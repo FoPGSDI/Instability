@@ -5,7 +5,7 @@
 % Requires: rel_preamble.tex (loaded by rel_main.tex)
 %
 % Classical reference: Chandrasekhar, Ch. II, §§10--12
-% Relativistic framework: Israel-Stewart causal dissipation theory
+% Relativistic framework: BDNK first-order causal viscous hydrodynamics
 % =====================================================================
 
 \chapter*{Chapter II (Relativistic): The B\'enard Problem --- Normal Mode
@@ -28,20 +28,22 @@ horizontal wave number.  The Newtonian dispersion relation that follows from
 the linearised Boussinesq equations is a cubic polynomial in $p$, and all
 three roots are physical.
 
-In the relativistic setting the situation changes in two essential respects:
+In the BDNK (Bemfica--Disconzi--Noronha--Kovtun) relativistic formulation,
+the perturbation equations are derived from first-order causal viscous
+hydrodynamics.  Unlike the Israel--Stewart approach, which introduces
+auxiliary relaxation equations (and consequently additional dynamical degrees
+of freedom), BDNK achieves causality through the choice of hydrodynamic
+frame and constrained first-order transport coefficients.  A single
+essential feature distinguishes the BDNK perturbation analysis from the
+classical one:
 
 \begin{enumerate}
-\item \textbf{Causal propagation.}  The perturbation equations must be
-  derived from the Israel--Stewart theory, which replaces the parabolic
-  (instantaneous-diffusion) heat and viscous-stress equations with hyperbolic
-  relaxation equations.  Every signal speed that emerges from the dispersion
-  relation must be bounded by~$c$.
-
-\item \textbf{Additional modes.}  Each Israel--Stewart relaxation equation
-  adds an independent dynamical degree of freedom.  The dispersion relation
-  consequently becomes a \emph{higher-order} polynomial in the growth
-  parameter, producing extra roots that represent transient relaxation modes
-  with no Newtonian counterpart.
+\item \textbf{Causal propagation.}  The BDNK constitutive relations ensure
+  that all signal speeds emerging from the dispersion relation are bounded
+  by~$c$.  This is achieved not by adding relaxation equations, but by the
+  algebraic structure of the first-order dissipative terms in a general
+  hydrodynamic frame.  No auxiliary dynamical degrees of freedom are
+  introduced.
 \end{enumerate}
 
 We work in the local rest frame of the static equilibrium and retain factors
@@ -51,10 +53,9 @@ can be taken at every stage.
 \medskip
 \noindent\textbf{Perturbation ansatz.}
 Ascribe to every linearised quantity (the vertical velocity perturbation~$W$,
-the temperature perturbation~$\Theta$, the vertical vorticity
-perturbation~$Z$, the heat-flux perturbation~$\delta q^{\mu}$, and the
-shear-stress perturbation~$\delta\pi^{\mu\nu}$) a dependence on the
-horizontal coordinates and time of the form
+the temperature perturbation~$\Theta$, and the vertical vorticity
+perturbation~$Z$) a dependence on the horizontal coordinates and time of
+the form
 \begin{equation}
 \label{eq:rel-2-88}
 \exp\!\bigl[i(k_x\, x + k_y\, y) + \sigma t\bigr],
@@ -70,50 +71,54 @@ with the operators
 D \equiv \frac{d}{dz}, \qquad
 \mathcal{D}^2 \equiv D^2 - a^2,
 \end{equation}
-the linearised Israel--Stewart equations for the vertical modes reduce to the
+the linearised BDNK equations for the vertical modes reduce to the
 following system.
 
 \subsection{Relativistic normal-mode equations}
 \label{sec:rel-10b}
 
+In the BDNK formalism the dissipative contributions to the energy-momentum
+tensor are first-order gradient terms: the shear stress is
+$\Pi^{\mu\nu} = -2\shearvisc\, \sigma^{\mu\nu}$, the bulk viscous pressure
+is $\Pi_{\mathrm{bulk}} = -\bulkvisc\, \nabla_\mu u^\mu$, and the heat flux
+$Q^\mu$ includes both a Fourier-type term and frame-dependent corrections.
+These enter the linearised conservation laws directly, without auxiliary
+evolution equations.
+
 The \emph{momentum equation} for the vertical velocity amplitude reads
 \begin{equation}
 \label{eq:rel-2-92}
-\Bigl[\mathcal{D}^2(\mathcal{D}^2 - \sigma_*)
-  + \frac{\sigma_* \taupi \nu}{d^2}\,\mathcal{D}^2
-      (\mathcal{D}^2 - \sigma_* - d^2/(\taupi\nu))\Bigr] W
+(\mathcal{D}^2 - \sigma_*)\,\mathcal{D}^2 W
 = -\Rarel\, a^2 \Theta,
 \end{equation}
 where $\Rarel$ is the relativistic Rayleigh number
 \begin{equation}
 \label{eq:rel-Rayleigh}
 \Rarel = \frac{g\alpha\beta\, d^4}{\kappa\nu}
-  \left[1 + \order{\frac{v^2}{c^2}}\right],
+  \left[1 + \order{\frac{v^2}{c^2}}\right].
 \end{equation}
-and $\taupi$ is the shear-stress relaxation time of the Israel--Stewart
-theory.  The first line of~\eqref{eq:rel-2-92} is exactly Chandrasekhar's
-equation~(92); the second line is the relativistic (Israel--Stewart)
-correction, which vanishes in the limit $\taupi\to 0$.
+Equation~\eqref{eq:rel-2-92} is exactly Chandrasekhar's classical
+equation~(92).  In BDNK there is no relaxation-time correction to this
+equation; the dissipative terms (shear viscosity) enter at the same order
+as in the classical Navier--Stokes theory.
 
-The \emph{energy equation} for the temperature amplitude, incorporating
-the causal heat-flux relaxation time~$\tauq$, becomes
+The \emph{energy equation} for the temperature amplitude becomes
 \begin{equation}
 \label{eq:rel-2-93}
-\Bigl[(\mathcal{D}^2 - \mathrm{p}\,\sigma_*)
-  + \tauq\,\frac{\kappa}{d^2}\,\sigma_*
-    \bigl(\mathcal{D}^2 - \mathrm{p}\,\sigma_*
-      - d^2/(\tauq\kappa)\bigr)\Bigr]\Theta
+(\mathcal{D}^2 - \mathrm{p}\,\sigma_*)\,\Theta
 = -\frac{\beta d^2}{\kappa}\, W,
 \end{equation}
-where $\mathrm{p} = \nu/\kappa$ is the Prandtl number.  Again the classical
-equation~(93) is recovered when $\tauq\to 0$.
+where $\mathrm{p} = \nu/\kappa$ is the Prandtl number.  Again, this is
+identical to Chandrasekhar's equation~(93).  The BDNK heat flux is a
+first-order gradient expression; its effect on the linearised energy
+equation at the hydrodynamic level is captured entirely by the thermal
+diffusivity~$\kappa$ (with $\order{v^2/c^2}$ corrections absorbed into the
+definition of $\Rarel$).
 
-The \emph{vorticity equation} acquires an analogous relaxation correction:
+The \emph{vorticity equation} is likewise unchanged:
 \begin{equation}
 \label{eq:rel-2-94}
-\bigl[\mathcal{D}^2 - \sigma_*
-  + \taupi(\nu/d^2)\,\sigma_*(\mathcal{D}^2 - \sigma_*
-    - d^2/(\taupi\nu))\bigr] Z = 0.
+(\mathcal{D}^2 - \sigma_*)\, Z = 0.
 \end{equation}
 The boundary conditions remain unchanged from the classical case:
 \begin{equation}
@@ -131,33 +136,29 @@ and seeking solutions proportional to $\sin(n\pi z)$ (the ``both free''
 boundary prototype), one obtains the dispersion relation
 \begin{equation}
 \label{eq:rel-dispersion}
-\mathcal{P}(\sigma_*;\, a^2,\, \Rarel,\, \taupi,\, \tauq) = 0,
+\mathcal{P}(\sigma_*;\, a^2,\, \Rarel) = 0,
 \end{equation}
-where $\mathcal{P}$ is a polynomial of degree \emph{five} in~$\sigma_*$
-(compared to the cubic of the classical theory).
-
-The five roots decompose as follows:
-\begin{enumerate}
-\item[\textbf{(i)}] \textbf{Three physical (hydrodynamic) modes} ---
-  continuously connected to the three roots of the classical dispersion
-  relation as $\taupi, \tauq \to 0$.  These govern the onset of thermal
-  convection.
-
-\item[\textbf{(ii)}] \textbf{Two transient (relaxation) modes} --- with
-  $\operatorname{Re}(\sigma_*) \sim -d^2/(\taupi\nu)$ or
-  $\sim -d^2/(\tauq\kappa)$ for small relaxation times.  These modes decay
-  rapidly on the relaxation time-scale and do not participate in the
-  instability.  They are an artefact of the extended thermodynamic theory
-  and have no classical counterpart.
-\end{enumerate}
+where $\mathcal{P}$ is a polynomial of degree \emph{three} in~$\sigma_*$
+--- the same order as in the classical theory.
 
 \begin{relcorrection}
-In the Newtonian theory the dispersion relation is cubic in~$\sigma_*$
-and all three modes are physical.  The Israel--Stewart extension raises the
-polynomial order by two, adding one mode per relaxation channel (heat and
-shear).  These ``spurious'' (from the Newtonian viewpoint) roots are
-essential for relativistic causality: they ensure that signals propagate at
-finite speed.
+\textbf{BDNK vs.\ Israel--Stewart mode structure.}
+In the Israel--Stewart formulation the dispersion relation is a fifth-order
+polynomial in~$\sigma_*$ (cubic classical part plus two additional roots from
+the relaxation equations for heat flux and shear stress).  The two extra
+roots represent transient relaxation modes that decay on microscopic
+time-scales and do not participate in convective onset.
+
+In the BDNK formalism no auxiliary relaxation equations are introduced, so
+the dispersion relation is \emph{third-order} --- precisely the same as in
+the classical theory.  All three roots are physical (hydrodynamic) modes,
+continuously connected to their Newtonian counterparts.  There are no
+``spurious'' transient modes to discuss or discard.
+
+The three physical modes are identical in both formulations: the BDNK and
+Israel--Stewart theories agree on the hydrodynamic sector of the dispersion
+relation.  The difference lies solely in the transient mode structure, which
+is absent in BDNK.
 \end{relcorrection}
 
 \subsection{Causality constraint on group velocities}
@@ -171,23 +172,21 @@ velocity
 v_g = \left|\frac{\partial\,\operatorname{Re}(\sigma_*)}
             {\partial a}\right| \frac{\nu}{d}.
 \end{equation}
-Causality requires $v_g \le c$ for every branch.  This is guaranteed
-provided the relaxation times satisfy
+In the BDNK theory, causality ($v_g \le c$) is guaranteed by the algebraic
+constraints on the transport coefficients and frame parameters:
 \begin{equation}
-\label{eq:rel-causality-shear}
-\taupi \ge \frac{\shearvisc}{\enthalpy\, c^2}\,,
-\qquad
-\tauq \ge \frac{\thermcond\, T}{\enthalpy\, c^2}\,,
+\label{eq:rel-causality-bdnk}
+\shearvisc > 0, \qquad
+\bulkvisc + \tfrac{2}{3}\shearvisc > 0, \qquad
+\text{plus coupled frame-coefficient inequalities},
 \end{equation}
-which are precisely the Israel--Stewart causality bounds.  When these hold,
-the maximum signal speed of the perturbation system is bounded by
-$\sqrt{\nu/\taupi}$ and $\sqrt{\kappa/\tauq}$ (in the respective channels),
-both of which are $\le c$ by~\eqref{eq:rel-causality-shear}.
+which ensure strong hyperbolicity of the full nonlinear BDNK system.
 
 For the three physical (hydrodynamic) modes, which govern convective
 onset, the group velocities are $\order{v}$ with $v \ll c$; causality
-is satisfied trivially.  The constraint is non-trivial only for the
-transient relaxation modes at large~$a$ (short wavelengths).
+is satisfied trivially.  Unlike the Israel--Stewart theory, there are no
+separate transient modes whose group velocities require an independent
+causality check.
 \end{causalitycheck}
 
 \subsection{Horizontal velocity components}
@@ -213,14 +212,12 @@ occurs through a \emph{stationary} (non-oscillatory) marginal state.  The key
 question in the relativistic extension is:
 
 \begin{quote}
-\emph{Does $\sigma_*$ remain real at the marginal state when the
-Israel--Stewart relaxation terms are included?}
+\emph{Does $\sigma_*$ remain real at the marginal state in the BDNK theory?}
 \end{quote}
 
-We shall prove that the answer is \emph{yes} for the three physical
-modes, up to corrections that vanish when the relaxation times tend to
-zero.  The two transient modes are always heavily damped and do not affect
-the exchange-of-stabilities argument.
+We shall prove that the answer is \emph{yes} --- and in fact the principle
+holds \emph{exactly} at the marginal state ($\sigma = 0$), not merely
+approximately.
 
 \subsection{Proof for the physical modes}
 \label{sec:rel-11b}
@@ -232,28 +229,18 @@ G = \mathcal{D}^2 W, \qquad
 F = \mathcal{D}^2(\mathcal{D}^2 - \sigma_*) W
   = (\mathcal{D}^2 - \sigma_*) G.
 \end{equation}
-From the relativistic normal-mode equations~\eqref{eq:rel-2-92}
+From the BDNK normal-mode equations~\eqref{eq:rel-2-92}
 and~\eqref{eq:rel-2-93}, after eliminating $\Theta$, we obtain
 \begin{equation}
 \label{eq:rel-2-115}
 (\mathcal{D}^2 - \mathrm{p}\,\sigma_*) F
-  + \mathcal{R}_{\mathrm{IS}}[\sigma_*, F, W]
-  = -\Rarel\, a^2 W,
+  = -\Rarel\, a^2 W.
 \end{equation}
-where
-\begin{equation}
-\label{eq:rel-IS-remainder}
-\mathcal{R}_{\mathrm{IS}}
-= \frac{\taupi\nu}{d^2}\,\sigma_*\,
-    \bigl[\mathcal{D}^2 F
-      - (\sigma_* + d^2/(\taupi\nu))\, F\bigr]
-  + \frac{\tauq\kappa}{d^2}\,\sigma_*\,
-    \bigl[\mathcal{D}^2 - \mathrm{p}\,\sigma_*
-      - d^2/(\tauq\kappa)\bigr]
-    \bigl[\mathcal{D}^2(\mathcal{D}^2 - \sigma_*) W\bigr]
-\end{equation}
-collects all Israel--Stewart corrections, and
-$\mathcal{R}_{\mathrm{IS}} \to 0$ as $\taupi, \tauq \to 0$.
+This is \emph{identical} to Chandrasekhar's classical equation~(115).
+In the BDNK formulation there is no remainder term
+$\mathcal{R}_{\mathrm{IS}}$ involving relaxation times; the first-order
+dissipative terms have already been absorbed into the effective transport
+coefficients.
 
 Multiply~\eqref{eq:rel-2-115} by $F^*$ and integrate over
 $z \in [0,1]$.  Following Chandrasekhar's integration-by-parts strategy
@@ -263,7 +250,6 @@ case), we arrive at
 \label{eq:rel-2-118}
 \int_0^1\!\bigl\{|DF|^2 + a^2|F|^2
   + \mathrm{p}\,\sigma_*|F|^2\bigr\}\,dz
-  + \int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz
   = \Rarel\, a^2\!\int_0^1 W F^*\,dz.
 \end{equation}
 The right-hand side is treated identically to the classical
@@ -272,7 +258,6 @@ equations~(119)--(123), yielding
 \label{eq:rel-2-124}
 \int_0^1\!\bigl\{|DF|^2 + a^2|F|^2
   + \mathrm{p}\,\sigma_*|F|^2\bigr\}\,dz
-  + \int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz
   = \Rarel\, a^2\!\int_0^1\!\bigl\{|G|^2
     + \sigma_*^*\bigl[|DW|^2 + a^2|W|^2\bigr]\bigr\}\,dz.
 \end{equation}
@@ -283,56 +268,37 @@ Taking the imaginary part:
   \left\{\mathrm{p}\!\int_0^1|F|^2\,dz
     + \Rarel\, a^2\!\int_0^1
       \bigl[|DW|^2 + a^2|W|^2\bigr]\,dz\right\}
-= -\operatorname{Im}\!\int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz.
+= 0.
 \end{equation}
-The left-hand factor in braces is positive definite for $\Rarel > 0$.
+The factor in braces is positive definite for $\Rarel > 0$.
 Therefore:
 \begin{equation}
 \label{eq:rel-2-126}
-\operatorname{Im}(\sigma_*) = \order{\taupi,\, \tauq}.
+\operatorname{Im}(\sigma_*) = 0 \qquad\text{exactly}.
 \end{equation}
 
 \begin{relcorrection}
-\textbf{Exchange of stabilities (relativistic).}
-In the classical theory ($\taupi = \tauq = 0$) the right-hand side
-of~\eqref{eq:rel-2-125} vanishes identically and one concludes
-$\operatorname{Im}(\sigma) = 0$ exactly.
+\textbf{Exchange of stabilities (BDNK).}
+In the BDNK formalism, the linearised perturbation equations for the
+hydrodynamic modes take exactly the same form as in the classical
+Navier--Stokes theory (with $\order{v^2/c^2}$ corrections absorbed into
+$\Rarel$).  Consequently, Chandrasekhar's classical proof of the exchange
+of stabilities applies \emph{without modification}: the imaginary part
+of $\sigma_*$ vanishes exactly for $\Rarel > 0$.
 
-With Israel--Stewart corrections, $\operatorname{Im}(\sigma_*)$ receives a
-contribution of order $\max(\taupi\nu/d^2,\, \tauq\kappa/d^2)$, which is
-the ratio of the \emph{microscopic} relaxation time to the
-\emph{macroscopic} viscous diffusion time.  For any laboratory or
-astrophysical fluid this ratio is exceedingly small ($\sim 10^{-10}$ or
-less), so the principle of exchange of stabilities holds to extraordinary
-accuracy.
+This is in contrast to the Israel--Stewart formulation, where the
+relaxation terms introduce an $\order{v^2/c^2}$ imaginary contribution
+to $\sigma_*$.  That contribution was always negligible in practice, but
+in BDNK it is absent entirely.  The reason is clear: BDNK has no auxiliary
+relaxation equations, so there are no additional terms in the dispersion
+relation that could break the classical exchange-of-stabilities argument.
 
-Formally, the principle is \emph{exact} in the non-relativistic limit
-$c \to \infty$ (equivalently $\taupi, \tauq \to 0$), and receives
-corrections suppressed by $v^2/c^2$:
-\begin{equation}
-\label{eq:rel-exchange-correction}
-\operatorname{Im}(\sigma_*) = \order{\frac{v^2}{c^2}}.
-\end{equation}
+At the marginal state ($\sigma = 0$), the IS and BDNK theories give
+\emph{identical} results, since the IS relaxation terms are all
+proportional to $\sigma$ and vanish at $\sigma = 0$.  The difference
+between the two formulations appears only away from the marginal state,
+in the transient dynamics and mode structure at finite $\sigma$.
 \end{relcorrection}
-
-\subsection{The transient relaxation modes}
-\label{sec:rel-11c}
-
-The two extra roots of the fifth-order dispersion
-relation~\eqref{eq:rel-dispersion} have
-\begin{equation}
-\label{eq:rel-transient}
-\operatorname{Re}(\sigma_*^{(\mathrm{trans})})
-\approx -\frac{d^2}{\taupi\nu}
-\quad\text{or}\quad
--\frac{d^2}{\tauq\kappa}.
-\end{equation}
-Since $d^2/(\taupi\nu) \gg 1$ and $d^2/(\tauq\kappa) \gg 1$ for any
-macroscopic system, these modes are strongly damped.  They never become
-marginal and therefore play no role in the onset of convection.  Their
-presence is required solely by the hyperbolic character of the
-Israel--Stewart equations and ensures that no perturbation signal propagates
-faster than~$c$.
 
 %----------------------------------------------------------------------
 \section{The marginal state and the relativistic characteristic value
@@ -343,12 +309,10 @@ faster than~$c$.
 \subsection{Marginal-state equations}
 \label{sec:rel-12a}
 
-Since the exchange of stabilities is valid (to the accuracy established
-in \S~\ref{sec:rel-11}), the marginal state is stationary:
+Since the exchange of stabilities holds exactly in BDNK
+(see \S~\ref{sec:rel-11}), the marginal state is stationary:
 $\sigma_* = 0$.  Setting $\sigma_* = 0$ in the normal-mode
-equations~\eqref{eq:rel-2-92} and~\eqref{eq:rel-2-93} and observing that
-every Israel--Stewart correction term carries a factor of $\sigma_*$
-(hence vanishes at $\sigma_* = 0$), we obtain
+equations~\eqref{eq:rel-2-92} and~\eqref{eq:rel-2-93}, we obtain
 \begin{equation}
 \label{eq:rel-2-127}
 (\mathcal{D}^2)^2 W
@@ -361,16 +325,24 @@ every Israel--Stewart correction term carries a factor of $\sigma_*$
 \end{equation}
 
 \begin{relcorrection}
-\textbf{Key observation.}  At marginal stability ($\sigma_* = 0$),
-every Israel--Stewart relaxation term vanishes because each such term is
-proportional to~$\sigma_*$.  The marginal-state equations therefore take
-\emph{exactly the same form} as the classical equations~(127)--(128) of
-Chandrasekhar, with $R$ replaced by $\Rarel$.
+\textbf{Key observation.}  At marginal stability ($\sigma_* = 0$), the
+BDNK dissipative terms --- which in the linearised equations are
+proportional to the time-derivative (i.e., to~$\sigma_*$) --- vanish
+identically.  The marginal-state equations therefore take \emph{exactly
+the same form} as the classical equations~(127)--(128) of Chandrasekhar,
+with $R$ replaced by $\Rarel$.
+
+This result is \emph{identical} to what one obtains in the Israel--Stewart
+formulation.  In IS, the relaxation correction terms (proportional to
+$\taupi$ and $\tauq$) all carry a factor of~$\sigma_*$ and likewise
+vanish at $\sigma_* = 0$.  At the marginal state, the two formulations ---
+BDNK and IS --- yield the same eigenvalue problem.  This is physically
+necessary: the marginal state is a time-independent configuration, so
+neither the hyperbolic relaxation structure (IS) nor the causal frame
+corrections (BDNK) can influence the result.
 
 The entire effect of relativistic corrections is thus absorbed into the
-definition of $\Rarel$.  This is physically sensible: the marginal state
-is a time-independent configuration, so the hyperbolic (causal) modifications
-to the time-evolution equations are invisible.
+definition of $\Rarel$.
 \end{relcorrection}
 
 Eliminating $\Theta$:
@@ -438,17 +410,33 @@ a_c^{(\mathrm{rel})}
   \left[1 + \order{\frac{v^2}{c^2}}\right].
 \end{equation}
 
-\subsection{Role of the relaxation modes in the eigenvalue problem}
+\subsection{Comparison of BDNK and Israel--Stewart at and near marginal state}
 \label{sec:rel-12c}
 
-Although the transient relaxation modes (identified in
-\S~\ref{sec:rel-10c}) do not participate in the instability, their presence
-modifies the \emph{approach} to the marginal state.  Specifically, for
-$\sigma_*$ small but non-zero, the dispersion relation receives
-corrections of order $\sigma_* \taupi\nu/d^2$ and
-$\sigma_* \tauq\kappa/d^2$.  These produce $\order{v^2/c^2}$ shifts in the
-growth rate near onset, but as shown above, the marginal eigenvalue problem
-itself is unaffected.
+At marginal stability ($\sigma_* = 0$), the BDNK and Israel--Stewart
+formulations yield \emph{identical} eigenvalue problems and hence identical
+critical Rayleigh numbers.  This is because:
+\begin{enumerate}
+\item In IS, every relaxation correction term is proportional
+  to~$\sigma_*$ and vanishes at $\sigma_* = 0$.
+\item In BDNK, the dissipative terms (first-order gradients) likewise
+  contribute only through time-derivative terms proportional to~$\sigma_*$
+  in the linearised equations, and vanish at $\sigma_* = 0$.
+\end{enumerate}
+The two formulations differ only \emph{away from} the marginal state:
+\begin{itemize}
+\item \textbf{Mode structure:} IS has a fifth-order dispersion relation
+  (3 physical + 2 transient relaxation modes); BDNK has a third-order
+  dispersion relation (3 physical modes only).
+\item \textbf{Transient dynamics:} For $\sigma_* \ne 0$, IS dispersion
+  receives corrections of order $\sigma_* \taupi\nu/d^2$ and
+  $\sigma_* \tauq\kappa/d^2$ from the relaxation modes.  BDNK has no
+  such corrections.
+\item \textbf{Exchange of stabilities:} In BDNK,
+  $\operatorname{Im}(\sigma_*) = 0$ exactly.  In IS,
+  $\operatorname{Im}(\sigma_*) = \order{v^2/c^2}$ (negligible but
+  non-zero).
+\end{itemize}
 
 \begin{causalitycheck}
 \textbf{Summary of causality verification for the eigenvalue problem.}
@@ -457,9 +445,10 @@ itself is unaffected.
 \item The three physical modes satisfy
   $|v_g| \ll c$ for all wave numbers relevant to convective onset.
 
-\item The two transient modes have group velocities bounded by
-  $\sqrt{\nu/\taupi}$ and $\sqrt{\kappa/\tauq}$, both $\le c$ by the
-  Israel--Stewart causality bounds~\eqref{eq:rel-causality-shear}.
+\item Causality is guaranteed by the BDNK strong hyperbolicity conditions
+  on the transport coefficients and frame parameters.  No separate
+  transient-mode causality check is required (there are no transient modes
+  in BDNK).
 
 \item The marginal-state eigenvalue problem ($\sigma_* = 0$) involves no
   time derivatives and is automatically causal.
@@ -475,10 +464,10 @@ relativistic eigenvalue problem is well-posed.
 \subsection{Non-relativistic limit}
 \label{sec:rel-12d}
 
-Taking $c \to \infty$ (hence $\taupi, \tauq \to 0$ and
-$\Rarel \to R$), the entire system of equations in \S\S~\ref{sec:rel-10}--\ref{sec:rel-12} reduces to Chandrasekhar's classical
-equations~(88)--(132) of Chapter~II, \S\S~10--12.  The five-mode dispersion
-relation collapses to the classical cubic as the two transient modes acquire
-$|\operatorname{Re}(\sigma_*)| \to \infty$ and decouple.  The exchange of
-stabilities becomes exact, and the characteristic value problem for $R$
+Taking $c \to \infty$ (hence $\Rarel \to R$), the entire system of
+equations in \S\S~\ref{sec:rel-10}--\ref{sec:rel-12} reduces to
+Chandrasekhar's classical equations~(88)--(132) of Chapter~II,
+\S\S~10--12.  The third-order BDNK dispersion relation reduces to the
+classical cubic.  The exchange of stabilities is exact (as it is already
+at finite~$c$ in BDNK), and the characteristic value problem for $R$
 is recovered without modification.
