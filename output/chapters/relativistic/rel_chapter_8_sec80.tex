@@ -632,4 +632,78 @@ to astrophysical jets and accretion flows:
 \item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
   \emph{Relativistic Fluid Dynamics In and Out of Equilibrium},
   Cambridge University Press, Cambridge, 2019.
+
+\item L.~\textsc{Gavassino}, `Extending Israel--Stewart theory: causal
+  bulk viscosity at large gradients',
+  \emph{Phys.\ Rev.\ D}\ \textbf{111}, 016013 (2025);
+  arXiv:2501.12543.
+
+\item L.~\textsc{Gavassino}, M.~\textsc{Antonelli}, and
+  B.~\textsc{Haskell}, `Bulk viscosity in relativistic fluids: from
+  thermodynamics to hydrodynamics',
+  \emph{Class.\ Quantum Grav.}\ \textbf{38}, 075001 (2021);
+  arXiv:2003.04609.
 \end{enumerate}
+
+%% ================================================================
+\section{Extending Israel--Stewart theory: causal bulk viscosity
+  at large gradients}\label{sec:rel-8-extending-IS}
+%% ================================================================
+
+The Israel--Stewart (IS) theory, which provides the framework for
+relativistic viscous hydrodynamics used throughout this chapter, develops
+pathologies when the bulk viscous stress $\Pi$ becomes comparable to the
+equilibrium pressure $P$.  Specifically, the propagation speed of
+viscous perturbations diverges as $\Pi \to -({\varepsilon + P})$,
+causing superluminal signal propagation and the breakdown of causality
+\citep{GavassinoBulkViscosity2020}.
+
+\citet{GavassinoExtendingIS2025} addresses this problem by constructing
+a class of relativistic fluid models for cold, dense matter with bulk
+viscosity whose equilibrium equation of state is polytropic
+($P = K\rho^{\Gamma}$ with $1 < \Gamma < 2$).  These models have three
+crucial properties:
+\begin{enumerate}
+\item \textbf{IS limit.}  For small $|\Pi|/P$, they reduce exactly to
+  the standard Israel--Stewart theory, reproducing all the results of
+  \S\S\,\ref{sec:rel-8-79}--\ref{sec:rel-8-80} in the near-equilibrium
+  regime.
+\item \textbf{Large-gradient safety.}  When $\Pi$ becomes comparable to
+  $P$, the evolution equations ``adjust'' so that the total pressure
+  $P + \Pi$ remains strictly within the interval $(0, \varepsilon)$.
+  This prevents the onset of acausality without any ad hoc cutoff.
+\item \textbf{Mathematical well-posedness.}  The equations of motion are
+  symmetric-hyperbolic and causal for \emph{all} continuously
+  differentiable flows, and the second law of thermodynamics
+  $\nabla_{\mu}s^{\mu}\geq 0$ holds exactly---not merely to second
+  order in deviations from equilibrium.
+\end{enumerate}
+
+The construction proceeds by recognising that the IS model for bulk
+viscosity is equivalent to a two-component reactive mixture
+\citep{GavassinoBulkViscosity2020}: the non-equilibrium scalar field
+$\phi$ (the reaction coordinate) evolves according to
+\begin{equation}
+\label{eq:rel-8-extended-IS}
+\dot{\phi} + \frac{1}{\tau_{\phi}}\,
+  \frac{\partial s}{\partial\phi}\bigg|_{\rho,n}
+= 0,
+\end{equation}
+where $s(\rho, n, \phi)$ is the non-equilibrium entropy density.
+In the IS limit, expanding $s$ to quadratic order in $\phi$ around
+equilibrium yields the standard relaxation equation
+$\tau\,\dot{\Pi}+\Pi = -\zeta\,\nabla_{\mu}u^{\mu}$.  The key insight
+of \citet{GavassinoExtendingIS2025} is that by choosing an appropriate
+\emph{non-perturbative} form for $s(\rho, n, \phi)$, one obtains a
+theory that inherits all the virtues of IS near equilibrium while
+remaining well-behaved at large $|\Pi|$.
+
+\paragraph{Relevance to Taylor--Couette stability.}
+For the viscous Couette stability problem of this chapter, the
+extended IS models become important when considering NS merger remnants
+or heavy-ion collisions, where the bulk stress can locally exceed
+$|{\Pi}| \sim P$.  In such regimes, the standard IS model used in
+\S\,\ref{sec:rel-8-80} would predict unphysical growth of
+perturbations due to loss of hyperbolicity.  The extended models
+guarantee that the perturbation equations remain well-posed, so that
+the stability analysis can be trusted even under extreme conditions.

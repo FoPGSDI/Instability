@@ -641,3 +641,89 @@ $w\to\rho$, $\Omega_{A,\mathrm{rel}}\to\Omega_{A}$, and all
 equations reduce to the classical forms of \S\S\,81--83.  The
 causality bounds become vacuous ($v_{A}/c\to 0$), and the Rayleigh and
 Michael criteria return to their standard Newtonian forms.
+
+%% ================================================================
+\section{Stability of multicomponent Israel--Stewart--Maxwell theory}
+\label{sec:rel-9-multicomponent-IS}
+%% ================================================================
+
+The MHD stability analysis of the preceding sections treats the fluid
+as a single-component system.  In realistic astrophysical plasmas (neutron
+star cores, QGP at finite baryon density, heavy-ion collisions at lower
+energies), multiple conserved charges coexist (baryon number, electric
+charge, strangeness), each with its own diffusive current.
+Gavassino \& Shokri (\citealt{GavassinoShokri2024}, arXiv:2307.11615)
+derive the stability conditions for multicomponent Israel--Stewart
+hydrodynamics in the presence of electromagnetic fields.
+
+\subsection{The multicomponent IS-Maxwell model}
+
+The fluid state is characterised by $\{\varepsilon, u^\mu, n_A,
+V_A^\mu\}$, where $A = 1,\ldots,l$ labels the chemical species.
+The entropy current includes a quadratic cost for diffusive currents:
+\begin{equation}
+\label{eq:rel-9-IS-entropy}
+S^\mu = s\,u^\mu - \frac{\mu^A}{T}\,V_A^\mu
+  - \frac{b^{AB}}{2T}\,V_A^\nu V_{B\nu}\,u^\mu\,,
+\end{equation}
+where $b^{AB}$ is a symmetric positive-definite matrix quantifying the
+out-of-equilibrium entropy cost.  The key result is derived using the
+information current method:
+
+\begin{equation}
+\label{eq:rel-9-IS-info-current}
+T E^\mu = \biggl[\delta T\,\delta s + \delta\mu^A\,\delta n_A
+  + (\varepsilon{+}P)\,\delta u^\nu\delta u_\nu
+  + b^{AB}\,\delta V_A^\nu\delta V_{B\nu}\biggr]
+  \frac{u^\mu}{2} + \cdots
+\end{equation}
+Stability requires $E^\mu$ to be future-directed non-spacelike for all
+perturbations, which yields:
+\begin{enumerate}
+\item \textbf{Fluid sector}: the standard thermodynamic stability
+  conditions ($\partial\varepsilon/\partial T > 0$, positive
+  compressibility) must hold.
+\item \textbf{Diffusive sector}: the matrix $b^{AB}$ must be positive
+  definite.
+\item \textbf{Coupling}: these conditions are \emph{independent}---the
+  fluid and diffusive sectors decouple in the stability analysis.
+\end{enumerate}
+
+\subsection{Extension to dynamic electromagnetic fields}
+
+The central result of Gavassino \& Shokri is that the electromagnetic
+part of the information current is \emph{automatically} stable and causal:
+\begin{quote}
+\textit{The stability conditions of a dissipative hydrodynamic theory
+extend unchanged to the corresponding theory of resistive dissipative
+magnetohydrodynamics, provided the medium is non-polarizable and
+non-magnetizable.}
+\end{quote}
+This means that the MRI stability analysis of
+\S\S\,\ref{sec:rel-81}--\ref{sec:rel-83}, which uses ideal MHD, remains
+valid when extended to resistive multicomponent plasmas: the diffusion
+currents and electromagnetic fields do not introduce new instabilities
+beyond those already present in the single-component inviscid theory,
+as long as the thermodynamic stability conditions and the positivity of
+$b^{AB}$ are satisfied.
+
+\subsection{Connection to Carter's multifluid theory}
+
+Gavassino \& Shokri show that the information current
+\eqref{eq:rel-9-IS-info-current} can be mapped, via a change of
+variables, to the information current of Carter's multifluid theory.
+This establishes a formal equivalence between the IS and Carter approaches
+for the purpose of stability analysis.  Gavassino (\citealt{GavassinoCarter2022},
+arXiv:2202.06760) had previously derived the stability conditions for
+Carter's multifluid theory itself, proving that:
+\begin{enumerate}
+\item The entrainment matrix $\mathcal{K}^{XY}$ (coupling the momenta
+  of different species to the currents of other species) must be
+  positive definite for stability.
+\item Thermodynamic stability implies linear causality: if the entropy
+  is maximised at equilibrium, all characteristic speeds are subluminal.
+\end{enumerate}
+These results are directly relevant to the superfluid Couette flows
+of Chapter~VI, where the entrainment between neutron and proton
+superfluids determines the stability of differential rotation in
+neutron star interiors.

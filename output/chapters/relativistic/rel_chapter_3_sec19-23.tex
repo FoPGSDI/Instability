@@ -922,4 +922,89 @@ using equation~\eqref{eq:rotating-heat} is developed in
 \item R.~C.~\textsc{Tolman}, `On the weight of heat and thermal
   equilibrium in general relativity',
   \emph{Phys.\ Rev.}, \textbf{35}, 904--24 (1930).
+
+\item L.~\textsc{Gavassino}, M.~\textsc{Antonelli},
+  P.~M.~\textsc{Pizzochero}, and B.~\textsc{Haskell},
+  `A universal formula for the relativistic correction to the mutual
+  friction coupling time-scale in neutron stars',
+  \emph{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{494},
+  3562--80 (2020); arXiv:2001.08951.
 \end{enumerate}
+
+%% ================================================================
+\section{Superfluid coupling and the onset of convection in
+  rotating neutron stars}\label{sec:rel-3-superfluid}
+%% ================================================================
+
+The discussion of relativistic rotating fluids in the preceding sections
+has treated the stellar interior as a single-component fluid.  In
+reality, neutron star interiors contain a superfluid neutron component
+that is coupled to the normal component (protons, electrons, ions)
+through the mutual friction mediated by quantised vortices
+\citep{GavassinoAntonelliPizzocheroHaskell2020}.  The timescale on
+which this coupling operates directly affects the onset conditions for
+convective instability in a rotating frame.
+
+\subsection{Relativistic mutual friction coupling time}
+\label{sec:rel-3-mutual-friction}
+
+\citet{GavassinoAntonelliPizzocheroHaskell2020} derived the relativistic
+correction to the mutual friction coupling time-scale directly from
+Carter's multifluid formalism.  The key result is a universal formula
+for the relativistic correction factor as a function of the stellar
+compactness $\mathcal{C} = GM/(Rc^{2})$ alone:
+\begin{equation}
+\label{eq:rel-3-trise}
+\frac{\tau_{\mathrm{rise}}^{\mathrm{GR}}}
+     {\tau_{\mathrm{rise}}^{\mathrm{Newton}}}
+= \frac{1}{(1-2\mathcal{C})^{1/2}}\,
+  \frac{I_{\mathrm{tot}}^{\mathrm{GR}}}{I_{\mathrm{tot}}^{\mathrm{Newton}}}
+  \approx 1 + 1.5\,\mathcal{C} + \mathcal{O}(\mathcal{C}^{2}),
+\end{equation}
+where $I_{\mathrm{tot}}$ is the total moment of inertia.  For a
+canonical NS ($M = 1.4\,M_{\odot}$, $R = 12\,$km,
+$\mathcal{C}\approx 0.17$), this gives a $\sim 25\%$ increase in the
+coupling time, rising to $\sim 40\%$ for more compact stars
+($\mathcal{C}\sim 0.25$).
+
+The universality of this formula---its independence from the equation of
+state---rests on the assumption that the superfluid angular-momentum
+reservoir is confined to a thin shell in the crust or outer core.  When
+the reservoir extends throughout the core, the formula connects
+continuously to the results of Sourie et al.\ (2017), which show
+EOS-dependent corrections of comparable magnitude.
+
+\subsection{Implications for convective onset}
+\label{sec:rel-3-convection-superfluid}
+
+The mutual friction coupling time $\tau_{\mathrm{mf}}$ sets the
+boundary between two regimes for rotating convection:
+\begin{enumerate}
+\item \textbf{Strongly coupled regime}
+  ($\tau_{\mathrm{mf}} \ll \tau_{\mathrm{conv}}$):
+  the superfluid and normal components are locked together and the
+  single-fluid Taylor--Proudman constraint (\S\,\ref{sec:rel-3-22})
+  applies, with the total density $\rho_{\mathrm{tot}} = \rho_{n} + \rho_{p}$
+  setting the inertia.
+
+\item \textbf{Weakly coupled regime}
+  ($\tau_{\mathrm{mf}} \gg \tau_{\mathrm{conv}}$):
+  the superfluid is effectively decoupled from the convective motion.
+  Only the normal component participates in buoyancy-driven overturn,
+  reducing the effective density and hence the critical Rayleigh
+  number.  However, the superfluid angular momentum reservoir is no
+  longer constrained by the Taylor--Proudman theorem, potentially
+  allowing new oscillatory (overstable) modes not present in the
+  single-fluid analysis.
+\end{enumerate}
+
+The relativistic enhancement of $\tau_{\mathrm{mf}}$ by $\sim 25$--$40\%$
+(equation~\eqref{eq:rel-3-trise}) pushes the boundary between these
+regimes to shorter convective timescales: in a relativistic star, the
+superfluid decouples more easily from the convective motion than a
+Newtonian estimate would predict.  For young, hot neutron stars where
+convective overturn timescales are $\sim 1$--$100\,$ms and
+$\tau_{\mathrm{mf}}^{\mathrm{GR}} \sim 10$--$100\,$ms (depending on
+the mutual friction parameters), this shift can qualitatively change
+the nature of the convective instability, favouring the weakly coupled
+(two-fluid) regime and its associated overstable modes.

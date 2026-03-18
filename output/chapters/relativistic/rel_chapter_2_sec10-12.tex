@@ -625,6 +625,74 @@ macroscopic scales.
 \label{fig:bdnk-full-dispersion}
 \end{figure}
 
+%% ================================================================
+\section{Gapless non-hydrodynamic modes and the validity of normal-mode analysis}
+\label{sec:rel-10-gapless}
+%% ================================================================
+
+The normal-mode analysis of the preceding sections assumes a clean
+separation between hydrodynamic modes (protected by conservation laws)
+and non-hydrodynamic transients (which decay on microscopic timescales).
+Gavassino (\citealt{GavassinoGapless2024}, arXiv:2404.12327) has shown
+that this separation can break down: in relativistic kinetic theories
+whose scattering cross-section decays to zero at high energies, the
+non-hydrodynamic sector is \emph{gapless}---there exist non-thermal
+excitations that survive longer than any hydrodynamic wave.
+
+\subsection{Physical origin}
+
+The mechanism is intuitive: if high-energy particles have vanishingly
+small scattering cross-sections (as in $\lambda\varphi^4$ scalar field
+theory, where $\sigma \sim g/E_{\mathrm{CM}}^2$), those particles
+free-stream through the medium without thermalizing.  A population of
+such particles creates a non-hydrodynamic perturbation whose total
+energy decays as a power law $E_{\mathrm{non-hy}}(t) \sim 1/t$, which
+outlives any viscously damped soundwave ($\propto e^{-k^2 t}$).
+
+\subsection{Rigorous criteria}
+
+Gavassino proves that the following conditions are equivalent (Theorem~1
+of arXiv:2404.12327):
+\begin{enumerate}
+\item[(a)] Non-hydrodynamic excitations can be made to survive
+  arbitrarily long.
+\item[(b)] States exist with $||(p^0)^{-1}L\phi_p||$ arbitrarily
+  smaller than $||\phi_p||$ (the collision operator acts weakly on them).
+\item[(c)] States exist that produce negligibly small entropy production
+  per unit free energy.
+\item[(d)] The frequency $\omega = 0$ is an accumulation point of the
+  non-hydrodynamic spectrum (a ``branch cut touching the origin'').
+\end{enumerate}
+Since most QFT cross-sections vanish at high energy, criterion (b) is
+generically satisfied by the high-energy tails of the kinetic distribution,
+making the non-hydrodynamic sector gapless in most relativistic systems
+of physical interest.
+
+\subsection{Implications for the B\'enard problem}
+
+For the relativistic B\'enard problem of this chapter, the gaplessness
+result implies:
+\begin{enumerate}
+\item The thermal mode $\omega_T$ in \eqref{eq:rel-bdnk-thermal} is
+  not the slowest mode in the system: there exist gapless non-hydrodynamic
+  modes that decay even more slowly.
+\item The exchange-of-stabilities theorem (\S\ref{sec:rel-11}) remains
+  valid for the \emph{hydrodynamic} sector, but additional non-hydrodynamic
+  instabilities could in principle be triggered at high wavenumbers.
+\item For practical purposes, the gapless modes carry exponentially
+  small energy (they involve particles far out in the tail of the
+  distribution) and are unlikely to affect the onset of thermal
+  convection.  However, they set a fundamental limit on the accuracy
+  of any finite-order gradient expansion of the constitutive relations.
+\end{enumerate}
+
+\medskip\noindent\textbf{Applicability of IS theory (Wagner \& Gavassino,
+arXiv:2309.14828).}  The IS relaxation equation used in the perturbation
+analysis captures only the slowest non-hydrodynamic mode.  Wagner \&
+Gavassino show that this is sufficient for accuracy in the transient
+regime provided the IReD prescription is used for the relaxation time
+(see \S\ref{sec:rel-regime-IS} in the framework chapter).
+
 \section*{References}
 
 \begin{enumerate}
@@ -633,6 +701,8 @@ macroscopic scales.
 \item F.~S.~Bemfica, M.~M.~Disconzi, J.~Noronha, and P.~Kovtun,
   \textit{Phys.\ Rev.\ D} \textbf{107}, 076012 (2023).
 \item R.~E.~Hoult and P.~Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106}, 066023 (2022).
+\item L.~Gavassino, \textit{Phys.\ Rev.\ Lett.}\ \textbf{132}, 222301 (2024) [arXiv:2404.12327].
+\item D.~Wagner and L.~Gavassino, \textit{Phys.\ Rev.\ D} \textbf{109}, 016019 (2024) [arXiv:2309.14828].
 \item A.~Pandya, E.~R.~Most, and F.~Pretorius, arXiv:2209.09265 (2022).
 \item W.~Israel and J.~M.~Stewart, \textit{Ann.\ Phys.}\ \textbf{118}, 341 (1979).
 \item S.~Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability}, OUP (1961).
