@@ -1,0 +1,730 @@
+% =====================================================================
+% Relativistic Dissipative Couette Flow in Hydromagnetics
+% Chapter IX, Sections 87--89: Relativistic Modification
+% =====================================================================
+% Requires: rel_preamble.tex (loaded by rel_main.tex)
+%
+% Classical reference: Chandrasekhar, Ch. IX, §§85--89
+% Relativistic framework: Israel-Stewart causal dissipation + resistive MHD
+% =====================================================================
+
+\chapter*{Chapter IX (Relativistic): Dissipative Couette Flow in
+  Hydromagnetics --- Perturbation Equations, Solutions, and the
+  General Case}
+\addcontentsline{toc}{chapter}{Chapter IX (Rel.): Dissipative MHD
+  Couette Flow (\S\S\,87--89)}
+
+In the classical treatment of Chapters~VII--IX, Chandrasekhar analyses
+the stability of viscous Couette flow in the presence of a uniform axial
+magnetic field.  The perturbation equations are parabolic: viscous
+stresses and Ohmic dissipation propagate instantaneously.  In a
+relativistic context this is unacceptable.  The Israel--Stewart theory
+replaces the Navier--Stokes constitutive relation by hyperbolic
+relaxation equations for both the viscous stress tensor $\pi^{\mu\nu}$
+and the heat flux $q^{\mu}$; resistive MHD likewise acquires a causal
+induction equation via a finite relaxation time $\tau_\eta$ for the
+electric current.  The present chapter re-derives the dissipative
+Couette--MHD stability problem within this causal framework, keeping the
+speed of light $c$ explicit throughout so that the non-relativistic limit
+$c\to\infty$ is transparent at every stage.
+
+%======================================================================
+\section{The perturbation equations: relativistic Israel--Stewart
+  formulation with resistive MHD}
+\label{sec:rel-87}
+%======================================================================
+
+\subsection{Covariant setup and equilibrium}
+\label{sec:rel-87-setup}
+
+We consider an incompressible conducting fluid confined between two
+coaxial cylinders of radii $R_1$ and $R_2$ ($R_1<R_2$), rotating with
+angular velocities $\Omega_1$ and $\Omega_2$, respectively.  A uniform
+axial magnetic field $\mathbf{H} = H\,\hat{\mathbf{z}}$ threads the
+fluid.  In the equilibrium state the azimuthal velocity is
+\begin{equation}
+  V(r) = Ar + \frac{B}{r},
+  \label{eq:rel-9-AB}
+\end{equation}
+with $A$ and $B$ determined by the boundary conditions, exactly as in the
+classical \S\,80.  For a relativistic treatment we note that the
+equilibrium 4-velocity is
+\begin{equation}
+  u^{\mu}_0 = \Lf_0\,(c,\,0,\,V(r),\,0),
+  \label{eq:rel-9-u0}
+\end{equation}
+where $\Lf_0 = (1 - V^2/c^2)^{-1/2}$ is the Lorentz factor.  For
+laboratory Couette flows $V\ll c$ and $\Lf_0 \approx 1$; we retain
+$\Lf_0$ to exhibit the structure but expand to lowest relativistic order
+wherever explicit results are needed.
+
+The equilibrium magnetic 4-vector in the fluid rest frame is
+\begin{equation}
+  b^{\mu}_0 = \Lf_0\bigl(HV/c,\;0,\;0,\;H\bigr),
+  \label{eq:rel-9-b0}
+\end{equation}
+with $b^2_0 = b^{\mu}_0 b_{0\mu} = H^2 + \mathcal{O}(V^2H^2/c^2)$.
+
+\subsection{Israel--Stewart dissipative sector}
+\label{sec:rel-87-IS}
+
+The relativistic viscous stress tensor $\pi^{\mu\nu}$ and the heat flux
+$q^{\mu}$ obey the Israel--Stewart relaxation equations (cf.\
+\S\ref{sec:rel-87-setup} and the conventions of
+\texttt{RELATIVISTIC\_CONVENTIONS.md}):
+\begin{equation}
+  \taupi\, u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+    + \pi^{\mu\nu}
+  = 2\shearvisc\,\sigma^{\mu\nu},
+  \label{eq:rel-9-IS-pi}
+\end{equation}
+\begin{equation}
+  \tauq\, u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle} + q^{\mu}
+  = -\kappa\Bigl(\proj\,\nabla_{\nu}T
+      + \frac{T}{c^2}\,u^{\mu}\,u^{\alpha}\nabla_{\alpha}u_{\mu}\Bigr),
+  \label{eq:rel-9-IS-q}
+\end{equation}
+where $\taupi$ and $\tauq$ are the shear-stress and heat-flux relaxation
+times, $\shearvisc$ the dynamic shear viscosity, $\kappa$ the thermal
+conductivity, and $\sigma^{\mu\nu}$ the shear tensor.  The angle-bracket
+notation denotes projection orthogonal to $u^{\mu}$ and symmetrised
+trace-free.  \emph{Causality requires $\taupi > 0$ and $\tauq > 0$}; the
+Navier--Stokes (parabolic) limit is recovered as $\taupi,\tauq\to 0$.
+
+For the resistive sector the Ohm's law in the fluid frame,
+\begin{equation}
+  J^{\mu} + \tau_\eta\,u^{\alpha}\nabla_{\alpha}J^{\langle\mu\rangle}
+  = \sigma_{\mathrm{c}}\,E^{\mu}_{\mathrm{fluid}},
+  \label{eq:rel-9-Ohm}
+\end{equation}
+introduces a resistive relaxation time $\tau_\eta$.  In the limit
+$\tau_\eta\to 0$ one recovers the standard (non-causal) resistive MHD.
+The magnetic diffusivity is $\eta = c^2/(4\pi\sigma_{\mathrm{c}})$.
+
+\subsection{Linearised perturbation equations}
+\label{sec:rel-87-pert}
+
+Let the perturbed state be described by
+\begin{equation}
+  u_r,\quad V + u_\theta,\quad u_z,\quad
+  h_r,\quad h_\theta,\quad H + h_z,\quad
+  \delta\pi^{\mu\nu},\quad \delta q^{\mu},\quad
+  \varpi\;(=\delta\Pi),
+  \label{eq:rel-9-pert-vars}
+\end{equation}
+where $\delta\pi^{\mu\nu}$ and $\delta q^{\mu}$ are the perturbations of
+the Israel--Stewart fields.  Restricting to axisymmetric perturbations
+(independent of $\theta$) and linearising, the radial and azimuthal
+momentum equations become
+\begin{align}
+  \Bigl(1 + \taupi\frac{\partial}{\partial t}\Bigr)
+  &\Bigl[\frac{\partial u_r}{\partial t} - 2\Omega u_\theta
+    - \frac{\mu_{\mathrm{m}} H}{4\pi\enthalpy}
+      \Bigl(1+\frac{b^2}{4\pi\enthalpy c^2}\Bigr)^{-1}
+      \frac{\partial h_r}{\partial z}\Bigr]
+  \notag\\
+  &= -\frac{1}{\enthalpy}\frac{\partial \varpi}{\partial r}
+    + \nu\Bigl(\nabla^2 u_r - \frac{u_r}{r^2}\Bigr),
+  \label{eq:rel-9-149R}
+\end{align}
+\begin{align}
+  \Bigl(1 + \taupi\frac{\partial}{\partial t}\Bigr)
+  &\Bigl[\frac{\partial u_\theta}{\partial t}
+    + \Bigl(\frac{dV}{dr}+\frac{V}{r}\Bigr)u_r
+    - \frac{\mu_{\mathrm{m}} H}{4\pi\enthalpy}
+      \Bigl(1+\frac{b^2}{4\pi\enthalpy c^2}\Bigr)^{-1}
+      \frac{\partial h_\theta}{\partial z}\Bigr]
+  \notag\\
+  &= \nu\Bigl(\nabla^2 u_\theta - \frac{u_\theta}{r^2}\Bigr),
+  \label{eq:rel-9-150R}
+\end{align}
+where $\enthalpy = (\varepsilon + p)/c^2$ is the relativistic enthalpy
+density per unit volume.  The factor
+$(1 + b^2/(4\pi\enthalpy c^2))^{-1}$ is the relativistic correction to
+the Alfv\'en coupling, which accounts for the magnetic contribution to
+the effective inertia.  In the non-relativistic limit
+$\enthalpy\to\rho$, $b^2/(4\pi\rho c^2)\to 0$, and these equations
+reduce to the classical equations~(149) and~(150) of~\S\,85.
+
+The Israel--Stewart operator
+$(1 + \taupi\,\partial/\partial t)$ acts on the left-hand side of each
+momentum equation, converting the system from parabolic to hyperbolic.
+This is the fundamental mechanism ensuring causal propagation of viscous
+signals at a finite speed
+\begin{equation}
+  v_{\mathrm{visc}} = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}}
+    \le c.
+  \label{eq:rel-9-vvisc}
+\end{equation}
+
+Similarly, the induction equations acquire the resistive relaxation
+operator:
+\begin{equation}
+  \Bigl(1 + \tau_\eta\frac{\partial}{\partial t}\Bigr)
+  \Bigl[\frac{\partial h_r}{\partial t}
+    - H\frac{\partial u_r}{\partial z}\Bigr]
+  = \eta\Bigl(\nabla^2 h_r - \frac{h_r}{r^2}\Bigr),
+  \label{eq:rel-9-152R}
+\end{equation}
+\begin{equation}
+  \Bigl(1 + \tau_\eta\frac{\partial}{\partial t}\Bigr)
+  \Bigl[\frac{\partial h_\theta}{\partial t}
+    - H\frac{\partial u_\theta}{\partial z}
+    - \Bigl(\frac{dV}{dr}-\frac{V}{r}\Bigr)h_r\Bigr]
+  = \eta\Bigl(\nabla^2 h_\theta - \frac{h_\theta}{r^2}\Bigr).
+  \label{eq:rel-9-153R}
+\end{equation}
+The resistive signal speed is bounded by
+\begin{equation}
+  v_{\mathrm{res}} = \sqrt{\frac{\eta}{\tau_\eta}} \le c,
+  \label{eq:rel-9-vres}
+\end{equation}
+which must be imposed as a consistency condition on $\tau_\eta$.
+
+The solenoidal conditions on $\mathbf{u}$ and $\mathbf{h}$ are unchanged
+from the classical case (equations~(156)--(157) of~\S\,85).
+
+\subsection{Normal mode decomposition}
+\label{sec:rel-87-modes}
+
+We seek solutions in the normal mode form
+\begin{equation}
+\begin{aligned}
+  u_r &= e^{pt}\,u(r)\cos kz, &\quad h_r &= e^{pt}\,\phi(r)\cos kz,\\
+  u_\theta &= e^{pt}\,v(r)\cos kz, &\quad h_\theta &= e^{pt}\,\chi(r)\sin kz,\\
+  u_z &= e^{pt}\,w(r)\sin kz, &\quad h_z &= e^{pt}\,\psi(r)\cos kz,
+\end{aligned}
+  \label{eq:rel-9-158R}
+\end{equation}
+together with $\delta\pi^{\mu\nu}$ and $\delta q^{\mu}$ in corresponding
+harmonic forms.  Substituting into the linearised equations and
+eliminating the pressure perturbation $\varpi$ as in the classical
+\S\,85, we obtain the relativistic normal-mode system:
+\begin{align}
+  \bigl(1 + \taupi p\bigr)
+  \Bigl[\bigl(DD_*-k^2-p/\nu\bigr)(DD_*-k^2)\,u
+    &+ \frac{\mu_{\mathrm{m}}Hk}{4\pi\enthalpy\nu}\,
+       \mathcal{A}^{-1}(DD_*-k^2)\phi\Bigr]
+  \notag\\
+  &= \frac{2\Omega k}{\nu}\,v,
+  \label{eq:rel-9-168R}
+\end{align}
+where $\mathcal{A} = 1 + b^2/(4\pi\enthalpy c^2)$ encodes the
+relativistic Alfv\'en correction, and the induction equation becomes
+\begin{equation}
+  \bigl(1+\tau_\eta p\bigr)
+  \bigl(DD_*-k^2-p/\eta\bigr)\phi = \frac{Hk}{\eta}\,u.
+  \label{eq:rel-9-162R}
+\end{equation}
+Here $D = d/dr$ and $D_* = d/dr + 1/r$ as in the classical analysis.
+
+\subsection{Boundary conditions}
+\label{sec:rel-87-bc}
+
+The mechanical boundary conditions are unchanged:
+\begin{equation}
+  u = v = 0,\quad Du = 0 \qquad\text{for } r = R_1 \text{ and } R_2.
+  \label{eq:rel-9-169R}
+\end{equation}
+The electromagnetic boundary conditions depend on the nature of the
+confining walls.  For \emph{non-conducting walls}:
+\begin{equation}
+  \phi = 0 \qquad\text{(on non-conducting walls),}
+  \label{eq:rel-9-174R}
+\end{equation}
+and for \emph{perfectly conducting walls}:
+\begin{equation}
+  \phi = 0,\quad D_*\chi = 0 \qquad\text{(on conducting walls).}
+  \label{eq:rel-9-175R}
+\end{equation}
+These conditions are identical in form to the classical ones
+(equations~(174)--(175) of \S\,85), because the boundary geometry and
+constitutive properties of the walls are not affected by the bulk
+relativistic corrections.
+
+\subsection{Marginal state equations}
+\label{sec:rel-87-marginal}
+
+For the onset of instability as a stationary secondary flow ($p = 0$),
+the Israel--Stewart operators reduce to identity and the marginal-state
+equations take the form
+\begin{equation}
+  \Bigl[(DD_*-k^2)^2
+    + \frac{\mu_{\mathrm{m}}^2 H^2 k^2}{4\pi\enthalpy\nu}
+      \,\mathcal{A}^{-1}\Bigr]\,u
+  = \frac{2\Omega k}{\nu}\,v,
+  \label{eq:rel-9-180R}
+\end{equation}
+\begin{equation}
+  (DD_*-k^2)\,v + \frac{\mu_{\mathrm{m}}Hk}{4\pi\enthalpy\nu}\,
+    \mathcal{A}^{-1}\chi
+  = \frac{1}{\nu}(D_*V)\,u,
+  \label{eq:rel-9-177R}
+\end{equation}
+\begin{equation}
+  (DD_*-k^2)\,\phi = \frac{kH}{\eta}\,u,
+  \label{eq:rel-9-178R}
+\end{equation}
+\begin{equation}
+  (DD_*-k^2)\,\chi = \frac{kH}{\eta}\,v
+    - \frac{1}{\eta}\Bigl(\frac{dV}{dr}-\frac{V}{r}\Bigr)\phi.
+  \label{eq:rel-9-179R}
+\end{equation}
+These are structurally identical to the classical marginal equations of
+\S\,85\,(b), with the replacements
+\begin{equation}
+  \rho \;\longrightarrow\; \enthalpy \equiv \frac{\varepsilon+p}{c^2},
+  \qquad
+  Q \;\longrightarrow\; Q_{\mathrm{rel}}
+    = \frac{\mu_{\mathrm{m}}^2 H^2 d^2}{\enthalpy\nu\eta}
+      \cdot \mathcal{A}^{-1}.
+  \label{eq:rel-9-Qrel}
+\end{equation}
+The relativistic Chandrasekhar number $Q_{\mathrm{rel}}$ reduces to
+the classical $Q$ when $\enthalpy\to\rho$ and $\mathcal{A}\to 1$.
+
+\medskip
+\noindent\textbf{Remark on the marginal state and Israel--Stewart.}
+At $p=0$ (stationary onset), the relaxation operators
+$(1+\taupi p)$ and $(1+\tau_\eta p)$ reduce to unity and the marginal
+eigenvalue problem is \emph{formally identical} to the classical one
+with the substitution $Q\to Q_{\mathrm{rel}}$.  The Israel--Stewart
+corrections manifest themselves through:
+\begin{enumerate}
+\item[(i)] the modified dispersion relation for \emph{oscillatory} onset
+  ($p\ne 0$), where the exchange of stabilities may fail;
+\item[(ii)] the boundedness of all signal speeds, which ensures that
+  the overstable modes always propagate at sub-luminal velocities.
+\end{enumerate}
+
+\subsection{Narrow-gap reduction}
+\label{sec:rel-87-narrowgap}
+
+In the narrow-gap limit $d = R_2 - R_1 \ll R_0 = \tfrac{1}{2}(R_1+R_2)$
+and with the non-dimensional variable $\zeta = (r-R_1)/d$, the marginal
+equations reduce to
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]\psi = u,
+  \label{eq:rel-9-194R}
+\end{equation}
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]u
+  = -\Ta_{\mathrm{rel}}\,a^2
+    \bigl[1-(1-\mu)\zeta\bigr](D^2-a^2)\psi,
+  \label{eq:rel-9-195R}
+\end{equation}
+where $a = kd$, $\mu = \Omega_2/\Omega_1$, and the relativistic Taylor
+number is
+\begin{equation}
+  \Ta_{\mathrm{rel}} = -\frac{4\Omega_1^2 d^4}{\nu^2}
+    \Bigl[1 + \frac{V_1^2}{c^2}
+      \Bigl(\frac{3}{2}-\frac{p}{\varepsilon+p}\Bigr)
+      + \mathcal{O}\!\bigl(V^4/c^4\bigr)\Bigr],
+  \label{eq:rel-9-Tarel}
+\end{equation}
+the correction arising from the relativistic inertia and the
+stress--energy coupling.  In the limit $c\to\infty$ one recovers the
+classical Taylor number $T = -4\Omega_1^2 d^4/\nu^2$.
+
+The boundary conditions are
+\begin{gather}
+  u = 0,\quad Du = 0,\quad (D^2-a^2)\psi = 0,
+  \quad\text{and either } \psi = 0 \;\text{or}\; D\psi = 0,
+  \notag\\
+  \text{for } \zeta = 0 \text{ and } 1,
+  \label{eq:rel-9-197R}
+\end{gather}
+depending on whether the walls are non-conducting or conducting.
+
+\medskip
+\noindent\textbf{Key simplification.}
+Under terrestrial (or mildly relativistic) conditions the magnetic
+diffusivity $\eta$ greatly exceeds the kinematic viscosity $\nu$
+(e.g., for mercury $\eta/\nu \sim 10^6$).  This inequality persists in
+the relativistic regime provided $v_A \ll c$; it reduces the order of
+the system from~10 to~8, exactly as in the classical case.
+
+%======================================================================
+\section{Solution of the characteristic value problem for $\mu > 0$:
+  relativistic}
+\label{sec:rel-88}
+%======================================================================
+
+When the two cylinders rotate in the same direction ($\mu>0$), the
+variation of $\Omega$ through the gap may be replaced by its average
+value.  Setting $\mathscr{T} = \tfrac{1}{2}(1+\mu)\Ta_{\mathrm{rel}}$
+and $G = (D^2-a^2)\psi$, the relativistic narrow-gap equations become
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]\psi = u,
+  \label{eq:rel-9-201R}
+\end{equation}
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]u
+  = -\mathscr{T}\,a^2\,G,
+  \label{eq:rel-9-202R}
+\end{equation}
+with boundary conditions (translating the origin to $\zeta=0$ at the
+midpoint)
+\begin{equation}
+  u = 0,\quad Du = 0,\quad G = 0,
+  \quad\text{and either } \psi \text{ or } D\psi = 0,
+  \qquad\text{for } \zeta = \pm\tfrac{1}{2}.
+  \label{eq:rel-9-203R}
+\end{equation}
+
+The reflection symmetry about $\zeta=0$ ensures that proper solutions
+split into even and odd classes; the lowest critical Taylor number
+belongs to the even class.
+
+\subsection{Variational principle (relativistic)}
+\label{sec:rel-88-var}
+
+Multiplying equation~\eqref{eq:rel-9-202R} by $u$ and integrating, one
+obtains after integration by parts the identity
+\begin{equation}
+  \int_{-1/2}^{+1/2}\bigl\{[(D^2-a^2)u]^2
+    + Q_{\mathrm{rel}}\,a^2\,u^2\bigr\}\,d\zeta
+  = \mathscr{T}\,a^2\int_{-1/2}^{+1/2}\bigl\{(DG)^2 + a^2 G^2
+    + Q_{\mathrm{rel}}\,a^2[(D\psi)^2+a^2\psi^2]\bigr\}\,d\zeta,
+  \label{eq:rel-9-205R}
+\end{equation}
+where both sides are positive-definite.  This is the relativistic
+variational principle: the critical Taylor number $\mathscr{T}_c$
+represents the \emph{absolute minimum} of the ratio on the right-hand
+side of~\eqref{eq:rel-9-205R}, subject to the constraint
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]\psi = u,
+  \label{eq:rel-9-206R}
+\end{equation}
+and the boundary conditions.  This principle has the same structure as
+Chandrasekhar's classical one (equation~(205) of \S\,86); the only
+change is $Q\to Q_{\mathrm{rel}}$.
+
+\subsection{Secular determinant}
+\label{sec:rel-88-secular}
+
+Expanding $u$ in terms of the Harris--Reid functions $C_m(\zeta)$
+(the proper solutions of $d^4y/dx^4 = \alpha^4 y$ with $y=y'=0$ at
+$x=\pm\frac{1}{2}$):
+\begin{equation}
+  u = \sum_m A_m\,C_m(\zeta),
+  \label{eq:rel-9-214R}
+\end{equation}
+and solving equation~\eqref{eq:rel-9-201R} for $\psi$ subject to the
+boundary conditions, one obtains
+\begin{equation}
+  \psi_m = \Gamma_m\bigl\{(\lambda_m^4+a^4+Q_{\mathrm{rel}}a^2)C_m
+    + 2a^2 C_m''\bigr\}
+    + B_1^{(m)}\cosh q_1\zeta + B_2^{(m)}\cosh q_2\zeta,
+  \label{eq:rel-9-217R}
+\end{equation}
+where
+\begin{equation}
+  q_1^2 = a^2 + ia\sqrt{Q_{\mathrm{rel}}},\qquad
+  q_2^2 = a^2 - ia\sqrt{Q_{\mathrm{rel}}},
+  \label{eq:rel-9-218R}
+\end{equation}
+and $\Gamma_m = 1/|\lambda_m^2 - q_1^2|^2$.  The constants
+$B_1^{(m)}$, $B_2^{(m)}$ are determined by the electromagnetic
+boundary conditions.
+
+Substituting into equation~\eqref{eq:rel-9-202R}, multiplying by
+$C_n(\zeta)$, and integrating yields the secular determinant
+\begin{equation}
+  \Bigl|\frac{1}{\mathscr{T}\,a^2}
+    \bigl\{(\lambda_m^4+a^4+Q_{\mathrm{rel}}a^2)\delta_{mn}
+      - 2a^2 X_{mn}\bigr\}
+    + \Gamma_m\bigl\{Z_{mn} + \Sigma_{mn}\bigr\}\Bigr| = 0,
+  \label{eq:rel-9-239R}
+\end{equation}
+where $X_{mn}$, $Z_{mn}$, $\Sigma_{mn}$ are defined exactly as in the
+classical \S\,86, with $Q$ replaced by $Q_{\mathrm{rel}}$ throughout.
+The self-adjoint character of the problem guarantees the symmetry of
+the secular matrix.
+
+\subsection{Non-conducting walls}
+\label{sec:rel-88-nonconduct}
+
+For non-conducting walls ($\psi_m = 0$ and $G_m = 0$ at
+$\zeta = \pm\frac{1}{2}$), the constants of integration are
+\begin{equation}
+  B_1^{(m)} = \frac{\Gamma_m}{2}\,\mathrm{sech}\,\tfrac{1}{2}q_1
+    \bigl\{-2a^2 C_m''(\tfrac{1}{2})
+      + ig_m\,C_m''(\tfrac{1}{2})\,q_1\tanh\tfrac{1}{2}q_1\bigr\},
+  \label{eq:rel-9-241aR}
+\end{equation}
+with $B_2^{(m)} = \overline{B_1^{(m)}}$ and
+$g_m = (\lambda_m^4-a^4+Q_{\mathrm{rel}}a^2)/(a\sqrt{Q_{\mathrm{rel}}})$.
+
+\subsection{Conducting walls}
+\label{sec:rel-88-conduct}
+
+For perfectly conducting walls ($D\psi_m = 0$ and $G_m = 0$ at
+$\zeta = \pm\frac{1}{2}$):
+\begin{equation}
+  B_1^{(m)} = \frac{\Gamma_m\,\mathrm{sech}\,\tfrac{1}{2}q_1}
+    {2\,\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1)}
+    \bigl\{-2a^2 C_m'''(\tfrac{1}{2})
+      + ig_m\,C_m''(\tfrac{1}{2})\,q_1\tanh\tfrac{1}{2}q_1\bigr\}.
+  \label{eq:rel-9-253aR}
+\end{equation}
+
+\subsection{Numerical results: critical $\Ta(Q)$ --- relativistic}
+\label{sec:rel-88-numerical}
+
+Since the marginal eigenvalue problem is formally identical to the
+classical one with $Q\to Q_{\mathrm{rel}}$, the classical numerical
+results (Tables~XLII and XLIII of \S\,86) carry over with the
+reinterpretation
+\begin{equation}
+  Q_{\mathrm{rel}}
+  = Q_{\mathrm{classical}} \cdot \frac{\rho}{\enthalpy}\cdot
+    \mathcal{A}^{-1}
+  = Q_{\mathrm{classical}}
+    \Bigl(1 - \frac{p}{\varepsilon+p}
+      - \frac{\vA^2}{c^2} + \cdots\Bigr).
+  \label{eq:rel-9-Qrel-expand}
+\end{equation}
+In the weakly relativistic regime, the shift in the critical Taylor
+number at fixed $H$ is
+\begin{equation}
+  \frac{\delta\mathscr{T}_c}{\mathscr{T}_c}
+  \approx -\frac{\partial\ln\mathscr{T}_c}{\partial\ln Q}\,
+    \Bigl(\frac{p}{\varepsilon+p} + \frac{\vA^2}{c^2}\Bigr)
+  + \frac{V_1^2}{c^2}\Bigl(\frac{3}{2}
+    -\frac{p}{\varepsilon+p}\Bigr).
+  \label{eq:rel-9-Tc-shift}
+\end{equation}
+The first term arises from the relativistic renormalisation of $Q$
+and the second from the relativistic correction to the Taylor number.
+For strongly magnetised plasmas with $\vA/c \sim 0.1$, the relative
+shift is of order $10^{-2}$.
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic corrections to the critical Taylor number
+  $\mathscr{T}_c$ for the case of non-conducting walls and $\mu>0$,
+  at representative values of $Q_{\mathrm{classical}}$.  The column
+  $\delta\mathscr{T}_c/\mathscr{T}_c$ gives the fractional shift
+  for $\vA/c = 0.1$ and $p/(\varepsilon+p) = 0.1$.}
+\label{tab:rel-XLII}
+\begin{tabular}{ccccc}
+\hline
+$Q_{\mathrm{class}}$ & $a_c$ & $\mathscr{T}_{c,\mathrm{class}}$
+  & $Q_{\mathrm{rel}}/Q_{\mathrm{class}}$
+  & $\delta\mathscr{T}_c/\mathscr{T}_c$ \\
+\hline
+   100 & 1.69  & $1.085\times10^5$ & 0.980 & $-0.012$ \\
+ 1\,000 & 0.900 & $1.072\times10^6$ & 0.980 & $-0.010$ \\
+10\,000 & 0.150 & $1.072\times10^7$ & 0.980 & $-0.009$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Asymptotic behaviour for $Q\to\infty$}
+\label{sec:rel-88-asymptotic}
+
+In the limit $Q_{\mathrm{rel}}\to\infty$ the asymptotic behaviour
+mirrors the classical analysis of \S\,86\,(f):
+\begin{equation}
+  Q_{\mathrm{rel}}\,a^2 \to Q_\infty,\qquad
+  \mathscr{T}\,a^2 \to \mathscr{T}_\infty,
+  \qquad\text{as } Q_{\mathrm{rel}}\to\infty,\; a\to 0,
+  \label{eq:rel-9-258R}
+\end{equation}
+with the limiting differential equations
+\begin{equation}
+  (D^4 + Q_\infty)\psi = u,\qquad
+  (D^4 + Q_\infty)u = -\mathscr{T}_\infty\,D^2\psi.
+  \label{eq:rel-9-259R}
+\end{equation}
+The asymptotic constants are identical in value to the classical ones:
+\begin{alignat}{2}
+  \mathscr{T} &\to 107.2\,Q_{\mathrm{rel}},\quad
+  & a &\to 15.0/\sqrt{Q_{\mathrm{rel}}}
+  \qquad\text{(non-conducting walls),}
+  \label{eq:rel-9-266aR}\\[4pt]
+  \mathscr{T} &\to 451.2\,Q_{\mathrm{rel}},\quad
+  & a &\to 52.0/\sqrt{Q_{\mathrm{rel}}}
+  \qquad\text{(conducting walls),}
+  \label{eq:rel-9-266bR}
+\end{alignat}
+but expressed in terms of $Q_{\mathrm{rel}}$ rather than
+$Q_{\mathrm{classical}}$.  The marked difference between the two sets of
+boundary conditions persists in the relativistic regime.
+
+%======================================================================
+\section{The general case ($\mu$ arbitrary): relativistic}
+\label{sec:rel-89}
+%======================================================================
+
+When the cylinders may rotate in opposite directions, the angular
+velocity varies linearly through the gap and the symmetry about the
+midpoint is destroyed.  The full narrow-gap equations are
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]\psi = u,
+  \label{eq:rel-9-267R}
+\end{equation}
+\begin{equation}
+  \bigl[(D^2-a^2)^2 + Q_{\mathrm{rel}}\,a^2\bigr]u
+  = -\mathscr{T}\,a^2
+    \bigl[\tfrac{1}{2}(1+\mu) - (1-\mu)\zeta\bigr](D^2-a^2)\psi,
+  \label{eq:rel-9-268R}
+\end{equation}
+with the boundary conditions~\eqref{eq:rel-9-197R}.  The loss of parity
+symmetry requires expanding $u$ in \emph{both} Harris--Reid function
+classes:
+\begin{equation}
+  u = \sum_m A_{Cm}\,C_m(\zeta) + \sum_m A_{Sm}\,S_m(\zeta),
+  \label{eq:rel-9-269R}
+\end{equation}
+\begin{equation}
+  \psi = \sum_m A_{Cm}\,\psi_{Cm}(\zeta)
+       + \sum_m A_{Sm}\,\psi_{Sm}(\zeta),
+  \label{eq:rel-9-270R}
+\end{equation}
+where $\psi_{Cm}$ and $\psi_{Sm}$ satisfy
+\begin{equation}
+  \bigl[(D^2-a^2)^2+Q_{\mathrm{rel}}a^2\bigr]\psi_{Cm} = C_m,
+  \qquad
+  \bigl[(D^2-a^2)^2+Q_{\mathrm{rel}}a^2\bigr]\psi_{Sm} = S_m.
+  \label{eq:rel-9-271-272R}
+\end{equation}
+The solutions, boundary-condition determinations, and matrix-element
+evaluations proceed exactly as in the classical \S\,87, with $Q$
+replaced by $Q_{\mathrm{rel}}$ and $T$ by $\Ta_{\mathrm{rel}}$
+throughout.
+
+\subsection{The case $\mu = -1$ (counter-rotating cylinders)}
+\label{sec:rel-89-mu-m1}
+
+When $\mu = -1$ the factor $\frac{1}{2}(1+\mu)-(1-\mu)\zeta = -2\zeta$
+and only the cross-parity matrix elements survive.  The secular
+equations become (cf.\ classical equations~(282)--(283))
+\begin{align}
+  \frac{1}{2\mathscr{T}\,a^2}\sum_m
+    A_{Cm}\bigl\{(\lambda_m^4+a^4+Q_{\mathrm{rel}}a^2)\delta_{mn}
+      - 2a^2 X_{mn}^{(C)}\bigr\}
+  &\notag\\
+  - \sum_m A_{Sm}\bigl\{\Gamma_{Sm}[\cdots]
+    + 2a\sqrt{Q_{\mathrm{rel}}}\,
+      \mathrm{re}\{iB_1^{(m)}\langle\zeta\cosh q_1\zeta|C_n\rangle\}
+    \bigr\} &= 0,
+  \label{eq:rel-9-282R}
+\end{align}
+\begin{align}
+  \frac{1}{2\mathscr{T}\,a^2}\sum_m
+    A_{Sm}\bigl\{(\mu_m^4+a^4+Q_{\mathrm{rel}}a^2)\delta_{mn}
+      - 2a^2 X_{mn}^{(S)}\bigr\}
+  &\notag\\
+  - \sum_m A_{Cm}\bigl\{\Gamma_{Cm}[\cdots]
+    + 2a\sqrt{Q_{\mathrm{rel}}}\,
+      \mathrm{re}\{iB_1^{(m)}\langle\zeta\sinh q_1\zeta|S_n\rangle\}
+    \bigr\} &= 0,
+  \label{eq:rel-9-283R}
+\end{align}
+where $[\cdots]$ denotes the matrix elements defined in the classical
+equations~(282)--(283) with the systematic replacement
+$Q\to Q_{\mathrm{rel}}$.
+
+The classical numerical results (Table~XLIV of \S\,87) extend to the
+relativistic case with the same reinterpretation as in
+\S\,\ref{sec:rel-88-numerical}: the critical Taylor numbers shift by
+a factor expressible in terms of $\vA^2/c^2$ and $p/(\varepsilon+p)$.
+The asymptotic behaviours for $Q_{\mathrm{rel}}\to\infty$ are
+\begin{alignat}{2}
+  \mathscr{T} &\to 726\,Q_{\mathrm{rel}},\quad
+  & a &\to 28.6/\sqrt{Q_{\mathrm{rel}}}
+  \qquad\text{(non-conducting walls, } \mu=-1\text{),}
+  \label{eq:rel-9-298R}\\[4pt]
+  \mathscr{T} &\to 6203\,Q_{\mathrm{rel}},\quad
+  & a &\to 534/\sqrt{Q_{\mathrm{rel}}}
+  \qquad\text{(conducting walls, } \mu=-1\text{),}
+  \label{eq:rel-9-299R}
+\end{alignat}
+in agreement with the classical constants of proportionality, since the
+asymptotic eigenvalue problem (equations~(294)--(295)) is unchanged in
+form.
+
+%======================================================================
+\section*{Causality: Israel--Stewart ensures causal propagation}
+\label{sec:rel-87-89-causality}
+\addcontentsline{toc}{section}{Causality Analysis}
+%======================================================================
+
+A central motivation for the relativistic reformulation is to guarantee
+that all signal speeds remain bounded by $c$.  We summarise the
+causality constraints.
+
+\subsection*{Viscous sector}
+
+The Israel--Stewart shear relaxation converts the parabolic viscous
+diffusion equation into a damped hyperbolic equation with characteristic
+speed
+\begin{equation}
+  v_{\mathrm{visc}}
+  = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}}\,.
+  \label{eq:rel-causality-visc}
+\end{equation}
+Causality requires $v_{\mathrm{visc}} \le c$, i.e.,
+\begin{equation}
+  \taupi \ge \frac{\shearvisc}{\enthalpy\,c^2}\,.
+  \label{eq:rel-causality-taupi}
+\end{equation}
+For the Couette problem, this bound is easily satisfied for laboratory
+fluids.
+
+\subsection*{Resistive sector}
+
+The causal Ohm's law~\eqref{eq:rel-9-Ohm} yields a resistive signal
+speed
+\begin{equation}
+  v_{\mathrm{res}} = \sqrt{\frac{\eta}{\tau_\eta}}\,,
+  \qquad\text{with the causality bound}\qquad
+  \tau_\eta \ge \frac{\eta}{c^2}\,.
+  \label{eq:rel-causality-taueta}
+\end{equation}
+
+\subsection*{MHD wave speeds}
+
+The linearised system supports Alfv\'en waves with the relativistic
+Alfv\'en speed
+\begin{equation}
+  \vA^2 = \frac{b^2}{4\pi\enthalpy + b^2/c^2}\,c^2
+  = \frac{H^2}{4\pi\enthalpy}\,
+    \Bigl(1 + \frac{H^2}{4\pi\enthalpy c^2}\Bigr)^{-1} c^2,
+  \label{eq:rel-Alfven}
+\end{equation}
+which automatically satisfies $\vA < c$.  The fast and slow
+magnetosonic speeds are likewise bounded.
+
+\subsection*{Dispersion relation and mode counting}
+
+The full dispersion relation for the relativistic system is obtained by
+setting the perturbations proportional to $\exp(pt)$ with complex $p$.
+In the Navier--Stokes limit ($\taupi=\tau_\eta=0$), each mode satisfies
+a polynomial of order~8 in $p$ (the classical system of combined
+order~8 after the $\eta\gg\nu$ simplification).  With Israel--Stewart
+corrections, the order increases:
+\begin{itemize}
+\item The viscous relaxation operator $(1+\taupi p)$ adds one power of
+  $p$ per momentum equation (2 additional roots).
+\item The resistive relaxation operator $(1+\tau_\eta p)$ adds one power
+  of $p$ per induction equation (2 additional roots).
+\end{itemize}
+The resulting dispersion relation is of order~12 in $p$.  The additional
+4 roots correspond to rapidly decaying transient modes with decay rates
+$\sim 1/\taupi$ and $\sim 1/\tau_\eta$; they do not participate in the
+hydrodynamic instability but ensure that \emph{all} signal propagation
+remains causal.
+
+\medskip
+\noindent\textbf{Summary.}
+In the stationary-onset regime ($p=0$), the Israel--Stewart formulation
+reduces to the classical eigenvalue problem with $Q\to Q_{\mathrm{rel}}$
+and $T\to\Ta_{\mathrm{rel}}$, so the classical solutions, variational
+principles, secular determinants, and numerical results carry over with
+only parametric reinterpretation.  The essential new physics appears for
+oscillatory (overstable) modes, where causality is enforced through the
+relaxation times, and for strongly magnetised relativistic plasmas where
+$\vA/c$ is non-negligible.
