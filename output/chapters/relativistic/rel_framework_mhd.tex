@@ -1,0 +1,668 @@
+% rel_framework_mhd.tex
+% Relativistic MHD Framework
+% Conventions: (-,+,+,+) signature, c kept explicit, u^μ u_μ = -c²
+% See RELATIVISTIC_CONVENTIONS.md for notation and macros.
+
+\chapter{Relativistic Magnetohydrodynamic Framework}
+\label{ch:rel-mhd-framework}
+
+The classical theory of magnetohydrodynamic stability, as developed by
+Chandrasekhar in Chapters~IV--VI, rests on the Navier--Stokes and
+induction equations in the non-relativistic regime.  When the Alfv\'en
+speed $\vA$ becomes an appreciable fraction of $c$, or when the fluid is
+embedded in a strongly curved spacetime, a fully covariant formulation is
+required.  This chapter develops the relativistic MHD framework from first
+principles, keeping the speed of light $c$ explicit throughout so that
+every non-relativistic limit can be read off transparently.
+
+%======================================================================
+\section{Covariant Electrodynamics}
+\label{sec:covariant-ed}
+%======================================================================
+
+\subsection{The Faraday tensor and its dual}
+
+The electromagnetic field is encoded in the antisymmetric Faraday tensor
+$\farad$.  In a coordinate basis with the metric signature $(-,+,+,+)$,
+its components read
+\begin{equation}
+  F^{\mu\nu} =
+  \begin{pmatrix}
+    0      & -E^{1}/c & -E^{2}/c & -E^{3}/c \\
+    E^{1}/c &  0       & -B^{3}   &  B^{2}   \\
+    E^{2}/c &  B^{3}   &  0       & -B^{1}   \\
+    E^{3}/c & -B^{2}   &  B^{1}   &  0
+  \end{pmatrix},
+  \label{eq:Fmunu-components}
+\end{equation}
+where $E^{i}$ and $B^{i}$ are the electric and magnetic field components
+measured by an observer at rest in the coordinate frame.
+
+The dual tensor is defined by
+\begin{equation}
+  {}^{\ast}\!F^{\mu\nu}
+  = \frac{1}{2}\,\epsilon^{\mu\nu\alpha\beta}\,F_{\alpha\beta},
+  \label{eq:dual-Faraday}
+\end{equation}
+with $\epsilon^{\mu\nu\alpha\beta}$ the Levi-Civita tensor satisfying
+$\epsilon^{0123} = 1/\!\sqrt{-g}$.
+
+\subsection{Maxwell equations in covariant form}
+
+The inhomogeneous Maxwell equations are
+\begin{equation}
+  \nabla_{\mu}\,F^{\mu\nu} = \frac{1}{c}\,j^{\nu},
+  \label{eq:Maxwell-inhom}
+\end{equation}
+where $j^{\nu}$ is the charge--current 4-vector.  The homogeneous
+equations (the Bianchi identity) take the form
+\begin{equation}
+  \nabla_{[\alpha}\,F_{\beta\gamma]} = 0
+  \qquad\Longleftrightarrow\qquad
+  \nabla_{\mu}\,{}^{\ast}\!F^{\mu\nu} = 0.
+  \label{eq:Maxwell-hom}
+\end{equation}
+These two sets of equations, \eqref{eq:Maxwell-inhom} and
+\eqref{eq:Maxwell-hom}, are manifestly covariant and hold in arbitrary
+curved spacetimes without modification.
+
+\subsection{Electric and magnetic fields in the fluid frame}
+
+Given a fluid with 4-velocity $\fvel$ (normalised so that
+$u^{\mu}u_{\mu}=-c^{2}$), one decomposes the electromagnetic field into
+electric and magnetic parts as measured in the instantaneous rest frame:
+\begin{equation}
+  E^{\mu} = F^{\mu\nu}\,u_{\nu},
+  \label{eq:Emu-def}
+\end{equation}
+\begin{equation}
+  b^{\mu} = \frac{1}{c}\,{}^{\ast}\!F^{\mu\nu}\,u_{\nu}
+  = \frac{1}{2c}\,\epsilon^{\mu\nu\alpha\beta}\,u_{\nu}\,F_{\alpha\beta}.
+  \label{eq:bmu-def}
+\end{equation}
+Both $E^{\mu}$ and $b^{\mu}$ are orthogonal to $u^{\mu}$:
+\begin{equation}
+  E^{\mu}\,u_{\mu} = 0, \qquad b^{\mu}\,u_{\mu} = 0.
+  \label{eq:E-b-orthogonal}
+\end{equation}
+The scalar $b^{2}\equiv b^{\mu}b_{\mu}$ plays the role of twice the
+magnetic pressure, and equals $B^{2}$ (the square of the rest-frame
+magnetic field magnitude) up to factors of $4\pi$.
+
+The Faraday tensor can be reconstructed from these fluid-frame fields:
+\begin{equation}
+  F^{\mu\nu}
+  = \frac{1}{c}\bigl(E^{\mu}\,u^{\nu} - E^{\nu}\,u^{\mu}\bigr)
+  + \epsilon^{\mu\nu\alpha\beta}\,u_{\alpha}\,b_{\beta}/c.
+  \label{eq:Fmunu-decomp}
+\end{equation}
+
+
+%======================================================================
+\section{Ideal Relativistic MHD}
+\label{sec:ideal-rmhd}
+%======================================================================
+
+\subsection{The ideal MHD condition}
+
+In a perfectly conducting fluid, the electric field vanishes in the
+comoving frame.  This \emph{ideal MHD condition} is
+\begin{equation}
+  E^{\mu} = F^{\mu\nu}\,u_{\nu} = 0.
+  \label{eq:ideal-MHD-condition}
+\end{equation}
+Equivalently, the Faraday tensor reduces to
+\begin{equation}
+  F^{\mu\nu} = \frac{1}{c}\,\epsilon^{\mu\nu\alpha\beta}\,u_{\alpha}\,b_{\beta}.
+  \label{eq:F-ideal}
+\end{equation}
+
+\subsection{Energy-momentum tensor of the magnetised fluid}
+
+The total energy-momentum tensor is the sum of fluid and electromagnetic
+contributions:
+\begin{equation}
+  T^{\mu\nu} = T^{\mu\nu}_{\mathrm{fluid}} + T^{\mu\nu}_{\mathrm{EM}}.
+  \label{eq:Tmunu-total}
+\end{equation}
+For a perfect fluid,
+\begin{equation}
+  T^{\mu\nu}_{\mathrm{fluid}}
+  = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}\,u^{\nu} + p\,g^{\mu\nu},
+  \label{eq:Tmunu-fluid}
+\end{equation}
+where $\varepsilon$ is the total energy density (including rest-mass
+energy) and $p$ the isotropic pressure.
+
+Under the ideal MHD condition \eqref{eq:ideal-MHD-condition}, the
+electromagnetic energy-momentum tensor becomes
+\begin{equation}
+  T^{\mu\nu}_{\mathrm{EM}}
+  = \frac{b^{2}}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + \frac{b^{2}}{2}\,g^{\mu\nu}
+  - b^{\mu}\,b^{\nu}.
+  \label{eq:Tmunu-EM}
+\end{equation}
+The first term represents the magnetic energy density's contribution to
+inertia; the second is the isotropic magnetic pressure $b^{2}/2$; the
+third is the anisotropic magnetic tension.
+
+Combining \eqref{eq:Tmunu-fluid} and \eqref{eq:Tmunu-EM}, the total
+energy-momentum tensor of the ideal relativistic MHD fluid is
+\begin{equation}
+  T^{\mu\nu}
+  = \frac{\varepsilon + p + b^{2}}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + \Bigl(p + \frac{b^{2}}{2}\Bigr)\,g^{\mu\nu}
+  - b^{\mu}\,b^{\nu}.
+  \label{eq:Tmunu-MHD}
+\end{equation}
+This has the form of a perfect fluid with effective enthalpy density
+$\enthalpy^{\ast} = (\varepsilon + p + b^{2})/c^{2}$ and effective
+pressure $p^{\ast} = p + b^{2}/2$, modified by the anisotropic tension
+$b^{\mu}b^{\nu}$.
+
+\subsection{Covariant induction equation}
+
+The evolution of the magnetic field is governed by the induction equation.
+Taking the ideal MHD condition and the homogeneous Maxwell equation
+\eqref{eq:Maxwell-hom}, one obtains
+\begin{equation}
+  u^{\mu}\,\nabla_{\mu}\,b^{\nu}
+  - b^{\mu}\,\nabla_{\mu}\,u^{\nu}
+  + b^{\nu}\,\nabla_{\mu}\,u^{\mu}
+  - u^{\nu}\,\nabla_{\mu}\,b^{\mu}
+  = 0.
+  \label{eq:induction-covariant}
+\end{equation}
+Using the constraint $b^{\mu}u_{\mu}=0$ and the normalisation
+$u^{\mu}u_{\mu}=-c^{2}$, this can be written more compactly as
+\begin{equation}
+  \mathcal{L}_{u}\,b^{\mu}
+  = b^{\mu}\,\nabla_{\nu}\,u^{\nu}
+    - b^{\nu}\,\nabla_{\nu}\,u^{\mu}
+    + u^{\mu}\,b^{\nu}\,\frac{a_{\nu}}{c^{2}},
+  \label{eq:induction-Lie}
+\end{equation}
+where $\mathcal{L}_{u}$ denotes the Lie derivative along $u^{\mu}$ and
+$a^{\mu} = u^{\nu}\nabla_{\nu}u^{\mu}$ is the 4-acceleration.  In the
+non-relativistic limit ($c\to\infty$) this reduces to the familiar form
+$\partial\vect{B}/\partial t = \nabla\times(\vect{v}\times\vect{B})$.
+
+\subsection{Magnetic flux freezing: the relativistic Alfv\'en theorem}
+
+Alfv\'en's theorem---that magnetic flux through any surface comoving
+with the fluid is conserved---generalises directly to the relativistic
+regime.  Consider a 2-surface $\mathcal{S}$ transported by the fluid
+flow.  The magnetic flux through $\mathcal{S}$ is
+\begin{equation}
+  \Phi_{\mathcal{S}}
+  = \int_{\mathcal{S}} F_{\mu\nu}\,\dd\Sigma^{\mu\nu},
+  \label{eq:flux-def}
+\end{equation}
+where $\dd\Sigma^{\mu\nu}$ is the surface element.  By virtue of the
+ideal MHD condition \eqref{eq:ideal-MHD-condition} and the homogeneous
+Maxwell equation \eqref{eq:Maxwell-hom}, one can show that
+\begin{equation}
+  \frac{\dd\Phi_{\mathcal{S}}}{\dd\tau} = 0,
+  \label{eq:flux-freezing}
+\end{equation}
+where $\tau$ is the proper time along the fluid worldlines.  This is the
+relativistic flux-freezing theorem: magnetic field lines are ``frozen
+into'' the perfectly conducting fluid, exactly as in the non-relativistic
+case.
+
+
+%======================================================================
+\section{Characteristic Speeds and Causality}
+\label{sec:char-speeds}
+%======================================================================
+
+A central requirement of relativistic physics is that all signal speeds
+remain bounded by $c$.  We now derive the characteristic speeds of ideal
+relativistic MHD and verify that this is automatically satisfied.
+
+\subsection{Alfv\'en speed}
+
+The relativistic Alfv\'en speed is obtained from the eigenvalue analysis
+of the linearised MHD system.  For propagation along the magnetic field
+direction,
+\begin{equation}
+  \vA^{2}
+  = \frac{b^{2}}{4\pi\enthalpy^{\ast}}
+  = \frac{b^{2}}{4\pi\bigl[(\varepsilon + p)/c^{2} + b^{2}/c^{2}\bigr]}
+  = \frac{b^{2}\,c^{2}}{4\pi(\varepsilon + p) + b^{2}},
+  \label{eq:vA-rel}
+\end{equation}
+where we have restored factors of $4\pi$ for Gaussian units.  Since the
+denominator exceeds the numerator whenever $\varepsilon + p > 0$ (as
+guaranteed by the dominant energy condition), we have the fundamental bound
+\begin{equation}
+  \vA^{2} < c^{2}.
+  \label{eq:vA-bound}
+\end{equation}
+In the non-relativistic limit $b^{2} \ll 4\pi\rho c^{2}$, this reduces to
+the classical expression $\vA^{2} \to B^{2}/(4\pi\rho)$.
+
+\subsection{Sound speed}
+
+The adiabatic sound speed is
+\begin{equation}
+  \cs^{2} = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}\,c^{2},
+  \label{eq:cs-rel}
+\end{equation}
+and thermodynamic stability (plus causality) requires
+\begin{equation}
+  0 \le \cs^{2} \le c^{2}.
+  \label{eq:cs-bound}
+\end{equation}
+
+\subsection{Fast and slow magnetosonic speeds}
+
+The fast and slow magnetosonic speeds for propagation at angle $\theta$
+to the magnetic field are the roots of
+\begin{equation}
+  v^{4} - v^{2}\bigl(\cs^{2} + \vA^{2}
+    - \cs^{2}\vA^{2}/c^{2}\bigr)
+  + \cs^{2}\,\vA^{2}\,\cos^{2}\!\theta = 0.
+  \label{eq:magnetosonic-dispersion}
+\end{equation}
+The solutions are
+\begin{align}
+  v_{\mathrm{f}}^{2}
+  &= \frac{1}{2}\Bigl[\bigl(\cs^{2}+\vA^{2}
+     -\cs^{2}\vA^{2}/c^{2}\bigr)
+    + \sqrt{\Delta}\;\Bigr],
+  \label{eq:vf}\\[6pt]
+  v_{\mathrm{s}}^{2}
+  &= \frac{1}{2}\Bigl[\bigl(\cs^{2}+\vA^{2}
+     -\cs^{2}\vA^{2}/c^{2}\bigr)
+    - \sqrt{\Delta}\;\Bigr],
+  \label{eq:vs}
+\end{align}
+where
+\begin{equation}
+  \Delta
+  = \bigl(\cs^{2}+\vA^{2}-\cs^{2}\vA^{2}/c^{2}\bigr)^{2}
+    - 4\,\cs^{2}\,\vA^{2}\,\cos^{2}\!\theta.
+  \label{eq:Delta}
+\end{equation}
+
+\subsection{Causality verification}
+
+The fast magnetosonic speed is maximised for $\theta=\pi/2$ (propagation
+perpendicular to $\vect{B}$), where $v_{\mathrm{s}}^{2}=0$ and
+\begin{equation}
+  v_{\mathrm{f}}^{2}\big|_{\theta=\pi/2}
+  = \cs^{2} + \vA^{2} - \frac{\cs^{2}\,\vA^{2}}{c^{2}}.
+  \label{eq:vf-perp}
+\end{equation}
+Since $\cs^{2}<c^{2}$ and $\vA^{2}<c^{2}$, we can write
+\begin{equation}
+  v_{\mathrm{f}}^{2}
+  = \cs^{2} + \vA^{2}\!\left(1-\frac{\cs^{2}}{c^{2}}\right)
+  < \cs^{2} + c^{2}\!\left(1-\frac{\cs^{2}}{c^{2}}\right)
+  = c^{2}.
+  \label{eq:vf-causal-proof}
+\end{equation}
+Thus $v_{\mathrm{f}}^{2} < c^{2}$ identically.  Since
+$v_{\mathrm{s}}^{2}\le v_{\mathrm{f}}^{2}$ and
+$\vA^{2}<c^{2}$, \emph{all three characteristic speeds of ideal
+relativistic MHD are strictly subluminal}.  This is a fundamental
+self-consistency of the relativistic theory that has no counterpart in the
+non-relativistic framework, where $\vA$ is unbounded.
+
+The ordering of characteristic speeds is
+\begin{equation}
+  0 \;\le\; v_{\mathrm{s}} \;\le\; \min(\cs,\,\vA)
+  \;\le\; \max(\cs,\,\vA) \;\le\; v_{\mathrm{f}} \;<\; c.
+  \label{eq:speed-ordering}
+\end{equation}
+
+
+%======================================================================
+\section{Resistive Relativistic MHD}
+\label{sec:resistive-rmhd}
+%======================================================================
+
+\subsection{Relativistic Ohm's law}
+
+When the conductivity $\sigma$ is finite, the ideal MHD condition
+\eqref{eq:ideal-MHD-condition} is replaced by the relativistic Ohm's law:
+\begin{equation}
+  j^{\mu} + \frac{j^{\nu}\,u_{\nu}}{c^{2}}\,u^{\mu}
+  = \sigma\,F^{\mu\nu}\,u_{\nu}
+  = \sigma\,E^{\mu}.
+  \label{eq:rel-Ohm}
+\end{equation}
+The left-hand side projects the current density onto the rest frame of the
+fluid (removing the charge density component $j^{\nu}u_{\nu}/c^{2}$),
+and the right-hand side is the rest-frame electric field multiplied by the
+scalar conductivity $\sigma$.  In the limit $\sigma\to\infty$, one
+recovers $E^{\mu}\to 0$, i.e.\ the ideal MHD condition.
+
+Written in terms of the projection tensor
+$\proj = g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$, this is
+\begin{equation}
+  \Delta^{\mu}{}_{\nu}\,j^{\nu} = \sigma\,E^{\mu}.
+  \label{eq:rel-Ohm-proj}
+\end{equation}
+
+\subsection{Magnetic diffusivity}
+
+The magnetic diffusivity is defined (in Gaussian units) by
+\begin{equation}
+  \eta_{\mathrm{m}} = \frac{c^{2}}{4\pi\sigma},
+  \label{eq:eta-m}
+\end{equation}
+with dimensions of length$^{2}$/time.  This is the direct relativistic
+generalisation of the classical magnetic diffusivity.
+
+\subsection{Relativistic magnetic Reynolds number}
+
+The magnetic Reynolds number, which measures the ratio of advective to
+diffusive transport of the magnetic field, is
+\begin{equation}
+  \mathrm{Rm} = \frac{v\,L}{\eta_{\mathrm{m}}}
+  = \frac{4\pi\sigma\,v\,L}{c^{2}},
+  \label{eq:Rm-rel}
+\end{equation}
+where $v$ is a characteristic velocity and $L$ a characteristic length
+scale.  The factor of $c^{2}$ in the denominator reflects the relativistic
+bound: as $v\to c$, the maximum magnetic Reynolds number for given $\sigma$
+and $L$ is $\mathrm{Rm}_{\max} = 4\pi\sigma L/c$.
+
+For $\mathrm{Rm}\gg 1$, the field is effectively frozen into the fluid
+and ideal MHD applies.  For $\mathrm{Rm}\lesssim 1$, resistive effects
+dominate and field diffusion must be accounted for.
+
+\subsection{Magnetic field decay and Joule dissipation}
+
+In a resistive fluid, the induction equation acquires a diffusive term.
+The covariant induction equation becomes
+\begin{equation}
+  u^{\mu}\,\nabla_{\mu}\,b^{\nu}
+  - b^{\mu}\,\nabla_{\mu}\,u^{\nu}
+  + b^{\nu}\,\nabla_{\mu}\,u^{\mu}
+  = \eta_{\mathrm{m}}\,\Delta^{\nu\alpha}\,
+    \nabla_{\beta}\,\nabla^{\beta}\,b_{\alpha}
+  + \text{(curvature terms)},
+  \label{eq:induction-resistive}
+\end{equation}
+where the right-hand side represents the magnetic diffusion (the
+Laplacian term) projected onto the fluid rest frame.  In flat spacetime,
+this reduces to
+\begin{equation}
+  \frac{\partial\vect{B}}{\partial t}
+  = \nabla\times(\vect{v}\times\vect{B})
+  + \eta_{\mathrm{m}}\,\nabla^{2}\vect{B},
+  \label{eq:induction-NR}
+\end{equation}
+which is the standard non-relativistic induction equation with Ohmic
+diffusion.
+
+The Joule heating rate per unit volume in the fluid frame is
+\begin{equation}
+  Q_{\mathrm{Joule}}
+  = \frac{E^{\mu}\,E_{\mu}}{\eta_{\mathrm{m}}}
+  = \frac{j^{\mu}j_{\mu} + (j^{\nu}u_{\nu})^{2}/c^{2}}{\sigma},
+  \label{eq:Joule}
+\end{equation}
+which enters as a source term in the energy equation.  In the ideal limit
+$\sigma\to\infty$, both $E^{\mu}\to 0$ and $Q_{\mathrm{Joule}}\to 0$.
+
+The characteristic timescale for Ohmic decay of a magnetic field
+structure of size $L$ is
+\begin{equation}
+  \tau_{\mathrm{Ohm}} = \frac{L^{2}}{\eta_{\mathrm{m}}}
+  = \frac{4\pi\sigma\,L^{2}}{c^{2}}.
+  \label{eq:tau-Ohm}
+\end{equation}
+
+
+%======================================================================
+\section{Linearised Relativistic MHD Perturbations}
+\label{sec:linearised-rmhd}
+%======================================================================
+
+\subsection{Background equilibrium}
+
+Consider a static, uniform background:
+\begin{itemize}
+  \item Fluid at rest: $u^{\mu}_{(0)} = (c,\,0,\,0,\,0)$ in Minkowski
+        spacetime.
+  \item Uniform energy density $\varepsilon_{0}$ and pressure $p_{0}$.
+  \item Uniform magnetic field $\vect{B}_{0} = B_{0}\,\hat{\vect{z}}$,
+        so that $b^{\mu}_{(0)} = (0,\,0,\,0,\,B_{0})$ in the rest frame,
+        and $b^{2}_{(0)} = B_{0}^{2}$.
+\end{itemize}
+
+\subsection{Perturbation ansatz}
+
+We perturb all quantities:
+\begin{equation}
+  u^{\mu} = u^{\mu}_{(0)} + \delta u^{\mu},
+  \qquad
+  \varepsilon = \varepsilon_{0} + \delta\varepsilon,
+  \qquad
+  p = p_{0} + \delta p,
+  \qquad
+  b^{\mu} = b^{\mu}_{(0)} + \delta b^{\mu},
+  \label{eq:perturbation-ansatz}
+\end{equation}
+and seek plane-wave solutions $\sim \exp[i(k_{\mu}x^{\mu})]$ with
+4-wavevector $k^{\mu} = (\omega/c,\,\vect{k})$.  The propagation angle
+relative to the background field is $\theta$, so
+$\vect{k}\cdot\hat{\vect{z}} = k\cos\theta$.
+
+The normalisation constraint $u^{\mu}u_{\mu}=-c^{2}$ implies
+$u_{(0)\mu}\,\delta u^{\mu} = 0$, so $\delta u^{0}=0$ at first order---the
+velocity perturbation is purely spatial: $\delta u^{\mu} = (0,\,\delta\vect{v})$.
+
+\subsection{Linearised equations}
+
+Linearising the energy-momentum conservation $\nabla_{\mu}T^{\mu\nu}=0$
+and the induction equation \eqref{eq:induction-covariant} about the
+background, one obtains a system of linear algebraic equations (in
+Fourier space):
+\begin{align}
+  -\omega\,\enthalpy^{\ast}_{0}\,\delta v^{i}
+  &= k^{i}\,c^{2}\Bigl(\delta p + \frac{b_{(0)}^{j}\,\delta b_{j}}{4\pi}\Bigr)
+  - \frac{c^{2}}{4\pi}\,(k_{j}\,b_{(0)}^{j})\,\delta b^{i}
+  \notag\\
+  &\quad
+  - \frac{c^{2}}{4\pi}\,(k_{j}\,\delta b^{j})\,b_{(0)}^{i},
+  \label{eq:lin-momentum}
+\end{align}
+\begin{equation}
+  -\omega\,\delta\varepsilon
+  = (\varepsilon_{0}+p_{0})\,(k_{j}\,\delta v^{j}),
+  \label{eq:lin-energy}
+\end{equation}
+\begin{equation}
+  -\omega\,\delta b^{i}
+  = (k_{j}\,b_{(0)}^{j})\,\delta v^{i}
+  - b_{(0)}^{i}\,(k_{j}\,\delta v^{j}),
+  \label{eq:lin-induction}
+\end{equation}
+where $\enthalpy^{\ast}_{0} = (\varepsilon_{0}+p_{0}+b_{(0)}^{2})/(4\pi c^{2})$
+is the background total (relativistic) inertia, with appropriate factors
+of $4\pi$ restored for Gaussian units.
+
+\subsection{Dispersion relation}
+
+Eliminating $\delta\varepsilon$, $\delta p = \cs^{2}\,\delta\varepsilon/c^{2}$,
+and $\delta b^{i}$ in favour of $\delta v^{i}$, one arrives at the
+dispersion relation.  Defining the phase speed $v_{\mathrm{ph}}=\omega/k$,
+the result is:
+\begin{equation}
+  \bigl(v_{\mathrm{ph}}^{2} - \vA^{2}\cos^{2}\!\theta\bigr)
+  \Bigl[v_{\mathrm{ph}}^{4}
+    - v_{\mathrm{ph}}^{2}\bigl(\cs^{2}+\vA^{2}
+      -\cs^{2}\vA^{2}/c^{2}\bigr)
+    + \cs^{2}\,\vA^{2}\,\cos^{2}\!\theta\Bigr] = 0.
+  \label{eq:dispersion-full}
+\end{equation}
+This factors into:
+\begin{enumerate}
+  \item \textbf{Alfv\'en mode}: $v_{\mathrm{ph}}^{2} = \vA^{2}\cos^{2}\!\theta$,
+  \item \textbf{Fast/slow magnetosonic modes}: the quartic in
+        $v_{\mathrm{ph}}^{2}$ whose roots are given by
+        \eqref{eq:vf}--\eqref{eq:vs}.
+\end{enumerate}
+All three families of modes satisfy $v_{\mathrm{ph}}^{2} < c^{2}$, as
+proved in \S\ref{sec:char-speeds}.
+
+\subsection{Non-relativistic limit: recovery of Chandrasekhar Ch~IV}
+
+In the non-relativistic limit, $\varepsilon \to \rho c^{2}$,
+$p \ll \rho c^{2}$, $b^{2}\ll 4\pi\rho c^{2}$, and $\cs^{2}\ll c^{2}$.
+The relativistic dispersion \eqref{eq:dispersion-full} then reduces to
+\begin{equation}
+  \bigl(v_{\mathrm{ph}}^{2} - V_{\!A}^{2}\cos^{2}\!\theta\bigr)
+  \bigl[v_{\mathrm{ph}}^{4}
+    - v_{\mathrm{ph}}^{2}(a^{2}+V_{\!A}^{2})
+    + a^{2}\,V_{\!A}^{2}\,\cos^{2}\!\theta\bigr] = 0,
+  \label{eq:dispersion-NR}
+\end{equation}
+where $V_{\!A}^{2} = B^{2}/(4\pi\rho)$ and $a^{2}=(\partial p/\partial\rho)_{s}$
+are the non-relativistic Alfv\'en and sound speeds.  This is precisely the
+dispersion relation derived in Chandrasekhar~\cite{Chandrasekhar1961},
+Chapter~IV, equations~(38) and~(39).
+
+
+%======================================================================
+\section{Relativistic Alfv\'en Waves}
+\label{sec:rel-alfven}
+%======================================================================
+
+\subsection{Derivation of the Alfv\'en mode}
+
+The Alfv\'en mode corresponds to incompressible, transverse perturbations
+with $\delta\varepsilon=0$, $\vect{k}\cdot\delta\vect{v}=0$.  From the
+linearised equations \eqref{eq:lin-momentum}--\eqref{eq:lin-induction},
+the perturbation velocity is perpendicular to both $\vect{k}$ and
+$\vect{B}_{0}$ (for general $\theta$), and the dispersion relation is
+simply
+\begin{equation}
+  \omega^{2} = k^{2}\,\vA^{2}\,\cos^{2}\!\theta,
+  \label{eq:alfven-dispersion}
+\end{equation}
+with the relativistic Alfv\'en speed given by \eqref{eq:vA-rel}.  The
+corresponding phase velocity along the magnetic field is
+\begin{equation}
+  v_{\mathrm{ph}} = \vA\cos\theta
+  = \cos\theta\;\frac{b\,c}{\sqrt{4\pi(\varepsilon+p)+b^{2}}},
+  \label{eq:alfven-phase}
+\end{equation}
+where $b = |\vect{B}_{0}|$ in the rest frame.  This is manifestly less
+than $c$ for all $\theta$.
+
+The group velocity for Alfv\'en waves is directed along the background
+magnetic field:
+\begin{equation}
+  \vect{v}_{\mathrm{g}}
+  = \frac{\partial\omega}{\partial\vect{k}}
+  = \vA\,\hat{\vect{z}},
+  \label{eq:alfven-group}
+\end{equation}
+showing that Alfv\'en waves transport energy along field lines, exactly
+as in the non-relativistic theory.
+
+\subsection{Comparison with Chandrasekhar~\S39}
+
+Chandrasekhar~\cite{Chandrasekhar1961}, \S39, derives the Alfv\'en wave
+dispersion for an incompressible, non-relativistic conducting fluid
+permeated by a uniform magnetic field $\vect{H}$.  His result (in our
+notation) is
+\begin{equation}
+  \omega^{2} = \frac{(\vect{k}\cdot\vect{H})^{2}}{4\pi\rho}
+  = k^{2}\,V_{\!A}^{2}\,\cos^{2}\!\theta,
+  \label{eq:alfven-chandrasekhar}
+\end{equation}
+with $V_{\!A}^{2} = H^{2}/(4\pi\rho)$.  This is recovered from our
+relativistic result \eqref{eq:alfven-dispersion} as follows.
+
+\subsection{Non-relativistic limit}
+
+In the limit $v/c\to 0$:
+\begin{enumerate}
+  \item $\varepsilon \to \rho c^{2}$ (rest-mass energy dominates),
+  \item $p \ll \rho c^{2}$,
+  \item $b^{2} = B^{2} \ll 4\pi\rho c^{2}$ (i.e.\ $\vA \ll c$).
+\end{enumerate}
+Then
+\begin{equation}
+  \vA^{2}
+  = \frac{b^{2}\,c^{2}}{4\pi(\varepsilon+p)+b^{2}}
+  \;\longrightarrow\;
+  \frac{B^{2}\,c^{2}}{4\pi\rho c^{2}}
+  = \frac{B^{2}}{4\pi\rho}
+  = V_{\!A}^{2},
+  \label{eq:vA-NR-limit}
+\end{equation}
+recovering the classical Alfv\'en speed.  The dispersion relation
+\eqref{eq:alfven-dispersion} then reduces identically to
+\eqref{eq:alfven-chandrasekhar}.
+
+\subsection{Ultra-relativistic regime}
+
+In the opposite extreme, when $b^{2}\gg 4\pi(\varepsilon+p)$ (a
+magnetically dominated plasma), the Alfv\'en speed saturates at
+\begin{equation}
+  \vA^{2} \to c^{2}
+  \qquad\text{(magnetically dominated limit)}.
+  \label{eq:vA-ultra}
+\end{equation}
+This is relevant for pulsar magnetospheres, relativistic jets, and
+gamma-ray burst outflows where the magnetisation parameter
+$\sigma_{\mathrm{mag}} = b^{2}/[4\pi(\varepsilon+p)] \gg 1$.  Even in
+this extreme, the Alfv\'en speed respects $\vA < c$, as required by
+causality.
+
+\subsection{Polarisation and eigenmodes}
+
+The Alfv\'en wave eigenmode has the polarisation
+\begin{equation}
+  \delta\vect{v} = \pm\,\frac{\delta\vect{B}}{\sqrt{4\pi\enthalpy^{\ast}_{0}}},
+  \label{eq:alfven-eigenmode}
+\end{equation}
+where the $\pm$ corresponds to forward/backward propagating waves.
+The magnetic and velocity perturbations are aligned (equipartition), and
+the total pressure perturbation $\delta p + \delta(b^{2}/2)/(4\pi) = 0$.
+These properties are identical to the non-relativistic Alfv\'en mode; the
+relativistic modification enters only through the inertia
+$\enthalpy^{\ast}_{0}$, which includes both rest-mass and magnetic
+contributions.
+
+
+%======================================================================
+\section{Summary}
+\label{sec:rmhd-summary}
+%======================================================================
+
+The relativistic MHD framework presented in this chapter provides the
+foundation for all subsequent stability analyses.  The key results are:
+\begin{enumerate}
+  \item The ideal MHD condition $F^{\mu\nu}u_{\nu}=0$ leads to a
+        well-defined energy-momentum tensor \eqref{eq:Tmunu-MHD} and a
+        covariant induction equation \eqref{eq:induction-covariant}.
+  \item All characteristic speeds---Alfv\'en, fast and slow
+        magnetosonic---are automatically bounded by $c$
+        (eq.~\ref{eq:vf-causal-proof}), ensuring causal propagation.
+  \item Resistive effects are captured by the relativistic Ohm's law
+        \eqref{eq:rel-Ohm}, with magnetic diffusivity
+        $\eta_{\mathrm{m}}=c^{2}/(4\pi\sigma)$.
+  \item The linearised perturbation theory yields the same modal
+        structure (Alfv\'en, fast, slow) as the non-relativistic theory,
+        but with relativistically corrected speeds.
+  \item All results reduce to the classical Chandrasekhar framework in
+        the limit $v/c\to 0$.
+\end{enumerate}
+
+\bigskip
+\noindent
+The next chapters will apply this framework to specific instability
+problems: thermal convection in magnetised relativistic fluids
+(the relativistic B\'enard problem), the relativistic
+magnetorotational instability, and relativistic magnetic buoyancy
+instabilities.
