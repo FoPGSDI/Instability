@@ -33,7 +33,11 @@ classical one:
   thermal waves, and viscous diffusion fronts---may propagate faster
   than~$c$.  This requirement rules out parabolic transport equations
   (Fourier, Navier--Stokes) in favour of hyperbolic, causal
-  alternatives such as the Israel--Stewart theory.
+  alternatives.  The BDNK (Bemfica--Disconzi--Noronha--Kovtun) theory
+  achieves this with first-order constitutive relations by working in
+  a general hydrodynamic frame whose transport coefficients are
+  constrained to ensure strong hyperbolicity
+  \cite{Bemfica2018,Kovtun2019}.
 \end{enumerate}
 
 In what follows we reformulate the basic concepts of Chapter~I in
@@ -92,51 +96,53 @@ equation $\rho(\partial\boldsymbol{v}/\partial t +
 conservation law~\eqref{eq:rel-1-3} becomes the continuity equation
 $\partial\rho/\partial t+\nabla\cdot(\rho\boldsymbol{v})=0$.
 
-\subsection{Israel--Stewart dissipative sector}
+\subsection{BDNK dissipative sector}
 \label{sec:rel-1-2b}
 
 In the presence of viscosity and heat conduction the energy-momentum
-tensor acquires dissipative corrections:
+tensor acquires dissipative corrections.  In the BDNK formalism one
+works in a \emph{general hydrodynamic frame}, where the decomposition
+takes the form
 \begin{equation}
 \label{eq:rel-1-6}
-T^{\mu\nu} = \varepsilon\,\frac{u^{\mu}u^{\nu}}{c^{2}}
-  + (p+\Pi)\,\Delta^{\mu\nu}
-  + \pi^{\mu\nu}
-  + \frac{1}{c^{2}}(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}),
+T^{\mu\nu} = E\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+  + P\,\Delta^{\mu\nu}
+  + \Pi^{\mu\nu}
+  + \frac{1}{c^{2}}(Q^{\mu}u^{\nu}+Q^{\nu}u^{\mu}),
 \end{equation}
-where $\Pi$ is the bulk viscous pressure, $\pi^{\mu\nu}$ is the
-traceless shear stress tensor satisfying
-$\pi^{\mu\nu}u_{\nu}=0$ and $\pi^{\mu}{}_{\mu}=0$, and $q^{\mu}$ is
-the heat-flux four-vector with $q^{\mu}u_{\mu}=0$.
+where $E$, $P$, $Q^{\mu}$, and $\Pi^{\mu\nu}$ are the energy density,
+isotropic pressure, heat flux, and traceless anisotropic stress in the
+general frame, satisfying $Q^{\mu}u_{\mu}=0$,
+$\Pi^{\mu\nu}u_{\nu}=0$, $\Pi^{\mu}{}_{\mu}=0$.  Crucially, the
+four-velocity $u^{\mu}$ is \emph{not} the Landau-frame velocity; it
+is a general-frame field whose definition is part of the constitutive
+specification.
 
-The Navier--Stokes (first-order) constitutive relations $\Pi=-\zeta\,
-\nabla_{\mu}u^{\mu}$, $\pi^{\mu\nu}=2\eta_{\rm s}\,\sigma^{\mu\nu}$,
-$q^{\mu}=-\kappa\,\Delta^{\mu\nu}\nabla_{\nu}T$ are \emph{acausal}:
-they admit infinite propagation speeds for viscous and thermal
-disturbances.  The Israel--Stewart (second-order) theory restores
-causality by promoting each dissipative flux to an independent
-dynamical variable obeying a relaxation equation:
+The standard Navier--Stokes (Landau- or Eckart-frame) first-order
+constitutive relations are acausal: they admit infinite propagation
+speeds for viscous and thermal disturbances.  The BDNK theory
+\cite{Bemfica2018,Kovtun2019} restores causality \emph{while
+remaining first-order} by introducing frame-dependent corrections to
+the constitutive relations.  The dissipative fluxes are given
+algebraically (not by relaxation equations):
 \begin{align}
-\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
-  &= -\zeta\,\nabla_{\mu}u^{\mu},
+E &= \varepsilon + \varepsilon_{1},
 \label{eq:rel-1-7}\\[4pt]
-\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu}
-  &= 2\eta_{\rm s}\,\sigma^{\mu\nu},
+P &= p - \zeta\,\nabla_{\mu}u^{\mu} + \ldots\;(\text{frame terms}),
 \label{eq:rel-1-8}\\[4pt]
-\tau_{q}\,u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle}
-  + q^{\mu}
-  &= -\kappa\!\left(
-    \Delta^{\mu\nu}\nabla_{\nu}T
-    + \frac{T}{c^{2}}\,u^{\mu}\,u^{\alpha}\nabla_{\alpha}T
-  \right),
-\label{eq:rel-1-9}
+Q^{\mu} &= -\kappa\,T\,\Delta^{\mu\alpha}\partial_{\alpha}
+  \!\left(\frac{\mu}{T}\right)
+  + \text{frame corrections},
+\label{eq:rel-1-9}\\[4pt]
+\Pi^{\mu\nu} &= -2\eta_{\rm s}\,\sigma^{\mu\nu},
+\label{eq:rel-1-9b}
 \end{align}
-where $\tau_{\Pi}$, $\tau_{\pi}$, $\tau_{q}>0$ are the relaxation
-times for bulk viscosity, shear viscosity, and heat flux respectively,
+where $\varepsilon_{1}$ is the first-order energy correction in the
+general frame (with contributions proportional to $\nabla_{\mu}u^{\mu}$,
+$u^{\mu}\partial_{\mu}T/T$, and $u^{\mu}\partial_{\mu}(\mu/T)$),
 $\eta_{\rm s}$ is the shear viscosity, $\zeta$ the bulk viscosity,
-$\kappa$ the thermal conductivity, and $\sigma^{\mu\nu}$ is the
-symmetric trace-free shear tensor
+$\kappa$ the thermal conductivity, $\mu$ the chemical potential, and
+$\sigma^{\mu\nu}$ is the symmetric trace-free shear tensor
 \begin{equation}
 \label{eq:rel-1-10}
 \sigma^{\mu\nu} = \Delta^{\mu\alpha}\Delta^{\nu\beta}
@@ -146,19 +152,30 @@ symmetric trace-free shear tensor
   \right).
 \end{equation}
 
-\noindent\textbf{Non-relativistic limit.}  Setting $\tau_{\Pi},
-\tau_{\pi},\tau_{q}\to 0$ (instantaneous relaxation) and taking
-$v/c\to 0$ recovers the Navier--Stokes constitutive relations and the
-Fourier heat law.
+Because the constitutive relations \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9b}
+are \emph{algebraic} in the fluid variables and their first gradients,
+the only dynamical equations are the conservation laws
+\eqref{eq:rel-1-2}--\eqref{eq:rel-1-3} themselves.  No additional
+relaxation equations or extra dynamical degrees of freedom appear.
+BDNK therefore achieves causality with a simpler PDE structure than
+the Israel--Stewart (IS) second-order theory, which introduces
+relaxation times $\tau_{\pi}$, $\tau_{q}$, $\tau_{\Pi}$ and
+corresponding evolution equations for each dissipative flux.
 
-\noindent\textbf{Causality enforcement.}  The relaxation times
-$\tau_{\Pi},\tau_{\pi},\tau_{q}$ guarantee that the characteristic
-speeds of the resulting hyperbolic system are bounded by~$c$.
-In particular, the thermal signal speed
-$v_{\rm th}=\sqrt{\kappa T/(\tau_{q}\,w\,c^{2})}$ and the viscous
-signal speed $v_{\rm visc}=\sqrt{\eta_{\rm s}/(\tau_{\pi}\,w)}$
-remain sub-luminal whenever the relaxation times satisfy the
-Israel--Stewart thermodynamic inequalities.
+\noindent\textbf{Non-relativistic limit.}  Taking $v/c\to 0$ with
+the BDNK constitutive relations recovers the Navier--Stokes
+constitutive relations and the Fourier heat law, exactly as in the IS
+theory; the frame corrections vanish at order $v^{2}/c^{2}$.
+
+\noindent\textbf{Causality enforcement.}  In the BDNK formalism,
+causality is guaranteed by requiring that the frame coefficients
+(the additional terms in $E$, $P$, $Q^{\mu}$ beyond Navier--Stokes)
+satisfy a set of coupled inequalities.  These inequalities ensure
+\emph{strong hyperbolicity} of the full nonlinear system: all
+characteristic speeds are bounded by~$c$ without the need for
+positive relaxation times \cite{Bemfica2018,Kovtun2019}.  This
+replaces the Israel--Stewart requirement $\tau_{\Pi},\tau_{\pi},
+\tau_{q}>0$.
 
 %% ----------------------------------------------------------------
 \section{Normal-mode analysis in the relativistic context}
@@ -168,32 +185,39 @@ Israel--Stewart thermodynamic inequalities.
 
 Consider a stationary relativistic flow characterised by a background
 energy-momentum tensor $\bar T^{\mu\nu}$, four-velocity
-$\bar u^{\mu}$, energy density $\bar\varepsilon$, pressure $\bar p$,
-and---when dissipation is present---background values of $\Pi$,
-$\pi^{\mu\nu}$, and $q^{\mu}$.  Let the system be characterised by
-a set of parameters $X_1,\ldots,X_j$ (including geometric dimensions,
-characteristic velocities, gravitational and electromagnetic field
-strengths, and thermodynamic coefficients).
+$\bar u^{\mu}$, energy density $\bar\varepsilon$, and pressure
+$\bar p$.  When dissipation is present in the BDNK framework, the
+background includes the frame energy~$\bar E$, frame pressure~$\bar P$,
+heat flux~$\bar Q^{\mu}$, and anisotropic stress
+$\bar\Pi^{\mu\nu}$---but these are \emph{determined algebraically}
+from the background thermodynamic state via the constitutive
+relations, not as independent dynamical variables.  Let the system be
+characterised by a set of parameters $X_1,\ldots,X_j$ (including
+geometric dimensions, characteristic velocities, gravitational and
+electromagnetic field strengths, and thermodynamic coefficients).
 
-We perturb every dynamical field:
+We perturb the fundamental dynamical fields:
 \begin{equation}
 \label{eq:rel-1-11}
 \varepsilon = \bar\varepsilon + \delta\varepsilon, \quad
 p = \bar p + \delta p, \quad
-u^{\mu} = \bar u^{\mu} + \delta u^{\mu}, \quad
-\Pi = \bar\Pi + \delta\Pi, \quad
-\pi^{\mu\nu} = \bar\pi^{\mu\nu} + \delta\pi^{\mu\nu}, \quad
-q^{\mu} = \bar q^{\mu} + \delta q^{\mu},
+u^{\mu} = \bar u^{\mu} + \delta u^{\mu}.
 \end{equation}
-and the full energy-momentum perturbation is
+In the BDNK framework there are no additional independent dissipative
+variables to perturb: the perturbations $\delta E$, $\delta P$,
+$\delta Q^{\mu}$, $\delta\Pi^{\mu\nu}$ follow algebraically from
+$(\delta\varepsilon, \delta p, \delta u^{\mu})$ through the
+first-order constitutive relations
+\eqref{eq:rel-1-7}--\eqref{eq:rel-1-9b}.  The full energy-momentum
+perturbation is
 \begin{equation}
 \label{eq:rel-1-12}
 \delta T^{\mu\nu}
   = \delta\!\left[
-    \varepsilon\,\frac{u^{\mu}u^{\nu}}{c^{2}}
-    + (p+\Pi)\,\Delta^{\mu\nu}
-    + \pi^{\mu\nu}
-    + \frac{1}{c^{2}}(q^{\mu}u^{\nu}+q^{\nu}u^{\mu})
+    E\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+    + P\,\Delta^{\mu\nu}
+    + \Pi^{\mu\nu}
+    + \frac{1}{c^{2}}(Q^{\mu}u^{\nu}+Q^{\nu}u^{\mu})
   \right].
 \end{equation}
 
@@ -210,11 +234,12 @@ components in the local rest frame.
 \subsection{Linearised equations and mode decomposition}
 
 Substituting \eqref{eq:rel-1-11} into the conservation laws
-\eqref{eq:rel-1-2}--\eqref{eq:rel-1-3} and the Israel--Stewart
-equations \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9}, and retaining
-only first-order terms, yields a system of linearised equations for
-$(\delta\varepsilon, \delta u^{\mu}, \delta\Pi, \delta\pi^{\mu\nu},
-\delta q^{\mu})$.
+\eqref{eq:rel-1-2}--\eqref{eq:rel-1-3}, with the BDNK constitutive
+relations \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9b} providing the
+dissipative fluxes algebraically, and retaining only first-order
+terms, yields a closed system of linearised equations for
+$(\delta\varepsilon, \delta u^{\mu})$ alone---no extra equations for
+dissipative fluxes are needed.
 
 Following the same logic as in the classical theory
 (Chapter~\ref{ch:1}, \S\,3), we decompose an arbitrary perturbation
@@ -236,9 +261,15 @@ For geometries with axial or spherical symmetry the mode decomposition
 proceeds exactly as in the classical case---via azimuthal Fourier modes
 $e^{im\theta}$ or spherical harmonics $Y_l^m(\theta,\varphi)$---but
 in each case the mode amplitudes are now tuples involving
-$(\delta\varepsilon, \delta u^{\mu}, \delta\Pi,
-\delta\pi^{\mu\nu}, \delta q^{\mu})$ rather than the classical
-velocity, temperature, and pressure perturbations alone.
+$(\delta\varepsilon, \delta u^{\mu})$---together with derivative
+terms entering through the BDNK constitutive relations---rather than
+the classical velocity, temperature, and pressure perturbations alone.
+Because there are no independent dissipative degrees of freedom, the
+resulting dispersion relations are standard-order polynomials in the
+frequency, containing only the physical hydrodynamic modes (sound,
+shear, heat).  This is in contrast to the Israel--Stewart theory,
+whose relaxation equations introduce additional spurious modes at
+high frequency.
 
 \subsection{Eigenvalue problem and stability criterion}
 
@@ -290,13 +321,16 @@ the requirement of relativistic causality is
   \qquad\text{for every mode } \mathbf{k}.}
 \end{equation}
 Any mode that violates \eqref{eq:rel-1-18} is physically inadmissible
-and must be discarded.  In the Israel--Stewart framework
+and must be discarded.  In the BDNK framework
 (\S\,\ref{sec:rel-1-2b}) this bound is \emph{automatically}
-satisfied when the relaxation times are positive and the
-thermodynamic stability conditions
+satisfied when the frame coefficients obey the coupled hyperbolicity
+inequalities and the thermodynamic stability conditions
 $c_{s}^{2}=(\partial p/\partial\varepsilon)_{s}\geq 0$ and
-$c_{s}^{2}\leq c^{2}$ hold.  This is the principal advantage of the
-Israel--Stewart formulation over the acausal Navier--Stokes theory.
+$c_{s}^{2}\leq c^{2}$ hold \cite{Bemfica2018,Kovtun2019}.  Strong
+hyperbolicity of the BDNK system has been proven rigorously at the
+full nonlinear level---a stronger result than that available for the
+Israel--Stewart theory, where causality proofs are restricted to the
+linearised regime.
 
 In non-dissipative systems the characteristic speeds are the sound
 speed $c_s$, the Alfv\'en speed $v_A$, and the fast and slow
@@ -456,8 +490,8 @@ simultaneously:
 \item $\varepsilon\to\rho c^{2}$, $w\to\rho$ (rest-mass dominated
   energy);
 \item $c_{s}/c\to 0$ (non-relativistic sound speed);
-\item $\tau_{\Pi},\tau_{\pi},\tau_{q}\to 0$ (instantaneous
-  relaxation, recovering Navier--Stokes and Fourier);
+\item BDNK frame corrections $\to 0$ at order $v^{2}/c^{2}$
+  (recovering Navier--Stokes and Fourier);
 \item $v_{A}/c\to 0$ (non-relativistic Alfv\'en speed).
 \end{enumerate}
 
@@ -466,8 +500,8 @@ Under these limits:
 \item The relativistic Euler equations
   \eqref{eq:rel-1-4}--\eqref{eq:rel-1-5} $\to$ classical Euler
   equations.
-\item The Israel--Stewart equations
-  \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9} $\to$ Navier--Stokes +
+\item The BDNK constitutive relations
+  \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9b} $\to$ Navier--Stokes +
   Fourier constitutive relations.
 \item The normal-mode eigenvalue problem (\S\,\ref{sec:rel-1-3}) $\to$
   the eigenvalue problem of Chapter~\ref{ch:1}, \S\,3.
@@ -483,10 +517,33 @@ Under these limits:
 \section*{Bibliographical Notes}
 \label{sec:rel-1-bib}
 
-The Israel--Stewart theory of causal dissipative relativistic fluids
-is developed in:
+The BDNK first-order causal viscous hydrodynamics formalism is
+developed in:
 
 \begin{enumerate}
+\item\label{Bemfica2018} F.~S.~\textsc{Bemfica},
+  M.~M.~\textsc{Disconzi}, and J.~\textsc{Noronha}, `Causality and
+  existence of solutions of relativistic viscous fluid dynamics with
+  gravity', \emph{Phys.\ Rev.\ D} \textbf{98}, 104064 (2018).
+
+\item\label{Kovtun2019} P.~\textsc{Kovtun}, `First-order relativistic
+  hydrodynamics is stable', \emph{JHEP} \textbf{10}, 034 (2019).
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi}, and
+  J.~\textsc{Noronha}, `Nonlinear causality of general first-order
+  relativistic viscous hydrodynamics', \emph{Phys.\ Rev.\ Lett.}
+  \textbf{122}, 221602 (2019).
+
+\item R.~E.~\textsc{Hoult} and P.~\textsc{Kovtun}, `Stable and causal
+  relativistic Navier--Stokes equations', \emph{JHEP} \textbf{06},
+  067 (2020).
+\end{enumerate}
+
+\noindent
+The earlier Israel--Stewart (second-order, relaxation-time) approach
+is developed in:
+
+\begin{enumerate}\setcounter{enumi}{4}
 \item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
   a causal relativistic theory', \emph{Ann.\ Phys.\ (N.Y.)}
   \textbf{100}, 310--331 (1976).
@@ -499,7 +556,7 @@ is developed in:
 \noindent
 For relativistic hydrodynamic stability and characteristic speeds:
 
-\begin{enumerate}\setcounter{enumi}{2}
+\begin{enumerate}\setcounter{enumi}{6}
 \item J.~L.~\textsc{Synge}, \emph{The Relativistic Gas}, North-Holland,
   Amsterdam, 1957.
 
@@ -514,7 +571,7 @@ For relativistic hydrodynamic stability and characteristic speeds:
 \noindent
 The relativistic MHD characteristic speed structure is discussed in:
 
-\begin{enumerate}\setcounter{enumi}{5}
+\begin{enumerate}\setcounter{enumi}{9}
 \item A.~\textsc{Lichnerowicz}, \emph{Relativistic Hydrodynamics and
   Magnetohydrodynamics}, W.~A.~Benjamin, New York, 1967.
 
