@@ -1,0 +1,580 @@
+% ===========================================================================
+% Relativistic Modification of Chapter III, Sections 19--23
+% Rotating frames, Helmholtz--Kelvin theorems, wave propagation
+% ===========================================================================
+% Agent 12 — relativistic branch
+% Conventions: RELATIVISTIC_CONVENTIONS.md, rel_preamble.tex
+% ===========================================================================
+
+\chapter{Relativistic Rotating Fluids and Vorticity Theorems}
+\label{ch:rel-3-rotation}
+
+\section*{2R. THE EFFECT OF ROTATION: RELATIVISTIC FORMULATION}
+
+\section{Introduction: relativistic rotating fluids}\label{sec:rel-3-19}
+
+In the non-relativistic theory (\S\,19 of Chandrasekhar), rotation introduces
+the Coriolis and centrifugal forces into the equations of motion, leading to
+profound consequences for the stability of fluid layers heated from below.
+The relativistic generalization of these results is far from a mere academic
+exercise: it is demanded by several astrophysical settings in which both
+rotation and relativistic effects are simultaneously important.
+
+\emph{Neutron stars} rotate with periods as short as a few milliseconds;
+the surface velocity of a rapidly spinning neutron star can reach
+$v \sim 0.1\text{--}0.2\,c$, while the gravitational compactness parameter
+$GM/(Rc^{2}) \sim 0.2$ places the fluid firmly in the relativistic regime.
+Convective and rotational instabilities in their interiors govern the thermal
+evolution, magnetic-field generation, and gravitational-wave emission of
+these objects.
+
+\emph{Accretion disks} around black holes exhibit orbital velocities of order
+$c$ in the innermost regions; here the interplay between frame-dragging
+(the Lense--Thirring effect) and the classical Coriolis effect is essential
+for understanding angular-momentum transport and magneto-rotational
+instability.
+
+\emph{Relativistic heavy-ion collisions} produce a quark--gluon plasma
+whose expansion is well modelled by relativistic hydrodynamics with strong
+vorticity; the \emph{chiral vortical effect} is a purely relativistic
+consequence of vorticity in such a fluid.
+
+In what follows we develop the relativistic counterparts of
+\S\S\,19--23 of Chandrasekhar: the Helmholtz--Kelvin theorems for
+relativistic vorticity (\S\,\ref{sec:rel-3-20}), the equations of motion
+in a relativistic rotating frame (\S\,\ref{sec:rel-3-21}), the
+Taylor--Proudman theorem (\S\,\ref{sec:rel-3-22}), and the propagation
+of inertial waves (\S\,\ref{sec:rel-3-23}).
+
+Throughout this chapter we adopt the conventions of
+\textsc{Relativistic\_Conventions}: metric signature $(-,+,+,+)$,
+the speed of light $c$ kept explicit, and the 4-velocity normalized as
+$u^{\mu}u_{\mu} = -c^{2}$.
+
+
+% ===================================================================
+\section{Relativistic Helmholtz--Kelvin theorems}\label{sec:rel-3-20}
+% ===================================================================
+
+\subsection{Relativistic vorticity tensor}
+
+In Newtonian fluid dynamics the vorticity is defined as
+$\boldsymbol{\omega} = \operatorname{curl}\mathbf{u}$.
+The natural relativistic generalization replaces the 3-velocity by
+a combination involving the specific enthalpy.
+Define the \emph{relativistic specific enthalpy} (enthalpy per unit
+rest-mass energy):
+\begin{equation}\label{eq:rel-3-1}
+  h \;=\; \frac{\edensity + p}{\rdensity\, c^{2}},
+\end{equation}
+where $\edensity$ is the energy density (including rest mass),
+$p$ is the pressure, and $\rdensity$ is the rest-mass density.
+In the non-relativistic limit $h \to 1 + (e + p)/(\rho_{0}c^{2})$
+where $e$ is the internal energy density; thus $h\to 1$ when
+$p/\rho_{0}c^{2} \to 0$.
+
+The \emph{relativistic vorticity 2-form} is defined as
+\begin{equation}\label{eq:rel-3-2}
+  \boxed{\;
+  \omega_{\mu\nu}
+  \;=\;
+  \nabla_{\mu}(h\,u_{\nu})
+  \;-\;
+  \nabla_{\nu}(h\,u_{\mu}).
+  \;}
+\end{equation}
+This is sometimes called the \emph{Synge--Lichnerowicz vorticity}.
+In components,
+\begin{equation}\label{eq:rel-3-3}
+  \omega_{\mu\nu}
+  = \partial_{\mu}(h\,u_{\nu}) - \partial_{\nu}(h\,u_{\mu}),
+\end{equation}
+since the Christoffel-symbol contributions cancel for an antisymmetric
+derivative.
+
+\begin{relcorrection}
+In the Newtonian limit ($h\to 1$, $u^{0}\to c$, $u^{i}\to v^{i}$),
+the spatial components reduce to
+$\omega_{ij} \to \partial_{i}v_{j} - \partial_{j}v_{i}$,
+which is the usual vorticity $\omega_{k} = \epsilon_{kij}\,\omega_{ij}/2$.
+The key relativistic novelty is the appearance of the enthalpy factor $h$:
+pressure and internal energy contribute to inertia through $(\edensity+p)/c^{2}$.
+\end{relcorrection}
+
+\subsection{Relativistic Euler equation in terms of vorticity}
+
+For a perfect, barotropic fluid ($p = p(\edensity)$, equivalently
+$p = p(\rdensity)$), the relativistic Euler equation
+\begin{equation}\label{eq:rel-3-4}
+  (\edensity + p)\,u^{\nu}\nabla_{\nu}u^{\mu}
+  \;=\;
+  -\left(g^{\mu\nu} + \frac{u^{\mu}u^{\nu}}{c^{2}}\right)\nabla_{\nu}p
+\end{equation}
+can be rewritten (following Lichnerowicz and Taub) as
+\begin{equation}\label{eq:rel-3-5}
+  u^{\nu}\,\omega_{\mu\nu} \;=\; 0.
+\end{equation}
+Equation~\eqref{eq:rel-3-5} is the relativistic analogue of
+Chandrasekhar's equation~(10) [our \eqref{eq:3-10}]; it states that
+the vorticity 2-form is \emph{simple} (i.e., $u^{\mu}$ lies in its
+null space), which is the content of the Euler equation for an
+isentropic flow.
+
+\subsection{Kelvin's circulation theorem in special relativity}
+
+Define the \emph{relativistic circulation} around a closed material
+curve $\mathcal{C}$ (a loop that moves with the fluid):
+\begin{equation}\label{eq:rel-3-6}
+  \Gamma
+  \;=\;
+  \oint_{\mathcal{C}} h\,u_{\mu}\,dx^{\mu}.
+\end{equation}
+By Stokes' theorem applied on a spacelike 2-surface $\Sigma$ bounded
+by $\mathcal{C}$,
+\begin{equation}\label{eq:rel-3-7}
+  \Gamma
+  \;=\;
+  \int_{\Sigma} \omega_{\mu\nu}\,d\Sigma^{\mu\nu},
+\end{equation}
+where $d\Sigma^{\mu\nu}$ is the surface-area element.
+
+\begin{quote}
+\textbf{Theorem (Relativistic Kelvin).}
+For a perfect barotropic fluid in special or general relativity,
+the circulation $\Gamma$ around any closed material loop is conserved
+along the flow:
+\begin{equation}\label{eq:rel-3-8}
+  \boxed{\;
+  \frac{d\Gamma}{d\tau} \;=\; 0
+  \qquad\text{(barotropic, inviscid).}
+  \;}
+\end{equation}
+\end{quote}
+
+\noindent\emph{Proof sketch.}
+Using the Cartan identity
+$\Lie_{u}\,(h\,u_{\mu}\,dx^{\mu})
+= u^{\nu}\omega_{\nu\mu}\,dx^{\mu} + d(h\,u_{\mu}\,u^{\mu})$
+and noting that $u_{\mu}u^{\mu} = -c^{2}$ (constant), the first term
+vanishes by~\eqref{eq:rel-3-5} and the second is an exact form whose
+integral around a closed loop is zero.  \hfill$\square$
+
+\begin{relcorrection}
+In the non-relativistic limit $h\to 1$ and $\tau\to t$, so
+$d\Gamma/d\tau \to d/dt\oint \mathbf{u}\cdot d\mathbf{s} = 0$,
+recovering exactly Chandrasekhar's equation~\eqref{eq:3-23}.
+\end{relcorrection}
+
+\subsection{Helmholtz theorem: relativistic vortex tubes}
+
+The antisymmetry of $\omega_{\mu\nu}$ implies that the vorticity
+2-form is closed when the equations of motion hold:
+\begin{equation}\label{eq:rel-3-9}
+  d\omega = 0
+  \qquad\Longleftrightarrow\qquad
+  \nabla_{[\alpha}\omega_{\mu\nu]} = 0.
+\end{equation}
+This is the relativistic analogue of $\operatorname{div}\boldsymbol{\omega}=0$
+[Chandrasekhar's equation~\eqref{eq:3-5}].  It guarantees that
+\emph{relativistic vortex tubes} (surfaces tangent to the bivector
+$\omega^{\mu\nu}$) have constant flux across any cross-section, and
+that they cannot begin or end inside the fluid---precisely as in the
+Newtonian case.
+
+Furthermore, equation~\eqref{eq:rel-3-5} together with~\eqref{eq:rel-3-9}
+implies that the vortex lines are \emph{frozen into the fluid}: they
+are Lie-dragged by the 4-velocity field,
+\begin{equation}\label{eq:rel-3-10}
+  \Lie_{u}\,\omega_{\mu\nu} = 0,
+\end{equation}
+which is the covariant statement of Helmholtz's theorem that ``vortex
+lines move with the fluid.''
+
+
+% ===================================================================
+\section{Equations of hydrodynamics in a relativistic rotating frame}
+\label{sec:rel-3-21}
+% ===================================================================
+
+\subsection{Rotating coordinates in special relativity}
+
+We consider a fluid rotating rigidly with angular velocity $\Omega$
+about the $z$-axis.  Introduce rotating (Born) coordinates
+$(t,r,\varphi',z)$ related to the inertial cylindrical coordinates
+$(t,r,\varphi,z)$ by
+\begin{equation}\label{eq:rel-3-11}
+  \varphi' = \varphi - \Omega\,t,
+  \qquad
+  r < \frac{c}{\Omega}
+  \quad\text{(light-cylinder constraint)}.
+\end{equation}
+The Minkowski metric in the rotating frame reads
+\begin{equation}\label{eq:rel-3-12}
+  ds^{2} \;=\;
+  -\left(1 - \frac{\Omega^{2}r^{2}}{c^{2}}\right)c^{2}\,dt^{2}
+  + 2\,\Omega\,r^{2}\,d\varphi'\,dt
+  + dr^{2}
+  + r^{2}\,d\varphi'^{2}
+  + dz^{2}.
+\end{equation}
+The off-diagonal term $g_{0\varphi'} = \Omega r^{2}$ is the
+special-relativistic precursor of the \emph{gravitomagnetic}
+(frame-dragging) potential familiar from the Lense--Thirring metric
+in general relativity.
+
+The effective gravitational potential seen by a static observer in
+the rotating frame is
+\begin{equation}\label{eq:rel-3-13}
+  \Phi_{\text{eff}}
+  \;=\;
+  -\tfrac{1}{2}\,c^{2}\ln\!\left(1 - \frac{\Omega^{2}r^{2}}{c^{2}}\right).
+\end{equation}
+In the non-relativistic limit $\Omega r \ll c$ this reduces to
+$\Phi_{\text{eff}} \approx -\frac{1}{2}\Omega^{2}r^{2}$,
+the usual centrifugal potential
+(cf.\ Chandrasekhar's $\frac{1}{2}|\boldsymbol{\Omega}\times\mathbf{r}|^{2}$
+in equation~\eqref{eq:3-44}).
+
+\subsection{Relativistic Coriolis and centrifugal forces}
+
+Let $\mathbf{v}$ denote the 3-velocity of a fluid element as measured
+in the rotating frame, with $|\mathbf{v}| \ll c$.  Working to first
+order in $v/c$ (but keeping $\Omega r/c$ to all orders), the spatial
+components of the relativistic Euler equation in the rotating frame
+become
+\begin{equation}\label{eq:rel-3-14}
+  \frac{\edensity + p}{c^{2}}
+  \left(
+  \frac{\partial v_{i}}{\partial t}
+  + v_{j}\frac{\partial v_{i}}{\partial x_{j}}
+  \right)
+  =
+  -\frac{\partial p}{\partial x_{i}}
+  + \frac{\edensity + p}{c^{2}}
+  \left[
+  \frac{\partial\Phi_{\text{eff}}}{\partial x_{i}}
+  + 2\,\epsilon_{ijk}\,v_{j}\,\Omega_{k}
+  \right].
+\end{equation}
+
+\begin{relcorrection}
+Comparing with Chandrasekhar's equation~\eqref{eq:3-44}, we observe
+two key relativistic modifications:
+\begin{enumerate}
+  \item The inertial mass density on the left-hand side is
+    $(\edensity + p)/c^{2}$, not $\rho$ alone.  Pressure contributes to
+    inertia---this is the Tolman--Oppenheimer--Volkoff effect familiar
+    from stellar structure.
+  \item The centrifugal potential~\eqref{eq:rel-3-13} is no longer
+    quadratic in $r$ but becomes logarithmic; it diverges at the
+    light cylinder $r = c/\Omega$, reflecting the impossibility of
+    rigid rotation beyond that radius.
+\end{enumerate}
+\end{relcorrection}
+
+\subsection{Frame-dragging analogy: Lense--Thirring effect}
+
+In general relativity, a rotating mass generates a
+\emph{gravitomagnetic field} $\mathbf{H}_{g}$ that acts on moving
+fluid elements in exact analogy with the Coriolis force.  For a slowly
+rotating star with angular momentum $J$, the linearized metric outside
+the star contains the off-diagonal component
+\begin{equation}\label{eq:rel-3-15}
+  g_{0\varphi}
+  \;=\;
+  -\frac{2GJ}{c^{2}\,r}\sin^{2}\!\theta
+  \;\equiv\;
+  \Omega_{\mathrm{LT}}(r)\,r^{2}\sin^{2}\!\theta,
+\end{equation}
+where the Lense--Thirring angular velocity is
+$\Omega_{\mathrm{LT}} = 2GJ/(c^{2}r^{3})$.
+The equations of motion for a fluid element then contain a term
+$2\,\epsilon_{ijk}\,v_{j}\,\Omega_{\mathrm{LT},k}$ that is formally
+identical to the Coriolis acceleration but is produced by the curvature
+of spacetime rather than by a choice of coordinates.  In a neutron star
+interior, the total effective rotation rate entering the Coriolis term
+is $\Omega_{\text{eff}} = \Omega - \Omega_{\mathrm{LT}}$, a combination
+of the stellar rotation and the frame-dragging correction.
+
+
+% ===================================================================
+\section{Relativistic Taylor--Proudman theorem}\label{sec:rel-3-22}
+% ===================================================================
+
+In the Newtonian theory, the Taylor--Proudman theorem
+(Chandrasekhar's \S\,22) states that slow, steady motions in a
+rotating inviscid fluid cannot vary in the direction of the angular
+velocity: $\Omega_{j}\,\partial u_{i}/\partial x_{j} = 0$.
+
+\subsection{Derivation of the relativistic version}
+
+We follow the same strategy as in \S\,22.  Taking the curl of the
+relativistic Euler equation~\eqref{eq:rel-3-14} for an inviscid,
+barotropic, incompressible fluid in steady slow motion
+($|\mathbf{v}| \ll \Omega L \ll c$), the dominant balance is between
+the Coriolis term and the pressure gradient, and the curl of the
+equation of motion yields
+\begin{equation}\label{eq:rel-3-16}
+  \operatorname{curl}
+  \!\left[
+  \frac{\edensity + p}{c^{2}}\,
+  \mathbf{v}\times\boldsymbol{\Omega}
+  \right]
+  = 0.
+\end{equation}
+
+For a fluid with uniform enthalpy density
+$\enthalpy = \edensity + p = \text{const}$ (the analogue of
+constant density in the Newtonian theory), this reduces to
+\begin{equation}\label{eq:rel-3-17}
+  \Omega_{j}\,\frac{\partial v_{i}}{\partial x_{j}} = 0,
+\end{equation}
+which is identical in form to the Newtonian result~\eqref{eq:3-55}.
+
+\subsection{Relativistic corrections to the Taylor--Proudman constraint}
+
+When the enthalpy density varies (e.g.\ due to a background pressure
+gradient in a self-gravitating star), equation~\eqref{eq:rel-3-16}
+gives
+\begin{equation}\label{eq:rel-3-18}
+  \frac{\edensity + p}{c^{2}}\;
+  \Omega_{j}\,\frac{\partial v_{i}}{\partial x_{j}}
+  \;=\;
+  \epsilon_{ijk}\,v_{j}\,\Omega_{k}\;
+  \frac{1}{c^{2}}\,
+  \frac{\partial(\edensity + p)}{\partial x_{l}}\,\delta_{li}.
+\end{equation}
+Thus motions \emph{can} vary along $\boldsymbol{\Omega}$ if the
+enthalpy gradient has a component along that direction.
+
+\begin{relcorrection}
+The relativistic correction to the Taylor--Proudman theorem is
+controlled by the dimensionless parameter
+\begin{equation}\label{eq:rel-3-19}
+  \xi
+  \;=\;
+  \frac{L}{\edensity + p}
+  \,\frac{\partial(\edensity + p)}{\partial z}
+  \;\sim\;
+  \frac{p}{\rdensity c^{2}},
+\end{equation}
+where $L$ is a characteristic length scale and the last estimate
+applies in hydrostatic equilibrium.  For neutron star interiors
+$p/(\rdensity c^{2}) \sim 0.1$, so the correction is of order 10\%.
+For terrestrial fluids $\xi \sim 10^{-10}$ and the classical theorem
+is recovered to extraordinary precision.
+\end{relcorrection}
+
+
+% ===================================================================
+\section{Wave propagation in a relativistic rotating fluid}
+\label{sec:rel-3-23}
+% ===================================================================
+
+\subsection{Linearized equations}
+
+We perturb a uniformly rotating fluid at rest in the rotating frame
+(background velocity $\mathbf{v}_{0} = 0$, background enthalpy density
+$\enthalpy_{0} = \edensity_{0}+p_{0}$), writing
+\begin{equation}\label{eq:rel-3-20}
+  v_{i} = \delta v_{i},
+  \qquad
+  p = p_{0} + \delta p,
+  \qquad
+  \edensity = \edensity_{0} + \delta\edensity.
+\end{equation}
+The linearized relativistic Euler equation~\eqref{eq:rel-3-14}, for an
+incompressible fluid with Israel--Stewart shear viscosity
+($\shearvisc$, relaxation time $\taupi$), becomes
+\begin{equation}\label{eq:rel-3-21}
+  \frac{\enthalpy_{0}}{c^{2}}
+  \left(
+    \frac{\partial}{\partial t}\,\delta v_{i}
+    + \taupi\,\frac{\partial^{2}}{\partial t^{2}}\,\delta v_{i}
+  \right)
+  =
+  -\frac{\partial\,\delta p}{\partial x_{i}}
+  + \frac{\enthalpy_{0}}{c^{2}}\;
+    2\,\epsilon_{ijk}\,\delta v_{j}\,\Omega_{k}
+  + \shearvisc\,\nabla^{2}\delta v_{i},
+\end{equation}
+together with the incompressibility condition
+$\partial\,\delta v_{i}/\partial x_{i} = 0$.
+
+The Israel--Stewart term
+$\taupi\,\partial^{2}\delta v_{i}/\partial t^{2}$ is the essential
+relativistic causal modification of the viscous stress; it converts
+the parabolic diffusion equation into a \emph{hyperbolic} one, ensuring
+that viscous signals propagate at finite speed
+$v_{\mathrm{visc}} \sim \sqrt{\shearvisc/(\taupi\,\enthalpy_{0}/c^{2})} \leq c$.
+
+\subsection{Dispersion relation}
+
+Seeking plane-wave solutions
+$\delta v_{i},\,\delta p \propto \exp[i(\mathbf{k}\cdot\mathbf{r} - \sigma t)]$,
+the incompressibility condition gives
+$\mathbf{k}\cdot\delta\mathbf{v} = 0$ (transverse waves, as in the
+classical case).  The remaining equations yield the dispersion relation
+\begin{equation}\label{eq:rel-3-22}
+  \boxed{\;
+  \sigma\left(1 - i\,\taupi\,\sigma\right)
+  \;=\;
+  \pm\,\frac{2\,\boldsymbol{\Omega}\cdot\mathbf{k}}{k}
+  \;+\;
+  i\,\frac{\shearvisc\,c^{2}}{\enthalpy_{0}}\,k^{2}.
+  \;}
+\end{equation}
+
+\subsubsection*{Inviscid limit ($\shearvisc = 0$, $\taupi = 0$)}
+
+Setting the dissipative terms to zero, we obtain
+\begin{equation}\label{eq:rel-3-23}
+  \sigma
+  \;=\;
+  \pm\,\frac{2\,\Omega\,k_{z}}{k}
+  \;=\;
+  \pm\,2\Omega\cos\vartheta,
+\end{equation}
+where $\vartheta$ is the angle between $\mathbf{k}$ and
+$\boldsymbol{\Omega}$.  This is \emph{identical} to the classical
+result~\eqref{eq:3-71}: the inviscid inertial-wave frequency is
+independent of $c$.  This is expected because inertial waves are
+restored by the Coriolis force, which depends on $\Omega$ and not on
+$c$.
+
+\subsubsection*{Damped regime}
+
+For small viscosity, treating $\shearvisc$ and $\taupi$ as
+perturbations, we expand $\sigma = \sigma_{0} + \sigma_{1}$ with
+$\sigma_{0} = \pm 2\Omega\cos\vartheta$.  To first order:
+\begin{equation}\label{eq:rel-3-24}
+  \sigma_{1}
+  \;=\;
+  \frac{i\,\nu_{\mathrm{rel}}\,k^{2}}
+       {1 - 2i\,\taupi\,\sigma_{0}},
+  \qquad
+  \nu_{\mathrm{rel}}
+  \;=\;
+  \frac{\shearvisc\,c^{2}}{\enthalpy_{0}},
+\end{equation}
+where $\nu_{\mathrm{rel}}$ is the relativistic kinematic viscosity.
+In the non-relativistic limit
+$\enthalpy_{0}/c^{2} \to \rho_{0}$ and $\taupi\to 0$, so
+$\sigma_{1} \to i\nu k^{2}$, recovering the classical damping
+constant of Chandrasekhar's equation~\eqref{eq:3-72}.
+
+\subsection{Causality check}
+
+\begin{causalitycheck}
+The dispersion relation~\eqref{eq:rel-3-22} is quadratic in $\sigma$
+(due to the Israel--Stewart term).  For large $k$, the two roots
+behave as
+\begin{equation}\label{eq:rel-3-25}
+  \sigma \;\sim\;
+  \begin{cases}
+    \displaystyle
+    \pm\,2\Omega\cos\vartheta
+    + i\,\nu_{\mathrm{rel}}\,k^{2}
+    & (k \ll k_{\mathrm{IS}}),
+    \\[8pt]
+    \displaystyle
+    \frac{i}{\taupi}
+    & (k \gg k_{\mathrm{IS}}),
+  \end{cases}
+\end{equation}
+where
+$k_{\mathrm{IS}} = (\taupi\,\nu_{\mathrm{rel}})^{-1/2}$
+is the Israel--Stewart crossover wavenumber.
+
+The \emph{phase velocity} $v_{\mathrm{ph}} = |\operatorname{Re}\sigma|/k$
+satisfies:
+\begin{itemize}
+  \item For inertial waves at any $k$:
+    $v_{\mathrm{ph}} \leq 2\Omega/k \to 0$ as $k\to\infty$.
+  \item For the viscous mode at large $k$:
+    $v_{\mathrm{ph}} \to 0$ (purely damped).
+\end{itemize}
+The \emph{front velocity} (signal speed) is bounded by
+\begin{equation}\label{eq:rel-3-26}
+  v_{\mathrm{front}}
+  \;=\;
+  \lim_{k\to\infty} \frac{|\operatorname{Re}\sigma|}{k}
+  \;=\; 0
+  \;\leq\; c.
+  \qquad\checkmark
+\end{equation}
+Causality is therefore satisfied.  This is in contrast to the
+Navier--Stokes (acausal) viscosity used in Chandrasekhar's
+equation~\eqref{eq:3-72}, where the damping $\nu k^{2}$ grows without
+bound, implying arbitrarily fast signal propagation.
+\end{causalitycheck}
+
+\subsection{Group velocity and energy transport}
+
+In the inviscid limit, the group velocity is
+\begin{equation}\label{eq:rel-3-27}
+  \frac{\partial\sigma}{\partial k_{i}}
+  \;=\;
+  \pm\,\frac{2}{k^{3}}\,
+  \epsilon_{ijk}\,k_{j}\,\Omega_{k}
+  \;\equiv\;
+  \pm\,\frac{2}{k^{3}}\,
+  \mathbf{k}\times(\boldsymbol{\Omega}\times\mathbf{k}),
+\end{equation}
+which is identical to the classical expression~\eqref{eq:3-76}.
+Its magnitude is
+\begin{equation}\label{eq:rel-3-28}
+  |\mathbf{v}_{g}|
+  \;=\;
+  \frac{2\Omega\sin\vartheta}{k}
+  \;\leq\;
+  \frac{2\Omega}{k}.
+\end{equation}
+For the group velocity to respect causality we require
+$|\mathbf{v}_{g}| < c$, which is satisfied whenever
+$k > 2\Omega/c$.  Since physically relevant wavelengths satisfy
+$\lambda \ll c/\Omega$ (i.e.\ they are much smaller than the
+light-cylinder radius), this bound is always met in practice.
+
+\begin{causalitycheck}
+For inertial waves, both the phase and group velocities vanish as
+$k\to\infty$.  The maximum group speed is
+$v_{g,\max} = 2\Omega/k_{\min}$, and the constraint
+$v_{g,\max} \leq c$ is equivalent to requiring that the largest
+wavelength does not exceed the light-cylinder circumference.
+This is automatically guaranteed by the restriction
+$r < c/\Omega$ in equation~\eqref{eq:rel-3-11}. $\checkmark$
+\end{causalitycheck}
+
+\subsection{Non-relativistic limit}
+
+We collect the non-relativistic limits of the principal results.
+
+\begin{enumerate}
+  \item \textbf{Vorticity:}
+    $\omega_{\mu\nu} \;\NRlimit\;
+    \partial_{i}v_{j} - \partial_{j}v_{i}$
+    \quad(equation~\eqref{eq:3-3}).
+
+  \item \textbf{Kelvin's theorem:}
+    $d\Gamma/d\tau \;\NRlimit\; d\Gamma/dt = 0$
+    \quad(equation~\eqref{eq:3-23}).
+
+  \item \textbf{Rotating-frame equations:}
+    $(\edensity+p)/c^{2} \;\NRlimit\; \rho$;
+    centrifugal potential~\eqref{eq:rel-3-13}
+    $\;\NRlimit\; -\frac{1}{2}\Omega^{2}r^{2}$;
+    recovers equation~\eqref{eq:3-44}.
+
+  \item \textbf{Taylor--Proudman:}
+    equation~\eqref{eq:rel-3-17}
+    $\;\NRlimit\;$ equation~\eqref{eq:3-55}.
+
+  \item \textbf{Inertial waves:}
+    $\sigma = \pm 2\Omega\cos\vartheta + i\nu k^{2}$
+    \quad(equation~\eqref{eq:3-72}).
+\end{enumerate}
+
+\noindent All relativistic results reduce exactly to the classical
+Chandrasekhar results when $v/c\to 0$, $p/(\rdensity c^{2})\to 0$,
+and $\taupi\to 0$.
