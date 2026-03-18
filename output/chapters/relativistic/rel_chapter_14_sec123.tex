@@ -1,0 +1,447 @@
+% Relativistic Chapter XIV, §123: Compressibility Extension — Relativistic
+% Relativistic generalization of Chandrasekhar, Chapter XIV §123
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter*{Extension of the Variational Principle to Allow for
+  Compressibility: Relativistic Formulation (\S\,123)}
+\addcontentsline{toc}{chapter}{Relativistic Compressibility Extension of the
+  Variational Principle (\S\,123)}
+\label{ch:rel-14-compress}
+
+%% ================================================================
+\section{Extension of the variational principle to allow for
+  compressibility}\label{sec:rel-123}
+
+In the classical treatment (\S\,123 of Chapter~XIV) the variational
+principle of \S\,122 is extended to compressible fluids.  The key
+observation is that the solenoidal character of the displacement
+$\boldsymbol{\xi}$ was used only in reducing two integrals; when
+compressibility is admitted, extra terms~$I$ and~$\mathit{II}$
+reappear that involve $\nabla_{i}\xi^{i}\neq 0$.  In the
+relativistic setting the passage from incompressible to compressible
+perturbations introduces three qualitatively new features:
+\begin{enumerate}
+\item \textbf{Relativistic equation of state.}  The perturbations
+  $\delta\varepsilon$ (energy density) and $\delta p$ (pressure) are
+  linked by the relativistic equation of state through the adiabatic
+  sound speed
+  \begin{equation}\label{eq:rel-14-cs}
+    \cs^{2} = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}
+    \le c^{2},
+  \end{equation}
+  where the subscript~$s$ denotes constant entropy per baryon.  The
+  bound $\cs \le c$ is a \emph{causality} constraint that has no
+  Newtonian counterpart and must be satisfied by every admissible
+  equation of state.
+
+\item \textbf{Relativistic enthalpy as inertia.}  The rest-mass
+  density~$\rho$ in the kinetic-energy integral is replaced by the
+  relativistic enthalpy density $w = (\varepsilon + p)/c^{2}$, so
+  that pressure contributions to inertia are included.
+
+\item \textbf{Causal propagation of compressional disturbances.}
+  Sound waves in a relativistic fluid travel at speed~$\cs < c$.  The
+  variational principle must be consistent with this causal bound:
+  the compressibility terms that enter the energy functional are
+  proportional to $\cs^{2}\,w$ (rather than $\gamma p$ in the
+  Newtonian limit), and the resulting eigenvalue problem automatically
+  respects $\cs < c$ when the background equation of state does.
+\end{enumerate}
+
+Throughout this section, the metric signature is $(-,+,+,+)$; the
+speed of light~$c$ is kept explicit; $u^{\mu}$ denotes the fluid
+four-velocity normalised as $u^{\mu}u_{\mu} = -c^{2}$; and
+$\Delta^{\mu\nu} = g^{\mu\nu} + u^{\mu}u^{\nu}/c^{2}$ is the
+projection tensor.
+
+%% ----------------------------------------------------------------
+\subsection{Compressible perturbations and the relativistic
+  equation of state}\label{sec:rel-123a}
+
+Consider a stationary equilibrium configuration of a perfectly
+conducting, magnetised, relativistic fluid.  The unperturbed
+energy-momentum tensor is
+\begin{equation}\label{eq:rel-14-T0}
+  T^{\mu\nu}_{(0)}
+  = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}u^{\nu}
+    + p\,g^{\mu\nu}
+    + \frac{1}{4\pi}\!\left(
+      b^{2}\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+      + \frac{b^{2}}{2}\,g^{\mu\nu}
+      - b^{\mu}b^{\nu}\right),
+\end{equation}
+where $b^{\mu}$ is the magnetic field four-vector in the fluid frame
+and $b^{2} = b^{\mu}b_{\mu}$.
+
+When compressibility is admitted, a Lagrangian displacement
+$\xi^{\mu}$ (orthogonal to $u^{\mu}$:
+$\xi^{\mu}u_{\mu}=0$) induces Eulerian perturbations
+\begin{equation}\label{eq:rel-14-dE}
+  \delta\varepsilon
+  = -\xi^{k}\nabla_{k}\varepsilon
+    - (\varepsilon + p)\,\nabla_{k}\xi^{k},
+\end{equation}
+\begin{equation}\label{eq:rel-14-dp}
+  \delta p
+  = -\xi^{k}\nabla_{k}p
+    - \cs^{2}\,(\varepsilon + p)\,
+      \frac{\nabla_{k}\xi^{k}}{c^{2}}\,c^{2}
+  = -\xi^{k}\nabla_{k}p
+    - \cs^{2}\,w\,c^{2}\,\nabla_{k}\xi^{k},
+\end{equation}
+where $w = (\varepsilon + p)/c^{2}$ is the relativistic enthalpy
+density and we have used the adiabatic condition
+\begin{equation}\label{eq:rel-14-adiabat}
+  \frac{\Delta p}{\Delta\varepsilon}
+  = \cs^{2},
+  \qquad
+  \cs^{2}
+  = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}.
+\end{equation}
+In the Newtonian limit ($\varepsilon \to \rho c^{2}$,
+$p/\varepsilon \to 0$, $\cs^{2}/c^{2}\to 0$), equation
+\eqref{eq:rel-14-dp} reduces to the classical relation
+$\delta p = -\xi_{k}\,\partial p/\partial x_{k}
+  - \gamma p\,\partial\xi_{k}/\partial x_{k}$
+(cf.\ equation~(14-49) of \S\,123).
+
+\medskip
+\noindent\textbf{CAUSALITY CONSTRAINT.}
+The sound speed satisfies $0 \le \cs^{2} \le c^{2}$ for any
+thermodynamically stable, causal equation of state.  This bound must
+be \emph{verified} for every equilibrium configuration before the
+variational principle is applied.  In particular, for dense nuclear
+matter at supra-nuclear densities the equation of state is
+constrained by the requirement $\cs < c$; violation would signal
+superluminal signal propagation and invalidate the entire stability
+analysis.
+
+%% ----------------------------------------------------------------
+\subsection{Modified energy functional with compressibility
+  terms}\label{sec:rel-123b}
+
+We now derive the relativistic generalisation of the additional
+integrals $I$ and~$\mathit{II}$ that appear when the displacement is
+no longer divergence-free.
+
+\paragraph{Term~$\boldsymbol{I}$: pressure--compression coupling.}
+The classical integral~$I$ (equation~(14-44)) generalises to
+\begin{equation}\label{eq:rel-14-I}
+  I_{\mathrm{rel}}
+  = -\int \varpi_{\mathrm{rel}}^{(n)}\,
+      \nabla_{i}\xi^{i\,(m)}\,\sqrt{-g}\;\mathrm{d}^{3}x,
+\end{equation}
+where $\varpi_{\mathrm{rel}}$ is the relativistic generalised
+pressure (including magnetic contributions):
+\begin{equation}\label{eq:rel-14-varpi}
+  \varpi_{\mathrm{rel}}
+  = \delta p + \frac{b_{j}\,\delta b^{j}}{4\pi}.
+\end{equation}
+Substituting the adiabatic relation \eqref{eq:rel-14-dp} and
+performing the same manipulations as in the classical case, one
+obtains
+\begin{align}\label{eq:rel-14-I-expand}
+  I_{\mathrm{rel}}
+  &= \int \!\left(\cs^{2}\,w
+     + \frac{b^{2}}{4\pi}\right)
+     (\nabla_{i}\xi^{i\,(n)})\,
+     (\nabla_{k}\xi^{k\,(m)})\,
+     \sqrt{-g}\;\mathrm{d}^{3}x
+  \notag\\
+  &\quad
+     + \frac{1}{4\pi}\int\!
+       \left(b_{k}\,\nabla_{j}b^{j}\,
+       \xi^{i\,(n)}
+       - b_{j}\,b_{k}\,\nabla^{k}\xi^{i\,(n)}\right)
+       \nabla_{i}\xi^{(m)\,i}\,
+       \sqrt{-g}\;\mathrm{d}^{3}x.
+\end{align}
+Observe that the Newtonian combination $c^{2}\rho +
+|\mathbf{H}|^{2}/(4\pi)$ in equation~(14-53) is replaced by
+$\cs^{2}\,w + b^{2}/(4\pi)$, which has the correct dimensions and
+reduces to the classical expression in the non-relativistic limit.
+
+\paragraph{Term~$\boldsymbol{\mathit{II}}$: magnetic--compression coupling.}
+The second additional integral (equation~(14-45)) involves only the
+magnetic field and the displacement gradient; its relativistic form is
+\begin{equation}\label{eq:rel-14-II}
+  \mathit{II}_{\mathrm{rel}}
+  = \frac{1}{4\pi}\int
+    (\nabla^{k}\xi^{i\,(n)})\!
+    \left(b_{j}\,\nabla^{j}b_{k}\,\xi_{i}^{(m)}
+    - b_{i}\,b_{j}\,\nabla^{j}\xi_{k}^{(m)}\right)
+    \sqrt{-g}\;\mathrm{d}^{3}x.
+\end{equation}
+This term is identical in structure to the classical
+equation~(14-45), with $H_{i}\to b_{i}$ and Cartesian partial
+derivatives replaced by covariant derivatives on the spatial
+hypersurface.
+
+%% ----------------------------------------------------------------
+\subsection{The relativistic variational principle for compressible
+  MHD perturbations}\label{sec:rel-123c}
+
+Adding $I_{\mathrm{rel}}$ and $\mathit{II}_{\mathrm{rel}}$ to the
+incompressible variational expression (the relativistic form of
+equation~(14-28) derived in \S\,122), we arrive at the compressible
+energy functional.  Writing the result with
+$\xi^{(m)} \to \xi^{*}$ (the complex conjugate) and suppressing
+mode labels, the eigenvalue equation becomes
+\begin{align}\label{eq:rel-14-57}
+  &\sigma^{2}\!\int w\,|\boldsymbol{\xi}|^{2}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x
+  \notag\\
+  &\quad
+  = \int_{S}
+    |N_{\mu}\xi^{\mu}|^{2}\,
+    [N^{\nu}\nabla_{\nu}\Delta_{S}(\Pi_{\mathrm{rel}})]\,
+    \mathrm{d}S
+  \notag\\
+  &\quad\quad
+  + \frac{1}{4\pi}\int
+    |b_{j}\nabla^{j}\xi_{i}|^{2}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x
+  + \int \xi_{i}\,\xi^{*\,i}\,
+    \nabla^{k}\nabla_{k}\Pi_{\mathrm{rel}}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x
+  \notag\\
+  &\quad\quad
+  + \int \!\left(\cs^{2}\,w
+    + \frac{b^{2}}{4\pi}\right)
+    |\nabla_{i}\xi^{i}|^{2}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x
+  + \frac{1}{4\pi}\int_{V^{(\mathrm{ex})}}
+    |\delta b_{i}|^{2}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x
+  \notag\\
+  &\quad\quad
+  + \frac{1}{4\pi}\int\!
+    \Bigl\{b_{k}\,\nabla^{k}b_{j}\,
+      \xi^{i}\,\nabla_{j}\xi_{i}^{*}
+    - b_{j}\,b_{k}\,
+      \nabla^{k}\xi^{i}\,\nabla_{j}\xi_{i}^{*}
+    \Bigr\}\,\sqrt{-g}\;\mathrm{d}^{3}x
+  \notag\\
+  &\quad\quad
+  - \frac{1}{2\pi}\int
+    b_{j}\,b_{k}\,\nabla^{k}\xi^{i}
+    \bigl(\nabla_{j}\xi_{i}^{*}
+    + \xi_{i}^{*}\nabla_{j}\ln\alpha\bigr)\,
+    \sqrt{-g}\;\mathrm{d}^{3}x,
+\end{align}
+where $\Pi_{\mathrm{rel}} = p + b^{2}/(8\pi)$ is the relativistic
+total (fluid + magnetic) pressure, $\alpha$ is the lapse function of
+the $3+1$ decomposition, and all integrals are over the interior
+volume unless otherwise indicated.
+
+Equation~\eqref{eq:rel-14-57} is the relativistic generalisation of
+the classical equation~(14-57).  The following properties carry over
+from the Newtonian case:
+
+\begin{enumerate}
+\item \textbf{Self-adjointness.}  The right-hand side is symmetric
+  under the interchange
+  $\boldsymbol{\xi}^{(n)} \leftrightarrow \boldsymbol{\xi}^{(m)}$,
+  establishing the self-adjoint character of the relativistic problem.
+  Hence the eigenvalues $\sigma^{2}$ are real, and the eigenfunctions
+  form a complete orthogonal set with respect to the inner product
+  weighted by~$w$.
+
+\item \textbf{Stability criterion.}  A necessary and sufficient
+  condition for stability is that the right-hand side of
+  \eqref{eq:rel-14-57} be positive for all admissible trial
+  displacements $\boldsymbol{\xi}$.
+
+\item \textbf{Variational character.}  The ratio
+  \begin{equation}\label{eq:rel-14-Rayleigh}
+    \sigma^{2}
+    = \frac{\delta W_{\mathrm{rel}}[\boldsymbol{\xi}]}
+           {\displaystyle\int w\,|\boldsymbol{\xi}|^{2}\,
+             \sqrt{-g}\;\mathrm{d}^{3}x}
+  \end{equation}
+  is a Rayleigh quotient, stationary at the true eigenvalues.  Here
+  $\delta W_{\mathrm{rel}}$ is the relativistic potential energy
+  functional comprising all terms on the right-hand side of
+  \eqref{eq:rel-14-57}.
+\end{enumerate}
+
+%% ----------------------------------------------------------------
+\subsection{The role of the sound-speed bound in the variational
+  principle}\label{sec:rel-123d}
+
+The compressibility term in the energy functional
+\eqref{eq:rel-14-57},
+\begin{equation}\label{eq:rel-14-compress-term}
+  \delta W_{\mathrm{comp}}
+  = \int \!\left(\cs^{2}\,w
+    + \frac{b^{2}}{4\pi}\right)
+    |\nabla_{i}\xi^{i}|^{2}\,
+    \sqrt{-g}\;\mathrm{d}^{3}x,
+\end{equation}
+is manifestly non-negative provided $\cs^{2} \ge 0$ (thermodynamic
+stability).  This term therefore has a \emph{stabilising} effect:
+compressibility raises the energy of perturbations by the work done
+against the adiabatic restoring force.
+
+In the relativistic theory the causality bound $\cs^{2} \le c^{2}$
+enters explicitly.  One may decompose the integrand as
+\begin{equation}\label{eq:rel-14-decompose}
+  \cs^{2}\,w + \frac{b^{2}}{4\pi}
+  = \frac{\cs^{2}}{c^{2}}\,(\varepsilon + p)
+    + \frac{b^{2}}{4\pi}
+  \le (\varepsilon + p)
+    + \frac{b^{2}}{4\pi},
+\end{equation}
+so that the compressibility contribution to $\delta W$ is bounded
+above by the total enthalpy-plus-magnetic energy.  This is a
+relativistic consistency check with no classical analogue: it ensures
+that the restoring force associated with compression cannot
+propagate information faster than light.
+
+When the fast magnetosonic speed
+\begin{equation}\label{eq:rel-14-vf}
+  v_{f}^{2}
+  = \cs^{2} + \vA^{2}
+    - \frac{\cs^{2}\,\vA^{2}}{c^{2}},
+  \qquad
+  \vA^{2}
+  = \frac{b^{2}}{4\pi\,w + b^{2}/c^{2}}\,c^{2},
+\end{equation}
+is introduced, one verifies that $v_{f} < c$ automatically whenever
+$\cs < c$, confirming the causal character of the compressible
+variational principle.
+
+%% ----------------------------------------------------------------
+\subsection{Connection to relativistic MHD stability of compressible
+  configurations}\label{sec:rel-123e}
+
+The variational principle \eqref{eq:rel-14-57} is the starting point
+for analysing the stability of a wide class of relativistic,
+magnetised, compressible equilibria---including neutron-star
+interiors, accretion-disk coronae, and relativistic jets.  Several
+consequences are noteworthy:
+
+\begin{enumerate}
+\item \textbf{Interchange and ballooning modes.}  In magnetic
+  confinement geometries the compressibility term
+  \eqref{eq:rel-14-compress-term} raises the threshold for
+  interchange instabilities relative to the incompressible case, as
+  $\nabla_{i}\xi^{i}\neq 0$ perturbations must overcome the adiabatic
+  restoring force.
+
+\item \textbf{Parker (magnetic buoyancy) instability.}  For
+  stratified atmospheres with a magnetic field, the relativistic
+  Parker instability criterion involves $\cs^{2}\,w$ rather than
+  $\gamma p$, modifying the critical wavelength and growth rate.
+
+\item \textbf{Magneto-rotational instability (MRI).}  In
+  differentially rotating, compressible relativistic disks, the
+  compressibility term modifies the MRI dispersion relation; the
+  stabilisation is proportional to $\cs^{2}\,k_{\parallel}^{2}$
+  where $k_{\parallel}$ is the wavenumber along the magnetic field.
+
+\item \textbf{Neutron-star oscillations.}  The $f$-modes, $p$-modes,
+  and $g$-modes of magnetised neutron stars are all governed by a
+  variational principle of the form \eqref{eq:rel-14-Rayleigh},
+  with $\cs$ determined by the nuclear equation of state.  The
+  causality bound $\cs \le c$ constrains the maximum $p$-mode
+  frequency.
+\end{enumerate}
+
+%% ================================================================
+\section*{BIBLIOGRAPHICAL NOTES}\label{sec:rel-14-bib-compress}
+\addcontentsline{toc}{section}{Bibliographical Notes}
+
+The variational (energy) principle for ideal MHD stability in the
+non-relativistic setting was established by:
+\begin{enumerate}
+\item I.~B.~\textsc{Bernstein}, E.~A.~\textsc{Frieman},
+  M.~D.~\textsc{Kruskal}, and R.~M.~\textsc{Kulsrud},
+  ``An energy principle for hydromagnetic stability problems,''
+  \emph{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{244}, 17--40 (1958).
+  --- The foundational paper deriving the self-adjoint energy
+  principle for compressible ideal MHD, including the compressibility
+  terms discussed in this section.  \cite{Bernstein1958}
+
+\item E.~A.~\textsc{Frieman} and M.~\textsc{Rotenberg},
+  ``On hydromagnetic stability of stationary equilibria,''
+  \emph{Rev.\ Mod.\ Phys.}, \textbf{32}, 898--902 (1960).
+  --- Extension of the Bernstein \emph{et~al.}\ energy principle to
+  stationary (flowing) equilibria; the self-adjointness proof for the
+  compressible case with flow.  \cite{Frieman1960}
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Relativistic extensions:}
+\begin{enumerate}\setcounter{enumi}{2}
+\item B.~F.~\textsc{Schutz},
+  ``Perfect fluids in general relativity: velocity potentials and a
+  variational principle,''
+  \emph{Phys.\ Rev.\ D}, \textbf{2}, 2762--2773 (1970).
+  --- Variational formulation of relativistic perfect-fluid dynamics
+  via velocity potentials; provides the Lagrangian framework from
+  which the relativistic displacement operator and adiabatic
+  perturbation theory are derived.  \cite{Schutz1970}
+
+\item J.~L.~\textsc{Friedman} and B.~F.~\textsc{Schutz},
+  ``Lagrangian perturbation theory of nonradial oscillations of a
+  self-gravitating fluid: the basic formalism,''
+  (University of Wisconsin--Milwaukee preprint, 1978).
+  --- Systematic Lagrangian perturbation theory for relativistic
+  self-gravitating fluids; establishes the self-adjointness of the
+  perturbation operator and the variational principle for
+  oscillation modes, including compressible perturbations with
+  $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$.  The causality
+  bound $\cs \le c$ is built into the formalism.
+  \cite{Friedman1978}
+
+\item J.~L.~\textsc{Friedman} and B.~F.~\textsc{Schutz},
+  ``Secular instability of rotating Newtonian stars,''
+  \emph{Astrophys.\ J.}, \textbf{222}, 281--296 (1978).
+  --- Demonstrates the CFS (Chandrasekhar--Friedman--Schutz)
+  instability mechanism, which relies on the symplectic structure
+  implicit in the variational principle; compressibility is essential
+  for the $f$-mode and $r$-mode analyses.  \cite{Friedman1978b}
+
+\item K.~D.~\textsc{Kokkotas} and B.~F.~\textsc{Schutz},
+  ``Normal modes of a model radiating system,''
+  \emph{Gen.\ Relativ.\ Gravit.}, \textbf{18}, 913--921 (1986).
+  --- Application of the relativistic variational framework to
+  quasi-normal modes; connection between the energy principle and
+  mode stability in radiating configurations.
+  \cite{Kokkotas1986}
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Relativistic MHD stability:}
+\begin{enumerate}\setcounter{enumi}{6}
+\item A.~\textsc{Lichnerowicz},
+  \emph{Relativistic Hydrodynamics and Magnetohydrodynamics},
+  W.~A.~Benjamin, New York (1967).
+  --- Early systematic treatment of relativistic MHD including the
+  characteristic speeds and causal structure; the sound-speed bound
+  $\cs \le c$ and its role in the hyperbolicity of the equations.
+  \cite{Lichnerowicz1967}
+
+\item S.~S.~\textsc{Komissarov},
+  ``A Godunov-type scheme for relativistic magnetohydrodynamics,''
+  \emph{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{303}, 343--366
+  (1999).
+  --- Numerical implementation of relativistic MHD with the full
+  characteristic structure (fast, slow, Alfv\'en speeds); confirms
+  the causal bounds used in the variational principle.
+  \cite{Komissarov1999}
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Causality and the equation of state:}
+\begin{enumerate}\setcounter{enumi}{8}
+\item P.~\textsc{Bedaque} and A.~W.~\textsc{Steiner},
+  ``Sound velocity bound and neutron stars,''
+  \emph{Phys.\ Rev.\ Lett.}, \textbf{114}, 031103 (2015).
+  --- Demonstrates that massive neutron stars require $\cs$ to
+  approach~$c/\!\sqrt{3}$ or exceed it at high densities, but always
+  remain below~$c$; directly relevant to the validity of the
+  compressible variational principle for neutron-star oscillations.
+  \cite{Bedaque2015}
+\end{enumerate}
