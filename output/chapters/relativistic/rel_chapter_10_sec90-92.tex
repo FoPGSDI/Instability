@@ -1,0 +1,453 @@
+% Relativistic Chapter X, §90--92: Rayleigh--Taylor Perturbation Equations (Inviscid Case)
+% Relativistic generalization of Chandrasekhar, Chapter X §90--92
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{The Stability of Superposed Relativistic Fluids: The Rayleigh--Taylor Instability}
+\label{ch:rel-10}
+
+%% ================================================================
+\section{Introduction}\label{sec:rel-90}
+
+In the non-relativistic theory (Chapter~X, \S\ref{sec:90}), the
+Rayleigh--Taylor instability arises when a heavy fluid is supported above a
+lighter one in a gravitational field, or---more generally---when a density
+interface is subjected to an acceleration directed from the heavy to the
+light fluid.  The instability plays a fundamental role in inertial
+confinement fusion, atmospheric dynamics, and astrophysical mixing.
+
+In the relativistic regime the same physical mechanism operates, but with
+important modifications:
+\begin{enumerate}
+\item \textbf{Inertia of internal energy.}  The role of the mass density
+  $\rho$ is taken over by the relativistic enthalpy per unit volume,
+  \begin{equation}
+  \label{eq:rel-10-w-def}
+  w \;=\; \frac{\varepsilon + p}{c^{2}},
+  \end{equation}
+  where $\varepsilon$ is the total energy density and $p$ the pressure.
+  Because pressure contributes to inertia, the effective ``weight'' of a
+  fluid element differs from its rest-mass density.
+
+\item \textbf{Causality constraints.}  Although the Rayleigh--Taylor mode
+  is non-oscillatory (the growth rate~$\sigma$ is real), the perturbation
+  equations must still respect $v \le c$.  In particular the sound speed
+  $c_{\mathrm{s}}^{2} = (\partial p/\partial\varepsilon)_{s}$ must
+  satisfy $c_{\mathrm{s}} \le c$, and any dissipative extension must
+  employ the Israel--Stewart formalism rather than parabolic diffusion.
+
+\item \textbf{Astrophysical contexts.}  Relativistic Rayleigh--Taylor
+  instability is encountered in:
+  \begin{itemize}
+  \item \emph{Relativistic jets} from active galactic nuclei and
+    micro-quasars, where the jet--cocoon interface is RT-unstable under
+    deceleration \citep[e.g.][]{Matsumoto2013};
+  \item \emph{Core-collapse supernovae}, where the shock-heated matter
+    decelerates through composition interfaces \citep{Couch2014};
+  \item \emph{Gamma-ray bursts} (GRBs), where the relativistic blast
+    wave sweeps up ambient medium and the contact discontinuity is
+    RT-unstable \citep{Duffell2013}.
+  \end{itemize}
+\end{enumerate}
+
+In what follows we derive the relativistic perturbation equations for a
+stratified fluid and solve the inviscid problem in closed form for two
+canonical density profiles.
+
+%% ================================================================
+\section{Perturbation equations for a stratified relativistic fluid}
+\label{sec:rel-91}
+
+\subsection{Relativistic hydrostatic equilibrium}
+\label{sec:rel-91-equil}
+
+Consider a fluid at rest in a uniform gravitational field of strength~$g$
+directed along the negative $z$-axis.  In the fluid rest frame the
+four-velocity is $u^{\mu} = (c,\,0,\,0,\,0)$ and the energy-momentum
+tensor of a perfect fluid takes the form
+\begin{equation}
+\label{eq:rel-10-1}
+T^{\mu\nu} = w\,u^{\mu}\,u^{\nu} + p\,g^{\mu\nu},
+\qquad w = \frac{\varepsilon+p}{c^{2}}.
+\end{equation}
+The relativistic hydrostatic equilibrium condition follows from the
+spatial projection of $\nabla_{\mu}T^{\mu\nu}=0$:
+\begin{equation}
+\label{eq:rel-10-2}
+\frac{dp}{dz} = -\,w\,g\,c^{2}\,\frac{1}{c^{2}} = -\,w\,g
+\;=\; -\frac{(\varepsilon+p)}{c^{2}}\,g.
+\end{equation}
+Equation~\eqref{eq:rel-10-2} is the Tolman--Oppenheimer--Volkoff
+relation in the weak-field (flat-space) limit.  It reduces to the
+Newtonian $dp/dz = -\rho g$ when $\varepsilon \approx \rho c^{2}$ and
+$p \ll \varepsilon$.
+
+The enthalpy profile is fixed by a barotropic equation of state
+$p = p(\varepsilon)$ together with~\eqref{eq:rel-10-2}; the equilibrium
+quantities $\varepsilon_{0}(z)$, $p_{0}(z)$, and $w_{0}(z)$ are thus
+functions of the vertical coordinate alone.
+
+\subsection{Eulerian perturbation of the energy-momentum tensor}
+\label{sec:rel-91-pert}
+
+We perturb the equilibrium by writing
+\begin{equation}
+\label{eq:rel-10-3}
+\varepsilon = \varepsilon_{0}(z) + \delta\varepsilon, \qquad
+p = p_{0}(z) + \delta p, \qquad
+u^{i} = \delta u^{i} \quad (i=1,2,3),
+\end{equation}
+where all perturbation amplitudes are first order in a formal smallness
+parameter.  The four-velocity normalization $u^{\mu}u_{\mu}=-c^{2}$
+yields, to first order,
+\begin{equation}
+\label{eq:rel-10-4}
+\delta u^{0} = 0.
+\end{equation}
+Hence the perturbed energy-momentum tensor,
+$T^{\mu\nu} = T^{\mu\nu}_{0} + \delta T^{\mu\nu}$, gives
+\begin{align}
+\label{eq:rel-10-5}
+\delta T^{00} &= \delta\varepsilon, \\[4pt]
+\label{eq:rel-10-6}
+\delta T^{0i} &= (\varepsilon_{0}+p_{0})\,\frac{\delta u^{i}}{c^{2}}
+  = w_{0}\,\delta u^{i}, \\[4pt]
+\label{eq:rel-10-7}
+\delta T^{ij} &= \delta p\;\delta^{ij}.
+\end{align}
+
+\subsection{Linearised equations of motion}
+\label{sec:rel-91-linear}
+
+Conservation of energy-momentum, $\nabla_{\mu}\delta T^{\mu\nu}=0$,
+yields the linearised relativistic Euler equations.  In the weak-field
+limit (Minkowski background with an external gravitational potential
+$\Phi = gz$) these read:
+
+\medskip\noindent
+\textit{Momentum equation} ($\nu = i$):
+\begin{equation}
+\label{eq:rel-10-8}
+w_{0}\,\frac{\partial(\delta u^{i})}{\partial t}
+= -\frac{\partial(\delta p)}{\partial x^{i}}
+  - g\,\delta w\;\delta^{i3},
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-10-9}
+\delta w = \frac{\delta\varepsilon + \delta p}{c^{2}}
+\end{equation}
+is the Eulerian perturbation of the enthalpy density.
+
+\medskip\noindent
+\textit{Energy equation} ($\nu = 0$):
+\begin{equation}
+\label{eq:rel-10-10}
+\frac{\partial(\delta\varepsilon)}{\partial t}
++ (\varepsilon_{0}+p_{0})\,\frac{\partial(\delta u^{i})}{\partial x^{i}}
++ \delta u^{3}\,\frac{d\varepsilon_{0}}{dz}
++ \delta u^{3}\,\frac{dp_{0}}{dz}
+= 0.
+\end{equation}
+Using the equilibrium relation~\eqref{eq:rel-10-2} the last two terms
+combine:
+\begin{equation}
+\label{eq:rel-10-11}
+\frac{\partial(\delta\varepsilon)}{\partial t}
++ (\varepsilon_{0}+p_{0})\,\nabla\!\cdot\!\delta\boldsymbol{u}
++ \delta u^{3}\,\frac{d\varepsilon_{0}}{dz}
+- w_{0}\,g\,\delta u^{3}
+= 0.
+\end{equation}
+
+For an \emph{incompressible} relativistic fluid
+($\nabla_{\mu}u^{\mu}=0$, i.e.\ $\nabla\!\cdot\!\delta\boldsymbol{u}=0$
+to first order), the continuity constraint becomes
+\begin{equation}
+\label{eq:rel-10-12}
+\frac{\partial(\delta u^{1})}{\partial x}
++ \frac{\partial(\delta u^{2})}{\partial y}
++ \frac{\partial(\delta u^{3})}{\partial z} = 0,
+\end{equation}
+and the energy perturbation is advective:
+\begin{equation}
+\label{eq:rel-10-13}
+\frac{\partial(\delta\varepsilon)}{\partial t}
+= -\delta u^{3}\,\frac{d\varepsilon_{0}}{dz}
+  + w_{0}\,g\,\delta u^{3}.
+\end{equation}
+
+\subsection{Normal-mode reduction}
+\label{sec:rel-91-normalmodes}
+
+Seeking solutions proportional to
+$\exp(ik_{x}x + ik_{y}y + \sigma t)$, with
+$k^{2}=k_{x}^{2}+k_{y}^{2}$ and $D = d/dz$, the momentum
+equations~\eqref{eq:rel-10-8} and incompressibility~\eqref{eq:rel-10-12}
+combine---exactly as in the Newtonian derivation (cf.\
+equations~(10-14)--(10-22))---to give a single equation for the vertical
+velocity perturbation $\hat{w}(z)$:
+\begin{equation}
+\boxed{
+D\!\bigl(w_{0}\,D\hat{w}\bigr) - k^{2}\,w_{0}\,\hat{w}
+= -\frac{k^{2}}{\sigma^{2}}\,g\,(Dw_{0})\,\hat{w}.
+}
+\label{eq:rel-10-14}
+\end{equation}
+This is the \textbf{relativistic Rayleigh--Taylor eigenvalue equation}.
+It is identical in form to the classical equation~(10-42) with the
+substitution
+\begin{equation}
+\label{eq:rel-10-15}
+\rho \;\longrightarrow\; w_{0}
+= \frac{\varepsilon_{0}+p_{0}}{c^{2}}.
+\end{equation}
+The boundary conditions are
+\begin{equation}
+\label{eq:rel-10-16}
+\hat{w} = 0 \quad\text{on the bounding surfaces.}
+\end{equation}
+
+\paragraph{Physical content.}
+Equation~\eqref{eq:rel-10-14} embodies the key relativistic modification:
+the gravitational weight \emph{and} the inertia of each fluid layer are
+governed by $w_{0} = (\varepsilon+p)/c^{2}$, not by $\rho$ alone.  A
+layer with large internal (thermal) energy is both heavier and harder to
+accelerate; these two effects partially compensate, but generically the
+growth rate is altered compared with the Newtonian prediction whenever
+$p/\varepsilon$ is non-negligible.
+
+\subsection{Surface tension at interfaces between relativistic fluids}
+\label{sec:rel-91-surftens}
+
+When the enthalpy density $w_{0}$ suffers a discontinuity at an
+interface $z = z_{s}$, surface-tension forces must be included.
+In a relativistic setting the surface energy density (surface tension)
+$\mathcal{T}$ contributes to the energy-momentum tensor of the
+interface through the Israel junction conditions.  For a weakly curved
+interface the net effect on the linearised vertical momentum equation is
+the same as in the Newtonian case:
+\begin{equation}
+\label{eq:rel-10-17}
+\Delta_{s}\!\bigl(w_{0}\,D\hat{w}\bigr)
+= -\frac{k^{2}}{\sigma^{2}}
+  \bigl[g\,\Delta_{s}(w_{0}) - k^{2}\mathcal{T}_{s}\bigr]\,\hat{w}_{s},
+\end{equation}
+where $\Delta_{s}(f) = f(z_{s}+0)-f(z_{s}-0)$ is the jump at the
+interface.  Equation~\eqref{eq:rel-10-17} is the relativistic
+generalisation of the classical equation~(10-49).
+
+The relativistic surface energy $\mathcal{T}$ receives contributions from
+both the rest-mass surface tension and the thermal/binding energy of the
+interface; for a QCD deconfinement front, for example, $\mathcal{T}$ is
+of order the bag constant times a characteristic length scale.
+
+%% ================================================================
+\section{The inviscid case---relativistic}\label{sec:rel-92}
+
+We specialise equation~\eqref{eq:rel-10-14} to two analytically
+tractable configurations.
+
+\subsection{Two uniform relativistic fluids separated by a horizontal
+boundary}
+\label{sec:rel-92-two}
+
+Let two uniform perfect fluids with constant enthalpy densities
+\begin{equation}
+\label{eq:rel-10-18}
+w_{1} = \frac{\varepsilon_{1}+p_{1}}{c^{2}}
+\quad (z<0),
+\qquad
+w_{2} = \frac{\varepsilon_{2}+p_{2}}{c^{2}}
+\quad (z>0)
+\end{equation}
+be separated by a horizontal interface at $z=0$.  Within each uniform
+region $Dw_{0}=0$, so equation~\eqref{eq:rel-10-14} reduces to
+\begin{equation}
+\label{eq:rel-10-19}
+(D^{2}-k^{2})\,\hat{w} = 0,
+\end{equation}
+with solutions vanishing at $z\to\mp\infty$:
+\begin{equation}
+\label{eq:rel-10-20}
+\hat{w}_{1} = A\,e^{+kz}\;(z<0),
+\qquad
+\hat{w}_{2} = A\,e^{-kz}\;(z>0).
+\end{equation}
+Applying the junction condition~\eqref{eq:rel-10-17} at $z=0$:
+\begin{equation}
+\label{eq:rel-10-21}
+-k(w_{2}+w_{1})\,A
+= -\frac{k^{2}}{\sigma^{2}}\bigl[g(w_{2}-w_{1})-k^{2}\mathcal{T}\bigr]\,A.
+\end{equation}
+Hence the \textbf{relativistic Rayleigh--Taylor dispersion relation}:
+\begin{equation}
+\boxed{
+\sigma^{2}
+= g\,k\!\left(
+  \frac{w_{2}-w_{1}}{w_{2}+w_{1}}
+  - \frac{k^{2}\mathcal{T}}{g(w_{2}+w_{1})}
+\right)\!.
+}
+\label{eq:rel-10-22}
+\end{equation}
+This is the relativistic counterpart of the classical
+equation~(10-51).  We define the \textbf{relativistic Atwood number}
+\begin{equation}
+\label{eq:rel-10-23}
+A_{\mathrm{rel}}
+= \frac{w_{2}-w_{1}}{w_{2}+w_{1}}
+= \frac{(\varepsilon_{2}+p_{2})-(\varepsilon_{1}+p_{1})}
+       {(\varepsilon_{2}+p_{2})+(\varepsilon_{1}+p_{1})}.
+\end{equation}
+In the non-relativistic limit ($p \ll \varepsilon \approx \rho c^{2}$),
+$w \to \rho$ and $A_{\mathrm{rel}} \to
+(\rho_{2}-\rho_{1})/(\rho_{2}+\rho_{1})$, recovering the classical
+Atwood number.
+
+\paragraph{Stability criterion.}
+\begin{itemize}
+\item If $w_{2} < w_{1}$ (lighter fluid on top), $\sigma^{2}<0$
+  for all~$k$ and the interface is \emph{stable} (oscillatory modes).
+\item If $w_{2} > w_{1}$ (heavier on top), $\sigma^{2}>0$ for
+  $k < k_{c,\mathrm{rel}}$ where
+\begin{equation}
+\label{eq:rel-10-24}
+k_{c,\mathrm{rel}}
+= \left[\frac{(w_{2}-w_{1})\,g}{\mathcal{T}}\right]^{1/2}\!.
+\end{equation}
+Surface tension stabilises wavelengths shorter than
+$\lambda_{c}=2\pi/k_{c,\mathrm{rel}}$.
+\end{itemize}
+
+\paragraph{Maximum growth rate.}
+The wavenumber of fastest growth is
+\begin{equation}
+\label{eq:rel-10-25}
+k_{*} = k_{c,\mathrm{rel}}/\sqrt{3},
+\end{equation}
+at which
+\begin{equation}
+\label{eq:rel-10-26}
+\sigma_{*}
+= \left[
+  \frac{2}{3^{3/2}}\,
+  \frac{(w_{2}-w_{1})\,g^{2}}{(w_{2}+w_{1})\,\mathcal{T}^{1/2}}
+\right]^{1/2}\!,
+\end{equation}
+reproducing equation~(10-55) with $\rho\to w$.
+
+\paragraph{Role of pressure in inertia.}
+A hot, radiation-dominated layer ($p=\varepsilon/3$) has
+$w = 4\varepsilon/(3c^{2})$, which exceeds the rest-mass density by a
+factor $4/(3\times\rho c^{2}/\varepsilon)$.  Consequently, two fluids
+with identical rest-mass densities but different temperatures can exhibit
+Rayleigh--Taylor instability in the relativistic regime (whereas they
+would be neutrally stable in Newtonian theory).  This is a genuinely
+relativistic phenomenon without classical counterpart.
+
+\subsection{Exponentially varying enthalpy density}
+\label{sec:rel-92-exp}
+
+Suppose
+\begin{equation}
+\label{eq:rel-10-27}
+w_{0}(z) = w_{00}\,e^{\beta z},
+\end{equation}
+where $\beta$ is a constant.  Equation~\eqref{eq:rel-10-14} then
+becomes
+\begin{equation}
+\label{eq:rel-10-28}
+D^{2}\hat{w} + \beta\,D\hat{w}
+- k^{2}\!\left(1 - \frac{g\beta}{\sigma^{2}}\right)\hat{w} = 0.
+\end{equation}
+This is formally identical to the classical equation~(10-57), with
+$\beta$ now being the gradient parameter of $w_{0}$ rather than of
+$\rho$.
+
+For a fluid confined between rigid planes at $z=0$ and $z=d$, the
+eigenfunction satisfying $\hat{w}(0)=\hat{w}(d)=0$ is
+\begin{equation}
+\label{eq:rel-10-29}
+\hat{w}(z) = C\,e^{-\beta z/2}\,\sin\!\left(\frac{m\pi z}{d}\right),
+\qquad m = 1, 2, 3, \ldots
+\end{equation}
+and the dispersion relation is
+\begin{equation}
+\label{eq:rel-10-30}
+\frac{g\beta}{\sigma^{2}}
+= 1 + \frac{\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2}}{k^{2}d^{2}}.
+\end{equation}
+
+\paragraph{Stability.}
+If $\beta<0$ (enthalpy decreasing upward), $\sigma^{2}<0$ and the
+stratification is stable; if $\beta>0$ (enthalpy increasing upward),
+$\sigma^{2}>0$ and the stratification is unstable.  The relativistic
+Atwood number for the exponential profile is
+\begin{equation}
+\label{eq:rel-10-31}
+A_{\mathrm{rel}}(z)
+= \frac{w_{0}(z+\delta z)-w_{0}(z-\delta z)}
+       {w_{0}(z+\delta z)+w_{0}(z-\delta z)}
+\;\xrightarrow{\delta z\to 0}\;
+\tanh\!\left(\tfrac{1}{2}\beta\,\delta z\right)
+\approx \tfrac{1}{2}\beta\,\delta z,
+\end{equation}
+confirming the identification $\beta \leftrightarrow D(\ln w_{0})$ as the
+local measure of stratification.
+
+\subsection{Causality check}
+\label{sec:rel-92-causality}
+
+The Rayleigh--Taylor instability is a purely growing (or decaying) mode:
+$\sigma$ is real.  Nonetheless, the perturbation equations must be
+checked for causal consistency.
+
+\begin{enumerate}
+\item \textbf{Phase velocity of RT modes.}  The normal-mode ansatz
+  $\sim\exp(ik_{x}x+ik_{y}y+\sigma t)$ with real $\sigma$ describes a
+  mode that is spatially periodic but temporally exponential.  There is
+  no phase velocity to compare with~$c$: the ``perturbation'' does not
+  propagate horizontally---it grows (or decays) in place.  Causality is
+  therefore not violated by the RT mode itself.
+
+\item \textbf{Sound-speed bound.}  The derivation assumed an
+  incompressible fluid.  In a compressible relativistic fluid, RT modes
+  with wavelengths shorter than the Jeans-like scale
+  $\lambda_{\mathrm{J}} \sim c_{\mathrm{s}}/\sqrt{g\,|Dw_{0}|/w_{0}}$
+  couple to sound waves; the sound speed must satisfy
+  $c_{\mathrm{s}}^{2} = (\partial p/\partial\varepsilon)_{s} \le c^{2}$
+  for causal thermodynamics.
+
+\item \textbf{Dissipative corrections.}  Viscosity and heat conduction,
+  when included via the Israel--Stewart formalism (see
+  RELATIVISTIC\_CONVENTIONS.md), introduce finite relaxation times
+  $\tau_{\pi}$, $\tau_{q} > 0$, guaranteeing that even the
+  short-wavelength cutoff from dissipation respects causality---unlike a
+  naive relativistic Navier--Stokes extension.
+\end{enumerate}
+
+We conclude that the relativistic RT growth rate~\eqref{eq:rel-10-22} is
+physically well-posed and causal for all wavenumbers within the regime
+of validity of the incompressible, inviscid approximation.
+
+%% ================================================================
+
+\begin{center}
+\rule{0.5\textwidth}{0.4pt}
+\end{center}
+
+\noindent\textbf{Summary of relativistic modifications
+(Chapter~X, \S\S\,90--92).}
+\begin{enumerate}
+\item The eigenvalue equation~\eqref{eq:rel-10-14} has the same
+  Sturm--Liouville structure as its Newtonian counterpart, with $\rho$
+  replaced everywhere by $w=(\varepsilon+p)/c^{2}$.
+\item The relativistic Atwood number is
+  $A_{\mathrm{rel}}=(w_{2}-w_{1})/(w_{2}+w_{1})$.
+\item Pressure contributes to both weight and inertia; two fluids of
+  equal rest-mass density but different internal energies can be
+  RT-unstable.
+\item The growth rate $\sigma$ is real; causality is satisfied
+  automatically for the incompressible limit and is enforced by the
+  Israel--Stewart formalism for dissipative corrections.
+\end{enumerate}
