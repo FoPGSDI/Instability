@@ -1,0 +1,520 @@
+% rel_framework_thermo.tex
+% Agent 3: Relativistic Thermodynamics and Causality Framework
+% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+
+\section{Relativistic Thermodynamics and Causality Framework}
+\label{sec:rel-thermo-framework}
+
+The classical theory of hydrodynamic and hydromagnetic stability rests on
+thermodynamic identities and transport equations that are valid only in
+the non-relativistic regime.  When fluid velocities approach $c$, when
+thermal energy becomes comparable to rest-mass energy, or when
+gravitational fields are strong, every one of these building blocks must
+be replaced by its relativistic counterpart.  This section establishes
+the relativistic thermodynamic framework and, critically, identifies the
+causality constraints that any physically admissible equation of state or
+transport law must satisfy.
+
+%------------------------------------------------------------------
+\subsection{Relativistic Thermodynamics}
+\label{subsec:rel-thermo}
+
+We work in the local rest frame of a fluid element and denote by
+$\varepsilon$ the total energy density (including rest-mass energy),
+by $p$ the isotropic pressure, by $n$ the baryon number density, by
+$s$ the entropy density, and by $T$ the temperature.
+
+\subsubsection{First Law}
+The relativistic first law of thermodynamics, expressed per unit
+volume, reads
+\begin{equation}
+  \dd\varepsilon
+  = T\,\dd s
+    + \frac{\varepsilon + p}{n}\,\dd n \,.
+  \label{eq:rel-first-law}
+\end{equation}
+Here $(\varepsilon+p)/n$ is the relativistic chemical potential
+(enthalpy per particle); it reduces to the rest-mass energy $m c^{2}$
+plus small thermal corrections in the non-relativistic limit.
+
+\subsubsection{Enthalpy Density and Specific Enthalpy}
+The \emph{relativistic enthalpy density} is defined as
+\begin{equation}
+  w \equiv \varepsilon + p \,.
+  \label{eq:enthalpy-density}
+\end{equation}
+This quantity replaces $\rho c^{2}$ as the effective inertia of the
+fluid in relativistic dynamics: the perfect-fluid energy-momentum
+tensor is
+\begin{equation}
+  T^{\mu\nu} = \frac{w}{c^{2}}\,u^{\mu}\,u^{\nu} + p\,g^{\mu\nu}\,,
+  \label{eq:perfect-Tmunu}
+\end{equation}
+so that $w/c^{2}$ plays the role of an effective mass density.
+
+The \emph{relativistic specific enthalpy} (dimensionless) is
+\begin{equation}
+  h \equiv \frac{\varepsilon + p}{\rho_{0}\,c^{2}}
+         = \frac{w}{\rho_{0}\,c^{2}}\,,
+  \label{eq:specific-enthalpy}
+\end{equation}
+where $\rho_{0} = m\,n$ is the rest-mass density.  In the
+non-relativistic limit $h \to 1 + (\hat\varepsilon + p)/(\rho_{0}c^{2})$,
+where $\hat\varepsilon$ is the internal (thermal) energy density; the
+departure from unity measures the relativistic correction.
+
+\subsubsection{Gibbs--Duhem Relation}
+Thermodynamic consistency requires the Gibbs--Duhem relation
+\begin{equation}
+  \dd p = s\,\dd T + n\,\dd\mu \,,
+  \label{eq:gibbs-duhem}
+\end{equation}
+where $\mu = (\varepsilon + p)/n - T s/n$ is the chemical potential per
+baryon.  This identity is central to deriving relativistic buoyancy
+criteria (Section~\ref{subsec:rel-buoyancy}).
+
+\subsubsection{Equation of State}
+A complete equation of state (EOS) specifies $p$ as a function of two
+independent thermodynamic variables.  Common choices are:
+\begin{itemize}
+  \item $p = p(\varepsilon, n)$ — convenient for numerical relativity
+        and baryon-conserving flows;
+  \item $p = p(\varepsilon, s)$ — natural for isentropic (adiabatic) flows;
+  \item $p = p(\rho_0, T)$ — useful for comparison with the classical
+        Chandrasekhar framework.
+\end{itemize}
+The relativistic Euler equations close once the EOS is specified.  The
+additional requirement of \emph{causality} constrains the functional
+form, as we discuss next.
+
+
+%------------------------------------------------------------------
+\subsection{Causality Constraints on the Equation of State}
+\label{subsec:eos-causality}
+
+\subsubsection{Sound Speed Bound}
+Small adiabatic perturbations of a perfect fluid propagate at the
+\emph{adiabatic sound speed}
+\begin{equation}
+  \cs^{2} = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}\,.
+  \label{eq:sound-speed}
+\end{equation}
+Causality demands that no signal travel faster than light:
+\begin{equation}
+  \boxed{\;0 \;\le\; \cs^{2} \;\le\; c^{2}\;}\,.
+  \label{eq:sound-causality}
+\end{equation}
+The lower bound $\cs^{2} \ge 0$ is thermodynamic stability (Le
+Chatelier's principle): a medium with $\cs^{2} < 0$ is mechanically
+unstable to collapse.  The upper bound $\cs^{2} \le c^{2}$ is the
+relativistic causality constraint; it is automatically satisfied for
+all known forms of matter but must be checked for phenomenological EOS
+models.
+
+\subsubsection{Le Chatelier's Principle}
+More precisely, thermodynamic stability requires
+\begin{equation}
+  \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s} > 0
+  \qquad\text{and}\qquad
+  \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!n} > 0 \,.
+  \label{eq:le-chatelier}
+\end{equation}
+The first condition ensures mechanical stability (real sound speed);
+the second ensures that an increase in energy at constant composition
+raises the pressure.  Violation of either signals a thermodynamic
+instability that is unrelated to the hydrodynamic instabilities studied
+in the Chandrasekhar framework but can trigger gravitational collapse
+in compact objects.
+
+\subsubsection{Ideal Relativistic Gas}
+For an ideal gas with adiabatic index $\Gamma$,
+\begin{equation}
+  \cs^{2}
+  = \frac{\Gamma\,p}{\varepsilon + p}
+  = \frac{\Gamma\,p}{w}\,.
+  \label{eq:cs-ideal}
+\end{equation}
+Two important limits:
+\begin{enumerate}
+  \item \textbf{Ultrarelativistic limit} ($\varepsilon \gg \rho_{0}c^{2}$,
+    radiation-dominated).  Here $p = \varepsilon/3$ and $\Gamma = 4/3$,
+    giving
+    \begin{equation}
+      \cs^{2} \;\longrightarrow\; \frac{c^{2}}{3}
+      \qquad\text{(ultrarelativistic)}\,.
+      \label{eq:cs-ultrarel}
+    \end{equation}
+    This is the well-known result for a photon gas or
+    ultrarelativistic plasma.
+
+  \item \textbf{Non-relativistic limit} ($k_{B}T \ll mc^{2}$).
+    With $\varepsilon \approx \rho_{0}c^{2}$ and $p \approx n k_{B}T$,
+    \begin{equation}
+      \cs^{2} \;\longrightarrow\;
+      \frac{\gamma\,k_{B}\,T}{m} \;\ll\; c^{2}
+      \qquad\text{(non-relativistic)}\,,
+      \label{eq:cs-nonrel}
+    \end{equation}
+    where $\gamma$ is the classical ratio of specific heats.  This
+    recovers the standard result used throughout the Chandrasekhar
+    treatment.
+\end{enumerate}
+
+
+%------------------------------------------------------------------
+\subsection{Thermal Conduction: From Fourier to Israel--Stewart}
+\label{subsec:heat-conduction}
+
+The treatment of heat conduction illustrates, in the most transparent
+way, the necessity of causal transport theory in the relativistic
+regime.
+
+\subsubsection{Classical Fourier Law (Acausal)}
+The Fourier law
+\begin{equation}
+  \vect{q} = -\kappa\,\nabla T
+  \label{eq:fourier}
+\end{equation}
+combined with the energy equation leads to the diffusion equation
+$\partial T/\partial t = \chi\,\nabla^{2}T$ (with
+$\chi = \kappa/c_{v}$ the thermal diffusivity).  This equation is
+\emph{parabolic}: a temperature perturbation propagates
+instantaneously to all points in space.  In the non-relativistic
+limit this is an excellent approximation; in the relativistic regime
+it is \emph{acausal} and therefore inadmissible.
+
+\subsubsection{Cattaneo Equation (Causal, Non-Relativistic)}
+Cattaneo's modification introduces a relaxation time $\tau_{q}$:
+\begin{equation}
+  \tau_{q}\,\frac{\partial\vect{q}}{\partial t}
+  + \vect{q}
+  = -\kappa\,\nabla T \,.
+  \label{eq:cattaneo}
+\end{equation}
+Combined with the energy equation, this yields the \emph{telegraph
+equation}
+\begin{equation}
+  \tau_{q}\,\frac{\partial^{2} T}{\partial t^{2}}
+  + \frac{\partial T}{\partial t}
+  = \chi\,\nabla^{2} T \,,
+  \label{eq:telegraph}
+\end{equation}
+which is \emph{hyperbolic}: thermal disturbances propagate at a finite
+speed
+\begin{equation}
+  v_{T} = \sqrt{\frac{\kappa}{\tau_{q}\,c_{v}}}
+        = \sqrt{\frac{\chi}{\tau_{q}}}\,.
+  \label{eq:thermal-wave-speed}
+\end{equation}
+Causality requires $v_{T} \le c$, i.e.,
+\begin{equation}
+  \tau_{q} \;\ge\; \frac{\kappa}{c_{v}\,c^{2}}
+           = \frac{\chi}{c^{2}}\,.
+  \label{eq:tauq-bound}
+\end{equation}
+
+\subsubsection{Israel--Stewart Theory (Fully Relativistic)}
+\label{subsubsec:IS-heat}
+
+The Israel--Stewart formulation upgrades the Cattaneo equation to full
+covariance.  The heat flux 4-vector $q^{\mu}$ (satisfying
+$q^{\mu}u_{\mu} = 0$) obeys
+\begin{equation}
+  \tau_{q}\,u^{\alpha}\nabla_{\alpha}\,q^{\langle\mu\rangle}
+  + q^{\mu}
+  = -\kappa\!\left(
+      \Delta^{\mu\nu}\nabla_{\nu}T
+      + T\,\frac{u^{\mu}\,a_{\nu}\,u^{\nu}}{c^{2}}
+    \right),
+  \label{eq:IS-heat}
+\end{equation}
+where $a^{\mu} = u^{\alpha}\nabla_{\alpha}u^{\mu}$ is the 4-acceleration,
+$\Delta^{\mu\nu} = g^{\mu\nu} + u^{\mu}u^{\nu}/c^{2}$ is the spatial
+projection tensor, and the angle brackets denote the symmetric,
+trace-free, transverse projection:
+\begin{equation}
+  q^{\langle\mu\rangle}
+  = \Delta^{\mu}{}_{\nu}\,q^{\nu}\,.
+  \label{eq:angle-bracket-proj}
+\end{equation}
+The second term on the right-hand side of Eq.~\eqref{eq:IS-heat},
+proportional to $a_{\nu}u^{\nu}/c^{2}$, has no Newtonian counterpart;
+it arises from the Tolman--Ehrenfest effect (temperature gradient in a
+gravitational field at thermal equilibrium) and is essential for
+thermodynamic consistency in curved spacetime.
+
+\subsubsection{Entropy Production}
+The second law of thermodynamics requires non-negative entropy
+production.  For the heat flux, the entropy production rate is
+\begin{equation}
+  \sigma_{s} = -\,q^{\mu}\,\nabla_{\mu}\!\left(\frac{1}{T}\right)
+             = \frac{q^{\mu}\,\nabla_{\mu}T}{T^{2}} \;\ge\; 0 \,.
+  \label{eq:entropy-production-heat}
+\end{equation}
+This is guaranteed when $\kappa \ge 0$ and $\tau_{q} > 0$, as the
+Israel--Stewart equation then drives $q^{\mu}$ toward the Fourier
+value $q^{\mu}_{\text{(Fourier)}}$ on a timescale $\tau_{q}$.
+
+
+%------------------------------------------------------------------
+\subsection{Viscosity: Relativistic Treatment}
+\label{subsec:rel-viscosity}
+
+The dissipative part of the energy-momentum tensor includes both
+\emph{bulk viscous pressure} $\Pi$ and the \emph{shear stress tensor}
+$\pi^{\mu\nu}$.  As with heat conduction, the Navier--Stokes
+constitutive relations are acausal; the Israel--Stewart relaxation
+equations restore causality.
+
+\subsubsection{Bulk Viscosity}
+The bulk viscous pressure satisfies
+\begin{equation}
+  \tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi
+  + \Pi
+  = -\zeta\,\nabla_{\mu}u^{\mu}\,,
+  \label{eq:IS-bulk}
+\end{equation}
+where $\zeta \ge 0$ is the bulk viscosity coefficient and
+$\tau_{\Pi} > 0$ is the bulk relaxation time.  The expansion scalar
+$\theta \equiv \nabla_{\mu}u^{\mu}$ drives bulk viscous effects; it
+vanishes for incompressible flow but is generically nonzero in
+relativistic hydrodynamics (even for ``nearly incompressible'' flows,
+because $\varepsilon + p$ depends on velocity through the Lorentz
+factor).
+
+The signal speed associated with bulk-viscous perturbations is
+\begin{equation}
+  v_{\Pi} = \sqrt{\frac{\zeta}{\tau_{\Pi}\,w/c^{2}}}
+  \label{eq:bulk-signal-speed}
+\end{equation}
+and causality requires $v_{\Pi} \le c$.
+
+Entropy production from bulk viscosity:
+\begin{equation}
+  \sigma_{s}^{(\Pi)} = -\frac{\Pi\,\nabla_{\mu}u^{\mu}}{T} \;\ge\; 0\,.
+  \label{eq:entropy-bulk}
+\end{equation}
+
+\subsubsection{Shear Viscosity}
+The shear stress tensor $\pi^{\mu\nu}$ (symmetric, traceless,
+transverse: $\pi^{\mu\nu}u_{\nu} = 0$, $\pi^{\mu}{}_{\mu} = 0$) obeys
+\begin{equation}
+  \tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\,\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu}
+  = 2\,\eta\,\sigma^{\mu\nu}\,,
+  \label{eq:IS-shear}
+\end{equation}
+where $\eta \ge 0$ is the (dynamic) shear viscosity coefficient,
+$\tau_{\pi} > 0$ is the shear relaxation time, and $\sigma^{\mu\nu}$
+is the shear tensor:
+\begin{equation}
+  \sigma^{\mu\nu}
+  = \Delta^{\mu\alpha}\Delta^{\nu\beta}
+    \!\left(
+      \frac{1}{2}(\nabla_{\alpha}u_{\beta} + \nabla_{\beta}u_{\alpha})
+      - \frac{1}{3}\,\Delta_{\alpha\beta}\,\nabla_{\gamma}u^{\gamma}
+    \right).
+  \label{eq:shear-tensor}
+\end{equation}
+The signal speed for shear perturbations is
+\begin{equation}
+  v_{\pi} = \sqrt{\frac{\eta}{\tau_{\pi}\,w/c^{2}}}\,,
+  \label{eq:shear-signal-speed}
+\end{equation}
+and causality requires $v_{\pi} \le c$, equivalently
+\begin{equation}
+  \tau_{\pi} \;\ge\; \frac{\eta}{w}\,.
+  \label{eq:taupi-bound}
+\end{equation}
+
+Entropy production from shear viscosity:
+\begin{equation}
+  \sigma_{s}^{(\pi)} = \frac{\pi^{\mu\nu}\pi_{\mu\nu}}{2\,\eta\,T}
+  \;\ge\; 0\,.
+  \label{eq:entropy-shear}
+\end{equation}
+
+\subsubsection{Summary: All Relaxation Times Must Be Positive}
+The three relaxation times $\tau_{q}$, $\tau_{\Pi}$, and $\tau_{\pi}$
+are not free parameters in the relativistic theory: they are
+\emph{required} by causality and thermodynamic stability.  Setting
+any $\tau \to 0$ recovers the acausal first-order theories
+(Eckart/Landau--Lifshitz), which are known to exhibit unphysical
+instabilities.
+
+
+%------------------------------------------------------------------
+\subsection{Relativistic Buoyancy and Convective Stability}
+\label{subsec:rel-buoyancy}
+
+The classical theory of convective stability (Chandrasekhar, Chapters
+II and IV) rests on the Schwarzschild and Ledoux criteria.  Their
+relativistic generalizations involve the enthalpy density $w$ in place
+of the mass density $\rho$.
+
+\subsubsection{Relativistic Schwarzschild Criterion}
+A fluid element displaced adiabatically in a gravitational field is
+convectively unstable when the ambient entropy gradient is
+superadiabatic.  In the relativistic formulation, the criterion
+becomes
+\begin{equation}
+  \frac{\dd s}{\dd r}
+  < \frac{s + p/T}{w}\,
+    \frac{\dd p}{\dd r}\,
+    \left(\frac{\partial s}{\partial p}\right)_{\!\varepsilon}
+  \label{eq:rel-schwarzschild}
+\end{equation}
+(for a radially stratified equilibrium with $\dd p/\dd r < 0$).
+The key relativistic modification is the appearance of $w = \varepsilon + p$
+in the denominator, which enhances the effective inertia and thus
+\emph{stabilizes} relativistically hot matter against convection
+compared to the classical prediction.
+
+\subsubsection{Relativistic Ledoux Criterion}
+When the fluid has multiple species (e.g., baryon number and lepton
+number in neutron-star matter), a composition gradient provides an
+additional stabilizing influence.  The relativistic Ledoux criterion is
+\begin{equation}
+  \frac{\dd s}{\dd r}
+  < \left(\frac{\dd s}{\dd r}\right)_{\!\text{ad}}
+  + \frac{1}{w}\left(\frac{\partial p}{\partial Y_{e}}\right)_{\!\varepsilon,s}
+    \frac{\dd Y_{e}}{\dd r}\,,
+  \label{eq:rel-ledoux}
+\end{equation}
+where $Y_{e}$ is the electron fraction (or any composition variable)
+and the subscript ``ad'' denotes the adiabatic gradient.
+
+\subsubsection{Relativistic Brunt--V\"ais\"al\"a Frequency}
+The squared Brunt--V\"ais\"al\"a frequency governing the oscillation
+(or growth) of displaced fluid elements generalizes to
+\begin{equation}
+  N^{2}
+  = -\frac{c^{2}}{w}\,\frac{\dd p}{\dd r}
+    \left[
+      \frac{1}{\cs^{2}}\,\frac{\dd p}{\dd r}
+      - \frac{\dd\varepsilon}{\dd r}
+    \right],
+  \label{eq:rel-BV}
+\end{equation}
+where all quantities are evaluated in the equilibrium background.
+Convective instability corresponds to $N^{2} < 0$.  In the
+non-relativistic limit ($w \to \rho c^{2}$, $\varepsilon \to \rho c^{2}$),
+Eq.~\eqref{eq:rel-BV} reduces to the standard expression
+$N^{2} = -g\,(\dd\ln\rho/\dd r - (1/\gamma)(\dd\ln p/\dd r))$.
+
+\subsubsection{Connection to Chandrasekhar's Thermal Instability}
+Chandrasekhar's analysis of thermal instability (B\'enard convection)
+proceeds from the Boussinesq equations.  The relativistic
+generalization requires:
+\begin{enumerate}
+  \item Replacing $\rho$ by $w/c^{2}$ in the buoyancy term and in the
+    inertia;
+  \item Using the causal heat equation~\eqref{eq:IS-heat} in place of
+    Fourier's law;
+  \item Including the $O(v^{2}/c^{2})$ corrections to the thermal
+    expansion coefficient:
+    $\alpha_{\text{rel}} = \alpha\,[1 + O(\varepsilon_{\text{th}}/\rho_{0}c^{2})]$;
+  \item Verifying that the resulting critical Rayleigh number satisfies
+    $\text{Ra}_{\text{crit,rel}} = \text{Ra}_{\text{crit,class}}
+    \times [1 + O(v^{2}/c^{2})]$.
+\end{enumerate}
+The dominant relativistic effect on thermal instability is the
+\emph{finite propagation speed of heat}, which modifies the onset
+criterion and the preferred wavenumber.  This is discussed in detail
+in the companion sections on relativistic B\'enard convection.
+
+
+%------------------------------------------------------------------
+\subsection{Summary of Causality Bounds}
+\label{subsec:causality-summary}
+
+Table~\ref{tab:causality-bounds} collects all signal speeds and their
+relativistic bounds.
+
+\begin{table}[htbp]
+\centering
+\caption{Signal speeds in relativistic dissipative hydrodynamics.
+  All must satisfy $v \le c$.  The third column shows the modification
+  relative to the classical (acausal) theory.}
+\label{tab:causality-bounds}
+\begin{tabular}{llll}
+\hline\hline
+\textbf{Mode} & \textbf{Signal speed} & \textbf{Classical limit} &
+  \textbf{Causality bound} \\
+\hline
+Sound &
+  $\cs = \sqrt{(\partial p/\partial\varepsilon)_{s}}$ &
+  $\sqrt{\gamma p/\rho}$ &
+  $\cs \le c$ \\[4pt]
+Thermal wave &
+  $v_{T} = \sqrt{\kappa/(\tau_{q}\,c_{v})}$ &
+  $\infty$ (Fourier) &
+  $v_{T} \le c$ \\[4pt]
+Bulk viscous &
+  $v_{\Pi} = \sqrt{\zeta\,c^{2}/(\tau_{\Pi}\,w)}$ &
+  $\infty$ (Navier--Stokes) &
+  $v_{\Pi} \le c$ \\[4pt]
+Shear viscous &
+  $v_{\pi} = \sqrt{\eta\,c^{2}/(\tau_{\pi}\,w)}$ &
+  $\infty$ (Navier--Stokes) &
+  $v_{\pi} \le c$ \\[4pt]
+Alfv\'en &
+  $\vA = c\sqrt{b^{2}/(4\pi w + b^{2})}$ &
+  $B/\sqrt{4\pi\rho}$ &
+  $\vA \le c$ \\[4pt]
+Fast magnetosonic &
+  $v_{f}$ (see Eq.~52 of conventions) &
+  $\sqrt{\cs^{2}+\vA^{2}}$ &
+  $v_{f} \le c$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Classical-to-Relativistic Modification Summary}
+The key modifications that the relativistic framework imposes on each
+classical transport equation are:
+\begin{enumerate}
+  \item \textbf{Fourier $\to$ Israel--Stewart (heat):}
+    Add relaxation term $\tau_{q}\,u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle}$;
+    include Tolman--Ehrenfest acceleration term.
+  \item \textbf{Navier--Stokes (bulk) $\to$ Israel--Stewart:}
+    Add relaxation term $\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi$.
+  \item \textbf{Navier--Stokes (shear) $\to$ Israel--Stewart:}
+    Add relaxation term $\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}$.
+  \item \textbf{Mass density $\to$ enthalpy density:}
+    Replace $\rho$ by $w/c^{2} = (\varepsilon+p)/c^{2}$ in all inertial
+    terms.
+  \item \textbf{Sound speed:}
+    Replace $\gamma p/\rho$ by $(\partial p/\partial\varepsilon)_{s}$;
+    enforce $\le c^{2}$.
+  \item \textbf{Buoyancy:}
+    Replace Schwarzschild/Ledoux criteria with versions using $w$.
+\end{enumerate}
+
+\subsubsection{Causality Verification Checklist}
+\label{subsubsec:causality-checklist}
+For any relativistic stability calculation, the following checks must
+be performed:
+\begin{enumerate}
+  \item[\ding{51}] $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$ satisfies
+    $0 \le \cs^{2} \le c^{2}$.
+  \item[\ding{51}] All relaxation times are strictly positive:
+    $\tau_{q} > 0$, $\tau_{\Pi} > 0$, $\tau_{\pi} > 0$.
+  \item[\ding{51}] Thermal wave speed
+    $v_{T} = \sqrt{\kappa/(\tau_{q}\,c_{v})} \le c$.
+  \item[\ding{51}] Bulk viscous signal speed
+    $v_{\Pi} = \sqrt{\zeta\,c^{2}/(\tau_{\Pi}\,w)} \le c$.
+  \item[\ding{51}] Shear viscous signal speed
+    $v_{\pi} = \sqrt{\eta\,c^{2}/(\tau_{\pi}\,w)} \le c$.
+  \item[\ding{51}] Entropy production rates
+    $\sigma_{s}^{(q)} \ge 0$,
+    $\sigma_{s}^{(\Pi)} \ge 0$,
+    $\sigma_{s}^{(\pi)} \ge 0$.
+  \item[\ding{51}] If MHD: Alfv\'en speed $\vA < c$; fast magnetosonic
+    speed $v_{f} < c$.
+  \item[\ding{51}] Non-relativistic limits recover the classical
+    Chandrasekhar equations.
+\end{enumerate}
+\noindent
+Failure of any of these checks indicates either an inadmissible EOS
+or incorrect transport coefficients.
