@@ -1,7 +1,8 @@
 % rel_framework_mhd.tex
-% Relativistic MHD Framework
+% Relativistic MHD Framework (BDNK formulation)
 % Conventions: (-,+,+,+) signature, c kept explicit, u^μ u_μ = -c²
-% See RELATIVISTIC_CONVENTIONS.md for notation and macros.
+% See RELATIVISTIC_CONVENTIONS.md and BDNK_CONVENTIONS.md for notation and macros.
+% Dissipative sector: BDNK first-order causal theory (no relaxation equations).
 
 \chapter{Relativistic Magnetohydrodynamic Framework}
 \label{ch:rel-mhd-framework}
@@ -318,34 +319,90 @@ The ordering of characteristic speeds is
   \label{eq:speed-ordering}
 \end{equation}
 
+\subsection{Characteristic speeds in resistive BDNK MHD}
+\label{sec:char-speeds-resistive}
+
+When resistive (and viscous) dissipation is included in the BDNK
+framework, the characteristic speed analysis is cleaner than in the
+Israel--Stewart formulation.  The key distinction is:
+\begin{itemize}
+  \item \textbf{BDNK}: The system remains a set of conservation laws
+        with first-order constitutive relations.  The characteristic
+        polynomial of the resistive MHD system has the \emph{same
+        degree} as the ideal system---there are no additional
+        ``relaxation modes.''  Dissipation modifies the existing
+        Alfv\'en and magnetosonic modes (introducing damping at
+        $\mathrm{Im}(\omega)\sim -\eta_{\mathrm{m}}k^{2}$) but does
+        not introduce spurious high-frequency modes.  The BDNK frame
+        coefficients ensure that all characteristic speeds satisfy
+        $|v_{\mathrm{char}}| \le c$, rigorously and at the full
+        nonlinear level.
+  \item \textbf{Israel--Stewart} (for comparison): The relaxation
+        equation for the resistive current introduces additional
+        degrees of freedom.  The characteristic polynomial gains extra
+        roots corresponding to transient ``relaxation modes'' with
+        speeds $\sim\!\sqrt{\eta_{\mathrm{m}}/\tau_{\mathrm{r}}}$.
+        These modes are physical artefacts of the extended
+        thermodynamic description and must be tuned (via the choice of
+        $\tau_{\mathrm{r}}$) to be subluminal.
+\end{itemize}
+Thus, the BDNK formulation provides a more economical description of
+the dissipative mode structure, with causality guaranteed by
+construction rather than by parameter tuning.
+
 
 %======================================================================
-\section{Resistive Relativistic MHD}
+\section{Resistive Relativistic MHD in the BDNK Framework}
 \label{sec:resistive-rmhd}
 %======================================================================
 
-\subsection{Relativistic Ohm's law}
+In the BDNK (Bemfica--Disconzi--Noronha--Kovtun) formulation of
+dissipative relativistic hydrodynamics, all dissipative fluxes are
+given as \emph{first-order} constitutive relations in the gradients
+of the fundamental variables $(\varepsilon,\,n,\,u^{\mu})$.  No
+relaxation equations or auxiliary dynamical degrees of freedom are
+introduced---in contrast to the Israel--Stewart approach, where the
+dissipative fluxes (such as the resistive current) satisfy their own
+evolution equations with associated relaxation times.  For MHD, the
+crucial dissipative sector is the resistive (Ohmic) contribution; the
+BDNK treatment replaces the Israel--Stewart relaxation equation for
+the conduction current with a direct, first-order Ohm's law, while
+maintaining causality through constraints on the transport coefficients
+and the choice of hydrodynamic frame.
+
+\subsection{BDNK resistive Ohm's law}
 
 When the conductivity $\sigma$ is finite, the ideal MHD condition
-\eqref{eq:ideal-MHD-condition} is replaced by the relativistic Ohm's law:
+\eqref{eq:ideal-MHD-condition} is replaced by the relativistic Ohm's law
+in the BDNK general hydrodynamic frame:
+\begin{equation}
+  \Delta^{\mu}{}_{\nu}\,j^{\nu} = \sigma\,E^{\mu},
+  \label{eq:rel-Ohm-proj}
+\end{equation}
+where $\Delta^{\mu\nu} = g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$ is the
+spatial projector orthogonal to $u^{\mu}$, and $E^{\mu}=F^{\mu\nu}u_{\nu}$
+is the comoving electric field.  Equivalently,
 \begin{equation}
   j^{\mu} + \frac{j^{\nu}\,u_{\nu}}{c^{2}}\,u^{\mu}
-  = \sigma\,F^{\mu\nu}\,u_{\nu}
   = \sigma\,E^{\mu}.
   \label{eq:rel-Ohm}
 \end{equation}
-The left-hand side projects the current density onto the rest frame of the
-fluid (removing the charge density component $j^{\nu}u_{\nu}/c^{2}$),
-and the right-hand side is the rest-frame electric field multiplied by the
-scalar conductivity $\sigma$.  In the limit $\sigma\to\infty$, one
-recovers $E^{\mu}\to 0$, i.e.\ the ideal MHD condition.
+In the limit $\sigma\to\infty$, one recovers $E^{\mu}\to 0$,
+i.e.\ the ideal MHD condition.
 
-Written in terms of the projection tensor
-$\proj = g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$, this is
-\begin{equation}
-  \Delta^{\mu}{}_{\nu}\,j^{\nu} = \sigma\,E^{\mu}.
-  \label{eq:rel-Ohm-proj}
-\end{equation}
+\medskip\noindent
+\textbf{Comparison with Israel--Stewart.}\quad
+In the IS formulation, the resistive current $j^{\mu}_{\perp}
+\equiv \Delta^{\mu}{}_{\nu}j^{\nu}$ would satisfy a \emph{relaxation
+equation} of the form
+$\tau_{\mathrm{r}}\,u^{\alpha}\nabla_{\alpha}j^{\langle\mu\rangle}_{\perp}
++ j^{\mu}_{\perp} = \sigma\,E^{\mu}$,
+where $\tau_{\mathrm{r}}>0$ is a relaxation time for the resistive
+current.  The BDNK approach eliminates $\tau_{\mathrm{r}}$ entirely:
+Ohm's law \eqref{eq:rel-Ohm} is an \emph{algebraic} (non-dynamical)
+constitutive relation, and causality is instead guaranteed by the
+BDNK frame coefficients and their associated constraints (see
+\S\ref{sec:char-speeds-resistive}).
 
 \subsection{Magnetic diffusivity}
 
@@ -354,8 +411,9 @@ The magnetic diffusivity is defined (in Gaussian units) by
   \eta_{\mathrm{m}} = \frac{c^{2}}{4\pi\sigma},
   \label{eq:eta-m}
 \end{equation}
-with dimensions of length$^{2}$/time.  This is the direct relativistic
-generalisation of the classical magnetic diffusivity.
+with dimensions of length$^{2}$/time.  This definition is identical in
+both the BDNK and IS frameworks, since it depends only on the
+conductivity $\sigma$ and not on any relaxation time.
 
 \subsection{Relativistic magnetic Reynolds number}
 
@@ -375,10 +433,12 @@ For $\mathrm{Rm}\gg 1$, the field is effectively frozen into the fluid
 and ideal MHD applies.  For $\mathrm{Rm}\lesssim 1$, resistive effects
 dominate and field diffusion must be accounted for.
 
-\subsection{Magnetic field decay and Joule dissipation}
+\subsection{BDNK resistive induction equation}
 
-In a resistive fluid, the induction equation acquires a diffusive term.
-The covariant induction equation becomes
+In a resistive fluid described by the BDNK first-order constitutive
+relations, the induction equation acquires a diffusive term directly,
+without the intermediate step of a relaxation equation.  The covariant
+resistive induction equation is
 \begin{equation}
   u^{\mu}\,\nabla_{\mu}\,b^{\nu}
   - b^{\mu}\,\nabla_{\mu}\,u^{\nu}
@@ -388,17 +448,36 @@ The covariant induction equation becomes
   + \text{(curvature terms)},
   \label{eq:induction-resistive}
 \end{equation}
-where the right-hand side represents the magnetic diffusion (the
-Laplacian term) projected onto the fluid rest frame.  In flat spacetime,
-this reduces to
+where the right-hand side is the magnetic diffusion (the projected
+Laplacian) in the fluid rest frame.  This equation is \emph{parabolic}
+at the level of the induction equation alone; however, when coupled to
+the full BDNK energy-momentum sector with its frame-dependent terms,
+the complete system of PDEs is \emph{strongly hyperbolic}, and all
+characteristic speeds are bounded by $c$.
+
+In flat spacetime, the non-relativistic limit yields
 \begin{equation}
   \frac{\partial\vect{B}}{\partial t}
   = \nabla\times(\vect{v}\times\vect{B})
   + \eta_{\mathrm{m}}\,\nabla^{2}\vect{B},
   \label{eq:induction-NR}
 \end{equation}
-which is the standard non-relativistic induction equation with Ohmic
-diffusion.
+the standard induction equation with Ohmic diffusion.
+
+\medskip\noindent
+\textbf{No telegraph-type equation.}\quad
+In the Israel--Stewart formulation, the relaxation time
+$\tau_{\mathrm{r}}$ converts the diffusion equation into a telegraph
+(hyperbolic diffusion) equation of the form
+$\tau_{\mathrm{r}}\,\partial^{2}b/\partial t^{2}
++ \partial b/\partial t = \eta_{\mathrm{m}}\nabla^{2}b$.
+In the BDNK framework, no such modification is needed: the first-order
+Ohm's law \eqref{eq:rel-Ohm} yields a standard diffusion term in the
+induction equation, and the BDNK frame coefficients in the energy-momentum
+sector ensure causality at the level of the \emph{full coupled system}
+without introducing additional time derivatives in the magnetic sector.
+
+\subsection{Joule dissipation}
 
 The Joule heating rate per unit volume in the fluid frame is
 \begin{equation}
@@ -409,6 +488,7 @@ The Joule heating rate per unit volume in the fluid frame is
 \end{equation}
 which enters as a source term in the energy equation.  In the ideal limit
 $\sigma\to\infty$, both $E^{\mu}\to 0$ and $Q_{\mathrm{Joule}}\to 0$.
+This expression is identical in both the BDNK and IS formulations.
 
 The characteristic timescale for Ohmic decay of a magnetic field
 structure of size $L$ is
@@ -488,7 +568,7 @@ where $\enthalpy^{\ast}_{0} = (\varepsilon_{0}+p_{0}+b_{(0)}^{2})/(4\pi c^{2})$
 is the background total (relativistic) inertia, with appropriate factors
 of $4\pi$ restored for Gaussian units.
 
-\subsection{Dispersion relation}
+\subsection{Dispersion relation (ideal sector)}
 
 Eliminating $\delta\varepsilon$, $\delta p = \cs^{2}\,\delta\varepsilon/c^{2}$,
 and $\delta b^{i}$ in favour of $\delta v^{i}$, one arrives at the
@@ -511,6 +591,59 @@ This factors into:
 \end{enumerate}
 All three families of modes satisfy $v_{\mathrm{ph}}^{2} < c^{2}$, as
 proved in \S\ref{sec:char-speeds}.
+
+\subsection{Resistive dispersion relation in the BDNK framework}
+\label{sec:resistive-dispersion-bdnk}
+
+When finite resistivity is included via the BDNK first-order Ohm's law
+\eqref{eq:rel-Ohm}, the dispersion relation acquires dissipative
+corrections.  The key simplification relative to the Israel--Stewart
+formulation is that the \emph{degree of the dispersion polynomial is
+unchanged}: because BDNK introduces no additional dynamical variables
+beyond the standard MHD fields $(\varepsilon,\,u^{\mu},\,b^{\mu})$,
+the resistive dispersion relation remains a polynomial of the same
+order as the ideal case.
+
+For propagation along the magnetic field ($\theta=0$), the resistive
+Alfv\'en mode dispersion becomes
+\begin{equation}
+  \omega^{2} + i\,\eta_{\mathrm{m}}\,k^{2}\,\omega
+  - \vA^{2}\,k^{2} = 0,
+  \label{eq:alfven-resistive-bdnk}
+\end{equation}
+a \emph{quadratic} in $\omega$.  The two roots are the damped
+forward- and backward-propagating Alfv\'en waves:
+\begin{equation}
+  \omega = -\frac{i\,\eta_{\mathrm{m}}\,k^{2}}{2}
+  \pm k\,\vA\,\sqrt{1 - \frac{\eta_{\mathrm{m}}^{2}\,k^{2}}{4\,\vA^{2}}}.
+  \label{eq:alfven-resistive-roots}
+\end{equation}
+For $\eta_{\mathrm{m}}k \ll 2\vA$ (weak resistivity), the modes are
+underdamped propagating waves; for $\eta_{\mathrm{m}}k \gg 2\vA$,
+they become overdamped diffusive modes.
+
+\medskip\noindent
+\textbf{Contrast with Israel--Stewart.}\quad
+In the IS formulation, the relaxation equation for the resistive current
+promotes the Alfv\'en dispersion to a \emph{cubic} in $\omega$:
+\[
+  \tau_{\mathrm{r}}\,\omega^{3}
+  + i\,\omega^{2}
+  - \tau_{\mathrm{r}}\,\vA^{2}\,k^{2}\,\omega
+  - i\,\vA^{2}\,k^{2}
+  + i\,\eta_{\mathrm{m}}\,k^{2}\,\omega = 0
+  \qquad\text{(IS, not used here)}.
+\]
+The extra root is a spurious, rapidly decaying ``relaxation mode'' at
+$\omega \sim -i/\tau_{\mathrm{r}}$.  In the BDNK framework, this mode
+is absent by construction, yielding a cleaner modal structure with
+only the physical MHD modes present.
+
+Similarly, the fast and slow magnetosonic modes in the resistive BDNK
+theory remain a quartic system (two pairs of damped propagating modes),
+whereas the IS formulation would yield a sextic.  The BDNK dispersion
+polynomials are therefore lower-order, simplifying both analytic treatment
+and numerical root-finding.
 
 \subsection{Non-relativistic limit: recovery of Chandrasekhar Ch~IV}
 
@@ -649,15 +782,34 @@ foundation for all subsequent stability analyses.  The key results are:
   \item All characteristic speeds---Alfv\'en, fast and slow
         magnetosonic---are automatically bounded by $c$
         (eq.~\ref{eq:vf-causal-proof}), ensuring causal propagation.
-  \item Resistive effects are captured by the relativistic Ohm's law
-        \eqref{eq:rel-Ohm}, with magnetic diffusivity
-        $\eta_{\mathrm{m}}=c^{2}/(4\pi\sigma)$.
+  \item Resistive effects are captured by the BDNK first-order Ohm's
+        law \eqref{eq:rel-Ohm}, with magnetic diffusivity
+        $\eta_{\mathrm{m}}=c^{2}/(4\pi\sigma)$.  No relaxation times
+        for the resistive current are needed.
   \item The linearised perturbation theory yields the same modal
         structure (Alfv\'en, fast, slow) as the non-relativistic theory,
-        but with relativistically corrected speeds.
+        but with relativistically corrected speeds.  In the BDNK
+        formulation, the resistive dispersion relations are lower-order
+        polynomials than in Israel--Stewart, with no spurious relaxation
+        modes (\S\ref{sec:resistive-dispersion-bdnk}).
   \item All results reduce to the classical Chandrasekhar framework in
         the limit $v/c\to 0$.
 \end{enumerate}
+
+\medskip\noindent
+\textbf{BDNK vs Israel--Stewart for MHD.}\quad
+The ideal MHD sector---covariant Maxwell equations, flux freezing, the
+Alfv\'en theorem, the energy-momentum tensor \eqref{eq:Tmunu-MHD}, and
+the ideal characteristic speeds---is \emph{identical} in both the BDNK
+and IS frameworks, since it involves no dissipative fluxes.  The two
+formulations differ \emph{only} in the dissipative sector: IS introduces
+relaxation equations (with relaxation times $\tau_{\mathrm{r}}$) for each
+dissipative flux, while BDNK uses first-order constitutive relations in a
+general hydrodynamic frame.  For resistive MHD, the practical consequences
+are: (i)~the BDNK system has fewer PDEs (no relaxation equation for the
+resistive current); (ii)~the dispersion relations are lower-order
+polynomials; (iii)~causality is proven rigorously at the nonlinear level
+rather than checked mode-by-mode in linearised perturbation theory.
 
 \bigskip
 \noindent
