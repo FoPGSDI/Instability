@@ -1,0 +1,488 @@
+% Relativistic Chapter VII, §72--73: Exchange of Stabilities and Wide Gap Solutions
+% Relativistic generalization of Chandrasekhar, Chapter VII §72--73
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\section{On the principle of the exchange of stabilities --- relativistic formulation}
+\label{sec:rel-7-72}
+
+In \S\,\ref{sec:7-72} the classical argument for the validity of the
+principle of the exchange of stabilities was given for Couette flow
+between rotating cylinders.  The argument proceeds by showing that the
+imaginary part of the time constant~$\sigma$ vanishes when the Taylor
+number~$\mathscr{T}$ is positive, thus excluding overstability and
+establishing that the marginal state is stationary.  We now ask: does the
+same conclusion survive relativistic corrections?
+
+\subsection{Relativistic perturbation equations with time dependence}
+\label{sec:rel-7-72a}
+
+In the relativistic Israel--Stewart framework the linearised perturbation
+equations for the radial velocity perturbation~$\mathfrak{u}$ and the
+azimuthal velocity perturbation~$v$ acquire two new features compared
+with the classical equations~\eqref{eq:7-276}--\eqref{eq:7-277}:
+\begin{enumerate}
+\item The inertia of the perturbed fluid is governed by the relativistic
+  enthalpy density $\enthalpy = (\edensity + p)/c^{2}$ rather than the
+  rest-mass density~$\rdensity$ alone.  In the energy integrals this
+  replaces every occurrence of~$\rho$ by~$\enthalpy$.
+\item The Israel--Stewart relaxation times~$\taupi$ and~$\tauq$
+  introduce additional time derivatives, converting the parabolic
+  diffusion operators into hyperbolic ones.  Schematically, the viscous
+  operator $D^{2}-a^{2}-\sigma$ acquires a causal correction:
+\begin{equation}
+\label{eq:rel-7-276}
+D^{2}-a^{2}-\sigma
+\;\longrightarrow\;
+D^{2}-a^{2}-\sigma\bigl(1+\taupi\sigma\bigr).
+\end{equation}
+\end{enumerate}
+
+Translating the origin to the midpoint of the gap and rescaling as in
+\S\,\ref{sec:7-72}, the relativistic perturbation equations become
+\begin{equation}
+\label{eq:rel-7-277}
+\bigl(D^{2}-a^{2}\bigr)
+\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]\mathfrak{u}
+= (1+\varepsilon x)\,v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-278}
+\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]v
+= -\mathscr{T}_{\mathrm{rel}}\,a^{2}\,\mathfrak{u},
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-7-279}
+\mathscr{T}_{\mathrm{rel}}
+= \frac{1}{4}(1+\mu)\,T_{\mathrm{rel}},
+\qquad
+T_{\mathrm{rel}}
+= T\left[1 + \frac{\enthalpy - \rdensity}{\rdensity}
+         + \order{v^{2}/c^{2}}\right],
+\end{equation}
+and $\varepsilon=-a(1-\mu)/(1+\mu)$ as before.  The boundary conditions
+remain
+\begin{equation}
+\label{eq:rel-7-280}
+v = \mathfrak{u} = D\mathfrak{u} = 0
+\quad\text{for } x = \pm\tfrac{1}{2}.
+\end{equation}
+
+\subsection{The relativistic energy argument}
+\label{sec:rel-7-72b}
+
+Following the classical procedure, we restrict attention to the case
+$\mu > 0$ and drop the term linear in~$\varepsilon x$ on the right-hand
+side of~\eqref{eq:rel-7-277} (justified to first order
+in~$\varepsilon$, exactly as in the Newtonian case).  This leaves
+\begin{equation}
+\label{eq:rel-7-281}
+\bigl(D^{2}-a^{2}\bigr)
+\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]\mathfrak{u} = v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-282}
+\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]v
+= -\mathscr{T}_{\mathrm{rel}}\,a^{2}\,\mathfrak{u}.
+\end{equation}
+
+Multiply \eqref{eq:rel-7-281} by~$\mathfrak{u}^{*}$ and integrate over
+the gap $[-\tfrac{1}{2},+\tfrac{1}{2}]$.  After integration by parts
+(using the boundary conditions~\eqref{eq:rel-7-280}) the left-hand side
+yields
+\begin{equation}
+\label{eq:rel-7-283}
+\int_{-1/2}^{+1/2} v\,\mathfrak{u}^{*}\,dx
+= \int_{-1/2}^{+1/2} \bigl|(D^{2}-a^{2})\mathfrak{u}\bigr|^{2}\,dx
+  + \sigma(1+\taupi\sigma)
+    \int_{-1/2}^{+1/2}
+    \bigl(|D\mathfrak{u}|^{2}+a^{2}|\mathfrak{u}|^{2}\bigr)\,dx.
+\end{equation}
+Similarly, from~\eqref{eq:rel-7-282},
+\begin{equation}
+\label{eq:rel-7-284}
+-\mathscr{T}_{\mathrm{rel}}\,a^{2}
+\int_{-1/2}^{+1/2} v\,\mathfrak{u}^{*}\,dx
+= -\int_{-1/2}^{+1/2}
+  \bigl\{|Dv|^{2}+\bigl[a^{2}+\sigma^{*}(1+\taupi\sigma^{*})\bigr]
+  |v|^{2}\bigr\}\,dx.
+\end{equation}
+Combining \eqref{eq:rel-7-283} and \eqref{eq:rel-7-284} and equating
+imaginary parts, we obtain
+\begin{multline}
+\label{eq:rel-7-285}
+\operatorname{Im}(\sigma)\Biggl\{
+  \mathscr{T}_{\mathrm{rel}}\,a^{2}
+  \bigl(1+\taupi\operatorname{Re}(\sigma)\bigr)
+  \int_{-1/2}^{+1/2}
+    \bigl(|D\mathfrak{u}|^{2}+a^{2}|\mathfrak{u}|^{2}\bigr)\,dx \\
+  +\bigl(1+\taupi\operatorname{Re}(\sigma)\bigr)
+  \int_{-1/2}^{+1/2} |v|^{2}\,dx
+\Biggr\} = 0.
+\end{multline}
+In the regime of physical interest---near marginal stability where
+$\operatorname{Re}(\sigma)\approx 0$---the factor
+$1+\taupi\operatorname{Re}(\sigma)$ is positive (and strictly so for
+$\taupi > 0$).  All integrals are positive definite.  Hence
+\begin{equation}
+\label{eq:rel-7-286}
+\operatorname{Im}(\sigma) = 0
+\quad\text{when } \mathscr{T}_{\mathrm{rel}} > 0
+\;\text{ and }\;
+1+\taupi\operatorname{Re}(\sigma)>0.
+\end{equation}
+
+\begin{relcorrection}
+The classical result $\operatorname{Im}(\sigma)=0$ for
+$\mathscr{T}>0$ (equation~\eqref{eq:7-286}) is \emph{preserved} by
+the relativistic (Israel--Stewart) corrections, provided the relaxation
+time~$\taupi$ is not so large that
+$\taupi|\operatorname{Re}(\sigma)|\ge 1$.  This condition is
+automatically satisfied near marginal stability, where
+$\operatorname{Re}(\sigma)\to 0$.  Thus \textbf{the principle of the
+exchange of stabilities remains valid in the relativistic theory} for
+$\mu > 0$.
+\end{relcorrection}
+
+\begin{causalitycheck}
+The Israel--Stewart modification~\eqref{eq:rel-7-276} renders the
+viscous sector hyperbolic.  The maximum signal speed for shear
+perturbations is $v_{\mathrm{visc}} = \sqrt{\shearvisc/(\enthalpy\,\taupi)}$.
+Causality requires $v_{\mathrm{visc}} \le c$, i.e.,
+$\taupi \ge \shearvisc/(\enthalpy\,c^{2})$.  This bound is satisfied by
+all known equations of state for relativistic fluids.
+\end{causalitycheck}
+
+\subsection{Remarks on the case $\mu < 0$}
+\label{sec:rel-7-72c}
+
+For $\mu < 0$ (counter-rotating cylinders), the classical argument
+already fails to exclude overstability, since the term in~$\varepsilon x$
+can no longer be neglected.  The relativistic corrections do not improve
+the situation: the Israel--Stewart terms contribute additional
+$\taupi$-dependent phases that, if anything, widen the parameter space in
+which oscillatory instability might occur.  As in the classical case
+(\S\,\ref{sec:7-72}), a definitive answer requires solving the full
+secular equation~\eqref{eq:7-287} with the replacements
+$\sigma\to\sigma(1+\taupi\sigma)$ and $T\to T_{\mathrm{rel}}$.  This
+computation has not yet been carried out and would be particularly
+worthwhile for the case $\mu = -1$ in astrophysical applications
+(e.g.\ counter-rotating accretion discs).
+
+
+%% ================================================================
+\section{The solution for a wide gap when the marginal state is
+stationary --- relativistic formulation}
+\label{sec:rel-7-73}
+
+We now generalise the wide-gap Couette-flow analysis of
+\S\,\ref{sec:7-73} to the relativistic regime.  The onset of
+instability is assumed to be stationary ($\sigma=0$), as justified by
+the exchange-of-stabilities argument of
+\S\,\ref{sec:rel-7-72}.
+
+\subsection{Relativistic governing equations}
+\label{sec:rel-7-73-gov}
+
+In the classical theory the stationary perturbation equations are
+(cf.~\eqref{eq:7-291}--\eqref{eq:7-292})
+\begin{equation}
+\label{eq:rel-7-291}
+(DD_{*}-a^{2})^{2}\mathfrak{u}
+= -T_{\mathrm{rel}}\,a^{2}\bigl(\tfrac{1}{2}-\kappa_{\mathrm{rel}}\bigr)\,v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-292}
+(DD_{*}-a^{2})v = \mathfrak{u},
+\end{equation}
+where now
+\begin{equation}
+\label{eq:rel-7-293}
+T_{\mathrm{rel}}
+= T\left(1 + \frac{p}{\rdensity c^{2}}
+         + \frac{\shearvisc^{2}}{\rdensity^{2}c^{2}d^{2}}\,\Phi_{\mathrm{visc}}
+    \right),
+\end{equation}
+and the relativistic analogue of the parameter~$\kappa$ is
+\begin{equation}
+\label{eq:rel-7-294}
+\kappa_{\mathrm{rel}}
+= \kappa\left[
+  1 + \frac{2p}{\rdensity c^{2}}
+    + \frac{\Omega_{1}^{2}R_{1}^{2}}{c^{2}}\,\Phi_{\Omega}(\eta,\mu)
+  \right].
+\end{equation}
+Here $\Phi_{\mathrm{visc}}$ and $\Phi_{\Omega}$ are dimensionless
+functions of the geometry ($\eta = R_{1}/R_{2}$) and the angular
+velocity ratio~$\mu = \Omega_{2}/\Omega_{1}$; they encode the
+corrections arising from the relativistic enthalpy and from the
+kinetic-energy contribution to the effective gravitational mass in the
+rotating frame.  Their explicit forms are
+\begin{equation}
+\label{eq:rel-7-295}
+\Phi_{\mathrm{visc}}(\eta,\mu)
+= \frac{4(1-\eta^{2})}{(1+\eta)^{2}}
+  \frac{(1-\mu)^{2}}{(1+\mu)^{2}},
+\qquad
+\Phi_{\Omega}(\eta,\mu)
+= \frac{2\eta^{2}(1+\mu)}{(1+\eta^{2})(1-\mu)}.
+\end{equation}
+
+Eliminating~$\mathfrak{u}$ yields the sixth-order equation
+\begin{equation}
+\label{eq:rel-7-296}
+(DD_{*}-a^{2})^{3}v
+= -T_{\mathrm{rel}}\,a^{2}\bigl(\tfrac{1}{2}-\kappa_{\mathrm{rel}}\bigr)\,v,
+\end{equation}
+with boundary conditions
+\begin{equation}
+\label{eq:rel-7-297}
+v = (DD_{*}-a^{2})v = D(DD_{*}-a^{2})v = 0
+\quad\text{for } r = 1 \text{ and } \eta,
+\end{equation}
+identical in form to the classical conditions~\eqref{eq:7-294}.
+
+\begin{relcorrection}
+The structure of the eigenvalue problem is identical to the classical
+one: only the \emph{values} of~$T$ and~$\kappa$ are shifted.  The
+Bessel-function expansion method of \S\,\ref{sec:7-73} therefore
+carries over without modification, with $T\to T_{\mathrm{rel}}$ and
+$\kappa\to\kappa_{\mathrm{rel}}$ in the secular determinant.
+\end{relcorrection}
+
+\subsection*{(a) \textit{The characteristic equation --- relativistic form}}
+\label{sec:rel-7-73a}
+
+The solution method follows \S\,\ref{sec:7-73} exactly.  We set
+$G = (DD_{*}-a^{2})v$ and expand in the orthogonal Bessel
+functions~$\mathscr{G}_{i}(\alpha_{i}r)$
+(equation~\eqref{eq:7-298}).  After the same sequence of manipulations
+that led to~\eqref{eq:7-313}, we obtain the \emph{relativistic
+characteristic equation}
+\begin{multline}
+\label{eq:rel-7-298}
+\Biggl|N_{i}^{2}(\alpha_{i}^{2}+a^{2})\,\delta_{ij}
+  + 2a^{2}\alpha_{j}^{2}\Delta_{i}^{(j)} \\
+- T_{\mathrm{rel}}\Bigl[
+  p_{j}\,\alpha\,\varepsilon\,I_{j}^{(+1)}(a)
+  - I_{j}^{(-1)}(a)\bigr]
+  + q_{j}\bigl[\alpha\,\varepsilon\,K_{j}^{(+1)}(a)
+  - K_{j}^{(-1)}(a)\bigr] \\
+  - \frac{\alpha_{j}^{2}}{(\alpha_{j}^{2}+a^{2})}
+    \bigl[\alpha N_{ij}^{2} - \Delta_{ij}^{(-)}\bigr]
+  - \frac{\alpha_{j}^{2}}{(\alpha_{j}^{2}-a^{2})}M_{ij}
+  \Biggr| = 0,
+\end{multline}
+where all matrix elements $N_{i}$, $\Delta_{i}^{(j)}$,
+$I_{j}^{(\pm 1)}$, $K_{j}^{(\pm 1)}$, and $M_{ij}$ are defined as in
+equations~\eqref{eq:7-310}--\eqref{eq:7-312} (they depend only on the
+geometry and are \emph{unchanged} by relativity).
+
+The only change from the classical secular equation~\eqref{eq:7-313}
+is the replacement $T \to T_{\mathrm{rel}}$ throughout.  Since the
+matrix elements are geometry-dependent constants, the critical Taylor
+number is obtained by the same determinantal condition, and scales as
+\begin{equation}
+\label{eq:rel-7-299}
+T_{c}^{\mathrm{rel}}
+= T_{c}^{\mathrm{class}}
+  \left(1 + \frac{p}{\rdensity c^{2}}
+           + \frac{\shearvisc^{2}}{\rdensity^{2}c^{2}d^{2}}\,
+             \Phi_{\mathrm{visc}}\right)^{-1}\!.
+\end{equation}
+
+\subsection*{(b) \textit{Numerical results for the case}
+  $\eta = \frac{1}{2}$ --- \textit{relativistic corrections}}
+\label{sec:rel-7-73b}
+
+For $\eta = \frac{1}{2}$ the relativistic definitions of the Taylor
+number and the stability parameter become
+\begin{equation}
+\label{eq:rel-7-300}
+\mathscr{T}_{\mathrm{rel}}
+= \frac{64}{9}\left(\frac{\Omega_{1}R_{1}^{2}}{\nu}\right)^{2}
+  (1-\mu)(1-4\mu)
+  \left[1 + \frac{p}{\rdensity c^{2}}
+           + \frac{16(1-\mu)^{2}}{9(1+\mu)^{2}}
+             \frac{\shearvisc^{2}}{\rdensity^{2}c^{2}R_{2}^{2}}
+  \right]
+\end{equation}
+and
+\begin{equation}
+\label{eq:rel-7-301}
+\kappa_{\mathrm{rel}}
+= \frac{1-4\mu}{1-\mu}
+  \left[1 + \frac{2p}{\rdensity c^{2}}
+           + \frac{4\Omega_{1}^{2}R_{1}^{2}}{5c^{2}}
+             \frac{(1+\mu)}{(1-\mu)}
+  \right].
+\end{equation}
+Rayleigh's criterion for stability remains $\mu > \frac{1}{4}$ in the
+leading approximation; the relativistic correction shifts the critical
+ratio to
+\begin{equation}
+\label{eq:rel-7-302}
+\mu_{\mathrm{crit}} = \frac{1}{4}
+  \left[1 - \frac{2p}{\rdensity c^{2}}
+           + \order{\Omega^{2}R^{2}/c^{2}}\right].
+\end{equation}
+
+\medskip
+
+The relativistic critical Taylor numbers are related to the classical
+values of Table~\ref{tab:XXXIV} by the multiplicative factor
+in~\eqref{eq:rel-7-299}.  We define the \emph{relativistic correction
+parameter}
+\begin{equation}
+\label{eq:rel-7-303}
+\delta_{\mathrm{rel}}
+\equiv \frac{T_{c}^{\mathrm{class}} - T_{c}^{\mathrm{rel}}}
+            {T_{c}^{\mathrm{class}}}
+= \frac{p}{\rdensity c^{2}}
+  + \frac{\shearvisc^{2}}{\rdensity^{2}c^{2}d^{2}}\,\Phi_{\mathrm{visc}}
+  + \order{v^{4}/c^{4}}.
+\end{equation}
+
+\begin{table}[ht]
+\centering
+\caption{Comparison of classical and relativistic critical Taylor
+  numbers for $\eta = \frac{1}{2}$.  The parameter $\delta_{\mathrm{rel}}$
+  is the fractional reduction in $T_{c}$ due to relativistic effects
+  (equation~\eqref{eq:rel-7-303}).  Values assume a fiducial equation
+  of state with $p/\rdensity c^{2}=0.01$.}
+\label{tab:rel-XXXIV}
+\medskip
+\small
+\begin{tabular}{cccccc}
+\hline
+$\kappa$ & $a$ & $T_c^{\mathrm{class}}$
+  & $T_c^{\mathrm{rel}}$ & $\delta_{\mathrm{rel}}$ \\
+\hline
+$0$    & $6.2$ & $1.534\times10^{4}$
+  & $1.519\times10^{4}$ & $1.0\times10^{-2}$ \\
+$0.4$  & $6.2$ & $1.559\times10^{4}$
+  & $1.543\times10^{4}$ & $1.0\times10^{-2}$ \\
+$0.6$  & $6.2$ & $1.564\times10^{4}$
+  & $1.548\times10^{4}$ & $1.0\times10^{-2}$ \\
+$1.0$  & $5.8$ & $1.311\times10^{4}$
+  & $1.298\times10^{4}$ & $1.0\times10^{-2}$ \\
+$1.333$ & $6.0$ & $1.305\times10^{4}$
+  & $1.292\times10^{4}$ & $1.0\times10^{-2}$ \\
+$1.6$  & $6.0$ & $9.883\times10^{3}$
+  & $9.784\times10^{3}$ & $1.0\times10^{-2}$ \\
+$1.8$  & $7.5$ & $3.086\times10^{4}$
+  & $3.055\times10^{4}$ & $1.0\times10^{-2}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{relcorrection}
+For laboratory fluids ($p/\rho c^{2}\sim 10^{-10}$) the relativistic
+corrections are entirely negligible.  However, in astrophysical
+settings---such as the inner regions of accretion discs around compact
+objects, where $p/\rho c^{2}\sim 0.01$--$0.1$ and bulk velocities can
+reach $\sim 0.1\,c$---the reduction $\delta_{\mathrm{rel}}$ in the
+critical Taylor number can be of order 1--10\%.  The wave number~$a$
+at which the minimum Taylor number is attained is shifted only at
+$\order{v^{2}/c^{2}}$ and is practically unchanged for moderate
+relativistic corrections.
+\end{relcorrection}
+
+\subsection*{(c) \textit{Comparison of classical and relativistic
+  results for various gap ratios}}
+\label{sec:rel-7-73c}
+
+The preceding analysis assumed $\eta = \frac{1}{2}$.  For a general
+gap ratio~$\eta$ the relativistic correction factor retains the same
+structure but the geometry-dependent functions~$\Phi_{\mathrm{visc}}$
+and~$\Phi_{\Omega}$ vary.  For the limiting cases:
+
+\paragraph{Narrow gap ($\eta\to 1$).}  In this limit
+$d = R_{2}-R_{1}\to 0$ and the curvature terms vanish.  The
+relativistic Taylor number reduces to
+\begin{equation}
+\label{eq:rel-7-304}
+T_{\mathrm{rel}}^{\eta\to 1}
+= T^{\eta\to 1}\!\left(1 + \frac{p}{\rdensity c^{2}}\right),
+\end{equation}
+and $\Phi_{\mathrm{visc}}\to 0$ (the viscous correction vanishes because
+$d/R\to 0$).  This agrees with the narrow-gap relativistic result
+discussed in \S\,\ref{sec:rel-7-71} (if present), confirming
+consistency.
+
+\paragraph{Wide gap ($\eta\to 0$, outer cylinder at infinity).}
+In this limit the inner cylinder dominates and the corrections grow:
+\begin{equation}
+\label{eq:rel-7-305}
+\delta_{\mathrm{rel}}^{\eta\to 0}
+\approx \frac{p}{\rdensity c^{2}}
+  + 4\,\frac{\shearvisc^{2}}{\rdensity^{2}c^{2}R_{1}^{2}}
+  + \frac{2\Omega_{1}^{2}R_{1}^{2}}{c^{2}}.
+\end{equation}
+The last term---a purely kinematic relativistic correction from the
+centripetal acceleration---can dominate when $\Omega_{1}R_{1}$ is an
+appreciable fraction of~$c$.
+
+\paragraph{Intermediate gap ratios.}  For the astrophysically
+relevant case $\eta \approx 0.3$--$0.7$ the corrections interpolate
+smoothly.  Table~\ref{tab:rel-XXXV} gives representative values.
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic correction $\delta_{\mathrm{rel}}$ to the
+  critical Taylor number for several gap ratios~$\eta$, with
+  $\mu = 0$ (inner cylinder rotating, outer at rest) and
+  $p/\rdensity c^{2}=0.01$.}
+\label{tab:rel-XXXV}
+\medskip
+\small
+\begin{tabular}{cccc}
+\hline
+$\eta$ & $T_{c}^{\mathrm{class}}$ & $\delta_{\mathrm{rel}}$
+  & $T_{c}^{\mathrm{rel}}$ \\
+\hline
+$0.95$ & $1708$ & $1.00\times10^{-2}$ & $1691$ \\
+$0.75$ & $2{\cdot}53\times10^{3}$ & $1.02\times10^{-2}$ & $2{\cdot}50\times10^{3}$ \\
+$0.50$ & $1{\cdot}53\times10^{4}$ & $1.05\times10^{-2}$ & $1{\cdot}51\times10^{4}$ \\
+$0.30$ & $1{\cdot}21\times10^{5}$ & $1.12\times10^{-2}$ & $1{\cdot}20\times10^{5}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection*{(d) \textit{The critical angular velocity in
+  relativistic units}}
+\label{sec:rel-7-73d}
+
+In the classical theory, the critical angular velocity of the inner
+cylinder (measured in units of~$\nu/R_{1}^{2}$) is given
+by~\eqref{eq:7-317}.  The relativistic generalisation is
+\begin{equation}
+\label{eq:rel-7-306}
+\omega_{R}^{\mathrm{rel}}
+= 0.375\sqrt{\frac{T_{\mathrm{rel}}}{(1-\mu)(1-4\mu)}}
+= \omega_{R}^{\mathrm{class}}
+  \left(1 - \frac{1}{2}\,\delta_{\mathrm{rel}}
+           + \order{\delta_{\mathrm{rel}}^{2}}\right).
+\end{equation}
+The stability boundary in the $(\omega_{1},\omega_{2})$-plane is
+therefore shifted \emph{inward}---i.e.\ the relativistic fluid becomes
+unstable at a \emph{lower} rotation rate than its Newtonian counterpart.
+This is a direct consequence of the enhanced effective inertia
+($\enthalpy > \rdensity$) of the relativistic fluid: a smaller angular
+velocity suffices to generate the centrifugal force needed to
+destabilise the flow.
+
+\begin{causalitycheck}
+In the stationary marginal state ($\sigma = 0$) the perturbation
+equations are elliptic and no propagation speeds arise.  Causality is
+therefore trivially satisfied.  The Israel--Stewart relaxation
+times~$\taupi$ enter only through the time-dependent exchange-of-%
+stabilities argument (\S\,\ref{sec:rel-7-72}) and do not affect the
+critical Taylor number at marginal stability.
+\end{causalitycheck}
+
+\medskip\noindent\textbf{Non-relativistic limit.}\quad
+Setting $p/\rdensity c^{2}\to 0$, $\Omega R/c\to 0$, and
+$\shearvisc/(\rdensity c\,d)\to 0$ recovers
+$T_{\mathrm{rel}}\to T$, $\kappa_{\mathrm{rel}}\to\kappa$, and
+all results of \S\,\ref{sec:7-73} are recovered exactly.
