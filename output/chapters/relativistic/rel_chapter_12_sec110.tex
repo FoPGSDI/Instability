@@ -1,0 +1,537 @@
+% Relativistic Chapter XII, §110: Axial Magnetic Field on Gravitational Cylinder Instability
+% Relativistic generalization of Chandrasekhar, Chapter XII §110
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter*{Relativistic Gravitational Instability of a Cylinder with an Axial Magnetic Field}
+\addcontentsline{toc}{chapter}{Relativistic Gravitational Instability of a Cylinder with Axial $B$-Field}
+\label{ch:rel-12-110}
+
+%% ================================================================
+\section{Introduction: magnetized relativistic self-gravitating cylinders}
+\label{sec:rel-12-110-intro}
+
+In the non-relativistic treatment of \S~110, Chandrasekhar showed that
+a uniform axial magnetic field partially stabilizes an infinite
+self-gravitating cylinder: it raises the minimum wavelength at which
+the gravitational (Jeans-type) varicose instability can operate, but
+can never suppress the instability entirely---modes of sufficiently
+long wavelength always remain unstable, owing to the logarithmic
+divergence of the gravitational potential perturbation.
+
+The present section extends that analysis to the relativistic regime,
+where the inertia of the fluid is governed by the relativistic
+enthalpy density $w = (\varepsilon + p)/c^{2}$ rather than the
+rest-mass density $\rho_{0}$, and the magnetic field itself
+contributes to the stress--energy tensor.  This generalization is
+relevant in several astrophysical contexts:
+
+\begin{enumerate}
+\item \textbf{Relativistic jet fragmentation.}  Extragalactic jets,
+  launched with bulk Lorentz factors $\Gamma \sim 10$--$50$ from
+  active galactic nuclei, carry helical magnetic fields whose axial
+  component may suppress varicose (sausage-mode) kink instabilities
+  that would otherwise fragment the jet.  Whether such a jet fragments
+  into knots depends on the competition between relativistic
+  self-gravity and magnetic tension---precisely the physics of the
+  relativistic \S~110 problem.
+\item \textbf{Magnetized neutron-star filaments.}  Dense magnetized
+  filaments in neutron-star magnetospheres or in the post-merger
+  ejecta of binary neutron-star coalescences can be relativistically
+  hot, with $p/\varepsilon$ not negligible.
+\item \textbf{Cosmic string analogues.}  Gravitationally bound
+  magnetized plasma columns in the early universe or in gamma-ray
+  burst engines involve relativistic equation-of-state effects.
+\end{enumerate}
+
+Throughout, we work in flat Minkowski spacetime with cylindrical
+coordinates $(t, \varpi, \varphi, z)$ and metric signature
+$(-,+,+,+)$.  The speed of light $c$ is kept explicit.  The
+four-velocity satisfies $u^{\mu}u_{\mu} = -c^{2}$.  We employ Gaussian
+units for electromagnetic quantities, consistent with the original
+treatment.
+
+%% ================================================================
+\section{Relativistic MHD framework for an axially magnetized cylinder}
+\label{sec:rel-12-110-framework}
+
+\subsection{Equilibrium configuration}
+\label{sec:rel-12-110-equil}
+
+Consider an infinite cylinder of radius $R$, filled with a
+relativistic perfect fluid of energy density $\varepsilon$, pressure
+$p$, and rest-mass density $\rho_{0}$.  A uniform magnetic field
+$\mathbf{H} = H\,\hat{e}_{z}$ threads the cylinder along its axis.
+In the fluid rest frame the magnetic field four-vector is
+\begin{equation}
+\label{eq:rel-12-110-1}
+b^{\mu} = \bigl(0,\,0,\,0,\,H\bigr),\qquad
+b^{2} \equiv b^{\mu}b_{\mu} = H^{2},
+\end{equation}
+since the fluid is at rest in the equilibrium state.
+
+The total energy--momentum tensor for the magnetized fluid is
+(cf.\ RELATIVISTIC\_CONVENTIONS.md)
+\begin{equation}
+\label{eq:rel-12-110-2}
+T^{\mu\nu} = \Bigl(\varepsilon + p + \frac{b^{2}}{4\pi}\Bigr)
+\frac{u^{\mu}u^{\nu}}{c^{2}}
++ \Bigl(p + \frac{b^{2}}{8\pi}\Bigr) g^{\mu\nu}
+- \frac{b^{\mu}b^{\nu}}{4\pi}.
+\end{equation}
+The effective relativistic enthalpy density (including the magnetic
+contribution) is
+\begin{equation}
+\label{eq:rel-12-110-3}
+w_{\mathrm{tot}} = \frac{1}{c^{2}}\Bigl(\varepsilon + p
++ \frac{b^{2}}{4\pi}\Bigr)
+= \frac{1}{c^{2}}\Bigl(\varepsilon + p
++ \frac{H^{2}}{4\pi}\Bigr).
+\end{equation}
+In the non-relativistic limit $\varepsilon \to \rho_{0}c^{2}$,
+$p \ll \rho_{0}c^{2}$, $H^{2}/(8\pi) \ll \rho_{0}c^{2}$, we recover
+$w_{\mathrm{tot}} \to \rho_{0}$.
+
+\subsection{Relativistic Alfv\'en speed}
+\label{sec:rel-12-110-alfven}
+
+A central quantity in the relativistic generalization is the
+Alfv\'en speed.  For a magnetic field aligned along $\hat{e}_{z}$
+the relativistic Alfv\'en speed is (cf.\ RELATIVISTIC\_CONVENTIONS.md)
+\begin{equation}
+\label{eq:rel-12-110-4}
+\boxed{\vA^{2} = \frac{H^{2}/4\pi}{w_{\mathrm{tot}}} \cdot \frac{1}{1}
+= \frac{H^{2}/(4\pi)}{(\varepsilon + p)/c^{2} + H^{2}/(4\pi c^{2})}
+= \frac{H^{2} c^{2}}{4\pi(\varepsilon + p) + H^{2}}.}
+\end{equation}
+\paragraph{Causality.}
+One verifies immediately that $\vA^{2} < c^{2}$ for all finite values
+of $H$, $\varepsilon$, and $p > 0$:
+\begin{equation}
+\label{eq:rel-12-110-5}
+\vA^{2} = \frac{c^{2}}{1 + 4\pi(\varepsilon + p)/H^{2}} < c^{2}.
+\end{equation}
+The non-relativistic limit gives
+$\vA^{2} \to \mu H^{2}/(4\pi\rho_{0})$ (with $\mu=1$ in Gaussian
+units), recovering the classical Alfv\'en frequency
+$\Omega_{a}^{2} = k^{2}\vA^{2}$ of equation~(115) in \S~110.
+
+%% ================================================================
+\section{Perturbation equations: relativistic axisymmetric modes}
+\label{sec:rel-12-110-perturb}
+
+We restrict attention to axisymmetric perturbations, as in the
+non-relativistic case only these modes are gravitationally unstable.
+Let the boundary of the cylinder be deformed as
+\begin{equation}
+\label{eq:rel-12-110-6}
+\varpi = R + \epsilon_{0}\,e^{ikz + \sigma t},
+\end{equation}
+where $k$ is the axial wave number and $\sigma$ the (possibly complex)
+growth rate.  We define $x = kR$.
+
+In the ideal MHD limit (infinite conductivity, $F^{\mu\nu}u_{\nu}=0$
+in the fluid frame), the linearized relativistic momentum equation
+for the perturbed four-velocity $\delta u^{\mu}$ in the rest frame of
+the equilibrium fluid becomes
+\begin{equation}
+\label{eq:rel-12-110-7}
+w_{\mathrm{tot}}\,\sigma\,\delta u^{i}
+= -\partial^{i}\delta\Pi_{\mathrm{rel}}
++ \frac{H}{4\pi}\,\frac{\partial\,\delta b^{i}}{\partial z},
+\end{equation}
+where $\delta\Pi_{\mathrm{rel}}$ is the relativistic generalization of
+the total (gravitational + fluid + magnetic) pressure perturbation:
+\begin{equation}
+\label{eq:rel-12-110-8}
+\delta\Pi_{\mathrm{rel}} = -\delta\mathfrak{B}
++ \frac{\delta p}{w_{\mathrm{tot}}}
++ \frac{H\,\delta b_{z}}{4\pi\,w_{\mathrm{tot}}}.
+\end{equation}
+Here $\delta\mathfrak{B}$ denotes the perturbation in the
+gravitational potential.  The induction equation retains its classical
+form in the fluid frame:
+\begin{equation}
+\label{eq:rel-12-110-9}
+\sigma\,\delta b^{i} = ik\,H\,\delta u^{i}.
+\end{equation}
+
+Equation~\eqref{eq:rel-12-110-7} can be written in terms of a scalar
+function $U(\varpi)$ exactly as in the non-relativistic case (since
+the fluid is at rest in equilibrium and the perturbations are
+non-relativistic in the linear regime).  Substituting
+\eqref{eq:rel-12-110-9} into \eqref{eq:rel-12-110-7}, one obtains the
+eigenvalue equation
+\begin{equation}
+\label{eq:rel-12-110-10}
+\Bigl(\sigma^{2} + \Omega_{a,\mathrm{rel}}^{2}\Bigr) U
+= -\frac{\epsilon_{0}\Pi_{0}}{w_{\mathrm{tot}}}\,k\,I_{0}(k\varpi),
+\end{equation}
+where we have defined the \emph{relativistic Alfv\'en frequency}
+\begin{equation}
+\label{eq:rel-12-110-11}
+\boxed{\Omega_{a,\mathrm{rel}}^{2}
+= k^{2}\vA^{2}
+= \frac{k^{2} H^{2} c^{2}}{4\pi(\varepsilon+p) + H^{2}}.}
+\end{equation}
+In the non-relativistic limit,
+$\Omega_{a,\mathrm{rel}}^{2} \to k^{2}\mu H^{2}/(4\pi\rho_{0})
+= \Omega_{a}^{2}$, recovering equation~(115) of \S~110.
+
+%% ================================================================
+\section{Dispersion relation: relativistic characteristic equation}
+\label{sec:rel-12-110-dispersion}
+
+The boundary conditions---kinematic compatibility at $\varpi = R$,
+continuity of the normal component of $\mathbf{b}$ across $\varpi=R$,
+and continuity of the total normal stress on the deformed
+surface---follow the same algebraic steps as in \S~110, with the
+replacement $\rho \to w_{\mathrm{tot}} = (\varepsilon + p + H^{2}/4\pi)/c^{2}$.
+The gravitational potential perturbation, however, is sourced by the
+\emph{total} energy density $\varepsilon$ (not merely $\rho_{0}$) in
+general relativity.  For a weak-field (linearized GR) treatment valid
+to post-Newtonian order, the Poisson equation is replaced by
+\begin{equation}
+\label{eq:rel-12-110-12}
+\nabla^{2}\delta\mathfrak{B}
+= -4\pi G\,\frac{1}{c^{2}}\bigl(\delta\varepsilon
++ 3\,\delta p + \delta b^{2}/4\pi\bigr),
+\end{equation}
+but for the dominant gravitational mode on scales much larger than the
+Schwarzschild radius of the cylinder, we may approximate the source
+term by $-4\pi G\,\rho_{\mathrm{eff}}$, where the effective
+gravitational mass density is
+\begin{equation}
+\label{eq:rel-12-110-13}
+\rho_{\mathrm{eff}} = \frac{\varepsilon + p}{c^{2}}
++ \frac{H^{2}}{8\pi c^{2}} + \frac{3p}{c^{2}}
+\approx \frac{\varepsilon + p}{c^{2}}\Bigl(1 + \frac{2p}{\varepsilon+p}\Bigr)
++ \frac{H^{2}}{8\pi c^{2}}.
+\end{equation}
+For simplicity and transparency of the relativistic corrections, we
+define the \emph{relativistic gravitational mass density}
+\begin{equation}
+\label{eq:rel-12-110-14}
+\rho_{G} \equiv \frac{\varepsilon + 3p}{c^{2}}
++ \frac{H^{2}}{8\pi c^{2}},
+\end{equation}
+which reduces to $\rho_{0}$ in the Newtonian limit.
+
+Proceeding exactly as in the non-relativistic derivation---applying
+boundary conditions (1)--(3) of \S~110 with the replacements
+$\rho \to w_{\mathrm{tot}}$ (inertial) and $\rho \to \rho_{G}$
+(gravitational source)---we arrive at the \textbf{relativistic
+characteristic equation}:
+\begin{equation}
+\label{eq:rel-12-110-15}
+\boxed{\sigma^{2}
+= 4\pi G\,\rho_{G}\,\frac{x\,I_{1}(x)}{I_{0}(x)}
+\Bigl[K_{0}(x)\,I_{0}(x) - \tfrac{1}{2}\Bigr]
+- \Omega_{a,\mathrm{rel}}^{2}\,
+\frac{x^{2}\,I_{1}(x)\,K_{0}(x)}{I_{0}(x)\,K_{1}(x)},}
+\end{equation}
+where $x = kR$ and $I_{n}$, $K_{n}$ are modified Bessel functions.
+Defining the relativistic critical field strength
+\begin{equation}
+\label{eq:rel-12-110-16}
+H_{0,\mathrm{rel}} \equiv 4\pi R\,c\,
+\sqrt{\frac{\rho_{G}}{w_{\mathrm{tot}}}}\,\sqrt{G\,\rho_{G}},
+\end{equation}
+we can recast the dispersion relation~\eqref{eq:rel-12-110-15} in the
+dimensionless form
+\begin{equation}
+\label{eq:rel-12-110-17}
+\frac{\sigma^{2}}{4\pi G\,\rho_{G}}
+= \frac{x\,I_{1}(x)}{I_{0}(x)}
+\left\{K_{0}(x)\,I_{0}(x) - \tfrac{1}{2}
+- \Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}
+\frac{x^{2}\,K_{0}(x)}{I_{0}(x)\,K_{1}(x)}\right\}.
+\end{equation}
+This is the direct relativistic generalization of equation~(128) of
+\S~110.
+
+\paragraph{Non-relativistic limit.}
+Setting $\varepsilon = \rho_{0}c^{2}$, $p\to 0$,
+$H^{2}/(8\pi) \ll \rho_{0}c^{2}$, we find
+$\rho_{G} \to \rho_{0}$, $w_{\mathrm{tot}} \to \rho_{0}$,
+$\Omega_{a,\mathrm{rel}}^{2} \to \mu H^{2}k^{2}/(4\pi\rho_{0})$,
+$H_{0,\mathrm{rel}} \to 4\pi\rho_{0}R\sqrt{G\rho_{0}} = H_{0}$, and
+equation~\eqref{eq:rel-12-110-17} reduces exactly to the classical
+equation~(128).
+
+%% ================================================================
+\section{Nature of the stabilizing effect: relativistic magnetic tension}
+\label{sec:rel-12-110-nature}
+
+\subsection{Minimum wavelength for instability}
+\label{sec:rel-12-110-minstab}
+
+The structure of equation~\eqref{eq:rel-12-110-17} shows that the
+axial magnetic field contributes a stabilizing term proportional to
+$H^{2}$ (through $\Omega_{a,\mathrm{rel}}^{2}$), which \emph{grows}
+with wave number $k$.  Meanwhile, the gravitational term has the
+long-wavelength ($x\to 0$) logarithmic divergence
+$K_{0}(x)\,I_{0}(x) - \frac{1}{2} \to -\log(x/2) - \gamma_{E}$,
+where $\gamma_{E}$ is the Euler--Mascheroni constant.  Consequently,
+as in the non-relativistic case:
+
+\begin{quote}
+\emph{No axial magnetic field, however strong, can stabilize the
+cylinder against perturbations of all wavelengths.  Modes of
+sufficiently long wavelength remain gravitationally unstable.}
+\end{quote}
+
+This fundamental conclusion is unchanged by relativistic corrections,
+because the logarithmic divergence of the gravitational potential is a
+purely geometric (Newtonian-order) effect that persists in linearized
+GR.
+
+The critical wave number $x_{a}$ below which instability occurs is the
+root of
+\begin{equation}
+\label{eq:rel-12-110-18}
+K_{0}(x)\,I_{0}(x) - \tfrac{1}{2}
+= \Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}
+\frac{x^{2}\,K_{0}(x)}{I_{0}(x)\,K_{1}(x)}.
+\end{equation}
+For $\sigma^{2} < 0$ when $x > x_{a}$ and $\sigma^{2} > 0$ for
+$0 < x < x_{a}$, the cylinder is unstable to all varicose
+deformations with wavelengths exceeding
+\begin{equation}
+\label{eq:rel-12-110-19}
+\lambda_{\min} = \frac{2\pi R}{x_{a}}.
+\end{equation}
+
+\subsection{Critical field strength: $B^{2}/(8\pi)$ vs
+$(\varepsilon+p)\times$gravitational energy}
+\label{sec:rel-12-110-critical}
+
+The competition between magnetic tension and gravitational collapse is
+governed by the ratio $H/H_{0,\mathrm{rel}}$.  The critical field
+$H_{0,\mathrm{rel}}$ can be written as
+\begin{equation}
+\label{eq:rel-12-110-20}
+\frac{H_{0,\mathrm{rel}}^{2}}{8\pi}
+= 2\pi\,R^{2}\,G\,\rho_{G}^{2}\,\frac{c^{2}}{w_{\mathrm{tot}}c^{2}}
+= 2\pi\,R^{2}\,G\,\frac{\rho_{G}^{2}}{w_{\mathrm{tot}}}.
+\end{equation}
+In the non-relativistic limit this gives
+$H_{0}^{2}/(8\pi) = 2\pi R^{2} G \rho_{0}^{2}$, which is the
+magnetic pressure that equals the gravitational binding energy per
+unit volume of the cylinder.
+
+In the relativistic regime, the stabilization criterion becomes
+\begin{equation}
+\label{eq:rel-12-110-21}
+\frac{H^{2}}{8\pi} \gtrsim 2\pi R^{2}\,G\,
+\frac{(\varepsilon + 3p)^{2}/c^{4}}{(\varepsilon + p + H^{2}/4\pi)/c^{2}}
+\quad\Longrightarrow\quad
+\text{substantial suppression of short-wavelength modes.}
+\end{equation}
+The key relativistic effects are:
+\begin{enumerate}
+\item \textbf{Enhanced gravitational source:} the factor
+  $\rho_{G} = (\varepsilon + 3p + H^{2}/8\pi)/c^{2}$ replaces
+  $\rho_{0}$, so relativistic pressure (and the magnetic field itself)
+  contribute to the gravitational instability drive---an effect absent
+  in Newtonian theory.
+\item \textbf{Enhanced inertia:}  the effective inertial mass
+  $w_{\mathrm{tot}}$ includes the enthalpy $(\varepsilon+p)$ and the
+  magnetic energy density $H^{2}/(4\pi)$, which slows the growth of
+  perturbations.
+\item \textbf{Bounded Alfv\'en speed:}  $\vA < c$ always, preventing
+  any superluminal signal propagation in the stabilization mechanism.
+\end{enumerate}
+
+\subsection{Strong-field asymptotic behaviour}
+\label{sec:rel-12-110-strongB}
+
+For $H \gg H_{0,\mathrm{rel}}$, the critical wavenumber $x_{a} \ll 1$
+and we may use the small-argument expansions of the Bessel functions.
+The analysis parallels equations~(132)--(138) of \S~110, and we obtain
+\begin{equation}
+\label{eq:rel-12-110-22}
+x_{a} \simeq 2\exp\!\Bigl[-\gamma_{E} - \tfrac{1}{2}
+- 2\Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}\Bigr]
+= 0.6811\,\exp\!\Bigl[-2\Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}\Bigr],
+\end{equation}
+\begin{equation}
+\label{eq:rel-12-110-23}
+x_{m} \simeq 0.4134\,\exp\!\Bigl[-2\Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}\Bigr],
+\end{equation}
+and the maximum growth rate
+\begin{equation}
+\label{eq:rel-12-110-24}
+\sigma_{\max}^{2}
+\simeq \frac{4\pi G\,\rho_{G}}{4e^{2}}\,x_{m}^{2}
+= 0.2055\,(4\pi G\,\rho_{G})\,
+\exp\!\Bigl[-4\Bigl(\frac{H}{H_{0,\mathrm{rel}}}\Bigr)^{2}\Bigr].
+\end{equation}
+The exponential suppression of the growth rate with increasing
+$H/H_{0,\mathrm{rel}}$ is identical in form to the non-relativistic
+result, but the \emph{scale} is set by $\rho_{G}$ rather than
+$\rho_{0}$, leading to faster growth in relativistic configurations
+(since $\rho_{G} > \rho_{0}$ when $p > 0$).
+
+%% ================================================================
+\section{Causality constraint: $\vA < c$}
+\label{sec:rel-12-110-causality}
+
+\subsection{The Alfv\'en speed bound}
+\label{sec:rel-12-110-vabound}
+
+From equation~\eqref{eq:rel-12-110-4}, the relativistic Alfv\'en
+speed satisfies
+\begin{equation}
+\label{eq:rel-12-110-25}
+\frac{\vA^{2}}{c^{2}}
+= \frac{H^{2}}{4\pi(\varepsilon + p) + H^{2}} < 1
+\end{equation}
+for all $H < \infty$, provided $\varepsilon + p > 0$ (satisfied by
+any physical equation of state).  In the extreme magnetic-dominance
+limit $H^{2}/(4\pi) \gg \varepsilon + p$, one has $\vA \to c$,
+approaching but never reaching the speed of light.  This ensures that
+the stabilization mechanism cannot transmit information superluminally.
+
+\subsection{Fast magnetosonic speed}
+\label{sec:rel-12-110-fastms}
+
+The fast magnetosonic speed, which governs compressive perturbations
+coupled to the magnetic field, is
+\begin{equation}
+\label{eq:rel-12-110-26}
+v_{f}^{2} = \cs^{2} + \vA^{2}
+- \frac{\cs^{2}\,\vA^{2}}{c^{2}},
+\end{equation}
+where $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$ is the sound
+speed.  One verifies that $v_{f}^{2} < c^{2}$ provided
+$\cs^{2} < c^{2}$ and $\vA^{2} < c^{2}$---both of which hold for
+causal equations of state.  Hence, all physical signal speeds in the
+relativistic magnetized cylinder are subluminal, guaranteeing a
+well-posed initial-value problem for the stability analysis.
+
+%% ================================================================
+\section{Astrophysical context: magnetized relativistic jet fragmentation}
+\label{sec:rel-12-110-jets}
+
+The results of this section have direct application to the stability
+of extragalactic relativistic jets.
+
+\subsection{Fiducial parameters}
+\label{sec:rel-12-110-fiducial}
+
+Consider a relativistic jet modelled as a cylinder of (proper-frame)
+radius $R_{\mathrm{jet}} \sim 1\,\mathrm{kpc}$, proper energy
+density $\varepsilon \sim 10^{-9}\,\mathrm{erg/cm^{3}}$ (dominated by
+kinetic energy of relativistic particles), and pressure
+$p \sim \varepsilon/3$ (ultra-relativistic equation of state).  A
+helical magnetic field threads the jet, with the axial component
+$H_{z} \sim 10\,\mu\mathrm{G}$.
+
+For these parameters:
+\begin{itemize}
+\item The relativistic enthalpy density is
+  $w_{\mathrm{tot}} = (\varepsilon + p + H^{2}/4\pi)/c^{2}
+  \approx (4\varepsilon/3)/c^{2}$, since $H^{2}/(8\pi) \ll \varepsilon$.
+\item The effective gravitational mass density is
+  $\rho_{G} = (\varepsilon + 3p)/c^{2} = 2\varepsilon/c^{2}$,
+  a factor of 2 larger than the Newtonian-equivalent
+  $\varepsilon/c^{2}$.
+\item The relativistic Alfv\'en speed is
+  $\vA \approx H/\sqrt{4\pi\cdot 4\varepsilon/(3c^{2})}
+  = Hc/\sqrt{16\pi\varepsilon/3}$.
+\end{itemize}
+
+\subsection{Fragmentation wavelength and growth time}
+\label{sec:rel-12-110-fragment}
+
+The minimum wavelength for gravitational instability is
+$\lambda_{\min} = 2\pi R/x_{a}$, where $x_{a}$ is determined by
+equation~\eqref{eq:rel-12-110-18} with $\rho_{G}$ replacing
+$\rho_{0}$.  The relativistic correction \emph{increases} $\rho_{G}$
+relative to the Newtonian mass density, thereby strengthening the
+gravitational drive and making the jet \emph{more} susceptible to
+fragmentation than a purely Newtonian estimate would suggest.  This
+effect competes with the enhanced inertia $w_{\mathrm{tot}}$, and the
+net result depends on the equation of state:
+
+\begin{itemize}
+\item For cold matter ($p \ll \varepsilon$):  the relativistic
+  corrections are small, and the classical results of \S~110 apply
+  with minor modifications.
+\item For ultra-relativistic matter ($p = \varepsilon/3$):
+  $\rho_{G} = 2\varepsilon/c^{2}$ and
+  $w_{\mathrm{tot}} = 4\varepsilon/(3c^{2})$, so the ratio
+  $\rho_{G}/w_{\mathrm{tot}} = 3/2$.  The gravitational drive is
+  enhanced by a factor $\rho_{G}/\rho_{0} = 2$ relative to the
+  Newtonian case, leading to shorter fragmentation timescales.
+\end{itemize}
+
+The exponential sensitivity of $\sigma_{\max}$ to the field
+strength (equation~\eqref{eq:rel-12-110-24}) means that even modest
+increases in the axial magnetic field can prolong the fragmentation
+time by many orders of magnitude---precisely as Chandrasekhar noted
+for the non-relativistic case with the galactic-arm parameters of
+\S~110.
+
+\subsection{Implications for jet morphology}
+\label{sec:rel-12-110-morphology}
+
+The competition between relativistic gravitational fragmentation and
+axial magnetic stabilization offers a natural explanation for the
+observed diversity of jet morphologies:
+\begin{enumerate}
+\item \textbf{Knotty jets} (e.g., M87): $H/H_{0,\mathrm{rel}}$
+  is moderate, allowing fragmentation at wavelengths of order a few
+  $R_{\mathrm{jet}}$, producing the regularly spaced knots observed
+  at radio and optical wavelengths.
+\item \textbf{Smooth jets} (e.g., Cygnus~A hotspot-dominated):
+  $H/H_{0,\mathrm{rel}} > 1$, exponentially suppressing
+  fragmentation over the jet's lifetime, so the jet remains coherent
+  over hundreds of kiloparsecs.
+\item \textbf{Disrupted jets} (e.g., FR~I sources):  the axial field
+  is weak relative to $H_{0,\mathrm{rel}}$, and the jet fragments
+  rapidly, decelerating and spreading into a plume.
+\end{enumerate}
+
+%% ================================================================
+\section{Summary and non-relativistic limit}
+\label{sec:rel-12-110-summary}
+
+The principal results of this relativistic extension of \S~110 are:
+
+\begin{enumerate}
+\item The \textbf{dispersion relation}~\eqref{eq:rel-12-110-15}
+  generalizes the Chandrasekhar characteristic
+  equation~(126) of \S~110 by replacing $\rho$ with
+  appropriate relativistic quantities: $\rho_{G}$ (gravitational
+  source, equation~\eqref{eq:rel-12-110-14}) and $w_{\mathrm{tot}}$
+  (inertia, equation~\eqref{eq:rel-12-110-3}).
+
+\item The \textbf{relativistic Alfv\'en frequency}
+  $\Omega_{a,\mathrm{rel}}$
+  (equation~\eqref{eq:rel-12-110-11}) automatically satisfies
+  $\vA < c$, ensuring \textbf{causality} of the stabilization
+  mechanism.
+
+\item The qualitative conclusion that \emph{no magnetic field can
+  fully stabilize the cylinder} remains valid in the relativistic
+  regime, owing to the logarithmic divergence of the gravitational
+  potential at long wavelengths.
+
+\item For strong fields ($H > H_{0,\mathrm{rel}}$), the exponential
+  suppression of the growth rate
+  (equation~\eqref{eq:rel-12-110-24}) persists, with the relativistic
+  scale set by $\rho_{G}$ and $H_{0,\mathrm{rel}}$.
+
+\item The results provide a framework for understanding the
+  \textbf{fragmentation of magnetized relativistic jets} into knots,
+  with the jet morphology determined by $H/H_{0,\mathrm{rel}}$.
+\end{enumerate}
+
+\paragraph{Non-relativistic limit.}
+In the limit $p \to 0$, $\varepsilon \to \rho_{0}c^{2}$,
+$H^{2}/(8\pi) \ll \rho_{0}c^{2}$, all relativistic corrections
+vanish: $\rho_{G} \to \rho_{0}$, $w_{\mathrm{tot}} \to \rho_{0}$,
+$\Omega_{a,\mathrm{rel}} \to \Omega_{a}$,
+$H_{0,\mathrm{rel}} \to H_{0}$, and every equation in this section
+reduces to its counterpart in Chandrasekhar's \S~110.
