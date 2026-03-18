@@ -1,0 +1,479 @@
+% rel_chapter_6_sec55-56.tex
+% Agent 23: Relativistic spherical perturbation equations (Ch VI §55-56)
+% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+
+\section{Introduction: Spherical Geometry in the Relativistic Context}
+\label{sec:rel-55}
+
+In Chapter~VI of the classical treatment, the onset of thermal instability
+was studied in spheres and spherical shells subject to a Newtonian
+gravitational field.  The motivations were largely geophysical---the
+convective motions in the Earth's liquid core, the pattern of mantle
+convection, and related questions concerning the origin of the Earth's
+magnetic field.
+
+In the relativistic regime the spherical geometry acquires new, and arguably
+more compelling, motivation.  The astrophysical objects for which general
+relativity is indispensable---neutron stars, proto-neutron stars formed in
+core-collapse supernovae, and the dense stellar interiors approaching
+gravitational compactness---are naturally spherical (or nearly so).  In
+such systems:
+\begin{enumerate}
+\item[(i)] The gravitational field is strong: the compactness parameter
+  $\mathcal{C} = GM/(Rc^{2})$ can reach values of order $0.1$--$0.3$,
+  so that Newtonian gravity is inadequate for even a qualitative
+  description.
+\item[(ii)] The background equilibrium is governed by the
+  Tolman--Oppenheimer--Volkoff (TOV) equation rather than by classical
+  hydrostatic balance.
+\item[(iii)] Thermal energy can become a non-negligible fraction of the
+  rest-mass energy, and the equation of state must satisfy the causality
+  bound $c_{\mathrm{s}}^{2} \le c^{2}$.
+\item[(iv)] Heat propagation must be treated within the Israel--Stewart
+  causal framework (cf.\ Section~\ref{sec:rel-thermo-framework}); the
+  Fourier heat-conduction law, being parabolic, would produce
+  superluminal signal propagation and must be replaced.
+\item[(v)] The gravitational redshift modifies the effective buoyancy
+  criterion: the classical Schwarzschild--Ledoux criterion acquires a
+  relativistic Tolman factor $e^{\Phi/c^{2}}$, where $\Phi$ is the
+  gravitational potential appearing in the metric.
+\end{enumerate}
+
+\noindent
+The programme of this and the following sections is to re-derive the
+perturbation equations of Chapter~VI in a fully relativistic setting,
+using the TOV equilibrium as the unperturbed background, and to
+identify the corrections that arise from spacetime curvature.
+
+%------------------------------------------------------------------
+\section{The Perturbation Equations in Spherical Coordinates:
+  Relativistic Treatment}
+\label{sec:rel-56}
+
+\subsection{The background spacetime and TOV equilibrium}
+\label{subsec:rel-56-tov}
+
+We consider a static, spherically symmetric spacetime.  The most general
+metric of this form can be written as
+\begin{equation}
+  \dd s^{2}
+  = -e^{2\Phi(r)/c^{2}}\,c^{2}\,\dd t^{2}
+    + e^{2\Lambda(r)}\,\dd r^{2}
+    + r^{2}\bigl(\dd\theta^{2} + \sin^{2}\!\theta\;\dd\varphi^{2}\bigr),
+  \label{eq:rel6-metric}
+\end{equation}
+where the metric functions $\Phi(r)$ and $\Lambda(r)$ are determined by
+Einstein's field equations.  It is conventional to introduce the
+\emph{mass function}
+\begin{equation}
+  e^{-2\Lambda(r)}
+  = 1 - \frac{2\,G\,m(r)}{r\,c^{2}} \,,
+  \label{eq:rel6-Lambda}
+\end{equation}
+so that $m(r)$ represents the gravitational mass contained within a sphere
+of areal radius~$r$.
+
+For a perfect fluid with energy density~$\varepsilon(r)$ and
+pressure~$p(r)$, Einstein's equations reduce to the
+Tolman--Oppenheimer--Volkoff (TOV) system:
+\begin{equation}
+  \frac{\dd m}{\dd r}
+  = \frac{4\pi\,r^{2}\,\varepsilon}{c^{2}} \,,
+  \label{eq:rel6-mass}
+\end{equation}
+\begin{equation}
+  \frac{\dd p}{\dd r}
+  = -\frac{(\varepsilon + p)}{c^{2}}
+    \,\frac{G\,m + 4\pi\,G\,r^{3}\,p/c^{2}}
+          {r\bigl(r - 2\,G\,m/c^{2}\bigr)} \,,
+  \label{eq:rel6-TOV}
+\end{equation}
+\begin{equation}
+  \frac{\dd\Phi}{\dd r}
+  = -\frac{c^{2}}{\varepsilon + p}\,\frac{\dd p}{\dd r} \,.
+  \label{eq:rel6-Phi}
+\end{equation}
+Equation~\eqref{eq:rel6-TOV} is the relativistic generalization of the
+classical hydrostatic equation $\dd p/\dd r = -\rho\,g(r)$, to which it
+reduces in the limit $p \ll \varepsilon \approx \rho_{0}\,c^{2}$ and
+$2Gm/(rc^{2}) \ll 1$.  The Newtonian gravitational acceleration
+$g(r) = Gm(r)/r^{2}$ is replaced by the effective gravitational
+acceleration
+\begin{equation}
+  g_{\mathrm{eff}}(r)
+  = \frac{G\,m + 4\pi\,G\,r^{3}\,p/c^{2}}
+        {r^{2}\bigl(1 - 2Gm/(rc^{2})\bigr)} \,,
+  \label{eq:rel6-geff}
+\end{equation}
+which incorporates the contributions of pressure to the gravitational
+source (a purely relativistic effect) and the spatial curvature
+correction factor $\bigl(1 - 2Gm/(rc^{2})\bigr)^{-1}$.
+
+%------------------------------------------------------------------
+\subsection{Relativistic thermal background}
+\label{subsec:rel-56-thermal}
+
+In the classical treatment (eq.~6-3 of the original text), the
+temperature distribution was determined by the Fourier equation
+$\kappa\,\nabla^{2}T = -\epsilon$.  In the relativistic setting
+we must replace this by the Israel--Stewart causal heat equation.
+For a static background the relaxation terms vanish and the
+steady-state temperature profile satisfies
+\begin{equation}
+  \frac{1}{r^{2}}\frac{\dd}{\dd r}\!\left(
+    r^{2}\,e^{-\Lambda}\,\kappa_{\mathrm{rel}}
+    \,e^{-\Lambda}\,\frac{\dd(e^{\Phi/c^{2}}\,T)}{\dd r}
+  \right)
+  = -\epsilon_{\mathrm{rel}}\,e^{2\Lambda} \,,
+  \label{eq:rel6-heat-bg}
+\end{equation}
+where $\kappa_{\mathrm{rel}}$ is the relativistic thermal conductivity
+and $\epsilon_{\mathrm{rel}}$ is the proper volumetric heat-generation
+rate.  The factor $e^{\Phi/c^{2}}\,T$ is the Tolman-redshifted
+temperature, which is spatially uniform in global thermal equilibrium.
+The temperature gradient driving buoyancy is therefore
+\begin{equation}
+  \beta_{\mathrm{rel}}(r)
+  = -e^{-\Lambda}\frac{\dd T}{\dd r}
+    + \frac{T}{c^{2}}\,e^{-\Lambda}\frac{\dd\Phi}{\dd r} \,,
+  \label{eq:rel6-beta}
+\end{equation}
+where the second term is the \emph{Tolman correction}, absent in the
+Newtonian theory.  In the non-relativistic limit
+($\Phi/c^{2} \to 0$, $\Lambda \to 0$), $\beta_{\mathrm{rel}}$
+reduces to the classical gradient
+$\beta = -\dd T/\dd r = 2\bar{\beta}_{0}\,r$.
+
+%------------------------------------------------------------------
+\subsection{The operator $\mathscr{L}^{2}$ in curved spacetime}
+\label{subsec:rel-56-L2}
+
+The angular momentum operator $\mathscr{L}^{2}$ was introduced in the
+classical theory in Section~\ref{sec:56a}.  In the metric
+\eqref{eq:rel6-metric} the two-sphere at fixed $r$ and $t$ has the
+standard round metric $r^{2}\,\dd\Omega^{2}$, and the Laplacian on this
+two-sphere is
+\begin{equation}
+  \mathscr{L}^{2}
+  = -\frac{1}{\sin\theta}\frac{\pp}{\pp\theta}\!\left(
+      \sin\theta\,\frac{\pp}{\pp\theta}
+    \right)
+    - \frac{1}{\sin^{2}\!\theta}\frac{\pp^{2}}{\pp\varphi^{2}} \,,
+  \label{eq:rel6-L2}
+\end{equation}
+which is \emph{identical in form} to the classical expression
+(eq.~\eqref{eq:6-25}).  This is because the angular sector of the
+metric~\eqref{eq:rel6-metric} is conformally identical to flat space;
+the curvature of the spacetime is encoded entirely in the
+$(t,r)$-sector through $\Phi$ and $\Lambda$.  The eigenvalue equation
+\begin{equation}
+  \mathscr{L}^{2}\,Y_{l}^{m}(\theta,\varphi)
+  = l(l+1)\,Y_{l}^{m}(\theta,\varphi)
+  \label{eq:rel6-L2-eigen}
+\end{equation}
+therefore carries over unchanged, and the spherical harmonics
+$Y_{l}^{m}(\theta,\varphi)$ remain the natural angular basis.
+
+The full covariant Laplacian acting on a scalar function
+$f(r)\,Y_{l}^{m}(\theta,\varphi)$ in the metric
+\eqref{eq:rel6-metric} becomes
+\begin{equation}
+  \Box_{\mathrm{spatial}}\bigl[f(r)\,Y_{l}^{m}\bigr]
+  = \left(\mathscr{D}_{l,\mathrm{rel}}^{2}\,f\right) Y_{l}^{m} \,,
+  \label{eq:rel6-scalar-lap}
+\end{equation}
+where the relativistic radial operator is
+\begin{equation}
+  \mathscr{D}_{l,\mathrm{rel}}^{2}
+  = e^{-2\Lambda}\!\left(
+      \frac{\dd^{2}}{\dd r^{2}}
+      + \left[\frac{2}{r} - \frac{\dd\Lambda}{\dd r}
+              + \frac{1}{c^{2}}\frac{\dd\Phi}{\dd r}\right]
+        \frac{\dd}{\dd r}
+    \right)
+    - \frac{l(l+1)}{r^{2}} \,.
+  \label{eq:rel6-Dlrel}
+\end{equation}
+In the Newtonian limit ($\Lambda \to 0$, $\Phi/c^{2}\to 0$)
+this reduces to the classical operator
+$\mathscr{D}_{l}^{2} = \dd^{2}/\dd r^{2}
+  + (2/r)\,\dd/\dd r - l(l+1)/r^{2}$
+(cf.\ eq.~\eqref{eq:6-34}).
+
+%------------------------------------------------------------------
+\subsection{Normal mode analysis with spherical harmonics}
+\label{subsec:rel-56-modes}
+
+Following the procedure of Section~\ref{sec:56b}, we decompose
+perturbations into normal modes.  In the relativistic setting we write,
+for Eulerian perturbations about the TOV background,
+\begin{equation}
+  \delta u_{r}\,r
+  = W(r)\,Y_{l}^{m}(\theta,\varphi)\,e^{pt} \,,
+  \label{eq:rel6-W}
+\end{equation}
+\begin{equation}
+  \delta T
+  = \Theta(r)\,Y_{l}^{m}(\theta,\varphi)\,e^{pt} \,,
+  \label{eq:rel6-Theta}
+\end{equation}
+\begin{equation}
+  \frac{\delta p}{\varepsilon + p}
+  = \Pi(r)\,Y_{l}^{m}(\theta,\varphi)\,e^{pt} \,,
+  \label{eq:rel6-Pi}
+\end{equation}
+where $p$ (not to be confused with pressure) is the growth rate.
+The key distinction from the classical analysis is that the
+background quantities $\varepsilon$, $p$, and $T$ are determined by the
+TOV system \eqref{eq:rel6-mass}--\eqref{eq:rel6-Phi} rather than by
+Newtonian hydrostatics.
+
+Inserting these modal forms into the linearized relativistic
+conservation equations $\nabla_{\mu}(\delta T^{\mu\nu}) = 0$ and the
+Israel--Stewart heat equation, and using the angular decomposition via
+$\mathscr{L}^{2}\,Y_{l}^{m} = l(l+1)\,Y_{l}^{m}$, we obtain the
+coupled radial system.
+
+\paragraph{Radial momentum (relativistic Euler):}
+\begin{equation}
+  p\,W
+  = -r\,e^{-2\Lambda}\frac{\dd\Pi}{\dd r}
+    + \frac{g_{\mathrm{eff}}}{c^{2}}\,\alpha_{\mathrm{rel}}\,r\,\Theta
+    + \nu_{\mathrm{rel}}\,\mathscr{D}_{l,\mathrm{rel}}^{2}\,W
+    + \mathcal{R}_{W} \,,
+  \label{eq:rel6-W-eq}
+\end{equation}
+where $\alpha_{\mathrm{rel}}$ is the relativistic thermal expansion
+coefficient,
+$\nu_{\mathrm{rel}} = \shearvisc/[(\varepsilon+p)/c^{2}]$ is the
+relativistic kinematic viscosity, and $\mathcal{R}_{W}$ collects
+curvature-coupling terms proportional to $\dd\Phi/\dd r$ and
+$\dd\Lambda/\dd r$ that vanish in the Newtonian limit.
+
+\paragraph{Thermal perturbation (Israel--Stewart):}
+\begin{equation}
+  \left(1 + \tauq\,p\right)\!
+  \left(\mathscr{D}_{l,\mathrm{rel}}^{2}
+        - \frac{p}{\kappa_{\mathrm{rel}}}\right)\Theta
+  = -\frac{\beta_{\mathrm{rel}}}{r}\,W
+    + \mathcal{R}_{\Theta} \,,
+  \label{eq:rel6-Theta-eq}
+\end{equation}
+where $\tauq$ is the heat-flux relaxation time.  In the limit
+$\tauq \to 0$ (Fourier law) this reduces to an equation of the
+classical form~\eqref{eq:6-35}.  For finite $\tauq > 0$, the thermal
+perturbation equation is \emph{hyperbolic}, ensuring causal
+propagation of thermal signals.
+
+\paragraph{Combined sixth-order equation:}
+In direct analogy with equation~\eqref{eq:6-23}, we can eliminate
+$\Theta$ to obtain a single equation for~$W$:
+\begin{equation}
+  \left(1 + \tauq\,p\right)
+  \!\left(\mathscr{D}_{l,\mathrm{rel}}^{2}
+          - \frac{p}{\kappa_{\mathrm{rel}}}\right)\!
+  \left(\mathscr{D}_{l,\mathrm{rel}}^{2}
+          - \frac{p}{\nu_{\mathrm{rel}}}\right)\!
+  \mathscr{D}_{l,\mathrm{rel}}^{2}\,W
+  = -\frac{\psi_{\mathrm{rel}}}{\kappa_{\mathrm{rel}}\,
+     \nu_{\mathrm{rel}}}\,l(l+1)\,
+     \frac{\beta_{\mathrm{rel}}}{r}\,W \,,
+  \label{eq:rel6-combined}
+\end{equation}
+where $\psi_{\mathrm{rel}}(r) = \alpha_{\mathrm{rel}}\,
+g_{\mathrm{eff}}(r)/r$ is the relativistic analogue of the function
+$\psi(r) = \alpha\gamma(r)$ defined in eq.~\eqref{eq:6-12}.  The
+additional factor $(1 + \tauq\,p)$ on the left-hand side is the
+signature of causal heat transport; it raises the order of the
+characteristic polynomial in $p$ by one, introducing a new (purely
+decaying) thermal-relaxation mode.
+
+In the non-relativistic limit
+($c \to \infty$, $\Lambda \to 0$, $\Phi \to 0$, $\tauq \to 0$)
+equation~\eqref{eq:rel6-combined} reduces precisely to
+equation~\eqref{eq:6-23}.
+
+%------------------------------------------------------------------
+\subsection{Boundary conditions}
+\label{subsec:rel-56-bc}
+
+Solutions of the radial system
+\eqref{eq:rel6-W-eq}--\eqref{eq:rel6-Theta-eq} must satisfy boundary
+conditions that are the relativistic counterparts of those in
+Section~\ref{sec:56c}.
+
+\subsubsection{Regularity at the centre ($r = 0$)}
+For a complete fluid sphere (as in a neutron star), all perturbation
+variables must be regular at $r = 0$.  From the structure of the
+relativistic radial operator~\eqref{eq:rel6-Dlrel} and the requirement
+that the metric be smooth at the origin ($\Lambda(0) = 0$,
+$m(0) = 0$), we obtain the behaviour
+\begin{equation}
+  W(r) \sim r^{l+1}, \qquad
+  \Theta(r) \sim r^{l}, \qquad
+  \Pi(r) \sim r^{l},
+  \qquad\text{as } r \to 0 \,.
+  \label{eq:rel6-bc-centre}
+\end{equation}
+This is the direct relativistic analogue of the classical condition
+(eq.~\eqref{eq:6-48}) that $W$ and $G$ behave like $r^{l}$ near the
+origin; the shift by one power in $W$ arises from the definition
+$\delta u_{r}\,r = W\,Y_{l}^{m}\,e^{pt}$.
+
+\subsubsection{Matching conditions at the stellar surface ($r = R$)}
+At the stellar surface, defined by $p(R) = 0$, the interior solution
+must match smoothly to the exterior Schwarzschild vacuum.  The
+conditions are:
+\begin{enumerate}
+\item[(i)] The Lagrangian pressure perturbation vanishes:
+  \begin{equation}
+    \Delta p\big|_{r=R}
+    = \delta p + \xi^{r}\frac{\dd p}{\dd r}\bigg|_{r=R} = 0 \,,
+    \label{eq:rel6-bc-surface-p}
+  \end{equation}
+  where $\xi^{r}$ is the radial displacement.
+
+\item[(ii)] The induced metric on the surface and its first derivative
+  are continuous (junction conditions).  In terms of the perturbation
+  variables this requires continuity of $W$ and $\dd W/\dd r$ across
+  $r = R$.
+
+\item[(iii)] The temperature perturbation satisfies either
+  $\Theta(R) = 0$ (isothermal surface) or a radiative boundary
+  condition matching to an optically thin envelope.
+
+\item[(iv)] When Israel--Stewart transport is used, the heat flux
+  perturbation $\delta q^{r}$ must be continuous across the surface,
+  providing an additional condition absent in the classical theory.
+\end{enumerate}
+
+\noindent
+For a spherical shell confined between $r = R_{1}$ (inner boundary) and
+$r = R_{0}$ (outer boundary), conditions analogous to the classical ones
+(eq.~\eqref{eq:6-38}) apply at both boundaries:
+\begin{equation}
+  W = 0, \quad \Theta = 0
+  \qquad\text{at } r = R_{1} \text{ and } r = R_{0} \,.
+  \label{eq:rel6-bc-shell}
+\end{equation}
+For a rigid boundary the additional condition is
+$\dd W/\dd r = 0$ (cf.\ eq.~\eqref{eq:6-43}); for a free boundary,
+$\dd^{2}W/\dd r^{2} = 0$ (cf.\ eq.~\eqref{eq:6-47}), both now
+evaluated in the coordinate $r$ of the metric~\eqref{eq:rel6-metric}.
+
+%------------------------------------------------------------------
+\subsection{Velocity field: toroidal--poloidal decomposition in
+  curved spacetime}
+\label{subsec:rel-56-TP}
+
+The classical decomposition of an arbitrary solenoidal velocity field into
+toroidal (\textbf{T}) and poloidal (\textbf{S}) components
+(Section~\ref{sec:56d}) extends naturally to the relativistic setting.
+In a static, spherically symmetric spacetime
+the spatial metric on a $t = \text{const}$ slice takes the form
+\begin{equation}
+  \dd\ell^{2}
+  = e^{2\Lambda}\,\dd r^{2}
+    + r^{2}\,\dd\Omega^{2} \,,
+  \label{eq:rel6-spatial}
+\end{equation}
+and the spatial part of the 4-velocity perturbation $\delta u^{i}$ can
+be decomposed on each two-sphere as
+\begin{equation}
+  \delta u^{i}
+  = \delta u^{r}\,\hat{e}_{r}^{i}
+    + \frac{1}{r}\left(
+        \nabla_{\!\perp}^{i}\,\mathscr{S}
+        + \epsilon^{ij}_{\perp}\,\nabla_{\!\perp\,j}\,\mathscr{T}
+      \right) e^{pt} \,,
+  \label{eq:rel6-TP-decomp}
+\end{equation}
+where $\nabla_{\!\perp}^{i}$ is the covariant derivative on the
+unit two-sphere, $\epsilon^{ij}_{\perp}$ is the Levi-Civita tensor on
+the two-sphere, and $\mathscr{S}(r,\theta,\varphi)$,
+$\mathscr{T}(r,\theta,\varphi)$ are the poloidal and toroidal scalar
+potentials, respectively.
+
+The poloidal and toroidal fields retain the fundamental properties
+catalogued in the classical case (eqs.~\eqref{eq:6-49}--\eqref{eq:6-57}):
+\begin{enumerate}
+\item[(i)] Both fields are solenoidal with respect to the spatial
+  covariant derivative $D_{i}$ of the metric~\eqref{eq:rel6-spatial}.
+
+\item[(ii)] The orthogonality relations
+  $\int \mathbf{S}\cdot\mathbf{S}'\,\dd\Omega = 0$ (for different
+  harmonics), $\int \mathbf{T}\cdot\mathbf{T}'\,\dd\Omega = 0$, and
+  $\int \mathbf{S}\cdot\mathbf{T}\,\dd\Omega = 0$ continue to hold,
+  because these integrals are performed on the round two-sphere whose
+  geometry is unaffected by the $(t,r)$-curvature.
+
+\item[(iii)] The curl relations between poloidal and toroidal fields
+  acquire metric factors: $\operatorname{curl}\mathbf{S}$ yields a
+  toroidal field whose defining scalar involves the factor
+  $e^{-\Lambda}$, and similarly for
+  $\operatorname{curl}\mathbf{T}$.
+
+\item[(iv)] The defining scalars $\mathscr{S}$ and $\mathscr{T}$ are
+  related to the radial functions $W$ and $Z$ (the radial vorticity
+  component) by
+  \begin{equation}
+    W = -\frac{l(l+1)}{r}\,\mathscr{S}\,, \qquad
+    Z = -\frac{l(l+1)}{r}\,\mathscr{T}\,,
+    \label{eq:rel6-WZ-ST}
+  \end{equation}
+  in direct correspondence with eq.~\eqref{eq:6-58}.
+\end{enumerate}
+
+\noindent
+An important consequence for the thermal instability problem is that,
+just as in the classical theory, the \emph{toroidal velocity field
+is not driven by thermal buoyancy}: the buoyancy force is purely radial
+and excites only the poloidal component.  The toroidal modes decouple
+from the temperature perturbation and, in the absence of rotation or
+magnetic fields, decay through viscous dissipation.  This structure
+persists in the relativistic theory because the buoyancy force remains
+radial in a spherically symmetric background.
+
+%------------------------------------------------------------------
+\subsection{Summary of relativistic corrections}
+\label{subsec:rel-56-summary}
+
+The principal modifications introduced by the relativistic treatment
+of the spherical perturbation equations may be summarized as follows:
+\begin{enumerate}
+\item The Newtonian hydrostatic equilibrium is replaced by the TOV
+  system \eqref{eq:rel6-mass}--\eqref{eq:rel6-Phi}.  All background
+  quantities ($\varepsilon$, $p$, $T$, $g_{\mathrm{eff}}$) reflect the
+  relativistic equation of state and the contribution of pressure to
+  gravity.
+
+\item The radial differential operator $\mathscr{D}_{l}^{2}$
+  (eq.~\eqref{eq:6-34}) is replaced by
+  $\mathscr{D}_{l,\mathrm{rel}}^{2}$ (eq.~\eqref{eq:rel6-Dlrel}),
+  which incorporates the metric functions $\Phi$ and $\Lambda$.
+
+\item The angular operator $\mathscr{L}^{2}$ and the spherical-harmonic
+  decomposition are unchanged, since the angular sector of the metric
+  is the standard round two-sphere.
+
+\item The Fourier heat equation is replaced by the Israel--Stewart
+  causal equation, introducing the relaxation time $\tauq$ and raising
+  the order of the eigenvalue problem in the growth rate~$p$.
+
+\item The temperature gradient driving buoyancy acquires a
+  Tolman-redshift correction (eq.~\eqref{eq:rel6-beta}).
+
+\item Boundary conditions at the stellar surface include junction
+  conditions to the exterior Schwarzschild metric and continuity of
+  the heat flux---requirements absent in the Newtonian theory.
+
+\item The effective gravitational acceleration
+  $g_{\mathrm{eff}}$ (eq.~\eqref{eq:rel6-geff}) includes pressure
+  contributions to the gravitational source and a spatial-curvature
+  factor.
+\end{enumerate}
+
+\noindent
+All relativistic corrections vanish in the limit
+$c \to \infty$ (equivalently $GM/(Rc^{2}) \to 0$ and $\tauq \to 0$),
+and the classical equations of Chapter~VI are recovered exactly.
