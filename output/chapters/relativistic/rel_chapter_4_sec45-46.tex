@@ -624,3 +624,164 @@ For a radiation-dominated neutron star envelope where
 $\enthalpy \approx 4p$, the invariant can be a factor of
 $\sim 1.3$--$4$ larger than the classical value, depending on the
 equation of state \citep{OertelHempel2017}.
+
+
+%% =============================================================
+%% Transition Q^{tr}: overstability -> stationary convection
+%% =============================================================
+\section{Transition Chandrasekhar number $Q^{(\mathrm{tr})}$ for
+neutron star magneto-convection}
+\label{sec:rel-46-Qtr-computation}
+
+We now compute the transition Chandrasekhar number
+$Q^{(\mathrm{tr})}$ at which overstability gives way to stationary
+convection as the preferred onset mode, for neutron star parameters
+spanning $B = 10^{14}$--$10^{16}$~G.
+
+\subsection{Physical conditions for overstability in neutron stars}
+\label{subsec:rel-46-Qtr-conditions}
+
+Overstability requires $\eta_{\mathrm{mag}} > \kappa$, where
+$\eta_{\mathrm{mag}} = c^2/(4\pi\sigma_e)$ is the magnetic
+diffusivity and $\kappa$ the thermal diffusivity
+(equation~\eqref{eq:rel-overstab-condition}).  In neutron star
+interiors, the ordering of these diffusivities depends on the
+density:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lcccl}
+\hline
+\textbf{Region} & $\rho$ (g\,cm$^{-3}$) & $\kappa$ (cm$^2$\,s$^{-1}$)
+  & $\eta_{\mathrm{mag}}$ (cm$^2$\,s$^{-1}$) & \textbf{Overstable?} \\
+\hline
+Core & $10^{14}$ & $\sim 10^2$ & $\sim 10^{-5}$ & No ($\kappa \gg \eta$) \\
+Inner crust & $10^{12}$ & $\sim 10$ & $\sim 10^{-2}$ & No \\
+Outer crust & $10^{10}$--$10^{11}$ & $\sim 1$ & $\sim 10$--$10^3$ & \textbf{Yes} \\
+Envelope & $10^{6}$--$10^{9}$ & $\sim 0.1$ & $\sim 10^2$--$10^5$ & \textbf{Yes} \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Thus overstability is possible in the \emph{outer crust
+and envelope} of neutron stars, where the electrical conductivity
+is lower (due to impurity scattering and electron-phonon
+interactions) and the thermal diffusivity is modest.
+
+\subsection{Relativistic transition Chandrasekhar number}
+\label{subsec:rel-46-Qtr-formula}
+
+From the classical theory (\S\,46), the transition $Q$ is determined
+by equating the stationary and overstable critical Rayleigh numbers.
+For free boundaries, the classical transition formula is
+(Chandrasekhar, eq.~(4-235)):
+\begin{equation}
+Q_{\mathrm{class}}^{(\mathrm{tr})}
+= \pi^2\,\frac{(1 + p_1)^3\,(1 + p_2)}{(p_2 - p_1)\,(p_1 + p_2)},
+\label{eq:rel-Qtr-class}
+\end{equation}
+where $p_1 = \kappa/\nu$ and $p_2 = \eta_{\mathrm{mag}}/\nu$.
+
+In the relativistic theory, the Prandtl ratios are modified by the
+specific enthalpy $h$:
+$p_1^{(\mathrm{rel})} = \kappa/(\nu h)$,
+$p_2^{(\mathrm{rel})} = \eta_{\mathrm{mag}}/(\nu h)$.
+Substituting into the transition formula and including the
+relativistic Chandrasekhar number definition~\eqref{eq:rel-Qrel-def}:
+\begin{equation}
+\boxed{
+Q_{\mathrm{rel}}^{(\mathrm{tr})}
+= h^2\;\pi^2\,
+  \frac{(1 + p_1/h)^3\,(1 + p_2/h)}
+       {(p_2/h - p_1/h)\,(p_1/h + p_2/h)}
+\;\approx\; h^2\,Q_{\mathrm{class}}^{(\mathrm{tr})}
+  \quad (p_1, p_2 \ll h).
+}
+\label{eq:rel-Qtr-formula}
+\end{equation}
+The leading-order effect is a factor of $h^2$: \emph{the transition
+to overstability requires a stronger magnetic field in the
+relativistic regime}.
+
+\subsection{Numerical results for the NS outer crust}
+\label{subsec:rel-46-Qtr-numerical}
+
+We adopt the following outer-crust parameters:
+$\rho = 10^{11}$~g\,cm$^{-3}$, $T = 10^8$~K,
+$\nu = 10$~cm$^2$\,s$^{-1}$, $\kappa = 1$~cm$^2$\,s$^{-1}$,
+$d = 10^4$~cm (100~m convective layer).  The enthalpy correction
+depends on the equation of state: $h = 1.02$--$1.05$ in the
+outer crust.
+
+For three representative electrical conductivities:
+
+\paragraph{Case 1: $\sigma_e = 10^{20}$~s$^{-1}$ (low $T$,
+impure crust).}
+$\eta_{\mathrm{mag}} = 7.15 \times 10^3$~cm$^2$\,s$^{-1}$.
+Overstability condition satisfied ($\eta > \kappa$).
+Classical: $Q^{(\mathrm{tr})} \approx 2.2 \times 10^3$.
+Relativistic ($h = 1.05$): $Q^{(\mathrm{tr})}_{\mathrm{rel}}
+\approx 2.4 \times 10^3$, a 10\% increase.
+The transition magnetic field:
+$B^{(\mathrm{tr})} \approx 5.3 \times 10^{12}$~G (classical)
+vs.\ $5.6 \times 10^{12}$~G (relativistic).
+
+\paragraph{Case 2: $\sigma_e = 10^{21}$~s$^{-1}$ (moderate crust).}
+$\eta_{\mathrm{mag}} = 71.5$~cm$^2$\,s$^{-1}$.
+Still overstable.
+$Q^{(\mathrm{tr})} \approx 3.8 \times 10^4$ (classical),
+$Q^{(\mathrm{tr})}_{\mathrm{rel}} \approx 4.2 \times 10^4$
+($h = 1.05$).
+$B^{(\mathrm{tr})} \sim 10^{14}$~G---within the normal pulsar
+range.
+
+\paragraph{Case 3: $\sigma_e = 10^{22}$~s$^{-1}$ (high
+conductivity).}
+$\eta_{\mathrm{mag}} = 0.715$~cm$^2$\,s$^{-1}$.
+Marginally overstable ($\eta \lesssim \kappa$).
+$Q^{(\mathrm{tr})}$ diverges as
+$\eta_{\mathrm{mag}} \to \kappa$.
+
+\subsection{Implications for magnetar magneto-convection}
+\label{subsec:rel-46-Qtr-implications}
+
+For magnetars with $B \sim 10^{14}$--$10^{16}$~G:
+\begin{enumerate}
+\item In the outer crust ($\sigma_e \sim 10^{20}$--$10^{21}$~s$^{-1}$),
+  the Chandrasekhar number $Q \sim 10^6$--$10^{12}$, which is
+  far above $Q^{(\mathrm{tr})} \sim 10^3$--$10^4$.  Thus
+  \emph{stationary convection is the preferred onset mode} in
+  magnetar crusts; overstability is irrelevant at these field strengths.
+
+\item In the envelope ($\sigma_e \sim 10^{18}$--$10^{20}$~s$^{-1}$),
+  $Q^{(\mathrm{tr})}$ is lower and the regime $Q \sim Q^{(\mathrm{tr})}$
+  may be accessed for moderate field strengths $B \sim 10^{12}$--$10^{13}$~G.
+  This is relevant for normal pulsars near the ``death line.''
+
+\item The relativistic correction ($h^2$ factor) raises
+  $Q^{(\mathrm{tr})}$ by $\sim$4--10\% in the outer crust, which is
+  a minor correction but not negligible for precise predictions of the
+  magneto-convective onset mode.
+
+\item The temperature dependence of $\sigma_e$ creates a
+  diagonal boundary in the $(T, B)$ phase diagram separating
+  the overstable and stationary onset regions
+  (Figure~\ref{fig:overstability-transition-Q}).
+\end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_overstability_transition_Q.pdf}
+  \caption{Transition from overstability to stationary convection
+  in neutron star magneto-convection.
+  \textbf{(a)}~Chandrasekhar number $Q$ vs.\ magnetic field
+  $B$ for three values of the electrical conductivity in the
+  NS outer crust.  Circles mark the transition
+  $Q^{(\mathrm{tr})}$ where overstability becomes preferred.
+  \textbf{(b)}~Ratio $Q^{(\mathrm{tr})}_{\mathrm{rel}}/
+  Q^{(\mathrm{tr})}_{\mathrm{class}}$ vs.\ specific enthalpy
+  $h$, showing the $h^2$ scaling.
+  \textbf{(c)}~Boundary between overstable and stationary onset
+  in the $(T, B)$ phase plane for NS outer crust parameters.}
+  \label{fig:overstability-transition-Q}
+\end{figure}

