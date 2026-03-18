@@ -63,9 +63,12 @@ at least three reasons:
   Tolman--Oppenheimer--Volkoff effect).
 
 \item \emph{Causal dissipation.}  When viscosity is present, the
-  Navier--Stokes equation must be replaced by the Israel--Stewart theory
-  to preserve causality; the resulting relaxation terms modify the
-  viscous damping at short wavelengths.
+  Navier--Stokes equation must be replaced by a causal viscous
+  theory to preserve causality.  In the BDNK (Bemfica--Disconzi--Noronha--Kovtun)
+  first-order framework, causality is ensured by appropriate constraints
+  on the transport coefficients and hydrodynamic frame choice, without
+  introducing relaxation equations; the viscous damping at short
+  wavelengths is modified by the causal bounds on the frame coefficients.
 \end{itemize}
 
 Throughout this chapter we work in cylindrical coordinates
@@ -385,7 +388,7 @@ motion $\ddot{\epsilon}=\sigma^{2}\epsilon$ reproduces
 \eqref{eq:rel-12-12}.
 
 %% ================================================================
-\section{The effect of viscosity: Israel--Stewart theory on cylindrical
+\section{The effect of viscosity: BDNK first-order causal theory on cylindrical
   instability}\label{sec:rel-12-109}
 
 \subsection{Motivation: causal viscous transport}
@@ -398,24 +401,29 @@ without delay.  This is physically acceptable when the speed of viscous
 signal propagation greatly exceeds all other relevant speeds, but
 violates causality in the relativistic regime.
 
-The Israel--Stewart theory of relativistic dissipative fluids remedies
-this by introducing relaxation equations for the viscous stress tensor.
-In the notation of the conventions document, the shear stress satisfies
+The BDNK (Bemfica--Disconzi--Noronha--Kovtun) theory of relativistic
+dissipative fluids~\cite{Bemfica2018,Kovtun2019,Bemfica2019} remedies
+this within a \emph{first-order} framework: the viscous stress is given
+directly by the constitutive relation
 \begin{equation}
 \label{eq:rel-12-26}
-\taupi\, u^{\alpha}\covd_{\!\alpha}\,\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu},
+\pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu},
 \end{equation}
-where $\taupi$ is the shear relaxation time, $\shearvisc$ is the shear
-viscosity coefficient, and $\sigma^{\mu\nu}$ is the shear tensor of the
-flow.  The relaxation time $\taupi > 0$ ensures that viscous signals
-propagate at the finite speed
+where $\shearvisc$ is the shear viscosity coefficient and
+$\sigma^{\mu\nu}$ is the shear tensor of the flow.  No relaxation
+equation is needed.  Causality is instead guaranteed by the choice of
+hydrodynamic frame: in the BDNK general frame, the frame coefficients
+are constrained so that all characteristic speeds of the resulting
+system of conservation laws satisfy
 \begin{equation}
 \label{eq:rel-12-27}
-v_{\mathrm{visc}} = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}} \;<\; c.
+v_{\mathrm{char}} \;\leq\; c,
 \end{equation}
-The Navier--Stokes limit is obtained as $\taupi\to 0$ with
-$\shearvisc$ fixed.
+with the causal bounds determined by coupled inequalities on the
+transport coefficients and frame
+coefficients~\cite{Bemfica2023,Hoult2020}.  The Navier--Stokes limit is
+recovered when the fluid velocities and gradients are small compared to
+$c$.
 
 \subsection{Linearized viscous perturbation equations}
 \label{sec:rel-12-109b}
@@ -428,30 +436,30 @@ the relativistic momentum equation replacing~(59) of Chapter~XII becomes
   = -\partial_{i}\,\delta\!\left(\Phi + \frac{p}{\enthalpy c^{2}}\right)
   + \partial_{j}\,\delta\pi^{ij},
 \end{equation}
-where $\delta\pi^{ij}$ is the perturbed shear stress.  In Fourier space,
-the Israel--Stewart equation~\eqref{eq:rel-12-26} becomes
+where $\delta\pi^{ij}$ is the perturbed shear stress.  In the BDNK
+first-order theory, the constitutive relation~\eqref{eq:rel-12-26}
+gives directly in Fourier space
 \begin{equation}
 \label{eq:rel-12-29}
-(1 + \taupi\sigma)\,\delta\pi^{ij}
-  = 2\shearvisc\,\delta\sigma^{ij},
+\delta\pi^{ij} = -2\shearvisc\,\delta\sigma^{ij},
 \end{equation}
-so that the \emph{effective viscosity} for perturbations of growth rate
-$\sigma$ is
+so that the kinematic viscosity entering the perturbation equations is
+simply
 \begin{equation}
 \label{eq:rel-12-30}
-\boxed{\nu_{\mathrm{eff}}(\sigma)
-  = \frac{\nu}{1+\taupi\sigma},}
+\boxed{\nu = \frac{\shearvisc}{\enthalpy},}
 \end{equation}
-where $\nu = \shearvisc/\enthalpy$ is the kinematic viscosity.  This is
-the central simplification: the Israel--Stewart relaxation reduces to a
-frequency-dependent effective viscosity that interpolates between the
-Navier--Stokes value ($\taupi\sigma\ll 1$) and vanishing viscosity
-($\taupi\sigma\gg 1$).
+with causal bounds on $\nu$ enforced by the BDNK frame
+coefficients~\cite{Bemfica2023,Hoult2020}.  The key simplification of
+the BDNK approach is that no frequency-dependent effective viscosity
+arises: the viscosity $\nu$ is the physical kinematic viscosity at all
+frequencies, and causality is guaranteed by the structure of the
+first-order equations rather than by a relaxation mechanism.
 
 \subsection{The case when viscous effects are dominant}
 \label{sec:rel-12-109c}
 
-In the limit of large viscosity ($\nu\to\infty$ with $\taupi$ fixed),
+In the limit of large viscosity ($\nu\to\infty$),
 the Newtonian analysis of \S109(a) gave
 \begin{equation}
 \label{eq:rel-12-31}
@@ -459,80 +467,65 @@ the Newtonian analysis of \S109(a) gave
   \frac{K_{0}(x)I_{0}(x)-\frac{1}{2}}{x^{2}
   [I_{1}^{2}(x)/I_{0}^{2}(x)-(1+x^{2})^{-1}]}.
 \end{equation}
-In the relativistic generalization, two modifications enter:
-\begin{enumerate}
-\item The Newtonian density $\rho_{0}$ is replaced by the effective
-  gravitating density $\rho_{0}^{*}$ defined in \eqref{eq:rel-12-11}.
-\item The kinematic viscosity $\nu$ is replaced by the effective
-  viscosity $\nu_{\mathrm{eff}}(\sigma)$ of \eqref{eq:rel-12-30}.
-\end{enumerate}
-The resulting implicit equation for $\sigma$ in the high-viscosity limit is
+In the relativistic BDNK generalisation, the only modification is that
+the Newtonian density $\rho_{0}$ is replaced by the effective
+gravitating density $\rho_{0}^{*}$ defined in \eqref{eq:rel-12-11},
+while the kinematic viscosity $\nu$ retains its physical value (no
+frequency-dependent replacement is needed in the BDNK first-order theory).
+The resulting equation for $\sigma$ in the high-viscosity limit is
 \begin{equation}
 \label{eq:rel-12-32}
-\sigma\,(1+\taupi\sigma) = \frac{4\pi G\rho_{0}^{*}\,R^{2}}{\nu}\,
+\sigma = \frac{4\pi G\rho_{0}^{*}\,R^{2}}{\nu}\,
   \frac{K_{0}(x)I_{0}(x)-\frac{1}{2}}{x^{2}
   [I_{1}^{2}(x)/I_{0}^{2}(x)-(1+x^{2})^{-1}]}.
 \end{equation}
-Denoting the right-hand side by $S(x)$, this is a quadratic in $\sigma$:
-\begin{equation}
-\label{eq:rel-12-33}
-\taupi\,\sigma^{2} + \sigma - S(x) = 0,
-\end{equation}
-with the physical root
+Denoting the right-hand side by $S(x)$, this gives directly
 \begin{equation}
 \label{eq:rel-12-34}
-\sigma = \frac{-1+\sqrt{1+4\taupi S(x)}}{2\taupi}.
+\sigma = S(x),
 \end{equation}
+which is the same functional form as the Newtonian result (with
+$\rho_{0}^{*}$ replacing $\rho_{0}$).
 
 \paragraph{Newtonian limit.}
-As $\taupi\to 0$, $\sigma\to S(x)$, recovering equation~(96) of
-Chapter~XII (with $\rho_{0}^{*}\to\rho_{0}$).
-
-\paragraph{Large relaxation time.}
-As $\taupi\to\infty$ (or for rapidly growing modes with
-$\taupi\sigma\gg 1$), $\sigma\to\sqrt{S(x)/\taupi}$.  The growth rate
-is reduced compared to the Newtonian case: the Israel--Stewart
-relaxation acts as an effective reduction of viscous coupling.  In this
-regime the growth rate transitions from the viscosity-dominated
-$\sigma\propto 1/\nu$ scaling to the intermediate
-$\sigma\propto 1/\sqrt{\nu\taupi}$ scaling.
+Setting $\rho_{0}^{*}\to\rho_{0}$ recovers equation~(96) of
+Chapter~XII.
 
 \paragraph{Causality bound.}
-The growth rate \eqref{eq:rel-12-34} is bounded:
+In the BDNK theory, the growth rate is bounded by the causal structure
+of the first-order equations.  The BDNK frame coefficients ensure that
+all characteristic speeds satisfy $v_{\mathrm{char}} \leq c$, which
+implies~\cite{Bemfica2023}
 \begin{equation}
 \label{eq:rel-12-35}
-\sigma < \frac{1}{2\taupi}\left(-1 + \sqrt{1+\frac{16\pi G\rho_{0}^{*}\taupi R^{2}}{\nu}}\right)
-  \;<\; \frac{1}{\taupi}\sqrt{\frac{4\pi G\rho_{0}^{*}R^{2}}{\nu}}
-  \;<\; \frac{c}{R},
+\sigma \;<\; \frac{c}{R}
 \end{equation}
-the last inequality following from $\nu/\taupi < c^{2}$
-[cf.\ \eqref{eq:rel-12-27}] and $\mathcal{C}\ll 1$.  Thus causality is
-preserved.
+when $\mathcal{C}\ll 1$.  Thus causality is preserved without the need
+for relaxation-time parameters.
 
 \paragraph{Monotone behaviour and fragmentation.}
-As in the Newtonian high-viscosity limit, the growth rate
-\eqref{eq:rel-12-34} is a monotone decreasing function of $x$ for
-$0<x<x_{a}$; there is no finite mode of maximum instability.  The
-Israel--Stewart relaxation does not change this qualitative feature:
-the cylinder still tends to fragment at the longest available wavelength
-rather than at the circumference.
+As in the Newtonian high-viscosity limit, the growth rate $S(x)$ is a
+monotone decreasing function of $x$ for $0<x<x_{a}$; there is no
+finite mode of maximum instability.  The BDNK viscous treatment does
+not change this qualitative feature: the cylinder still tends to
+fragment at the longest available wavelength rather than at the
+circumference.
 
 \subsection{General case with relativistic corrections}
 \label{sec:rel-12-109d}
 
 For intermediate values of the viscosity, the full characteristic
-equation is obtained by replacing $\nu\to\nu_{\mathrm{eff}}(\sigma)$
-and $\rho_{0}\to\rho_{0}^{*}$ in the Newtonian equation~(86) of
-Chapter~XII.  With $\ell^{2}=k^{2}+\sigma/\nu_{\mathrm{eff}}$, the
-Israel--Stewart modification gives
+equation is obtained by replacing $\rho_{0}\to\rho_{0}^{*}$ in the
+Newtonian equation~(86) of Chapter~XII.  In the BDNK first-order
+theory, with $\ell^{2}=k^{2}+\sigma/\nu$, we have directly
 \begin{equation}
 \label{eq:rel-12-36}
-\ell^{2} = k^{2} + \frac{\sigma(1+\taupi\sigma)}{\nu},
+\ell^{2} = k^{2} + \frac{\sigma}{\nu},
 \end{equation}
 so that $y = \ell R$ satisfies
 \begin{equation}
 \label{eq:rel-12-37}
-\frac{\sigma R^{2}}{\nu}\,(1+\taupi\sigma) = y^{2}-x^{2}.
+\frac{\sigma R^{2}}{\nu} = y^{2}-x^{2}.
 \end{equation}
 Equation~(90) of Chapter~XII then becomes
 \begin{equation}
@@ -555,37 +548,34 @@ with $J = 4\pi G\rho_{0}R^{4}/\nu^{2}$ the Newtonian parameter
 [cf.\ equation~(89) of Chapter~XII].
 
 The system of equations~\eqref{eq:rel-12-37} and \eqref{eq:rel-12-38}
-implicitly determines the growth rate $\sigma$ as a function of $x$,
-$J^{*}$, and the Israel--Stewart parameter
-\begin{equation}
-\label{eq:rel-12-40}
-\mathcal{T} \;\equiv\; \frac{\taupi\nu}{R^{2}}.
-\end{equation}
+implicitly determines the growth rate $\sigma$ as a function of $x$ and
+$J^{*}$.  In the BDNK framework, there is no additional
+relaxation-time parameter; causality is instead enforced by the
+frame-coefficient constraints on the transport
+coefficients~\cite{Bemfica2023,Kovtun2019}.
 
 \paragraph{Key results.}
 \begin{enumerate}
 \item \emph{Instability criterion unaffected.}  As in the Newtonian
   case, the modes $0<x<x_{a}$ are unstable and the modes $x>x_{a}$ are
-  stable; viscosity (whether Navier--Stokes or Israel--Stewart) does not
-  change the range of unstable wavenumbers.
+  stable; viscosity (whether Navier--Stokes or BDNK first-order) does
+  not change the range of unstable wavenumbers.
 
-\item \emph{Mode of maximum instability.}  For finite $J^{*}$ and
-  $\mathcal{T}=0$ (Navier--Stokes limit), the mode of maximum
-  instability shifts to smaller $x$ (longer wavelengths) as $J^{*}$
-  decreases (increasing viscosity), exactly as in the Newtonian theory.
-  For $\mathcal{T}>0$ (Israel--Stewart), the effective viscosity is
-  reduced at high $\sigma$, causing the mode of maximum instability to
-  shift \emph{back towards} the inviscid value $x=0.580$---the
-  relaxation partially undoes the viscous suppression of
-  short-wavelength modes.
+\item \emph{Mode of maximum instability.}  For finite $J^{*}$, the
+  mode of maximum instability shifts to smaller $x$ (longer wavelengths)
+  as $J^{*}$ decreases (increasing viscosity), exactly as in the
+  Newtonian theory.  In the BDNK theory, the viscosity $\nu$ enters at
+  its physical value at all frequencies, so the dispersion relation is
+  a standard polynomial without the extra (spurious) relaxation modes
+  that appear in second-order theories.
 
-\item \emph{Dispersion curves.}  For a given $(J^{*},\mathcal{T})$,
-  the dispersion relation can be obtained numerically by solving
+\item \emph{Dispersion curves.}  For a given $J^{*}$, the dispersion
+  relation can be obtained numerically by solving
   equations~\eqref{eq:rel-12-37}--\eqref{eq:rel-12-38} for a sequence
   of $y$ values at each $x$.  The progressive shifting of
-  $x_{\max}$ with decreasing $J^{*}$ (Fig.~126 of Chapter~XII) is
-  modulated by $\mathcal{T}$: larger relaxation times compress the
-  family of curves towards the inviscid limit.
+  $x_{\max}$ with decreasing $J^{*}$ (Fig.~126 of Chapter~XII) follows
+  the same pattern as in the Newtonian theory; the BDNK causal bounds
+  ensure that the growth rates remain subluminal.
 \end{enumerate}
 
 \paragraph{Summary of gravitational signal speed.}
@@ -597,10 +587,11 @@ ways:
 \item The Poisson equation is replaced by a wave equation
   [equation~\eqref{eq:rel-12-7}], introducing the modified wavenumber
   $\tilde{k}$ [equation~\eqref{eq:rel-12-8}].
-\item The viscous stress propagates at the finite speed
-  $v_{\mathrm{visc}} < c$
-  [equation~\eqref{eq:rel-12-27}], preventing the viscous
-  characteristic equation from admitting superluminal modes.
+\item In the BDNK first-order theory, all characteristic speeds of
+  the viscous fluid are bounded by $c$
+  [equation~\eqref{eq:rel-12-27}], as guaranteed by the frame-coefficient
+  constraints~\cite{Bemfica2023,Hoult2020}.  No additional relaxation
+  degrees of freedom or spurious modes arise.
 \item The growth rate is bounded: $\sigma < c/R$
   [equations~\eqref{eq:rel-12-20} and \eqref{eq:rel-12-35}], in
   contrast to the Newtonian theory where $\sigma$ can in principle be

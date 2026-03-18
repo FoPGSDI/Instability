@@ -46,9 +46,11 @@ to the classical Bernstein--Frieman--Kruskal--Kulsrud (BFKK) energy
 principle of ideal magnetohydrodynamics.
 
 We also incorporate the effect of viscous dissipation, replacing the
-Newtonian viscous stress tensor by the Israel--Stewart causal
-dissipative framework, thereby ensuring that the resulting variational
-structure respects relativistic causality.
+Newtonian viscous stress tensor by the BDNK
+(Bemfica--Disconzi--Noronha--Kovtun) first-order causal dissipative
+framework~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, thereby ensuring
+that the resulting variational structure respects relativistic causality
+without introducing relaxation equations.
 
 %======================================================================
 \section{Relativistic variational principle for hydromagnetic
@@ -368,7 +370,7 @@ the causality constraints listed in
 \end{equation}
 
 %----------------------------------------------------------------------
-\subsection{Effect of viscosity: Israel--Stewart dissipation in
+\subsection{Effect of viscosity: BDNK first-order causal dissipation in
   the variational framework}\label{sec:rel-122-viscosity}
 %----------------------------------------------------------------------
 
@@ -376,8 +378,8 @@ In the classical theory (\S\,122\,(a)), the inclusion of Newtonian
 viscosity modifies the eigenvalue equation by adding a viscous stress
 $P_{ij}$ to the pressure, leading to a quadratic dispersion relation
 (equation~\eqref{eq:14-41}).  In the relativistic theory the
-Newtonian viscous stress is replaced by the Israel--Stewart causal
-dissipative tensor.
+Newtonian viscous stress is replaced by the BDNK first-order causal
+constitutive relations.
 
 The dissipative energy-momentum tensor is (see \texttt{RELATIVISTIC\_CONVENTIONS.md})
 \begin{equation}
@@ -389,23 +391,22 @@ The dissipative energy-momentum tensor is (see \texttt{RELATIVISTIC\_CONVENTIONS
 \end{equation}
 where $\Pi_{\mathrm{bulk}}$ is the bulk viscous pressure,
 $\pi^{\mu\nu}$ the traceless shear stress, and $q^{\mu}$ the heat
-flux.  The Israel--Stewart evolution equations are
+flux.  In the BDNK framework~\cite{Bemfica2018,Kovtun2019,Bemfica2019},
+these are given by first-order constitutive relations:
 \begin{align}
-  \taupi\,u^{\alpha}\nabla_{\alpha}\,\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu}
-  &= 2\,\shearvisc\,\sigma^{\mu\nu},
+  \pi^{\mu\nu}
+  &= -2\,\shearvisc\,\sigma^{\mu\nu},
   \label{eq:rel14-IS-shear}\\[4pt]
-  \tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\,\Pi_{\mathrm{bulk}}
-  + \Pi_{\mathrm{bulk}}
+  \Pi_{\mathrm{bulk}}
   &= -\bulkvisc\,\nabla_{\mu}\,u^{\mu},
   \label{eq:rel14-IS-bulk}
 \end{align}
-where $\sigma^{\mu\nu}$ is the shear tensor, $\shearvisc$ and
-$\bulkvisc$ are the shear and bulk viscosity coefficients, and
-$\taupi$, $\tau_{\Pi}>0$ are the relaxation times that guarantee
-causal signal propagation.
+where $\sigma^{\mu\nu}$ is the shear tensor, and $\shearvisc$ and
+$\bulkvisc$ are the shear and bulk viscosity coefficients.  No
+relaxation times appear; causality is ensured by the BDNK
+frame-coefficient constraints~\cite{Bemfica2023,Hoult2020}.
 
-Linearising the Israel--Stewart equations about the equilibrium and
+Linearising the BDNK constitutive relations about the equilibrium and
 substituting into the perturbed conservation law, the eigenvalue
 equation~\eqref{eq:rel14-eigenvalue} acquires an additional viscous
 force:
@@ -422,12 +423,11 @@ force:
   \label{eq:rel14-eigenvalue-visc}
 \end{equation}
 
-For perturbations $\propto e^{i\sigma t}$, the Israel--Stewart
-relation~\eqref{eq:rel14-IS-shear} gives at linear order
+For perturbations $\propto e^{i\sigma t}$, the BDNK constitutive
+relation~\eqref{eq:rel14-IS-shear} gives directly at linear order
 \begin{equation}
   \delta\pi^{\mu\nu}
-  = \frac{2\,\shearvisc}{1 + i\sigma\,\taupi}\,
-    \delta\sigma^{\mu\nu},
+  = -2\,\shearvisc\,\delta\sigma^{\mu\nu},
   \label{eq:rel14-deltaPI-shear}
 \end{equation}
 with an analogous expression for $\delta\Pi_{\mathrm{bulk}}$.
@@ -435,11 +435,11 @@ with an analogous expression for $\delta\Pi_{\mathrm{bulk}}$.
 Defining the relativistic dissipation function
 \begin{equation}
   \Phi_{\mathrm{rel}}
-  = \frac{1}{2}\int_{\Sigma}
-    \frac{2\,\shearvisc}{1+i\sigma\,\taupi}\,
+  = \int_{\Sigma}
+    \shearvisc\,
     |\delta\sigma^{\mu\nu}|^{2}\,\sqrt{\gamma}\,d^{3}x
   + \frac{1}{2}\int_{\Sigma}
-    \frac{\bulkvisc}{1+i\sigma\,\tau_{\Pi}}\,
+    \bulkvisc\,
     |\nabla_{\mu}\,\xi^{\mu}|^{2}\,\sqrt{\gamma}\,d^{3}x
   \label{eq:rel14-Phi-rel}
 \end{equation}
@@ -460,13 +460,12 @@ classical~\eqref{eq:14-41})
   \label{eq:rel14-dispersion-visc}
 \end{equation}
 
-In the \emph{Navier--Stokes limit} $\taupi\to 0$,
-$\tau_{\Pi}\to 0$, one recovers $\Phi_{\mathrm{rel}}\to\Phi$ (the
-classical dissipation integral~\eqref{eq:14-39}), and the dispersion
-relation reduces to equation~\eqref{eq:14-41}.
+In the Newtonian limit $\enthalpy \to \rho$, one recovers
+$\Phi_{\mathrm{rel}}\to\Phi$ (the classical dissipation
+integral~\eqref{eq:14-39}), and the dispersion relation reduces to
+equation~\eqref{eq:14-41}.
 
-For finite relaxation times the roots of
-equation~\eqref{eq:rel14-dispersion-visc} are
+The roots of equation~\eqref{eq:rel14-dispersion-visc} are
 \begin{equation}
   i\sigma
   = \frac{1}{2\mathcal{I}}\Bigl\{
@@ -476,19 +475,22 @@ equation~\eqref{eq:rel14-dispersion-visc} are
     \Bigr\}.
   \label{eq:rel14-sigma-roots}
 \end{equation}
-Since both $\mathcal{I}>0$ and
-$\operatorname{Re}\Phi_{\mathrm{rel}}>0$ (the latter guaranteed by
-the second law of thermodynamics), the \emph{necessary and sufficient
+Since both $\mathcal{I}>0$ and $\Phi_{\mathrm{rel}}>0$ (the latter
+guaranteed by the second law of thermodynamics and the positivity of
+$\shearvisc$, $\bulkvisc$), the \emph{necessary and sufficient
 condition for stability remains $\delta^{2}W>0$}, exactly as in the
 non-dissipative case.
 
-The key distinction from the Newtonian theory is that the relaxation
-times $\taupi$ and $\tau_{\Pi}$ modify the damping rate and can
-change the character of modes (oscillatory vs.\ over-damped) but
-\emph{do not affect the stability boundary}.  Moreover, the finite
-relaxation times ensure that all perturbation signals propagate at
-speeds $\le c$, unlike the acausal instantaneous propagation implicit
-in the Navier--Stokes viscous stress.
+The key advantage of the BDNK framework is that the dispersion relation
+\eqref{eq:rel14-dispersion-visc} is a standard polynomial in $\sigma$
+--- the same degree as in the Navier--Stokes case --- without the extra
+modes introduced by relaxation equations in second-order theories.
+Viscosity modifies the damping rate and can change the character of
+modes (oscillatory vs.\ over-damped) but \emph{does not affect the
+stability boundary}.  The BDNK frame-coefficient constraints ensure
+that all perturbation signals propagate at speeds $\le c$, unlike the
+acausal instantaneous propagation implicit in the Navier--Stokes
+viscous stress.
 
 %----------------------------------------------------------------------
 \subsection{Connection to the Bernstein--Frieman--Kruskal--Kulsrud
@@ -567,7 +569,7 @@ and only if the second-variation energy functional
 for every displacement $\xi^{\mu}$ satisfying
 $\xi^{\mu}u_{\mu}=0$, $\Delta^{\mu\nu}\nabla_{\mu}\xi_{\nu}=0$
 (incompressibility), and the linearised boundary conditions
-on $\mathcal{S}$.  The inclusion of Israel--Stewart causal dissipation
+on $\mathcal{S}$.  The inclusion of BDNK first-order causal dissipation
 does not alter this criterion; it affects only the damping rates of
 stable modes.  In the limit $c\to\infty$ with flat spacetime the
 principle reduces to the classical Bernstein--Frieman--Kruskal--Kulsrud
