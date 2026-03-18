@@ -1,0 +1,433 @@
+% =====================================================================
+%  Relativistic extension of Chapter II, Sections 13--14
+%  (Variational Principles & Thermodynamic Significance)
+%
+%  Based on Chandrasekhar, "Hydrodynamic and Hydromagnetic Stability"
+%  Original: §13 -- The variational principles
+%            §14 -- The thermodynamic significance of the variational
+%                   principle
+%
+%  Relativistic formulation following the Israel--Stewart causal
+%  dissipative framework; metric signature (-,+,+,+); c kept explicit.
+% =====================================================================
+\input{rel_preamble}
+
+\section{Relativistic variational principles}\label{sec:rel-13}
+
+In the classical theory (\S~13), the critical Rayleigh number is
+characterised as the stationary value of a ratio of positive-definite
+integrals---the Rayleigh quotient.  We now derive the relativistic
+analogues of these variational principles for a layer of fluid in a
+static spacetime with a uniform gravitational field~$g$.
+
+Throughout this section we work in Eulerian perturbation theory around
+a relativistic hydrostatic equilibrium with energy density
+$\edensity$, pressure $p$, and relativistic enthalpy density
+$\enthalpy = \edensity + p$.  Length is measured in units of the layer
+depth~$d$, and $D \equiv \mathrm{d}/\mathrm{d}z$ as before.  The
+perturbation amplitude for the vertical component of the 4-velocity is
+$\delta u^z \equiv W(z)\,f(x,y)\,e^{\sigma t}$, and the temperature
+perturbation is $\Theta(z)\,f(x,y)\,e^{\sigma t}$, where $f$ satisfies
+$(\partial_x^2+\partial_y^2)f = -a^2 f$.
+
+\subsection{Relativistic characteristic value problem}\label{sec:rel-13-prelim}
+
+The linearised relativistic perturbation equations for a thermally
+stratified fluid, in the Israel--Stewart framework with
+vanishing relaxation times at marginal stability ($\sigma=0$), reduce
+to (see \S\S~11--12 for the classical derivation, and the relativistic
+linearisation in the companion sections)
+\begin{equation}
+\label{eq:rel-2-134}
+(D^2-a^2)F_{\mathrm{rel}} = -\Rarel\;a^2\,\frac{\enthalpy}{c^2}\,W,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-2-133}
+F_{\mathrm{rel}} = (D^2-a^2)^2 W = (D^2-a^2)G_{\mathrm{rel}},
+\qquad
+G_{\mathrm{rel}} = (D^2-a^2)W,
+\end{equation}
+and the relativistic Rayleigh number is
+\begin{equation}
+\label{eq:rel-Ra-def}
+\Rarel \;=\; \frac{\alpha\,g\,\beta\,d^4}{\kappa_T\,\nu}
+\left(1 + \frac{\edensity + p}{\rdensity\,c^2}\right)
+\;=\; \Ra\;\frac{\enthalpy}{\rdensity\,c^2}.
+\end{equation}
+Here $\alpha$ is the thermal expansion coefficient, $\beta$ the
+adverse temperature gradient, $\kappa_T$ the thermal diffusivity, and
+$\nu$ the kinematic viscosity.  The factor
+$\enthalpy/(\rdensity c^2)$ is the key relativistic correction:
+in the non-relativistic limit $\enthalpy \to \rdensity c^2$ and
+$\Rarel \to \Ra$.
+
+The boundary conditions are unchanged in form:
+\begin{equation}
+\label{eq:rel-2-135}
+W = 0 \;\text{ and }\; F_{\mathrm{rel}} = 0
+\;\text{ for }\; z = 0,\;1;\quad
+\text{and \emph{either} } DW = 0 \;\text{ \emph{or} }\; D^2 W = 0,
+\end{equation}
+depending on whether the bounding surfaces are rigid or free.
+
+\subsection{The first variational principle (relativistic)}%
+\label{sec:rel-13a}
+
+Let $\Rarel_j$ denote the characteristic values and let subscripts
+$i,j$ label eigenfunctions belonging to different characteristic
+values.  Multiplying the equation for $W_i$ by $F_{\mathrm{rel},j}$,
+integrating, and performing the same sequence of integrations by parts
+as in \S~13\textit{a}, we obtain the relativistic orthogonality
+relation
+\begin{equation}
+\label{eq:rel-2-139}
+\int_0^1 \frac{\enthalpy}{c^2}\,G_{\mathrm{rel},i}\,
+G_{\mathrm{rel},j}\,\mathrm{d}z = 0
+\qquad (i \neq j).
+\end{equation}
+The weight function $\enthalpy/c^2$ replaces the unit weight of the
+classical theory; physically it reflects the relativistic inertia of
+enthalpy.
+
+Setting $i = j$ we find the \emph{relativistic Rayleigh quotient}:
+\begin{equation}
+\label{eq:rel-2-141}
+\boxed{
+\Rarel \;=\;
+\frac{\displaystyle\int_0^1\bigl[(DF_{\mathrm{rel}})^2
+  + a^2 F_{\mathrm{rel}}^2\bigr]\,\mathrm{d}z}
+{a^2\;\displaystyle\int_0^1
+  \frac{\enthalpy}{c^2}\,G_{\mathrm{rel}}^2\,\mathrm{d}z}
+\;=\; \frac{\mathscr{I}_1^{\mathrm{rel}}}
+           {\mathscr{I}_2^{\mathrm{rel}}}.
+}
+\end{equation}
+Equation~\eqref{eq:rel-2-141} reduces to the classical
+expression~(2-141) when $\enthalpy/c^2 \to \rdensity$ (i.e.\ when
+internal and kinetic energies are negligible compared with rest-mass
+energy).
+
+\paragraph{Stationary property.}
+Let $W$ be an admissible trial function satisfying~\eqref{eq:rel-2-135},
+and let $\delta W$ be a variation compatible with those boundary
+conditions.  Following the classical argument (equations (2-143)--(2-148)), we compute
+\begin{equation}
+\label{eq:rel-2-148}
+\delta\Rarel = -\frac{2}{\mathscr{I}_2^{\mathrm{rel}}}
+\int_0^1 \delta F_{\mathrm{rel}}
+\left\{(D^2-a^2)F_{\mathrm{rel}}
+  + \Rarel\,a^2\,\frac{\enthalpy}{c^2}\,W\right\}\mathrm{d}z.
+\end{equation}
+Hence $\delta\Rarel = 0$ if and only if~\eqref{eq:rel-2-134} holds,
+establishing the stationary property.
+
+\paragraph{Minimum property.}
+Let the eigenfunctions $G_{\mathrm{rel},j}$ be normalised with respect
+to the relativistic weight:
+\begin{equation}
+\label{eq:rel-2-150}
+\int_0^1 \frac{\enthalpy}{c^2}\,
+G_{\mathrm{rel},i}\,G_{\mathrm{rel},j}\,\mathrm{d}z
+= \delta_{ij}.
+\end{equation}
+Expanding an arbitrary normalised $G_{\mathrm{rel}}$ in the
+eigenbasis, $G_{\mathrm{rel}} = \sum_j A_j\,G_{\mathrm{rel},j}$,
+and repeating the argument of equations (2-154)--(2-161), we obtain
+\begin{equation}
+\label{eq:rel-2-161}
+\Rarel_{1}\;a^2 \;\leqslant\;
+\int_0^1\bigl[(DF_{\mathrm{rel}})^2 + a^2 F_{\mathrm{rel}}^2\bigr]
+\,\mathrm{d}z,
+\end{equation}
+with equality if and only if $A_j = 0$ for $j \geqslant 2$.
+\emph{The lowest relativistic Rayleigh number is therefore a true
+minimum of the relativistic Rayleigh quotient.}
+
+\subsection{The second variational principle (relativistic)}%
+\label{sec:rel-13b}
+
+Starting instead from the characteristic value problem expressed in
+terms of the temperature perturbation~$\Theta$, we let
+$G'_{\mathrm{rel}} = (D^2 - a^2)\Theta$ and follow the procedure of
+\S~13\textit{b}.  The relativistic second variational principle gives
+\begin{equation}
+\label{eq:rel-2-170}
+\boxed{
+\Rarel_j \;=\;
+\frac{\displaystyle\int_0^1
+  \bigl[(D^2-a^2)G'_{\mathrm{rel},j}\bigr]^2\,\mathrm{d}z}
+{a^2\;\displaystyle\int_0^1
+  \frac{\enthalpy}{c^2}\,
+  \bigl[(D\Theta_j)^2 + a^2\Theta_j^2\bigr]\,\mathrm{d}z}.
+}
+\end{equation}
+Again, the relativistic enthalpy weight $\enthalpy/c^2$ appears in
+the denominator, and the same stationary and minimum properties hold.
+
+\begin{relcorrection}
+Both variational principles acquire a single structural modification
+in the relativistic case: every integral that classically involves
+the fluid density $\rho$ is replaced by an integral weighted with
+the relativistic inertial mass density $\enthalpy/c^2 = (\edensity+p)/c^2$.
+This replacement originates from the relativistic momentum equation
+$\nabla_\nu T^{\mu\nu} = 0$, where the inertia of enthalpy---not
+just rest mass---enters the equation of motion.
+\end{relcorrection}
+
+% =====================================================================
+\section{Thermodynamic significance of the relativistic variational
+principle}\label{sec:rel-14}
+
+In \S~14, Chandrasekhar showed that the classical variational
+principle has a direct thermodynamic interpretation: the Rayleigh
+number is the ratio of the rate of energy release by buoyancy to the
+rate of viscous dissipation.  We now establish the relativistic
+counterpart of this result within the Israel--Stewart causal
+dissipative theory.
+
+\subsection{Relativistic viscous dissipation rate}\label{sec:rel-14a}
+
+At marginal stability ($\sigma = 0$) in the relativistic theory, the
+$z$-component of the 4-vorticity vanishes by the same argument as in
+the classical case (cf.\ equation~(2-171)).  The perturbation velocity
+field therefore has the same kinematic structure as in
+equations~(2-172)--(2-175), with $\rho$ replaced by $\enthalpy/c^2$.
+
+The rate of viscous dissipation per unit horizontal area in the
+relativistic theory is
+\begin{equation}
+\label{eq:rel-2-176}
+\epsilon_v^{\mathrm{rel}} = -\frac{\enthalpy\,\nu}{c^2\,d^2}
+\int_0^1 \bigl\langle
+  w(D^2-a^2)w + u(D^2-a^2)u + v(D^2-a^2)v
+\bigr\rangle\,\mathrm{d}z,
+\end{equation}
+where angle brackets denote the horizontal average and $\nu$ is the
+kinematic shear viscosity.  The factor $\enthalpy/c^2$ replaces
+the classical $\rho$ because the relativistic viscous stress
+$\pi^{\mu\nu}$ acts on the inertia of enthalpy.
+
+Following exactly the integration-by-parts sequence of
+equations~(2-177)--(2-178), we obtain
+\begin{equation}
+\label{eq:rel-2-178}
+\epsilon_v^{\mathrm{rel}}
+= \frac{\enthalpy\,\nu}{4\,c^2\,d^2}
+\int_0^1 G_{\mathrm{rel}}^2\,\mathrm{d}z
+= \frac{\enthalpy\,\nu}{4\,c^2\,d^2}
+\int_0^1 \bigl[(D^2-a^2)W\bigr]^2\,\mathrm{d}z.
+\end{equation}
+
+\subsection{Relativistic buoyancy energy release rate}\label{sec:rel-14b}
+
+In the relativistic framework the buoyancy force per unit volume is
+\begin{equation}
+\label{eq:rel-buoy-force}
+f_{\mathrm{buoy}}
+= -\frac{\enthalpy}{c^2}\,g\,\alpha\,\theta,
+\end{equation}
+where $\theta$ is the Eulerian temperature perturbation and
+$\alpha = -(\rdensity)^{-1}(\partial\rdensity/\partial T)_p$ the
+thermal expansion coefficient.  The rate of energy release by buoyancy
+in a unit column is therefore
+\begin{equation}
+\label{eq:rel-2-179}
+\epsilon_g^{\mathrm{rel}}
+= \frac{\enthalpy}{c^2}\,g\,\alpha
+\int_0^1 \langle\theta\,w\rangle\,\mathrm{d}z.
+\end{equation}
+Using the linearised heat equation (the relativistic analogue of
+equation~(2-76)) and integrating by parts gives
+\begin{equation}
+\label{eq:rel-2-181}
+\epsilon_g^{\mathrm{rel}}
+= \frac{\enthalpy\,g\,\alpha\,\kappa_T}
+       {4\,c^2\,\beta\,d^2}
+\int_0^1 \bigl[(D\Theta)^2 + a^2\Theta^2\bigr]\,\mathrm{d}z.
+\end{equation}
+Expressing $\Theta$ in terms of $F_{\mathrm{rel}}$ via the
+relativistic analogue of equation~(2-182),
+\begin{equation}
+\label{eq:rel-2-182}
+\Theta = \frac{\nu\,c^2}{g\,\alpha\,\enthalpy\,d^2}\,
+(D^2-a^2)^2 W
+= \frac{\nu\,c^2}{g\,\alpha\,\enthalpy\,d^2}\,F_{\mathrm{rel}},
+\end{equation}
+we obtain
+\begin{equation}
+\label{eq:rel-2-183}
+\epsilon_g^{\mathrm{rel}}
+= \frac{\nu^2\,\kappa_T\,c^2}
+       {4\,g\,\alpha\,\beta\,\enthalpy\,d^6}
+\int_0^1 \bigl[(DF_{\mathrm{rel}})^2
+  + a^2 F_{\mathrm{rel}}^2\bigr]\,\mathrm{d}z.
+\end{equation}
+
+\subsection{Energy balance and the variational principle}\label{sec:rel-14c}
+
+In a steady state the viscous dissipation and buoyancy release must
+balance:
+\begin{equation}
+\label{eq:rel-2-184}
+\epsilon_v^{\mathrm{rel}} = \epsilon_g^{\mathrm{rel}}.
+\end{equation}
+Substituting equations~\eqref{eq:rel-2-178}
+and~\eqref{eq:rel-2-183} we find
+\begin{equation}
+\label{eq:rel-2-185}
+\frac{\enthalpy\,\nu}{4\,c^2\,d^2}
+\int_0^1 G_{\mathrm{rel}}^2\,\mathrm{d}z
+=
+\frac{\nu^2\,\kappa_T\,c^2}
+{4\,g\,\alpha\,\beta\,\enthalpy\,d^6}
+\int_0^1 \bigl[(DF_{\mathrm{rel}})^2
+  + a^2 F_{\mathrm{rel}}^2\bigr]\,\mathrm{d}z,
+\end{equation}
+which, upon rearranging, yields
+\begin{equation}
+\label{eq:rel-2-186}
+\boxed{
+\Rarel
+= \frac{g\,\alpha\,\beta\,d^4}{\kappa_T\,\nu}
+  \cdot\frac{\enthalpy}{\rdensity\,c^2}
+= \frac{\displaystyle\int_0^1
+  \bigl[(DF_{\mathrm{rel}})^2 + a^2 F_{\mathrm{rel}}^2\bigr]
+  \,\mathrm{d}z}
+{a^2\;\displaystyle\int_0^1
+  \frac{\enthalpy}{c^2}\,G_{\mathrm{rel}}^2\,\mathrm{d}z}.
+}
+\end{equation}
+This is precisely the relativistic Rayleigh
+quotient~\eqref{eq:rel-2-141}, confirming that the first variational
+principle has the same physical content in the relativistic theory:
+
+\emph{Relativistic thermal instability occurs at the minimum
+temperature gradient at which a balance can be steadily maintained
+between the kinetic energy dissipated by viscosity (acting on the
+relativistic enthalpy-inertia $\enthalpy/c^2$) and the internal energy
+released by the relativistic buoyancy force.}
+
+\subsection{Relativistic entropy production and the Israel--Stewart
+second law}\label{sec:rel-14d}
+
+The Israel--Stewart theory provides a natural framework for connecting
+the variational principle to entropy production.  The entropy current
+is
+\begin{equation}
+\label{eq:rel-entropy-current}
+s^\mu = s\,n\,u^\mu + \frac{q^\mu}{T}
+  - \frac{\tauq}{2\,\thermcond\,T^2}\,q_\alpha q^\alpha\,u^\mu
+  + \ldots,
+\end{equation}
+where $s$ is the entropy per baryon and $n$ the baryon number density.
+Its divergence is (Israel \& Stewart 1979)
+\begin{equation}
+\label{eq:rel-entropy-production}
+\nabla_\mu s^\mu
+= -\frac{\bulkP^2}{\bulkvisc\,T}
+  - \frac{\pi_{\mu\nu}\pi^{\mu\nu}}{2\,\shearvisc\,T}
+  - \frac{q_\mu q^\mu}{\thermcond\,T^2}
+  + \text{(second-order relaxation terms)} \;\geqslant\; 0.
+\end{equation}
+The second law $\nabla_\mu s^\mu \geqslant 0$ is guaranteed
+order-by-order provided the transport coefficients satisfy
+$\shearvisc,\,\bulkvisc,\,\thermcond \geqslant 0$ and the relaxation
+times $\taupi,\,\tauPi,\,\tauq > 0$.
+
+At marginal stability ($\sigma = 0$), only the shear viscous and heat
+flux contributions survive in the linearised perturbation.  The
+volume-integrated entropy production rate in the perturbed layer
+becomes
+\begin{equation}
+\label{eq:rel-entropy-rate}
+\dot{S}_{\mathrm{prod}}
+= \int \nabla_\mu s^\mu\,\sqrt{-g}\;\mathrm{d}^3 x
+= \frac{1}{T}\bigl(\epsilon_v^{\mathrm{rel}}
+  + \epsilon_{\mathrm{heat}}^{\mathrm{rel}}\bigr),
+\end{equation}
+where $\epsilon_{\mathrm{heat}}^{\mathrm{rel}}$ is the rate of entropy
+production from heat conduction.  At the marginal state
+$\epsilon_v^{\mathrm{rel}} = \epsilon_g^{\mathrm{rel}}$, and the
+variational principle~\eqref{eq:rel-2-186} selects the perturbation
+mode that \emph{maximises} the entropy production rate at the
+threshold of instability, consistent with the principle of maximum
+entropy production.
+
+\begin{relcorrection}
+The connection to entropy production is qualitatively the same as in
+the classical theory but gains two important features in the
+relativistic context:
+
+\begin{enumerate}
+\item The entropy current~\eqref{eq:rel-entropy-current} contains
+  additional quadratic terms in the heat flux, required by the
+  Israel--Stewart theory for causal propagation.  These ensure that
+  the entropy production inequality~\eqref{eq:rel-entropy-production}
+  is maintained even when heat signals propagate at finite speed.
+
+\item The maximum entropy production principle, which classically
+  determines the critical Rayleigh number, is promoted to a
+  \emph{covariant} statement: the four-divergence of the entropy
+  current is maximised among all perturbation modes satisfying the
+  relativistic constraints.
+\end{enumerate}
+\end{relcorrection}
+
+\begin{causalitycheck}
+The Israel--Stewart relaxation times ($\taupi$, $\tauq$, $\tauPi$)
+do not appear explicitly in the marginal-stability equations
+($\sigma = 0$), because all time derivatives vanish at the onset of
+instability.  Causality is nevertheless preserved: the relaxation times
+ensure that the \emph{growth} of perturbations (for $\Rarel$ slightly
+above the critical value) propagates at finite speed.  The
+characteristic speeds of the Israel--Stewart system are bounded by
+\begin{equation}
+v_{\mathrm{signal}}^2
+= \frac{\shearvisc}{\enthalpy\,\taupi/c^2}
+\leqslant c^2,
+\end{equation}
+which is guaranteed when the relaxation times satisfy the standard
+causality bounds $\taupi \geqslant \shearvisc/(\enthalpy/c^2)\cdot c^{-2}$.
+\end{causalitycheck}
+
+\subsection{Non-relativistic recovery}\label{sec:rel-14e}
+
+In the limit $v/c \to 0$ (equivalently
+$\enthalpy = \edensity + p \to \rdensity c^2$), every relativistic
+expression derived above reduces to its classical counterpart:
+
+\begin{enumerate}
+\item The enthalpy weight
+  $\enthalpy/c^2 \to \rdensity$, so the relativistic Rayleigh
+  quotient~\eqref{eq:rel-2-141} reduces to equation~(2-141).
+
+\item The relativistic Rayleigh number
+  $\Rarel = \Ra\cdot\enthalpy/(\rdensity c^2)
+  \;\NRlimit\; \Ra$.
+
+\item The orthogonality relation~\eqref{eq:rel-2-139} loses the
+  weight $\enthalpy/c^2$ and becomes equation~(2-139).
+
+\item The viscous dissipation rate~\eqref{eq:rel-2-178} reduces to
+  $\epsilon_v = (\rho\nu/4d^2)\int_0^1 G^2\,\mathrm{d}z$,
+  matching equation~(2-178).
+
+\item The buoyancy energy release rate~\eqref{eq:rel-2-183} reduces
+  to equation~(2-183).
+
+\item The energy balance~\eqref{eq:rel-2-186} becomes
+  $\Ra = \int[(DF)^2 + a^2 F^2]\,\mathrm{d}z\,/\,
+  (a^2\int G^2\,\mathrm{d}z)$,
+  reproducing equation~(2-186).
+
+\item The Israel--Stewart entropy production
+  inequality~\eqref{eq:rel-entropy-production} reduces to the
+  classical Clausius--Duhem inequality when all relaxation times
+  vanish.
+\end{enumerate}
+
+\emph{All relativistic corrections are therefore of order
+$\order{(\edensity + p)/(\rdensity c^2) - 1}
+= \order{p/(\rdensity c^2)}$
+and vanish identically in the non-relativistic limit.}
