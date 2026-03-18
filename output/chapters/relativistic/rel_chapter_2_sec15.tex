@@ -1,0 +1,328 @@
+% =====================================================================
+%  Relativistic modification of Chapter II, §15
+%  Exact solutions of the characteristic value problem
+%  for relativistic thermal (Bénard) instability
+% =====================================================================
+%
+%  Classical reference: Chandrasekhar, Ch. II §15, eqs. (187)–(227)
+%  Relativistic framework: Israel-Stewart causal dissipation
+%  Agent: 9 (subagent for Bénard, part 4 — exact solutions)
+% =====================================================================
+
+\section{Exact solutions of the relativistic characteristic value problem}
+\label{sec:rel-15}
+
+We return to the relativistic eigenvalue problem formulated in the
+preceding sections. The classical analysis of \S\ref{sec:15} determined
+the critical Rayleigh number $R_c$ for three canonical boundary
+configurations. Here we solve the corresponding relativistic problem,
+where the eigenvalue equation is modified by two physical effects:
+\begin{enumerate}
+\item[(i)] the \emph{pressure contribution to inertia}
+  $(\edensity + p)/c^{2}$, which replaces the rest-mass density
+  $\rdensity$ in the inertial terms; and
+\item[(ii)] the \emph{Israel--Stewart causal heat transport}, which
+  introduces a finite relaxation time $\tauq$ for the heat flux.
+\end{enumerate}
+
+\subsection{The relativistic eigenvalue equation}
+\label{sec:rel-15-eigen}
+
+In the Boussinesq limit of the relativistic perturbation equations
+(cf.\ the development in the preceding relativistic sections), the
+sixth-order eigenvalue equation for the vertical velocity perturbation
+$W(z)$ becomes
+\begin{equation}
+\label{eq:rel-15-eigen}
+\bigl(D^{2}-a^{2}\bigr)^{3}W = -\Rarel\,a^{2}\,W,
+\end{equation}
+where the relativistic Rayleigh number is
+\begin{equation}
+\label{eq:rel-15-Radef}
+\Rarel = \frac{\alpha\,g\,d^{3}\,\Delta T}{\nu\,\kappa_{T}}
+  \cdot\frac{1}{1 + p_{0}/(\edensity_{0}\,c^{2})}\,
+  \cdot\frac{1}{1 + \tauq\,\kappa_{T}/d^{2}}.
+\end{equation}
+Here $\edensity_{0}$ and $p_{0}$ are the equilibrium energy density
+and pressure, and $\kappa_{T}$ is the thermal diffusivity. We define
+the two dimensionless relativistic parameters
+\begin{equation}
+\label{eq:rel-15-params}
+\Xi \;\equiv\; \frac{p_{0}}{\edensity_{0}\,c^{2}}, \qquad
+\Upsilon \;\equiv\; \frac{\tauq\,\kappa_{T}}{d^{2}},
+\end{equation}
+so that
+\begin{equation}
+\label{eq:rel-15-Rarel}
+\Rarel = \frac{R}{(1+\Xi)(1+\Upsilon)},
+\end{equation}
+where $R$ is the classical Rayleigh number. In the non-relativistic
+limit $\Xi \to 0$, $\Upsilon \to 0$, one recovers $\Rarel \to R$.
+
+\begin{relcorrection}
+\textbf{Key physical insight.}
+The factor $(1+\Xi)^{-1}$ arises because the relativistic inertia of
+the fluid is $(\edensity + p)/c^{2}$ rather than $\rdensity$. Since
+$\edensity + p > \rdensity c^{2}$ for any fluid with non-zero pressure,
+the effective inertia is \emph{larger}, and therefore $\Rarel < R$ for
+the same temperature gradient. Equivalently, the pressure contribution
+to inertia \emph{lowers} the effective Rayleigh number, making the
+system \textbf{more unstable} at a given adverse temperature gradient.
+
+The factor $(1+\Upsilon)^{-1}$ captures the delay introduced by causal
+(Israel--Stewart) heat transport. A finite heat-flux relaxation time
+$\tauq > 0$ modifies the thermal response, providing a further
+(typically small) correction that can either stabilize or destabilize
+depending on the ratio $\tauq\kappa_{T}/d^{2}$.
+\end{relcorrection}
+
+Since equation~\eqref{eq:rel-15-eigen} has the \emph{same operator
+structure} as the classical equation~(\ref{eq:2-198}), the
+eigenfunctions are unchanged for each boundary type. The entire
+relativistic modification enters through the eigenvalue relation: one
+replaces $R$ by $\Rarel$ everywhere. This crucial simplification means
+that the classical solutions of Pellew \& Southwell, Low, and Reid \&
+Harris carry over directly, with the critical Rayleigh number shifted
+by the factor $(1+\Xi)(1+\Upsilon)$.
+
+
+% -----------------------------------------------------------------
+\subsection{Two free boundaries (relativistic)}
+\label{sec:rel-15a}
+% -----------------------------------------------------------------
+
+The boundary conditions are identical to the classical case~(\ref{eq:2-187}):
+\begin{equation}
+\label{eq:rel-15-bc-free}
+W = D^{2}W = D^{4}W = 0 \qquad\text{for } z = 0 \text{ and } 1.
+\end{equation}
+The eigenfunctions remain $W = A\sin n\pi z$ ($n = 1,2,\ldots$), and
+substitution into~\eqref{eq:rel-15-eigen} gives the relativistic
+characteristic equation
+\begin{equation}
+\label{eq:rel-15-Rfree}
+\Rarel = \frac{(n^{2}\pi^{2}+a^{2})^{3}}{a^{2}}.
+\end{equation}
+For $n = 1$ the minimum over $a^{2}$ is attained at $a^{2} = \pi^{2}/2$
+(the same critical wavenumber as in the classical theory), yielding
+\begin{equation}
+\label{eq:rel-15-Rcfree}
+\boxed{\;
+\Rarel^{(c)} = \frac{27}{4}\,\pi^{4} = 657.511.
+\;}
+\end{equation}
+Expressing this in terms of the \emph{classical} Rayleigh number $R$
+via~\eqref{eq:rel-15-Rarel}, the onset condition becomes
+\begin{equation}
+\label{eq:rel-15-Rcfree-classical}
+R_{c}^{(\mathrm{rel})} = \frac{27}{4}\,\pi^{4}\,(1+\Xi)(1+\Upsilon)
+  = 657.511\;\bigl[1 + \Xi + \Upsilon + \Xi\,\Upsilon\bigr].
+\end{equation}
+
+\begin{relcorrection}
+The classical critical Rayleigh number $R_{c} = 27\pi^{4}/4 = 657.511$
+is \emph{exact} in the relativistic theory provided one uses $\Rarel$
+as the control parameter. When the onset condition is phrased in terms
+of the classical (Newtonian) Rayleigh number $R$, the critical value
+receives a multiplicative relativistic correction:
+\[
+R_{c}^{(\mathrm{rel})} = R_{c}^{(\mathrm{class})}
+  \times (1+\Xi)(1+\Upsilon)
+  = R_{c}^{(\mathrm{class})}
+    \left[1 + \frac{p_{0}}{\edensity_{0}c^{2}}
+    + \frac{\tauq\kappa_{T}}{d^{2}}
+    + \order{\Xi\Upsilon}\right].
+\]
+Since the factor $(1+\Xi)(1+\Upsilon) > 1$, a \emph{larger} classical
+Rayleigh number is needed to trigger instability, but this is precisely
+because the same physical temperature gradient corresponds to a
+\emph{smaller} relativistic Rayleigh number (due to increased inertia).
+Hence, for a given temperature gradient, the system is \textbf{more
+unstable} in the relativistic regime.
+\end{relcorrection}
+
+
+% -----------------------------------------------------------------
+\subsection{Two rigid boundaries (relativistic)}
+\label{sec:rel-15b}
+% -----------------------------------------------------------------
+
+With the fluid confined between $z = \pm\tfrac{1}{2}$ and boundary
+conditions
+\begin{equation}
+\label{eq:rel-15-bc-rigid}
+W = DW = (D^{2}-a^{2})^{2}W = 0 \qquad\text{for } z = \pm\tfrac{1}{2},
+\end{equation}
+the operator structure is unchanged, and the general solution has the
+same form as in the classical case (cf.\ equations~(\ref{eq:2-200})--(\ref{eq:2-206})),
+with the parameter $\tau$ now defined through
+\begin{equation}
+\label{eq:rel-15-tau-rigid}
+\Rarel\,a^{2} = \tau^{3}\,a^{6}.
+\end{equation}
+The even and odd transcendental equations~(\ref{eq:2-218})
+and~(\ref{eq:2-225}) are therefore formally identical, and the
+numerical solution of Reid and Harris applies verbatim. The critical
+state for the lowest (even) mode is
+\begin{equation}
+\label{eq:rel-15-Rcrigid}
+\boxed{\;
+\Rarel^{(c)} = 1707.762, \qquad a_{c} = 3.117.
+\;}
+\end{equation}
+In terms of the classical Rayleigh number:
+\begin{equation}
+\label{eq:rel-15-Rcrigid-classical}
+R_{c}^{(\mathrm{rel})} = 1707.762\,(1+\Xi)(1+\Upsilon).
+\end{equation}
+
+For terrestrial laboratory conditions (e.g.\ water at room temperature),
+$\Xi \sim p_{0}/(\rdensity c^{2}) \approx 10^{-10}$ and $\Upsilon$
+is negligibly small, so $R_{c}^{(\mathrm{rel})}$ is indistinguishable
+from $1707.762$. The corrections become significant only for
+relativistic fluids: in a quark--gluon plasma with
+$p \approx \edensity/3$, one has $\Xi \approx 1/4$, giving
+$R_{c}^{(\mathrm{rel})} \approx 1707.76 \times 1.25 = 2134.7$.
+
+The eigenfunctions $W(z)$ and $(a^{2}\Rarel)^{-1}F(z)$ are
+\emph{identical} to the classical expressions~(\ref{eq:2-220}) with
+the same values of $q_{0}$, $q_{1}$, $q_{2}$
+given in~(\ref{eq:2-221}), since these depend only on $a$ and $\tau$,
+which take the same numerical values at criticality.
+
+
+% -----------------------------------------------------------------
+\subsection{One rigid and one free boundary (relativistic)}
+\label{sec:rel-15c}
+% -----------------------------------------------------------------
+
+As in the classical case~(\S\ref{sec:15}(c)), the solution for one
+rigid and one free boundary can be deduced from the odd solution for
+two rigid boundaries applied to a layer of half the depth. The argument
+carries over without modification to the relativistic case, and we
+obtain
+\begin{equation}
+\label{eq:rel-15-Rcmixed}
+\boxed{\;
+\Rarel^{(c)} = 1100.65, \qquad a_{c} = 2.682.
+\;}
+\end{equation}
+In terms of the classical Rayleigh number:
+\begin{equation}
+\label{eq:rel-15-Rcmixed-classical}
+R_{c}^{(\mathrm{rel})} = 1100.65\,(1+\Xi)(1+\Upsilon).
+\end{equation}
+
+
+% -----------------------------------------------------------------
+\subsection{Summary: classical versus relativistic critical values}
+\label{sec:rel-15d}
+% -----------------------------------------------------------------
+
+Table~\ref{tab:rel-15-summary} collects the results for all three
+boundary configurations.
+
+\begin{table}[htbp]
+\centering
+\caption{Critical parameters for the onset of relativistic thermal
+  instability compared with the classical (Newtonian) values.
+  Here $\Xi = p_{0}/(\edensity_{0}c^{2})$ and
+  $\Upsilon = \tauq\kappa_{T}/d^{2}$.}
+\label{tab:rel-15-summary}
+\medskip
+\begin{tabular}{@{}l c c c c@{}}
+\toprule
+Boundary type
+  & $R_{c}^{(\mathrm{class})}$
+  & $\Rarel^{(c)}$
+  & $R_{c}^{(\mathrm{rel})}$
+  & $a_{c}$ \\
+\midrule
+Both free
+  & $657.511$
+  & $657.511$
+  & $657.511\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $2.221$ \\[4pt]
+Both rigid
+  & $1707.762$
+  & $1707.762$
+  & $1707.762\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $3.117$ \\[4pt]
+One rigid, one free
+  & $1100.65$
+  & $1100.65$
+  & $1100.65\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $2.682$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Remarks.}
+\begin{enumerate}
+\item The critical wavenumber $a_{c}$ is \emph{unchanged} by the
+  relativistic corrections, since the minimization of $\Rarel(a)$ yields
+  the same functional form as in the classical theory.
+
+\item The critical relativistic Rayleigh number $\Rarel^{(c)}$ coincides
+  numerically with the classical $R_{c}$ in every case. All relativistic
+  physics is absorbed into the \emph{definition} of $\Rarel$.
+
+\item When the onset condition is expressed in terms of the classical
+  Rayleigh number $R$, one finds $R_{c}^{(\mathrm{rel})} >
+  R_{c}^{(\mathrm{class})}$ by the factor $(1+\Xi)(1+\Upsilon)$.
+  Physically, this means that relativistic effects raise the
+  \emph{apparent} threshold as measured by $R$, but the system is in
+  fact \emph{more unstable} for a given temperature gradient because
+  the enhanced inertia reduces $\Rarel$ below $R$.
+
+\item For astrophysical applications (neutron-star oceans, accretion
+  disks, quark--gluon plasma), $\Xi$ can be of order unity, producing
+  $\mathcal{O}(1)$ shifts in the critical conditions.
+\end{enumerate}
+
+
+% -----------------------------------------------------------------
+\subsection{Causality verification of critical modes}
+\label{sec:rel-15-causality}
+% -----------------------------------------------------------------
+
+\begin{causalitycheck}
+We must verify that the critical eigenmodes found above propagate
+causally, i.e.\ no signal speed exceeds $c$.
+
+\paragraph{Phase and group velocities of the critical mode.}
+At marginal stability the perturbation is time-independent
+($\sigma = 0$), so the critical mode is \emph{stationary}---it has
+zero phase velocity. There is no propagation, and causality is
+trivially satisfied.
+
+\paragraph{Slightly supercritical regime.}
+For $\Rarel$ slightly above $\Rarel^{(c)}$, the growth rate $\sigma$
+is real and positive (exchange of stabilities). The corresponding
+disturbance grows exponentially in time but does not propagate
+horizontally faster than a diffusive speed. Specifically, the
+perturbation envelope satisfies
+\[
+v_{\mathrm{signal}} \sim \sqrt{\kappa_{T}\,\sigma}
+  \ll c,
+\]
+since both $\kappa_{T}$ and $\sigma$ are non-relativistic in magnitude
+for the thermal instability problem.
+
+\paragraph{Role of Israel--Stewart relaxation.}
+In the Fourier-decomposed perturbation equations, the Israel--Stewart
+term contributes a factor $(1 + i\sigma\tauq)$ in the denominator of the
+heat-flux response. This regularises the high-wavenumber behaviour and
+ensures that the effective thermal propagation speed satisfies
+\[
+v_{\mathrm{th}} = \sqrt{\frac{\kappa_{T}}{\tauq}} \leq c,
+\]
+provided $\tauq \geq \kappa_{T}/c^{2}$. This inequality is
+automatically satisfied for any physical fluid, since
+$\kappa_{T}/c^{2}$ is an extraordinarily small time scale.
+
+\paragraph{Conclusion.}
+All critical and near-critical modes of the relativistic B\'enard
+problem propagate causally. The Israel--Stewart framework guarantees
+that no acausal behaviour is introduced by the dissipative terms.
+\end{causalitycheck}
