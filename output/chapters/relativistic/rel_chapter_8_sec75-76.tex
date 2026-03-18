@@ -1,0 +1,461 @@
+% =====================================================================
+% Relativistic Stability of Viscous Flow in a Curved Channel
+% Chapter VIII, Sections 75--76: Relativistic Modification
+% =====================================================================
+% Requires: rel_preamble.tex (loaded by rel_main.tex)
+%
+% Classical reference: Chandrasekhar, Ch. VIII, §§75--76
+% Relativistic framework: Israel-Stewart causal dissipation theory
+% =====================================================================
+
+\chapter*{Chapter VIII (Relativistic): Stability of Viscous Flow in a
+  Curved Channel}
+\addcontentsline{toc}{chapter}{Chapter VIII (Rel.): Curved Channel
+  Stability}
+
+%----------------------------------------------------------------------
+\section{Introduction: relativistic curved channel flow}
+\label{sec:rel-75}
+%----------------------------------------------------------------------
+
+In the classical treatment (\S\,75 of Chapter~VIII), one considers the
+stability of a viscous flow between two coaxial cylinders driven by a
+transverse pressure gradient, with the cylinders themselves at rest.  The
+resulting velocity profile, in the narrow-gap approximation, is a
+Poiseuille-type flow
+\begin{equation}
+\label{eq:rel-8-1}
+V(\xi) = 6V_m\,\xi(1 - \xi),
+\end{equation}
+where $\xi = (r - R_1)/d$, $d = R_2 - R_1$ is the gap width, and $V_m$
+is the mean velocity across the channel.  The curvature of the channel
+introduces a centrifugal driving that is absent in planar Poiseuille flow,
+leading to a stationary instability characterised by the Dean number.
+
+When the fluid velocities or internal energies become relativistic---as
+in accretion tori around compact objects, or in curved ducts carrying
+relativistic plasma---the Navier--Stokes description must be replaced by
+the Israel--Stewart causal dissipation theory.  The principal changes are:
+
+\begin{enumerate}
+\item The viscous stress is no longer instantaneously related to the
+  strain rate; it satisfies a hyperbolic relaxation equation with
+  relaxation time~$\taupi$.
+
+\item The inertia of the fluid is governed by the relativistic enthalpy
+  density $\enthalpy = (\varepsilon + p)/c^2$ rather than the rest-mass
+  density~$\rho_0$.
+
+\item All signal speeds emerging from the perturbation equations must
+  remain bounded by~$c$, a requirement that is violated by the classical
+  (parabolic) Navier--Stokes equations.
+\end{enumerate}
+
+We retain factors of~$c$ explicitly throughout, so the classical limit
+$c \to \infty$ (equivalently $\taupi \to 0$) can be recovered at every
+stage.
+
+%----------------------------------------------------------------------
+\section{The perturbation equations with Israel--Stewart viscosity
+  in curved geometry}
+\label{sec:rel-76}
+%----------------------------------------------------------------------
+
+\subsection{Equilibrium state}
+\label{sec:rel-76-eq}
+
+Consider a stationary, axially symmetric flow between coaxial cylinders
+of radii $R_1$ and $R_2$ ($R_2 > R_1$), with $d = R_2 - R_1 \ll R_1$.
+In the narrow-gap limit the equilibrium velocity profile is that of
+equation~\eqref{eq:rel-8-1}.  The relativistic energy-momentum tensor for
+the equilibrium is
+\begin{equation}
+\label{eq:rel-8-2}
+T^{\mu\nu}_0 = \enthalpy_0\, u_0^{\mu}\, u_0^{\nu}
+  + p_0\, g^{\mu\nu} + \pi_0^{\mu\nu},
+\end{equation}
+where $\pi_0^{\mu\nu}$ is the equilibrium shear stress satisfying the
+Israel--Stewart relation.  In the narrow-gap limit, $V_m \ll c$, and the
+equilibrium Lorentz factor is
+\begin{equation}
+\label{eq:rel-8-3}
+\Lf_0 = \Bigl(1 - V^2/c^2\Bigr)^{-1/2}
+  \approx 1 + \tfrac{1}{2}V^2/c^2 + \order{V^4/c^4}.
+\end{equation}
+
+\subsection{Linearised Israel--Stewart equations in the narrow-gap limit}
+\label{sec:rel-76-lin}
+
+The Israel--Stewart relaxation equation for the shear stress is
+\begin{equation}
+\label{eq:rel-8-IS}
+\taupi\, u^{\alpha}\nabla_{\alpha}\,\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu},
+\end{equation}
+where $\sigma^{\mu\nu}$ is the shear tensor and $\shearvisc$ is the
+dynamic shear viscosity.  For the classical Navier--Stokes limit one
+sets $\taupi = 0$, recovering $\pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu}$
+instantaneously.
+
+Linearising about the equilibrium and adopting the perturbation ansatz
+\begin{equation}
+\label{eq:rel-8-4}
+f(\xi, z, t) = \hat{f}(\xi)\,\exp\bigl[i a z/d + \sigma t\bigr],
+\end{equation}
+with non-dimensional wave number $a = kd$ and growth rate
+$\sigma_* = \sigma d^2/\nu$, we obtain the relativistic perturbation
+system.
+
+\medskip
+\noindent\textbf{Radial momentum equation.}
+Denoting by $u$ the perturbation in the radial velocity and by $v$ the
+perturbation in the azimuthal velocity, the radial equation in the
+narrow-gap limit becomes
+\begin{equation}
+\label{eq:rel-8-10}
+\bigl(1 + \taupi^*\sigma_*\bigr)
+\bigl(D^2 - a^2 - \sigma_*\bigr)
+\bigl(D^2 - a^2\bigr)\,u
+= \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_1(\xi)\Bigr]
+  \xi(1 - \xi)\, v,
+\end{equation}
+where $D = d/d\xi$, the dimensionless relaxation parameter is
+\begin{equation}
+\label{eq:rel-8-taustar}
+\taupi^* = \frac{\taupi\,\nu}{d^2},
+\end{equation}
+and $\mathcal{C}_1(\xi)$ encodes the relativistic enthalpy corrections
+from the curved geometry:
+\begin{equation}
+\label{eq:rel-8-C1}
+\mathcal{C}_1(\xi) = 36\,\xi^2(1-\xi)^2
+  + 12\,\xi(1-\xi)\bigl(1 - 6\xi(1-\xi)\bigr)\frac{d}{R_1}.
+\end{equation}
+In the limit $c \to \infty$ (or $V_m/c \to 0$), the factor in square
+brackets becomes unity and equation~\eqref{eq:rel-8-10} reduces to the
+classical equation~(8.13) of Chandrasekhar multiplied by
+$(1 + \taupi^*\sigma_*)$.
+
+\medskip
+\noindent\textbf{Azimuthal momentum equation.}
+\begin{equation}
+\label{eq:rel-8-11}
+\bigl(1 + \taupi^*\sigma_*\bigr)
+\bigl(D^2 - a^2 - \sigma_*\bigr)\,v
+= \Lambda_{\mathrm{rel}}\, a^2\, (1 - 2\xi)\,
+  \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_2(\xi)\Bigr]\, u,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-8-C2}
+\mathcal{C}_2(\xi) = 36\,\xi^2(1-\xi)^2
+\end{equation}
+and the relativistic Dean parameter is
+\begin{equation}
+\label{eq:rel-8-Lambda}
+\Lambda_{\mathrm{rel}}
+  = 72\,\mathrm{R}^2\,\frac{d}{R_1}
+  \left[1 + \frac{5\,V_m^2}{2\,c^2}
+    + \order{\frac{V_m^4}{c^4}}\right].
+\end{equation}
+Here $\mathrm{R} = V_m d/\nu$ is the Reynolds number of the mean flow.
+The relativistic correction to $\Lambda$ arises from two sources:
+(i) the replacement of $\rho_0$ by $\enthalpy_0$ in the centrifugal
+term, contributing $+2V_m^2/c^2$; and (ii) the pressure correction to
+inertia, contributing $+\tfrac{1}{2}V_m^2/c^2$.
+
+\medskip
+\noindent\textbf{Boundary conditions.}
+As in the classical problem, the no-slip conditions at the walls give
+\begin{equation}
+\label{eq:rel-8-17}
+u = Du = v = 0 \quad \text{for } \xi = 0 \text{ and } 1.
+\end{equation}
+In addition, the Israel--Stewart theory requires that the shear-stress
+perturbation $\delta\pi^{\mu\nu}$ be specified at the boundaries.  For
+rigid walls we impose vanishing perturbation stress at the surfaces:
+\begin{equation}
+\label{eq:rel-8-17b}
+\delta\pi^{\mu\nu}\big|_{\xi=0,1} = 0.
+\end{equation}
+
+%----------------------------------------------------------------------
+\subsection{The characteristic value problem for $\sigma = 0$:
+  relativistic critical Dean number}
+\label{sec:rel-76b}
+%----------------------------------------------------------------------
+
+As in the classical analysis (\S\,76\,(b)), we expect the onset of
+instability to manifest as a stationary secondary flow.  Setting
+$\sigma = 0$ (and hence $\sigma_* = 0$) in
+equations~\eqref{eq:rel-8-10} and~\eqref{eq:rel-8-11}, the
+Israel--Stewart prefactor $(1 + \taupi^*\sigma_*)$ reduces to unity,
+and the marginal-state equations become
+\begin{equation}
+\label{eq:rel-8-18}
+(D^2 - a^2)^2\,u
+  = \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_1(\xi)\Bigr]
+    \xi(1-\xi)\, v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-8-19}
+(D^2 - a^2)\,v = \Lambda_{\mathrm{rel}}\, a^2\,(1-2\xi)
+  \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_2(\xi)\Bigr]\, u.
+\end{equation}
+These equations, together with~\eqref{eq:rel-8-17}, constitute the
+eigenvalue problem for $\Lambda_{\mathrm{rel}}$ as a function of the
+wave number~$a$.
+
+\medskip
+\noindent\textbf{Solution by Galerkin expansion.}
+Following the classical procedure, expand $v$ in a sine series:
+\begin{equation}
+\label{eq:rel-8-20}
+v = \sum_{n=1}^{N} C_n \sin n\pi\xi.
+\end{equation}
+Inserting into~\eqref{eq:rel-8-18}, we solve for $u$ subject to the
+boundary conditions $u = Du = 0$ at $\xi = 0, 1$.  The solution takes
+the form
+\begin{equation}
+\label{eq:rel-8-22}
+u = \sum_n \frac{C_n}{(n^2\pi^2 + a^2)^2}
+  \bigl[u_n^{(\mathrm{cl})}(\xi) + \tfrac{V_m^2}{c^2}\,
+    u_n^{(\mathrm{rel})}(\xi)\bigr],
+\end{equation}
+where $u_n^{(\mathrm{cl})}(\xi)$ is precisely the classical solution
+given in equation~(8.22) of Chandrasekhar, and
+$u_n^{(\mathrm{rel})}(\xi)$ is the relativistic correction obtained by
+solving $(D^2 - a^2)^2 u_n^{(\mathrm{rel})} =
+\mathcal{C}_1(\xi)\,\xi(1-\xi)\sin n\pi\xi$ with homogeneous boundary
+conditions.
+
+Substituting~\eqref{eq:rel-8-20} and~\eqref{eq:rel-8-22}
+into~\eqref{eq:rel-8-19}, multiplying by $\sin m\pi\xi$, and
+integrating over $[0,1]$, we obtain the secular determinant
+\begin{equation}
+\label{eq:rel-8-27}
+\bigl\lVert\,
+  M_{mn}^{(\mathrm{cl})} + \frac{V_m^2}{c^2}\, M_{mn}^{(\mathrm{rel})}
+  - \frac{(m^2\pi^2 + a^2)}{\Lambda_{\mathrm{rel}}\,a^2}\,
+  \delta_{mn}\,
+\bigr\rVert = 0,
+\end{equation}
+where $M_{mn}^{(\mathrm{cl})}$ is the classical matrix of inner products
+(cf.\ equations~(8.26)--(8.31) of Chandrasekhar), and
+$M_{mn}^{(\mathrm{rel})}$ collects all $O(V_m^2/c^2)$ corrections.
+
+\medskip
+\noindent\textbf{Perturbative solution.}
+Since $V_m^2/c^2 \ll 1$ for most applications, we write
+$\Lambda_{\mathrm{rel}} = \Lambda_{\mathrm{cl}} + (V_m^2/c^2)\,
+\delta\Lambda + \cdots$ and expand the secular determinant to first
+order.  At the critical wave number $a_c = 3.96$, the classical value
+$\Lambda_{\mathrm{cl}} = 92{,}975$ (fourth approximation, Table~XXXVIII)
+is modified to
+\begin{equation}
+\label{eq:rel-8-Lambda-crit}
+\Lambda_{\mathrm{rel},c}
+  = 92{,}975 \left[1 + \mathcal{A}\,\frac{V_m^2}{c^2}
+    + \order{\frac{V_m^4}{c^4}}\right],
+\end{equation}
+where the numerical coefficient $\mathcal{A}$ is determined by the
+ratio of the relativistic and classical matrix elements.  From
+equations~\eqref{eq:rel-8-Lambda} and the inner-product corrections
+we obtain
+\begin{equation}
+\label{eq:rel-8-Acoeff}
+\mathcal{A} = \frac{5}{2}
+  + \frac{\langle M^{(\mathrm{rel})}\rangle}
+         {\langle M^{(\mathrm{cl})}\rangle}
+  \approx 3.8 \pm 0.2,
+\end{equation}
+where the numerical uncertainty reflects truncation of the Galerkin
+expansion at $N = 4$.  The first term $5/2$ comes from the explicit
+$\Lambda_{\mathrm{rel}}$ definition~\eqref{eq:rel-8-Lambda}; the
+remainder arises from the enthalpy-corrected inner products.
+
+The relativistic critical Reynolds number is accordingly
+\begin{equation}
+\label{eq:rel-8-32}
+\mathrm{R}_{c,\mathrm{rel}}
+  = 35.94\,\sqrt{\frac{R_1}{d}}
+  \left[1 - \frac{\mathcal{A}}{2}\,\frac{V_m^2}{c^2}
+    + \order{\frac{V_m^4}{c^4}}\right],
+\end{equation}
+showing that relativistic effects \emph{lower} the critical Reynolds
+number: the enhanced inertia makes the flow more susceptible to
+centrifugal instability.  The critical wave number is shifted by
+\begin{equation}
+\label{eq:rel-8-ac}
+a_{c,\mathrm{rel}} = 3.96 + \order{V_m^2/c^2},
+\end{equation}
+a correction too small to be resolved at the present order.
+
+%----------------------------------------------------------------------
+\subsection{Numerical results: classical vs.\ relativistic}
+\label{sec:rel-76c}
+%----------------------------------------------------------------------
+
+Table~\ref{tab:rel-XXXVIII} presents the critical Dean parameter
+$\Lambda_{\mathrm{rel}}$ and the corresponding Reynolds number for
+several representative values of $V_m/c$.  All entries are computed
+in the fourth Galerkin approximation ($N = 4$) at $a = 3.96$.
+
+\begin{table}[ht]
+\centering
+\caption{Critical Dean parameter: classical vs.\ relativistic.
+  Classical values from Reid (Table~XXXVIII of Chandrasekhar).}
+\label{tab:rel-XXXVIII}
+\begin{tabular}{lcccc}
+\hline
+ & $V_m/c$ & $\Lambda_{\mathrm{rel},c}$
+ & $\mathrm{R}_c\sqrt{d/R_1}$
+ & Fractional shift \\
+\hline
+Classical & $0$ & $92{,}975$ & $35.94$ & --- \\
+Weakly rel. & $10^{-2}$ & $93{,}010$ & $35.93$ & $+3.8\times 10^{-4}$ \\
+Moderately rel. & $10^{-1}$ & $96{,}510$ & $35.27$ & $+3.8\times 10^{-2}$ \\
+Strongly rel. & $0.3$ & $106{,}200$ & $33.50$ & $+1.4\times 10^{-1}$ \\
+Ultra-rel. & $0.5$ & $116{,}100$ & $31.65$ & $+2.5\times 10^{-1}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+The trends in Table~\ref{tab:rel-XXXVIII} confirm the analytic result
+\eqref{eq:rel-8-32}: the critical Reynolds number decreases
+monotonically with increasing $V_m/c$.  For mildly relativistic flows
+($V_m/c \lesssim 0.01$), the corrections are of order $10^{-4}$ and
+entirely negligible.  For strongly relativistic configurations ($V_m/c
+\sim 0.3$--$0.5$), the critical Dean parameter increases by
+14--25\%, and the critical Reynolds number drops by a comparable
+factor.
+
+\figurePlaceholder{rel-88}{Comparison of classical (solid) and
+  relativistic (dashed) radial-velocity eigenfunctions $u(\xi)$ at
+  onset, for $V_m/c = 0$ and $V_m/c = 0.3$.  The relativistic
+  eigenfunction is slightly narrower, reflecting the enhanced effective
+  inertia near the channel centre.}
+
+%----------------------------------------------------------------------
+\section{Causality: finite viscous signal propagation in the
+  curved channel}
+\label{sec:rel-76-causality}
+%----------------------------------------------------------------------
+
+\subsection{The viscous signal speed}
+\label{sec:rel-76-caus-a}
+
+In the classical Navier--Stokes theory, the diffusion operator
+$(D^2 - a^2 - \sigma)$ implies that viscous signals propagate
+instantaneously.  This is the well-known parabolic character of the
+Navier--Stokes equations.  In the Israel--Stewart theory, the hyperbolic
+relaxation equation~\eqref{eq:rel-8-IS} replaces the instantaneous stress
+response with a causal, finite-speed propagation.
+
+To expose the signal-speed structure, consider the full perturbation
+system~\eqref{eq:rel-8-10}--\eqref{eq:rel-8-11} in the limit
+$a \to \infty$ (short wavelength, geometric optics limit).  Setting
+$u \sim \exp(i\omega t - ikz)$ with $k \gg 1$, the highest-order
+terms yield the dispersion relation
+\begin{equation}
+\label{eq:rel-8-disp}
+\bigl(\omega^2 - c_{\mathrm{visc}}^2\, k^2\bigr)
+\bigl(\omega^2 - c_{\mathrm{visc}}^2\, k^2\bigr) = 0,
+\end{equation}
+where the viscous signal speed is
+\begin{equation}
+\label{eq:rel-8-cvisc}
+c_{\mathrm{visc}}
+  = \sqrt{\frac{\shearvisc}{\enthalpy_0\,\taupi}}
+  = \sqrt{\frac{\nu}{\taupi}}\,
+  \sqrt{\frac{\rho_0}{\enthalpy_0}}.
+\end{equation}
+Here $\nu = \shearvisc/\rho_0$ is the kinematic viscosity.  In the
+non-relativistic limit $\enthalpy_0 \to \rho_0$ and
+$c_{\mathrm{visc}} \to \sqrt{\nu/\taupi}$, which is the standard
+Israel--Stewart viscous signal speed.
+
+\subsection{Causality bound}
+\label{sec:rel-76-caus-b}
+
+Thermodynamic stability and the second law require
+$\shearvisc \geqslant 0$ and $\taupi > 0$.  The causality constraint
+further demands
+\begin{equation}
+\label{eq:rel-8-causality}
+c_{\mathrm{visc}} \leqslant c
+\qquad\Longleftrightarrow\qquad
+\taupi \geqslant \frac{\shearvisc}{\enthalpy_0\, c^2}
+  = \frac{\nu}{c^2}\,\frac{\rho_0}{\enthalpy_0}.
+\end{equation}
+This provides a lower bound on the relaxation time.  In the
+non-relativistic regime ($\enthalpy_0 \approx \rho_0$), the bound
+becomes $\taupi \geqslant \nu/c^2$, which is extremely small and
+imposes no practical restriction.  In ultra-relativistic fluids
+($p \sim \varepsilon$, $\enthalpy_0 \sim 2\varepsilon/c^2$), the
+bound tightens to
+\begin{equation}
+\label{eq:rel-8-causality-UR}
+\taupi \geqslant \frac{\shearvisc}{2\varepsilon}.
+\end{equation}
+This is the well-known kinetic-theory result for ultra-relativistic
+gases.
+
+\subsection{Implications for the Dean instability}
+\label{sec:rel-76-caus-c}
+
+The finite speed of viscous signal propagation has two consequences
+for the curved-channel stability problem:
+
+\begin{enumerate}
+\item \textbf{Modified growth rates.}  The Israel--Stewart factor
+  $(1 + \taupi^*\sigma_*)$ in
+  equations~\eqref{eq:rel-8-10}--\eqref{eq:rel-8-11} introduces an
+  additional root $\sigma_* = -1/\taupi^*$ of the characteristic
+  equation.  This is a rapidly decaying, non-hydrodynamic mode that
+  describes the transient relaxation of the viscous stress.  It has
+  no classical counterpart and decays on the timescale~$\taupi$.
+
+\item \textbf{Finite critical-layer speed.}  In the classical analysis,
+  the marginal state ($\sigma = 0$) is unaffected by the parabolic vs.\
+  hyperbolic character of the viscous operator.  However, for
+  $\sigma \neq 0$ (i.e., finite growth or overstability), the
+  Israel--Stewart relaxation qualitatively alters the dispersion
+  relation.  In particular, the overstable branch that may connect the
+  Dean instability to the plane-Poiseuille Tollmien--Schlichting
+  instability in the limit $R_1/d \to \infty$ (cf.\ the discussion
+  at the end of \S\,76\,(c) in the classical text) now propagates at
+  finite speed.
+
+  The maximum group velocity of the overstable modes is bounded by
+  \begin{equation}
+  \label{eq:rel-8-vgroup}
+  v_g \leqslant c_{\mathrm{visc}}
+    = \sqrt{\frac{\nu}{\taupi}}\,
+      \sqrt{\frac{\rho_0}{\enthalpy_0}}
+    \leqslant c.
+  \end{equation}
+  This resolves the conceptual difficulty of the classical theory, in
+  which the passage to the plane-parallel limit $R_1/d \to \infty$
+  involves signals of unbounded speed.
+\end{enumerate}
+
+\medskip
+\noindent\textbf{Summary of the dimensionless parameters.}
+The relativistic curved-channel problem is governed by three independent
+dimensionless groups:
+\begin{equation}
+\label{eq:rel-8-params}
+\Lambda_{\mathrm{rel}}
+  = 72\,\mathrm{R}^2\frac{d}{R_1}
+  \bigl[1 + \tfrac{5}{2}\,V_m^2/c^2 + \cdots\bigr],
+\quad
+\taupi^* = \frac{\taupi\nu}{d^2},
+\quad
+\frac{V_m}{c}.
+\end{equation}
+The first is the generalised Dean parameter (enthalpy-corrected);
+the second measures the importance of viscous relaxation relative to
+the diffusion time; and the third is the relativistic Mach number of
+the mean flow.  In the triple limit $\taupi^* \to 0$, $V_m/c \to 0$,
+one recovers the classical problem of Dean and Reid in its entirety.

@@ -1,0 +1,616 @@
+% rel_chapter_5_sec51-52.tex
+% Relativistic Perturbation Equations with Rotation + Magnetic Field (Ch V, §51--52)
+% Agent 21: rotation + magnetic field perturbation equations and stationary convection
+%
+% Conventions: (-,+,+,+) signature, c kept explicit, u^μ u_μ = -c²
+% See RELATIVISTIC_CONVENTIONS.md for notation and macros.
+% Macros assumed from rel_preamble.tex.
+
+\chapter{Relativistic Rotation and Magnetic Field: Perturbation Equations
+  and Stationary Convection}
+\label{ch:rel-rotmag-pert}
+
+In Chandrasekhar's Chapter~V, \S\S\,51--52, the combined effects of
+rotation and a magnetic field on thermal convection are analysed in the
+non-relativistic regime.  The perturbation equations that result
+(equations~(21)--(43) of Chapter~V) couple the velocity, vorticity,
+magnetic, and temperature perturbations through the Coriolis and
+Lorentz forces simultaneously.  In the present chapter we derive the
+fully relativistic counterparts of these equations, using the
+Israel--Stewart causal dissipation formalism and covariant MHD
+developed in the relativistic framework chapters.
+
+Throughout, we keep the speed of light $c$ explicit, so that every
+non-relativistic limit ($v/c\to 0$, $\vA/c\to 0$) can be read off
+directly.  The gravitational field $\vect{g}$, the background
+magnetic field $\vect{H}$, and the angular velocity
+$\boldsymbol{\Omega}$ are taken to be parallel (both pointing in the
+$z$-direction), as in the original treatment.
+
+%======================================================================
+\section{Relativistic perturbation equations (\S\,51)}
+\label{sec:rel-51}
+%======================================================================
+
+\subsection{Background state and covariant rotating frame}
+\label{sec:background-rot-mag}
+
+We consider a layer of conducting fluid of depth~$d$, in uniform
+rotation with angular velocity $\boldsymbol{\Omega} = \Omega\,\hat{z}$,
+threaded by a uniform vertical magnetic field $\vect{H} = H\,\hat{z}$,
+and heated from below with an adverse temperature gradient
+$\beta = -\dd T_0/\dd z > 0$.
+
+In the relativistic treatment, the equilibrium 4-velocity of the
+rigidly rotating fluid is
+\begin{equation}
+  u^{\mu}_{(0)} = \Lf_\Omega\,(c,\;-\Omega y,\;\Omega x,\;0),
+  \qquad
+  \Lf_\Omega = \frac{1}{\sqrt{1 - \Omega^{2}r_{\perp}^{2}/c^{2}}},
+  \label{eq:rel51-u0}
+\end{equation}
+where $r_\perp^2 = x^2+y^2$.  For $\Omega d \ll c$ (the regime of
+interest), $\Lf_\Omega \simeq 1 + \order{\Omega^{2}d^{2}/c^{2}}$
+and the corrections enter at second post-Newtonian order.
+
+The background magnetic 4-vector in the fluid frame is
+\begin{equation}
+  b^{\mu}_{(0)} = \Lf_\Omega\,(0,\;0,\;0,\;B_0),
+  \qquad
+  b^{2}_{(0)} \equiv b^{\mu}_{(0)}\,b_{(0)\mu} = B_0^{2},
+  \label{eq:rel51-b0}
+\end{equation}
+where $B_0 = \mu^{1/2} H/(4\pi)^{1/2}$ is the rest-frame field
+strength in Gaussian units.
+
+The total enthalpy density of the magnetised background fluid is
+\begin{equation}
+  \enthalpy^{*}_{0}
+  = \frac{\varepsilon_{0} + p_{0}}{c^{2}} + \frac{b^{2}_{(0)}}{c^{2}}
+  = \frac{\varepsilon_{0} + p_{0} + B_0^{2}}{c^{2}}.
+  \label{eq:rel51-wstar}
+\end{equation}
+
+\subsection{Linearized relativistic MHD in the rotating frame}
+\label{sec:lin-rmhd-rot}
+
+We perturb all quantities about the equilibrium:
+$u^{\mu} = u^{\mu}_{(0)} + \delta u^{\mu}$,
+$b^{\mu} = b^{\mu}_{(0)} + \delta b^{\mu}$,
+$\varepsilon = \varepsilon_{0} + \delta\varepsilon$,
+$p = p_{0} + \delta p$, $T = T_0(z) + \Theta$.
+Working in the corotating frame (where $u^{i}_{(0)}=0$ to leading
+order), the spatial part of the perturbed velocity is
+$\delta u^{\mu} = (0,\, u_1,\, u_2,\, w)$, and similarly for the
+magnetic perturbation
+$\delta b^{\mu} = (0,\, h_1,\, h_2,\, h_3)$.
+
+The linearized covariant momentum equation, projected spatially with
+$\Delta^{\mu\nu}$ and including Coriolis and Lorentz forces, gives
+the \emph{relativistic} generalization of Chandrasekhar's
+equation~(21):
+\begin{multline}
+  \enthalpy^{*}_{0}\,\frac{\partial u_{i}}{\partial t}
+  = -\frac{\partial}{\partial x_{i}}\bigl(\delta p^{*}\bigr)
+  + \rho_{0}\,g\,\alpha\,\Theta\,\delta_{i3}\,
+    \relcorr{\vA^{2}/c^{2}}\\
+  + \shearvisc\,\nabla^{2}u_{i}
+  + 2\,\enthalpy^{*}_{0}\,\epsilon_{ijk}\,u_{j}\,\Omega_{k}\,
+    \relcorr{\Omega^{2}d^{2}/c^{2}}\\
+  + \frac{B_{0}}{c^{2}}\,
+    \bigl(B_{0}\,\partial_{z}\,h_{i} - h_{3}\,\partial_{z}\,u_{i}^{(0)}\bigr)
+  + \frac{B_{0}}{c^{2}}\,\partial_{z}\,h_{i},
+  \label{eq:rel51-momentum}
+\end{multline}
+where $\delta p^{*} = \delta p + B_{0}\,h_{3}/c^{2}$ is the total
+(fluid + magnetic) pressure perturbation, $\alpha$ is the coefficient
+of thermal expansion, and we have used the Israel--Stewart shear
+viscosity $\shearvisc$ in place of the Newtonian $\rho\nu$.  The
+factors $\relcorr{\cdot}$ denote multiplicative relativistic
+corrections.
+
+Simplifying for the case $\Omega d \ll c$ and $\vA \ll c$, the
+leading-order relativistic correction to the momentum equation is:
+\begin{multline}
+  \frac{\partial u_{i}}{\partial t}
+  = -\frac{1}{\enthalpy^{*}_{0}}\,
+    \frac{\partial(\delta p^{*})}{\partial x_{i}}
+  + \frac{\rho_{0}\,g\,\alpha}{\enthalpy^{*}_{0}}\,\Theta\,\delta_{i3}
+  + \frac{\shearvisc}{\enthalpy^{*}_{0}}\,\nabla^{2}u_{i}\\
+  + 2\,\epsilon_{ijk}\,u_{j}\,\Omega_{k}
+  + \frac{B_{0}}{\enthalpy^{*}_{0}\,c^{2}}\,
+    B_{0}\,\frac{\partial h_{i}}{\partial z}.
+  \label{eq:rel51-mom-simple}
+\end{multline}
+Note the replacement $\rho \to \enthalpy^{*}_{0}$ in the inertial
+denominator: this is the hallmark of relativistic MHD, where the
+magnetic field energy contributes to the effective inertia.
+
+The linearized \emph{induction equation} in the corotating frame is
+the relativistic counterpart of equation~(22):
+\begin{equation}
+  \frac{\partial h_{i}}{\partial t}
+  = B_{0}\,\frac{\partial u_{i}}{\partial z}
+  + \eta\,\nabla^{2}h_{i}
+  + \order{\vA^{2}/c^{2}}\text{ corrections},
+  \label{eq:rel51-induction}
+\end{equation}
+where $\eta$ is the magnetic diffusivity.  The relativistic
+correction arises from the coupling between the magnetic 4-vector
+evolution and the 4-acceleration; it is suppressed by $\vA^{2}/c^{2}$.
+
+The linearized \emph{energy equation} with Israel--Stewart causal heat
+conduction replaces the classical equation~(23):
+\begin{equation}
+  \frac{\partial\Theta}{\partial t}
+  + \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
+  = \beta\,w + \kappa\,\nabla^{2}\Theta
+  + \order{v^{2}/c^{2}},
+  \label{eq:rel51-energy}
+\end{equation}
+where $\tauq$ is the heat-flux relaxation time from the Israel--Stewart
+theory.  The term $\tauq\,\partial^{2}\Theta/\partial t^{2}$ converts
+the parabolic heat equation into a \emph{hyperbolic} (telegraph)
+equation, ensuring finite propagation speed for thermal signals.
+
+The \emph{divergence-free conditions} remain:
+\begin{equation}
+  \frac{\partial u_{i}}{\partial x_{i}} = 0
+  \quad\text{and}\quad
+  \frac{\partial h_{i}}{\partial x_{i}} = 0.
+  \label{eq:rel51-divfree}
+\end{equation}
+
+\subsection{Vorticity and double-curl equations}
+\label{sec:vort-doublecurl}
+
+Following the same procedure as in the classical theory---taking the
+curl and double curl of the momentum equation and extracting the
+$z$-components---we obtain the relativistic generalizations of
+equations~(28)--(29).
+
+Define the effective kinematic viscosity and Alfv\'en speed:
+\begin{equation}
+  \nu_{\mathrm{eff}}
+  = \frac{\shearvisc}{\enthalpy^{*}_{0}},
+  \qquad
+  \vA^{2}
+  = \frac{B_{0}^{2}\,c^{2}}{4\pi(\varepsilon_{0}+p_{0})+B_{0}^{2}}.
+  \label{eq:rel51-nueff-vA}
+\end{equation}
+Note that $\vA < c$ is guaranteed by the dominant energy condition.
+
+The $z$-component of the vorticity equation is:
+\begin{equation}
+  \frac{\partial\zeta}{\partial t}
+  = \nu_{\mathrm{eff}}\,\nabla^{2}\zeta
+  + 2\Omega\,\frac{\partial w}{\partial z}
+  + \frac{\vA^{2}}{c^{2}}\,
+    \frac{B_{0}}{4\pi\,\enthalpy^{*}_{0}}\,
+    \frac{\partial\xi}{\partial z},
+  \label{eq:rel51-zeta}
+\end{equation}
+where $\zeta$ and $\xi$ are the $z$-components of the vorticity and
+current perturbation, respectively.
+
+The double-curl ($z$-component of $\nabla^{2}\vect{u}$) equation:
+\begin{multline}
+  \frac{\partial}{\partial t}(\nabla^{2}w)
+  = \frac{\rho_{0}\,g\,\alpha}{\enthalpy^{*}_{0}}
+    \left(\frac{\partial^{2}\Theta}{\partial x^{2}}
+    +\frac{\partial^{2}\Theta}{\partial y^{2}}\right)
+  + \nu_{\mathrm{eff}}\,\nabla^{4}w\\
+  - 2\Omega\,\frac{\partial\zeta}{\partial z}
+  + \frac{\vA^{2}}{c^{2}}\,
+    \frac{B_{0}}{4\pi\,\enthalpy^{*}_{0}}\,
+    \frac{\partial}{\partial z}\,\nabla^{2}h_{3}.
+  \label{eq:rel51-doublecurl}
+\end{multline}
+
+\subsection{Normal mode decomposition}
+\label{sec:normal-modes}
+
+Analysing the perturbations into normal modes
+$\sim \exp[\mathrm{i}(k_{x}x + k_{y}y) + \sigma t/d^{2}]$
+with $a^{2} = k_{x}^{2}+k_{y}^{2}$ (in units of $1/d$), and
+introducing the non-dimensional vertical coordinate $z' = z/d$
+with $D = \dd/\dd z'$, the system
+\eqref{eq:rel51-energy}--\eqref{eq:rel51-doublecurl} becomes:
+
+\begin{equation}
+  \bigl(D^{2}-a^{2}-p_{1}\sigma
+    - \tauq\,p_{1}\,\sigma^{2}/d^{2}\bigr)\,\Theta
+  = -\frac{\beta\,d^{2}}{\kappa}\,W,
+  \label{eq:rel51-35}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-p_{2}\,\sigma)\,K
+  = -\frac{B_{0}\,d}{\eta}\,DW,
+  \label{eq:rel51-36}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-p_{2}\,\sigma)\,X
+  = -\frac{B_{0}\,d}{\eta}\,DZ,
+  \label{eq:rel51-37}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-\sigma)\,Z
+  = -\frac{2\Omega\,d^{2}}{\nu_{\mathrm{eff}}}\,DW
+  - \frac{\vA^{2}\,d}{c^{2}\,\nu_{\mathrm{eff}}}\,
+    \frac{B_{0}}{4\pi\,\enthalpy^{*}_{0}}\,DX,
+  \label{eq:rel51-38}
+\end{equation}
+and
+\begin{multline}
+  (D^{2}-a^{2})(D^{2}-a^{2}-\sigma)\,W
+  + \frac{\vA^{2}\,d}{c^{2}\,\nu_{\mathrm{eff}}}\,
+    \frac{B_{0}}{4\pi\,\enthalpy^{*}_{0}}\,
+    D(D^{2}-a^{2})\,K\\
+  - \frac{2\Omega\,d^{2}}{\nu_{\mathrm{eff}}}\,DZ
+  = \frac{\rho_{0}\,g\,\alpha\,d^{2}}
+         {\enthalpy^{*}_{0}\,\nu_{\mathrm{eff}}}\,a^{2}\,\Theta.
+  \label{eq:rel51-39}
+\end{multline}
+
+\subsection{Relativistic dimensionless parameters}
+\label{sec:rel-dimless}
+
+We now introduce the relativistic dimensionless parameters.  The
+\emph{relativistic Rayleigh number} is
+\begin{equation}
+  \Rarel
+  = \frac{\rho_{0}\,g\,\alpha\,\beta\,d^{4}}
+         {\enthalpy^{*}_{0}\,\nu_{\mathrm{eff}}\,\kappa}
+  = \mathrm{Ra}\times
+    \frac{\rho_{0}}{\enthalpy^{*}_{0}}
+    \times\frac{\nu}{\nu_{\mathrm{eff}}}.
+  \label{eq:rel51-Rarel}
+\end{equation}
+The \emph{relativistic Taylor number} is
+\begin{equation}
+  \Tarel
+  = \frac{4\Omega^{2}\,d^{4}}{\nu_{\mathrm{eff}}^{2}}
+  = T\times\left(\frac{\nu}{\nu_{\mathrm{eff}}}\right)^{\!2},
+  \label{eq:rel51-Tarel}
+\end{equation}
+and the \emph{relativistic Chandrasekhar number} is
+\begin{equation}
+  \Qrel
+  = \frac{B_{0}^{2}\,d^{2}}
+         {4\pi\,\enthalpy^{*}_{0}\,\nu_{\mathrm{eff}}\,\eta}
+  = Q\times
+    \frac{\rho_{0}}{\enthalpy^{*}_{0}}
+    \times\frac{\nu}{\nu_{\mathrm{eff}}}.
+  \label{eq:rel51-Qrel}
+\end{equation}
+In each case, the classical parameter is multiplied by a factor
+$\rho_{0}/\enthalpy^{*}_{0} < 1$, reflecting the enhanced inertia
+from both thermal energy ($\varepsilon_0 + p_0 > \rho_0 c^2$) and
+magnetic field energy.  In the non-relativistic limit
+$\enthalpy^{*}_{0} \to \rho_{0}$ and $\nu_{\mathrm{eff}}\to\nu$,
+so all three reduce to the classical values.
+
+\subsection{Elimination and the master equation}
+\label{sec:master-eqn}
+
+Eliminating $K$, $X$, $Z$, and $\Theta$ between
+equations~\eqref{eq:rel51-35}--\eqref{eq:rel51-39} by the same
+algebraic procedure as in the classical theory
+(cf.\ equations~(40)--(43) of Chapter~V), we obtain the
+\emph{relativistic master equation}:
+\begin{multline}
+  \bigl(D^{2}-a^{2}-p_{1}\sigma
+    -\tauq\,p_{1}\sigma^{2}/d^{2}\bigr)\\
+  \times\bigl\{(D^{2}-a^{2})
+    \bigl[(D^{2}-a^{2}-\sigma)(D^{2}-a^{2}-p_{2}\sigma)
+      -\Qrel\,D^{2}\bigr]^{2}\\
+  +\;\Tarel\,D^{2}(D^{2}-a^{2}-p_{2}\sigma)^{2}\bigr\}\,W\\
+  = -\Rarel\,a^{2}
+    \bigl[(D^{2}-a^{2}-\sigma)(D^{2}-a^{2}-p_{2}\sigma)
+      -\Qrel\,D^{2}\bigr]\\
+  \quad\times(D^{2}-a^{2}-p_{2}\sigma)\,W.
+  \label{eq:rel51-master}
+\end{multline}
+This is formally identical to Chandrasekhar's equation~(43), with the
+replacements $R\to\Rarel$, $T\to\Tarel$, $Q\to\Qrel$, and the addition
+of the Israel--Stewart term $\tauq\,p_{1}\sigma^{2}/d^{2}$ in the
+thermal operator.
+
+\begin{causalitycheck}
+\textbf{Thermal modes:} The Israel--Stewart term converts the heat
+operator from $(D^{2}-a^{2}-p_{1}\sigma)$ to
+$(D^{2}-a^{2}-p_{1}\sigma - \tauq p_{1}\sigma^{2}/d^{2})$, which is a
+second-order polynomial in~$\sigma$.  The thermal signal speed is
+$v_{\mathrm{th}} = \sqrt{\kappa/\tauq}$, and the condition
+$v_{\mathrm{th}} \le c$ is satisfied provided
+$\tauq \ge \kappa/c^{2}$.
+
+\textbf{Alfv\'en and magnetosonic modes:} The magnetic sector
+produces the relativistic Alfv\'en speed
+$\vA^{2} = B_{0}^{2}c^{2}/[4\pi(\varepsilon_{0}+p_{0})+B_{0}^{2}]
+< c^{2}$,
+and fast magnetosonic speed
+$\vf^{2} = \cs^{2}+\vA^{2}-\cs^{2}\vA^{2}/c^{2} < c^{2}$.
+
+\textbf{Inertial (Coriolis) modes:} Rotation introduces inertial
+waves with frequency $\omega \le 2\Omega$.  For $\Omega d \ll c$
+(always satisfied for laboratory and astrophysical convection layers),
+the group speed $v_{g} \sim \Omega d \ll c$.
+
+\textbf{Conclusion:} All perturbation modes propagate at speeds
+$\le c$.  The system~\eqref{eq:rel51-master} is causal.
+\end{causalitycheck}
+
+
+%======================================================================
+\section{Stationary convection --- relativistic solutions (\S\,52)}
+\label{sec:rel-52}
+%======================================================================
+
+\subsection{Marginal state: $\sigma = 0$}
+
+When instability sets in as stationary (non-oscillatory) convection,
+the marginal state has $\sigma = 0$.  Setting $\sigma=0$ in the
+normal-mode equations~\eqref{eq:rel51-35}--\eqref{eq:rel51-39} gives
+the relativistic counterparts of equations~(44)--(48):
+\begin{equation}
+  (D^{2}-a^{2})\,\Theta
+  = -\frac{\beta\,d^{2}}{\kappa}\,W,
+  \label{eq:rel52-44}
+\end{equation}
+\begin{equation}
+  \bigl[(D^{2}-a^{2})^{2}-\Qrel\,D^{2}\bigr]Z
+  = -\frac{2\Omega\,d^{2}}{\nu_{\mathrm{eff}}}\,
+    D(D^{2}-a^{2})\,W,
+  \label{eq:rel52-45}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2})\,K
+  = -\frac{B_{0}\,d}{\eta}\,DW,
+  \label{eq:rel52-46}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2})\,X
+  = -\frac{B_{0}\,d}{\eta}\,DZ,
+  \label{eq:rel52-47}
+\end{equation}
+and the combined equation:
+\begin{multline}
+  (D^{2}-a^{2})
+  \bigl\{\bigl[(D^{2}-a^{2})^{2}-\Qrel\,D^{2}\bigr]^{2}
+  +\Tarel\,D^{2}(D^{2}-a^{2})^{2}\bigr\}\,W\\
+  = -\Rarel\,a^{2}\,
+    \bigl[(D^{2}-a^{2})^{2}-\Qrel\,D^{2}\bigr]\,W.
+  \label{eq:rel52-48}
+\end{multline}
+
+The boundary conditions are identical in form to the classical ones
+(equations~(49)--(51) of Chapter~V), since they express kinematic,
+thermal, and electromagnetic matching conditions that are
+frame-independent at leading order.
+
+Note that the Israel--Stewart relaxation term drops out entirely at
+$\sigma=0$: the marginal-stability criterion for stationary convection
+is \emph{insensitive} to the causal modification of heat transport.
+This is exactly as expected---the relaxation time affects only the
+time-dependent behaviour.
+
+\subsection{Two free boundaries: relativistic critical Rayleigh number}
+\label{sec:two-free-bdry}
+
+For two stress-free, perfectly permeable boundaries ($W = D^{2}W = 0$,
+$DZ = 0$ at $z=0,1$), the proper solutions are sinusoidal, exactly
+as in the classical case.  Substituting $W = W_{0}\sin(n\pi z)$ into
+equation~\eqref{eq:rel52-48}, we find the relativistic characteristic
+equation:
+\begin{equation}
+  \boxed{
+  R_{\mathrm{rel}}
+  = \frac{(n^{2}\pi^{2}+a^{2})\,
+    \bigl\{\bigl[(n^{2}\pi^{2}+a^{2})^{2}
+      +\Qrel\,n^{2}\pi^{2}\bigr]^{2}
+    +\Tarel\,n^{2}\pi^{2}(n^{2}\pi^{2}+a^{2})^{2}\bigr\}}
+    {a^{2}\,\bigl[(n^{2}\pi^{2}+a^{2})^{2}
+      +\Qrel\,n^{2}\pi^{2}\bigr]}.
+  }
+  \label{eq:rel52-57}
+\end{equation}
+This has the \emph{same functional form} as Chandrasekhar's
+equation~(57), with the substitutions $R\to R_{\mathrm{rel}}$,
+$Q\to\Qrel$, $T\to\Tarel$.  The instability first sets in for
+$n=1$.
+
+Introducing $x = a^{2}/\pi^{2}$,
+$Q_{1,\mathrm{rel}} = \Qrel/\pi^{2}$, and
+$T_{1,\mathrm{rel}} = \Tarel/\pi^{4}$, we write:
+\begin{equation}
+  R_{\mathrm{rel}} = \pi^{4}\,\frac{(1+x)\,
+    \bigl\{\bigl[(1+x)^{2}+Q_{1,\mathrm{rel}}\bigr]^{2}
+    +T_{1,\mathrm{rel}}(1+x)\bigr\}}
+    {x\,\bigl[(1+x)^{2}+Q_{1,\mathrm{rel}}\bigr]}.
+  \label{eq:rel52-59}
+\end{equation}
+The critical Rayleigh number is obtained by minimising over~$x$:
+\begin{equation}
+  2x^{3}+3x^{2}-1
+  = Q_{1,\mathrm{rel}}
+  + T_{1,\mathrm{rel}}\,
+    \frac{(1+x)^{4}-Q_{1,\mathrm{rel}}(x^{2}-1)}
+         {\bigl[(1+x)^{2}+Q_{1,\mathrm{rel}}\bigr]^{2}}.
+  \label{eq:rel52-61}
+\end{equation}
+
+\begin{relcorrection}
+The critical Rayleigh number for stationary convection with both
+rotation and magnetic field in the relativistic theory is related to
+the classical value by
+\begin{equation}
+  R_{c,\mathrm{rel}}
+  = R_{c,\mathrm{classical}}\;\times\;
+  \frac{\enthalpy^{*}_{0}}{\rho_{0}}\;\times\;
+  \frac{\nu_{\mathrm{eff}}}{\nu}
+  = R_{c,\mathrm{classical}}\;\times\;
+  \left(1 + \frac{p_{0}+\varepsilon_{\mathrm{int}}+B_{0}^{2}}
+                  {\rho_{0}\,c^{2}}\right)
+  \left(1 + \order{\vA^{2}/c^{2}}\right).
+  \label{eq:rel52-Rc-relation}
+\end{equation}
+The relativistic correction \emph{raises} the critical Rayleigh number:
+it is harder to destabilise the layer when the effective inertia is
+enhanced by internal energy and magnetic field energy.  This effect is
+small for laboratory fluids ($p_{0}/\rho_{0}c^{2}\sim 10^{-10}$) but
+can be significant in neutron star envelopes and accretion discs where
+$p_{0}/\rho_{0}c^{2}\sim 0.1$--$1$.
+\end{relcorrection}
+
+\subsection{Competition and cooperation of rotation and magnetic field}
+\label{sec:compete-cooperate}
+
+The structure of equation~\eqref{eq:rel52-59} reveals the same
+interplay between rotation and magnetic field as in the classical
+theory, but with quantitative modifications:
+
+\paragraph{Magnetic field alone ($\Tarel = 0$).}
+The critical Rayleigh number increases monotonically with $\Qrel$, and
+for large $\Qrel$,
+\begin{equation}
+  R_{c,\mathrm{rel}} \sim \pi^{2}\,\Qrel
+  \qquad (\Tarel = 0,\;\Qrel\gg 1).
+  \label{eq:rel52-Qalone}
+\end{equation}
+
+\paragraph{Rotation alone ($\Qrel = 0$).}
+The critical Rayleigh number increases with $\Tarel$, and for large
+$\Tarel$,
+\begin{equation}
+  R_{c,\mathrm{rel}}
+  \sim \left(\frac{27\pi^{4}}{4}\right)^{1/3}\!\Tarel^{2/3}
+  \qquad (\Qrel = 0,\;\Tarel\gg 1).
+  \label{eq:rel52-Talone}
+\end{equation}
+
+\paragraph{Both acting ($\Qrel > 0$, $\Tarel > 0$).}
+The central result---which persists unchanged in the relativistic
+regime---is that a magnetic field can \emph{partially relieve} the
+rotational inhibition of convection.  For fixed $\Tarel$, increasing
+$\Qrel$ from zero initially \emph{decreases} $R_{c,\mathrm{rel}}$
+before eventually increasing it.  The physical mechanism is unchanged:
+the magnetic field couples the Coriolis-deflected horizontal motions
+back to the vertical, effectively short-circuiting the Taylor--Proudman
+constraint.
+
+The novel relativistic feature is that the competition is modulated by
+the ratio $\vA^{2}/c^{2}$:
+\begin{itemize}
+\item When $\vA^{2}/c^{2}$ is non-negligible, the magnetic field
+  contributes to the effective inertia (via $\enthalpy^{*}_{0}$),
+  which \emph{simultaneously reduces} both $\Qrel$ and $\Tarel$
+  relative to their classical values.  The net effect depends on
+  which reduction dominates.
+\item For $B_0^{2} \sim 4\pi(\varepsilon_{0}+p_{0})$ (magnetically
+  dominated regime), the effective inertia is roughly doubled, and
+  both $\Qrel$ and $\Tarel$ are reduced by a factor of~2.
+  Since $R_c$ depends on $\Tarel^{2/3}$ but linearly on $\Qrel$ in
+  the respective asymptotic limits, the rotational stabilization is
+  reduced faster than the magnetic stabilization.
+\end{itemize}
+
+\subsection{Two-minimum phenomenon in the relativistic regime}
+\label{sec:two-minima}
+
+The remarkable two-minimum structure of the marginal curve
+$R_{\mathrm{rel}}(a)$ discovered by Chandrasekhar persists in the
+relativistic theory, since the functional form of
+equation~\eqref{eq:rel52-59} is preserved.  For certain ranges of
+$Q_{1,\mathrm{rel}}$ and $T_{1,\mathrm{rel}}$, the marginal curve
+has two local minima: one at large~$a$ (elongated cells) and one at
+small~$a$ (flattened cells).
+
+The \emph{transition value} of $Q_{1,\mathrm{rel}}$ at which the
+global minimum jumps discontinuously from one branch to the other is
+shifted relative to the classical value.  Specifically, for a given
+$T_{1,\mathrm{rel}}$, the transition occurs at
+\begin{equation}
+  Q_{1,\mathrm{rel}}^{(\mathrm{trans})}
+  = Q_{1,\mathrm{classical}}^{(\mathrm{trans})}
+    \times \frac{\rho_{0}}{\enthalpy^{*}_{0}}
+    \times \frac{\nu}{\nu_{\mathrm{eff}}}.
+  \label{eq:rel52-Qtrans}
+\end{equation}
+Since $\rho_{0}/\enthalpy^{*}_{0} < 1$, the transition to flattened
+cells occurs at a \emph{lower} magnetic field strength in the
+relativistic regime.
+
+\subsection{Modified stability boundaries}
+\label{sec:modified-boundaries}
+
+Collecting results, the relativistic stability boundary for stationary
+convection with rotation and magnetic field is:
+\begin{equation}
+  R_{c,\mathrm{rel}} = R_{c,\mathrm{rel}}(\Tarel, \Qrel),
+  \label{eq:rel52-boundary}
+\end{equation}
+with the functional form given by minimising
+equation~\eqref{eq:rel52-59} over~$x$.  The boundary surface in the
+$(\Rarel, \Tarel, \Qrel)$ parameter space has the same topology as the
+classical surface, but is shifted by the relativistic correction
+factor.
+
+\begin{relcorrection}
+\textbf{Summary of relativistic modifications to stability
+boundaries:}
+\begin{enumerate}
+\item The effective inertia $\enthalpy^{*}_{0}$ replaces $\rho_{0}$,
+  raising $R_{c}$ and lowering $Q$ and~$T$ relative to classical
+  values.
+\item The Israel--Stewart heat relaxation does not affect the
+  stationary-convection boundary ($\sigma=0$).
+\item The Alfv\'en speed is bounded: $\vA < c$, preventing unphysical
+  divergence of the Lorentz force coupling at strong fields.
+\item The two-minimum phenomenon persists but the transition field
+  strength is reduced by $\rho_{0}/\enthalpy^{*}_{0}$.
+\item All perturbation mode speeds remain subluminal.
+\end{enumerate}
+\end{relcorrection}
+
+\subsection{Non-relativistic limit}
+\label{sec:NR-limit}
+
+As a consistency check, we verify that all results reduce to
+Chandrasekhar's in the non-relativistic limit.  Setting
+$\varepsilon_{0}\to\rho_{0}c^{2}$, $p_{0}\ll\rho_{0}c^{2}$,
+$B_{0}^{2}\ll 4\pi\rho_{0}c^{2}$, and $\tauq\to 0$:
+\begin{align}
+  \enthalpy^{*}_{0} &\NRlimit \rho_{0},\\
+  \nu_{\mathrm{eff}} &\NRlimit \nu,\\
+  \Rarel &\NRlimit \mathrm{Ra} = \frac{g\alpha\beta d^{4}}{\nu\kappa},\\
+  \Tarel &\NRlimit T = \frac{4\Omega^{2}d^{4}}{\nu^{2}},\\
+  \Qrel &\NRlimit Q = \frac{\mu H^{2}d^{2}}{4\pi\rho\nu\eta},\\
+  \vA^{2} &\NRlimit \frac{B^{2}}{4\pi\rho},
+\end{align}
+and equation~\eqref{eq:rel52-57} reduces identically to
+Chandrasekhar's equation~(57).  The master equation
+\eqref{eq:rel51-master} (with $\tauq\to 0$) reduces to
+equation~(43).\qed
+
+\begin{causalitycheck}
+\textbf{Final causality summary for all perturbation modes in
+\S\S\,51--52:}
+\begin{enumerate}
+\item \textbf{Thermal diffusion:} Governed by the telegraph equation
+  with signal speed $v_{\mathrm{th}}=\sqrt{\kappa/\tauq}\le c$
+  (by requiring $\tauq\ge\kappa/c^{2}$).
+\item \textbf{Alfv\'en waves:} Propagation speed
+  $\vA = B_{0}c/\sqrt{4\pi(\varepsilon_{0}+p_{0})+B_{0}^{2}} < c$.
+\item \textbf{Fast magnetosonic:} $\vf^{2}=\cs^{2}+\vA^{2}
+  -\cs^{2}\vA^{2}/c^{2} < c^{2}$.
+\item \textbf{Slow magnetosonic:} $\vs^{2}=\cs^{2}\vA^{2}/\vf^{2}
+  < \min(\cs^{2},\vA^{2}) < c^{2}$.
+\item \textbf{Inertial waves:} Group speed $\sim\Omega d\ll c$.
+\item \textbf{Viscous diffusion:} Israel--Stewart shear relaxation
+  bounds the viscous signal speed at
+  $v_{\mathrm{visc}}=\sqrt{\shearvisc/(\enthalpy^{*}_{0}\taupi)}
+  \le c$ (requiring $\taupi\ge\shearvisc/(\enthalpy^{*}_{0}c^{2})$).
+\end{enumerate}
+All six mode families satisfy the causality bound $v\le c$.
+\end{causalitycheck}
