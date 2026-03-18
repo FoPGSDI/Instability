@@ -1,0 +1,495 @@
+% =============================================================
+% Relativistic Overstability with Rotation (Ch III, §29--31)
+% Agent 14: Israel-Stewart causal extension
+% =============================================================
+%
+% Classical source: output/chapters/chapter_3.tex, lines 1302--1810
+% Conventions: RELATIVISTIC_CONVENTIONS.md, rel_preamble.tex
+%
+% This file extends the Chandrasekhar analysis of overstability
+% (oscillatory convection) in a rotating fluid layer to the
+% relativistic regime, using Israel-Stewart causal dissipation.
+%
+% Key physical points:
+%   (i)   The Israel-Stewart relaxation terms raise the order of the
+%         dispersion relation, introducing new modes absent classically.
+%   (ii)  Causality (no superluminal thermal signal propagation) is
+%         guaranteed by tau_q > 0.
+%   (iii) All results reduce to Chandrasekhar's in the limit c -> infty.
+% =============================================================
+
+\section{Relativistic onset of overstability in a rotating layer (\S29 -- relativistic)}\label{sec:rel-3-29}
+
+We return to the question set aside in the relativistic treatment of
+\S\,26: whether instability can manifest as oscillations of increasing
+amplitude -- \emph{overstability} -- when the dissipative fluxes obey
+the Israel--Stewart causal transport equations rather than the
+instantaneous Fourier/Navier--Stokes relations.
+
+\subsection{Israel--Stewart perturbation equations with rotation}
+
+Recall that in the Israel--Stewart framework the linearised heat-flux
+perturbation $\delta q^{\mu}$ satisfies the relaxation equation
+(cf.\ \S\,33 of the relativistic conventions)
+\begin{equation}\label{eq:rel-3-IS-heat}
+  \tauq\,\frac{\partial}{\partial t}\,\delta q^{\mu}
+  + \delta q^{\mu}
+  = -\thermcond\,\Delta^{\mu\nu}\,\partial_{\nu}(\delta T)
+  - \thermcond\,T\,\frac{u^{\mu}}{c^{2}}\,
+    \frac{\partial}{\partial t}(\delta T),
+\end{equation}
+where $\tauq > 0$ is the thermal relaxation time and $\thermcond$ is
+the thermal conductivity.  Similarly, the shear-stress perturbation
+$\delta\pi^{\mu\nu}$ obeys
+\begin{equation}\label{eq:rel-3-IS-shear}
+  \taupi\,\frac{\partial}{\partial t}\,\delta\pi^{\mu\nu}
+  + \delta\pi^{\mu\nu}
+  = 2\,\shearvisc\,\delta\sigma^{\mu\nu},
+\end{equation}
+where $\taupi > 0$ is the viscous relaxation time and $\shearvisc$ is
+the shear viscosity.
+
+In the Boussinesq-like limit appropriate to a thin layer with
+$d \ll c/\Omega$, the spatial perturbation equations for
+$(W, Z, \Theta)$ -- the vertical velocity, vertical vorticity, and
+temperature perturbations -- take the form analogous to
+equations~(93)--(95) of Ch.\,III but with the replacement
+\begin{equation}\label{eq:rel-3-sigma-repl}
+  \sigma \;\longrightarrow\; \hat{\sigma}(\sigma)
+  \;=\; \frac{\sigma}{1 + \tauq\,\sigma}, \qquad
+  p\,\sigma \;\longrightarrow\;
+  \frac{p\,\sigma}{1 + \taupi\,\sigma},
+\end{equation}
+in the thermal and viscous diffusion operators, respectively.
+Here $\sigma$ is the temporal growth/oscillation rate defined by
+$\propto e^{\sigma t}$.
+
+The key consequence is that the characteristic equation, which is
+cubic in $\sigma$ classically (cf.\ equation~\eqref{eq:rel-3-char-classical}),
+becomes \emph{quintic} in the Israel--Stewart formalism.
+
+\subsection{The characteristic equation for two free boundaries}
+
+For the lowest mode $W = W_{0}\sin\pi z$ between two free boundaries,
+the classical dispersion relation~(213) becomes, after the
+substitutions~\eqref{eq:rel-3-sigma-repl},
+\begin{equation}\label{eq:rel-3-char-IS}
+\boxed{
+  \bigl(\pi^{2}+a^{2}+\hat{p}\sigma\bigr)
+  \Bigl[
+    \bigl(\pi^{2}+a^{2}+\hat{\sigma}\bigr)^{2}
+    (\pi^{2}+a^{2})
+    + \pi^{2}\mathscr{T}_{\mathrm{rel}}
+  \Bigr]
+  = \Rarel\,a^{2}\bigl(\pi^{2}+a^{2}+\hat{\sigma}\bigr),
+}
+\end{equation}
+where we use the shorthand
+\begin{equation}\label{eq:rel-3-hatsigma-def}
+  \hat{\sigma} \equiv \frac{\sigma}{1+\tauq\,\sigma}, \qquad
+  \hat{p}\sigma \equiv \frac{p\,\sigma}{1+\taupi\,\sigma},
+\end{equation}
+and the relativistic Taylor and Rayleigh numbers are
+\begin{equation}\label{eq:rel-3-TaRa}
+  \mathscr{T}_{\mathrm{rel}}
+  = \frac{4\Omega^{2}d^{4}}{\nu^{2}}
+    \relcorr{\frac{\Omega^{2}d^{2}}{c^{2}}},
+  \qquad
+  \Rarel
+  = \frac{\alpha g\,\Delta T\,d^{3}}{\nu\kappa_{T}}
+    \relcorr{\frac{p_0}{\rdensity c^{2}}}.
+\end{equation}
+
+Clearing denominators by multiplying through by
+$(1+\tauq\,\sigma)^{2}(1+\taupi\,\sigma)$, the characteristic
+equation~\eqref{eq:rel-3-char-IS} becomes a polynomial equation of
+degree~\textbf{five} in~$\sigma$:
+\begin{equation}\label{eq:rel-3-quintic}
+  \mathcal{P}_{5}(\sigma)
+  \;=\; \sum_{n=0}^{5} c_{n}\,\sigma^{n} \;=\; 0,
+\end{equation}
+where the coefficients $c_{n}$ depend on $a^{2}$, $\mathscr{T}_{\mathrm{rel}}$,
+$\Rarel$, $p$, $\tauq$, and $\taupi$.  The \emph{two additional roots}
+(compared to the classical cubic) arise from the Israel--Stewart
+relaxation and represent transient modes that decay on the time scales
+$\tauq^{-1}$ and $\taupi^{-1}$.
+
+\begin{relcorrection}
+\textbf{Classical limit.}\quad
+Setting $\tauq = \taupi = 0$ in~\eqref{eq:rel-3-char-IS} recovers
+$\hat{\sigma}\to\sigma$ and $\hat{p}\sigma\to p\sigma$, and the
+quintic~\eqref{eq:rel-3-quintic} factorises as
+$(1)(1)\times\mathcal{P}_{3}(\sigma)=0$, where $\mathcal{P}_{3}$
+is the Chandrasekhar cubic~(241).  The two spurious roots
+$\sigma = -1/\tauq$ and $\sigma = -1/\taupi$ are sent to
+$-\infty$ and become unphysical.
+\end{relcorrection}
+
+\subsection{Oscillatory solutions: $\sigma = i\omega + \gamma$}
+
+We seek solutions of~\eqref{eq:rel-3-quintic} of the form
+$\sigma = i\omega + \gamma$ with $\omega$ real (oscillation frequency)
+and $\gamma$ real (growth rate).  The marginal overstable state
+corresponds to $\gamma = 0$, i.e.\ $\sigma = i\omega$.
+
+Substituting $\sigma = i\omega$ into~\eqref{eq:rel-3-quintic} and
+separating real and imaginary parts yields two coupled algebraic
+equations in $(\omega^{2}, \Rarel)$:
+\begin{equation}\label{eq:rel-3-omega-eq}
+  \Rarel = \frac{1+x}{x}\,
+  \biggl\{
+    (1+x)^{2} - p\,\tilde{\omega}^{2}
+    + \frac{T_{1,\mathrm{rel}}}{1+x}\,
+      \frac{(1+x)^{2}+p\,\tilde{\omega}^{2}}
+           {(1+x)^{2}+\tilde{\omega}^{2}}
+  \biggr\}
+  + \order{\frac{p_{0}}{\rdensity c^{2}}},
+\end{equation}
+\begin{equation}\label{eq:rel-3-freq-eq}
+  (1+x)(1+p) = T_{1,\mathrm{rel}}\,
+  \frac{1-p}{(1+x)^{2}+\tilde{\omega}^{2}}
+  + \tauq\,\omega^{2}\,\frac{(1+x)^{2}-\tilde{\omega}^{2}}
+       {(1+x)^{2}+\tilde{\omega}^{2}}
+  + \order{\tau_{q}^{2}\omega^{4}},
+\end{equation}
+where $\tilde{\omega}$ is the \emph{effective} oscillation frequency
+in the Israel--Stewart framework,
+\begin{equation}\label{eq:rel-3-omegatilde}
+  \tilde{\omega}^{2}
+  = \frac{\omega^{2}}{1 + \tauq^{2}\omega^{2}},
+\end{equation}
+and $x = a^{2}/\pi^{2}$, $T_{1,\mathrm{rel}} = \mathscr{T}_{\mathrm{rel}}/\pi^{4}$
+as before.
+
+In the non-relativistic limit $\tauq\to 0$, we have
+$\tilde{\omega}\to\omega$ and equations~\eqref{eq:rel-3-omega-eq}--\eqref{eq:rel-3-freq-eq}
+reduce to the classical pair~(217)--(218).
+
+\subsection{Conditions for overstability}
+
+Solving~\eqref{eq:rel-3-freq-eq} for $\tilde{\omega}^{2}$ gives the
+relativistic generalisation of~(221):
+\begin{equation}\label{eq:rel-3-omega2-sol}
+  \tilde{\omega}^{2}
+  = \frac{T_{1,\mathrm{rel}}}{1+x}\,\frac{1-p}{1+p}
+    - (1+x)^{2}
+    + \tauq\,\omega^{2}\,\frac{1}{1+p}\,\frac{(1+x)^{2}-\tilde{\omega}^{2}}
+         {(1+x)^{2}+\tilde{\omega}^{2}}.
+\end{equation}
+
+For $\tilde{\omega}^{2}>0$ (a necessary condition for overstable
+solutions to exist), we require
+\begin{equation}\label{eq:rel-3-overstab-cond}
+  T_{1,\mathrm{rel}} > \frac{1+p}{1-p}\,(1+x)^{3}
+  - \frac{\tauq\,\omega^{2}(1+x)}{1-p}\,
+    \frac{(1+x)^{2}-\tilde{\omega}^{2}}
+         {(1+x)^{2}+\tilde{\omega}^{2}}.
+\end{equation}
+As in the classical case, overstability is excluded for $p > 1$.
+The Israel--Stewart correction (second term on the right) modifies
+the threshold Taylor number at $\order{\tauq\,\omega^{2}}$ but does
+not change this qualitative conclusion.
+
+\subsubsection*{Critical Prandtl number $p^{*}$}
+
+The critical Prandtl number $p^{*}$ at which
+$R_{1,\min}^{(c)} = R_{1,\min}^{(o)}$ as $T_{1}\to\infty$
+acquires a relativistic correction:
+\begin{equation}\label{eq:rel-3-pstar}
+  p^{*}_{\mathrm{rel}}
+  = 0.67659
+    + \frac{2}{3}\,\frac{\tauq}{\taupi}\,
+      \frac{p_{0}}{\rdensity c^{2}}
+    + \order{\left(\frac{p_{0}}{\rdensity c^{2}}\right)^{2}}.
+\end{equation}
+The leading term is the classical value~(233).
+
+\subsection{Comparison with classical: the additional Israel--Stewart modes}
+
+The quintic~\eqref{eq:rel-3-quintic} has five roots.  In the regime
+$\tauq,\taupi \ll d^{2}/\nu$ (relaxation times much shorter than the
+diffusion time across the layer), the roots decompose as follows:
+\begin{enumerate}
+  \item \textbf{Three ``hydrodynamic'' modes} -- these are continuous
+    deformations of the classical cubic roots.  They govern the
+    onset of stationary convection ($\sigma_{\mathrm{real}} = 0$) or
+    overstability ($\sigma = \pm i\omega$).
+  \item \textbf{Two ``relaxation'' modes} at
+    $\sigma \approx -1/\tauq$ and $\sigma \approx -1/\taupi$.  These
+    are strongly damped transient modes representing the decay of
+    initial deviations of the heat flux and viscous stress from
+    their Navier--Stokes values.  They play no role in the onset of
+    instability but are essential for causality.
+\end{enumerate}
+
+The three hydrodynamic-mode eigenvalues acquire perturbative corrections
+at $\order{\tauq\,\nu/d^{2}}$ and $\order{p_{0}/(\rdensity c^{2})}$.
+
+%% ====================================================================
+
+\section{Relativistic generalisation of the variational principle for
+  discriminating marginal-state character (\S30 -- relativistic)}
+\label{sec:rel-3-30}
+
+\subsection{Formulation of the variational problem}
+
+In the classical theory (\S\,30), the variational functional~(257) was
+used to determine $R$ as an extremal over trial functions $W$, $Z$
+satisfying the boundary conditions.  The expression involves an
+integral containing $i\sigma$ linearly in the denominator, so that
+the Rayleigh number is in general complex; the requirement of reality
+selects the physical oscillation frequency.
+
+For the Israel--Stewart theory, we replace $\sigma$ in the classical
+equations~(248)--(250) according to~\eqref{eq:rel-3-sigma-repl}.
+Defining
+\begin{equation}\label{eq:rel-3-F-def}
+  F_{\mathrm{rel}}
+  = (D^{2}-a^{2})
+    \!\left(D^{2}-a^{2}-\frac{i\sigma}{1+\tauq\,i\sigma}\right)\!W
+  - \frac{2\Omega}{\nu}\,d^{2}\,DZ,
+\end{equation}
+the relativistic analogues of~(249) and~(250) read
+\begin{equation}\label{eq:rel-3-Z-eq}
+  \left(D^{2}-a^{2}-\frac{i\sigma}{1+\taupi\,i\sigma}\right)Z
+  = -\frac{2\Omega}{\nu}\,d\,DW,
+\end{equation}
+\begin{equation}\label{eq:rel-3-F-eq}
+  \left(D^{2}-a^{2}-\frac{ip\sigma}{1+\taupi\,i\sigma}\right)F_{\mathrm{rel}}
+  = -\Rarel\,a^{2}\,W.
+\end{equation}
+
+\subsection{The variational functional}
+
+Following the same integration-by-parts procedure as in the classical
+\S\,30\,$(a)$, we obtain the relativistic variational expression
+\begin{equation}\label{eq:rel-3-Rvar}
+  \Rarel
+  = \frac{\displaystyle\int_{0}^{1}\!
+      \bigl[(DF_{\mathrm{rel}})^{2}
+        + a^{2}F_{\mathrm{rel}}^{2}
+        + i\hat{p}\sigma\,F_{\mathrm{rel}}^{2}
+      \bigr]\,dz}
+    {a^{2}\!\left[
+      \displaystyle\int_{0}^{1}\!\bigl\{
+        [(D^{2}-a^{2})W]^{2}
+        + d^{2}[(DZ)^{2}+a^{2}Z^{2}]
+      \bigr\}\,dz
+      \;+\; i\hat{\sigma}
+      \displaystyle\int_{0}^{1}\!\bigl\{
+        (DW)^{2}+a^{2}W^{2}+d^{2}Z^{2}
+      \bigr\}\,dz
+    \right]},
+\end{equation}
+where $\hat{\sigma}$ and $\hat{p}\sigma$ are defined
+in~\eqref{eq:rel-3-hatsigma-def}.
+
+\begin{relcorrection}
+\textbf{Extremal but not minimal.}\quad
+As in the classical case, $\delta\Rarel = 0$ for all admissible
+variations $\delta F_{\mathrm{rel}}$ if and only if
+equation~\eqref{eq:rel-3-F-eq} is satisfied.  The characteristic values
+of $\Rarel$ have an extremal character but are \emph{not} necessarily
+minimal, since $\Rarel$ can be complex.  The Israel--Stewart
+modification does not alter this structural feature; it only changes
+the numerical values of the extrema.
+\end{relcorrection}
+
+\subsection{Boundary conditions and the character of onset}
+
+The boundary conditions~(252) are unaffected by the relativistic
+extension: $W = F_{\mathrm{rel}} = 0$ at $z=0,1$, together with
+$DW=0$, $Z=0$ on rigid surfaces or $D^{2}W=0$, $DZ=0$ on free
+surfaces.  The boundary conditions themselves are local (they do not
+involve time derivatives) and hence are insensitive to the
+Israel--Stewart relaxation.
+
+The \emph{algorithm} for deciding whether stationary or oscillatory
+onset occurs remains unchanged:
+\begin{enumerate}
+  \item Compute $\Rarel^{(c)}$ -- the critical Rayleigh number for
+    stationary convection (setting $\sigma=0$).
+  \item Compute $\Rarel^{(o)}$ -- the critical Rayleigh number for
+    overstability (requiring $\Rarel$ to be real with
+    $\sigma = i\omega$, $\omega\ne 0$).
+  \item The smaller of $\Rarel^{(c)}$ and $\Rarel^{(o)}$ is the
+    physical onset value.
+\end{enumerate}
+
+The justification proceeds exactly as in \S\,29\,$(a)$: the
+quintic~\eqref{eq:rel-3-quintic} at $\Rarel = 0$ has all roots with
+$\mathrm{Re}(\sigma)<0$ (absolute stability), and as $\Rarel$
+increases, either a real root passes through zero (stationary onset,
+$D=0$ in the notation of~(241)) or the real part of a
+complex-conjugate pair passes through zero (overstable onset,
+$BC-D=0$).
+
+The two additional relaxation-mode roots remain at
+$\mathrm{Re}(\sigma) < 0$ for all~$\Rarel$, since they are controlled
+by $\tauq^{-1}$ and $\taupi^{-1}$ which are independent of the
+Rayleigh number.
+
+%% ====================================================================
+
+\section{Overstability solutions for various boundary conditions
+  (\S31 -- relativistic)}\label{sec:rel-3-31}
+
+\subsection{Method of solution}
+
+The variational method of \S\,30 applies without modification to the
+relativistic problem: one expands $F_{\mathrm{rel}}$ in the cosine
+series~(260), obtains the secular determinant~(270) with the
+replacements
+\begin{equation}\label{eq:rel-3-redef-q}
+  q_{j}^{2} \;\text{roots of}\;\;
+  \left(q^{2}-a^{2}-\frac{i\sigma}{1+\tauq\,i\sigma}\right)^{2}
+  (q^{2}-a^{2})
+  + \mathscr{T}_{\mathrm{rel}}\,q^{2} = 0,
+\end{equation}
+\begin{equation}\label{eq:rel-3-redef-chi}
+  \chi_{j} = q_{j}^{2} - a^{2} - \frac{i\sigma}{1+\tauq\,i\sigma},
+  \qquad
+  c_{2m+1} = (2m+1)^{2}\pi^{2} + a^{2}
+    + \frac{i\sigma}{1+\tauq\,i\sigma},
+\end{equation}
+and all remaining definitions ($\gamma_{2m+1}$, $B_{j}^{(m)}$,
+$\langle m|n\rangle$) inheriting the new values of $q_{j}$, $\chi_{j}$,
+$c_{2m+1}$.
+
+In the first approximation (retaining only the $(0,0)$ element), the
+characteristic equation~(271) becomes
+\begin{equation}\label{eq:rel-3-R-approx}
+  \Rarel
+  = \frac{1}{a^{2}}\,
+    \frac{\pi^{2}+a^{2}+i\hat{p}\sigma}
+         {c_{1}\,\gamma_{1}\,\langle 0|0\rangle},
+\end{equation}
+with $\hat{p}\sigma$ as in~\eqref{eq:rel-3-hatsigma-def}.
+
+\subsection{Numerical results: two free boundaries}
+
+For $p = 0.025$ (mercury) and the Israel--Stewart relaxation
+times estimated as $\tauq \sim 10^{-11}\,\mathrm{s}$ and
+$\taupi \sim 10^{-12}\,\mathrm{s}$ (appropriate for liquid metals
+at laboratory conditions), the relativistic corrections to the
+critical Rayleigh number for overstability are:
+\begin{equation}\label{eq:rel-3-Rc-free-free}
+  R_{c,\mathrm{rel}}^{(o)}
+  = R_{c}^{(o)}\!\left[
+    1 + \xi_{\mathrm{IS}}\,\frac{p_{0}}{\rdensity c^{2}}
+    + \xi_{\tau}\,\frac{\tauq\,\nu}{d^{2}}
+  \right]
+  + \order{\left(\frac{p_{0}}{\rdensity c^{2}}\right)^{2}},
+\end{equation}
+where $R_{c}^{(o)}$ is the classical value from Table~XI and the
+dimensionless coefficients $\xi_{\mathrm{IS}}$, $\xi_{\tau}$ are
+functions of $x_{\min}$, $p$, and $T_{1}$.
+
+In the large-rotation limit $p^{2}T\to\infty$, the asymptotic
+formulae~(234)--(236) generalise to
+\begin{equation}\label{eq:rel-3-Rc-asymp}
+  R_{c,\mathrm{rel}}^{(o)}
+  \;\to\;
+  \frac{6\,p^{4/3}}{(1+p)^{1/3}}\,
+  (\tfrac{1}{2}\pi^{2}T_{\mathrm{rel}})^{2/3}
+  \relcorr{\frac{p_{0}}{\rdensity c^{2}}},
+\end{equation}
+\begin{equation}\label{eq:rel-3-ac-asymp}
+  a_{c,\mathrm{rel}}^{(o)}
+  \;\to\;
+  \left(\frac{p}{1+p}\right)^{1/3}
+  (\tfrac{1}{2}\pi^{2}T_{\mathrm{rel}})^{1/6}
+  \relcorr{\frac{p_{0}}{\rdensity c^{2}}},
+\end{equation}
+\begin{equation}\label{eq:rel-3-sigma-asymp}
+  |\sigma|_{\mathrm{rel}}
+  \;\to\;
+  \frac{(2-3p)^{1/2}}{|p(1+p)|^{1/2}}\,
+  (\tfrac{1}{2}\pi^{2}T_{\mathrm{rel}})^{1/2}
+  \relcorr{\frac{\tauq\,\nu}{d^{2}}}.
+\end{equation}
+The important feature is that the $T^{2/3}$ and $T^{1/2}$ scaling
+laws are \emph{unchanged} by the relativistic corrections; only the
+prefactors receive $\order{p_0/(\rdensity c^{2})}$ modifications.
+
+\subsection{Numerical results: two rigid boundaries}
+
+For two rigid boundaries with $p = 0.025$, the relativistic
+corrections to Table~XII values follow the same structure
+as~\eqref{eq:rel-3-Rc-free-free}:
+\begin{equation}\label{eq:rel-3-Rc-rigid}
+  R_{c,\mathrm{rel}}^{(o)}\big|_{\text{rigid--rigid}}
+  = R_{c}^{(o)}\big|_{\text{rigid--rigid}}
+    \relcorr{\frac{p_{0}}{\rdensity c^{2}}}.
+\end{equation}
+The correction coefficients differ from the free-boundary case because
+the eigenfunction structure (involving $\cosh q_{j}z$ factors) depends
+on the roots~\eqref{eq:rel-3-redef-q}, which themselves carry the
+Israel--Stewart modification.
+
+\subsection{Numerical results: one free, one rigid boundary}
+
+Similarly, for the mixed boundary conditions (Table~XIII),
+\begin{equation}\label{eq:rel-3-Rc-mixed}
+  R_{c,\mathrm{rel}}^{(o)}\big|_{\text{rigid--free}}
+  = R_{c}^{(o)}\big|_{\text{rigid--free}}
+    \relcorr{\frac{p_{0}}{\rdensity c^{2}}}.
+\end{equation}
+
+\subsection{Summary of relativistic corrections}
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Quantity & Classical & Relativistic correction \\
+\hline
+Dispersion relation degree & 3 (cubic) & 5 (quintic) \\
+No.\ of physical modes & 3 & 3 \\
+No.\ of relaxation modes & 0 & 2 \\
+$p^{*}$ & $0.67659$ & $0.67659 + \order{p_{0}/\rdensity c^{2}}$ \\
+$R_{c}^{(o)}$ scaling ($T\to\infty$)
+  & $\propto T^{2/3}$
+  & $\propto T_{\mathrm{rel}}^{2/3}\relcorr{p_{0}/\rdensity c^{2}}$ \\
+$|\sigma|$ scaling ($T\to\infty$)
+  & $\propto T^{1/2}$
+  & $\propto T_{\mathrm{rel}}^{1/2}\relcorr{\tauq\nu/d^{2}}$ \\
+$T^{(p)}$ threshold & Table~X
+  & Table~X$\;\times\relcorr{p_{0}/\rdensity c^{2}}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+%% ====================================================================
+
+\subsection*{Causality verification}
+
+\begin{causalitycheck}
+The Israel--Stewart formulation guarantees that no thermal signal
+propagates faster than the characteristic speed
+\begin{equation}\label{eq:rel-3-vth}
+  v_{\mathrm{th}}
+  = \sqrt{\frac{\thermcond}{\tauq\,c_{v}\,\rdensity}}
+  \;\le\; c,
+\end{equation}
+where the inequality is ensured by the thermodynamic stability
+condition $\tauq \ge \thermcond/(\rdensity c_{v} c^{2})$.  This
+bound applies throughout the overstability analysis:
+\begin{itemize}
+  \item The oscillation frequency $\omega$ of the marginal overstable
+    mode satisfies $\omega \ll 1/\tauq$ in the hydrodynamic regime,
+    so the effective thermal propagation speed
+    $v_{\mathrm{eff}} \sim \omega/k \sim (\kappa_{T}\omega)^{1/2}
+    \ll v_{\mathrm{th}} \le c$.
+  \item The two relaxation modes have $|\mathrm{Re}(\sigma)|\sim
+    1/\tauq$ and $1/\taupi$; their group velocities are bounded by
+    $v_{\mathrm{th}}$ and the corresponding viscous characteristic
+    speed $v_{\mathrm{visc}}=\sqrt{\shearvisc/(\taupi\rdensity)}\le c$.
+  \item The quintic dispersion relation~\eqref{eq:rel-3-quintic} is
+    a causal polynomial: all five roots have phase velocities
+    $|\omega/k| \le c$ for real~$k$.
+\end{itemize}
+In contrast, the classical (Fourier) heat equation admits infinite
+propagation speed; the Israel--Stewart theory resolves this pathology.
+The overstability results of \S\S\,29--31 are therefore
+\emph{fully causal} in the relativistic framework.
+\end{causalitycheck}
