@@ -1,0 +1,524 @@
+% Relativistic Chapter I: Basic Concepts
+% Relativistic generalization of Chandrasekhar, Chapter I (pp.\ 1--8)
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{Basic Concepts: Relativistic Generalization}
+\label{ch:rel-1}
+
+%% ----------------------------------------------------------------
+\section{Introduction}
+\label{sec:rel-1-1}
+
+The equations of relativistic hydrodynamics---like their
+non-relativistic counterparts---admit simple stationary flow
+patterns whose realizability is limited to certain ranges of the
+governing parameters.  Outside these ranges the flows are
+\emph{unstable}: they cannot sustain themselves against small
+perturbations.  The demarcation of stable from unstable states
+constitutes the subject of \emph{relativistic hydrodynamic stability}.
+
+When the characteristic velocities in the problem approach the speed
+of light~$c$, or when thermal and internal energies become comparable
+to the rest-mass energy, the Navier--Stokes description of viscous
+flow must be replaced by a manifestly covariant framework.  Two
+physical requirements distinguish the relativistic theory from the
+classical one:
+\begin{enumerate}
+\item \textbf{Covariance.}  All equations are tensor equations on
+  spacetime, written in terms of the energy-momentum tensor
+  $T^{\mu\nu}$, the baryon-number current $n\, u^{\mu}$, and
+  (when electromagnetic fields are present) the Faraday tensor
+  $F^{\mu\nu}$.
+\item \textbf{Causality.}  No signal---including perturbation modes,
+  thermal waves, and viscous diffusion fronts---may propagate faster
+  than~$c$.  This requirement rules out parabolic transport equations
+  (Fourier, Navier--Stokes) in favour of hyperbolic, causal
+  alternatives such as the Israel--Stewart theory.
+\end{enumerate}
+
+In what follows we reformulate the basic concepts of Chapter~I in
+this relativistic setting.  Throughout, Greek indices
+$\mu,\nu,\ldots$ run over $0,1,2,3$ with signature $(-,+,+,+)$;
+Latin indices $i,j,\ldots$ label spatial directions $1,2,3$.  The
+speed of light~$c$ is kept explicit so that the non-relativistic limit
+$v/c\to 0$ is transparent.  The four-velocity is normalised as
+$u^{\mu}u_{\mu}=-c^{2}$, and the projection tensor orthogonal to the
+flow is $\Delta^{\mu\nu}=g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$.
+
+%% ----------------------------------------------------------------
+\section{Relativistic fluid equations}
+\label{sec:rel-1-2}
+
+\subsection{Perfect-fluid (Euler) sector}
+\label{sec:rel-1-2a}
+
+For a perfect fluid the energy-momentum tensor is
+\begin{equation}
+\label{eq:rel-1-1}
+T^{\mu\nu} = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}\,u^{\nu}
+              + p\,g^{\mu\nu},
+\end{equation}
+where $\varepsilon$ is the total energy density (rest-mass plus
+internal) and $p$ is the isotropic pressure.  The relativistic
+enthalpy density is $w=(\varepsilon+p)/c^{2}$.  Conservation of
+energy-momentum,
+\begin{equation}
+\label{eq:rel-1-2}
+\nabla_{\mu}T^{\mu\nu}=0,
+\end{equation}
+together with baryon-number conservation,
+\begin{equation}
+\label{eq:rel-1-3}
+\nabla_{\mu}(n\,u^{\mu})=0,
+\end{equation}
+yield the relativistic Euler equations.  Projecting
+\eqref{eq:rel-1-2} along $u_{\nu}$ and orthogonal to $u_{\nu}$, one
+obtains, respectively, the energy equation and the relativistic
+momentum equation:
+\begin{align}
+u^{\mu}\nabla_{\mu}\varepsilon
+  + (\varepsilon+p)\,\nabla_{\mu}u^{\mu} &= 0,
+\label{eq:rel-1-4}\\[6pt]
+w\,u^{\mu}\nabla_{\mu}u^{\nu}
+  + \Delta^{\nu\alpha}\nabla_{\alpha}p &= 0.
+\label{eq:rel-1-5}
+\end{align}
+
+\noindent\textbf{Non-relativistic limit.}  In the limit
+$v/c\to 0$, $\varepsilon\to\rho c^{2}$, $w\to\rho$, the time-like
+component of \eqref{eq:rel-1-5} reduces to the classical Euler
+equation $\rho(\partial\boldsymbol{v}/\partial t +
+\boldsymbol{v}\cdot\nabla\boldsymbol{v})=-\nabla p$, and the
+conservation law~\eqref{eq:rel-1-3} becomes the continuity equation
+$\partial\rho/\partial t+\nabla\cdot(\rho\boldsymbol{v})=0$.
+
+\subsection{Israel--Stewart dissipative sector}
+\label{sec:rel-1-2b}
+
+In the presence of viscosity and heat conduction the energy-momentum
+tensor acquires dissipative corrections:
+\begin{equation}
+\label{eq:rel-1-6}
+T^{\mu\nu} = \varepsilon\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+  + (p+\Pi)\,\Delta^{\mu\nu}
+  + \pi^{\mu\nu}
+  + \frac{1}{c^{2}}(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}),
+\end{equation}
+where $\Pi$ is the bulk viscous pressure, $\pi^{\mu\nu}$ is the
+traceless shear stress tensor satisfying
+$\pi^{\mu\nu}u_{\nu}=0$ and $\pi^{\mu}{}_{\mu}=0$, and $q^{\mu}$ is
+the heat-flux four-vector with $q^{\mu}u_{\mu}=0$.
+
+The Navier--Stokes (first-order) constitutive relations $\Pi=-\zeta\,
+\nabla_{\mu}u^{\mu}$, $\pi^{\mu\nu}=2\eta_{\rm s}\,\sigma^{\mu\nu}$,
+$q^{\mu}=-\kappa\,\Delta^{\mu\nu}\nabla_{\nu}T$ are \emph{acausal}:
+they admit infinite propagation speeds for viscous and thermal
+disturbances.  The Israel--Stewart (second-order) theory restores
+causality by promoting each dissipative flux to an independent
+dynamical variable obeying a relaxation equation:
+\begin{align}
+\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
+  &= -\zeta\,\nabla_{\mu}u^{\mu},
+\label{eq:rel-1-7}\\[4pt]
+\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu}
+  &= 2\eta_{\rm s}\,\sigma^{\mu\nu},
+\label{eq:rel-1-8}\\[4pt]
+\tau_{q}\,u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle}
+  + q^{\mu}
+  &= -\kappa\!\left(
+    \Delta^{\mu\nu}\nabla_{\nu}T
+    + \frac{T}{c^{2}}\,u^{\mu}\,u^{\alpha}\nabla_{\alpha}T
+  \right),
+\label{eq:rel-1-9}
+\end{align}
+where $\tau_{\Pi}$, $\tau_{\pi}$, $\tau_{q}>0$ are the relaxation
+times for bulk viscosity, shear viscosity, and heat flux respectively,
+$\eta_{\rm s}$ is the shear viscosity, $\zeta$ the bulk viscosity,
+$\kappa$ the thermal conductivity, and $\sigma^{\mu\nu}$ is the
+symmetric trace-free shear tensor
+\begin{equation}
+\label{eq:rel-1-10}
+\sigma^{\mu\nu} = \Delta^{\mu\alpha}\Delta^{\nu\beta}
+  \!\left(\tfrac{1}{2}\nabla_{\alpha}u_{\beta}
+        +\tfrac{1}{2}\nabla_{\beta}u_{\alpha}
+        -\tfrac{1}{3}\Delta_{\alpha\beta}\,\nabla_{\gamma}u^{\gamma}
+  \right).
+\end{equation}
+
+\noindent\textbf{Non-relativistic limit.}  Setting $\tau_{\Pi},
+\tau_{\pi},\tau_{q}\to 0$ (instantaneous relaxation) and taking
+$v/c\to 0$ recovers the Navier--Stokes constitutive relations and the
+Fourier heat law.
+
+\noindent\textbf{Causality enforcement.}  The relaxation times
+$\tau_{\Pi},\tau_{\pi},\tau_{q}$ guarantee that the characteristic
+speeds of the resulting hyperbolic system are bounded by~$c$.
+In particular, the thermal signal speed
+$v_{\rm th}=\sqrt{\kappa T/(\tau_{q}\,w\,c^{2})}$ and the viscous
+signal speed $v_{\rm visc}=\sqrt{\eta_{\rm s}/(\tau_{\pi}\,w)}$
+remain sub-luminal whenever the relaxation times satisfy the
+Israel--Stewart thermodynamic inequalities.
+
+%% ----------------------------------------------------------------
+\section{Normal-mode analysis in the relativistic context}
+\label{sec:rel-1-3}
+
+\subsection{Background state and perturbations}
+
+Consider a stationary relativistic flow characterised by a background
+energy-momentum tensor $\bar T^{\mu\nu}$, four-velocity
+$\bar u^{\mu}$, energy density $\bar\varepsilon$, pressure $\bar p$,
+and---when dissipation is present---background values of $\Pi$,
+$\pi^{\mu\nu}$, and $q^{\mu}$.  Let the system be characterised by
+a set of parameters $X_1,\ldots,X_j$ (including geometric dimensions,
+characteristic velocities, gravitational and electromagnetic field
+strengths, and thermodynamic coefficients).
+
+We perturb every dynamical field:
+\begin{equation}
+\label{eq:rel-1-11}
+\varepsilon = \bar\varepsilon + \delta\varepsilon, \quad
+p = \bar p + \delta p, \quad
+u^{\mu} = \bar u^{\mu} + \delta u^{\mu}, \quad
+\Pi = \bar\Pi + \delta\Pi, \quad
+\pi^{\mu\nu} = \bar\pi^{\mu\nu} + \delta\pi^{\mu\nu}, \quad
+q^{\mu} = \bar q^{\mu} + \delta q^{\mu},
+\end{equation}
+and the full energy-momentum perturbation is
+\begin{equation}
+\label{eq:rel-1-12}
+\delta T^{\mu\nu}
+  = \delta\!\left[
+    \varepsilon\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+    + (p+\Pi)\,\Delta^{\mu\nu}
+    + \pi^{\mu\nu}
+    + \frac{1}{c^{2}}(q^{\mu}u^{\nu}+q^{\nu}u^{\mu})
+  \right].
+\end{equation}
+
+The four-velocity perturbation $\delta u^{\mu}$ must respect the
+normalisation constraint $u^{\mu}u_{\mu}=-c^{2}$, which to first
+order requires
+\begin{equation}
+\label{eq:rel-1-13}
+\bar u_{\mu}\,\delta u^{\mu} = 0,
+\end{equation}
+so that $\delta u^{\mu}$ has only three independent spatial
+components in the local rest frame.
+
+\subsection{Linearised equations and mode decomposition}
+
+Substituting \eqref{eq:rel-1-11} into the conservation laws
+\eqref{eq:rel-1-2}--\eqref{eq:rel-1-3} and the Israel--Stewart
+equations \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9}, and retaining
+only first-order terms, yields a system of linearised equations for
+$(\delta\varepsilon, \delta u^{\mu}, \delta\Pi, \delta\pi^{\mu\nu},
+\delta q^{\mu})$.
+
+Following the same logic as in the classical theory
+(Chapter~\ref{ch:1}, \S\,3), we decompose an arbitrary perturbation
+into normal modes.  For a system confined between two parallel planes
+with background quantities depending only on the coordinate $z$
+perpendicular to the planes:
+\begin{equation}
+\label{eq:rel-1-14}
+\delta A(x^{\mu}) = \int_{-\infty}^{+\infty}\int_{-\infty}^{+\infty}
+  dk_x\,dk_y\;
+  \hat A_{\mathbf{k}}(z)\,
+  \exp\!\left[i(k_x x + k_y y) + p_{\mathbf{k}}\,t\right],
+\end{equation}
+where $\delta A$ stands for any of the perturbed quantities,
+$k=\sqrt{k_x^{2}+k_y^{2}}$ is the transverse wave number, and
+$p_{\mathbf{k}}$ is the (complex) temporal eigenvalue.
+
+For geometries with axial or spherical symmetry the mode decomposition
+proceeds exactly as in the classical case---via azimuthal Fourier modes
+$e^{im\theta}$ or spherical harmonics $Y_l^m(\theta,\varphi)$---but
+in each case the mode amplitudes are now tuples involving
+$(\delta\varepsilon, \delta u^{\mu}, \delta\Pi,
+\delta\pi^{\mu\nu}, \delta q^{\mu})$ rather than the classical
+velocity, temperature, and pressure perturbations alone.
+
+\subsection{Eigenvalue problem and stability criterion}
+
+The linearised perturbation equations, after mode decomposition,
+reduce to an eigenvalue problem for the complex
+frequency~$p_{\mathbf{k}}$:
+\begin{equation}
+\label{eq:rel-1-15}
+p_{\mathbf{k}} = p_{\mathbf{k}}^{(r)} + i\,p_{\mathbf{k}}^{(i)}.
+\end{equation}
+The stability criterion is identical in form to the classical one:
+\begin{itemize}
+\item \textbf{Stable:} $p_{\mathbf{k}}^{(r)} < 0$ for every
+  mode~$\mathbf{k}$.
+\item \textbf{Unstable:} $\exists\;\mathbf{k}$ with
+  $p_{\mathbf{k}}^{(r)}>0$.
+\item \textbf{Marginal:}
+  $p_{\mathbf{k}}^{(r)}(X_1,\ldots,X_j)=0$ defines the marginal
+  locus $\Sigma_{\mathbf{k}}$ for mode~$\mathbf{k}$; the overall
+  marginal surface~$\Sigma$ is the envelope of all
+  $\Sigma_{\mathbf{k}}$.
+\end{itemize}
+The classification of marginal states into \emph{stationary}
+($p_{\mathbf{k}}^{(i)}=0$, exchange of stabilities) and
+\emph{oscillatory} ($p_{\mathbf{k}}^{(i)}\neq 0$, overstability)
+carries over unchanged.
+
+\subsection{Causality constraint on modes}
+\label{sec:rel-1-3d}
+
+A crucial new ingredient in the relativistic theory is the causality
+bound on the phase and group velocities of every perturbation mode.
+Defining the phase velocity
+\begin{equation}
+\label{eq:rel-1-16}
+v_{\rm ph} = \frac{|p_{\mathbf{k}}^{(i)}|}{|\mathbf{k}|}
+\end{equation}
+and the group velocity
+\begin{equation}
+\label{eq:rel-1-17}
+v_{\rm gr} = \left|
+  \frac{\partial\,p_{\mathbf{k}}^{(i)}}{\partial \mathbf{k}}
+\right|,
+\end{equation}
+the requirement of relativistic causality is
+\begin{equation}
+\label{eq:rel-1-18}
+\boxed{v_{\rm ph}\leq c \quad\text{and}\quad v_{\rm gr}\leq c
+  \qquad\text{for every mode } \mathbf{k}.}
+\end{equation}
+Any mode that violates \eqref{eq:rel-1-18} is physically inadmissible
+and must be discarded.  In the Israel--Stewart framework
+(\S\,\ref{sec:rel-1-2b}) this bound is \emph{automatically}
+satisfied when the relaxation times are positive and the
+thermodynamic stability conditions
+$c_{s}^{2}=(\partial p/\partial\varepsilon)_{s}\geq 0$ and
+$c_{s}^{2}\leq c^{2}$ hold.  This is the principal advantage of the
+Israel--Stewart formulation over the acausal Navier--Stokes theory.
+
+In non-dissipative systems the characteristic speeds are the sound
+speed $c_s$, the Alfv\'en speed $v_A$, and the fast and slow
+magnetosonic speeds $v_f$, $v_s$, all of which are bounded by~$c$
+(see \S\,\ref{sec:rel-1-4}).
+
+\noindent\textbf{Non-relativistic limit.}  As $v/c\to 0$ the
+causality bound becomes trivially satisfied, and the eigenvalue
+problem reduces to that of Chapter~\ref{ch:1}, \S\,3.
+
+%% ----------------------------------------------------------------
+\section{Relativistic dimensionless numbers}
+\label{sec:rel-1-4}
+
+The classical dimensionless numbers that govern hydrodynamic stability
+acquire relativistic corrections when the flow velocities, sound
+speeds, or thermal energies are no longer negligible compared to~$c$.
+We define the relativistic generalisations below, with the Lorentz
+factor $\gamma=(1-v^{2}/c^{2})^{-1/2}$ and the relativistic enthalpy
+per unit volume $w=(\varepsilon+p)/c^{2}$.
+
+\subsection{Reynolds number}
+
+In the classical theory the Reynolds number is
+$\mathrm{Re}=Lv/\nu$.  Relativistically, kinematic viscosity must be
+replaced by the ratio $\nu_{\rm rel}=\eta_{\rm s}/(w\,c^{2})$
+(where $\eta_{\rm s}$ is the dynamic shear viscosity), giving
+\begin{equation}
+\label{eq:rel-1-19}
+\mathrm{Re}_{\rm rel}
+  = \frac{L\,\gamma\,v}{\nu_{\rm rel}}
+  = \frac{(\varepsilon+p)\,L\,\gamma\,v}{\eta_{\rm s}\,c^{2}}.
+\end{equation}
+When $v\ll c$ and $\varepsilon+p\approx\rho c^{2}$, this reduces to
+$\mathrm{Re}=Lv/\nu$ with $\nu=\eta_{\rm s}/\rho$.
+
+\subsection{Prandtl number}
+
+The Prandtl number compares viscous to thermal diffusivity.
+Relativistically:
+\begin{equation}
+\label{eq:rel-1-20}
+\mathrm{Pr}_{\rm rel}
+  = \frac{\eta_{\rm s}\,c_{p}}{\kappa}
+  \left(1 + \frac{v^{2}}{c^{2}}\,\mathcal{O}(1)\right),
+\end{equation}
+where $c_{p}$ is the specific heat at constant pressure and $\kappa$
+the thermal conductivity.  The leading-order expression is identical
+to the classical Prandtl number; corrections enter at order
+$v^{2}/c^{2}$ and are model-dependent.
+
+\subsection{Rayleigh number}
+
+For a horizontal layer of relativistic fluid of depth~$d$ heated from
+below with adverse temperature gradient~$\beta$, the relativistic
+Rayleigh number is
+\begin{equation}
+\label{eq:rel-1-21}
+\mathrm{Ra}_{\rm rel}
+  = \frac{g\,\alpha\,\beta\,d^{4}}{\kappa_{T}\,\nu_{\rm rel}}
+  \left[
+    1 + \mathcal{C}_{\rm Ra}\,\frac{v^{2}}{c^{2}}
+    + \mathcal{O}\!\left(\frac{v^{4}}{c^{4}}\right)
+  \right],
+\end{equation}
+where $\alpha$ is the relativistic expansion coefficient,
+$\kappa_{T}$ the thermal diffusivity, $g$ the gravitational
+acceleration, and $\mathcal{C}_{\rm Ra}$ is a dimensionless constant
+depending on the equation of state.  In the non-relativistic limit
+this reduces to the classical Rayleigh number
+$R=g\alpha\beta d^{4}/(\kappa\nu)$ of equation~(14) of
+Chapter~\ref{ch:1}.
+
+\subsection{Taylor number}
+
+For a rotating relativistic fluid the Taylor number generalises to
+\begin{equation}
+\label{eq:rel-1-22}
+\mathrm{Ta}_{\rm rel}
+  = \frac{4\,\Omega^{2}\,L^{4}}{\nu_{\rm rel}^{2}}
+  \left[
+    1 + \mathcal{C}_{\rm Ta}\,\frac{\Omega^{2}L^{2}}{c^{2}}
+    + \mathcal{O}\!\left(\frac{v^{4}}{c^{4}}\right)
+  \right],
+\end{equation}
+where the correction term $\mathcal{C}_{\rm Ta}$ encodes both
+special-relativistic kinematic effects and (in general relativity)
+frame-dragging contributions from the Lense--Thirring effect.
+
+\subsection{Chandrasekhar number (magnetic field)}
+
+When a magnetic field $b^{\mu}$ (the covariant magnetic four-vector in
+the fluid frame) is present, the Chandrasekhar number generalises to
+\begin{equation}
+\label{eq:rel-1-23}
+Q_{\rm rel}
+  = \frac{b^{2}\,d^{2}}{4\pi\,w\,\nu_{\rm rel}\,\eta_m}
+  \left[
+    1 + \mathcal{O}\!\left(\frac{v_{A}^{2}}{c^{2}}\right)
+  \right],
+\end{equation}
+where $b^{2}=b^{\mu}b_{\mu}$ is the magnetic pressure parameter,
+$\eta_m$ is the magnetic diffusivity, and $v_{A}$ is the Alfv\'en
+speed:
+\begin{equation}
+\label{eq:rel-1-24}
+v_{A}^{2} = \frac{b^{2}}{4\pi\,w + b^{2}/c^{2}}\,c^{2}
+  < c^{2}.
+\end{equation}
+The strict inequality in \eqref{eq:rel-1-24} is a consequence of the
+causality bound \eqref{eq:rel-1-18}.
+
+\subsection{Characteristic speeds and causality}
+\label{sec:rel-1-4f}
+
+All characteristic wave speeds in the relativistic theory are
+sub-luminal by construction:
+\begin{align}
+\text{Sound:} &\quad c_{s}^{2}
+  = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}
+  \leq c^{2},
+\label{eq:rel-1-25}\\[4pt]
+\text{Alfv\'en:} &\quad v_{A}^{2}
+  = \frac{b^{2}\,c^{2}}{4\pi\,w\,c^{2}+b^{2}} \leq c^{2},
+\label{eq:rel-1-26}\\[4pt]
+\text{Fast magnetosonic:} &\quad v_{f}^{2}
+  = c_{s}^{2}+v_{A}^{2}-\frac{c_{s}^{2}\,v_{A}^{2}}{c^{2}}
+  \leq c^{2},
+\label{eq:rel-1-27}\\[4pt]
+\text{Slow magnetosonic:} &\quad v_{s}^{2}
+  = \frac{c_{s}^{2}\,v_{A}^{2}}{v_{f}^{2}}
+  \leq c^{2}.
+\label{eq:rel-1-28}
+\end{align}
+The fast magnetosonic bound $v_f^2\leq c^2$ follows from the
+algebraic identity
+$v_f^2 = c_s^2+v_A^2(1-c_s^2/c^2) \leq c_s^2+(c^2-c_s^2)=c^2$.
+
+\subsection{Mach number}
+The relativistic Mach number
+\begin{equation}
+\label{eq:rel-1-29}
+\mathcal{M} = \frac{\gamma\,v}{c_{s}/\sqrt{1-c_{s}^{2}/c^{2}}}
+\end{equation}
+governs the importance of compressibility.  For $c_{s}\ll c$ and
+$v\ll c$ this reduces to the classical $\mathcal{M}=v/c_{s}$.
+
+%% ----------------------------------------------------------------
+\section{Summary: recovery of the non-relativistic limit}
+\label{sec:rel-1-5}
+
+Every result of this chapter reduces to the corresponding result of
+the classical Chapter~I when the following limits are taken
+simultaneously:
+\begin{enumerate}
+\item $v/c\to 0$ and $\gamma\to 1$ (non-relativistic flow);
+\item $\varepsilon\to\rho c^{2}$, $w\to\rho$ (rest-mass dominated
+  energy);
+\item $c_{s}/c\to 0$ (non-relativistic sound speed);
+\item $\tau_{\Pi},\tau_{\pi},\tau_{q}\to 0$ (instantaneous
+  relaxation, recovering Navier--Stokes and Fourier);
+\item $v_{A}/c\to 0$ (non-relativistic Alfv\'en speed).
+\end{enumerate}
+
+Under these limits:
+\begin{itemize}
+\item The relativistic Euler equations
+  \eqref{eq:rel-1-4}--\eqref{eq:rel-1-5} $\to$ classical Euler
+  equations.
+\item The Israel--Stewart equations
+  \eqref{eq:rel-1-7}--\eqref{eq:rel-1-9} $\to$ Navier--Stokes +
+  Fourier constitutive relations.
+\item The normal-mode eigenvalue problem (\S\,\ref{sec:rel-1-3}) $\to$
+  the eigenvalue problem of Chapter~\ref{ch:1}, \S\,3.
+\item The causality bound \eqref{eq:rel-1-18} becomes vacuous.
+\item $\mathrm{Re}_{\rm rel}\to\mathrm{Re}$,
+  $\mathrm{Pr}_{\rm rel}\to\mathrm{Pr}$,
+  $\mathrm{Ra}_{\rm rel}\to\mathrm{Ra}$,
+  $\mathrm{Ta}_{\rm rel}\to\mathrm{Ta}$,
+  $Q_{\rm rel}\to Q$.
+\end{itemize}
+
+%% ----------------------------------------------------------------
+\section*{Bibliographical Notes}
+\label{sec:rel-1-bib}
+
+The Israel--Stewart theory of causal dissipative relativistic fluids
+is developed in:
+
+\begin{enumerate}
+\item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
+  a causal relativistic theory', \emph{Ann.\ Phys.\ (N.Y.)}
+  \textbf{100}, 310--331 (1976).
+
+\item W.~\textsc{Israel} and J.~M.~\textsc{Stewart}, `Transient
+  relativistic thermodynamics and kinetic theory',
+  \emph{Ann.\ Phys.\ (N.Y.)} \textbf{118}, 341--372 (1979).
+\end{enumerate}
+
+\noindent
+For relativistic hydrodynamic stability and characteristic speeds:
+
+\begin{enumerate}\setcounter{enumi}{2}
+\item J.~L.~\textsc{Synge}, \emph{The Relativistic Gas}, North-Holland,
+  Amsterdam, 1957.
+
+\item A.~M.~\textsc{Anile}, \emph{Relativistic Fluids and
+  Magneto-fluids}, Cambridge University Press, Cambridge, 1989.
+
+\item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
+  \emph{Relativistic Fluid Dynamics In and Out of Equilibrium},
+  Cambridge University Press, Cambridge, 2019.
+\end{enumerate}
+
+\noindent
+The relativistic MHD characteristic speed structure is discussed in:
+
+\begin{enumerate}\setcounter{enumi}{5}
+\item A.~\textsc{Lichnerowicz}, \emph{Relativistic Hydrodynamics and
+  Magnetohydrodynamics}, W.~A.~Benjamin, New York, 1967.
+
+\item S.~S.~\textsc{Komissarov}, `On the properties of Alfv\'en
+  waves in relativistic magnetohydrodynamics',
+  \emph{Phys.\ Lett.\ A} \textbf{232}, 435--442 (1997).
+\end{enumerate}
