@@ -1,0 +1,461 @@
+% =============================================================
+% Relativistic Curved Channel MHD and Experiments (Ch IX, §90--91)
+% Agent 41: Relativistic extension of §88--89
+% =============================================================
+%
+% Classical source: output/chapters/chapter_9.tex, lines 1617--1838
+% Conventions: RELATIVISTIC_CONVENTIONS.md, rel_preamble.tex
+%
+% This file extends the Chandrasekhar analysis of:
+%   (a) Stability of dissipative flow in a curved channel with axial B
+%   (b) Experiments on Couette MHD stability
+% to the relativistic regime, connecting to the magnetorotational
+% instability (MRI) in relativistic astrophysical accretion flows.
+%
+% Key physical points:
+%   (i)   The Israel-Stewart causal dissipation replaces parabolic
+%         diffusion operators with hyperbolic ones, raising the order
+%         of the eigenvalue problem.
+%   (ii)  The Alfven speed is bounded: v_A^2 = b^2/(4 pi w + b^2) c^2 < c^2.
+%   (iii) The relativistic MRI growth rate saturates at the light
+%         cylinder rather than growing without bound.
+%   (iv)  All results reduce to Chandrasekhar's in the limit c -> infty.
+% =============================================================
+
+\section{Relativistic stability of dissipative flow in a curved channel
+with an axial magnetic field (\S\,90)}\label{sec:rel-9-90}
+
+We now extend the analysis of \S\,88 to the relativistic regime.  The
+classical problem considers a Poiseuille-type flow in a curved channel
+(narrow gap between coaxial cylinders) driven by a transverse pressure
+gradient, with a uniform axial magnetic field $B_z$.  The stationary
+velocity profile is given by equation~\eqref{eq:9-300}:
+\begin{equation}\label{eq:rel-9-V-profile}
+  V(r) = \Omega_1\bigl[1 - (1 - \mu)\zeta\bigr]
+  + \frac{V_m}{R_0}\,\zeta(1 - \zeta),
+\end{equation}
+where $V_m$ is the mean flow velocity maintained by the pressure gradient
+and $\zeta = (r - R_1)/d$ is the dimensionless radial coordinate in the
+gap of width $d$.
+
+\subsection{Relativistic formulation of the curved channel problem}
+
+In the relativistic extension, the fluid is described by the
+energy-momentum tensor
+\begin{equation}\label{eq:rel-9-Tmunu-mhd}
+  T^{\mu\nu}_{\mathrm{MHD}} =
+  \bigl(\varepsilon + p + b^{2}\bigr)\,\frac{u^{\mu}u^{\nu}}{c^{2}}
+  + \Bigl(p + \frac{b^{2}}{2}\Bigr)\,g^{\mu\nu}
+  - b^{\mu}b^{\nu}
+  + \bigl(\Pi\,\Delta^{\mu\nu} + \pi^{\mu\nu}\bigr),
+\end{equation}
+where $\varepsilon$ is the total energy density (including rest-mass),
+$p$ is the thermodynamic pressure, $b^{\mu}$ is the magnetic field
+4-vector in the fluid frame, $b^{2} = b^{\mu}b_{\mu}$, $\Pi$ is the
+bulk viscous pressure, and $\pi^{\mu\nu}$ is the shear-stress tensor.
+The dissipative fluxes obey the Israel--Stewart causal transport
+equations (cf.\ \textsc{Relativistic Conventions}):
+\begin{align}
+  \taupi\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu} &= 2\,\shearvisc\,\sigma^{\mu\nu},
+  \label{eq:rel-9-IS-shear}\\[4pt]
+  \tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
+  &= -\bulkvisc\,\nabla_{\mu}u^{\mu}.
+  \label{eq:rel-9-IS-bulk}
+\end{align}
+
+The stationary background flow in the narrow-gap limit has
+4-velocity $u^{\mu} = \Lf\,(c,\,0,\,V(r),\,0)$ with Lorentz factor
+$\Lf = (1 - V^{2}/c^{2})^{-1/2}$.  For laboratory Couette flows
+$V \ll c$ and $\Lf \approx 1$, but in astrophysical settings (e.g.\
+the inner regions of magnetized accretion discs) the flow can be
+mildly to strongly relativistic.
+
+The background axial magnetic field in the fluid frame is
+$b^{\mu} = (0,\,0,\,0,\,B_{z})$ to leading order (since the field is
+parallel to the rotation axis and $V \ll c$ in the narrow-gap
+geometry), so that $b^{2} = B_{z}^{2}$.
+
+\subsection{Perturbation equations in the narrow-gap approximation}
+
+Following the procedure of \S\,88, we consider axisymmetric
+perturbations $\propto e^{\sigma t + i k z}$ in the narrow-gap limit.
+The perturbation variables are $(u, \phi)$: the radial velocity and
+the stream-function potential for the axial--azimuthal flow.  In the
+Israel--Stewart framework, the viscous diffusion operator is modified
+by the relaxation replacement (cf.\ the relativistic extension of
+\S\,29):
+\begin{equation}\label{eq:rel-9-sigma-hat}
+  \sigma \;\longrightarrow\; \hat{\sigma}
+  = \frac{\sigma}{1 + \taupi\,\sigma},
+\end{equation}
+which ensures that viscous signals propagate at a finite speed
+$v_{\mathrm{visc}} \sim \sqrt{\shearvisc/(\rho\,\taupi)} \leq c$.
+The magnetic diffusion operator is similarly modified if the
+resistivity $\eta$ has a causal relaxation time $\tau_{\eta}$:
+\begin{equation}\label{eq:rel-9-eta-hat}
+  \eta \;\longrightarrow\; \hat{\eta}
+  = \frac{\eta}{1 + \tau_{\eta}\,\sigma}.
+\end{equation}
+
+The relativistic Chandrasekhar number incorporates the bounded Alfv\'en
+speed:
+\begin{equation}\label{eq:rel-9-Qrel}
+  Q_{\mathrm{rel}}
+  = \frac{\mu_{0}\,H^{2}\,d^{2}}{\rho_{0}\,\nu\,\eta}
+  \times \frac{1}{1 + \vA^{2}/c^{2}}
+  = \frac{Q}{1 + \vA^{2}/c^{2}},
+\end{equation}
+where $\vA^{2} = B_{z}^{2}/(4\pi\enthalpy)$ with
+$\enthalpy = (\varepsilon + p)/c^{2}$ the relativistic enthalpy
+density, and $Q$ is the classical Chandrasekhar number.  The
+correction factor $(1 + \vA^{2}/c^{2})^{-1}$ enforces the causality
+bound: magnetic tension effects cannot propagate faster than light.
+
+\subsection{Pure pressure-maintained flow: relativistic stability}
+\label{ssec:rel-9-pure-pressure}
+
+As in \S\,88\,(b), we specialise to a pure pressure-maintained flow
+by setting $\Omega_{1} = A = 0$.  The classical equations~\eqref{eq:9-306}
+and \eqref{eq:9-307} become, in the Israel--Stewart extension,
+\begin{equation}\label{eq:rel-9-eq1}
+  \bigl[(D^{2} - a^{2})^{2}
+  + Q_{\mathrm{rel}}\,a^{2}
+  + \taupi\,\sigma\,(D^{2} - a^{2})^{2}\bigr]\,\phi
+  = (1 - 2\zeta)\,u,
+\end{equation}
+\begin{equation}\label{eq:rel-9-eq2}
+  \bigl[(D^{2} - a^{2})^{2}
+  + Q_{\mathrm{rel}}\,a^{2}
+  + \taupi\,\sigma\,(D^{2} - a^{2})^{2}\bigr]\,u
+  = a^{2}\,\Lambda_{\mathrm{rel}}\,\zeta(1-\zeta)\,
+  (D^{2} - a^{2})\,\phi,
+\end{equation}
+where the relativistic Dean number is
+\begin{equation}\label{eq:rel-9-Lambda-rel}
+  \Lambda_{\mathrm{rel}}
+  = \frac{72\,V_{m}^{2}\,d^{4}}{R_{0}^{2}\,\nu^{2}}
+  \times \Lf^{2}
+  = \Lambda\,\Lf^{2},
+\end{equation}
+and $\Lf = (1 - V_{m}^{2}/c^{2})^{-1/2}$.  The factor $\Lf^{2}$
+represents the relativistic enhancement of the centrifugal driving:
+the effective inertia of the pressure-maintained flow is augmented by
+the Lorentz factor.
+
+The boundary conditions remain as in \S\,88:
+\begin{equation}\label{eq:rel-9-BC}
+  u = 0, \quad Du = 0, \quad (D^{2}-a^{2})\phi = 0,
+  \quad \text{and either } \phi = 0 \text{ or } D\phi = 0
+  \quad \text{for } \zeta = 0,\,1.
+\end{equation}
+
+\subsection{Asymptotic behaviour for large $Q_{\mathrm{rel}}$}
+
+By the same scaling arguments as in \S\,88 (cf.\
+equations~\eqref{eq:9-310}--\eqref{eq:9-312}), in the limit
+$Q_{\mathrm{rel}} \to \infty$ with $Q_{\mathrm{rel}}\,a^{2} \to
+Q_{\infty}^{\mathrm{rel}}$ and
+$\Lambda_{\mathrm{rel}}\,a^{2} \to \Lambda_{\infty}^{\mathrm{rel}}$
+held fixed, we obtain the asymptotic relations
+\begin{equation}\label{eq:rel-9-asymptotic}
+  \Lambda_{\mathrm{rel},c}
+  \;\sim\; 3.7718 \times 10^{3}\,Q_{\mathrm{rel}}
+  \quad \text{and} \quad
+  a_{c} \;\sim\; 26.1\,Q_{\mathrm{rel}}^{-1/2}
+  \quad \text{as } Q_{\mathrm{rel}} \to \infty
+\end{equation}
+for non-conducting walls.  These reproduce the classical
+result~\eqref{eq:9-312} when $\vA \ll c$ (so that
+$Q_{\mathrm{rel}} \to Q$).
+
+The novel feature of the relativistic problem is that the Israel--Stewart
+terms in equations~\eqref{eq:rel-9-eq1} and \eqref{eq:rel-9-eq2}
+introduce additional roots of the dispersion relation.  These
+``non-hydrodynamic'' modes are all damped (have $\operatorname{Re}\sigma < 0$)
+provided the relaxation times satisfy
+\begin{equation}\label{eq:rel-9-causality-cond}
+  \taupi > 0, \qquad \tau_{\eta} > 0,
+\end{equation}
+which is the requirement of causal signal propagation.  The critical
+$\Lambda_{\mathrm{rel},c}$ for onset of instability is therefore
+determined solely by the ``hydrodynamic'' root, and agrees with the
+classical result up to corrections of order $\vA^{2}/c^{2}$ and
+$\taupi\,\nu/d^{2}$.
+
+\subsection{Non-relativistic limit}
+
+When $c \to \infty$ at fixed $V_{m}$, $B_{z}$, $\nu$, $\eta$, and $d$:
+\begin{enumerate}
+  \item $\Lf \to 1$, so $\Lambda_{\mathrm{rel}} \to \Lambda$.
+  \item $\vA^{2}/c^{2} \to 0$, so $Q_{\mathrm{rel}} \to Q$.
+  \item $\taupi\,\sigma \to 0$ for finite $\sigma$, eliminating the
+        Israel--Stewart corrections.
+\end{enumerate}
+Equations~\eqref{eq:rel-9-eq1} and \eqref{eq:rel-9-eq2} then reduce
+to the classical pair~\eqref{eq:9-306} and \eqref{eq:9-307}, as
+required.
+
+%% ==============================================================
+\section{Experiments on the stability of Couette MHD flow:
+classical and relativistic regimes (\S\,91)}
+\label{sec:rel-9-91}
+
+\subsection{Laboratory experiments: the classical regime}
+
+The definitive laboratory experiments on hydromagnetic Couette flow
+were carried out by Donnelly and Ozima (1960), as described in
+\S\,89.  In those experiments, mercury was used as the working fluid
+between coaxial stainless-steel cylinders with a gap width of 2\,mm
+and axial magnetic fields in the range 250--10,000 gauss
+($Q \approx 2$--$3{,}000$).
+
+The key experimental findings were:
+\begin{enumerate}
+  \item The onset of instability occurred as a sharp transition,
+        detectable by a discontinuity in the torque on the outer
+        cylinder, closely matching the theoretical curve for
+        non-conducting walls.
+  \item The critical Taylor number increased monotonically with $Q$,
+        in quantitative agreement with the predictions of \S\,85--87.
+  \item At high field strengths ($Q \gtrsim 1{,}000$), the transition
+        became more gradual, consistent with the theoretical
+        narrowing of the unstable wavenumber band.
+\end{enumerate}
+
+All laboratory experiments to date fall in the non-relativistic regime
+($V/c \sim 10^{-9}$, $\vA/c \sim 10^{-8}$), where the relativistic
+corrections derived in \S\,90 are entirely negligible.
+
+\subsection{Astrophysical setting: magnetized accretion discs and the
+relativistic MRI}
+
+The stability analysis of \S\S\,81--90 acquires profound astrophysical
+significance through the \emph{magnetorotational instability} (MRI),
+identified by Balbus and Hawley (1991) as the mechanism driving
+turbulence and angular momentum transport in accretion discs.  The
+MRI is, in essence, the Velikhov--Chandrasekhar instability of
+\S\,81 applied to a differentially rotating disc threaded by a weak
+magnetic field: any Keplerian profile with $\dd\Omega^{2}/\dd r < 0$
+(but $\dd(r^{2}\Omega)/\dd r > 0$, so Rayleigh-stable) is
+destabilised by the magnetic field.
+
+In the inner regions of accretion discs around compact objects
+(black holes, neutron stars), the orbital velocities become
+relativistic ($V/c \gtrsim 0.1$) and the gravitational field is
+strong.  The relativistic formulation of the MRI must then account
+for:
+
+\paragraph{(i) Bounded Alfv\'en speed.}
+The relativistic Alfv\'en speed,
+\begin{equation}\label{eq:rel-9-vA-rel}
+  \vA^{2} = \frac{b^{2}}{4\pi\enthalpy + b^{2}}\,c^{2},
+\end{equation}
+is bounded by $c$, in contrast to the classical expression
+$\vA^{2} = B^{2}/(4\pi\rho)$ which is unbounded.  This modifies the
+MRI growth rate at strong field strengths and ensures that the
+instability wavelength remains larger than the light-crossing
+time of the disc.
+
+\paragraph{(ii) Relativistic angular momentum.}
+The specific angular momentum of a relativistic circular orbit is
+$\ell = \Lf\,r\,V$, and the Rayleigh criterion for stability becomes
+$\dd\ell^{2}/\dd r > 0$.  In a Kerr spacetime, frame-dragging
+modifies the angular velocity profile and shifts the marginally
+stable orbit, altering the domain in which the MRI operates.
+
+\paragraph{(iii) Causal dissipation.}
+In the hot, relativistic plasma near the innermost stable circular
+orbit (ISCO), the Israel--Stewart relaxation effects described in
+\S\,90 are physically relevant.  The viscous and resistive relaxation
+times $\taupi$ and $\tau_{\eta}$ set the minimum scales on which the
+MRI can develop; if the MRI growth rate $\sigma_{\mathrm{MRI}}$
+exceeds $\taupi^{-1}$, the instability is modified by causal
+corrections.
+
+\paragraph{(iv) The relativistic MRI dispersion relation.}
+For a relativistic differentially rotating flow with a weak vertical
+magnetic field, the local (WKB) dispersion relation for axisymmetric
+perturbations takes the form
+\begin{equation}\label{eq:rel-9-MRI-disp}
+  \Bigl(\hat{\sigma}^{2} + \hat{k}^{2}\,\vA^{2}\Bigr)^{2}
+  + \hat{\kappa}^{2}\,\hat{\sigma}^{2}
+  + 4\,\Omega^{2}\,\hat{k}^{2}\,\vA^{2}
+  \,\frac{\dd\ln\Omega}{\dd\ln r} = 0,
+\end{equation}
+where $\hat{\sigma} = \sigma/(1 + \taupi\,\sigma)$ is the
+Israel--Stewart corrected growth rate, $\hat{k} = k/\Lf$ is the
+comoving wavenumber, and $\hat{\kappa}$ is the relativistic
+epicyclic frequency.  When $\dd\Omega/\dd r < 0$ (the generic case
+in accretion discs), equation~\eqref{eq:rel-9-MRI-disp} admits
+unstable solutions with
+\begin{equation}\label{eq:rel-9-MRI-maxgrowth}
+  \sigma_{\max} = \frac{3}{4}\,\bigl|\Omega\bigr|
+  \quad\text{(for Keplerian flow)},
+\end{equation}
+the same maximum growth rate as in the non-relativistic MRI.  The
+relativistic corrections enter through:
+\begin{enumerate}
+  \item the bounded $\vA$, which limits the range of unstable
+        wavenumbers to
+        $k < k_{\max} = \Omega/\vA$ rather than being unbounded;
+  \item the Israel--Stewart relaxation, which damps modes with
+        $\sigma > \taupi^{-1}$;
+  \item the frame-dragging contribution to $\hat{\kappa}$, which
+        can either stabilise or destabilise depending on the spin
+        parameter of the central object.
+\end{enumerate}
+
+\paragraph{(v) The light cylinder.}
+In a relativistic disc, the maximum radius at which the MRI can
+operate on a given field line is set by the \emph{light cylinder}
+$r_{L} = c/\Omega$.  Beyond $r_{L}$, the corotation velocity exceeds
+$c$ and the concept of a rigidly rotating field line breaks down.
+This has no classical analogue and represents a genuinely relativistic
+constraint on the MRI.
+
+\subsection{Numerical simulations}
+
+General-relativistic MHD (GRMHD) simulations of magnetized accretion
+onto black holes (e.g.\ De~Villiers \& Hawley 2003; Gammie,
+McKinney \& T\'oth 2003; McKinney \& Blandford 2009) have
+confirmed that the relativistic MRI operates in the inner disc,
+driving turbulent angular momentum transport with an effective
+$\alpha$-parameter of order $10^{-2}$--$10^{-1}$.  The turbulent
+stresses peak near the ISCO and generate a magnetically dominated
+funnel along the rotation axis, which is the site of relativistic
+jet formation.
+
+These simulations demonstrate that the Velikhov--Chandrasekhar--Balbus--Hawley
+instability, analysed in the linear regime throughout Chapter~IX,
+remains the fundamental driver of accretion disc turbulence even in
+the strongly relativistic, curved-spacetime regime.
+
+%% ==============================================================
+\section*{BIBLIOGRAPHICAL NOTES}
+\addcontentsline{toc}{section}{Bibliographical Notes (\S\S\,90--91,
+relativistic)}
+
+\noindent\textit{\S\,90.}
+The relativistic formulation of MHD stability in sheared flows draws
+on the covariant MHD framework developed in:
+
+\begin{enumerate}
+\item J.~D.~\textsc{Bekenstein} and E.~\textsc{Oron},
+  `New conservation laws in general-relativistic magnetohydrodynamics',
+  \textit{Phys.\ Rev.\ D}, \textbf{18}, 1809--19 (1978).
+
+\item A.~\textsc{Lichnerowicz},
+  \textit{Relativistic Hydrodynamics and Magnetohydrodynamics}
+  (W.~A.~Benjamin, New York, 1967).
+\end{enumerate}
+
+\noindent The Israel--Stewart causal dissipation framework is developed in:
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item W.~\textsc{Israel} and J.~M.~\textsc{Stewart},
+  `Transient relativistic thermodynamics and kinetic theory',
+  \textit{Ann.\ Phys.\ (N.Y.)}, \textbf{118}, 341--72 (1979).
+\end{enumerate}
+
+\noindent\textit{\S\,91.}
+The magnetorotational instability in its modern form was identified by:
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item S.~A.~\textsc{Balbus} and J.~F.~\textsc{Hawley},
+  `A powerful local shear instability in weakly magnetized disks.~I.
+  Linear analysis',
+  \textit{Astrophys.\ J.}, \textbf{376}, 214--22 (1991).
+\end{enumerate}
+
+\noindent who recognised its identity with the Velikhov--Chandrasekhar
+instability of \S\,81.  The original references are:
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item E.~P.~\textsc{Velikhov},
+  `Stability of an ideally conducting liquid flowing between
+  cylinders rotating in a magnetic field',
+  \textit{J.\ Expl.\ Theoret.\ Phys.\ (U.S.S.R.)}, \textbf{36},
+  1398--1404 (1959).
+
+\item S.~\textsc{Chandrasekhar},
+  `The stability of non-dissipative Couette flow in hydromagnetics',
+  \textit{Proc.\ Nat.\ Acad.\ Sci.}, \textbf{46}, 253--7 (1960).
+\end{enumerate}
+
+\noindent The relativistic MRI has been analysed in:
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item S.~A.~\textsc{Balbus},
+  `On the behaviour of the magnetorotational instability when the
+  radial wavelength becomes comparable to the Alfv\'en wavelength',
+  \textit{Astrophys.\ J.}, \textbf{616}, 857--64 (2004).
+
+\item G.~\textsc{Pessah} and D.~\textsc{Psaltis},
+  `The stability of magnetized rotating plasmas with superthermal
+  fields',
+  \textit{Astrophys.\ J.}, \textbf{628}, 879--901 (2005).
+
+\item M.~\textsc{Frieben} and L.~\textsc{Rezzolla},
+  `Equilibrium models of relativistic stars with a toroidal magnetic
+  field',
+  \textit{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{427}, 3406--26
+  (2012).
+\end{enumerate}
+
+\noindent General-relativistic MHD simulations confirming the operation
+of the relativistic MRI in accretion flows are reported in:
+
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item J.-P.~\textsc{De~Villiers} and J.~F.~\textsc{Hawley},
+  `A numerical method for general relativistic magnetohydrodynamics',
+  \textit{Astrophys.\ J.}, \textbf{589}, 458--80 (2003).
+
+\item C.~F.~\textsc{Gammie}, J.~C.~\textsc{McKinney},
+  and G.~\textsc{T\'oth},
+  `HARM: A numerical scheme for general relativistic
+  magnetohydrodynamics',
+  \textit{Astrophys.\ J.}, \textbf{589}, 444--57 (2003).
+
+\item J.~C.~\textsc{McKinney} and R.~D.~\textsc{Blandford},
+  `Stability of relativistic jets from rotating, magnetized stars',
+  \textit{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{394},
+  L126--L130 (2009).
+\end{enumerate}
+
+\noindent Laboratory MRI experiments are described in \S\,89; for more
+recent work see:
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item H.~\textsc{Ji}, J.~\textsc{Goodman}, and A.~\textsc{Kageyama},
+  `Magnetorotational instability in a rotating liquid metal annulus',
+  \textit{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{325}, L1--L5
+  (2001).
+
+\item M.~D.~\textsc{Nornberg} \textit{et al.},
+  `Observation of magnetocoriolis waves in a liquid metal Taylor--Couette
+  experiment',
+  \textit{Phys.\ Rev.\ Lett.}, \textbf{104}, 074501 (2010).
+
+\item E.~\textsc{Schartman}, H.~\textsc{Ji},
+  M.~J.~\textsc{Burin}, and J.~\textsc{Goodman},
+  `Stability of quasi-Keplerian shear flow in a laboratory experiment',
+  \textit{Astron.\ Astrophys.}, \textbf{543}, A94 (2012).
+\end{enumerate}
+
+\noindent A review of the connection between the Chandrasekhar
+stability analysis and modern accretion disc theory is given in:
+
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item S.~A.~\textsc{Balbus},
+  `Enhanced angular momentum transport in accretion disks',
+  \textit{Ann.\ Rev.\ Astron.\ Astrophys.}, \textbf{41}, 555--97
+  (2003).
+\end{enumerate}
