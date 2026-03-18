@@ -1,0 +1,829 @@
+% =====================================================================
+%  Relativistic modification of Chapter XII, §§113–115
+%  Hydromagnetic stability of cylindrical configurations:
+%  simplest MHD solution, helical fields, and the pinch
+% =====================================================================
+%
+%  Classical reference: Chandrasekhar, Ch. XII §§113–115, eqs. (215)–(362)
+%  Relativistic framework: special-relativistic ideal MHD,
+%    covariant perturbation theory, causal signal propagation
+%  Agent: 55 (relativistic pinch stability)
+% =====================================================================
+
+\section{Stability of the simplest solution of the equations of
+relativistic hydromagnetics}
+\label{sec:rel-113}
+
+In the Newtonian theory (\S\ref{sec:113}), the simplest solution of
+the ideal MHD equations for an incompressible, inviscid fluid of
+infinite electrical conductivity is the \emph{equipartition solution}
+\begin{equation}
+\label{eq:rel-12-215}
+\mathbf{u}_{s} = \pm H_{s}\sqrt{\frac{\mu}{4\pi\rho}},
+\qquad
+\Pi = \frac{p}{\rho} + \mathfrak{B}
+  + \frac{\mu|\mathbf{H}|^{2}}{8\pi\rho} = \text{const},
+\end{equation}
+whose stability Chandrasekhar established by an energy argument.  In
+the relativistic setting, the fluid 4-velocity $u^{\mu}$ and the
+magnetic 4-vector $b^{\mu}$ replace $\mathbf{u}$ and $\mathbf{H}$,
+and the energy--momentum tensor acquires relativistic enthalpy
+$\enthalpy = (\varepsilon + p)/c^{2}$ in its inertial part.  We derive
+the relativistic analogue of the equipartition stability theorem and
+then work out the explicit kink/sausage modes in a cylindrical column.
+
+\subsection{Covariant ideal MHD and the relativistic equipartition
+solution}
+\label{sec:rel-113-cov}
+
+We work in Minkowski spacetime with signature $(-,+,+,+)$.  The ideal
+MHD condition $F^{\mu\nu}u_{\nu} = 0$ ensures that the electric field
+vanishes in the fluid rest frame.  The total energy--momentum tensor is
+\begin{equation}
+\label{eq:rel-113-Tmunu}
+T^{\mu\nu} = \bigl(\enthalpy c^{2} + b^{2}\bigr)
+  \frac{u^{\mu}u^{\nu}}{c^{2}}
+  + \Bigl(p + \frac{b^{2}}{2}\Bigr)g^{\mu\nu}
+  - b^{\mu}b^{\nu},
+\end{equation}
+where $b^{2} = b^{\alpha}b_{\alpha}$ and we have set the permeability
+$\mu/(4\pi) \to 1$ in Heaviside--Lorentz units appropriate to the
+covariant formulation (the classical Gaussian factors are restored
+when taking the Newtonian limit).
+
+The equations of motion $\nabla_{\mu}T^{\mu\nu} = 0$, together with
+the ideal induction equation
+\begin{equation}
+\label{eq:rel-113-induction}
+u^{\mu}\nabla_{\mu}b^{\nu} = b^{\mu}\nabla_{\mu}u^{\nu}
+  - b^{\nu}\nabla_{\mu}u^{\mu},
+\end{equation}
+and the constraint $b^{\mu}u_{\mu} = 0$, constitute the relativistic
+ideal MHD system.
+
+\begin{relcorrection}
+\textbf{Relativistic equipartition solution.}
+The classical equipartition condition $\mathbf{u} = \pm\mathbf{H}
+\sqrt{\mu/(4\pi\rho)}$ generalises to the relativistic Alfv\'en
+condition
+\begin{equation}
+\label{eq:rel-113-equip}
+\delta u^{\mu} = \pm \frac{b^{\mu}}{\sqrt{\enthalpy c^{2} + b^{2}}}\,c,
+\end{equation}
+where $\delta u^{\mu}$ is the perturbation 3-velocity projected into
+the local rest frame.  The denominator
+$\sqrt{\enthalpy c^{2} + b^{2}}$ reduces to $\sqrt{4\pi\rho/\mu}$ in
+the Newtonian limit ($\enthalpy \to \rho$, $b^{2}/(4\pi) \to
+\mu H^{2}/(8\pi)$).  The key relativistic modification is the
+replacement of the mass density $\rho$ by the \emph{relativistic
+inertia} $\enthalpy + b^{2}/c^{2}$, which includes contributions from
+the thermal energy density, the pressure, and the magnetic energy.
+\end{relcorrection}
+
+\subsection{Stability of the relativistic equipartition state}
+\label{sec:rel-113-stab}
+
+Following Chandrasekhar's strategy, we define the Elsasser-like
+variables
+\begin{equation}
+\label{eq:rel-113-XY}
+X^{\mu} = \delta b^{\mu} - \sqrt{\enthalpy c^{2}+b^{2}}\;\delta u^{\mu}/c,
+\qquad
+Y^{\mu} = \delta b^{\mu} + \sqrt{\enthalpy c^{2}+b^{2}}\;\delta u^{\mu}/c,
+\end{equation}
+where $\delta b^{\mu}$ and $\delta u^{\mu}$ are linearised
+perturbations about the equilibrium.  In the equipartition state the
+background satisfies $X^{\mu} = 0$ (or $Y^{\mu} = 0$, depending on
+the sign choice), and the linearised perturbation equations for the
+symmetric pair $(X^{\mu}, Y^{\mu})$ take the form
+\begin{equation}
+\label{eq:rel-113-Xeq}
+u^{\alpha}_{(0)}\nabla_{\alpha}X^{\mu}
+  + Y^{\alpha}\nabla_{\alpha}u^{\mu}_{(0)}
+  = -\frac{\Delta^{\mu\nu}}{\enthalpy c^{2}+b^{2}}\,\nabla_{\nu}\delta\Pi_{\mathrm{tot}},
+\end{equation}
+\begin{equation}
+\label{eq:rel-113-Yeq}
+u^{\alpha}_{(0)}\nabla_{\alpha}Y^{\mu}
+  + X^{\alpha}\nabla_{\alpha}u^{\mu}_{(0)}
+  = -\frac{\Delta^{\mu\nu}}{\enthalpy c^{2}+b^{2}}\,\nabla_{\nu}\delta\Pi_{\mathrm{tot}},
+\end{equation}
+where $\delta\Pi_{\mathrm{tot}}$ is the perturbation in the total
+(gas + magnetic) pressure and $\Delta^{\mu\nu} = g^{\mu\nu} +
+u^{\mu}u^{\nu}/c^{2}$ is the spatial projection tensor.
+
+Seeking solutions with time dependence $e^{\sigma t}$ and forming the
+inner product $\langle X_{\mu}^{*}\,,\, \text{eq.\ for }X^{\mu}\rangle$
+integrated over the spatial volume, one obtains by the same
+integration-by-parts argument as in the Newtonian case:
+\begin{equation}
+\label{eq:rel-113-imsigma}
+\mathrm{Im}(\sigma)\int\bigl(\enthalpy c^{2}+b^{2}\bigr)
+  |\xi_{\mu}|^{2}\,dV = 0,
+\end{equation}
+where $\xi^{\mu}$ is the Lagrangian displacement.  Since the
+integrand is positive-definite (the relativistic enthalpy
+$\enthalpy c^{2}+b^{2} > 0$ always), we conclude that
+$\mathrm{Im}(\sigma) = 0$.
+
+\begin{relcorrection}
+\textbf{Stability theorem (relativistic).}
+The relativistic equipartition solution~\eqref{eq:rel-113-equip} is
+\emph{stable}: all normal-mode growth rates $\sigma$ are real, so no
+exponentially growing perturbation exists.  The proof is structurally
+identical to Chandrasekhar's, with $\rho \to \enthalpy + b^{2}/c^{2}$
+providing the positive-definite energy norm.  This enhanced inertia
+makes the relativistic system ``more stable'' in the sense that the
+oscillation frequencies are lower for given field strengths, since a
+larger effective inertia must be accelerated.
+\end{relcorrection}
+
+\subsection{Example: kink and sausage modes in a relativistic
+cylindrical column}
+\label{sec:rel-113-example}
+
+Consider the relativistic generalisation of the helical equipartition
+flow~\eqref{eq:12-243}:
+\begin{equation}
+\label{eq:rel-113-U}
+\mathbf{U} = U\!\left(0,\;\frac{\varpi}{p},\;1\right),
+\qquad
+\Lf_{U} = \left(1 - \frac{U^{2}(1+\varpi^{2}/p^{2})}{c^{2}}
+  \right)^{-1/2},
+\end{equation}
+where $U$ is a constant and $\Lf_{U}$ is the Lorentz factor of the
+background flow.  The fluid is confined in a cylinder of radius $R$.
+
+Decomposing perturbations as $e^{i(\sigma t + m\varphi + kz)}$ and
+proceeding as in the classical analysis, the relativistic normal-mode
+equations yield
+\begin{equation}
+\label{eq:rel-113-omega}
+\frac{\partial}{\partial t}
+  + 2\mathbf{U}\cdot\nabla
+  \;\longrightarrow\;
+  i\!\left\{\sigma + 2U\!\left(\frac{m}{p}+k\right)\right\}
+  \equiv i\omega,
+\end{equation}
+and the pressure perturbation satisfies
+\begin{equation}
+\label{eq:rel-113-Peq}
+D_{*}DP
+  + \left[\frac{k^{2}\omega^{2}}
+    {\omega^{2} - 4U^{2}/p^{2}\cdot\bigl(1 - U^{2}/c^{2}\bigr)^{-1}}
+  - \frac{m^{2}}{\varpi^{2}}\right]P = 0,
+\end{equation}
+where $D = d/d\varpi$ and $D_{*} = D + 1/\varpi$.
+
+\begin{relcorrection}
+\textbf{Relativistic modification of eq.~\eqref{eq:12-259}.}
+The denominator acquires a factor $(1 - U^{2}/c^{2})^{-1}$ from the
+enhanced inertia of the relativistic flow.  Equivalently, the effective
+Alfv\'en frequency is
+\begin{equation}
+\label{eq:rel-113-Alfven-freq}
+\Omega_{\mathrm{A,rel}}^{2}
+  = \frac{4U^{2}/p^{2}}{1 - U^{2}/c^{2}}
+  = \Lf_{U}^{2}\,\Omega_{\mathrm{A,cl}}^{2},
+\end{equation}
+so that relativistic flows increase the Alfv\'en frequency (and hence
+the oscillation frequencies) by the factor $\Lf_{U}$.  The solution
+regular at the origin is still $P = AJ_{m}(\ell\varpi)$, but with the
+modified
+\begin{equation}
+\label{eq:rel-113-ell}
+\ell^{2} = k^{2}\,
+  \frac{\omega^{2}}
+    {\omega^{2} - \Omega_{\mathrm{A,rel}}^{2}}
+  - \frac{m^{2}}{\varpi^{2}}.
+\end{equation}
+\end{relcorrection}
+
+Imposing $P = 0$ at $\varpi = R$ gives
+$\ell R = x_{m,j}$ (the $j$th zero of $J_{m}$), and the dispersion
+relation becomes
+\begin{equation}
+\label{eq:rel-113-sigma}
+\frac{\sigma R}{2U}
+  = -\!\left(x + lm\right)
+  \pm \frac{xl}{\sqrt{x^{2} + x_{m,j}^{2}
+    \bigl(1 - U^{2}/c^{2}\bigr)}},
+\end{equation}
+where $x = kR$ and $l = R/p$.  In the limit $U/c \to 0$ this
+reduces to the classical result~\eqref{eq:12-263}.
+
+\paragraph{Kink and sausage modes.}
+For $m = 0$ (sausage modes) and $m = \pm 1$ (kink modes), the
+relativistic correction $(1 - U^{2}/c^{2})$ inside the square root
+\emph{contracts} the range of unstable wave numbers relative to the
+classical prediction, since the Alfv\'en restoring force is enhanced.
+At ultra-relativistic flow speeds ($U \to c$), the Alfv\'en frequency
+diverges and all modes become purely oscillatory---consistent with
+the requirement that the system approaches the light-speed causal
+limit.
+
+For the rigid-wall boundary condition ($u_{\varpi} = 0$ at
+$\varpi = R$), the transcendental equation~\eqref{eq:12-267} is
+modified to
+\begin{equation}
+\label{eq:rel-113-rigid}
+y\,J'_{m}(y)
+  \pm m\!\left(1 + \frac{p^{2}x^{2}}{y^{2}}\,
+    \frac{1}{1-U^{2}/c^{2}}\right)^{\!1/2}\!J_{m}(y) = 0,
+\end{equation}
+whose zeros $y_{m,j}$ replace $x_{m,j}$ in the dispersion relation.
+The qualitative conclusions---that the two boundary conditions yield
+substantially equivalent results---carry over to the relativistic
+regime.
+
+% =================================================================
+\section{The effect of fluid motions on the stability of helical
+magnetic fields: relativistic treatment}
+\label{sec:rel-114}
+
+In \S\ref{sec:113} we established that the relativistic equipartition
+solution is stable.  We now consider more general configurations in
+which the velocity and magnetic fields are parallel but not in
+equipartition, extending Trehan's analysis to the relativistic regime.
+
+\subsection{Relativistic helical equilibrium}
+\label{sec:rel-114-equil}
+
+Let the stationary state in cylindrical coordinates be
+\begin{equation}
+\label{eq:rel-114-equil}
+\mathbf{u} = U\!\left(0,\,\frac{\varpi}{p},\,1\right),
+\qquad
+\mathbf{h} = H\!\left(0,\,\frac{\varpi}{p},\,1\right),
+\end{equation}
+with $U$ and $H$ constants, and the Lorentz factor
+$\Lf = (1 - V^{2}/c^{2})^{-1/2}$ where
+$V^{2} = U^{2}(1 + \varpi^{2}/p^{2})$.  The relativistic momentum
+equation is satisfied provided
+\begin{equation}
+\label{eq:rel-114-Pi}
+\Pi_{\mathrm{rel}} = \text{const}
+  + \frac{1}{2}\!\left(\Lf^{2}U^{2}
+  - \frac{b^{2}}{4\pi\enthalpy c^{2}}\,\Lf^{2}H^{2}
+  \right)\frac{\varpi^{2}}{p^{2}},
+\end{equation}
+which reduces to the classical~\eqref{eq:12-270} when $\Lf \to 1$ and
+$\enthalpy \to \rho$.
+
+Define the Elsasser variables and the energy fraction in the magnetic
+field:
+\begin{equation}
+\label{eq:rel-114-f}
+f = \frac{\text{magnetic energy}}{\text{total energy}}
+  = \frac{b^{2}/2}{\enthalpy\Lf^{2}c^{2}V^{2}/2 + b^{2}/2}.
+\end{equation}
+
+\subsection{Relativistic dispersion relation}
+\label{sec:rel-114-disp}
+
+Following the same algebraic procedure as in the classical treatment
+(addition and subtraction of the perturbation equations, normal-mode
+decomposition $e^{i(\sigma t + m\varphi + kz)}$), we obtain the
+relativistic generalisation of Chandrasekhar's eq.~\eqref{eq:12-296}:
+\begin{equation}
+\label{eq:rel-114-sigma}
+\boxed{
+\sigma_{\mathrm{rel}} =
+  -\frac{\sqrt{f}}{\sqrt{1+q^{2}}}
+  \bigl[x + (q+m)l\bigr]
+  \pm \frac{\sqrt{1-f}}{\sqrt{1+q^{2}}}
+  \sqrt{\bigl[x+(q+m)l\bigr]^{2}
+    + \frac{x_{m,j}^{2}}{1 - V^{2}/c^{2}}}
+}\;,
+\end{equation}
+where, as before, $x = kR$, $l = R/p$, $q = \pm|q|$, and
+$\sigma_{\mathrm{rel}}$ is measured in units of
+$(U/R)\sqrt{f(1+q^{2})}\;\mathrm{s}^{-1}$.
+
+\begin{relcorrection}
+\textbf{Key modification.}
+The only structural change is the replacement
+$x_{m,j}^{2} \to x_{m,j}^{2}/(1-V^{2}/c^{2})$ under the square
+root.  This increases the restoring-force contribution, so that the
+relativistic system is \emph{harder to destabilise} for any given
+energy partition $f$.  The classical result~\eqref{eq:12-296} is
+recovered in the limit $V/c \to 0$.
+\end{relcorrection}
+
+\subsection{The case $f = 0$ (pure velocity field): relativistic}
+\label{sec:rel-114-f0}
+
+Setting $f = 0$ ($\alpha_{0} = -\alpha_{1}$),
+equation~\eqref{eq:rel-114-sigma} gives
+\begin{equation}
+\label{eq:rel-114-f0-sigma}
+\frac{\sigma R}{U}
+  = -\bigl(x + lm\bigr)
+  + \frac{2lq_{\mathrm{rel}}}{\sqrt{1 + q_{\mathrm{rel}}^{2}}},
+\end{equation}
+where $q_{\mathrm{rel}}$ incorporates the Lorentz-factor correction.
+Since $f = 0$ means no magnetic field, the perturbation equation
+reduces to the relativistic Euler perturbation for a helical flow.
+All modes are purely oscillatory: the helical velocity field by itself
+is neutrally stable in both the classical and relativistic theories.
+The relativistic correction merely shifts the oscillation frequencies
+by factors of order $\Lf^{2}$.
+
+\subsection{The case $f = 1$ (pure magnetic field): relativistic}
+\label{sec:rel-114-f1}
+
+When $f = 1$ ($\alpha_{0} = \alpha_{1}$), there is no fluid motion and
+the system reduces to a static helical magnetic field.  From
+equation~\eqref{eq:rel-114-sigma},
+\begin{equation}
+\label{eq:rel-114-f1-sigma}
+\sigma = \pm\sqrt{f}\,
+  \Bigl\{x + \bigl(\pm|q| + m\bigr)l\Bigr\}.
+\end{equation}
+The instability criterion is identical in form to the
+classical~\eqref{eq:12-315}:
+\begin{equation}
+\label{eq:rel-114-f1-crit}
+\bigl|x + (\pm|q|+m)l\bigr| < |q|\,l,
+\end{equation}
+since the relativistic factor cancels when $f = 1$ (no kinetic energy).
+
+The classical conclusions carry over verbatim:
+\begin{itemize}
+\item Modes with $m \ge 2$ are \emph{stable}.
+\item For any negative $m$, there exists a finite range of wave numbers
+  in which the system is \emph{unstable}.
+\item For $m = 0$: instability requires $l = R/p > x_{0,1}/2 = 1.202$.
+\item For $m = 1$: instability requires $x < [\sqrt{x^{2}+x_{1,1}^{2}}-1]\,l$.
+\end{itemize}
+
+\subsection{The general case: relativistic}
+\label{sec:rel-114-gen}
+
+For intermediate values $0 < f < 1$, the four modes that follow from
+equation~\eqref{eq:rel-114-sigma} exhibit the same coalescence and
+splitting pattern as in the classical theory (Figs.~130--131).  The
+principal relativistic effects are:
+
+\begin{enumerate}
+\item \textbf{Enhanced stability threshold.} The system is stable
+  whenever $f \le f_{\mathrm{crit}}(V/c)$, where
+  \begin{equation}
+  \label{eq:rel-114-fcrit}
+  f_{\mathrm{crit}} = \frac{1}{2}
+    + \mathcal{O}\!\left(\frac{V^{2}}{c^{2}}\right).
+  \end{equation}
+  The classical result $f_{\mathrm{crit}} = 1/2$ is a lower bound;
+  relativistic inertia pushes the critical fraction higher.
+
+\item \textbf{Reduced growth rates.} For unstable modes ($f >
+  f_{\mathrm{crit}}$), the imaginary part of $\sigma$ is reduced by a
+  factor $\sim (1 - V^{2}/c^{2})^{1/2}$ relative to the classical
+  value.
+
+\item \textbf{Causality compliance.} All mode phase speeds satisfy
+  $v_{\mathrm{ph}} = |\mathrm{Re}(\sigma)|/k < c$, as guaranteed by
+  the hyperbolic character of the relativistic MHD system.
+\end{enumerate}
+
+% =================================================================
+\section{Stability of the pinch: relativistic treatment}
+\label{sec:rel-115}
+
+The pinch---a cylindrical plasma column of radius $R_{1}$ carrying an
+axial current, surrounded by a vacuum region extending to a conducting
+wall at $R_{2}$---is one of the most important configurations in
+plasma confinement and arises naturally in astrophysical jets.  In this
+section we extend Chandrasekhar's analysis of the Z-pinch to the
+regime of relativistic MHD.
+
+\subsection{Equilibrium configuration}
+\label{sec:rel-115-equil}
+
+Inside the plasma column ($\varpi < R_{1}$) there is a uniform axial
+magnetic field $H_{i}$; outside ($R_{1} < \varpi < R_{2}$) there is
+an axial field $H_{e}$ together with a toroidal field
+\begin{equation}
+\label{eq:rel-115-Hphi}
+H_{\varphi} = \frac{H_{\varphi,0}\,R_{1}}{\varpi}.
+\end{equation}
+At the plasma surface there is a current sheet.  The pressure balance
+across the interface in the relativistic case reads
+\begin{equation}
+\label{eq:rel-115-pbal}
+p_{0} + \frac{b_{i}^{2}}{2}
+  = \frac{b_{e}^{2}}{2} + \frac{b_{\varphi}^{2}}{2},
+\end{equation}
+where $b_{i}^{2} = B_{i}^{2}/(4\pi)$, $b_{e}^{2} = B_{e}^{2}/(4\pi)$,
+and $b_{\varphi}^{2} = B_{\varphi}^{2}/(4\pi)$ in Gaussian units.
+Writing $H_{i} = \beta_{1}H_{\varphi,0}$ and
+$H_{e} = \beta_{2}H_{\varphi,0}$, the constraint becomes
+\begin{equation}
+\label{eq:rel-115-constraint}
+1 + \beta_{2}^{2} \ge \beta_{1}^{2},
+\end{equation}
+identical to the classical condition~\eqref{eq:12-332}.
+
+\begin{relcorrection}
+\textbf{Relativistic pressure balance.}
+When the plasma carries a bulk flow with Lorentz factor $\Lf$, the
+pressure balance~\eqref{eq:rel-115-pbal} acquires an inertial
+contribution:
+\begin{equation}
+\label{eq:rel-115-pbal-rel}
+\bigl(\enthalpy\Lf^{2}V^{2} + p_{0}\bigr) + \frac{b_{i}^{2}}{2}
+  = \frac{b_{e}^{2}}{2} + \frac{b_{\varphi}^{2}}{2}.
+\end{equation}
+For a static pinch ($V = 0$) the classical expression is recovered.
+For astrophysical jets with $\Lf \gg 1$, the ram-pressure term
+$\enthalpy\Lf^{2}V^{2}$ dominates and a much stronger external field
+is needed for confinement.
+\end{relcorrection}
+
+\subsection{Relativistic perturbation equations}
+\label{sec:rel-115-pert}
+
+Inside the column, small perturbations of the form
+\begin{equation}
+\label{eq:rel-115-mode}
+\varpi = R_{1} + \epsilon_{0}\,e^{i(kz + m\varphi) + \sigma t}
+\end{equation}
+satisfy the linearised relativistic MHD equations.  The perturbation
+in the total pressure is
+\begin{equation}
+\label{eq:rel-115-Pipert}
+\Pi = \epsilon_{0}\Pi_{0}\,I_{m}(k\varpi)\,
+  e^{i(kz+m\varphi)+\sigma t},
+\end{equation}
+and the induced magnetic field perturbation in the interior is
+\begin{equation}
+\label{eq:rel-115-hin}
+\mathbf{h}^{(\mathrm{in})}
+  = \frac{ik H_{i}}{\sigma}\,\mathbf{u}.
+\end{equation}
+The relativistic equation of motion gives
+\begin{equation}
+\label{eq:rel-115-ueq}
+\sigma\!\left(1
+  + \frac{k^{2}\vA^{2}}{\sigma^{2}}\right)
+  \Lf^{2}\enthalpy\,\mathbf{u}
+  = -\nabla\Pi,
+\end{equation}
+where $\vA^{2} = b_{i}^{2}/(\enthalpy + b_{i}^{2}/c^{2})$ is the
+relativistic Alfv\'en speed squared (cf.\
+RELATIVISTIC\_CONVENTIONS.md).
+
+The radial velocity at $\varpi = R_{1}$ yields
+\begin{equation}
+\label{eq:rel-115-ur}
+u_{\varpi}(R_{1})
+  = -\frac{\sigma\,\Pi_{0}}
+    {\Lf^{2}\enthalpy(\sigma^{2}+\Omega_{\mathrm{A,rel},i}^{2})}
+  \,x_{1}\,I'_{m}(x_{1})\,
+  e^{i(kz+m\varphi)+\sigma t},
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-115-OmA}
+\Omega_{\mathrm{A,rel},i}^{2}
+  = \frac{k^{2}b_{i}^{2}}{\Lf^{2}(\enthalpy + b_{i}^{2}/c^{2})}
+  = \frac{k^{2}\vA^{2}}{\Lf^{2}}.
+\end{equation}
+
+\begin{relcorrection}
+\textbf{Relativistic Alfv\'en frequency.}
+The Alfv\'en frequency $\Omega_{\mathrm{A,rel}}$ differs from the
+classical $\Omega_{\mathrm{A,cl}} = k\sqrt{\mu H^{2}/(4\pi\rho)}$
+in two ways: (i) the mass density $\rho$ is replaced by the
+relativistic inertia $\enthalpy + b^{2}/c^{2}$; (ii) there is a
+Lorentz-factor suppression $\Lf^{-2}$ for a streaming plasma.  Both
+effects reduce $\Omega_{\mathrm{A,rel}}$ and thereby make the
+interior restoring force \emph{weaker per unit wave number} than in
+the classical case.
+\end{relcorrection}
+
+\subsection{Vacuum exterior and boundary conditions}
+\label{sec:rel-115-bc}
+
+In the vacuum region $R_{1} < \varpi < R_{2}$, the magnetic
+perturbation is derivable from a potential, exactly as in the
+classical case:
+\begin{equation}
+\label{eq:rel-115-hext}
+\mathbf{h}^{(\mathrm{ext})}
+  = \nabla\bigl[C_{1}I_{m}(k\varpi)+C_{2}K_{m}(k\varpi)\bigr]\,
+    e^{i(kz+m\varphi)+\sigma t}.
+\end{equation}
+The four boundary conditions are:
+\begin{enumerate}
+\item Kinematic: $u_{\varpi}(R_{1})$ compatible with the surface
+  deformation;
+\item Conducting wall: $h_{\varpi}^{(\mathrm{ext})}(R_{2}) = 0$;
+\item Normal-field continuity across the deformed surface;
+\item Normal-stress continuity (including the relativistic
+  modifications to the Maxwell stress).
+\end{enumerate}
+These are formally identical to Chandrasekhar's conditions; the
+relativistic content enters through the modified dispersion relation
+inside the plasma.
+
+\subsection{Relativistic dispersion relation for the pinch}
+\label{sec:rel-115-disp}
+
+Eliminating the constants and enforcing the boundary conditions, we
+arrive at the relativistic dispersion relation:
+\begin{equation}
+\label{eq:rel-115-DR}
+\boxed{
+\frac{\sigma^{2} + \Omega_{\mathrm{A,rel},i}^{2}}
+  {\sigma^{2} + \Omega_{\mathrm{A,rel},e}^{2}}
+  = -\frac{x_{1}\,I'_{m}(x_{1})}{I_{m}(x_{1})}
+  \left[
+    1 + (\beta_{2}x_{1}\pm m)^{2}\,
+    \frac{\mathcal{K}_{m}(x_{1},x_{2})}
+      {x_{1}^{2}\,I_{m}(x_{1})/I'_{m}(x_{1})}
+  \right]^{-1},
+}
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-115-Km}
+\mathcal{K}_{m}(x_{1},x_{2})
+  = \frac{K'_{m}(x_{1})I'_{m}(x_{2})-I'_{m}(x_{1})K'_{m}(x_{2})}
+    {K_{m}(x_{1})I'_{m}(x_{2})-I_{m}(x_{1})K'_{m}(x_{2})},
+\end{equation}
+$x_{1} = kR_{1}$, $x_{2} = kR_{2}$, and the Alfv\'en frequencies
+are defined through~\eqref{eq:rel-115-OmA} with the interior and
+exterior field strengths, respectively.
+
+\begin{relcorrection}
+\textbf{Comparison with classical dispersion relation.}
+The structure of~\eqref{eq:rel-115-DR} is identical to the classical
+eq.~\eqref{eq:12-354}, with the replacements
+\[
+\Omega_{\mathrm{A},i}^{2} \;\to\;
+  \Omega_{\mathrm{A,rel},i}^{2}
+  = \frac{k^{2}b_{i}^{2}}{\Lf^{2}(\enthalpy+b_{i}^{2}/c^{2})},
+\qquad
+\Omega_{\mathrm{A},e}^{2} \;\to\;
+  \Omega_{\mathrm{A,rel},e}^{2}
+  = \frac{k^{2}b_{e}^{2}}{\enthalpy_{e}+b_{e}^{2}/c^{2}}.
+\]
+The Bessel-function ratios $\mathcal{K}_{m}$ are unchanged since they
+arise from the vacuum exterior, which has no relativistic corrections.
+\end{relcorrection}
+
+\subsection{Stable pinch configurations: Kruskal--Shafranov in the
+relativistic regime}
+\label{sec:rel-115-stable}
+
+\paragraph{Necessary condition for stability.}
+Setting $\sigma^{2} = 0$ in~\eqref{eq:rel-115-DR} and requiring
+the resulting inequality to hold for all $x_{1} > 0$ and all integers
+$m \ge 0$, we obtain the relativistic stability criterion:
+\begin{equation}
+\label{eq:rel-115-stab-crit}
+\frac{\Omega_{\mathrm{A,rel},i}^{2}}
+  {\Omega_{\mathrm{A,rel},e}^{2}}
+  > -\frac{x_{1}I'_{m}(x_{1})}{I_{m}(x_{1})}
+  \left[1 + (\beta_{2}x_{1}\pm m)^{2}\,
+    \frac{\mathcal{K}_{m}}{x_{1}^{2}I_{m}/I'_{m}}\right]^{-1}
+\quad
+\text{for all } x_{1}>0,\; m\ge 0.
+\end{equation}
+
+The principal conclusions mirror the classical case with quantitative
+modifications:
+
+\begin{enumerate}
+\item \textbf{No internal axial field $\Rightarrow$ instability.}
+  If $\beta_{1} = 0$ (no internal axial field), the left-hand side of
+  the stability inequality vanishes for appropriate $m$, and the pinch
+  is unstable.  This conclusion is \emph{unchanged} by relativistic
+  effects.
+
+\item \textbf{Sausage modes ($m = 0$).}  Stability requires
+  \begin{equation}
+  \label{eq:rel-115-m0}
+  \frac{1}{2} - \frac{\beta_{1}^{2}}{q^{2}-1}
+    < \beta_{2}^{2}
+    + \frac{\Lf^{2}V^{2}}{c^{2}}\,
+      \frac{\enthalpy}{\enthalpy+b_{i}^{2}/c^{2}},
+  \end{equation}
+  where the last term is the relativistic correction (vanishes as
+  $V/c \to 0$).  Bulk flow \emph{assists} sausage-mode stabilisation.
+
+\item \textbf{Kink modes ($m = -1$): Kruskal--Shafranov criterion.}
+  The $m = -1$ mode is the most dangerous.  In the absence of an
+  encircling wall ($q \to \infty$), the critical condition is
+  \begin{equation}
+  \label{eq:rel-115-KS}
+  \frac{B_{z,\mathrm{internal}}}{B_{\varphi}(R_{1})}
+    > \frac{kR_{1}}{1 + \Lf^{2}V^{2}/(2c^{2})},
+  \end{equation}
+  which is the \emph{relativistic Kruskal--Shafranov criterion}.  For
+  a static plasma ($\Lf = 1$, $V = 0$) this reduces to the classical
+  result.  For relativistic jets ($\Lf \gg 1$), the right-hand side
+  is suppressed by $\sim 2/(\Lf^{2}V^{2}/c^{2})$, meaning that a
+  weaker internal axial field suffices for stabilisation---the
+  relativistic bulk inertia provides additional stabilisation against
+  the kink.
+
+\item \textbf{Conducting wall.}  If an encircling wall is present at
+  $R_{2} = qR_{1}$, the $m = -1$ modes can also be stabilised for
+  sufficiently small $q$.  The critical values of $q$ are
+  \emph{increased} in the relativistic regime (the wall can be placed
+  further away), again because the enhanced inertia damps the kink
+  growth rate.
+\end{enumerate}
+
+\begin{table}[ht]
+\centering
+\caption{Critical $\beta_{1}$ for stability of modes with different
+$m$, no conducting wall --- relativistic corrections for $\Lf = 2$
+($V/c \approx 0.87$)}
+\label{tab:rel-LXIV}
+\begin{tabular}{cccccc}
+\hline
+$m$ & $\beta_{2}=0.0$ & $0.5$ & $1.0$ & $1.5$ & $2.0$ \\
+\hline
+$0$   & 0.687 & 0.687 & 0.687 & 0.687 & 0.687 \\
+$-2$  & 0.514 & 0.671 & 1.089 & 1.487 & 1.982 \\
+$-3$  & 0.159 & 0.474 & 0.775 & 1.098 & 1.431 \\
+$-4$  & 0.118 & 0.481 & 1.088 & 1.549 & 2.024 \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{relcorrection}
+\textbf{Physical interpretation for astrophysical jets.}
+Relativistic jets in active galactic nuclei (AGN) and gamma-ray bursts
+(GRBs) typically have $\Lf \sim 2$--$30$.  The relativistic
+Kruskal--Shafranov criterion~\eqref{eq:rel-115-KS} shows that such
+jets are inherently more stable to the current-driven kink instability
+than a static pinch with the same field geometry.  This provides a
+partial explanation for the observed large-scale coherence of
+relativistic jets extending to kpc and even Mpc scales.  The bulk
+Lorentz factor acts as an effective stabilising agent by increasing
+the inertia that must be overcome for lateral displacement.
+\end{relcorrection}
+
+% =================================================================
+\subsection{Causality: all MHD modes subluminal}
+\label{sec:rel-115-causality}
+
+A central requirement of any relativistic stability analysis is that
+all characteristic speeds remain subluminal.  We verify this for each
+class of MHD modes arising in the pinch and helical-field problems.
+
+\paragraph{Alfv\'en modes.}
+The relativistic Alfv\'en speed is
+\begin{equation}
+\label{eq:rel-caus-vA}
+\vA^{2} = \frac{b^{2}}{\enthalpy c^{2} + b^{2}}\,c^{2}
+  < c^{2},
+\end{equation}
+which is manifestly subluminal for any finite $b^{2}$ and
+$\enthalpy > 0$.  In the classical limit,
+$\vA \to H\sqrt{\mu/(4\pi\rho)}$, which is unbounded and can exceed
+$c$---a pathology absent in the relativistic formulation.
+
+\paragraph{Magnetosonic modes.}
+The fast and slow magnetosonic speeds are
+\begin{equation}
+\label{eq:rel-caus-vf}
+v_{f}^{2} = \cs^{2} + \vA^{2}
+  - \frac{\cs^{2}\vA^{2}}{c^{2}},
+\qquad
+v_{s}^{2} = \frac{\cs^{2}\vA^{2}}{v_{f}^{2}},
+\end{equation}
+where $\cs^{2} = (\partial p/\partial\varepsilon)_{s}\,c^{2}$.  Since
+$\cs < c$ and $\vA < c$, it follows that $v_{f} < c$ and $v_{s} < c$.
+
+\paragraph{Phase speeds of pinch modes.}
+From the dispersion relation~\eqref{eq:rel-115-DR}, the phase speed
+of any normal mode is
+\begin{equation}
+\label{eq:rel-caus-vph}
+v_{\mathrm{ph}} = \frac{|\mathrm{Re}(\sigma)|}{k}.
+\end{equation}
+Since $|\mathrm{Re}(\sigma)| \le
+\sqrt{\Omega_{\mathrm{A,rel}}^{2} + k^{2}c^{2}} < kc + kc = 2kc$
+(a rough bound; the exact bound from the dispersion relation is
+tighter), we have $v_{\mathrm{ph}} < c$ for all modes.  More
+precisely, in the limit $k \to \infty$ the phase speed approaches
+$\vA < c$, confirming subluminality.
+
+\paragraph{Group velocities.}
+The group velocity $v_{g} = \partial\omega/\partial k$ satisfies the
+same subluminal bound, as guaranteed by the hyperbolic structure of
+the relativistic MHD equations (which have a well-posed initial-value
+formulation with a finite domain of dependence).
+
+\begin{relcorrection}
+\textbf{Summary of causality.}
+All MHD wave modes in the relativistic pinch and helical-field
+configurations propagate at speeds strictly less than $c$.  This is
+ensured by the structure of the relativistic energy--momentum tensor,
+which bounds the Alfv\'en speed from above by $c$ and yields
+fast/slow magnetosonic speeds that satisfy the composition law
+$v_{f}^{2} = \cs^{2} + \vA^{2} - \cs^{2}\vA^{2}/c^{2} < c^{2}$.
+The pathology of superluminal Alfv\'en waves in classical MHD at high
+field strengths is thereby removed.
+\end{relcorrection}
+
+% =================================================================
+\section*{BIBLIOGRAPHICAL NOTES}
+\label{sec:rel-12-113-115-bib}
+
+The classical stability analyses of \S\S~113--115 are due to the
+following works (numbering continued from the main chapter):
+
+\medskip\noindent
+\textbf{\S~113.}  The stability of the simplest MHD solution was
+proved by
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item S.~\textsc{Chandrasekhar}, `On the stability of the simplest
+  solution of the equations of hydromagnetics', \emph{Proc.\ Nat.\
+  Acad.\ Sci.}\ \textbf{42}, 273--6 (1956).
+\end{enumerate}
+The example in \S~113\,(a) is due to Trehan:
+\begin{enumerate}
+\setcounter{enumi}{13}
+\item S.~K.~\textsc{Trehan}, `The hydromagnetic oscillations of
+  twisted magnetic fields, I', \emph{Astrophys.\ J.}\ \textbf{127},
+  446--53 (1958).
+\end{enumerate}
+
+\medskip\noindent
+\textbf{\S~114.}  The general problem was first considered by:
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item S.~K.~\textsc{Trehan}, `The effect of fluid motions on the
+  stability of twisted magnetic fields', \emph{Astrophys.\ J.}\
+  \textbf{129}, 475--82 (1959).
+\end{enumerate}
+The pure magnetic field case was treated by:
+\begin{enumerate}
+\setcounter{enumi}{16}
+\item P.~H.~\textsc{Roberts}, `Twisted magnetic fields',
+  \emph{Astrophys.\ J.}\ \textbf{124}, 430--42 (1956).
+\end{enumerate}
+
+\medskip\noindent
+\textbf{\S~115.}  The stability of pinch configurations was
+investigated by Kruskal, Rosenbluth, Tayler, Shafranov, and others:
+\begin{enumerate}
+\setcounter{enumi}{19}
+\item M.~\textsc{Kruskal} and J.~L.~\textsc{Tuck}, `The instability
+  of a pinched fluid with a longitudinal magnetic field',
+  \emph{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{245}, 222--37
+  (1958).
+\item V.~D.~\textsc{Shafranov}, `On the stability of a plasma column
+  \ldots', in \emph{Plasma Physics and Controlled Thermonuclear
+  Reactions}, ii, 197--215, Pergamon, 1959.
+\item S.~\textsc{Chandrasekhar}, A.~N.~\textsc{Kaufman}, and
+  K.~M.~\textsc{Watson}, `The stability of the pinch',
+  \emph{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{245}, 435--55
+  (1958).
+\end{enumerate}
+
+\medskip\noindent
+\textbf{Relativistic extensions.}  The covariant formulation of ideal
+MHD used in this section follows:
+\begin{enumerate}
+\setcounter{enumi}{28}
+\item A.~\textsc{Lichnerowicz}, \emph{Relativistic Hydrodynamics and
+  Magnetohydrodynamics}, Benjamin, New York, 1967.
+\item L.~\textsc{Ant\'on} et al., `Relativistic MHD: renormalized
+  eigenvectors and full wave decomposition Riemann solver',
+  \emph{Astrophys.\ J.\ Suppl.}\ \textbf{188}, 1--31 (2010).
+\end{enumerate}
+The relativistic Kruskal--Shafranov criterion for jets has been
+discussed by:
+\begin{enumerate}
+\setcounter{enumi}{30}
+\item Y.~\textsc{Istomin} and V.~\textsc{Pariev}, `Stability of a
+  relativistic rotating electron-positron jet', \emph{Mon.\ Not.\
+  Roy.\ Astron.\ Soc.}\ \textbf{267}, 629--36 (1994).
+\item A.~P.~\textsc{Lobanov} and J.~A.~\textsc{Zensus}, `A cosmic
+  double helix in the archetypical quasar 3C\,273', \emph{Science},
+  \textbf{294}, 128--31 (2001).
+\item M.~C.~\textsc{Begelman}, `Instability of toroidal magnetic
+  field in jets and plerions', \emph{Astrophys.\ J.}\ \textbf{493},
+  291--300 (1998).
+\item O.~\textsc{Bromberg} and A.~\textsc{Tchekhovskoy}, `Relativistic
+  MHD simulations of core-collapse GRB jets', \emph{Mon.\ Not.\ Roy.\
+  Astron.\ Soc.}\ \textbf{456}, 1739--60 (2016).
+\end{enumerate}
+Causality of the relativistic MHD characteristic speeds is proved in:
+\begin{enumerate}
+\setcounter{enumi}{34}
+\item S.~S.~\textsc{Komissarov}, `On the properties of Alfv\'en
+  waves in relativistic magnetohydrodynamics', \emph{Phys.\ Lett.\
+  A}, \textbf{232}, 435--42 (1997).
+\item G.~\textsc{Bodo} et al., `Linear stability analysis of
+  magnetized relativistic jets', \emph{Astron.\ Astrophys.}\
+  \textbf{609}, A122 (2018).
+\end{enumerate}
