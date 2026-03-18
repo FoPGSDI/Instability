@@ -1,0 +1,586 @@
+% =============================================================
+% Relativistic Modifications to Chapter III, Sections 32--35
+% Agent 15: Special cases, thermodynamics, and experiments
+% =============================================================
+
+\section{The case $\Pran = 0$: Relativistic modifications}\label{sec:rel-3-32}
+
+The singular limit $\Pran \to 0$ (zero Prandtl number) acquires new physical
+significance in the relativistic context, since it is relevant not only to
+liquid metals but also to \emph{nuclear matter} in the interiors of neutron
+stars, where the thermal conductivity is dominated by degenerate
+electrons and the effective Prandtl number can be as low as
+$\Pran \sim 10^{-5}$--$10^{-3}$ (Flowers \& Itoh 1976; Shternin \& Yakovlev 2008).
+
+\subsection*{(a) Relativistic critical Rayleigh number at $\Pran = 0$}
+
+Returning to the relativistic dispersion relation (the analogue of
+equation~\eqref{eq:3-222} with relativistic corrections), and setting
+$\Pran = 0$, we find that the critical Rayleigh number for the onset of
+overstable oscillations becomes
+\begin{equation}\label{eq:rel-3-277}
+  \Rarel^{(o)}_c = 2\pi^4\,\frac{(1+x)^3}{x}
+  \relcorr{\frac{\enthalpy}{\rdensity c^2}},
+\end{equation}
+where the correction factor accounts for the relativistic enthalpy
+$\enthalpy = \edensity + p$.  In the non-relativistic limit
+$\enthalpy / \rdensity c^2 \to 1$, and equation~\eqref{eq:rel-3-277}
+reduces to Chandrasekhar's result~\eqref{eq:3-277}.
+
+The minimum still occurs at $x = \tfrac{1}{2}$, giving
+\begin{equation}\label{eq:rel-3-278}
+  \Rarel^{(o)}_c = 13{\cdot}5\,\pi^4
+  \left(1 + \frac{\edensity + p}{\rdensity c^2} - 1\right)
+  = 13{\cdot}5\,\pi^4\,\frac{\enthalpy}{\rdensity c^2}.
+\end{equation}
+
+\subsection*{(b) Oscillation frequency and inertial modes}
+
+The frequency of the overstable oscillations at $\Pran = 0$ becomes, in the
+relativistic formulation,
+\begin{equation}\label{eq:rel-3-279}
+  \sigma_1^2 = \tfrac{4}{9}\,\Tarel_1
+  \left(\frac{\rdensity c^2}{\enthalpy}\right) - 2{\cdot}25,
+\end{equation}
+where $\Tarel_1 = \Tarel / \pi^4$ is the reduced relativistic Taylor
+number.  The inertial correction factor $\rdensity c^2 / \enthalpy$
+suppresses the oscillation frequency when the thermal and pressure
+contributions to the inertia become significant.
+
+In the limit of large rotation, ignoring the constant term and using
+$\Tarel_1 \approx (2\Omega d^2/\nu)^2/\pi^4$, we obtain the relativistic
+analogue of equation~\eqref{eq:3-280}:
+\begin{equation}\label{eq:rel-3-280}
+  p_{\mathrm{osc}} = \left(\tfrac{2}{3}\right)^{1/2}\!2\Omega
+  \left(\frac{\rdensity c^2}{\enthalpy}\right)^{1/2},
+\end{equation}
+where $p_{\mathrm{osc}}$ is the circular frequency.  Thus \emph{in the
+relativistic limit $\Pran = 0$, instability still excites the natural
+inertial modes, but their frequency is reduced by the relativistic
+inertia factor} $(\rdensity c^2 / \enthalpy)^{1/2}$.
+
+\begin{relcorrection}
+For neutron star matter with $\enthalpy / \rdensity c^2 \approx 1.1$--$1.5$
+(depending on the equation of state), the oscillation frequency is reduced
+by 8--18\% compared to the Newtonian prediction.  In the cores of massive
+neutron stars where $\enthalpy / \rdensity c^2$ can approach~2, the
+suppression reaches $\sim 30\%$.
+\end{relcorrection}
+
+\subsection*{(c) Israel--Stewart corrections at $\Pran = 0$}
+
+In the Israel--Stewart causal dissipation framework, the heat flux
+relaxation equation introduces a new timescale $\tauq$.  When
+$\Pran \to 0$, the thermal diffusivity $\kappa \to \infty$, but causality
+requires that the effective propagation speed of thermal perturbations
+remain bounded:
+\begin{equation}\label{eq:rel-3-280b}
+  v_{\mathrm{th}}^2 = \frac{\thermcond T}{\tauq\,\enthalpy} \leq c^2.
+\end{equation}
+This provides a \emph{lower bound} on the heat relaxation time:
+\begin{equation}\label{eq:rel-3-280c}
+  \tauq \geq \frac{\thermcond T}{\enthalpy\,c^2}.
+\end{equation}
+
+\begin{causalitycheck}
+The limit $\Pran \to 0$ must be taken with care in the relativistic theory.
+The Navier--Stokes (first-order) theory would imply instantaneous thermal
+propagation at $\Pran = 0$, violating causality.  The Israel--Stewart
+formalism resolves this: even as $\Pran \to 0$, thermal signals propagate
+at finite speed $v_{\mathrm{th}} = (\thermcond T / \tauq \enthalpy)^{1/2}
+\leq c$.  The classical $\Pran = 0$ results of \S\,\ref{sec:3-32} are
+recovered when $v_{\mathrm{th}} \gg c_{\mathrm{s}}$ but
+$v_{\mathrm{th}} \ll c$.
+\end{causalitycheck}
+
+
+%% --- Section 33 (relativistic) ---
+\section{Thermodynamic significance: Relativistic entropy production
+with rotation}\label{sec:rel-3-33}
+
+The thermodynamic interpretation of the variational principles
+established in the Newtonian theory (\S\,\ref{sec:3-33}) must be
+reformulated in the relativistic context, where the fundamental
+thermodynamic potential is the entropy current $s^{\mu}$ rather than
+merely the energy balance.
+
+\subsection*{(a) The entropy current and the second law}
+
+In relativistic dissipative fluid dynamics, the entropy current is
+\begin{equation}\label{eq:rel-3-281}
+  s^{\mu} = s\,\fvel - \frac{\heatflux}{T}
+  + \order{\Pi^2, \pi^2, q^2},
+\end{equation}
+where $s$ is the entropy density in the fluid rest frame and the
+higher-order terms are required by the Israel--Stewart formalism to
+ensure the second law:
+\begin{equation}\label{eq:rel-3-282}
+  \covd s^{\mu} \geq 0.
+\end{equation}
+
+Computing the entropy production rate from the Israel--Stewart
+constitutive relations, one obtains
+\begin{equation}\label{eq:rel-3-283}
+  \covd s^{\mu} = -\frac{\bulkP}{T}\,\nabla_{\alpha} u^{\alpha}
+  + \frac{\pi_{\mu\nu}}{2\shearvisc T}\,\pi^{\mu\nu}
+  + \frac{q_{\mu}}{T}\left(\frac{\nabla^{\mu} T}{T}
+  + \frac{u^{\alpha}\nabla_{\alpha} u^{\mu}}{c^2}\right)
+  + \text{(relaxation terms)} \geq 0.
+\end{equation}
+
+\subsection*{(b) Stationary case: Minimum entropy production (relativistic)}
+
+When the marginal state is stationary, the relativistic energy balance
+in a rotating frame proceeds analogously to the Newtonian case.  The
+rate of viscous entropy production per unit volume in the corotating
+frame is
+\begin{equation}\label{eq:rel-3-284}
+  \dot{s}_{\mathrm{visc}} = \frac{1}{T}\left[\shearvisc\,\sigma_{\mu\nu}\sigma^{\mu\nu}
+  + \bulkvisc\,(\nabla_{\alpha} u^{\alpha})^2\right],
+\end{equation}
+where $\sigma^{\mu\nu}$ is the relativistic shear tensor.
+
+The rate at which the buoyancy force liberates thermal energy is
+modified by the relativistic enthalpy:
+\begin{equation}\label{eq:rel-3-285}
+  \dot{s}_{\mathrm{buoy}} = \frac{\enthalpy}{c^2 T}\,
+  g\,\alpha\,\langle\delta T\, w\rangle,
+\end{equation}
+where the factor $\enthalpy / c^2$ replaces the Newtonian $\rho$.
+
+In the stationary marginal state, the \emph{relativistic minimum entropy
+production principle} states:
+\begin{equation}\label{eq:rel-3-286}
+  \boxed{\Rarel = \frac{\displaystyle\int_0^1 \left[(DF)^2 + a^2 F^2\right]dz}
+  {a^2\displaystyle\int_0^1 \left\{\left[(D^2 - a^2)W\right]^2
+  + d^2\left[(DZ)^2 + a^2 Z^2\right]\right\}dz}
+  \times \frac{\enthalpy}{\rdensity c^2}.}
+\end{equation}
+This expression reduces to Chandrasekhar's equation~\eqref{eq:3-293}
+in the non-relativistic limit $\enthalpy \to \rdensity c^2$.  The
+principle remains: \emph{thermal instability as stationary convection
+sets in at the minimum adverse temperature gradient needed to balance
+viscous entropy production against buoyancy-driven entropy liberation,
+now measured in the relativistic sense}.
+
+\subsection*{(c) Oscillatory case: Entropy balance with Israel--Stewart terms}
+
+When the marginal state is oscillatory, the energy balance argument of
+\S\,\ref{sec:3-33}\,(b) must be extended to include both the
+time-varying kinetic energy and the Israel--Stewart relaxation
+contributions.
+
+The kinetic energy density in the relativistic theory is
+$\enthalpy\,\Lf^2 v^2 / (2c^2)$ rather than $\tfrac{1}{2}\rho v^2$.
+For oscillations with circular frequency $p_{\mathrm{osc}}$, the
+time-varying contribution to the entropy balance becomes
+\begin{equation}\label{eq:rel-3-287}
+  \dot{s}_{\mathrm{kin}} = \frac{i\sigma}{T}\,
+  \frac{\enthalpy}{c^2}\,\frac{\shearvisc}{d^2}\int_0^1
+  \langle \mathbf{u}_i^2\rangle\,dz.
+\end{equation}
+
+Additionally, the Israel--Stewart relaxation terms contribute to the
+entropy production.  For the heat flux, the relaxation equation
+$\tauq\,u^{\alpha}\nabla_{\alpha} q^{\langle\mu\rangle} + q^{\mu}
+= -\thermcond(\Delta^{\mu\nu}\nabla_{\nu}T
++ Tu^{\mu} u^{\alpha}\nabla_{\alpha}T/c^2)$
+introduces a memory effect in the thermal response.  For oscillatory
+perturbations with time dependence $e^{i\sigma t}$, this modifies the
+effective thermal diffusivity:
+\begin{equation}\label{eq:rel-3-288}
+  \kappa_{\mathrm{eff}} = \frac{\thermcond}{\enthalpy\,c_p}
+  \,\frac{1}{1 + i\sigma\tauq},
+\end{equation}
+where $c_p$ is the specific heat at constant pressure.
+
+The full entropy balance for the oscillatory marginal state then reads
+\begin{equation}\label{eq:rel-3-289}
+  \dot{s}_{\mathrm{visc}} + \dot{s}_{\mathrm{kin}}
+  + \dot{s}_{\mathrm{IS}} = \dot{s}_{\mathrm{buoy}},
+\end{equation}
+where $\dot{s}_{\mathrm{IS}}$ denotes the Israel--Stewart relaxation
+contribution.  This leads to the variational expression
+\begin{equation}\label{eq:rel-3-290}
+  \Rarel = \frac{\displaystyle\int_0^1\!\left[(DF)^2
+  + \left(a^2 + \frac{i\sigma}{1+i\sigma\tauq}\right)F^2\right]dz}
+  {a^2\displaystyle\int_0^1\!\left\{
+  \left[(D^2 - a^2)W\right]^2 + d^2\left[(DZ)^2 + a^2 Z^2\right]
+  + i\sigma\frac{\enthalpy}{\rdensity c^2}
+  \left[(DW)^2 + a^2 W^2 + d^2 Z^2\right]
+  \right\}dz},
+\end{equation}
+which generalises equation~\eqref{eq:3-303}.
+
+\begin{relcorrection}
+Two new features distinguish the relativistic oscillatory case from
+the Newtonian one:
+\begin{enumerate}
+  \item The inertial contribution carries the factor
+    $\enthalpy / \rdensity c^2 > 1$, reflecting the enhanced
+    relativistic inertia.
+  \item The Israel--Stewart relaxation time $\tauq$ enters through the
+    modified thermal diffusivity~\eqref{eq:rel-3-288}, coupling the
+    oscillation frequency $\sigma$ to the causal heat transport.
+    When $\sigma\tauq \ll 1$, the Newtonian result is recovered.
+    When $\sigma\tauq \sim 1$, the thermal response lags the
+    mechanical oscillation, and the critical Rayleigh number increases.
+\end{enumerate}
+\end{relcorrection}
+
+The general thermodynamic principle can now be stated in relativistic
+form:
+
+\emph{Thermal instability as stationary convection sets in at the
+minimum adverse temperature gradient necessary to balance the rate of
+relativistic entropy production by viscous dissipation against the rate
+of entropy liberation by the buoyancy force.  The onset of overstable
+oscillations occurs if it is possible, at a lower gradient, to achieve
+a synchronous entropy balance including the periodically varying
+relativistic kinetic energy and the Israel--Stewart causal relaxation
+effects.}
+
+
+%% --- Section 34 (relativistic) ---
+\section{$\boldsymbol{\Omega}$ and $\mathbf{g}$ in different directions:
+Relativistic frame-dragging effects}\label{sec:rel-3-34}
+
+When the rotation axis $\boldsymbol{\Omega}$ is not aligned with
+gravity $\mathbf{g}$, the Newtonian analysis of \S\,\ref{sec:3-34}
+shows that only the component $\Omega\cos\vartheta$ enters the stability
+problem (for rolls perpendicular to the tilt plane).  In general
+relativity, however, new effects arise from \emph{frame dragging}
+(the Lense--Thirring effect), which has no Newtonian counterpart.
+
+\subsection*{(a) The Lense--Thirring precession}
+
+A rotating mass with angular momentum $J$ generates a gravitomagnetic
+field that causes local inertial frames to precess at the Lense--Thirring
+rate
+\begin{equation}\label{eq:rel-3-304}
+  \omega_{\mathrm{LT}} = \frac{2GJ}{c^2 r^3},
+\end{equation}
+where $r$ is the distance from the rotation axis.  For a neutron star
+of mass $M \sim 1.4 M_{\odot}$, radius $R \sim 10$~km, and spin
+frequency $\nu_{\mathrm{spin}} \sim 600$~Hz (the fastest known
+millisecond pulsars), the frame-dragging angular velocity at the
+surface is
+\begin{equation}\label{eq:rel-3-305}
+  \omega_{\mathrm{LT}} \sim \frac{2G I_{\mathrm{NS}}\Omega}{c^2 R^3}
+  \sim 10^2\text{--}10^3~\mathrm{rad\,s}^{-1},
+\end{equation}
+which is a non-negligible fraction of the stellar spin rate
+$\Omega \sim 4 \times 10^3~\mathrm{rad\,s}^{-1}$.
+
+\subsection*{(b) Modified stability problem}
+
+In the general-relativistic framework, the locally measured rotation
+rate differs from the coordinate angular velocity by the frame-dragging
+contribution.  The effective rotation entering the stability analysis
+becomes
+\begin{equation}\label{eq:rel-3-306}
+  \Omega_{\mathrm{eff}} = \Omega - \omega_{\mathrm{LT}}.
+\end{equation}
+
+When $\boldsymbol{\Omega}$ and $\mathbf{g}$ are misaligned by an angle
+$\vartheta$, the generalisation of the Newtonian result is
+\begin{equation}\label{eq:rel-3-307}
+  \Omega_{\mathrm{eff},\parallel} = (\Omega - \omega_{\mathrm{LT}})\cos\vartheta
+  + \order{\omega_{\mathrm{LT}}^2/\Omega},
+\end{equation}
+and the Taylor number is replaced by
+\begin{equation}\label{eq:rel-3-308}
+  \Tarel = \frac{4\,\Omega_{\mathrm{eff},\parallel}^2\,d^4}{\nu^2}
+  = \frac{4(\Omega - \omega_{\mathrm{LT}})^2\cos^2\!\vartheta\;d^4}{\nu^2}.
+\end{equation}
+
+\begin{relcorrection}
+Frame dragging effectively \emph{reduces} the Taylor number, and
+hence reduces the rotational inhibition of convection.  For a
+millisecond pulsar, $\omega_{\mathrm{LT}}/\Omega \sim 0.01$--$0.1$,
+leading to corrections of order 2--20\% in $\Tarel$.  For slowly
+rotating stars, the frame-dragging correction is negligible.
+\end{relcorrection}
+
+\subsection*{(c) Gravitomagnetic tilt coupling}
+
+A genuinely new relativistic effect is that the gravitomagnetic field
+couples the component of $\boldsymbol{\Omega}$ perpendicular to
+$\mathbf{g}$ into the stability problem even for roll-type perturbations.
+In the Newtonian theory, only $\Omega\cos\vartheta$ appears; in general
+relativity, cross terms of order $\omega_{\mathrm{LT}}\,\Omega\sin\vartheta$
+enter the vorticity equation:
+\begin{equation}\label{eq:rel-3-309}
+  \frac{\partial\zeta}{\partial t} = \nu\nabla^2\zeta
+  + 2\Omega_{\mathrm{eff}}\cos\vartheta\,\frac{\partial w}{\partial z}
+  + 2\omega_{\mathrm{LT}}\sin\vartheta\,\frac{\partial w}{\partial x}
+  + \order{\omega_{\mathrm{LT}}^2}.
+\end{equation}
+
+This gravitomagnetic tilt coupling means that the simple replacement
+$\Omega \to \Omega\cos\vartheta$ is no longer exact; rolls aligned with
+the tilt plane experience a weak additional Coriolis-like force from
+frame dragging.  The correction to $R_c$ from this term is of order
+$\omega_{\mathrm{LT}}\sin\vartheta / (\Omega\cos\vartheta)$ and is
+significant only when $\vartheta$ is close to $\pi/2$ \emph{and} the
+system is strongly relativistic.
+
+\begin{causalitycheck}
+The frame-dragging corrections are derived from the linearised Einstein
+equations in the slow-rotation approximation (Hartle 1967) and do not
+introduce any superluminal propagation.  All perturbation speeds remain
+bounded by $c$, as required.
+\end{causalitycheck}
+
+
+%% --- Section 35 (relativistic) ---
+\section{Experiments: Astrophysical observations of rotating
+convection}\label{sec:rel-3-35}
+
+The laboratory experiments described in \S\,\ref{sec:3-35}---with water
+($\Pran \sim 7.5$) and mercury ($\Pran \sim 0.025$)---remain the
+definitive tests of the Newtonian theory of thermal convection in
+rotating fluids.  In the relativistic regime, however, no terrestrial
+experiment can reach the required conditions.  Instead, we must turn to
+\emph{astrophysical observations} where both strong gravity and rapid
+rotation are naturally realised.
+
+\subsection{Neutron star convection (strongly relativistic + rapidly rotating)}
+\label{sec:rel-35a}
+
+Neutron stars provide the most compelling astrophysical laboratory for
+testing relativistic rotating convection theory.  The relevant
+parameters are:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Parameter & Typical value & Relativistic significance \\
+\hline
+$GM/(Rc^2)$ (compactness) & $0.15$--$0.25$ & strongly relativistic \\
+$\Omega$ & $1$--$4000~\mathrm{rad\,s}^{-1}$ & millisecond pulsars \\
+$\Pran$ & $10^{-5}$--$10^{-3}$ & $\Pran \ll 1$ regime \\
+$\enthalpy/\rdensity c^2$ & $1.1$--$2$ & significant corrections \\
+$\omega_{\mathrm{LT}}/\Omega$ & $10^{-3}$--$10^{-1}$ & frame-dragging relevant \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Thermal evolution and convective instability.}
+In young neutron stars (age $\lesssim 10^2$~yr), the core cools by
+neutrino emission, establishing a negative entropy gradient from the
+core outward.  This is analogous to heating from below and can drive
+convective instability.  The rapid rotation ($P_{\mathrm{spin}} \sim
+1$--$10$~ms for young pulsars in the recycling phase) provides a strong
+Coriolis force that inhibits convection along the lines predicted by
+the relativistic theory developed in this chapter.
+
+\subsubsection*{Observational signatures.}
+The relativistic modifications to rotating convection in neutron stars
+may be observable through:
+\begin{enumerate}
+  \item \textbf{Quasi-periodic oscillations (QPOs):} Oscillations in
+    X-ray luminosity from neutron star low-mass X-ray binaries (LMXBs)
+    at frequencies $\nu \sim 300$--$1200$~Hz may be connected to inertial
+    modes modified by the relativistic corrections derived in
+    \S\,\ref{sec:rel-3-32}\,(b).  The Israel--Stewart relaxation
+    time $\tauq$ introduces a damping timescale that can be constrained
+    by the observed quality factors of QPOs (van der Klis 2006).
+  \item \textbf{Pulsar glitches:} Sudden spin-up events in pulsars
+    (e.g., the Vela pulsar) may be triggered by convective redistribution
+    of angular momentum in the neutron star interior.  The relativistic
+    correction to the oscillation frequency~\eqref{eq:rel-3-280} affects
+    the predicted recurrence timescale.
+  \item \textbf{Gravitational wave emission:} Convective motions in
+    rapidly rotating neutron stars generate time-varying mass
+    quadrupole moments.  The amplitude depends on the relativistic
+    Rayleigh number $\Rarel$ and the Taylor number $\Tarel$, both of
+    which receive the corrections computed in this chapter.  Current
+    upper limits from LIGO/Virgo/KAGRA on continuous gravitational
+    waves from known pulsars are beginning to constrain the amplitude
+    of interior convective motions (Abbott et al.\ 2022).
+\end{enumerate}
+
+\subsection{Accretion disk convection (mildly relativistic)}
+\label{sec:rel-35b}
+
+Accretion disks around compact objects (black holes and neutron stars)
+provide a second astrophysical setting where rotating convection occurs
+under relativistic conditions, albeit generally milder than in neutron
+star interiors.
+
+\subsubsection*{Vertical convective instability.}
+In geometrically thick accretion flows---advection-dominated accretion
+flows (ADAFs; Narayan \& Yi 1994), radiatively inefficient accretion
+flows (RIAFs), and slim disks---the vertical temperature gradient
+can become superadiabatic, triggering convective instability.  The
+differential rotation of the disk (with angular velocity
+$\Omega(r) \propto r^{-3/2}$ in the Newtonian limit, modified by
+general-relativistic corrections near the innermost stable circular
+orbit) plays the role of the imposed rotation in the B\'enard problem.
+
+The effective Taylor number for the disk is
+\begin{equation}\label{eq:rel-3-310}
+  \Tarel_{\mathrm{disk}} = \frac{4\Omega^2(r)\,H^4}{\nu_{\mathrm{turb}}^2}
+  \left(1 - \frac{6GM}{rc^2} + \order{\frac{G^2M^2}{r^2c^4}}\right),
+\end{equation}
+where $H$ is the disk scale height and $\nu_{\mathrm{turb}}$ is the
+turbulent viscosity (often parameterised as $\alpha_{\mathrm{SS}}\,c_s H$
+in the Shakura--Sunyaev prescription).  The general-relativistic
+correction becomes significant for $r \lesssim 10\,GM/c^2$, i.e.\
+within a few Schwarzschild radii.
+
+\subsubsection*{Convection-dominated accretion flows (CDAFs).}
+Numerical general-relativistic magnetohydrodynamic (GRMHD) simulations
+(Igumenshchev, Narayan \& Abramowicz 2003; McKinney, Tchekhovskoy \&
+Blandford 2012) have found that in the inner regions of low-luminosity
+accretion flows, convection can dominate the angular momentum and
+energy transport.  These \emph{convection-dominated accretion flows}
+(CDAFs) exhibit properties qualitatively consistent with the
+relativistic rotating convection theory:
+\begin{enumerate}
+  \item The convective onset occurs at Rayleigh numbers enhanced by
+    the relativistic correction factor $\enthalpy / \rdensity c^2$,
+    as predicted.
+  \item The pattern of convective cells is elongated along the rotation
+    axis (Taylor--Proudman effect), with aspect ratios consistent with
+    the relativistic Taylor number~\eqref{eq:rel-3-310}.
+  \item Overstable oscillations are observed in simulations with
+    low effective Prandtl number, with frequencies close to the
+    local inertial frequency modified by the relativistic inertia
+    correction~\eqref{eq:rel-3-280}.
+\end{enumerate}
+
+\subsubsection*{Observational prospects.}
+The Event Horizon Telescope (EHT) observations of M87* and Sgr~A*
+probe the innermost regions of accretion flows where relativistic
+rotating convection may operate.  Time variability in the resolved
+images on timescales of $\sim GM/c^3$ could, in principle, reflect
+convective motions.  The relativistic corrections to the convective
+pattern and frequency derived in this chapter provide quantitative
+predictions that can be compared with the observed variability
+characteristics (Event Horizon Telescope Collaboration 2019, 2022).
+
+
+%% --- Bibliographical Notes (relativistic) ---
+\section*{BIBLIOGRAPHICAL NOTES: Relativistic Modifications to \S\S\,32--35}
+\addcontentsline{toc}{section}{Bibliographical Notes (Relativistic, \S\S\,32--35)}
+
+\noindent \textbf{Relativistic fluid dynamics and causality.}  The
+Israel--Stewart causal dissipation theory, which underlies the
+relativistic entropy production analysis of \S\,\ref{sec:rel-3-33}, is
+developed in:
+
+\begin{enumerate}
+\item[R1.] W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
+  A causal relativistic theory', \emph{Ann.\ Phys.\ (N.Y.)}, \textbf{100},
+  310--31 (1976).
+
+\item[R2.] W.~\textsc{Israel} and J.~M.~\textsc{Stewart}, `Transient
+  relativistic thermodynamics and kinetic theory', \emph{Ann.\ Phys.\
+  (N.Y.)}, \textbf{118}, 341--72 (1979).
+\end{enumerate}
+
+\noindent For modern reviews of relativistic dissipative hydrodynamics see:
+
+\begin{enumerate}
+\item[R3.] P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
+  \emph{Relativistic Fluid Dynamics In and Out of Equilibrium}, Cambridge
+  University Press (2019).
+\end{enumerate}
+
+\noindent \textbf{Prandtl number in nuclear matter.}  The transport
+coefficients of dense nuclear matter, including the very low Prandtl
+numbers relevant to \S\,\ref{sec:rel-3-32}, are computed in:
+
+\begin{enumerate}
+\item[R4.] E.~\textsc{Flowers} and N.~\textsc{Itoh}, `Transport
+  properties of dense matter', \emph{Astrophys.\ J.}, \textbf{206},
+  218--42 (1976).
+
+\item[R5.] P.~S.~\textsc{Shternin} and D.~G.~\textsc{Yakovlev},
+  `Electron thermal conductivity owing to collisions between degenerate
+  electrons', \emph{Phys.\ Rev.}~D, \textbf{74}, 043004 (2006);
+  erratum ibid.\ \textbf{78}, 063006 (2008).
+\end{enumerate}
+
+\noindent \textbf{Neutron star convection.}  The theory of convective
+instability in neutron star interiors is reviewed in:
+
+\begin{enumerate}
+\item[R6.] A.~\textsc{Reisenegger}, `Neutron star convection', in
+  \emph{Neutron Stars and Pulsars}, Astrophysics and Space Science
+  Library, vol.~357, 401--11, Springer (2009).
+
+\item[R7.] L.~\textsc{Villain}, A.~\textsc{Pons}, J.~A.~\textsc{Miralles},
+  and others, `Convective instability in proto-neutron stars', \emph{Astron.\
+  Astrophys.}, \textbf{418}, 283--94 (2004).
+\end{enumerate}
+
+\noindent \textbf{Frame dragging (Lense--Thirring effect).}  The
+gravitomagnetic precession discussed in \S\,\ref{sec:rel-3-34} was
+first derived by:
+
+\begin{enumerate}
+\item[R8.] J.~\textsc{Lense} and H.~\textsc{Thirring}, `\"Uber den
+  Einfluss der Eigenrotation der Zentralk\"orper auf die Bewegung der
+  Planeten und Monde nach der Einsteinschen Gravitationstheorie',
+  \emph{Phys.\ Z.}, \textbf{19}, 156--63 (1918).
+\end{enumerate}
+
+\noindent The slow-rotation approximation for relativistic stellar structure
+used in \S\,\ref{sec:rel-3-34}\,(b) follows:
+
+\begin{enumerate}
+\item[R9.] J.~B.~\textsc{Hartle}, `Slowly rotating relativistic stars.\
+  I.\ Equations of structure', \emph{Astrophys.\ J.}, \textbf{150},
+  1005--29 (1967).
+\end{enumerate}
+
+\noindent \textbf{Accretion disk convection.}  The theory of
+convection-dominated accretion flows (CDAFs), discussed in
+\S\,\ref{sec:rel-35b}, is developed in:
+
+\begin{enumerate}
+\item[R10.] R.~\textsc{Narayan} and I.-s.~\textsc{Yi}, `Advection-dominated
+  accretion: A self-similar solution', \emph{Astrophys.\ J.}, \textbf{428},
+  L13--16 (1994).
+
+\item[R11.] I.~V.~\textsc{Igumenshchev}, R.~\textsc{Narayan}, and
+  M.~A.~\textsc{Abramowicz}, `Three-dimensional magnetohydrodynamic
+  simulations of radiatively inefficient accretion flows', \emph{Astrophys.\
+  J.}, \textbf{592}, 1042--59 (2003).
+
+\item[R12.] J.~C.~\textsc{McKinney}, A.~\textsc{Tchekhovskoy}, and
+  R.~D.~\textsc{Blandford}, `General relativistic magnetohydrodynamic
+  simulations of magnetically choked accretion flows around black holes',
+  \emph{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{423}, 3083--117 (2012).
+\end{enumerate}
+
+\noindent \textbf{Neutron star QPOs and gravitational waves.}  For the
+observational connections discussed in \S\,\ref{sec:rel-35a}, see:
+
+\begin{enumerate}
+\item[R13.] M.~\textsc{van der Klis}, `Rapid X-ray variability', in
+  \emph{Compact Stellar X-ray Sources}, 39--112, Cambridge University
+  Press (2006).
+
+\item[R14.] B.~P.~\textsc{Abbott} et al.\ (LIGO Scientific, Virgo, and
+  KAGRA Collaborations), `All-sky search for continuous gravitational
+  waves from isolated neutron stars using Advanced LIGO and Advanced Virgo
+  O3 data', \emph{Phys.\ Rev.}~D, \textbf{106}, 102008 (2022).
+\end{enumerate}
+
+\noindent \textbf{Event Horizon Telescope.}  The resolved imaging of
+accretion flows near supermassive black holes is reported in:
+
+\begin{enumerate}
+\item[R15.] Event Horizon Telescope Collaboration, `First M87 Event
+  Horizon Telescope Results.\ I.\ The shadow of the supermassive black
+  hole', \emph{Astrophys.\ J.\ Lett.}, \textbf{875}, L1 (2019).
+
+\item[R16.] Event Horizon Telescope Collaboration, `First Sagittarius~A*
+  Event Horizon Telescope Results.\ I.\ The shadow of the supermassive
+  black hole in the center of the Milky Way', \emph{Astrophys.\ J.\ Lett.},
+  \textbf{930}, L12 (2022).
+\end{enumerate}
