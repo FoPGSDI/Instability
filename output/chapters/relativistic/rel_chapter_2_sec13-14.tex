@@ -7,8 +7,9 @@
 %            §14 -- The thermodynamic significance of the variational
 %                   principle
 %
-%  Relativistic formulation following the Israel--Stewart causal
-%  dissipative framework; metric signature (-,+,+,+); c kept explicit.
+%  Relativistic formulation following the BDNK (Bemfica--Disconzi--Noronha--Kovtun)
+%  causal first-order dissipative framework; metric signature (-,+,+,+); c kept explicit.
+%  References: Bemfica et al. (2018), Kovtun (2019).
 % =====================================================================
 \input{rel_preamble}
 
@@ -33,8 +34,8 @@ $(\partial_x^2+\partial_y^2)f = -a^2 f$.
 \subsection{Relativistic characteristic value problem}\label{sec:rel-13-prelim}
 
 The linearised relativistic perturbation equations for a thermally
-stratified fluid, in the Israel--Stewart framework with
-vanishing relaxation times at marginal stability ($\sigma=0$), reduce
+stratified fluid, in the BDNK first-order causal framework
+(Bemfica et al.\ 2018; Kovtun 2019) at marginal stability ($\sigma=0$), reduce
 to (see \S\S~11--12 for the classical derivation, and the relativistic
 linearisation in the companion sections)
 \begin{equation}
@@ -183,8 +184,8 @@ In \S~14, Chandrasekhar showed that the classical variational
 principle has a direct thermodynamic interpretation: the Rayleigh
 number is the ratio of the rate of energy release by buoyancy to the
 rate of viscous dissipation.  We now establish the relativistic
-counterpart of this result within the Israel--Stewart causal
-dissipative theory.
+counterpart of this result within the BDNK causal first-order
+dissipative theory (Bemfica, Disconzi \& Noronha 2018; Kovtun 2019).
 
 \subsection{Relativistic viscous dissipation rate}\label{sec:rel-14a}
 
@@ -308,32 +309,33 @@ between the kinetic energy dissipated by viscosity (acting on the
 relativistic enthalpy-inertia $\enthalpy/c^2$) and the internal energy
 released by the relativistic buoyancy force.}
 
-\subsection{Relativistic entropy production and the Israel--Stewart
+\subsection{Relativistic entropy production and the BDNK
 second law}\label{sec:rel-14d}
 
-The Israel--Stewart theory provides a natural framework for connecting
-the variational principle to entropy production.  The entropy current
-is
+The BDNK theory provides a natural framework for connecting
+the variational principle to entropy production.  In the BDNK
+first-order formalism, the entropy current is
 \begin{equation}
 \label{eq:rel-entropy-current}
-s^\mu = s\,n\,u^\mu + \frac{q^\mu}{T}
-  - \frac{\tauq}{2\,\thermcond\,T^2}\,q_\alpha q^\alpha\,u^\mu
-  + \ldots,
+s^\mu = s\,n\,u^\mu + \frac{Q^\mu}{T}
+  + \text{(frame-dependent first-order terms)},
 \end{equation}
-where $s$ is the entropy per baryon and $n$ the baryon number density.
-Its divergence is (Israel \& Stewart 1979)
+where $s$ is the entropy per baryon, $n$ the baryon number density,
+and $Q^\mu$ is the BDNK heat flux including frame corrections.
+Its divergence is (Bemfica et al.\ 2018; Kovtun 2019)
 \begin{equation}
 \label{eq:rel-entropy-production}
 \nabla_\mu s^\mu
 = -\frac{\bulkP^2}{\bulkvisc\,T}
-  - \frac{\pi_{\mu\nu}\pi^{\mu\nu}}{2\,\shearvisc\,T}
-  - \frac{q_\mu q^\mu}{\thermcond\,T^2}
-  + \text{(second-order relaxation terms)} \;\geqslant\; 0.
+  - \frac{\Pi_{\mu\nu}\Pi^{\mu\nu}}{2\,\shearvisc\,T}
+  - \frac{Q_\mu Q^\mu}{\thermcond\,T^2}
+  \;\geqslant\; 0.
 \end{equation}
 The second law $\nabla_\mu s^\mu \geqslant 0$ is guaranteed
-order-by-order provided the transport coefficients satisfy
-$\shearvisc,\,\bulkvisc,\,\thermcond \geqslant 0$ and the relaxation
-times $\taupi,\,\tauPi,\,\tauq > 0$.
+provided the transport coefficients satisfy
+$\shearvisc,\,\bulkvisc,\,\thermcond \geqslant 0$ and the BDNK
+frame coefficients satisfy the coupled inequalities that ensure
+strong hyperbolicity (Bemfica, Disconzi \& Noronha 2019).
 
 At marginal stability ($\sigma = 0$), only the shear viscous and heat
 flux contributions survive in the linearised perturbation.  The
@@ -360,11 +362,12 @@ the classical theory but gains two important features in the
 relativistic context:
 
 \begin{enumerate}
-\item The entropy current~\eqref{eq:rel-entropy-current} contains
-  additional quadratic terms in the heat flux, required by the
-  Israel--Stewart theory for causal propagation.  These ensure that
-  the entropy production inequality~\eqref{eq:rel-entropy-production}
-  is maintained even when heat signals propagate at finite speed.
+\item In the BDNK first-order theory, the entropy current~\eqref{eq:rel-entropy-current}
+  contains frame-dependent first-order gradient terms whose coefficients
+  are chosen to ensure causal propagation and strong hyperbolicity.
+  The entropy production inequality~\eqref{eq:rel-entropy-production}
+  is maintained by the positivity of the transport coefficients
+  together with the BDNK frame constraints.
 
 \item The maximum entropy production principle, which classically
   determines the critical Rayleigh number, is promoted to a
@@ -375,20 +378,22 @@ relativistic context:
 \end{relcorrection}
 
 \begin{causalitycheck}
-The Israel--Stewart relaxation times ($\taupi$, $\tauq$, $\tauPi$)
-do not appear explicitly in the marginal-stability equations
-($\sigma = 0$), because all time derivatives vanish at the onset of
-instability.  Causality is nevertheless preserved: the relaxation times
-ensure that the \emph{growth} of perturbations (for $\Rarel$ slightly
-above the critical value) propagates at finite speed.  The
-characteristic speeds of the Israel--Stewart system are bounded by
+At marginal stability ($\sigma = 0$) all time derivatives vanish,
+so the dissipative constitutive relations play no role in the onset
+equations.  Consequently, the BDNK first-order theory and the
+Israel--Stewart second-order theory yield \emph{identical} results
+at the marginal state.  Away from marginality, the BDNK theory
+ensures causal propagation through the coupled inequalities on the
+transport and frame coefficients (Bemfica et al.\ 2018; Kovtun 2019),
+which guarantee that all characteristic speeds of the BDNK system
+satisfy
 \begin{equation}
-v_{\mathrm{signal}}^2
-= \frac{\shearvisc}{\enthalpy\,\taupi/c^2}
-\leqslant c^2,
+v_{\mathrm{char}}^2 \leqslant c^2.
 \end{equation}
-which is guaranteed when the relaxation times satisfy the standard
-causality bounds $\taupi \geqslant \shearvisc/(\enthalpy/c^2)\cdot c^{-2}$.
+Unlike the Israel--Stewart theory, no relaxation times $\taupi$,
+$\tauq$, $\tauPi$ are needed; causality is achieved through the
+choice of hydrodynamic frame and constrained first-order transport
+coefficients.
 \end{causalitycheck}
 
 \subsection{Non-relativistic recovery}\label{sec:rel-14e}
@@ -421,10 +426,10 @@ expression derived above reduces to its classical counterpart:
   (a^2\int G^2\,\mathrm{d}z)$,
   reproducing equation~(2-186).
 
-\item The Israel--Stewart entropy production
+\item The BDNK entropy production
   inequality~\eqref{eq:rel-entropy-production} reduces to the
-  classical Clausius--Duhem inequality when all relaxation times
-  vanish.
+  classical Clausius--Duhem inequality in the non-relativistic limit,
+  as the frame corrections vanish at $\order{v^2/c^2}$.
 \end{enumerate}
 
 \emph{All relativistic corrections are therefore of order

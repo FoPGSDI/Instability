@@ -5,7 +5,8 @@
 % =====================================================================
 %
 %  Classical reference: Chandrasekhar, Ch. II §15, eqs. (187)–(227)
-%  Relativistic framework: Israel-Stewart causal dissipation
+%  Relativistic framework: BDNK causal first-order dissipation
+%  (Bemfica et al. 2018; Kovtun 2019)
 %  Agent: 9 (subagent for Bénard, part 4 — exact solutions)
 % =====================================================================
 
@@ -21,8 +22,10 @@ where the eigenvalue equation is modified by two physical effects:
 \item[(i)] the \emph{pressure contribution to inertia}
   $(\edensity + p)/c^{2}$, which replaces the rest-mass density
   $\rdensity$ in the inertial terms; and
-\item[(ii)] the \emph{Israel--Stewart causal heat transport}, which
-  introduces a finite relaxation time $\tauq$ for the heat flux.
+\item[(ii)] the \emph{BDNK causal first-order heat transport}
+  (Bemfica et al.\ 2018; Kovtun 2019), which ensures finite-speed
+  thermal signal propagation through frame-dependent transport
+  coefficients rather than relaxation times.
 \end{enumerate}
 
 \subsection{The relativistic eigenvalue equation}
@@ -40,24 +43,30 @@ where the relativistic Rayleigh number is
 \begin{equation}
 \label{eq:rel-15-Radef}
 \Rarel = \frac{\alpha\,g\,d^{3}\,\Delta T}{\nu\,\kappa_{T}}
-  \cdot\frac{1}{1 + p_{0}/(\edensity_{0}\,c^{2})}\,
-  \cdot\frac{1}{1 + \tauq\,\kappa_{T}/d^{2}}.
+  \cdot\frac{1}{1 + p_{0}/(\edensity_{0}\,c^{2})}.
 \end{equation}
 Here $\edensity_{0}$ and $p_{0}$ are the equilibrium energy density
 and pressure, and $\kappa_{T}$ is the thermal diffusivity. We define
-the two dimensionless relativistic parameters
+the dimensionless relativistic parameter
 \begin{equation}
 \label{eq:rel-15-params}
-\Xi \;\equiv\; \frac{p_{0}}{\edensity_{0}\,c^{2}}, \qquad
-\Upsilon \;\equiv\; \frac{\tauq\,\kappa_{T}}{d^{2}},
+\Xi \;\equiv\; \frac{p_{0}}{\edensity_{0}\,c^{2}},
 \end{equation}
 so that
 \begin{equation}
 \label{eq:rel-15-Rarel}
-\Rarel = \frac{R}{(1+\Xi)(1+\Upsilon)},
+\Rarel = \frac{R}{1+\Xi},
 \end{equation}
 where $R$ is the classical Rayleigh number. In the non-relativistic
-limit $\Xi \to 0$, $\Upsilon \to 0$, one recovers $\Rarel \to R$.
+limit $\Xi \to 0$, one recovers $\Rarel \to R$.
+
+\emph{Note:} In the BDNK first-order theory (Bemfica et al.\ 2018;
+Kovtun 2019), there is no thermal relaxation time $\tauq$, so the
+Israel--Stewart parameter $\Upsilon = \tauq\kappa_T/d^2$ does not
+appear.  At marginal stability ($\sigma = 0$), the BDNK and
+Israel--Stewart theories yield \emph{identical} results, since all
+time-derivative terms vanish and only the first-order constitutive
+relation $\Pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu}$ contributes.
 
 \begin{relcorrection}
 \textbf{Key physical insight.}
@@ -69,11 +78,11 @@ the same temperature gradient. Equivalently, the pressure contribution
 to inertia \emph{lowers} the effective Rayleigh number, making the
 system \textbf{more unstable} at a given adverse temperature gradient.
 
-The factor $(1+\Upsilon)^{-1}$ captures the delay introduced by causal
-(Israel--Stewart) heat transport. A finite heat-flux relaxation time
-$\tauq > 0$ modifies the thermal response, providing a further
-(typically small) correction that can either stabilize or destabilize
-depending on the ratio $\tauq\kappa_{T}/d^{2}$.
+In the BDNK formalism, no relaxation time $\tauq$ appears; causality
+is instead ensured by the BDNK frame coefficients and coupled
+transport-coefficient inequalities.  At the marginal state
+($\sigma = 0$), these frame corrections do not contribute, and the
+BDNK result coincides exactly with the Israel--Stewart result.
 \end{relcorrection}
 
 Since equation~\eqref{eq:rel-15-eigen} has the \emph{same operator
@@ -83,7 +92,7 @@ relativistic modification enters through the eigenvalue relation: one
 replaces $R$ by $\Rarel$ everywhere. This crucial simplification means
 that the classical solutions of Pellew \& Southwell, Low, and Reid \&
 Harris carry over directly, with the critical Rayleigh number shifted
-by the factor $(1+\Xi)(1+\Upsilon)$.
+by the factor $(1+\Xi)$.
 
 
 % -----------------------------------------------------------------
@@ -115,8 +124,8 @@ Expressing this in terms of the \emph{classical} Rayleigh number $R$
 via~\eqref{eq:rel-15-Rarel}, the onset condition becomes
 \begin{equation}
 \label{eq:rel-15-Rcfree-classical}
-R_{c}^{(\mathrm{rel})} = \frac{27}{4}\,\pi^{4}\,(1+\Xi)(1+\Upsilon)
-  = 657.511\;\bigl[1 + \Xi + \Upsilon + \Xi\,\Upsilon\bigr].
+R_{c}^{(\mathrm{rel})} = \frac{27}{4}\,\pi^{4}\,(1+\Xi)
+  = 657.511\;\bigl[1 + \Xi\bigr].
 \end{equation}
 
 \begin{relcorrection}
@@ -127,13 +136,12 @@ of the classical (Newtonian) Rayleigh number $R$, the critical value
 receives a multiplicative relativistic correction:
 \[
 R_{c}^{(\mathrm{rel})} = R_{c}^{(\mathrm{class})}
-  \times (1+\Xi)(1+\Upsilon)
+  \times (1+\Xi)
   = R_{c}^{(\mathrm{class})}
     \left[1 + \frac{p_{0}}{\edensity_{0}c^{2}}
-    + \frac{\tauq\kappa_{T}}{d^{2}}
-    + \order{\Xi\Upsilon}\right].
+    + \order{\Xi^2}\right].
 \]
-Since the factor $(1+\Xi)(1+\Upsilon) > 1$, a \emph{larger} classical
+Since the factor $(1+\Xi) > 1$, a \emph{larger} classical
 Rayleigh number is needed to trigger instability, but this is precisely
 because the same physical temperature gradient corresponds to a
 \emph{smaller} relativistic Rayleigh number (due to increased inertia).
@@ -173,12 +181,11 @@ state for the lowest (even) mode is
 In terms of the classical Rayleigh number:
 \begin{equation}
 \label{eq:rel-15-Rcrigid-classical}
-R_{c}^{(\mathrm{rel})} = 1707.762\,(1+\Xi)(1+\Upsilon).
+R_{c}^{(\mathrm{rel})} = 1707.762\,(1+\Xi).
 \end{equation}
 
 For terrestrial laboratory conditions (e.g.\ water at room temperature),
-$\Xi \sim p_{0}/(\rdensity c^{2}) \approx 10^{-10}$ and $\Upsilon$
-is negligibly small, so $R_{c}^{(\mathrm{rel})}$ is indistinguishable
+$\Xi \sim p_{0}/(\rdensity c^{2}) \approx 10^{-10}$ so $R_{c}^{(\mathrm{rel})}$ is indistinguishable
 from $1707.762$. The corrections become significant only for
 relativistic fluids: in a quark--gluon plasma with
 $p \approx \edensity/3$, one has $\Xi \approx 1/4$, giving
@@ -210,7 +217,7 @@ obtain
 In terms of the classical Rayleigh number:
 \begin{equation}
 \label{eq:rel-15-Rcmixed-classical}
-R_{c}^{(\mathrm{rel})} = 1100.65\,(1+\Xi)(1+\Upsilon).
+R_{c}^{(\mathrm{rel})} = 1100.65\,(1+\Xi).
 \end{equation}
 
 
@@ -226,8 +233,9 @@ boundary configurations.
 \centering
 \caption{Critical parameters for the onset of relativistic thermal
   instability compared with the classical (Newtonian) values.
-  Here $\Xi = p_{0}/(\edensity_{0}c^{2})$ and
-  $\Upsilon = \tauq\kappa_{T}/d^{2}$.}
+  Here $\Xi = p_{0}/(\edensity_{0}c^{2})$.  In the BDNK first-order
+  theory no IS relaxation parameter appears; at $\sigma=0$ the
+  BDNK and IS results are identical.}
 \label{tab:rel-15-summary}
 \medskip
 \begin{tabular}{@{}l c c c c@{}}
@@ -241,17 +249,17 @@ Boundary type
 Both free
   & $657.511$
   & $657.511$
-  & $657.511\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $657.511\,(1{+}\Xi)$
   & $2.221$ \\[4pt]
 Both rigid
   & $1707.762$
   & $1707.762$
-  & $1707.762\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $1707.762\,(1{+}\Xi)$
   & $3.117$ \\[4pt]
 One rigid, one free
   & $1100.65$
   & $1100.65$
-  & $1100.65\,(1{+}\Xi)(1{+}\Upsilon)$
+  & $1100.65\,(1{+}\Xi)$
   & $2.682$ \\
 \bottomrule
 \end{tabular}
@@ -269,7 +277,7 @@ One rigid, one free
 
 \item When the onset condition is expressed in terms of the classical
   Rayleigh number $R$, one finds $R_{c}^{(\mathrm{rel})} >
-  R_{c}^{(\mathrm{class})}$ by the factor $(1+\Xi)(1+\Upsilon)$.
+  R_{c}^{(\mathrm{class})}$ by the factor $(1+\Xi)$.
   Physically, this means that relativistic effects raise the
   \emph{apparent} threshold as measured by $R$, but the system is in
   fact \emph{more unstable} for a given temperature gradient because
@@ -309,20 +317,19 @@ v_{\mathrm{signal}} \sim \sqrt{\kappa_{T}\,\sigma}
 since both $\kappa_{T}$ and $\sigma$ are non-relativistic in magnitude
 for the thermal instability problem.
 
-\paragraph{Role of Israel--Stewart relaxation.}
-In the Fourier-decomposed perturbation equations, the Israel--Stewart
-term contributes a factor $(1 + i\sigma\tauq)$ in the denominator of the
-heat-flux response. This regularises the high-wavenumber behaviour and
-ensures that the effective thermal propagation speed satisfies
-\[
-v_{\mathrm{th}} = \sqrt{\frac{\kappa_{T}}{\tauq}} \leq c,
-\]
-provided $\tauq \geq \kappa_{T}/c^{2}$. This inequality is
-automatically satisfied for any physical fluid, since
-$\kappa_{T}/c^{2}$ is an extraordinarily small time scale.
+\paragraph{Role of BDNK frame coefficients.}
+In the BDNK first-order theory, causality is ensured by the choice of
+hydrodynamic frame and the coupled inequalities on transport and frame
+coefficients (Bemfica et al.\ 2018; Kovtun 2019; Hoult \& Kovtun 2020).
+The characteristic speeds of the BDNK system are rigorously bounded by
+$c$ when these inequalities are satisfied, without the need for
+relaxation times $\tauq$ or $\taupi$.  At the marginal state
+($\sigma = 0$), all time-derivative terms vanish, so the BDNK and
+Israel--Stewart theories yield \emph{identical} critical Rayleigh
+numbers and eigenfunctions.
 
 \paragraph{Conclusion.}
 All critical and near-critical modes of the relativistic B\'enard
-problem propagate causally. The Israel--Stewart framework guarantees
+problem propagate causally. The BDNK framework guarantees
 that no acausal behaviour is introduced by the dissipative terms.
 \end{causalitycheck}

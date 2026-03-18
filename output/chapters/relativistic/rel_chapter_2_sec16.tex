@@ -4,7 +4,7 @@
 %
 %  Original: Chandrasekhar, §16 "The cell patterns"
 %  This file extends the analysis to a relativistic fluid
-%  using the Israel-Stewart causal dissipation framework.
+%  using the BDNK causal first-order dissipation framework.
 % =============================================================
 
 \section{Cell patterns in relativistic thermal convection}\label{sec:rel-16}
@@ -83,7 +83,7 @@ persists in the relativistic theory for the following reason.
 
 The relativistic linearised perturbation equations, derived from the
 conservation laws $\covd T^{\mu\nu}=0$ supplemented by the
-Israel--Stewart constitutive relations, reduce in the static
+BDNK first-order constitutive relations, reduce in the static
 background to a system whose coefficients depend on~$z$ alone.
 After Fourier decomposition in the horizontal coordinates
 $(x,y)\to(k_{x},k_{y})$, every coefficient involves only
@@ -104,13 +104,14 @@ yields a critical eigenvalue $a_{\mathrm{rel,c}}^{2}$ that again
 places no restriction on the direction of $\mathbf{k}=(k_{x},k_{y})$.
 
 \begin{causalitycheck}
-The Israel--Stewart relaxation times $\taupi$ and $\tauq$ enter
+The BDNK causal modifications times $\taupi$ and $\tauq$ enter
 the vertical eigenvalue problem but not the horizontal Helmholtz
 equation.  They therefore influence $\Rarel^{(\mathrm{c})}$ and
 $a_{\mathrm{rel,c}}$ but do not break the horizontal isotropy
 that underlies the planform degeneracy.
 Causality ($v_{\mathrm{signal}}\le c$) is automatically satisfied
-because $\taupi,\tauq>0$ and the perturbation equations are
+because the BDNK frame coefficients satisfy the coupled
+causality inequalities and the perturbation equations are
 hyperbolic in the time-like direction.
 \end{causalitycheck}
 
@@ -212,7 +213,7 @@ $|\mathbf{k}_{j}|=a_{\mathrm{rel,c}}$.  To cubic order the amplitude
 equations take the standard form
 \begin{equation}
 \label{eq:rel-amplitude}
-\tauq\,\frac{\partial A_{j}}{\partial t}
+\tau_{\mathrm{rel}}\,\frac{\partial A_{j}}{\partial t}
   = \sigma\,A_{j}
   - \ell_{j}\,|A_{j}|^{2}A_{j}
   - \sum_{k\neq j} g_{jk}\,|A_{k}|^{2}A_{j}
@@ -232,7 +233,7 @@ values.  These corrections enter through:
   $u^{\alpha}\covda u^{\mu}$ is replaced by the enthalpy
   $\enthalpy/c^{2}=(\edensity+p)/c^{2}$, enhancing the effective
   inertia by a factor $1+p/(\edensity c^{2})+\order{c^{-4}}$.
-\item \emph{Causal heat transport}: the Israel--Stewart relaxation
+\item \emph{Causal heat transport}: the BDNK causal modifications
   time~$\tauq$ introduces a frequency-dependent (dispersive)
   correction to the thermal diffusivity that modifies the saturation
   coefficients $\ell_{j}$ and $g_{jk}$.

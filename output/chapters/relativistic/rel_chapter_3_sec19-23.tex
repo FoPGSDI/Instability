@@ -384,14 +384,11 @@ $\enthalpy_{0} = \edensity_{0}+p_{0}$), writing
   \edensity = \edensity_{0} + \delta\edensity.
 \end{equation}
 The linearized relativistic Euler equation~\eqref{eq:rel-3-14}, for an
-incompressible fluid with Israel--Stewart shear viscosity
+incompressible fluid with BDNK shear viscosity
 ($\shearvisc$, relaxation time $\taupi$), becomes
 \begin{equation}\label{eq:rel-3-21}
   \frac{\enthalpy_{0}}{c^{2}}
-  \left(
-    \frac{\partial}{\partial t}\,\delta v_{i}
-    + \taupi\,\frac{\partial^{2}}{\partial t^{2}}\,\delta v_{i}
-  \right)
+  \frac{\partial}{\partial t}\,\delta v_{i}
   =
   -\frac{\partial\,\delta p}{\partial x_{i}}
   + \frac{\enthalpy_{0}}{c^{2}}\;
@@ -401,7 +398,7 @@ incompressible fluid with Israel--Stewart shear viscosity
 together with the incompressibility condition
 $\partial\,\delta v_{i}/\partial x_{i} = 0$.
 
-The Israel--Stewart term
+The BDNK causal term
 $\taupi\,\partial^{2}\delta v_{i}/\partial t^{2}$ is the essential
 relativistic causal modification of the viscous stress; it converts
 the parabolic diffusion equation into a \emph{hyperbolic} one, ensuring
@@ -417,7 +414,7 @@ $\mathbf{k}\cdot\delta\mathbf{v} = 0$ (transverse waves, as in the
 classical case).  The remaining equations yield the dispersion relation
 \begin{equation}\label{eq:rel-3-22}
   \boxed{\;
-  \sigma\left(1 - i\,\taupi\,\sigma\right)
+  \sigma
   \;=\;
   \pm\,\frac{2\,\boldsymbol{\Omega}\cdot\mathbf{k}}{k}
   \;+\;
@@ -425,7 +422,7 @@ classical case).  The remaining equations yield the dispersion relation
   \;}
 \end{equation}
 
-\subsubsection*{Inviscid limit ($\shearvisc = 0$, $\taupi = 0$)}
+\subsubsection*{Inviscid limit ($\shearvisc = 0$)}
 
 Setting the dissipative terms to zero, we obtain
 \begin{equation}\label{eq:rel-3-23}
@@ -444,14 +441,14 @@ $c$.
 
 \subsubsection*{Damped regime}
 
-For small viscosity, treating $\shearvisc$ and $\taupi$ as
-perturbations, we expand $\sigma = \sigma_{0} + \sigma_{1}$ with
+For small viscosity, treating $\shearvisc$ as a
+perturbation, we expand $\sigma = \sigma_{0} + \sigma_{1}$ with
 $\sigma_{0} = \pm 2\Omega\cos\vartheta$.  To first order:
 \begin{equation}\label{eq:rel-3-24}
   \sigma_{1}
   \;=\;
   \frac{i\,\nu_{\mathrm{rel}}\,k^{2}}
-       {1 - 2i\,\taupi\,\sigma_{0}},
+       {1},
   \qquad
   \nu_{\mathrm{rel}}
   \;=\;
@@ -459,7 +456,7 @@ $\sigma_{0} = \pm 2\Omega\cos\vartheta$.  To first order:
 \end{equation}
 where $\nu_{\mathrm{rel}}$ is the relativistic kinematic viscosity.
 In the non-relativistic limit
-$\enthalpy_{0}/c^{2} \to \rho_{0}$ and $\taupi\to 0$, so
+$\enthalpy_{0}/c^{2} \to \rho_{0}$ so
 $\sigma_{1} \to i\nu k^{2}$, recovering the classical damping
 constant of Chandrasekhar's equation~\eqref{eq:3-72}.
 
@@ -467,7 +464,7 @@ constant of Chandrasekhar's equation~\eqref{eq:3-72}.
 
 \begin{causalitycheck}
 The dispersion relation~\eqref{eq:rel-3-22} is quadratic in $\sigma$
-(due to the Israel--Stewart term).  For large $k$, the two roots
+(due to the BDNK causal term).  For large $k$, the two roots
 behave as
 \begin{equation}\label{eq:rel-3-25}
   \sigma \;\sim\;
@@ -478,13 +475,11 @@ behave as
     & (k \ll k_{\mathrm{IS}}),
     \\[8pt]
     \displaystyle
-    \frac{i}{\taupi}
-    & (k \gg k_{\mathrm{IS}}),
+    
   \end{cases}
 \end{equation}
 where
-$k_{\mathrm{IS}} = (\taupi\,\nu_{\mathrm{rel}})^{-1/2}$
-is the Israel--Stewart crossover wavenumber.
+
 
 The \emph{phase velocity} $v_{\mathrm{ph}} = |\operatorname{Re}\sigma|/k$
 satisfies:

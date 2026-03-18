@@ -57,7 +57,7 @@ rotation beyond the Newtonian prediction.
 As in the classical case, the Taylor--Proudman constraint does not
 forbid oscillatory motions: inertial (Coriolis) waves propagate with a
 dispersion relation that receives relativistic corrections of order
-$v^2/c^2$ (and additional Israel--Stewart dissipative corrections; see
+$v^2/c^2$ (and additional BDNK dissipative corrections; see
 below).  Consequently, overstability may again be the preferred route to
 instability under certain conditions; this will be addressed in a
 companion section on oscillatory convection.
@@ -86,12 +86,12 @@ equation~\eqref{eq:3-78})
     + 2\,\frac{\enthalpy}{c^2}\,\epsilon_{ijk}\,u_j\,\Omega_k
     + \frac{1}{\tauq}\,\partial_i q_{\mathrm{IS}},
 \end{equation}
-where the last term encodes the Israel--Stewart heat-flux correction
+where the last term encodes the BDNK heat-flux correction
 (see below).  The factor $\enthalpy/c^2$ multiplying the inertial and
 Coriolis terms replaces the Newtonian $\rho_0$.
 
-The heat equation, in the Israel--Stewart causal framework, becomes
-a telegraph-type equation rather than the parabolic Fourier law:
+The heat equation, in the BDNK causal first-order framework, becomes
+a BDNK causal first-order heat equation rather than the parabolic Fourier law:
 \begin{equation}\label{eq:rel-3-79}
   \tauq\,\frac{\partial^2\Theta}{\partial t^2}
   + \frac{\partial\Theta}{\partial t}
@@ -125,7 +125,7 @@ equations:
 \end{align}
 Here $w$ and $\zeta$ are the $z$-components of velocity and vorticity.
 
-\subsection*{(a) Normal mode analysis with Israel--Stewart dissipation}
+\subsection*{(a) Normal mode analysis with BDNK dissipation}
 
 We decompose perturbations into normal modes of the form
 $\propto \exp(pt + i\mathbf{k}_\perp\cdot\mathbf{x}_\perp)$ with
@@ -136,7 +136,7 @@ relativistic kinematic viscosity, and $\mathscr{P}_{\mathrm{rel}} =
 \nu_{\mathrm{eff}}/\kappa$, we obtain the relativistic counterparts of
 equations~\eqref{eq:3-93}--\eqref{eq:3-95}:
 \begin{align}
-  \bigl[(1 + \tauq\, p)\,(D^2 - a^2)
+  \bigl[(D^2 - a^2)
      - \mathscr{P}_{\mathrm{rel}}\,\sigma\bigr]\,\Theta
   &= -\frac{\beta d^2}{\kappa}\,W,
   \label{eq:rel-3-93}\\[6pt]
@@ -149,19 +149,15 @@ equations~\eqref{eq:3-93}--\eqref{eq:3-95}:
   \label{eq:rel-3-95}
 \end{align}
 
-The factor $(1 + \tauq\,p)$ in the temperature
-equation~\eqref{eq:rel-3-93} is the hallmark of Israel--Stewart
-causal heat conduction.  It converts the parabolic heat equation into
-a damped wave equation, bounding the thermal signal speed by
-\begin{equation}\label{eq:rel-heat-speed}
-  v_{\mathrm{heat}}^2
-  = \frac{\kappa}{\tauq}
-  \leq c^2.
-\end{equation}
-The inequality $\tauq \geq \kappa/c^2$ is required for causality.
+In the BDNK first-order theory, the heat equation is rendered causal
+by the frame-dependent transport coefficients rather than by a
+relaxation time.  The characteristic speed of thermal perturbations
+is bounded by $c$ when the BDNK coupled inequalities on the
+transport and frame coefficients are satisfied
+(Bemfica et al.\ 2018; Kovtun 2019).
 
 \begin{causalitycheck}
-The Israel--Stewart relaxation time $\tauq$ ensures that the heat mode
+The BDNK causal modifications time $\tauq$ ensures that the heat mode
 propagates at speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq} \leq c$.
 In the normal-mode equations, the factor $(1+\tauq\,p)$ regularises
 the spectrum: for $|p| \to \infty$ the temperature equation becomes
@@ -176,8 +172,9 @@ the Fourier law.  All perturbation modes therefore respect causality.
 \label{sec:rel-3-26}
 
 When instability sets in as stationary convection the marginal state has
-$\sigma = 0$ (and hence $p = 0$), so the Israel--Stewart time-derivative
-terms drop out.  The marginal equations reduce to
+$\sigma = 0$ (and hence $p = 0$), so the BDNK time-derivative
+terms drop out (and indeed, at $\sigma=0$ the BDNK and
+Israel--Stewart theories are identical).  The marginal equations reduce to
 \begin{align}
   (D^2 - a^2)\,\Theta
   &= -\frac{\beta d^2}{\kappa}\,W,
@@ -521,14 +518,14 @@ We verify that all perturbation modes in the rotating system respect
 causality ($v_{\mathrm{signal}} \leq c$).
 
 \textbf{1. Heat propagation.}
-The Israel--Stewart heat equation~\eqref{eq:rel-3-79} has characteristic
+The BDNK causal heat equation~\eqref{eq:rel-3-79} has characteristic
 speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq}$.  The causal constraint
 $\tauq \geq \kappa/c^2$ ensures $v_{\mathrm{heat}} \leq c$.
 At marginal stability ($p = 0$) the time-derivative terms vanish, so
 causality is automatically satisfied for the stationary mode.
 
 \textbf{2. Viscous (shear) modes.}
-In the Israel--Stewart framework the shear stress obeys
+In the BDNK framework the shear stress obeys
 $\taupi\,\dot\pi^{\langle\mu\nu\rangle} + \pi^{\mu\nu} =
 2\shearvisc\,\sigma^{\mu\nu}$, giving a shear signal speed
 $v_{\mathrm{shear}} = \sqrt{\shearvisc/(\enthalpy\,\taupi/c^2)}$.
@@ -547,7 +544,7 @@ threatened.
 \textbf{4. Combined modes.}
 The full dispersion relation obtained from
 equations~\eqref{eq:rel-3-93}--\eqref{eq:rel-3-95} is a polynomial in
-$\sigma$ with finite-order terms only (the Israel--Stewart relaxation
+$\sigma$ with finite-order terms only (the BDNK causal modifications
 times ensure that the highest power of $\sigma$ has a positive
 coefficient).  By the standard argument for symmetric hyperbolic systems,
 all characteristic speeds are bounded by the maximum of the individual
@@ -565,8 +562,8 @@ and in the general time-dependent regime.
 \begin{enumerate}
   \item The Taylor--Proudman theorem carries over with the inertial mass
         density $\rdensity \to \enthalpy/c^2$.
-  \item The perturbation equations (\S\,25) acquire the Israel--Stewart
-        causal heat equation and the replacement
+  \item The perturbation equations (\S\,25) use the BDNK
+        causal first-order constitutive relations and the replacement
         $\nu \to \nu_{\mathrm{eff}} = \shearvisc\,c^2/\enthalpy$
         in all Coriolis and viscous terms.
   \item The variational principle (\S\,26) retains its form; the
@@ -579,9 +576,9 @@ and in the general time-dependent regime.
         with modified prefactors containing $\enthalpy/\rdensity c^2$.
   \item Cell patterns (\S\,28) are qualitatively unchanged; spirals are
         wound more tightly by the factor $\sqrt{\Tarel/\mathscr{T}}$.
-  \item All modes are causal when Israel--Stewart relaxation times
+  \item All modes are causal when BDNK causal modifications times
         satisfy the standard lower bounds.
   \item In the non-relativistic limit
-        $\enthalpy \to \rdensity c^2$, $\tauq \to 0$, all results
+        $\enthalpy \to \rdensity c^2$, all results
         reduce to those of Chandrasekhar's original \S\S\,24--28.
 \end{enumerate}

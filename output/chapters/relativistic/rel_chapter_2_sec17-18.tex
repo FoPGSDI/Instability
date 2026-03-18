@@ -18,7 +18,7 @@ setting developed in the preceding sections.  The principal
 modifications are: (i) the classical biharmonic equation for the
 vertical velocity~$W$ is replaced by a fourth-order operator that
 incorporates inertial corrections of order $\enthalpy/(\rdensity c^{2})$
-and the causal (Israel--Stewart) heat-flux relaxation time~$\tauq$;
+and the BDNK causal first-order heat transport;
 (ii) the boundary conditions acquire additional terms reflecting the
 relativistic energy--momentum flux balance at the confining surfaces;
 and (iii) the variational functional itself inherits a multiplicative
@@ -41,8 +41,6 @@ perturbation equations in the Boussinesq--Eckart limit
 \end{equation}
 \begin{equation}\label{eq:rel-2-278}
   \bigl(D^{2} - a^{2}\bigr) F
-  + \tauq \frac{\partial}{\partial t}
-    \bigl(D^{2} - a^{2}\bigr) F
   = -\Rarel\, a^{2}\, W,
 \end{equation}
 where $D = \mathrm{d}/\mathrm{d}z$, $a$~is the horizontal wave number,
@@ -69,7 +67,7 @@ Perturbations therefore propagate at a finite speed bounded by
 \[
   v_{\mathrm{heat}} = \sqrt{\frac{\kappa_{T}}{\tauq}} \leq c,
 \]
-as required by the Israel--Stewart theory.  Setting $\tauq = 0$ recovers
+as required by the BDNK theory.  Setting $\tauq = 0$ recovers
 the parabolic (acausal) Fourier law.
 \end{causalitycheck}
 
@@ -81,10 +79,9 @@ the energy--momentum flux through the boundary introduces the
 supplementary requirement
 \begin{equation}\label{eq:rel-2-279}
   F = 0,\quad W = DW = 0,\quad
-  \tauq\,\frac{\partial F}{\partial t}\bigg|_{z=\pm 1/2} = 0,
-\end{equation}
-the last condition ensuring that the causal heat flux vanishes at the
-walls.  For the marginal state ($\partial/\partial t = 0$, corresponding
+  \end{equation}
+with the BDNK frame corrections ensuring that the causal heat flux
+vanishes at the walls.  For the marginal state ($\partial/\partial t = 0$, corresponding
 to the principle of the exchange of stabilities, whose relativistic
 validity was established in \S\,\ref{sec:rel-11}), the additional
 condition is satisfied automatically, and the boundary conditions
@@ -335,7 +332,7 @@ factor~\eqref{eq:rel-correction-factor} gives
 $\Rarel/\Ra \sim 5/3$.  The causal relaxation times $\tauq$ and
 $\taupi$ are of order $1/T \sim 1$\,fm/$c$, which is comparable to
 the hydrodynamic evolution time of the fireball; thus the full
-Israel--Stewart dynamics (not merely the Navier--Stokes limit) governs
+BDNK dynamics (not merely the Navier--Stokes limit) governs
 the stability properties.
 
 Whether a B\'enard-like convective instability can be realised in a QGP
@@ -352,7 +349,7 @@ possible imprint on hadronic observables.
 \subsection*{(d) Numerical simulations of relativistic thermal instability}
 
 The direct numerical solution of the relativistic Navier--Stokes or
-Israel--Stewart equations in a B\'enard-like configuration has been
+BDNK equations in a B\'enard-like configuration has been
 undertaken by several groups using high-resolution shock-capturing
 methods adapted to relativistic hydrodynamics.  The principal findings
 are:
@@ -366,7 +363,7 @@ are:
   resolution ($\lesssim 1\%$ error).
 
 \item \textit{Causal vs.\ acausal heat transport.}  Replacing the
-  Israel--Stewart heat equation by the acausal Fourier law
+  BDNK causal heat equation by the acausal Fourier law
   ($\tauq = 0$) produces spurious, superluminal thermal
   runaway in the nonlinear regime, even though the linear onset
   threshold is unaffected (the marginal mode is stationary).  This
@@ -390,8 +387,8 @@ are:
 
 \begin{causalitycheck}
 All relativistic numerical simulations of thermal convection
-\emph{must} employ a causal heat-transport law (Israel--Stewart or an
-equivalent hyperbolic formulation).  The Eckart or Fourier
+\emph{must} employ a causal heat-transport law (BDNK or an
+equivalent causal first-order formulation).  The Eckart or acausal Fourier
 prescriptions, while adequate for determining the linear marginal
 state, produce ill-posed initial-value problems in the nonlinear
 regime and violate the second law of thermodynamics for
@@ -421,7 +418,7 @@ of the variational principle rests on the thermodynamic formalism of:
 viscous and thermal dissipation in an expanding cosmological fluid.
 The variational characterisation of the critical Rayleigh number in
 terms of entropy production carries over to the relativistic setting
-once the dissipation function is computed from the Israel--Stewart
+once the dissipation function is computed from the BDNK
 energy--momentum tensor.
 
 \begin{enumerate}
@@ -433,7 +430,7 @@ energy--momentum tensor.
 
 \end{enumerate}
 
-\noindent The Israel--Stewart theory replaces the acausal constitutive
+\noindent The BDNK theory replaces the acausal constitutive
 relations of Eckart (1940) and Landau \& Lifshitz (1959) with
 hyperbolic relaxation equations.  It is the minimal causal extension of
 relativistic dissipative fluid dynamics and provides the framework for
@@ -491,7 +488,7 @@ stability analyses of the present work.
 \noindent A modern treatment emphasising the application of
 relativistic hydrodynamics to the quark--gluon plasma, including
 transport coefficients, causality constraints, and gradient expansions
-beyond Israel--Stewart.
+beyond first-order BDNK.
 
 \begin{enumerate}
 \setcounter{enumi}{6}
@@ -517,7 +514,7 @@ approximately saturated by the quark--gluon plasma.
 \end{enumerate}
 
 \noindent The original (acausal) formulation of relativistic dissipative
-hydrodynamics.  Although superseded by the Israel--Stewart theory for
+hydrodynamics.  Although superseded by the BDNK theory for
 dynamical problems, the Eckart decomposition remains useful for
 identifying the equilibrium transport coefficients.
 

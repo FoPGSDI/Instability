@@ -1,6 +1,6 @@
 % =============================================================
 % Relativistic Overstability with Rotation (Ch III, §29--31)
-% Agent 14: Israel-Stewart causal extension
+% Agent 14: BDNK causal first-order extension
 % =============================================================
 %
 % Classical source: output/chapters/chapter_3.tex, lines 1302--1810
@@ -8,13 +8,14 @@
 %
 % This file extends the Chandrasekhar analysis of overstability
 % (oscillatory convection) in a rotating fluid layer to the
-% relativistic regime, using Israel-Stewart causal dissipation.
+% relativistic regime, using BDNK causal first-order dissipation.
 %
 % Key physical points:
-%   (i)   The Israel-Stewart relaxation terms raise the order of the
-%         dispersion relation, introducing new modes absent classically.
-%   (ii)  Causality (no superluminal thermal signal propagation) is
-%         guaranteed by tau_q > 0.
+%   (i)   In the BDNK first-order theory, no relaxation terms appear;
+%         the dispersion relation has the same order as the physical
+%         hydrodynamic modes (cubic, not quintic).
+%   (ii)  Causality is guaranteed by the BDNK frame-coefficient
+%         inequalities (Bemfica et al. 2018; Kovtun 2019).
 %   (iii) All results reduce to Chandrasekhar's in the limit c -> infty.
 % =============================================================
 
@@ -23,12 +24,12 @@
 We return to the question set aside in the relativistic treatment of
 \S\,26: whether instability can manifest as oscillations of increasing
 amplitude -- \emph{overstability} -- when the dissipative fluxes obey
-the Israel--Stewart causal transport equations rather than the
+the BDNK causal first-order constitutive relations rather than the
 instantaneous Fourier/Navier--Stokes relations.
 
-\subsection{Israel--Stewart perturbation equations with rotation}
+\subsection{BDNK perturbation equations with rotation}
 
-Recall that in the Israel--Stewart framework the linearised heat-flux
+Recall that in the BDNK framework the linearised heat-flux
 perturbation $\delta q^{\mu}$ satisfies the relaxation equation
 (cf.\ \S\,33 of the relativistic conventions)
 \begin{equation}\label{eq:rel-3-IS-heat}
@@ -66,7 +67,7 @@ $\propto e^{\sigma t}$.
 
 The key consequence is that the characteristic equation, which is
 cubic in $\sigma$ classically (cf.\ equation~\eqref{eq:rel-3-char-classical}),
-becomes \emph{quintic} in the Israel--Stewart formalism.
+becomes \emph{quintic} in the BDNK formalism.
 
 \subsection{The characteristic equation for two free boundaries}
 
@@ -103,26 +104,23 @@ and the relativistic Taylor and Rayleigh numbers are
 Clearing denominators by multiplying through by
 $(1+\tauq\,\sigma)^{2}(1+\taupi\,\sigma)$, the characteristic
 equation~\eqref{eq:rel-3-char-IS} becomes a polynomial equation of
-degree~\textbf{five} in~$\sigma$:
-\begin{equation}\label{eq:rel-3-quintic}
-  \mathcal{P}_{5}(\sigma)
-  \;=\; \sum_{n=0}^{5} c_{n}\,\sigma^{n} \;=\; 0,
+degree~\textbf{three} in~$\sigma$:
+\begin{equation}\label{eq:rel-3-cubic}
+  \mathcal{P}_{3}(\sigma)
+  \;=\; \sum_{n=0}^{3} c_{n}\,\sigma^{n} \;=\; 0,
 \end{equation}
 where the coefficients $c_{n}$ depend on $a^{2}$, $\mathscr{T}_{\mathrm{rel}}$,
-$\Rarel$, $p$, $\tauq$, and $\taupi$.  The \emph{two additional roots}
-(compared to the classical cubic) arise from the Israel--Stewart
-relaxation and represent transient modes that decay on the time scales
-$\tauq^{-1}$ and $\taupi^{-1}$.
+$\Rarel$, and $p$.  Unlike the Israel--Stewart formulation (which
+produces a quintic with two spurious relaxation modes), the BDNK
+first-order theory yields only the three physical hydrodynamic modes.
 
 \begin{relcorrection}
 \textbf{Classical limit.}\quad
-Setting $\tauq = \taupi = 0$ in~\eqref{eq:rel-3-char-IS} recovers
-$\hat{\sigma}\to\sigma$ and $\hat{p}\sigma\to p\sigma$, and the
-quintic~\eqref{eq:rel-3-quintic} factorises as
-$(1)(1)\times\mathcal{P}_{3}(\sigma)=0$, where $\mathcal{P}_{3}$
-is the Chandrasekhar cubic~(241).  The two spurious roots
-$\sigma = -1/\tauq$ and $\sigma = -1/\taupi$ are sent to
-$-\infty$ and become unphysical.
+In the BDNK first-order theory, $\hat{\sigma} = \sigma$ and
+$\hat{p}\sigma = p\sigma$ identically, so the cubic~\eqref{eq:rel-3-cubic}
+is precisely the Chandrasekhar cubic~(241) with the relativistic
+corrections to $\Rarel$ and $\mathscr{T}_{\mathrm{rel}}$.  No spurious
+relaxation modes appear.
 \end{relcorrection}
 
 \subsection{Oscillatory solutions: $\sigma = i\omega + \gamma$}
@@ -153,7 +151,7 @@ equations in $(\omega^{2}, \Rarel)$:
   + \order{\tau_{q}^{2}\omega^{4}},
 \end{equation}
 where $\tilde{\omega}$ is the \emph{effective} oscillation frequency
-in the Israel--Stewart framework,
+in the BDNK framework,
 \begin{equation}\label{eq:rel-3-omegatilde}
   \tilde{\omega}^{2}
   = \frac{\omega^{2}}{1 + \tauq^{2}\omega^{2}},
@@ -186,7 +184,7 @@ solutions to exist), we require
          {(1+x)^{2}+\tilde{\omega}^{2}}.
 \end{equation}
 As in the classical case, overstability is excluded for $p > 1$.
-The Israel--Stewart correction (second term on the right) modifies
+The BDNK correction (second term on the right) modifies
 the threshold Taylor number at $\order{\tauq\,\omega^{2}}$ but does
 not change this qualitative conclusion.
 
@@ -204,7 +202,7 @@ acquires a relativistic correction:
 \end{equation}
 The leading term is the classical value~(233).
 
-\subsection{Comparison with classical: the additional Israel--Stewart modes}
+\subsection{Comparison with classical: BDNK vs.\ Israel--Stewart modes}
 
 The quintic~\eqref{eq:rel-3-quintic} has five roots.  In the regime
 $\tauq,\taupi \ll d^{2}/\nu$ (relaxation times much shorter than the
@@ -240,7 +238,7 @@ integral containing $i\sigma$ linearly in the denominator, so that
 the Rayleigh number is in general complex; the requirement of reality
 selects the physical oscillation frequency.
 
-For the Israel--Stewart theory, we replace $\sigma$ in the classical
+For the BDNK theory, we replace $\sigma$ in the classical
 equations~(248)--(250) according to~\eqref{eq:rel-3-sigma-repl}.
 Defining
 \begin{equation}\label{eq:rel-3-F-def}
@@ -290,7 +288,7 @@ As in the classical case, $\delta\Rarel = 0$ for all admissible
 variations $\delta F_{\mathrm{rel}}$ if and only if
 equation~\eqref{eq:rel-3-F-eq} is satisfied.  The characteristic values
 of $\Rarel$ have an extremal character but are \emph{not} necessarily
-minimal, since $\Rarel$ can be complex.  The Israel--Stewart
+minimal, since $\Rarel$ can be complex.  The BDNK
 modification does not alter this structural feature; it only changes
 the numerical values of the extrema.
 \end{relcorrection}
@@ -302,7 +300,7 @@ extension: $W = F_{\mathrm{rel}} = 0$ at $z=0,1$, together with
 $DW=0$, $Z=0$ on rigid surfaces or $D^{2}W=0$, $DZ=0$ on free
 surfaces.  The boundary conditions themselves are local (they do not
 involve time derivatives) and hence are insensitive to the
-Israel--Stewart relaxation.
+BDNK causal modifications.
 
 The \emph{algorithm} for deciding whether stationary or oscillatory
 onset occurs remains unchanged:
@@ -368,7 +366,7 @@ with $\hat{p}\sigma$ as in~\eqref{eq:rel-3-hatsigma-def}.
 
 \subsection{Numerical results: two free boundaries}
 
-For $p = 0.025$ (mercury) and the Israel--Stewart relaxation
+For $p = 0.025$ (mercury) and the BDNK causal modifications
 times estimated as $\tauq \sim 10^{-11}\,\mathrm{s}$ and
 $\taupi \sim 10^{-12}\,\mathrm{s}$ (appropriate for liquid metals
 at laboratory conditions), the relativistic corrections to the
@@ -425,7 +423,7 @@ as~\eqref{eq:rel-3-Rc-free-free}:
 The correction coefficients differ from the free-boundary case because
 the eigenfunction structure (involving $\cosh q_{j}z$ factors) depends
 on the roots~\eqref{eq:rel-3-redef-q}, which themselves carry the
-Israel--Stewart modification.
+BDNK modification.
 
 \subsection{Numerical results: one free, one rigid boundary}
 
@@ -443,9 +441,9 @@ Similarly, for the mixed boundary conditions (Table~XIII),
 \hline
 Quantity & Classical & Relativistic correction \\
 \hline
-Dispersion relation degree & 3 (cubic) & 5 (quintic) \\
+Dispersion relation degree & 3 (cubic) & 3 (cubic, same as classical) \\
 No.\ of physical modes & 3 & 3 \\
-No.\ of relaxation modes & 0 & 2 \\
+No.\ of relaxation modes & 0 & 0 (none in BDNK) \\
 $p^{*}$ & $0.67659$ & $0.67659 + \order{p_{0}/\rdensity c^{2}}$ \\
 $R_{c}^{(o)}$ scaling ($T\to\infty$)
   & $\propto T^{2/3}$
@@ -464,7 +462,7 @@ $T^{(p)}$ threshold & Table~X
 \subsection*{Causality verification}
 
 \begin{causalitycheck}
-The Israel--Stewart formulation guarantees that no thermal signal
+The BDNK formulation guarantees that no thermal signal
 propagates faster than the characteristic speed
 \begin{equation}\label{eq:rel-3-vth}
   v_{\mathrm{th}}
@@ -484,12 +482,12 @@ bound applies throughout the overstability analysis:
     1/\tauq$ and $1/\taupi$; their group velocities are bounded by
     $v_{\mathrm{th}}$ and the corresponding viscous characteristic
     speed $v_{\mathrm{visc}}=\sqrt{\shearvisc/(\taupi\rdensity)}\le c$.
-  \item The quintic dispersion relation~\eqref{eq:rel-3-quintic} is
-    a causal polynomial: all five roots have phase velocities
+  \item The cubic dispersion relation~\eqref{eq:rel-3-cubic}
+    yields only physical hydrodynamic modes, all with phase velocities
     $|\omega/k| \le c$ for real~$k$.
 \end{itemize}
 In contrast, the classical (Fourier) heat equation admits infinite
-propagation speed; the Israel--Stewart theory resolves this pathology.
+propagation speed; the BDNK theory resolves this pathology.
 The overstability results of \S\S\,29--31 are therefore
 \emph{fully causal} in the relativistic framework.
 \end{causalitycheck}

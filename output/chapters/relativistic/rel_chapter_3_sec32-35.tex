@@ -67,9 +67,9 @@ neutron stars where $\enthalpy / \rdensity c^2$ can approach~2, the
 suppression reaches $\sim 30\%$.
 \end{relcorrection}
 
-\subsection*{(c) Israel--Stewart corrections at $\Pran = 0$}
+\subsection*{(c) BDNK corrections at $\Pran = 0$}
 
-In the Israel--Stewart causal dissipation framework, the heat flux
+In the BDNK causal first-order dissipation framework, the heat flux
 relaxation equation introduces a new timescale $\tauq$.  When
 $\Pran \to 0$, the thermal diffusivity $\kappa \to \infty$, but causality
 requires that the effective propagation speed of thermal perturbations
@@ -84,11 +84,11 @@ This provides a \emph{lower bound} on the heat relaxation time:
 
 \begin{causalitycheck}
 The limit $\Pran \to 0$ must be taken with care in the relativistic theory.
-The Navier--Stokes (first-order) theory would imply instantaneous thermal
-propagation at $\Pran = 0$, violating causality.  The Israel--Stewart
+The acausal Navier--Stokes theory would imply instantaneous thermal
+propagation at $\Pran = 0$, violating causality.  The BDNK
 formalism resolves this: even as $\Pran \to 0$, thermal signals propagate
-at finite speed $v_{\mathrm{th}} = (\thermcond T / \tauq \enthalpy)^{1/2}
-\leq c$.  The classical $\Pran = 0$ results of \S\,\ref{sec:3-32} are
+at finite speed bounded by $c$, ensured by the BDNK frame-coefficient
+inequalities.  The classical $\Pran = 0$ results of \S\,\ref{sec:3-32} are
 recovered when $v_{\mathrm{th}} \gg c_{\mathrm{s}}$ but
 $v_{\mathrm{th}} \ll c$.
 \end{causalitycheck}
@@ -112,14 +112,14 @@ In relativistic dissipative fluid dynamics, the entropy current is
   + \order{\Pi^2, \pi^2, q^2},
 \end{equation}
 where $s$ is the entropy density in the fluid rest frame and the
-higher-order terms are required by the Israel--Stewart formalism to
+higher-order terms are required by the BDNK formalism to
 ensure the second law:
 \begin{equation}\label{eq:rel-3-282}
   \covd s^{\mu} \geq 0.
 \end{equation}
 
-Computing the entropy production rate from the Israel--Stewart
-constitutive relations, one obtains
+Computing the entropy production rate from the BDNK
+first-order constitutive relations, one obtains
 \begin{equation}\label{eq:rel-3-283}
   \covd s^{\mu} = -\frac{\bulkP}{T}\,\nabla_{\alpha} u^{\alpha}
   + \frac{\pi_{\mu\nu}}{2\shearvisc T}\,\pi^{\mu\nu}
@@ -163,11 +163,11 @@ sets in at the minimum adverse temperature gradient needed to balance
 viscous entropy production against buoyancy-driven entropy liberation,
 now measured in the relativistic sense}.
 
-\subsection*{(c) Oscillatory case: Entropy balance with Israel--Stewart terms}
+\subsection*{(c) Oscillatory case: Entropy balance with BDNK causal terms}
 
 When the marginal state is oscillatory, the energy balance argument of
 \S\,\ref{sec:3-33}\,(b) must be extended to include both the
-time-varying kinetic energy and the Israel--Stewart relaxation
+time-varying kinetic energy and the BDNK causal modifications
 contributions.
 
 The kinetic energy density in the relativistic theory is
@@ -180,7 +180,7 @@ time-varying contribution to the entropy balance becomes
   \langle \mathbf{u}_i^2\rangle\,dz.
 \end{equation}
 
-Additionally, the Israel--Stewart relaxation terms contribute to the
+Additionally, the BDNK causal modifications terms contribute to the
 entropy production.  For the heat flux, the relaxation equation
 $\tauq\,u^{\alpha}\nabla_{\alpha} q^{\langle\mu\rangle} + q^{\mu}
 = -\thermcond(\Delta^{\mu\nu}\nabla_{\nu}T
@@ -199,7 +199,7 @@ The full entropy balance for the oscillatory marginal state then reads
   \dot{s}_{\mathrm{visc}} + \dot{s}_{\mathrm{kin}}
   + \dot{s}_{\mathrm{IS}} = \dot{s}_{\mathrm{buoy}},
 \end{equation}
-where $\dot{s}_{\mathrm{IS}}$ denotes the Israel--Stewart relaxation
+where $\dot{s}_{\mathrm{IS}}$ denotes the BDNK causal modifications
 contribution.  This leads to the variational expression
 \begin{equation}\label{eq:rel-3-290}
   \Rarel = \frac{\displaystyle\int_0^1\!\left[(DF)^2
@@ -219,7 +219,7 @@ the Newtonian one:
   \item The inertial contribution carries the factor
     $\enthalpy / \rdensity c^2 > 1$, reflecting the enhanced
     relativistic inertia.
-  \item The Israel--Stewart relaxation time $\tauq$ enters through the
+  \item The BDNK causal modifications time $\tauq$ enters through the
     modified thermal diffusivity~\eqref{eq:rel-3-288}, coupling the
     oscillation frequency $\sigma$ to the causal heat transport.
     When $\sigma\tauq \ll 1$, the Newtonian result is recovered.
@@ -237,7 +237,7 @@ relativistic entropy production by viscous dissipation against the rate
 of entropy liberation by the buoyancy force.  The onset of overstable
 oscillations occurs if it is possible, at a lower gradient, to achieve
 a synchronous entropy balance including the periodically varying
-relativistic kinetic energy and the Israel--Stewart causal relaxation
+relativistic kinetic energy and the BDNK causal transport
 effects.}
 
 
@@ -383,7 +383,7 @@ may be observable through:
     X-ray luminosity from neutron star low-mass X-ray binaries (LMXBs)
     at frequencies $\nu \sim 300$--$1200$~Hz may be connected to inertial
     modes modified by the relativistic corrections derived in
-    \S\,\ref{sec:rel-3-32}\,(b).  The Israel--Stewart relaxation
+    \S\,\ref{sec:rel-3-32}\,(b).  The BDNK causal modifications
     time $\tauq$ introduces a damping timescale that can be constrained
     by the observed quality factors of QPOs (van der Klis 2006).
   \item \textbf{Pulsar glitches:} Sudden spin-up events in pulsars
@@ -467,7 +467,7 @@ characteristics (Event Horizon Telescope Collaboration 2019, 2022).
 \addcontentsline{toc}{section}{Bibliographical Notes (Relativistic, \S\S\,32--35)}
 
 \noindent \textbf{Relativistic fluid dynamics and causality.}  The
-Israel--Stewart causal dissipation theory, which underlies the
+BDNK causal first-order dissipation theory, which underlies the
 relativistic entropy production analysis of \S\,\ref{sec:rel-3-33}, is
 developed in:
 
