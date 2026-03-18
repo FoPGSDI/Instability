@@ -1,0 +1,345 @@
+% =============================================================
+%  Relativistic modification of Chapter II, §16
+%  Cell patterns in relativistic thermal convection
+%
+%  Original: Chandrasekhar, §16 "The cell patterns"
+%  This file extends the analysis to a relativistic fluid
+%  using the Israel-Stewart causal dissipation framework.
+% =============================================================
+
+\section{Cell patterns in relativistic thermal convection}\label{sec:rel-16}
+
+In \S\,\ref{sec:16} it was shown that the theory of marginal stability
+at the onset of convection leaves the horizontal cell pattern entirely
+unspecified: a disturbance of wave number~$a$ can be decomposed into
+orthogonal components in infinitely many ways, and these components may
+be superposed with arbitrary amplitudes and phases.  The question we
+address here is whether the extension to a relativistic fluid---one in
+which the energy density~$\edensity$, pressure~$p$, and inertia
+$\enthalpy/c^{2}=(\edensity+p)/c^{2}$ all enter the governing
+equations---lifts or preserves this degeneracy at marginal stability,
+and how the cell structures are modified when non-linear effects are
+taken into account.
+
+%--------------------------------------------------------------
+\subsection{Relativistic horizontal eigenvalue problem}\label{sec:rel-16-eigenvalue}
+%--------------------------------------------------------------
+
+The separation of the vertical velocity perturbation into horizontal
+and vertical factors,
+\begin{equation}
+\label{eq:rel-2-229}
+\delta w = F(x,y)\,W(z),
+\end{equation}
+carries over to the relativistic problem provided one replaces the
+Newtonian horizontal Helmholtz equation
+$\nabla_{1}^{2}F = -a^{2}F$
+by its relativistic counterpart.  In a static background with metric
+$g_{\mu\nu} = \mathrm{diag}(-e^{2\Phi/c^{2}},1,1,1)$, where $\Phi$
+is the gravitational potential, the horizontal Laplacian on the
+perturbed 3-surface is
+\begin{equation}
+\label{eq:rel-2-228}
+\nabla_{1}^{2}F
+  = \left(\frac{\partial^{2}}{\partial x^{2}}
+       + \frac{\partial^{2}}{\partial y^{2}}\right)F
+  = -a_{\mathrm{rel}}^{2}\,F,
+\end{equation}
+with the \emph{relativistic horizontal eigenvalue}
+\begin{equation}
+\label{eq:rel-2-237}
+\boxed{\;
+a_{\mathrm{rel}}^{2}
+  = \bigl(k_{x}^{2}+k_{y}^{2}\bigr)
+    \left[1 + \frac{p}{\edensity + p}
+             \,\frac{2\Phi}{c^{2}}
+         + \order{c^{-4}}\right].
+\;}
+\end{equation}
+Here $k_{x}=2\pi/L_{x}$ and $k_{y}=2\pi/L_{y}$ are the
+Newtonian wave numbers in the two horizontal directions.  The
+correction factor arises because the spatial part of the perturbed
+metric contributes a conformal rescaling of horizontal lengths of
+order~$\Phi/c^{2}$.  For a layer of depth~$d$ with
+$\Phi\sim gd$, the fractional shift is
+$\Delta a^{2}/a^{2}\sim gd/c^{2}$.
+
+\begin{relcorrection}
+The classical relation $a^{2}=k_{x}^{2}+k_{y}^{2}$ receives a
+multiplicative correction
+$1+p\,\Phi/[(\edensity+p)\,c^{2}/2]+\order{c^{-4}}$.  This
+correction is \emph{isotropic} in the $(x,y)$-plane and therefore
+does not prefer any particular orientation of the wave vector.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{Degeneracy of planforms at marginal stability}\label{sec:rel-16-degeneracy}
+%--------------------------------------------------------------
+
+A central result of the classical theory is that the critical Rayleigh
+number depends only on the magnitude~$a$ of the horizontal wave
+vector, not on its orientation.  This \emph{planform degeneracy}
+persists in the relativistic theory for the following reason.
+
+The relativistic linearised perturbation equations, derived from the
+conservation laws $\covd T^{\mu\nu}=0$ supplemented by the
+Israel--Stewart constitutive relations, reduce in the static
+background to a system whose coefficients depend on~$z$ alone.
+After Fourier decomposition in the horizontal coordinates
+$(x,y)\to(k_{x},k_{y})$, every coefficient involves only
+$a_{\mathrm{rel}}^{2}=k_{x}^{2}+k_{y}^{2}+\order{c^{-2}}$,
+never $k_{x}$ or $k_{y}$ individually.  Consequently the
+eigenvalue relation for the relativistic Rayleigh number
+\begin{equation}
+\label{eq:rel-Ra-marginal}
+\Rarel = \Rarel(a_{\mathrm{rel}}^{2})
+\end{equation}
+is a function of $a_{\mathrm{rel}}^{2}$ alone, and the
+minimisation that defines the critical state,
+\begin{equation}
+\label{eq:rel-Ra-crit}
+\Rarel^{(\mathrm{c})} = \min_{a_{\mathrm{rel}}}\Rarel(a_{\mathrm{rel}}^{2}),
+\end{equation}
+yields a critical eigenvalue $a_{\mathrm{rel,c}}^{2}$ that again
+places no restriction on the direction of $\mathbf{k}=(k_{x},k_{y})$.
+
+\begin{causalitycheck}
+The Israel--Stewart relaxation times $\taupi$ and $\tauq$ enter
+the vertical eigenvalue problem but not the horizontal Helmholtz
+equation.  They therefore influence $\Rarel^{(\mathrm{c})}$ and
+$a_{\mathrm{rel,c}}$ but do not break the horizontal isotropy
+that underlies the planform degeneracy.
+Causality ($v_{\mathrm{signal}}\le c$) is automatically satisfied
+because $\taupi,\tauq>0$ and the perturbation equations are
+hyperbolic in the time-like direction.
+\end{causalitycheck}
+
+Thus the infinite degeneracy of cell patterns found in the Newtonian
+theory---the freedom to superpose plane-wave solutions at arbitrary
+orientations and phases so long as
+$|\mathbf{k}|=a_{\mathrm{rel,c}}$---\emph{survives intact} in the
+relativistic regime.  The cell pattern that is realised must therefore
+be determined, as in the classical case, either by symmetry arguments
+or by the non-linear dynamics of the finite-amplitude state.
+
+%--------------------------------------------------------------
+\subsection{Rolls, rectangles, hexagons, and triangles in the
+  relativistic regime}\label{sec:rel-16-patterns}
+%--------------------------------------------------------------
+
+Because the horizontal eigenvalue problem~\eqref{eq:rel-2-228} has
+exactly the same form as in the Newtonian case---only the value
+of~$a$ is shifted---all the cell-pattern solutions of \S\,\ref{sec:16}
+carry over with the simple replacement
+$a\to a_{\mathrm{rel}}$.  We summarise the relativistic forms for
+completeness.
+
+\subsubsection*{(a) Rolls}
+
+\begin{equation}
+\label{eq:rel-2-233}
+\delta w = W(z)\cos\frac{2\pi}{L_{\mathrm{rel}}}\,x,
+\qquad
+L_{\mathrm{rel}} = \frac{2\pi}{a_{\mathrm{rel}}}.
+\end{equation}
+The roll width is $L_{\mathrm{rel}}$, which differs from the
+Newtonian value by a fractional amount $\sim gd/c^{2}$.
+
+\subsubsection*{(b) Rectangular and square cells}
+
+\begin{equation}
+\label{eq:rel-2-236}
+\delta w = W(z)\cos\frac{2\pi}{L_{x}}\,x\;\cos\frac{2\pi}{L_{y}}\,y,
+\qquad
+a_{\mathrm{rel}}^{2}
+  = 4\pi^{2}\!\left(\frac{1}{L_{x}^{2}}+\frac{1}{L_{y}^{2}}\right)
+    \relcorr{\Phi/c^{2}}.
+\end{equation}
+The streamlines in the horizontal plane satisfy the same differential
+equation~\eqref{eq:2-246} as in the classical theory and the
+cell geometry (sides $L_{x}$, $L_{y}$) is modified only through the
+relativistic value of $a_{\mathrm{rel,c}}$.
+
+\subsubsection*{(c) Hexagonal cells}
+
+Christopherson's solution generalises to
+\begin{equation}
+\label{eq:rel-2-248}
+\delta w = \tfrac{1}{3}W(z)\biggl\{
+  2\cos\frac{2\pi}{\sqrt{3}\,L_{\mathrm{rel}}}\,x
+   \cos\frac{2\pi}{3L_{\mathrm{rel}}}\,y
+  + \cos\frac{4\pi}{3L_{\mathrm{rel}}}\,y
+\biggr\},
+\end{equation}
+with $a_{\mathrm{rel}}=4\pi/(3L_{\mathrm{rel}})$.  The hexagonal
+symmetry---invariance under $60^{\circ}$ rotation---is preserved because
+the relativistic correction to $a^{2}$ is isotropic.  The hexagon side
+length $L_{\mathrm{rel}}$ replaces the classical~$L$; the flow topology
+(six triangular sub-cells, inscribed hexagon of constant~$w$, etc.)\ is
+unchanged.
+
+\subsubsection*{(d) Triangular cells}
+
+As in \S\,\ref{sec:16}, the hexagonal pattern can equally be viewed as
+a triangular tessellation with unit-cell side $L_{\mathrm{rel}}\sqrt{3}$.
+
+\subsubsection*{(e) General Bisshopp patterns}
+
+Bisshopp's more general solution~\eqref{eq:2-276} carries over with
+the replacement $a\to a_{\mathrm{rel}}$ and the wavelengths
+\begin{equation}
+\label{eq:rel-2-272}
+\lambda_{x}^{\mathrm{rel}}
+  = \frac{2\pi}{a_{\mathrm{rel}}}\,\frac{m}{\sqrt{m^{2}-1}},
+\qquad
+\lambda_{y}^{\mathrm{rel}}
+  = \frac{2\pi}{a_{\mathrm{rel}}}\,m.
+\end{equation}
+
+%--------------------------------------------------------------
+\subsection{Non-linear effects: relativistic corrections to
+  amplitude equations}\label{sec:rel-16-nonlinear}
+%--------------------------------------------------------------
+
+Although the linear theory does not select the cell pattern, the
+weakly non-linear theory does---through the \emph{amplitude equations}
+(Landau or Ginzburg--Landau type) that govern the slow evolution of
+finite-amplitude perturbations near the critical Rayleigh number.
+
+Denote by $A_{j}$ ($j=1,\ldots,N$) the complex amplitudes of~$N$
+plane-wave modes whose wave vectors $\mathbf{k}_{j}$ all have
+$|\mathbf{k}_{j}|=a_{\mathrm{rel,c}}$.  To cubic order the amplitude
+equations take the standard form
+\begin{equation}
+\label{eq:rel-amplitude}
+\tauq\,\frac{\partial A_{j}}{\partial t}
+  = \sigma\,A_{j}
+  - \ell_{j}\,|A_{j}|^{2}A_{j}
+  - \sum_{k\neq j} g_{jk}\,|A_{k}|^{2}A_{j}
+  + h_{j}\,A_{m}^{*}A_{n}^{*}\,\delta_{\mathbf{k}_{j}+\mathbf{k}_{m}+\mathbf{k}_{n},\,0},
+\end{equation}
+where $\sigma\propto(\Rarel-\Rarel^{(\mathrm{c})})$ is the
+supercriticality parameter.
+
+\paragraph{Relativistic modifications of the Landau coefficients.}
+The self-interaction coefficient $\ell_{j}$, the cross-coupling
+$g_{jk}$, and the resonant triad coefficient $h_{j}$ all receive
+$\order{v^{2}/c^{2}}$ corrections compared with their Newtonian
+values.  These corrections enter through:
+\begin{enumerate}
+\item \emph{Relativistic inertia}: the role of the rest-mass
+  density~$\rdensity$ in the non-linear advection term
+  $u^{\alpha}\covda u^{\mu}$ is replaced by the enthalpy
+  $\enthalpy/c^{2}=(\edensity+p)/c^{2}$, enhancing the effective
+  inertia by a factor $1+p/(\edensity c^{2})+\order{c^{-4}}$.
+\item \emph{Causal heat transport}: the Israel--Stewart relaxation
+  time~$\tauq$ introduces a frequency-dependent (dispersive)
+  correction to the thermal diffusivity that modifies the saturation
+  coefficients $\ell_{j}$ and $g_{jk}$.
+\item \emph{Compressibility}: relativistic fluids with
+  $c_{\mathrm{s}}/c$ not negligible develop a coupling between
+  the thermal and acoustic modes that has no Newtonian counterpart.
+  This generates an additional cubic term of
+  order~$(c_{\mathrm{s}}/c)^{2}$ in~\eqref{eq:rel-amplitude}.
+\end{enumerate}
+
+\paragraph{Pattern selection.}
+The classical result of Busse and others---that rolls are the stable
+planform for Boussinesq convection between stress-free boundaries
+with up/down symmetry---carries over to the relativistic case as
+long as the Boussinesq-type symmetry is preserved.  However, two
+mechanisms can break this symmetry relativistically:
+\begin{itemize}
+\item A non-negligible gravitational redshift across the layer
+  ($gd/c^{2}\not\ll 1$) introduces a preferred vertical direction
+  in the energetics, making $h_{j}\neq 0$ and favouring hexagonal
+  over roll-like patterns.
+\item Bulk-viscous effects ($\bulkP\neq 0$) associated with the
+  equation of state of dense matter couple the mean dilatation to
+  the convective amplitude, again generating a hexagonal tendency.
+\end{itemize}
+
+%--------------------------------------------------------------
+\subsection{Physical discussion and astrophysical
+  relevance}\label{sec:rel-16-discussion}
+%--------------------------------------------------------------
+
+\subsubsection*{Laboratory fluids}
+
+For terrestrial experiments the relativistic corrections are
+negligible.  Taking water as an example:
+\begin{equation}
+\label{eq:rel-lab-estimate}
+\frac{gd}{c^{2}}
+  \sim \frac{10\;\mathrm{m\,s^{-2}}\times 10^{-2}\;\mathrm{m}}
+       {(3\times 10^{8}\;\mathrm{m\,s^{-1}})^{2}}
+  \sim 10^{-18}.
+\end{equation}
+The fractional correction to $a^{2}$ and to the Landau coefficients
+is of this order---far beyond any conceivable measurement.  The
+classical cell-pattern analysis of \S\,\ref{sec:16} therefore
+applies without modification to all laboratory B\'enard experiments.
+
+\subsubsection*{Neutron-star oceans}
+
+In the outer envelope of a neutron star, $g\sim 10^{14}\;\mathrm{m\,s^{-2}}$
+and $d\sim 1$--$10\;\mathrm{m}$, giving
+\begin{equation}
+\label{eq:rel-ns-estimate}
+\frac{gd}{c^{2}} \sim 10^{-3}\text{--}10^{-2}.
+\end{equation}
+Corrections at the percent level can affect the critical wave number
+and thus the cell size of convective patterns in accreting neutron-star
+oceans.  Moreover, the equation of state of dense matter yields
+$c_{\mathrm{s}}^{2}/c^{2}\sim 0.1$--$0.3$, so the compressibility
+coupling in~\eqref{eq:rel-amplitude} is no longer negligible and may
+shift the non-linear pattern selection toward hexagons.
+
+\subsubsection*{Quark--gluon plasma}
+
+In the quark--gluon plasma produced in heavy-ion collisions,
+$c_{\mathrm{s}}^{2}=c^{2}/3$ (conformal limit) and the fluid is
+ultra-relativistic.  While the geometry is far from a classical
+B\'enard layer, the mathematical structure of the amplitude
+equations~\eqref{eq:rel-amplitude} applies to any convective
+instability in a relativistic fluid.  The Landau coefficients
+receive $\order{1}$ corrections; the Newtonian expressions are
+not even a useful starting approximation.
+
+\subsubsection*{Early-universe plasma}
+
+During the radiation-dominated era, the cosmic fluid has
+$p=\edensity/3$ and $\enthalpy/c^{2}=4\edensity/(3c^{2})$.
+Convective instabilities driven by compositional gradients (e.g.\
+lepton-number inhomogeneities) would obey the full relativistic
+amplitude equations with $\order{1}$ relativistic effects.  The
+planform degeneracy still holds at linear order, but the pattern
+selected by the non-linear dynamics is governed entirely by the
+relativistic coefficients.
+
+%--------------------------------------------------------------
+\subsection{Summary}\label{sec:rel-16-summary}
+%--------------------------------------------------------------
+
+\begin{enumerate}
+\item The horizontal eigenvalue relation
+  $a^{2}=k_{x}^{2}+k_{y}^{2}$ receives a multiplicative
+  relativistic correction~\eqref{eq:rel-2-237} that is isotropic
+  and of order $gd/c^{2}$.
+\item The \emph{degeneracy of planforms at marginal stability
+  persists} in the relativistic theory: the critical Rayleigh number
+  depends only on $a_{\mathrm{rel}}^{2}$, not on the direction
+  of~$\mathbf{k}$.
+\item All classical cell-pattern solutions (rolls, rectangles,
+  hexagons, triangles, Bisshopp patterns) carry over with the
+  replacement $a\to a_{\mathrm{rel}}$.
+\item Non-linear amplitude equations receive $\order{v^{2}/c^{2}}$
+  corrections from relativistic inertia, causal heat transport,
+  and compressibility.  These corrections can shift the preferred
+  pattern from rolls to hexagons when $gd/c^{2}$ or
+  $c_{\mathrm{s}}^{2}/c^{2}$ is not negligible.
+\item For laboratory fluids the corrections are unmeasurably small
+  ($\sim 10^{-18}$); for neutron-star oceans they reach
+  $\sim 10^{-2}$; for quark--gluon plasma and the early universe
+  they are of order unity.
+\end{enumerate}
