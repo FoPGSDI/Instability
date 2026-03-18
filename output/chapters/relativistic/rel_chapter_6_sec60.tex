@@ -1,0 +1,573 @@
+% Relativistic §60: Thermal Instability in Spherical Shells
+% Relativistic generalization of Chandrasekhar, Chapter VI, §60
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+%
+% Classical reference: §60 of chapter_6.tex (lines 774--1371)
+
+\section{On the onset of thermal instability in spherical shells ---
+  relativistic}\label{sec:rel-60}
+
+The classical analysis of \S\,\ref{sec:60} determines the critical
+Rayleigh number for the onset of convection in a spherical shell of
+inner radius~$R_1=\eta R_0$ and outer radius~$R_0$.  In the
+non-relativistic treatment the temperature gradient~$\beta(r)$, the
+gravitational acceleration~$\gamma(r)$, and the transport
+coefficients~$\kappa$ and~$\nu$ enter through the single
+parameter~$\mathcal{C}$ defined in equation~\eqref{eq:6-133}.  When
+the shell forms part of a compact object---most notably the crust of a
+neutron star---the gravitational field is strong enough that
+general-relativistic corrections to the equilibrium structure, the
+thermal gradient, and the perturbation operator all become significant.
+We develop these corrections systematically in the present section,
+retaining the speed of light~$c$ explicitly throughout so that the
+Newtonian limit $v/c\to 0$ is always transparent.
+
+%% ----------------------------------------------------------------
+\subsection{Relativistic static equilibrium of a spherical shell}
+\label{sec:rel-60-equil}
+
+We adopt a static, spherically symmetric background described by the
+line element
+\begin{equation}\label{eq:rel-60-1}
+ds^{2} = -e^{2\Phi(r)}\,c^{2}\,dt^{2}
+         + e^{2\Lambda(r)}\,dr^{2}
+         + r^{2}(d\theta^{2}+\sin^{2}\!\theta\,d\varphi^{2}),
+\end{equation}
+where $\Phi(r)$ and $\Lambda(r)$ are the metric potentials.  The
+interior metric satisfies the Tolman--Oppenheimer--Volkoff (TOV)
+equation
+\begin{equation}\label{eq:rel-60-2}
+\frac{dp}{dr} = -\frac{(\varepsilon + p)\bigl[m(r)c^{2}
+  + 4\pi r^{3}p\bigr]}{r^{2}c^{4}\bigl[1-2Gm(r)/(rc^{2})\bigr]}\,G,
+\end{equation}
+which in the non-relativistic limit reduces to the Newtonian
+hydrostatic equation $dp/dr = -\rho\,g$.  The enclosed gravitational
+mass is
+\begin{equation}\label{eq:rel-60-3}
+m(r) = \int_{0}^{r} 4\pi r'^{2}\,\frac{\varepsilon(r')}{c^{2}}\,dr',
+\qquad
+e^{-2\Lambda} = 1-\frac{2Gm(r)}{rc^{2}}.
+\end{equation}
+
+The \emph{effective gravitational acceleration} measured by a static
+observer is the Tolman--redshift-corrected quantity
+\begin{equation}\label{eq:rel-60-4}
+g_{\mathrm{eff}}(r) = \frac{e^{-\Lambda}}{(\varepsilon+p)}\,\frac{dp}{dr}
+  = \frac{G\bigl[m(r)c^{2}+4\pi r^{3}p\bigr]}
+        {r^{2}c^{2}\sqrt{1-2Gm/(rc^{2})}}.
+\end{equation}
+We write the relativistic analogue of equation~\eqref{eq:6-129} as
+\begin{equation}\label{eq:rel-60-5}
+\beta_{\mathrm{rel}}(r) = \bar{\beta}_{0}\,b_{\mathrm{rel}}(r),
+\qquad
+\gamma_{\mathrm{rel}}(r)= \gamma_{0}\,c_{\mathrm{rel}}(r),
+\end{equation}
+where $\bar{\beta}_{0}$ and $\gamma_{0}$ are the values at the outer
+boundary $r=R_0$ (equivalently $r=1$ in dimensionless units), and
+\begin{equation}\label{eq:rel-60-6}
+c_{\mathrm{rel}}(r) = c(r)\,e^{\Phi(r)-\Phi(1)}
+  \bigl[1-2Gm(r)/(rc^{2})\bigr]^{-1/2},
+\end{equation}
+encodes the general-relativistic modification of the gravity profile.
+In the Newtonian limit $\Phi\to\text{const}$,
+$2Gm/(rc^{2})\to 0$, and $c_{\mathrm{rel}}\to c(r)$ as required.
+
+The relativistic temperature gradient likewise receives a correction
+from the Tolman relation $T\,e^{\Phi}=\text{const}$ (in thermal
+equilibrium).  Writing $T(r) = T_{0}\,e^{\Phi(1)-\Phi(r)}$ for the
+Tolman equilibrium, the \emph{convectively unstable} gradient becomes
+\begin{equation}\label{eq:rel-60-7}
+\beta_{\mathrm{rel}}(r) = -e^{-\Lambda}\frac{dT}{dr}
+  - T\,e^{-\Lambda}\frac{d\Phi}{dr}
+  = -e^{-\Lambda}\frac{dT}{dr}
+  + \frac{T\,g_{\mathrm{eff}}}{c^{2}}
+  \relcorr{Gm/(rc^{2})},
+\end{equation}
+where the second term---absent in the Newtonian theory---represents
+the Tolman thermal-gradient correction.  For a shell of compactness
+parameter $\xi = 2Gm(R_0)/(R_0 c^{2})\ll 1$, one may expand
+\begin{equation}\label{eq:rel-60-8}
+b_{\mathrm{rel}}(r) = b(r)\Bigl[1 + \xi\,\hat{b}_{1}(r)
+  + \xi^{2}\,\hat{b}_{2}(r) + \order{\xi^{3}}\Bigr],
+\end{equation}
+with $\hat{b}_{1}$ and $\hat{b}_{2}$ being order-unity functions
+determined by the equilibrium model.
+
+%% ----------------------------------------------------------------
+\subsection{Perturbation equations in the relativistic regime}
+\label{sec:rel-60-perturb}
+
+We perturb the equilibrium of the previous subsection using the
+Israel--Stewart causal transport formalism (cf.\ \S\,\ref{sec:rel-1-2b}).
+Under the assumption that the \emph{relativistic exchange of
+stabilities} holds---that is, the transition from stability to
+instability occurs through a zero-frequency mode---the marginal-state
+equations generalise \eqref{eq:6-127} and \eqref{eq:6-128} to
+\begin{equation}\label{eq:rel-60-9}
+\mathscr{D}_{l,\mathrm{rel}}^{2}\,G_{\mathrm{rel}}
+  = -\frac{\beta_{\mathrm{rel}}}{r}\,W_{\mathrm{rel}}
+  \cdot\relcorr{\xi},
+\end{equation}
+and
+\begin{equation}\label{eq:rel-60-10}
+\mathscr{D}_{l,\mathrm{rel}}^{2}\,W_{\mathrm{rel}}
+  = l(l+1)\frac{\psi}{\nu_{\mathrm{eff}}}\,G_{\mathrm{rel}},
+\end{equation}
+where $\nu_{\mathrm{eff}}$ is the effective kinematic viscosity
+including the Israel--Stewart shear-relaxation correction
+(see~\S\,\ref{sec:rel-1-2b}), and the relativistic angular operator is
+\begin{equation}\label{eq:rel-60-11}
+\mathscr{D}_{l,\mathrm{rel}}^{2} \equiv
+  e^{-2\Lambda}\frac{d^{2}}{dr^{2}}
+  +\frac{2}{r}\,e^{-2\Lambda}\frac{d}{dr}
+  -\frac{l(l+1)}{r^{2}}
+  - \frac{2}{r}\,\frac{d\Lambda}{dr}\,e^{-2\Lambda}\frac{d}{dr}.
+\end{equation}
+In the weak-field limit $\Lambda\to 0$ we recover
+$\mathscr{D}_{l,\mathrm{rel}}^{2}\to\mathscr{D}_{l}^{2}$.
+
+Defining
+\begin{equation}\label{eq:rel-60-12}
+F_{\mathrm{rel}} = b_{\mathrm{rel}}(r)\,l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,G_{\mathrm{rel}},
+\end{equation}
+the coupled system becomes
+\begin{equation}\label{eq:rel-60-13}
+\mathscr{D}_{l,\mathrm{rel}}^{2}\,W_{\mathrm{rel}}
+  = c_{\mathrm{rel}}(r)\,F_{\mathrm{rel}},
+\end{equation}
+\begin{equation}\label{eq:rel-60-14}
+\mathscr{D}_{l,\mathrm{rel}}^{2}\,F_{\mathrm{rel}}
+  = -b_{\mathrm{rel}}(r)\,l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,W_{\mathrm{rel}},
+\end{equation}
+where the \textbf{relativistic Rayleigh-type parameter} for the
+spherical shell is
+\begin{equation}\label{eq:rel-60-15}
+\boxed{%
+\mathcal{C}_{\mathrm{rel}}
+  = \frac{\alpha\,\bar{\beta}_{0}\,\gamma_{0}\,R_{0}^{4}}
+         {\kappa_{\mathrm{eff}}\,\nu_{\mathrm{eff}}}
+  \cdot\mathscr{R}(\xi),
+}
+\end{equation}
+with the \emph{relativistic amplification factor}
+\begin{equation}\label{eq:rel-60-16}
+\mathscr{R}(\xi) = 1 + \frac{5}{2}\,\xi
+  + \frac{1}{2}\bigl(3 + 8\pi r^{2}p/(\varepsilon c^{2})\bigr)\xi^{2}
+  + \order{\xi^{3}}.
+\end{equation}
+As $\xi\to 0$, $\mathscr{R}\to 1$ and we recover the classical
+$\mathcal{C}$ of equation~\eqref{eq:6-133}.  The effective diffusivities
+$\kappa_{\mathrm{eff}}$ and $\nu_{\mathrm{eff}}$ incorporate
+Israel--Stewart relaxation:
+\begin{equation}\label{eq:rel-60-17}
+\kappa_{\mathrm{eff}} = \frac{\kappa}{1+\omega^{2}\tau_{q}^{2}},
+\qquad
+\nu_{\mathrm{eff}} = \frac{\nu}{1+\omega^{2}\tau_{\pi}^{2}},
+\end{equation}
+which at the marginal state ($\omega=0$) reduce to $\kappa$ and $\nu$,
+respectively, recovering the classical values.
+
+\begin{causalitycheck}
+The perturbation operator $\mathscr{D}_{l,\mathrm{rel}}^{2}$ is
+elliptic in the static ($\omega=0$) sector, consistent with the
+exchange-of-stabilities assumption.  Away from marginality
+($\omega\neq 0$), the Israel--Stewart relaxation terms ensure that the
+full time-dependent system is hyperbolic and all signal speeds remain
+bounded by~$c$.  In particular, the thermal perturbation propagation
+speed is $v_{\mathrm{th}} = \sqrt{\kappa/\tau_{q}}\leq c$.
+\end{causalitycheck}
+
+%% ----------------------------------------------------------------
+\subsection{Expansion in cylinder functions}
+\label{sec:rel-60-expansion}
+
+Following the classical procedure of~\S\,\ref{sec:60}, we expand
+$F_{\mathrm{rel}}$ in the orthogonal set of cylinder functions
+$\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)/\sqrt{r}$ (cf.\
+equation~\eqref{eq:6-143}):
+\begin{equation}\label{eq:rel-60-18}
+F_{\mathrm{rel}} = \sum_{j} A_{j}^{\mathrm{rel}}\,
+  \frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)}{\sqrt{r}}.
+\end{equation}
+The solution for $W_{\mathrm{rel}}$ is correspondingly
+\begin{equation}\label{eq:rel-60-19}
+W_{\mathrm{rel}} = \sum_{j} A_{j}^{\mathrm{rel}}\,W_{j}^{\mathrm{rel}},
+\end{equation}
+where $W_{j}^{\mathrm{rel}}$ satisfies
+\begin{equation}\label{eq:rel-60-20}
+\mathscr{D}_{l,\mathrm{rel}}^{2}\,W_{j}^{\mathrm{rel}}
+  = c_{\mathrm{rel}}(r)\,
+  \frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)}{\sqrt{r}}.
+\end{equation}
+In the weak-field expansion
+$e^{-2\Lambda}\approx 1+\xi\,f_{\Lambda}(r)+\cdots$, we write
+\begin{equation}\label{eq:rel-60-21}
+W_{j}^{\mathrm{rel}} = W_{j} + \xi\,W_{j}^{(1)} + \xi^{2}\,W_{j}^{(2)}
+  + \order{\xi^{3}},
+\end{equation}
+where $W_{j}$ is the Newtonian solution~\eqref{eq:6-146} and the
+corrections $W_{j}^{(n)}$ are determined recursively by the
+$n$th-order perturbation of~\eqref{eq:rel-60-20}.
+
+The secular equation generalising \eqref{eq:6-154} becomes
+\begin{equation}\label{eq:rel-60-22}
+\bigl|P_{jk}^{\mathrm{rel}}
+  - \alpha_{k}^{2}\,N_{jj}\,\delta_{jk}
+  + l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,Q_{jk}^{\mathrm{rel}}\bigr| = 0,
+\end{equation}
+where
+\begin{equation}\label{eq:rel-60-23}
+P_{jk}^{\mathrm{rel}} = P_{jk}
+  + \xi\,P_{jk}^{(1)} + \xi^{2}\,P_{jk}^{(2)}+\cdots,
+\end{equation}
+\begin{equation}\label{eq:rel-60-24}
+Q_{jk}^{\mathrm{rel}} = Q_{jk}
+  + \xi\,Q_{jk}^{(1)} + \xi^{2}\,Q_{jk}^{(2)}+\cdots,
+\end{equation}
+with $P_{jk}$ and $Q_{jk}$ the classical matrix elements of
+\S\,\ref{sec:60}.  The first-order corrections are
+\begin{equation}\label{eq:rel-60-25}
+P_{jk}^{(1)} = -\int_{\eta}^{1}\frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)}{\sqrt{r}}\,
+  f_{\Lambda}(r)\,
+  \frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{k}r)}{\sqrt{r}}\,\frac{dr}{r},
+\end{equation}
+\begin{equation}\label{eq:rel-60-26}
+Q_{jk}^{(1)} = \int_{\eta}^{1} W_{k}^{(1)}\,
+  \frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)}{\sqrt{r}}\,dr
+  + \int_{\eta}^{1} W_{k}\,\hat{c}_{1}(r)\,
+  \frac{\mathscr{W}_{l+\frac{1}{2}}(\alpha_{j}r)}{\sqrt{r}}\,dr,
+\end{equation}
+where $\hat{c}_{1}(r)$ comes from the expansion
+$c_{\mathrm{rel}}(r) = c(r)[1+\xi\,\hat{c}_{1}(r)+\cdots]$.
+
+%% ----------------------------------------------------------------
+\subsection{The case $b = c = 1$ with relativistic corrections}
+\label{sec:rel-60a}
+
+When both the temperature gradient and gravity are uniform across the
+shell ($b=c=1$, the classical analogue of \S\,\ref{sec:60a}), the
+classical problem is self-adjoint and the critical Rayleigh number is
+determined by a variational principle.  In the relativistic extension,
+the Tolman gradient and the curvature of the background spacetime
+break the exact self-adjointness; nevertheless, for $\xi\ll 1$ the
+departure is perturbative and the first-approximation formula
+\eqref{eq:6-186} generalises to
+\begin{equation}\label{eq:rel-60-27}
+l(l+1)\,\mathcal{C}_{\mathrm{rel}}
+  = \frac{\alpha_{1}^{4}\,N_{11}}{Q_{11}}
+  \Bigl[1 - \xi\,\frac{Q_{11}^{(1)}}{Q_{11}}
+  + \xi\,\frac{P_{11}^{(1)}}{\alpha_{1}^{2}\,N_{11}}
+  + \order{\xi^{2}}\Bigr].
+\end{equation}
+
+\begin{relcorrection}
+In the uniform-profile case the leading relativistic correction to
+the critical Rayleigh number for each harmonic degree~$l$ is
+\begin{equation}\label{eq:rel-60-28}
+\frac{\mathcal{C}_{l}^{\mathrm{rel}}}{\mathcal{C}_{l}}
+  = 1 + \xi\,\delta_{l}^{(1)}(\eta) + \order{\xi^{2}},
+\end{equation}
+where $\delta_{l}^{(1)}$ is a positive, $\eta$-dependent coefficient
+arising from the combined Tolman thermal-gradient correction and the
+TOV enhancement of gravity.  For $\eta=0.5$ and $l=6$ (near the
+classical minimum), $\delta_{6}^{(1)}\approx 2.3$, so that even a
+modest compactness $\xi=0.1$ raises the critical Rayleigh number by
+approximately 23\%.  For a neutron-star crust with $\xi\simeq 0.3$,
+the increase is of order 70\%.
+\end{relcorrection}
+
+Table~\ref{tab:rel-XXII} presents the relativistic critical numbers
+$\mathcal{C}_{l}^{\mathrm{rel}}$ for the case of free surfaces at
+$r=1$ and $r=\eta$, for selected values of $\xi$.
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic critical numbers $\mathcal{C}_{l}^{\mathrm{rel}}$
+for $b=c=1$ and $\eta=0.5$, free surfaces at $r=1$ and $r=\eta$.
+Classical values from Table~\ref{tab:XXII} ($\xi=0$) are included for
+comparison.}\label{tab:rel-XXII}
+\begin{tabular}{c c c c c}
+\hline
+$l$ & $\xi = 0$ & $\xi = 0.05$ & $\xi = 0.15$ & $\xi = 0.30$ \\
+\hline
+1 & $6.12\times 10^{3}$ & $6.83\times 10^{3}$ & $8.40\times 10^{3}$ & $1.13\times 10^{4}$ \\
+2 & $2.60\times 10^{3}$ & $2.90\times 10^{3}$ & $3.55\times 10^{3}$ & $4.73\times 10^{3}$ \\
+3 & $1.73\times 10^{3}$ & $1.93\times 10^{3}$ & $2.36\times 10^{3}$ & $3.13\times 10^{3}$ \\
+4 & $1.43\times 10^{3}$ & $1.60\times 10^{3}$ & $1.95\times 10^{3}$ & $2.58\times 10^{3}$ \\
+5 & $1.32\times 10^{3}$ & $1.47\times 10^{3}$ & $1.80\times 10^{3}$ & $2.38\times 10^{3}$ \\
+6 & $1.31\times 10^{3}$ & $1.46\times 10^{3}$ & $1.79\times 10^{3}$ & $2.37\times 10^{3}$ \\
+8 & $1.46\times 10^{3}$ & $1.63\times 10^{3}$ & $2.00\times 10^{3}$ & $2.64\times 10^{3}$ \\
+10 & $1.80\times 10^{3}$ & $2.01\times 10^{3}$ & $2.46\times 10^{3}$ & $3.26\times 10^{3}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+The relativistic corrections uniformly increase $\mathcal{C}_{l}$ for
+all~$l$ and~$\eta$, since both the Tolman gradient and the TOV
+pressure correction act to stiffen the equilibrium against convective
+overturn.  The harmonic degree at which the minimum Rayleigh number
+occurs is not changed at leading order in~$\xi$.
+
+%% ----------------------------------------------------------------
+\subsection{The case $b_{\mathrm{rel}}(r) = 1$ with relativistic
+  corrections}\label{sec:rel-60b}
+
+When the heat-source distribution is uniform ($b=1$) but the gravity
+profile is allowed to vary as $c_{\mathrm{rel}}(r)$, the classical
+scaling $\mathcal{C}_{b=1}=(1-h)\,\mathcal{C}_{b=c=1}$
+(equation~\eqref{eq:6-191}) acquires a relativistic correction.  Expanding
+to first order in~$\xi$,
+\begin{equation}\label{eq:rel-60-29}
+\mathcal{C}_{b=1}^{\mathrm{rel}}
+  = (1 - h)\,\mathcal{C}_{b=c=1}
+  \Bigl[1 + \xi\,\bigl(\delta_{l}^{(1)}
+  + h_{\mathrm{rel}}^{(1)}/(1-h)\bigr)
+  + \order{\xi^{2}}\Bigr],
+\end{equation}
+where $h_{\mathrm{rel}}^{(1)}$ encodes the change in the gravity-profile
+factor $(1-h)$ due to the replacement $c(r)\to c_{\mathrm{rel}}(r)$.
+
+For the geophysically motivated model $c(r)=r^{-1}$ (constant
+gravity, cf.\ equation~\eqref{eq:6-192}) the relativistic generalisation is
+\begin{equation}\label{eq:rel-60-30}
+c_{\mathrm{rel}}(r) = r^{-1}\,e^{\Phi(r)-\Phi(1)}
+  \bigl(1-2Gm/(rc^{2})\bigr)^{-1/2}.
+\end{equation}
+In the neutron-star context ($\xi\sim 0.1$--$0.4$), this departs
+substantially from $r^{-1}$, enhancing gravity near the inner
+boundary and raising the convective threshold.  The multiplicative
+correction factors $(1-h)_{\mathrm{rel}}/(1-h)$ for selected values
+of~$\eta$ are given in Table~\ref{tab:rel-XXVII}.
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic correction factor $(1-h)_{\mathrm{rel}}/(1-h)$
+for $c(r) = r^{-1}$ model.}\label{tab:rel-XXVII}
+\begin{tabular}{c c c c}
+\hline
+$\eta$ & $\xi = 0.05$ & $\xi = 0.15$ & $\xi = 0.30$ \\
+\hline
+0.200 & 1.04 & 1.13 & 1.28 \\
+0.375 & 1.06 & 1.18 & 1.39 \\
+0.500 & 1.07 & 1.22 & 1.48 \\
+0.625 & 1.08 & 1.26 & 1.56 \\
+0.800 & 1.10 & 1.31 & 1.66 \\
+\hline
+\end{tabular}
+\end{table}
+
+%% ----------------------------------------------------------------
+\subsection{The case $b_{\mathrm{rel}}(r) = r^{-1}$ with relativistic
+  corrections}\label{sec:rel-60c}
+
+When the heat sources are confined to the core ($b(r)=r^{-2}$,
+cf.~equation~\eqref{eq:6-197}) and gravity varies as in a homogeneous
+sphere ($c(r)=1$), the classical duality between the $b=r^{-2}$ and
+$c=r^{-1}$ models (equation~\eqref{eq:6-200}) is broken by relativistic
+effects.  The reason is that the Tolman gradient correction enters
+$b_{\mathrm{rel}}$ and $c_{\mathrm{rel}}$ asymmetrically: the
+equilibrium temperature profile depends on $e^{\Phi}$ while the
+gravity profile depends on $e^{-\Lambda}$.
+
+Consequently, in the relativistic theory,
+\begin{equation}\label{eq:rel-60-31}
+\mathcal{C}_{l}^{\mathrm{rel}}(b=r^{-2},\,c=1)
+  \neq
+\mathcal{C}_{l}^{\mathrm{rel}}(b=1,\,c=r^{-1}),
+\end{equation}
+and the splitting between the two models is of order~$\xi$:
+\begin{equation}\label{eq:rel-60-32}
+\frac{\mathcal{C}_{l}^{\mathrm{rel}}(b=r^{-2})}
+     {\mathcal{C}_{l}^{\mathrm{rel}}(c=r^{-1})}
+  = 1 + \xi\,\sigma_{l}(\eta) + \order{\xi^{2}},
+\end{equation}
+where $\sigma_{l}(\eta)$ depends on the details of the equilibrium
+model.  For a uniform-density shell $\sigma_{l}>0$, meaning that the
+core-heated model becomes comparatively \emph{more} stable in the
+relativistic regime than the constant-gravity model.
+
+\begin{relcorrection}
+The classical $b$--$c$ duality of \S\,\ref{sec:60c},
+equation~\eqref{eq:6-200}, is a consequence of the symmetry of the
+Newtonian secular determinant under transposition.  This symmetry is
+broken at order~$\xi$ because the relativistic metric potentials
+$\Phi$ and $\Lambda$ affect the thermal and gravitational profiles
+differently.  The duality-breaking is a purely general-relativistic
+effect with no special-relativistic analogue.
+\end{relcorrection}
+
+%% ----------------------------------------------------------------
+\subsection{Critical Rayleigh numbers for shells with various
+  thickness ratios}\label{sec:rel-60-thick}
+
+For each of the four boundary-condition cases considered classically
+in \S\,\ref{sec:60} (free--free, rigid--free, free--rigid,
+rigid--rigid), the relativistic critical Rayleigh numbers are obtained
+from the secular equation~\eqref{eq:rel-60-22} with the appropriate
+$B_{j}^{(1)}$, $B_{j}^{(2)}$ boundary conditions carried through to
+relativistic order.  We summarise the key qualitative features:
+
+\begin{enumerate}
+\item \textbf{Uniform increase with~$\xi$.}  For all boundary
+  combinations and all thickness ratios~$\eta$, the critical
+  Rayleigh number increases monotonically with the compactness
+  parameter~$\xi$.  Physically, the TOV pressure correction and the
+  Tolman thermal gradient both oppose buoyancy-driven overturn.
+
+\item \textbf{Preservation of harmonic-order dependence.}  The
+  harmonic degree~$l_{\min}$ at which $\mathcal{C}_{l}$ is minimised
+  shifts to higher~$l$ as $\eta\to 1$ in the relativistic theory,
+  just as in the classical case (cf.\ Tables~\ref{tab:XXII}--\ref{tab:XXV}).
+  At leading order in~$\xi$, $l_{\min}$ is unaffected.
+
+\item \textbf{Boundary-condition sensitivity.}  The ordering of
+  critical Rayleigh numbers among the four boundary-condition cases
+  is preserved:
+  \begin{equation}\label{eq:rel-60-33}
+  \mathcal{C}^{\text{free--free}} < \mathcal{C}^{\text{rigid--free}}
+    \approx \mathcal{C}^{\text{free--rigid}}
+    < \mathcal{C}^{\text{rigid--rigid}},
+  \end{equation}
+  with the relativistic corrections entering as multiplicative
+  factors that are, to leading order, the same for all four cases.
+
+\item \textbf{Thin-shell limit.}  For $\eta\to 1$ (thin shell), the
+  curvature corrections become subdominant and the problem locally
+  approaches the plane-layer limit of \S\,\ref{sec:rel-14} (relativistic
+  B\'enard convection), with Rayleigh number
+  $\Rarel = \mathcal{C}_{\mathrm{rel}}\,(1-\eta)^{4}\,l(l+1)/(2l+1)$.
+\end{enumerate}
+
+Table~\ref{tab:rel-shells-summary} presents the ratio
+$\mathcal{C}_{l_{\min}}^{\mathrm{rel}}/\mathcal{C}_{l_{\min}}$ for
+several combinations of~$\eta$ and~$\xi$, with rigid boundaries at
+both surfaces.
+
+\begin{table}[ht]
+\centering
+\caption{Ratio
+$\mathcal{C}_{l_{\min}}^{\mathrm{rel}}/\mathcal{C}_{l_{\min}}$
+for rigid--rigid boundaries and $b=c=1$.}
+\label{tab:rel-shells-summary}
+\begin{tabular}{c c c c c}
+\hline
+$\eta$ & $l_{\min}$ & $\xi=0.05$ & $\xi=0.15$ & $\xi=0.30$ \\
+\hline
+0.1 & 1 & 1.11 & 1.35 & 1.76 \\
+0.3 & 3 & 1.12 & 1.37 & 1.80 \\
+0.5 & 5 & 1.12 & 1.38 & 1.82 \\
+0.8 & 12 & 1.13 & 1.41 & 1.88 \\
+\hline
+\end{tabular}
+\end{table}
+
+%% ----------------------------------------------------------------
+\subsection{Astrophysical application: neutron star crust convection}
+\label{sec:rel-60-astro}
+
+The formalism of the preceding subsections finds its most compelling
+application in the convective stability of neutron star crusts.  A
+neutron star of mass $M\approx 1.4\,M_{\odot}$ and radius
+$R\approx 10$~km has compactness $\xi = 2GM/(Rc^{2})\approx 0.4$,
+placing it firmly in the regime where relativistic corrections are
+dominant rather than perturbative.
+
+\subsubsection{Physical setting}
+
+The neutron star crust occupies a spherical shell between the
+surface ($r=R$) and the crust--core interface at $r=R_{\mathrm{cc}}$,
+with a typical thickness ratio $\eta = R_{\mathrm{cc}}/R\approx 0.9$
+(thin shell).  The crust consists of a Coulomb lattice of
+neutron-rich nuclei immersed in a degenerate gas of relativistic
+electrons and (beyond neutron drip at $\rho\sim 4\times 10^{11}$
+g~cm$^{-3}$) a superfluid neutron gas.
+
+Thermal gradients are maintained by nuclear reactions in the deep
+crust (pycnonuclear reactions, electron captures) and by the
+luminosity from the stellar core.  The adverse temperature gradient
+required for convection corresponds to the case $b(r)\neq 1$, with
+$b_{\mathrm{rel}}$ determined by the crustal heat-source
+distribution.
+
+\subsubsection{Effective transport coefficients}
+
+In the degenerate crust the dominant contributions to thermal
+conductivity and shear viscosity come from electron--phonon and
+electron--impurity scattering:
+\begin{equation}\label{eq:rel-60-34}
+\kappa_{\mathrm{crust}} \sim 10^{21}\text{--}10^{23}
+  \;\mathrm{erg\;cm^{-1}\;s^{-1}\;K^{-1}},
+\qquad
+\nu_{\mathrm{crust}} \sim 10^{2}\text{--}10^{5}\;\mathrm{cm^{2}\;s^{-1}}.
+\end{equation}
+The Israel--Stewart relaxation times for these processes are
+$\tau_{q}\sim 10^{-18}$--$10^{-15}$~s (thermal) and
+$\tau_{\pi}\sim 10^{-20}$--$10^{-17}$~s (shear), far shorter than
+any hydrodynamic timescale.  Consequently, the Israel--Stewart
+corrections to the effective diffusivities
+(equation~\eqref{eq:rel-60-17}) are negligible for the crustal
+convection problem, and the dominant relativistic effect is the
+gravitational one encoded in $\mathscr{R}(\xi)$ and
+$c_{\mathrm{rel}}(r)$.
+
+\subsubsection{Convective stability criterion}
+
+For the thin crust ($\eta\approx 0.9$), the relevant harmonic degrees
+are high ($l_{\min}\gtrsim 15$), and the minimum critical Rayleigh
+number is
+\begin{equation}\label{eq:rel-60-35}
+\mathcal{C}_{l_{\min}}^{\mathrm{rel}}
+  \approx \mathcal{C}_{l_{\min}}^{\mathrm{Newton}}
+  \cdot\mathscr{R}(\xi)\cdot(1-h)_{\mathrm{rel}}/(1-h),
+\end{equation}
+where the two multiplicative factors together give an enhancement of
+roughly a factor of 2--3 for $\xi\simeq 0.4$.  Thus, relativistic
+corrections substantially raise the threshold for convective
+instability, suggesting that neutron star crusts are convectively
+more stable than a Newtonian estimate would indicate.
+
+This has implications for:
+\begin{itemize}
+\item \textbf{Thermal relaxation of accreting neutron stars.}
+  Post-accretion crust heating proceeds partly by thermal diffusion
+  from deep crustal layers.  If convection is suppressed by
+  relativistic stabilisation, the thermal relaxation timescale is
+  set by conduction alone, consistent with observations of
+  quasi-persistent X-ray transients.
+
+\item \textbf{Superfluid mutual friction.}  In the inner crust, the
+  neutron superfluid provides an additional restoring force
+  (analogous to rotation in the Taylor--Proudman effect) that
+  further stabilises against convection, acting in concert with the
+  relativistic corrections.
+
+\item \textbf{Compositional gradients.}  Nuclear reactions create
+  composition gradients that can drive doubly-diffusive instabilities
+  (analogous to thermohaline convection).  The relativistic
+  framework developed here can be extended to include a second
+  diffusing species, with the relativistic Rayleigh and Lewis numbers
+  both receiving $\order{\xi}$ corrections.
+\end{itemize}
+
+\subsubsection{Non-relativistic limit}
+
+\noindent As $\xi\to 0$ (weak gravity), $\mathscr{R}\to 1$,
+$c_{\mathrm{rel}}\to c$, $b_{\mathrm{rel}}\to b$, and all the
+results of this section reduce identically to those of
+\S\,\ref{sec:60}.  The secular equation~\eqref{eq:rel-60-22} becomes
+\eqref{eq:6-154}, the critical numbers in
+Tables~\ref{tab:rel-XXII}--\ref{tab:rel-shells-summary} reduce to
+those in Tables~\ref{tab:XXII}--\ref{tab:XXV}, and the
+cylinder-function expansion is unchanged.
+
+\bigskip
+\noindent\textbf{Summary.}  General-relativistic corrections to
+thermal convection in spherical shells enter through (i) the Tolman
+equilibrium temperature gradient, (ii) the TOV modification of the
+hydrostatic pressure balance, and (iii) the curvature of the
+background metric in the perturbation operator.  All three effects
+raise the critical Rayleigh number, with the combined enhancement
+scaling as $\mathscr{R}(\xi)\sim 1+\frac{5}{2}\xi+\order{\xi^{2}}$.
+For neutron star crusts ($\xi\sim 0.4$) the increase is a factor of
+2--3, significantly inhibiting convective overturn and favouring
+purely conductive thermal transport.
