@@ -1,0 +1,266 @@
+\documentclass[12pt]{book}
+
+% =====================================================================
+% Packages
+% =====================================================================
+\usepackage[margin=1in,headheight=15pt]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\pdfstringdefDisableCommands{%
+  \def\boldsymbol#1{#1}%
+  \def\mathbf#1{#1}%
+  \def\bm#1{#1}%
+  \def\textbf#1{#1}%
+}
+
+% =====================================================================
+% Page style
+% =====================================================================
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+\renewcommand{\headrulewidth}{0.4pt}
+
+% =====================================================================
+% 4-Vector notation
+% =====================================================================
+\newcommand{\fourv}[1]{#1^{\mu}}
+\newcommand{\fvel}{u^{\mu}}
+\newcommand{\fveldown}{u_{\mu}}
+\newcommand{\proj}{\Delta^{\mu\nu}}
+\newcommand{\projdown}{\Delta_{\mu\nu}}
+
+% =====================================================================
+% Tensors
+% =====================================================================
+\newcommand{\emt}{T^{\mu\nu}}
+\newcommand{\emtdown}{T_{\mu\nu}}
+\newcommand{\farad}{F^{\mu\nu}}
+\newcommand{\faraddown}{F_{\mu\nu}}
+\newcommand{\dualF}{{}^{*}\!F^{\mu\nu}}
+\newcommand{\metric}{g^{\mu\nu}}
+\newcommand{\metricdown}{g_{\mu\nu}}
+\newcommand{\mink}{\eta^{\mu\nu}}
+
+% =====================================================================
+% Covariant derivatives and Lie derivative
+% =====================================================================
+\newcommand{\covd}{\nabla_{\mu}}
+\newcommand{\covdu}{\nabla_{\nu}}
+\newcommand{\covda}{\nabla_{\alpha}}
+\newcommand{\Lie}{\mathcal{L}}
+
+% =====================================================================
+% Physical quantities
+% =====================================================================
+\newcommand{\enthalpy}{w}           % w = epsilon + p
+\newcommand{\edensity}{\varepsilon} % energy density
+\newcommand{\rdensity}{\rho_0}     % rest-mass density
+\newcommand{\Lf}{\gamma}            % Lorentz factor
+\newcommand{\cs}{c_{\mathrm{s}}}    % sound speed
+\newcommand{\vA}{v_{\mathrm{A}}}    % Alfven speed
+\newcommand{\vf}{v_{\mathrm{f}}}    % fast magnetosonic speed
+\newcommand{\vs}{v_{\mathrm{s}}}    % slow magnetosonic speed
+\newcommand{\bfour}{b^{\mu}}        % magnetic 4-vector
+\newcommand{\bsq}{b^2}             % b^mu b_mu
+
+% =====================================================================
+% Dissipation (BDNK first-order causal theory)
+% =====================================================================
+\newcommand{\Pibulk}{\Pi}            % bulk viscous pressure (BDNK)
+\newcommand{\shearten}{\pi^{\mu\nu}} % shear stress tensor
+\newcommand{\heatflux}{Q^{\mu}}      % heat flux 4-vector
+\newcommand{\bulkvisc}{\zeta}        % bulk viscosity coefficient
+\newcommand{\shearvisc}{\eta_{\mathrm{s}}} % shear viscosity coefficient
+\newcommand{\thermcond}{\kappa}      % thermal conductivity
+
+% =====================================================================
+% BDNK frame coefficients
+% =====================================================================
+\newcommand{\epsone}{\varepsilon_1}
+\newcommand{\betaone}{\beta_1}
+\newcommand{\alphaone}{\alpha_1}
+\newcommand{\Efr}{E}
+\newcommand{\Pfr}{P}
+\newcommand{\sheartensor}{\sigma^{\mu\nu}}
+\newcommand{\expansion}{\theta}
+
+% =====================================================================
+% Dimensionless numbers (relativistic generalisations)
+% =====================================================================
+\newcommand{\Rarel}{\mathrm{Ra}_{\mathrm{rel}}}
+\newcommand{\Tarel}{\mathrm{Ta}_{\mathrm{rel}}}
+\newcommand{\Qrel}{Q_{\mathrm{rel}}}
+\newcommand{\Mach}{\mathcal{M}}
+\newcommand{\Pran}{\mathrm{Pr}}
+\newcommand{\tauq}{\tau_{q}}
+\newcommand{\taupi}{\tau_{\pi}}
+\newcommand{\bulkP}{\Pi}
+
+% =====================================================================
+% Operators
+% =====================================================================
+\newcommand{\dAlembert}{\Box}
+\newcommand{\Dalembertian}{\Box}
+\newcommand{\order}[1]{\mathcal{O}(#1)}
+
+% =====================================================================
+% Compatibility macros
+% =====================================================================
+\providecommand{\dd}{\mathrm{d}}
+\providecommand{\vect}[1]{\mathbf{#1}}
+\providecommand{\Ra}{\mathrm{Ra}}
+\providecommand{\tauPi}{\tau_{\Pi}}
+
+% =====================================================================
+% Relativistic correction helpers
+% =====================================================================
+\newcommand{\relcorr}[1]{\left[1 + \order{#1}\right]}
+\newcommand{\NRlimit}{\xrightarrow{v/c \to 0}}
+
+% =====================================================================
+% Custom environments (tcolorbox)
+% =====================================================================
+\newenvironment{causalitycheck}{%
+  \begin{tcolorbox}[colback=yellow!5, colframe=yellow!50!black, title=BDNK Causality Verification]
+}{%
+  \end{tcolorbox}
+}
+
+\newenvironment{relcorrection}{%
+  \begin{tcolorbox}[colback=blue!5, colframe=blue!50!black, title=Relativistic Correction]
+}{%
+  \end{tcolorbox}
+}
+
+\newenvironment{bdnkframe}{%
+  \begin{tcolorbox}[colback=green!5, colframe=green!50!black, title=BDNK Frame Specification]
+}{%
+  \end{tcolorbox}
+}
+
+% =====================================================================
+\begin{document}
+
+\begin{titlepage}
+\centering
+\vspace*{3cm}
+{\Huge\bfseries Relativistic Hydrodynamic and\\[0.5em]
+Hydromagnetic Stability\par}
+\vspace{1.5cm}
+{\Large Using BDNK First-Order Causal Viscous Hydrodynamics\par}
+\vspace{2cm}
+{\large After S.\ Chandrasekhar\par}
+\vspace{0.5cm}
+{\large Relativistic Modifications (BDNK Formalism)\par}
+\vspace{3cm}
+{\large \today\par}
+\end{titlepage}
+
+\tableofcontents
+
+% =============================================================
+% Part I: Relativistic framework chapters
+% =============================================================
+\input{rel_framework_hydro}
+\input{rel_framework_mhd}
+\input{rel_framework_thermo}
+
+% =============================================================
+% Part II: Modified stability chapters (Ch I--XIV)
+% =============================================================
+
+% --- Chapter I ---
+\input{rel_chapter_1}
+
+% --- Chapter II ---
+\input{rel_chapter_2_sec5-9}
+\input{rel_chapter_2_sec10-12}
+\input{rel_chapter_2_sec13-14}
+\input{rel_chapter_2_sec15}
+\input{rel_chapter_2_sec16}
+\input{rel_chapter_2_sec17-18}
+
+% --- Chapter III ---
+\input{rel_chapter_3_sec19-23}
+\input{rel_chapter_3_sec24-28}
+\input{rel_chapter_3_sec29-31}
+\input{rel_chapter_3_sec32-35}
+
+% --- Chapter IV ---
+\input{rel_chapter_4_sec36-40}
+\input{rel_chapter_4_sec41-44}
+\input{rel_chapter_4_sec45-46}
+\input{rel_chapter_4_sec47-48}
+
+% --- Chapter V ---
+\input{rel_chapter_5_sec49-50}
+\input{rel_chapter_5_sec51-52}
+\input{rel_chapter_5_sec53-54}
+
+% --- Chapter VI ---
+\input{rel_chapter_6_sec55-56}
+\input{rel_chapter_6_sec57-58}
+\input{rel_chapter_6_sec59}
+\input{rel_chapter_6_sec60}
+\input{rel_chapter_6_sec61-63}
+
+% --- Chapter VII ---
+\input{rel_chapter_7_sec64-66}
+\input{rel_chapter_7_sec67}
+\input{rel_chapter_7_sec68}
+\input{rel_chapter_7_sec69-70}
+\input{rel_chapter_7_sec71}
+\input{rel_chapter_7_sec72-73}
+
+% --- Chapter VIII ---
+\input{rel_chapter_8_sec75-76}
+\input{rel_chapter_8_sec77-78}
+\input{rel_chapter_8_sec79}
+\input{rel_chapter_8_sec80}
+
+% --- Chapter IX ---
+\input{rel_chapter_9_sec81-83}
+\input{rel_chapter_9_sec84-86}
+\input{rel_chapter_9_sec87-89}
+\input{rel_chapter_9_sec90-91}
+
+% --- Chapter X ---
+\input{rel_chapter_10_sec90-92}
+\input{rel_chapter_10_sec93}
+\input{rel_chapter_10_sec94}
+\input{rel_chapter_10_sec95}
+\input{rel_chapter_10_sec96-97}
+\input{rel_chapter_10_sec98-99}
+
+% --- Chapter XI ---
+\input{rel_chapter_11_sec100-101}
+\input{rel_chapter_11_sec102-103}
+\input{rel_chapter_11_sec104}
+\input{rel_chapter_11_sec105-106}
+
+% --- Chapter XII ---
+\input{rel_chapter_12_sec107-109}
+\input{rel_chapter_12_sec110}
+\input{rel_chapter_12_sec111-112}
+\input{rel_chapter_12_sec113-115}
+
+% --- Chapter XIII ---
+\input{rel_chapter_13_sec116-118}
+\input{rel_chapter_13_sec119}
+\input{rel_chapter_13_sec120}
+
+% --- Chapter XIV ---
+\input{rel_chapter_14_sec121-122}
+\input{rel_chapter_14_sec123}
+
+\end{document}
