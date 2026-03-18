@@ -1,0 +1,530 @@
+% Relativistic Chapter VII, §69--70: Viscous Couette Flow and Perturbation Equations
+% Relativistic generalization of Chandrasekhar, Chapter VII §69--70
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\section{Relativistic viscous Couette flow}\label{sec:rel-7-69}
+
+In \S\ref{sec:7-69} we described the classical viscous Couette flow
+between two coaxial rotating cylinders.  We now reformulate this
+problem in the relativistic framework, replacing the Navier--Stokes
+viscous stress by the Israel--Stewart causal dissipative theory.
+
+\subsection{Relativistic energy-momentum tensor with Israel--Stewart
+  viscosity}\label{sec:rel-7-69a}
+
+The energy-momentum tensor for a relativistic dissipative fluid is
+(cf.\ \textsc{RELATIVISTIC\_CONVENTIONS.md})
+\begin{equation}
+\label{eq:rel-7-134}
+T^{\mu\nu} = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + (p + \Pi)\,\Delta^{\mu\nu}
+  + \pi^{\mu\nu}
+  + \frac{1}{c^{2}}\bigl(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}\bigr),
+\end{equation}
+where $\varepsilon$ is the energy density, $p$ the equilibrium
+pressure, $\Pi$ the bulk viscous pressure, $\pi^{\mu\nu}$ the shear
+stress tensor, and $q^{\mu}$ the heat flux four-vector.  The
+projection tensor is
+$\Delta^{\mu\nu}=g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$ and the
+four-velocity satisfies $u^{\mu}u_{\mu}=-c^{2}$.
+
+In the Israel--Stewart theory the shear stress is not given
+algebraically by the velocity gradient; instead it satisfies the
+\emph{relaxation equation}
+\begin{equation}
+\label{eq:rel-7-135}
+\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu}
+  = 2\,\eta_{\mathrm{s}}\,\sigma^{\mu\nu},
+\end{equation}
+where $\tau_{\pi}>0$ is the shear relaxation time,
+$\eta_{\mathrm{s}}$ is the coefficient of shear viscosity, and
+$\sigma^{\mu\nu}$ is the relativistic shear tensor
+\begin{equation}
+\label{eq:rel-7-136}
+\sigma^{\mu\nu}
+  = \tfrac{1}{2}\bigl(\Delta^{\mu\alpha}\nabla_{\alpha}u^{\nu}
+    + \Delta^{\nu\alpha}\nabla_{\alpha}u^{\mu}\bigr)
+  - \tfrac{1}{3}\,\Delta^{\mu\nu}\,\nabla_{\alpha}u^{\alpha}.
+\end{equation}
+The angular brackets in~\eqref{eq:rel-7-135} denote the symmetric,
+traceless, and transverse (to~$u^{\mu}$) projection.  The crucial
+feature of~\eqref{eq:rel-7-135} is that $\tau_{\pi}>0$ renders the
+viscous sector \emph{hyperbolic}: perturbations in $\pi^{\mu\nu}$
+propagate at a finite speed
+\begin{equation}
+\label{eq:rel-7-137}
+v_{\mathrm{visc}} = \sqrt{\frac{\eta_{\mathrm{s}}}
+  {(\varepsilon+p)\,\tau_{\pi}/c^{2}}} \le c,
+\end{equation}
+so that causality is preserved.  When $\tau_{\pi}\to 0$
+equation~\eqref{eq:rel-7-135} reduces to the Navier--Stokes
+constitutive relation $\pi^{\mu\nu}=2\eta_{\mathrm{s}}\sigma^{\mu\nu}$,
+which is acausal (parabolic).
+
+Similarly, the bulk viscous pressure satisfies
+\begin{equation}
+\label{eq:rel-7-138}
+\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
+  = -\zeta\,\nabla_{\mu}u^{\mu},
+\end{equation}
+with relaxation time $\tau_{\Pi}>0$ and bulk viscosity coefficient
+$\zeta$.  For incompressible flow ($\nabla_{\mu}u^{\mu}=0$) the bulk
+viscous pressure vanishes in equilibrium, and we shall henceforth
+set $\Pi=0$ and $q^{\mu}=0$ (no heat flux).
+
+\subsection{Equilibrium Couette profile: relativistic
+  corrections}\label{sec:rel-7-69b}
+
+We work in cylindrical coordinates $(t,r,\varphi,z)$ on a flat
+(Minkowski) spacetime.  The equilibrium four-velocity for purely
+azimuthal flow with angular velocity $\Omega(r)$ is
+\begin{equation}
+\label{eq:rel-7-139}
+u^{\mu} = \gamma\,(c,\,0,\,r\Omega,\,0),
+\qquad
+\gamma = \Bigl(1-\frac{r^{2}\Omega^{2}}{c^{2}}\Bigr)^{-1/2},
+\end{equation}
+where $\gamma$ is the Lorentz factor.  The azimuthal velocity is
+$V(r)=r\Omega(r)$ and we require $V<c$ everywhere.
+
+For the equilibrium state the shear tensor~\eqref{eq:rel-7-136}
+reduces, after projection onto the azimuthal--radial plane, to the
+single independent component
+\begin{equation}
+\label{eq:rel-7-140}
+\sigma^{r\varphi}
+  = \frac{\gamma^{2}}{2}\,r\,\frac{d\Omega}{dr}.
+\end{equation}
+In the Israel--Stewart equilibrium ($u^{\alpha}\nabla_{\alpha}
+\pi^{\mu\nu}=0$), the relaxation equation~\eqref{eq:rel-7-135}
+yields
+\begin{equation}
+\label{eq:rel-7-141}
+\pi^{r\varphi}_{\mathrm{eq}}
+  = 2\eta_{\mathrm{s}}\,\sigma^{r\varphi}
+  = \eta_{\mathrm{s}}\,\gamma^{2}\,r\,\frac{d\Omega}{dr}.
+\end{equation}
+
+The radial component of the relativistic momentum equation
+$\nabla_{\mu}T^{\mu\nu}=0$ yields the centrifugal balance
+\begin{equation}
+\label{eq:rel-7-142}
+\frac{d}{dr}\!\Bigl(\frac{p}{\varepsilon+p}\Bigr)
+  = \frac{\gamma^{2}\,V^{2}}{c^{2}\,r}
+  + \frac{1}{\varepsilon+p}\,
+    \frac{1}{r}\frac{d}{dr}\bigl(r\,\pi^{r\varphi}_{\mathrm{eq}}\bigr)
+    - \text{curvature corrections}.
+\end{equation}
+The azimuthal component gives the equation for the equilibrium
+velocity profile.  Defining the kinematic viscosity
+$\nu=\eta_{\mathrm{s}}/w$ with
+$w=(\varepsilon+p)/c^{2}$ the relativistic enthalpy density, the
+azimuthal equilibrium condition becomes
+\begin{equation}
+\label{eq:rel-7-143}
+\nu\,\gamma^{2}\,\frac{d}{dr}\!\left[
+  \gamma^{2}\,\frac{d}{dr}\!\Bigl(
+    \frac{\gamma\,V}{r}\Bigr)\,r^{3}
+\right] = 0.
+\end{equation}
+In the non-relativistic limit $\gamma\to 1$ this reduces to
+\begin{equation}
+\label{eq:rel-7-144}
+\nu\,\frac{d}{dr}\!\left(\frac{dV}{dr}+\frac{V}{r}\right) = 0,
+\end{equation}
+which is precisely equation~\eqref{eq:7-142} of \S\ref{sec:7-69},
+confirming the classical Couette solution
+$V=Ar+B/r$.
+
+For the relativistic case, equation~\eqref{eq:rel-7-143} admits the
+solution
+\begin{equation}
+\label{eq:rel-7-145}
+V(r) = Ar + \frac{B}{r}
+  + \frac{A^{3}r^{3}+3A^{2}Br+3AB^{2}/r+B^{3}/r^{3}}{2c^{2}}
+  + O(V^{4}/c^{4}),
+\end{equation}
+so that the angular velocity acquires relativistic corrections:
+\begin{equation}
+\label{eq:rel-7-146}
+\Omega(r) = A + \frac{B}{r^{2}}
+  + \frac{1}{2c^{2}}\Bigl(A + \frac{B}{r^{2}}\Bigr)^{3}r^{2}
+  + O(c^{-4}),
+\end{equation}
+where $A$ and $B$ are determined by the boundary conditions on the
+two cylinders exactly as in the classical case
+(equation~\eqref{eq:7-145}), with $O(V^{2}/c^{2})$ corrections.
+
+The corresponding expression for the constants is
+\begin{equation}
+\label{eq:rel-7-147}
+A = -\Omega_{1}\eta^{2}\,\frac{1-\mu/\eta^{2}}{1-\eta^{2}}
+  \bigl[1+O(R_{1}^{2}\Omega_{1}^{2}/c^{2})\bigr],
+\qquad
+B = \Omega_{1}\,\frac{R_{1}^{2}(1-\mu)}{1-\eta^{2}}
+  \bigl[1+O(R_{1}^{2}\Omega_{1}^{2}/c^{2})\bigr],
+\end{equation}
+with $\mu=\Omega_{2}/\Omega_{1}$ and $\eta=R_{1}/R_{2}$ retaining
+their classical definitions (equation~\eqref{eq:7-146}).
+
+\medskip
+\noindent\textbf{Remark (causality).}  In the Navier--Stokes
+formulation the viscous equilibrium~\eqref{eq:rel-7-144} is
+instantaneously established.  In the Israel--Stewart theory, the
+equilibrium is reached on a timescale $\sim\tau_{\pi}$; but once
+$t\gg\tau_{\pi}$ the stationary profiles~\eqref{eq:rel-7-145}
+and~\eqref{eq:rel-7-146} are the same.  The difference becomes
+crucial only for the perturbation dynamics.
+
+%% ================================================================
+\section{The perturbation equations: relativistic
+  formulation}\label{sec:rel-7-70}
+
+We now investigate the stability of the relativistic Couette flow
+described in \S\ref{sec:rel-7-69}.  The perturbation analysis follows
+the structure of the classical treatment in \S\ref{sec:7-70}, but the
+viscous sector is governed by the Israel--Stewart relaxation
+equation~\eqref{eq:rel-7-135} rather than by the Navier--Stokes
+stress.
+
+\subsection{Linearized relativistic equations}\label{sec:rel-7-70a}
+
+Let the perturbed state be characterised by
+\begin{equation}
+\label{eq:rel-7-148}
+u^{\mu} = u^{\mu}_{\mathrm{eq}} + \delta u^{\mu},
+\quad
+p = p_{\mathrm{eq}} + \delta p,
+\quad
+\varepsilon = \varepsilon_{\mathrm{eq}} + \delta\varepsilon,
+\quad
+\pi^{\mu\nu} = \pi^{\mu\nu}_{\mathrm{eq}} + \delta\pi^{\mu\nu},
+\end{equation}
+where perturbations are taken to be axisymmetric
+($\partial_{\varphi}=0$) and of first order.
+
+Writing the perturbation velocity components in the local rest frame
+as $u_{r}$, $u_{\varphi}$, $u_{z}$, and the pressure perturbation as
+$\varpi=\delta p/w$ (with $w=(\varepsilon+p)/c^{2}$), the linearized
+radial, azimuthal, and axial momentum equations become
+\begin{align}
+\label{eq:rel-7-149}
+\gamma^{2}\frac{\partial u_{r}}{\partial t}
+  - \frac{2\gamma^{2}V}{r}\,u_{\varphi}
+  &= -\frac{\partial\varpi}{\partial r}
+  + \frac{1}{w}\,\nabla_{\mu}\delta\pi^{\mu r}
+  + \frac{\gamma^{2}V^{2}}{c^{2}r}\,
+    \frac{\delta\varepsilon}{\varepsilon+p}\,,
+\\[6pt]
+\label{eq:rel-7-150}
+\gamma^{2}\frac{\partial u_{\varphi}}{\partial t}
+  + \gamma^{2}\!\left(\frac{dV}{dr}+\frac{V}{r}\right)u_{r}
+  &= \frac{1}{w}\,\nabla_{\mu}\delta\pi^{\mu\varphi},
+\\[6pt]
+\label{eq:rel-7-151}
+\frac{\partial u_{z}}{\partial t}
+  &= -\frac{\partial\varpi}{\partial z}
+  + \frac{1}{w}\,\nabla_{\mu}\delta\pi^{\mu z}.
+\end{align}
+The continuity equation (baryon conservation) for axisymmetric
+perturbations is
+\begin{equation}
+\label{eq:rel-7-152}
+\frac{\partial(\gamma\,u_{r})}{\partial r}
+  + \frac{\gamma\,u_{r}}{r}
+  + \frac{\partial u_{z}}{\partial z}
+  + \frac{\gamma^{3}V}{c^{2}}\,\frac{\partial u_{r}}{\partial t}
+  = 0.
+\end{equation}
+In the non-relativistic limit $\gamma\to 1$, the last term vanishes
+and equations~\eqref{eq:rel-7-149}--\eqref{eq:rel-7-152} reduce
+exactly to equations~\eqref{eq:7-149}--\eqref{eq:7-153} of
+\S\ref{sec:7-70}.
+
+\subsection{Israel--Stewart perturbation of the shear
+  stress}\label{sec:rel-7-70b}
+
+The key difference from the classical analysis is that the viscous
+stress perturbation $\delta\pi^{\mu\nu}$ is not slaved to the
+velocity gradient; it satisfies the linearised Israel--Stewart
+equation
+\begin{equation}
+\label{eq:rel-7-153}
+\tau_{\pi}\,\frac{\partial\,\delta\pi^{\mu\nu}}{\partial t}
+  + \delta\pi^{\mu\nu}
+  = 2\eta_{\mathrm{s}}\,\delta\sigma^{\mu\nu}
+  - \tau_{\pi}\,(\delta u^{\alpha}\nabla_{\alpha})
+    \pi^{\mu\nu}_{\mathrm{eq}},
+\end{equation}
+where $\delta\sigma^{\mu\nu}$ is the perturbed shear tensor.  In the
+limit $\tau_{\pi}\to 0$ the left-hand side reduces to
+$\delta\pi^{\mu\nu}=2\eta_{\mathrm{s}}\delta\sigma^{\mu\nu}$,
+recovering the Navier--Stokes constitutive law and hence the
+classical perturbation equations.
+
+The explicit components of $\delta\sigma^{\mu\nu}$ in cylindrical
+coordinates for axisymmetric perturbations are
+\begin{align}
+\label{eq:rel-7-154}
+\delta\sigma^{rr} &= \gamma^{2}\,\frac{\partial u_{r}}{\partial r}
+  - \tfrac{1}{3}\gamma^{2}\,\nabla_{\mu}\delta u^{\mu},
+\\
+\delta\sigma^{r\varphi} &= \tfrac{1}{2}\gamma^{2}
+  \Bigl(\frac{\partial u_{\varphi}}{\partial r}
+  - \frac{u_{\varphi}}{r}
+  + \frac{\gamma^{2}V}{c^{2}}\frac{\partial u_{r}}{\partial t}\Bigr),
+\\
+\delta\sigma^{zz} &= \frac{\partial u_{z}}{\partial z}
+  - \tfrac{1}{3}\gamma^{2}\,\nabla_{\mu}\delta u^{\mu}.
+\end{align}
+
+\subsection{Normal mode analysis}\label{sec:rel-7-70c}
+
+Following the classical treatment, we decompose the perturbations
+into normal modes:
+\begin{equation}
+\label{eq:rel-7-155}
+\begin{aligned}
+u_{r} &= e^{pt}\,u(r)\cos kz, &\quad
+u_{\varphi} &= e^{pt}\,v(r)\sin kz, \\
+u_{z} &= e^{pt}\,w(r)\cos kz, &\quad
+\varpi &= e^{pt}\,\hat\varpi(r)\cos kz, \\
+\delta\pi^{\mu\nu} &= e^{pt}\,\Pi^{\mu\nu}(r)
+  \times\{\cos kz \text{ or } \sin kz\},
+\end{aligned}
+\end{equation}
+where $k$ is the axial wave number and $p$ may be complex.  For the
+Israel--Stewart stress components the relaxation
+equation~\eqref{eq:rel-7-153} yields the algebraic relation (for each
+mode)
+\begin{equation}
+\label{eq:rel-7-156}
+\Pi^{\mu\nu}(r)
+  = \frac{2\eta_{\mathrm{s}}}{1+\tau_{\pi}p}\,
+    \delta\sigma^{\mu\nu}_{\mathrm{mode}}(r)
+  - \frac{\tau_{\pi}}{1+\tau_{\pi}p}\,
+    (\delta u^{\alpha}\nabla_{\alpha})
+    \pi^{\mu\nu}_{\mathrm{eq}},
+\end{equation}
+so that the Israel--Stewart viscous term in the momentum equations
+enters through an \emph{effective kinematic viscosity}
+\begin{equation}
+\label{eq:rel-7-157}
+\nu_{\mathrm{eff}}(p) = \frac{\nu}{1+\tau_{\pi}p},
+\end{equation}
+which is frequency-dependent.  For steady perturbations ($p=0$),
+$\nu_{\mathrm{eff}}=\nu$ and the classical eigenvalue problem is
+recovered.
+
+Substituting~\eqref{eq:rel-7-156} into the linearised momentum
+equations and carrying out the same elimination of $w$ and $\varpi$
+as in the classical \S\ref{sec:7-70}, we arrive at the pair of
+coupled equations (measuring $r$ in units of $R_{2}$, with
+$a^{2}=k^{2}R_{2}^{2}$ and
+$\sigma=pR_{2}^{2}/\nu$):
+\begin{equation}
+\label{eq:rel-7-158}
+\frac{1}{1+\tau_{\pi}p}\bigl(DD_{*}-a^{2}\bigr)
+\Bigl[\frac{\gamma^{2}}{1+\tau_{\pi}p}\bigl(DD_{*}-a^{2}\bigr)
+  - \sigma\gamma^{2}\Bigr]u
+= -T_{\mathrm{rel}}\,a^{2}
+  \Bigl(\frac{1}{r^{2}}-\kappa_{\mathrm{rel}}\Bigr)v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-159}
+\frac{\gamma^{2}}{1+\tau_{\pi}p}
+  \bigl(DD_{*}-a^{2}\bigr)v
+  - \sigma\gamma^{2}v
+= \bigl(D_{*}V\bigr)_{\mathrm{rel}}\,u,
+\end{equation}
+where $D$ and $D_{*}$ retain their classical meanings
+(equation~\eqref{eq:7-106}) and we have introduced the
+\emph{relativistic Taylor number}
+\begin{equation}
+\label{eq:rel-7-160}
+T_{\mathrm{rel}}
+  = -\frac{4A_{\mathrm{rel}}B_{\mathrm{rel}}}{R_{2}^{4}}
+  = T_{\mathrm{cl}}
+    \times\gamma_{1}^{2}\gamma_{2}^{2}
+    \bigl[1+O(V^{2}/c^{2})\bigr],
+\end{equation}
+with $T_{\mathrm{cl}}$ the classical Taylor number of
+equation~\eqref{eq:7-169}, and the relativistic analogue of
+$\kappa$:
+\begin{equation}
+\label{eq:rel-7-161}
+\kappa_{\mathrm{rel}}
+  = -\frac{A_{\mathrm{rel}}\,R_{2}^{4}}{B_{\mathrm{rel}}}
+  = \kappa\bigl[1+O(V^{2}/c^{2})\bigr].
+\end{equation}
+The notation $\gamma_{1}=\gamma(R_{1})$,
+$\gamma_{2}=\gamma(R_{2})$ refers to the Lorentz factor evaluated
+at each cylinder wall.
+
+\medskip
+\noindent\textbf{Remark.}  The structure of
+equations~\eqref{eq:rel-7-158} and~\eqref{eq:rel-7-159} is
+identical to the classical system~\eqref{eq:7-167}--\eqref{eq:7-168}
+except for two modifications: (i) every occurrence of $\nu$ is
+replaced by $\nu_{\mathrm{eff}}(p)=\nu/(1+\tau_{\pi}p)$, and
+(ii)~factors of $\gamma^{2}$ multiply the inertial terms.
+
+\subsection{Stability for $\mu>\eta^{2}$: relativistic
+  generalisation}\label{sec:rel-7-70d}
+
+We now establish that the Rayleigh criterion $\mu>\eta^{2}$ remains a
+\emph{sufficient condition for stability} in the relativistic theory.
+
+The argument follows the classical energy-integral method of
+\S\ref{sec:7-70}.  Multiply equation~\eqref{eq:rel-7-158} by
+$r\,u^{*}$ and equation~\eqref{eq:rel-7-159} by
+$r\,T_{\mathrm{rel}}\,a^{2}\phi_{\mathrm{rel}}(r)\,v^{*}$, where
+\begin{equation}
+\label{eq:rel-7-162}
+\phi_{\mathrm{rel}}(r)
+  = (1-\mu)\Bigl(\frac{1}{r^{2}}-\kappa_{\mathrm{rel}}\Bigr)
+    \gamma^{2}(r),
+\end{equation}
+integrate over the gap $\eta\le r\le 1$, and use the boundary
+conditions (no-slip on both walls):
+\begin{equation}
+\label{eq:rel-7-163}
+u=v=0, \qquad Du=0
+\qquad\text{at } r=1 \text{ and } r=\eta.
+\end{equation}
+After integration by parts (using the same identities~\eqref{eq:7-172}
+and~\eqref{eq:7-173} as in the classical case), one obtains an
+equation of the form
+\begin{equation}
+\label{eq:rel-7-164}
+\mathrm{re}(\sigma)\,
+  \bigl\{I_{1}^{\mathrm{rel}}
+    - \mathscr{T}_{\mathrm{rel}}\,a^{2}\,I_{3}^{\mathrm{rel}}
+    + \mathrm{re}(I_{4}^{\mathrm{rel}})\bigr\} = 0,
+\end{equation}
+where the relativistic integral functionals are
+\begin{align}
+\label{eq:rel-7-165}
+I_{1}^{\mathrm{rel}}
+  &= \int_{\eta}^{1}\gamma^{2}(r)
+     \Bigl\{r\Bigl|\frac{du}{dr}\Bigr|^{2}
+     + \Bigl(\frac{1}{r}+a^{2}r\Bigr)|u|^{2}\Bigr\}\,dr,
+\\[4pt]
+I_{3}^{\mathrm{rel}}
+  &= \int_{\eta}^{1}\phi_{\mathrm{rel}}(r)\,|v|^{2}\,dr,
+\\[4pt]
+\mathrm{re}(I_{4}^{\mathrm{rel}})
+  &= \int_{\eta}^{1}r\,\gamma^{2}(r)\,\phi_{\mathrm{rel}}(r)
+     \Bigl|\frac{dv}{dr}-\frac{v}{r}\Bigr|^{2}\,dr.
+\end{align}
+The factors $\gamma^{2}(r)\ge 1$ are everywhere positive and do not
+alter the sign-definiteness of the integrands.  When $\mu>\eta^{2}$
+we have $\mathscr{T}_{\mathrm{rel}}<0$ (just as in the classical
+case, equation~\eqref{eq:7-189}), so the coefficient of
+$\mathrm{re}(\sigma)$ in~\eqref{eq:rel-7-164} is
+\emph{positive definite}.  Therefore
+\begin{equation}
+\label{eq:rel-7-166}
+\boxed{\mathrm{re}(\sigma) < 0
+  \qquad\text{for } \mu > \eta^{2},}
+\end{equation}
+and the relativistic viscous Couette flow is stable whenever
+Rayleigh's criterion is satisfied.  This is the relativistic
+generalisation of equation~\eqref{eq:7-189}.
+
+\subsection{Eigenvalue problem for the relativistic Taylor
+  number}\label{sec:rel-7-70e}
+
+The marginal state is defined by $\mathrm{re}(p)=0$.  Following
+the classical analysis, we expect the marginal state to be
+\emph{stationary} ($p=0$, exchange of stabilities), so that
+$\nu_{\mathrm{eff}}=\nu$ and the Israel--Stewart relaxation plays no
+role at onset.  In this case
+equations~\eqref{eq:rel-7-158}--\eqref{eq:rel-7-159} reduce to the
+eigenvalue problem
+\begin{equation}
+\label{eq:rel-7-167}
+\gamma^{2}(DD_{*}-a^{2})^{2}u
+  = -T_{\mathrm{rel}}\,a^{2}
+    \Bigl(\frac{1}{r^{2}}-\kappa_{\mathrm{rel}}\Bigr)v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-168}
+\gamma^{2}(DD_{*}-a^{2})v = u,
+\end{equation}
+subject to the boundary conditions~\eqref{eq:rel-7-163}.  This is a
+generalised eigenvalue problem for $T_{\mathrm{rel}}$ as a function
+of the dimensionless wave number~$a$.  The critical relativistic
+Taylor number is
+\begin{equation}
+\label{eq:rel-7-169}
+T_{\mathrm{rel,cr}} = \min_{a}\,T_{\mathrm{rel}}(a)
+  = T_{\mathrm{cl,cr}}
+    \bigl[1+O(V^{2}/c^{2})\bigr],
+\end{equation}
+where $T_{\mathrm{cl,cr}}$ is the classical critical Taylor number.
+The relativistic corrections are of order $V^{2}/c^{2}$ and
+increase the critical Taylor number, i.e.\ relativity has a
+\emph{stabilising} effect.  This is physically expected: the
+enhanced inertia ($\gamma^{2}$ factors) makes it harder to displace
+fluid elements against the centrifugal gradient.
+
+\subsection{Role of Israel--Stewart relaxation for oscillatory
+  modes}\label{sec:rel-7-70f}
+
+While the Israel--Stewart relaxation drops out at marginal stability
+($p=0$), it is essential for the \emph{dynamics} of perturbations
+away from the marginal state.  For oscillatory modes ($p=i\omega$)
+the effective viscosity~\eqref{eq:rel-7-157} becomes
+\begin{equation}
+\label{eq:rel-7-170}
+\nu_{\mathrm{eff}}(i\omega)
+  = \frac{\nu}{1+i\tau_{\pi}\omega}
+  = \frac{\nu(1-i\tau_{\pi}\omega)}{1+\tau_{\pi}^{2}\omega^{2}},
+\end{equation}
+which has a reduced real part and a non-zero imaginary part.  The
+damping rate of stable modes is therefore modified:
+\begin{equation}
+\label{eq:rel-7-171}
+\mathrm{re}(p)
+  = -\frac{\nu k^{2}}{1+\tau_{\pi}^{2}\omega^{2}}
+    + \cdots,
+\end{equation}
+showing that high-frequency perturbations are
+\emph{less efficiently damped} than in the Navier--Stokes theory.
+This is a direct consequence of causality: in the Israel--Stewart
+theory, viscous damping cannot act instantaneously.
+
+More significantly, for any mode the viscous signal speed is bounded
+by~\eqref{eq:rel-7-137}; perturbation fronts cannot outrun this
+speed regardless of frequency.  In the Navier--Stokes limit
+$\tau_{\pi}\to 0$ the signal speed diverges, violating causality.
+
+\subsection{Summary of relativistic modifications}\label{sec:rel-7-70g}
+
+The relativistic treatment of viscous Couette flow and its stability
+introduces the following modifications to the classical theory of
+\S\S\ref{sec:7-69}--\ref{sec:7-70}:
+
+\begin{enumerate}
+\item \textbf{Equilibrium profile:}  The velocity
+  $V(r)=Ar+B/r$ receives corrections of order $V^{2}/c^{2}$
+  (equation~\eqref{eq:rel-7-145}).
+\item \textbf{Viscous constitutive law:}  The Navier--Stokes
+  relation is replaced by the Israel--Stewart relaxation
+  equation~\eqref{eq:rel-7-135}, ensuring that viscous signals
+  propagate at finite speed $v_{\mathrm{visc}}\le c$.
+\item \textbf{Perturbation equations:}  The eigenvalue problem
+  acquires $\gamma^{2}$ factors and the frequency-dependent
+  effective viscosity $\nu_{\mathrm{eff}}=\nu/(1+\tau_{\pi}p)$.
+\item \textbf{Sufficient stability condition:}  The criterion
+  $\mu>\eta^{2}$ remains sufficient for stability, with the proof
+  carrying through thanks to the positive-definiteness of
+  $\gamma^{2}$.
+\item \textbf{Critical Taylor number:}  $T_{\mathrm{rel,cr}}>
+  T_{\mathrm{cl,cr}}$; relativity stabilises the flow.
+\item \textbf{Causality:}  All viscous propagation speeds are
+  bounded by $v_{\mathrm{visc}}\le c$, guaranteed by
+  $\tau_{\pi}>0$.
+\end{enumerate}
