@@ -743,3 +743,122 @@ The complete set of causality constraints is:
 No fine-tuning is required: these are standard thermodynamic
 consistency conditions.
 \end{relcorrection}
+
+%% ===================================================================
+\section{Astrophysical application: Rayleigh--Plateau breakup of GRB jets}
+\label{sec:rel-111-112-astro}
+
+The relativistic capillary instability has a direct astrophysical
+realisation in the breakup of gamma-ray burst (GRB) jets.  In the
+collapsar and compact-binary-merger scenarios, a relativistic jet with
+bulk Lorentz factor $\Lf\sim 100$--$300$ is launched and confined by
+the cocoon pressure of the surrounding stellar envelope.  The effective
+surface tension is provided by the cocoon--jet pressure interface,
+$T \sim p_{\mathrm{cocoon}}\,R_{\mathrm{jet}}$.
+
+\paragraph{Breakup timescale estimate.}
+In the jet comoving frame, the Rayleigh--Plateau growth rate for the
+most unstable mode ($x\approx 0.697$) is, from
+equation~\eqref{eq:rel-111-disp-m0},
+\begin{equation}
+\label{eq:rel-111-astro-sigma}
+\sigma_{\max} \;\approx\; 0.34\,
+  \sqrt{\frac{T}{\enthalpy c^{2}\,R^{3}}}\,.
+\end{equation}
+For a GRB jet with $R_{\mathrm{jet}}\sim 10^{7}\;\mathrm{cm}$,
+$\rho\sim 10^{-10}\;\mathrm{g\,cm^{-3}}$, cocoon pressure
+$p_{\mathrm{cocoon}}\sim 10^{18}\;\mathrm{erg\,cm^{-3}}$, and
+enthalpy ratio $w/\rho\sim 10$ (radiation-dominated fireball), the
+comoving breakup timescale is
+$\tau_{\mathrm{co}}\sim 1/\sigma_{\max}\sim 10^{-2}\;\mathrm{s}$.
+The observer-frame timescale, including the Lorentz-factor time
+dilation, is
+\begin{equation}
+\label{eq:rel-111-astro-tau}
+\tau_{\mathrm{obs}} \;\approx\;
+  \frac{\tau_{\mathrm{co}}}{\Lf}
+  \;\sim\; 0.1\;\mathrm{ms}
+  \quad (\Lf = 100).
+\end{equation}
+This is comparable to the shortest variability timescales observed in
+prompt GRB light curves, suggesting that capillary breakup may
+contribute to the rapid time structure of GRB emission.
+
+The relativistic enthalpy suppression (the factor $\enthalpy$ replacing
+$\rho$ in the denominator) extends $\tau_{\mathrm{co}}$ by
+$\sqrt{w/\rho}\sim 3$ relative to a Newtonian estimate, as shown in
+Figure~\ref{fig:jet-capillary-breakup}.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{plots/ch12/fig_jet_capillary_breakup.pdf}
+\caption{%
+\textbf{Left:} Relativistic suppression of the capillary growth rate
+and enhancement of the breakup timescale as functions of the
+enthalpy ratio $w/\rho = (\varepsilon+p)/(\rho c^{2})$, with
+astrophysical regimes indicated.
+\textbf{Right:} Observer-frame breakup timescale for a GRB jet
+(cocoon-confined, $R=10^{7}\;\mathrm{cm}$) as a function of bulk
+Lorentz factor $\Lf$, for several internal enthalpy ratios.  The
+grey band marks the observed GRB variability range.}
+\label{fig:jet-capillary-breakup}
+\end{figure}
+
+%% ===================================================================
+\section*{BIBLIOGRAPHICAL NOTES (\S\S111--112)}
+\label{sec:rel-12-111-112-bib}
+
+The classical capillary instability was discovered by:
+\begin{enumerate}
+\item J.~\textsc{Plateau}, \emph{Statique exp\'erimentale et
+  th\'eorique des liquides soumis aux seules forces
+  mol\'eculaires}, Gauthier-Villars, Paris, 1873.
+
+\item Lord~\textsc{Rayleigh}, `On the instability of jets',
+  \emph{Proc.\ London Math.\ Soc.}\ \textbf{10}, 4--13 (1878).
+\end{enumerate}
+
+\noindent
+Relativistic surface energy--momentum tensor and junction conditions:
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item W.~\textsc{Israel}, `Singular hypersurfaces and thin shells in
+  general relativity', \emph{Nuovo Cimento B}, \textbf{44}, 1--14
+  (1966).
+
+\item E.~\textsc{Poisson}, \emph{A Relativist's Toolkit: The
+  Mathematics of Black-Hole Mechanics}, Cambridge Univ.\ Press, 2004.
+\end{enumerate}
+
+\noindent
+GRB jet structure and variability:
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item P.~\textsc{M\'esz\'aros}, `Gamma-ray bursts', \emph{Rep.\ Prog.\
+  Phys.}\ \textbf{69}, 2259--321 (2006).
+
+\item A.~\textsc{Bromberg} et al., `The propagation of relativistic
+  jets in external media', \emph{Astrophys.\ J.}\ \textbf{740}, 100
+  (2011).
+
+\item O.~\textsc{Gottlieb} et al., `The structure of weakly
+  magnetized gamma-ray burst jets', \emph{Astrophys.\ J.\ Lett.}\
+  \textbf{933}, L9 (2022).
+\end{enumerate}
+
+\noindent
+BDNK causal viscous theory:
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi}, and
+  J.~\textsc{Noronha}, `Causality and existence of solutions of
+  relativistic viscous fluid dynamics with gravity',
+  \emph{Phys.\ Rev.\ D}, \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun}, `First-order relativistic hydrodynamics is
+  stable', \emph{J.\ High Energy Phys.}\ \textbf{2019}(10), 034 (2019).
+
+\item R.~E.~\textsc{Hoult} and P.~\textsc{Kovtun}, `Stable and causal
+  relativistic Navier--Stokes equations', \emph{J.\ High Energy Phys.}\
+  \textbf{2020}(06), 067 (2020).
+\end{enumerate}
