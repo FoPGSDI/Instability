@@ -1,0 +1,138 @@
+% Relativistic Modification Preamble
+% Shared macros for all relativistic chapter modifications
+%
+% NOTE: This file requires \usepackage{tcolorbox} to be loaded
+% in the main preamble (../../preamble.tex) for the custom
+% environments defined at the end of this file.
+%
+% Usage: \input{rel_preamble} from any relativistic chapter
+% or from rel_main.tex
+
+% =====================================================================
+% 4-Vector notation
+% ---------------------------------------------------------------------
+% Macros for writing 4-vectors and projection operators in a
+% consistent style throughout all relativistic chapters.
+% =====================================================================
+\newcommand{\fourv}[1]{#1^{\mu}}
+\newcommand{\fvel}{u^{\mu}}
+\newcommand{\fveldown}{u_{\mu}}
+\newcommand{\proj}{\Delta^{\mu\nu}}
+\newcommand{\projdown}{\Delta_{\mu\nu}}
+
+% =====================================================================
+% Tensors
+% ---------------------------------------------------------------------
+% Energy-momentum tensor, Faraday tensor and its dual, metric tensors.
+% These appear pervasively in the relativistic formulation of both
+% hydrodynamic and hydromagnetic stability problems.
+% =====================================================================
+\newcommand{\emt}{T^{\mu\nu}}
+\newcommand{\emtdown}{T_{\mu\nu}}
+\newcommand{\farad}{F^{\mu\nu}}
+\newcommand{\faraddown}{F_{\mu\nu}}
+\newcommand{\dualF}{{}^{*}\!F^{\mu\nu}}
+\newcommand{\metric}{g^{\mu\nu}}
+\newcommand{\metricdown}{g_{\mu\nu}}
+\newcommand{\mink}{\eta^{\mu\nu}}
+
+% =====================================================================
+% Covariant derivatives and Lie derivative
+% ---------------------------------------------------------------------
+% Covariant derivatives with different index labels for use in
+% multi-index expressions without conflict.
+% =====================================================================
+\newcommand{\covd}{\nabla_{\mu}}
+\newcommand{\covdu}{\nabla_{\nu}}
+\newcommand{\covda}{\nabla_{\alpha}}
+\newcommand{\Lie}{\mathcal{L}}
+
+% =====================================================================
+% Physical quantities
+% ---------------------------------------------------------------------
+% Core thermodynamic and kinematic quantities that appear in the
+% relativistic equations of motion.  The enthalpy density
+% w = epsilon + p plays the role that rho alone plays in the
+% Newtonian theory.
+% =====================================================================
+\newcommand{\enthalpy}{w}           % w = epsilon + p
+\newcommand{\edensity}{\varepsilon} % energy density
+\newcommand{\rdensity}{\rho_0}     % rest-mass density
+\newcommand{\Lf}{\gamma}            % Lorentz factor
+\newcommand{\cs}{c_{\mathrm{s}}}    % sound speed
+\newcommand{\vA}{v_{\mathrm{A}}}    % Alfven speed
+\newcommand{\vf}{v_{\mathrm{f}}}    % fast magnetosonic speed
+\newcommand{\vs}{v_{\mathrm{s}}}    % slow magnetosonic speed
+\newcommand{\bfour}{b^{\mu}}        % magnetic 4-vector
+\newcommand{\bsq}{b^2}             % b^mu b_mu (magnetic pressure term)
+
+% =====================================================================
+% Dissipation (Israel-Stewart causal theory)
+% ---------------------------------------------------------------------
+% The Israel-Stewart formalism replaces the acausal Navier-Stokes
+% constitutive relations with hyperbolic relaxation equations.
+% Each dissipative flux (bulk pressure Pi, shear tensor pi^{mu nu},
+% heat flux q^mu) has its own relaxation time (tau_Pi, tau_pi, tau_q).
+% =====================================================================
+\newcommand{\bulkP}{\Pi}            % bulk viscous pressure
+\newcommand{\shearten}{\pi^{\mu\nu}} % shear stress tensor
+\newcommand{\heatflux}{q^{\mu}}     % heat flux 4-vector
+\newcommand{\taupi}{\tau_{\pi}}     % shear relaxation time
+\newcommand{\tauq}{\tau_{q}}        % heat relaxation time
+\newcommand{\tauPi}{\tau_{\Pi}}     % bulk relaxation time
+\newcommand{\bulkvisc}{\zeta}       % bulk viscosity coefficient
+\newcommand{\shearvisc}{\eta_{\mathrm{s}}} % shear viscosity coefficient
+\newcommand{\thermcond}{\kappa}     % thermal conductivity
+
+% =====================================================================
+% Dimensionless numbers (relativistic generalisations)
+% ---------------------------------------------------------------------
+% Relativistic analogues of the classical dimensionless parameters
+% that govern stability thresholds.  Subscript "rel" distinguishes
+% them from the Newtonian versions defined in the original chapters.
+% =====================================================================
+\newcommand{\Rarel}{\mathrm{Ra}_{\mathrm{rel}}}   % relativistic Rayleigh number
+\newcommand{\Tarel}{\mathrm{Ta}_{\mathrm{rel}}}   % relativistic Taylor number
+\newcommand{\Qrel}{Q_{\mathrm{rel}}}              % relativistic Chandrasekhar Q
+\newcommand{\Mach}{\mathcal{M}}                    % Mach number
+
+% =====================================================================
+% Operators
+% ---------------------------------------------------------------------
+% The d'Alembertian (wave operator) replaces the Laplacian in the
+% relativistic wave equations.  Two aliases are provided for
+% author convenience.
+% =====================================================================
+\newcommand{\dAlembert}{\Box}       % d'Alembertian
+\newcommand{\Dalembertian}{\Box}    % alias
+\newcommand{\order}[1]{\mathcal{O}(#1)} % order-of-magnitude symbol
+
+% =====================================================================
+% Relativistic correction helpers
+% ---------------------------------------------------------------------
+% \relcorr{v^2/c^2} expands to [1 + O(v^2/c^2)], useful for
+% writing correction factors.  \NRlimit produces an arrow
+% labelled "v/c -> 0" for taking the non-relativistic limit.
+% =====================================================================
+\newcommand{\relcorr}[1]{\left[1 + \order{#1}\right]} % correction factor
+\newcommand{\NRlimit}{\xrightarrow{v/c \to 0}}        % non-relativistic limit arrow
+
+% =====================================================================
+% Custom environments (require tcolorbox package)
+% ---------------------------------------------------------------------
+% causalitycheck  -- yellow box for verifying that perturbation
+%                    equations preserve causality (signal speeds <= c).
+% relcorrection   -- blue box highlighting where and how the
+%                    relativistic result departs from the Newtonian one.
+% =====================================================================
+\newenvironment{causalitycheck}{%
+  \begin{tcolorbox}[colback=yellow!5, colframe=yellow!50!black, title=Causality Verification]
+}{%
+  \end{tcolorbox}
+}
+
+\newenvironment{relcorrection}{%
+  \begin{tcolorbox}[colback=blue!5, colframe=blue!50!black, title=Relativistic Correction]
+}{%
+  \end{tcolorbox}
+}
