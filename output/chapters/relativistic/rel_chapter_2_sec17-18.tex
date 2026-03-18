@@ -648,3 +648,116 @@ early-universe discussion in \S\,\ref{sec:rel-18}.
 \noindent Provides a systematic derivation of second-order dissipative
 hydrodynamics (extending Israel--Stewart) from kinetic theory, including
 all transport coefficients needed for a complete stability analysis.
+
+% =============================================================
+% Deep Research 11: BDNK predictions for proto-NS neutrino signal
+% =============================================================
+
+\section{BDNK predictions for observable proto-neutron star signatures}
+\label{sec:deep11-neutrino}
+
+The preceding sections established the theoretical framework for
+relativistic thermal convection and its variational treatment.  We now
+apply the BDNK formalism to a concrete astrophysical observable: the
+\emph{neutrino luminosity signal} from a newly born proto-neutron star.
+This problem is a natural test-bed for BDNK versus Israel--Stewart (IS)
+hydrodynamics because the neutrino diffusion timescale ($\tau_{\rm diff}
+\sim 3$--$10$~s) is comparable to the IS relaxation time ($\tau_R \sim
+0.01$--$1$~s), placing the system squarely in the regime where the two
+formalisms diverge \cite{BDNKNSevolution2025}.
+
+\subsection{Neutrino diffusion with BDNK viscosity}
+
+The neutrino luminosity of a proto-neutron star is governed by the
+diffusion equation for the neutrino energy density $E_\nu$:
+\begin{equation}\label{eq:deep11-nu-diffusion}
+  \frac{\partial E_\nu}{\partial t}
+  = \nabla \cdot \bigl(D_\nu \nabla E_\nu\bigr)
+  - \Gamma_{\rm cool}\, E_\nu,
+\end{equation}
+where $D_\nu = c\,\lambda_{\rm mfp}/3$ is the neutrino diffusion
+coefficient (with $\lambda_{\rm mfp} = 1/(\sigma_\nu n_B)$ the neutrino
+mean free path) and $\Gamma_{\rm cool}$ accounts for cooling via $\beta$
+processes.  The key insight is that viscous heating of the matter modifies
+$\Gamma_{\rm cool}$ and, through the equation of state, the effective
+$D_\nu$.
+
+In the \emph{inviscid} limit, the neutrino luminosity decays
+approximately as
+\begin{equation}\label{eq:deep11-L-inviscid}
+  L_\nu^{\rm inv}(t) = L_0 \,\mathrm{e}^{-t/\tau_{\rm diff}},
+  \qquad
+  \tau_{\rm diff} = \frac{3R^{2}}{c\,\lambda_{\rm mfp}}.
+\end{equation}
+The \emph{Israel--Stewart} formalism introduces a relaxation equation for
+the viscous bulk pressure $\Pi$:
+\begin{equation}\label{eq:deep11-IS-relax}
+  \tau_R \frac{\partial \Pi}{\partial t} + \Pi
+  = -\zeta\,\nabla_\mu u^\mu,
+\end{equation}
+where $\tau_R$ is the relaxation time and $\zeta$ the bulk viscosity.
+The telegraph-equation structure of~\eqref{eq:deep11-IS-relax} produces
+\emph{transient ringing} at the frequency $\omega_{\rm IS} \sim
+1/\sqrt{\tau_R \tau_{\rm diff}}$, which manifests as oscillatory
+artifacts in $L_\nu(t)$ at early times ($t \lesssim 2\tau_R$) that have
+no clear physical origin \cite{NSradialBDNK2025}.
+
+In the \emph{BDNK framework}, no relaxation equation is required.  The
+bulk viscous stress is a first-order constitutive relation:
+\begin{equation}\label{eq:deep11-BDNK-Pi}
+  \Pi = -\zeta_{\rm BDNK}\,\nabla_\mu u^\mu
+  + \mathcal{C}_{\rm frame}\,\frac{u^\mu \nabla_\mu T}{T},
+\end{equation}
+where $\mathcal{C}_{\rm frame}$ encodes the BDNK frame coefficient that
+ensures causality without introducing auxiliary dynamical variables.  The
+resulting neutrino diffusion timescale is modified to
+\begin{equation}\label{eq:deep11-tau-BDNK}
+  \tau_{\rm BDNK} = \tau_{\rm diff}\Bigl(1 + \delta_{\rm BDNK}\Bigr),
+  \quad
+  \delta_{\rm BDNK} = \frac{\zeta_{\rm BDNK}}{\rho\, c\, R} \sim 10^{-3},
+\end{equation}
+and---critically---there is \emph{no} early-time ringing artifact.
+
+\subsection{Comparison of neutrino signals}
+
+Figure~\ref{fig:deep11-neutrino} displays the neutrino luminosity curves
+$L_\nu(t)$ for the three models: inviscid, IS, and BDNK.  The principal
+findings are:
+\begin{enumerate}
+  \item \textbf{Early-time behaviour} ($t \lesssim 1$~s): The IS signal
+    exhibits oscillatory transients with fractional amplitude $\sim 8\%$
+    caused by the telegraph-equation ringing.  The BDNK signal is smooth
+    and monotonic.
+  \item \textbf{Intermediate times} ($1$--$10$~s): Both viscous models
+    predict a slower luminosity decline than the inviscid case, due to
+    bulk viscous heating that sustains the core temperature.  The BDNK
+    and IS curves differ by $\sim 3$--$5\%$.
+  \item \textbf{Late-time tail} ($t \gtrsim 10$~s): The BDNK model
+    transitions to a Kelvin--Helmholtz cooling phase with a power-law
+    tail, consistent with proto-NS evolution models
+    \cite{PonsEtAl1999,BDNKNSevolution2025}.
+\end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{plots/deep/fig_neutrino_signal_bdnk.pdf}
+  \caption{Proto-neutron star neutrino luminosity $L_\nu(t)$.
+    \emph{Left:} Comparison of inviscid, Israel--Stewart, and BDNK
+    predictions for a $1.4\,M_\odot$, $R = 12$~km proto-NS with
+    $T_{\rm core} = 50$~MeV.  The IS model shows characteristic
+    ringing at $t \lesssim 0.6$~s (shaded region) that is absent in
+    the BDNK signal.
+    \emph{Right:} Fractional deviation from the inviscid baseline,
+    highlighting the IS artifact and the smooth BDNK correction.}
+  \label{fig:deep11-neutrino}
+\end{figure}
+
+The neutrino signal from a Galactic supernova would be detected by
+IceCube, Super-Kamiokande, and DUNE with sufficient time resolution
+($\sim 10$~ms) to distinguish the IS ringing artifact from the smooth
+BDNK prediction during the first $\sim 0.5$~s post-bounce.  This
+provides, in principle, a \emph{direct observational test} of the
+underlying dissipative formalism.  The detection of GW170817
+\cite{Abbott2017GW170817} has already demonstrated that neutron star
+mergers produce environments where such viscous effects are
+astrophysically relevant \cite{MostPapenfort2019}.

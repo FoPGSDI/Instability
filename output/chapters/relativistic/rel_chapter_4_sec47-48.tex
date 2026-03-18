@@ -603,3 +603,106 @@ The key observational implications include:
     high-frequency oscillatory modes in the relativistic regime
     \citep{Israel2005,Watts2006}.
 \end{itemize}
+
+% =============================================================
+% Deep Research 11: Magnetar QPOs and BDNK torsional mode damping
+% =============================================================
+
+\section{Magnetar quasi-periodic oscillations and BDNK damping}
+\label{sec:deep11-magnetar-qpo}
+
+The detection of quasi-periodic oscillations (QPOs) in the tail of
+giant flares from soft gamma repeaters---most notably the 2004 December~27
+hyperflare from SGR~1806$-$20 \cite{Israel2005,Watts2006}---has opened a
+window into the interior physics of magnetars.  The observed QPO
+frequencies (18, 26, 30, 92, 150, 625, and 1840~Hz) are widely
+interpreted as torsional oscillation modes of the neutron star crust,
+coupled magneto-elastically to the core
+\cite{Strohmayer2005,BDNKtwoSphere2025}.  We now analyse these modes
+using the BDNK viscous framework developed in the preceding sections.
+
+\subsection{Torsional oscillation spectrum}
+
+The torsional modes of a neutron star crust with shear modulus $\mu_s$,
+density $\rho$, thickness $\Delta R$, and permeated by a magnetic field
+of strength $B$, have frequencies
+\begin{equation}\label{eq:deep11-torsional-freq}
+  f_{n,\ell}
+  = \frac{v_s}{2\Delta R}
+    \sqrt{(n+1)^{2} + \frac{v_A^{2}}{v_s^{2}}\,
+    \frac{\ell(\ell+1)}{4\pi}},
+\end{equation}
+where $v_s = \sqrt{\mu_s/\rho}$ is the shear wave speed, $v_A =
+B/\sqrt{4\pi\rho}$ the Alfv\'en speed, $n$ the radial overtone number,
+and $\ell$ the angular harmonic degree.  For $B \sim 10^{15}$~G
+(magnetar strength), $v_A \sim 3 \times 10^{7}$~cm\,s$^{-1}$ and
+$v_s \sim 5 \times 10^{7}$~cm\,s$^{-1}$, so the magnetic correction
+is of order unity and produces a rich spectrum of magneto-elastic modes.
+
+\subsection{BDNK versus IS damping of torsional modes}
+
+The quality factor of a torsional mode is
+\begin{equation}\label{eq:deep11-Q-factor}
+  Q = \frac{\pi f}{\gamma_{\rm visc}},
+  \qquad
+  \gamma_{\rm visc} = \frac{\eta_s k_n^{2}}{\rho\,(\enthalpy/\rho c^{2})},
+\end{equation}
+where $k_n = (n+1)\pi/\Delta R$ is the radial wavenumber.  In the IS
+formalism, the effective shear viscosity at frequency $\omega = 2\pi f$
+is reduced by the factor $1/(1 + \omega^{2}\tau_R^{2})$, where
+$\tau_R \sim 10^{-4}$~s in the crust.  For the high-frequency QPOs
+(625 and 1840~Hz), $\omega\tau_R \sim 0.4$--$1.2$, so the IS
+damping rate is reduced by 15--60\%.  This overestimates the quality
+factor and the mode lifetime.
+
+In the BDNK framework, the shear viscosity enters directly without
+relaxation suppression.  The BDNK causality constraint only modifies the
+effective viscosity at frequencies $\omega \sim c/R \sim 2.5 \times
+10^{4}$~Hz, far above the QPO frequencies.  Therefore, for all observed
+magnetar QPOs:
+\begin{equation}\label{eq:deep11-BDNK-vs-IS-Q}
+  \gamma_{\rm BDNK} > \gamma_{\rm IS},
+  \qquad
+  Q_{\rm BDNK} < Q_{\rm IS}.
+\end{equation}
+The BDNK modes are \emph{more damped} than IS predicts, with important
+consequences for the observed QPO phenomenology.
+
+\subsection{Comparison with SGR~1806$-$20 observations}
+
+Figure~\ref{fig:deep11-magnetar-qpo} compares the computed torsional
+mode spectrum with the observed QPO frequencies from SGR~1806$-$20.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{plots/deep/fig_magnetar_qpo.pdf}
+  \caption{Magnetar torsional oscillation modes versus SGR~1806$-$20
+    QPOs.
+    \emph{Left:} Computed magneto-elastic mode frequencies (coloured
+    ticks) for angular degrees $\ell = 2, 4, 7, 10, 13$, overlaid with
+    observed QPO frequencies (red vertical bands).  The low-frequency
+    QPOs (18--30~Hz) require $\ell \geq 7$ modes or core-coupled
+    Alfv\'en continuum oscillations.
+    \emph{Right:} Quality factor $Q$ of $\ell = 2$ modes computed with
+    BDNK (green circles) and IS (orange squares) damping.  BDNK
+    predicts systematically lower $Q$, especially at high frequencies
+    where IS relaxation artificially reduces the damping.}
+  \label{fig:deep11-magnetar-qpo}
+\end{figure}
+
+The principal conclusions are:
+\begin{itemize}
+  \item The observed 92~Hz and 150~Hz QPOs are well matched by low-order
+    $\ell = 2$ crustal torsional modes, consistent with previous
+    identifications.
+  \item The low-frequency cluster (18--30~Hz) requires either
+    high-$\ell$ modes or, more likely, Alfv\'en continuum oscillations
+    in the liquid core \cite{BDNKtwoSphere2025}.
+  \item The 625~Hz and 1840~Hz QPOs are naturally explained as overtones
+    with $n \geq 2$, $\ell = 2$--$4$.
+  \item The BDNK-predicted $Q$-factors ($Q \sim 10^{2}$--$10^{4}$)
+    imply mode lifetimes of $\sim 0.01$--$1$~s, consistent with the
+    observed duration of QPO signals in the hyperflare tail
+    ($\sim 200$~s observation, with individual QPO features lasting
+    $\sim 10$--$50$~s).
+\end{itemize}

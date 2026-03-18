@@ -758,6 +758,91 @@ Chatelier's principle, eq.~\ref{eq:le-chatelier}).
 \end{figure}
 
 %------------------------------------------------------------------
+\subsection{Nuclear EOS Transport Coefficients for BDNK}
+\label{subsec:nuclear-transport}
+
+The practical application of BDNK hydrodynamics to neutron star
+physics requires knowledge of the transport coefficients---shear
+viscosity $\eta$, bulk viscosity $\zeta$, and thermal conductivity
+$\kappa$---as functions of baryon density $n_B$ and temperature $T$.
+These coefficients depend sensitively on the nuclear equation of state
+through the composition (proton fraction $x_p$), effective nucleon
+masses $m^*$, and the threshold for fast (direct Urca) neutrino
+emission processes.
+
+We compare transport coefficients computed for three representative
+nuclear EOSs that span the range of current theoretical predictions:
+
+\begin{itemize}
+  \item \textbf{APR} \citep{AkmalPR1998}: A variational calculation
+    with realistic two- and three-nucleon potentials.  Predicts a stiff
+    EOS with $\cs^2/c^2$ reaching $\sim 0.8$ at high density.
+  \item \textbf{SLy} \citep{DouchinHaensel2001}: A Skyrme-type
+    effective interaction fitted to nuclear properties and neutron
+    matter calculations.  Moderate stiffness.
+  \item \textbf{DD2}: A relativistic mean-field model with
+    density-dependent meson-nucleon couplings.  Softer at intermediate
+    densities but stiffens at high density to support massive NSs.
+\end{itemize}
+
+The key features are:
+
+\medskip\noindent
+\textbf{Shear viscosity.}  In degenerate neutron star matter at
+$T \sim 10^9$\,K, the shear viscosity is dominated by
+neutron-neutron scattering and scales as
+$\eta \sim n_B^{9/4}\, T^{-2}\, (m^*/m)^{-5/2}$
+\citep{AlfordMahmoodi2012}.  The EOS enters primarily through the
+effective mass $m^*(n_B)$, which decreases with density in all three
+models but at different rates: DD2 predicts the strongest decrease,
+giving the largest $\eta$ at high density.
+
+\medskip\noindent
+\textbf{Bulk viscosity.}  The bulk viscosity arises from the
+$\beta$-equilibration lag during compression and expansion.  At low
+density, modified Urca processes dominate, giving
+$\zeta \propto n_B^2\, T^6$.  Above the direct Urca threshold
+($x_p > x_{\mathrm{DU}} \approx 0.11$--$0.14$ depending on the EOS),
+the bulk viscosity increases by several orders of magnitude
+\citep{GavassinoAntonelli2024}.  DD2 reaches this threshold at lower
+density than APR or SLy, producing a dramatic enhancement visible in
+Figure~\ref{fig:nuclear-transport}.
+
+\medskip\noindent
+\textbf{Thermal conductivity.}  Electron thermal conduction dominates
+in NS cores, with $\kappa \propto n_e^{1/3}\, T^{-1}$
+\citep{PotekhinChabrier2018}.  The electron fraction $x_p$ determines
+$n_e = x_p\, n_B$, so EOSs with higher proton fraction (DD2) predict
+larger thermal conductivity.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_nuclear_transport.pdf}
+  \caption{BDNK transport coefficients as functions of baryon density
+    $n_B/n_0$ (where $n_0 = 0.16$\,fm$^{-3}$ is nuclear saturation
+    density) at $T = 10^9$\,K for three nuclear EOSs: APR (red solid),
+    SLy (blue dashed), and DD2 (green dash-dotted).
+    (a)~Shear viscosity $\eta$: dominated by nn-scattering, sensitive
+    to the effective mass.
+    (b)~Bulk viscosity $\zeta$: shows dramatic enhancement at the
+    direct Urca threshold (highest density peak in DD2).
+    (c)~Thermal conductivity $\kappa$: governed by electron conduction,
+    sensitive to the proton fraction.
+    The vertical dotted line marks nuclear saturation density.}
+  \label{fig:nuclear-transport}
+\end{figure}
+
+These EOS-dependent transport coefficients enter directly into the
+BDNK hyperbolicity conditions (Section~\ref{subsec:BDNK-causality}):
+the frame coefficients $(\varepsilon_1, \beta_1, \alpha_1)$ must be
+chosen in relation to $(\eta, \zeta, \kappa)$ and the thermodynamic
+state $(\varepsilon, p, \cs^2)$ to ensure strong hyperbolicity.
+The variation of transport coefficients across EOSs therefore affects
+not only the magnitude of dissipative effects but also the
+\emph{allowed range of BDNK frame choices} for a given physical
+environment.
+
+%------------------------------------------------------------------
 \subsection*{References for This Section}
 
 \begin{itemize}
@@ -786,4 +871,16 @@ Chatelier's principle, eq.~\ref{eq:le-chatelier}).
     \citep{Weinberg1972}
   \item Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability},
     Oxford (1961) \citep{Chandrasekhar1961}
+  \item Pandya \& Pretorius, \textit{Phys.\ Rev.\ D} \textbf{104},
+    023015 (2021) \citep{PandyaPretorius2021}
+  \item Pandya, Most \& Pretorius, arXiv:2209.09265 (2022)
+    \citep{PandyaMostPretorius2022ideal}
+  \item Gavassino \& Antonelli, \textit{Phys.\ Lett.\ B} \textbf{849},
+    138434 (2024) \citep{GavassinoAntonelli2024}
+  \item Hoult \& Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106},
+    066023 (2022) \citep{HoultKovtun2022kinetic}
+  \item Potekhin \& Chabrier, \textit{Astron.\ Astrophys.}\ \textbf{609},
+    A74 (2018) \citep{PotekhinChabrier2018}
+  \item arXiv:2509.15303, NS evolution with BDNK (2025)
+    \citep{NSevolutionBDNK2025}
 \end{itemize}

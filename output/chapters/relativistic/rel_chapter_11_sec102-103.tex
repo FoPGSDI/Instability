@@ -680,3 +680,104 @@ for stability, with observed positions of M87 and Cen~A marked.
 }
 \label{fig:miles-howard-ri-rel}
 \end{figure}
+
+% ===================================================================
+\section{Deep Research: structured spine-sheath jet model}
+\label{sec:rel-102-103-spine-sheath}
+
+Modern VLBI and EHT observations have established that relativistic
+jets are not monolithic flows but possess a radially stratified
+velocity structure: a fast \emph{spine} ($\Gamma_{\mathrm{spine}} \sim 10$--$50$)
+surrounded by a slower \emph{sheath} ($\Gamma_{\mathrm{sheath}} \sim 2$--$5$)
+\cite{Hardee2007, MizunoHardeeNishikawa2007, Fromm2024}.  This spine-sheath
+structure introduces a qualitatively new feature into the KH stability
+analysis: two distinct shear interfaces (spine-sheath and sheath-ambient),
+each with its own relativistic Richardson number.
+
+\subsection{Two-interface KH problem}
+\label{sec:rel-102-103-spine-sheath-two}
+
+Consider a cylindrical jet with three concentric regions:
+\begin{enumerate}
+\item \textbf{Spine} ($r < R_{\mathrm{spine}}$): Lorentz factor
+  $\Gamma_{s} \sim 10$, enthalpy density $\hat{\rho}_{s}$;
+\item \textbf{Sheath} ($R_{\mathrm{spine}} < r < R_{\mathrm{jet}}$):
+  Lorentz factor $\Gamma_{\mathrm{sh}} \sim 2$, enthalpy density
+  $\hat{\rho}_{\mathrm{sh}}$;
+\item \textbf{Ambient} ($r > R_{\mathrm{jet}}$): at rest,
+  enthalpy density $\hat{\rho}_{a}$.
+\end{enumerate}
+Typical parameters give $\hat{\rho}_{s}/\hat{\rho}_{a} \sim 10^{-3}$
+(very light spine) and $\hat{\rho}_{\mathrm{sh}}/\hat{\rho}_{a} \sim 0.05$
+(moderately light sheath), with $R_{\mathrm{spine}} \approx 0.3\,R_{\mathrm{jet}}$.
+
+The relativistic Richardson number at each interface follows
+from~\eqref{eq:rel-11-22}:
+\begin{align}
+  J_{\mathrm{rel}}^{(\mathrm{s-sh})}
+  &= \frac{g_{\mathrm{eff}}\,d_{\mathrm{s-sh}}}
+  {\Gamma_{\mathrm{s-sh}}^{4}\,(\Delta V_{\mathrm{s-sh}})^{2}}\,
+  \frac{\Delta\hat{\rho}_{\mathrm{s-sh}}}{\hat{\rho}_{\mathrm{sh}}}\,,
+  \label{eq:rel-Ri-spine-sheath} \\
+  J_{\mathrm{rel}}^{(\mathrm{sh-a})}
+  &= \frac{g_{\mathrm{eff}}\,d_{\mathrm{sh-a}}}
+  {\Gamma_{\mathrm{sh}}^{4}\,(\Delta V_{\mathrm{sh-a}})^{2}}\,
+  \frac{\Delta\hat{\rho}_{\mathrm{sh-a}}}{\hat{\rho}_{a}}\,,
+  \label{eq:rel-Ri-sheath-amb}
+\end{align}
+where $\Gamma_{\mathrm{s-sh}}$ is the effective Lorentz factor across
+the spine-sheath interface (the geometric mean of the two bulk values),
+and $d$ is the shear-layer width at each interface.
+
+\subsection{KH growth rate: spine-sheath vs.\ uniform jet}
+\label{sec:rel-102-103-spine-sheath-growth}
+
+The KH growth rate at the spine-sheath interface is controlled by
+the \emph{relative} velocity between spine and sheath:
+\begin{equation}
+  V_{\mathrm{rel}}^{(\mathrm{s-sh})}
+  = \frac{V_{s} - V_{\mathrm{sh}}}{1 - V_{s}\,V_{\mathrm{sh}}/c^{2}}\,.
+\end{equation}
+For $\Gamma_{s} = 10$, $\Gamma_{\mathrm{sh}} = 2$:
+$V_{s} \approx 0.995\,c$, $V_{\mathrm{sh}} \approx 0.866\,c$,
+giving $V_{\mathrm{rel}}^{(\mathrm{s-sh})} \approx 0.93\,c$
+($\gamma_{\mathrm{rel}} \approx 2.7$).  The lab-frame growth rate
+at this interface, from the analysis of \S\,\ref{sec:rel-11-104-jets},
+is suppressed by a factor $\Gamma_{\mathrm{s-sh}}^{-2} \sim 7^{-2}$,
+but at the sheath-ambient boundary the suppression is only
+$\Gamma_{\mathrm{sh}}^{-2} = 1/4$.
+
+The sheath-ambient interface is therefore the \emph{more unstable}
+of the two, with growth rates exceeding the spine-sheath interface
+by an order of magnitude.  However, when the modes at the two
+interfaces interact constructively (for $k R_{\mathrm{jet}} \sim 1$--$3$),
+the combined growth rate can exceed that of either interface alone by
+$20$--$50\%$.  This \emph{coupling enhancement} is a distinctive
+feature of structured jets that is absent from uniform-jet models.
+
+Long-term relativistic MHD simulations by \cite{PeruchoMartiQuilis2022}
+confirm this picture: the sheath-ambient boundary disrupts first,
+producing the limb-brightened morphology observed in jets like M87,
+while the spine remains intact over much longer distances.
+
+Figure~\ref{fig:spine-sheath-kh} compares the KH growth rate for a
+spine-sheath jet ($\Gamma_{s}=10$, $\Gamma_{\mathrm{sh}}=2$) with
+that of a uniform jet ($\Gamma=6$), illustrating the coupling
+enhancement and the dominance of the sheath-ambient interface.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_spine_sheath_kh.pdf}
+\caption{%
+\textbf{Left:} KH growth rate $\sigma R_{\mathrm{jet}}/c$ vs.\
+normalised wavenumber for a spine-sheath jet model
+($\Gamma_{s}=10$, $\Gamma_{\mathrm{sh}}=2$, $\eta_s=10^{-3}$,
+$\eta_{\mathrm{sh}}=0.05$) compared with a uniform jet
+($\Gamma=6$, $\eta=0.01$).  The red curve shows the coupled
+growth rate including mode interaction at the two interfaces.
+\textbf{Right:} Ratio of spine-sheath to uniform growth rates,
+with an inset showing the jet cross-section schematic.
+Parameters from \cite{Hardee2007, MizunoHardeeNishikawa2007}.
+}
+\label{fig:spine-sheath-kh}
+\end{figure}

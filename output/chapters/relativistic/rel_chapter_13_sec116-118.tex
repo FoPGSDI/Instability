@@ -527,6 +527,89 @@ analysis --- relevant for rotating relativistic stars and the onset of
 gravitational-wave-driven (CFS) instabilities --- will be taken up in
 a subsequent section.
 
+% =====================================================================
+\subsection{Deep calculation: Chandrasekhar mass limit with GR (BDNK)}
+\label{sec:rel-118-deep-chandrasekhar}
+% =====================================================================
+
+We now compute the Chandrasekhar mass limit with explicit GR corrections,
+following the BDNK framework for causal dissipation.
+
+\paragraph{Electron degeneracy pressure and the Chandrasekhar EOS.}
+For a white dwarf supported by electron degeneracy pressure, the
+equation of state transitions from non-relativistic
+($P \propto \rho^{5/3}$, $\gamma = 5/3$) to ultra-relativistic
+($P \propto \rho^{4/3}$, $\gamma = 4/3$) at the relativistic
+transition density
+\begin{equation}
+\label{eq:rel-13-rho-rel}
+\rho_{\mathrm{rel}}
+  = \mu_{e}\,m_{H}\,
+    \frac{(2m_{e}c/\hbar)^{3}}{3\pi^{2}}
+  \approx 2 \times 10^{6}\;\mathrm{g\,cm^{-3}},
+\end{equation}
+where $m_{e}$ is the electron mass.  The effective adiabatic index
+interpolates smoothly:
+\begin{equation}
+\label{eq:rel-13-gamma-interp}
+\gamma_{\mathrm{eff}}(\rho_{c})
+  = \frac{5/3}{1 + x^{2}} + \frac{4/3\;\,x^{2}}{1 + x^{2}},
+  \qquad
+  x \equiv \left(\frac{\rho_{c}}{\rho_{\mathrm{rel}}}\right)^{1/3}.
+\end{equation}
+
+\paragraph{GR correction and the upper mass limit.}
+From eq.~\eqref{eq:rel-13-gamma-c}, the GR correction raises the
+critical index to $\gamma_{c} = 4/3 + (38/21)\,GM/(Rc^{2})$.  The
+compactness of a white dwarf near the Chandrasekhar limit is
+$\mathcal{C} = GM/(Rc^{2}) \sim 10^{-3}$, giving
+\begin{equation}
+\label{eq:rel-13-delta-gamma-wd}
+\Delta\gamma_{c}
+  = \frac{38}{21}\,\mathcal{C}
+  \approx 1.8 \times 10^{-3}.
+\end{equation}
+Although small, this correction is \emph{decisive}: as
+$\rho_{c} \to \infty$ the effective index
+$\gamma_{\mathrm{eff}} \to 4/3$ from above, but the GR-corrected
+threshold $\gamma_{c} > 4/3$.  The curves cross at a finite central
+density, yielding a GR maximum mass
+\begin{equation}
+\label{eq:rel-13-MGR-max}
+M_{\max,\mathrm{GR}}
+  = M_{\mathrm{Ch}}\,\Bigl(1 - \delta\Bigr),
+  \qquad
+  \delta \approx \frac{1}{2}\,\kappa\,\frac{GM_{\mathrm{Ch}}}{R_{0}\,c^{2}}
+  \sim 10^{-3},
+\end{equation}
+where $R_{0} \approx 8.7 \times 10^{8}\;\mathrm{cm}$ is the
+characteristic white-dwarf radius at the mass limit.
+
+\paragraph{BDNK dissipation.}
+In the BDNK framework, the viscous terms modify the oscillation
+damping rate but \emph{not} the stability boundary
+(cf.~eq.~\eqref{eq:rel14-dispersion-visc} in Chapter~XIV).  The
+maximum mass is therefore identical to the inviscid GR result.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_chandrasekhar_limit.pdf}
+\caption{%
+  \textbf{Left:} Maximum white-dwarf mass as a function of central
+  density $\rho_{c}$.  The Newtonian curve (blue) asymptotes to
+  $M_{\mathrm{Ch}} \approx 1.44\,M_{\odot}$; the GR-corrected curve
+  (red) turns over at $M_{\max,\mathrm{GR}} < M_{\mathrm{Ch}}$ and
+  the configuration becomes unstable (red shading) at high density.
+  The vertical dashed line marks the NR/UR transition density
+  $\rho_{\mathrm{rel}}$.
+  \textbf{Right:} Effective adiabatic index $\gamma_{\mathrm{eff}}$
+  (blue) and GR critical index $\gamma_{c} = 4/3 +
+  (38/21)\,GM/(Rc^{2})$ (red) as functions of $M/M_{\mathrm{Ch}}$.
+  The crossing defines the GR instability window (red shading).
+}
+\label{fig:chandrasekhar-limit-deep}
+\end{figure}
+
 \bigskip
 \noindent\textbf{References for \S\S\,\ref{sec:rel-116}--\ref{sec:rel-118}.}\quad
 The relativistic pulsation equation and the critical adiabatic index
@@ -543,3 +626,6 @@ post-Newtonian instability of supermassive stars is discussed in
 Shapiro \& Teukolsky (1979, \emph{Ap.\ J.}\ \textbf{234},
 L177)~\citep{Shapiro1979} and Baumgarte \& Shapiro (1999,
 \emph{Ap.\ J.}\ \textbf{526}, 941)~\citep{Baumgarte1999}.
+The entropy generation and dissipative effects in protogalactic
+collapse were analysed by Weinberg (1971, \emph{Ap.\ J.}\
+\textbf{168}, 175)~\citep{Weinberg1971}.

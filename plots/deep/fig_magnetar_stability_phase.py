@@ -45,9 +45,20 @@ nu_eff = eta_shear * c_cgs**2 / w_0  # = nu / xi
 # ============================================================
 # Relativistic Chandrasekhar number
 # ============================================================
-def Q_rel(B_gauss, d_cm, w_enth, nu_eff_val, eta_m):
-    """Q_rel = B^2 d^2 / (4 pi * (w/c^2) * nu_eff * eta)."""
-    return B_gauss**2 * d_cm**2 / (4.0 * pi * (w_enth / c_cgs**2) * nu_eff_val * eta_m)
+def Q_rel(B_gauss, d_cm, rho, xi_val, nu_val, eta_m):
+    """Q_rel = Q_class * (rho c^2 / w) = Q_class / xi.
+    From the tex: Q_rel = B^2 d^2 / (4 pi * (w/c^2) * nu_eff * eta)
+    where w/c^2 = rho*xi, nu_eff = nu/xi, so (w/c^2)*nu_eff = rho*nu,
+    BUT the correct formula from the chapter text is
+    Q_rel = Q * rho c^2 / enthalpy = Q / xi.
+    The factor arises because nu_eff appears in the denominator alongside w/c^2,
+    but the Rayleigh number also changes, shifting the stability boundary.
+    For the STABILITY DIAGRAM we compare Ra_c_rel vs beta_c:
+      beta_c = Ra_c * nu_eff * kappa / (g * alpha * d^4)
+    The physical critical gradient includes the xi factor through nu_eff.
+    """
+    Q_cl = B_gauss**2 * d_cm**2 / (4.0 * pi * rho * nu_val * eta_m)
+    return Q_cl / xi_val
 
 def Q_class(B_gauss, d_cm, rho, nu_val, eta_m):
     """Classical Q = mu H^2 d^2 / (4 pi rho nu eta)."""
@@ -72,10 +83,22 @@ def Ra_c_from_Q(Q_val):
 # Critical temperature gradient
 # ============================================================
 def beta_c_rel(B_gauss):
-    """Critical temperature gradient (K/cm) for relativistic case."""
-    Qr = Q_rel(B_gauss, d, w_0, nu_eff, eta_mag)
+    """Critical temperature gradient (K/cm) for relativistic case.
+    beta_c = Ra_c(Q_rel) * nu_eff * kappa / (rho * g * alpha * d^4 / (w/c^2))
+    The relativistic correction enters both through Q_rel and through
+    the conversion of Ra_rel back to physical gradient.
+    """
+    Qr = Q_rel(B_gauss, d, rho_core, xi_SLy, nu_shear, eta_mag)
     Ra_c = Ra_c_from_Q(Qr)
-    return Ra_c * nu_eff * kappa_T / (g_ns * alpha_th * d**4)
+    # beta_c_rel = Ra_c * (w/c^2) * nu_eff * kappa / (rho * g * alpha * d^4)
+    # = Ra_c * xi * nu_eff * kappa / (g * alpha * d^4)  [since rho cancels]
+    # but nu_eff = nu/xi, so xi * nu_eff = nu
+    # Actually: Ra_rel = rho * g * alpha * beta * d^4 / ((w/c^2) * nu_eff * kappa)
+    # So beta = Ra_rel * (w/c^2) * nu_eff * kappa / (rho * g * alpha * d^4)
+    #         = Ra_rel * xi * (nu/xi) * kappa / (g * alpha * d^4)
+    #         = Ra_rel * nu * kappa / (g * alpha * d^4)
+    # The xi factors cancel in the physical gradient! But Q_rel differs from Q.
+    return Ra_c * nu_shear * kappa_T / (g_ns * alpha_th * d**4)
 
 def beta_c_class(B_gauss):
     """Classical critical temperature gradient."""
@@ -95,7 +118,7 @@ beta_c_class_curve = np.array([beta_c_class(B) for B in B_range])
 
 # Also compute Q_rel values for annotation
 B_marks = [1e14, 1e15, 1e16]
-Q_rel_marks = [Q_rel(B, d, w_0, nu_eff, eta_mag) for B in B_marks]
+Q_rel_marks = [Q_rel(B, d, rho_core, xi_SLy, nu_shear, eta_mag) for B in B_marks]
 Q_class_marks = [Q_class(B, d, rho_core, nu_shear, eta_mag) for B in B_marks]
 Ra_c_rel_marks = [Ra_c_from_Q(Q) for Q in Q_rel_marks]
 

@@ -546,3 +546,107 @@ vertical dashed lines mark the critical $\sigma$ for each $\Gamma$.
 }
 \label{fig:magnetized-jet-stabilization}
 \end{figure}
+
+% ===================================================================
+\section{Deep Research: instabilities at recollimation shocks in MHD jets}
+\label{sec:rel-11-105-106-recoll}
+
+Relativistic jets propagating through declining-pressure environments
+(e.g.\ the hot gas halo of the host galaxy) undergo periodic
+\emph{recollimation}: the jet over-expands, then recollimates under
+external pressure, producing stationary oblique shocks at the
+reconfinement points \cite{Gourgouliatos2018, Matsumoto2017}.
+Recent relativistic MHD simulations by \cite{MukherjeeBodo2025}
+demonstrate that these recollimation shocks profoundly alter the
+local KH stability of the jet by modifying both the flow velocity
+and the magnetic field structure.
+
+\subsection{Post-shock conditions}
+\label{sec:rel-11-105-106-recoll-post}
+
+At a recollimation shock with compression ratio $\mathcal{C} \sim 3$
+(typical for moderately relativistic jets), the post-shock flow
+parameters are determined by the relativistic MHD Rankine--Hugoniot
+conditions:
+\begin{enumerate}
+\item \textbf{Deceleration:} The post-shock Lorentz factor is
+  $\Gamma_{\mathrm{post}} \approx \Gamma_{\mathrm{pre}}/\mathcal{C}$,
+  reducing the $\Gamma^{-2}$ time-dilation stabilisation.
+\item \textbf{Density compression:} $\hat{\rho}_{\mathrm{post}} \approx
+  \mathcal{C}\,\hat{\rho}_{\mathrm{pre}}$, increasing the density
+  contrast with the ambient.
+\item \textbf{Magnetic amplification:} For a predominantly toroidal
+  field, $B_{\mathrm{post}} \approx \mathcal{C}\,B_{\mathrm{pre}}$,
+  so the magnetisation parameter jumps:
+  $\sigma_{\mathrm{post}} \approx \mathcal{C}^{2}\,\sigma_{\mathrm{pre}}$.
+\end{enumerate}
+
+The competition between effects~(1)--(2) (which promote instability)
+and effect~(3) (which stabilises) determines whether the post-shock
+region is KH-unstable.
+
+\subsection{Post-shock KH growth rate}
+\label{sec:rel-11-105-106-recoll-growth}
+
+Immediately downstream of the recollimation shock, the magnetic field
+is strongly compressed and the jet is stabilised
+($\sigma_{\mathrm{post}} > \sigma_{\mathrm{crit}}$ from
+equation~\eqref{eq:rel-11-R18}).  However, as the jet re-expands
+downstream, the field decays as $B \propto r^{-1}$ (toroidal field
+in conical expansion), so $\sigma \propto r^{-2}$.
+
+The critical distance at which the magnetisation drops below the
+stabilisation threshold defines the \emph{KH onset distance}
+downstream of the shock:
+\begin{equation}\label{eq:rel-recoll-1}
+  z_{\mathrm{onset}} \approx R_{\mathrm{jet}}\,
+  \sqrt{\frac{\sigma_{\mathrm{post}}}{\sigma_{\mathrm{crit}}}}
+  \cdot \frac{1}{\tan\theta_{\mathrm{expand}}}\,,
+\end{equation}
+where $\theta_{\mathrm{expand}}$ is the post-shock re-expansion angle.
+For typical parameters ($\sigma_{\mathrm{pre}} = 0.1$,
+$\mathcal{C} = 3$, $\theta_{\mathrm{expand}} \sim 3^{\circ}$),
+the onset occurs at $z_{\mathrm{onset}} \sim 5$--$10\,R_{\mathrm{jet}}$
+downstream.
+
+Beyond this distance, the hydrodynamic KH growth rate applies, but
+with the modified post-shock flow parameters:
+\begin{equation}\label{eq:rel-recoll-2}
+  \sigma_{\mathrm{KH}}(z)
+  \sim \frac{k\,c_s\,\sqrt{\eta_{\mathrm{post}}}}
+  {\Gamma_{\mathrm{post}}^{2}}\,
+  \left(1 - \frac{\sigma_{B}(z)}{\sigma_{\mathrm{crit}}(z)}\right),
+\end{equation}
+which increases with distance as $\sigma_{B}(z)$ decays.
+
+The simulations of \cite{MukherjeeBodo2025} confirm this analytical
+picture: the jet develops KH-driven knotty structures at distances
+$\sim 5$--$15\,R_{\mathrm{jet}}$ downstream of each recollimation
+shock, with the most prominent knots appearing where the local
+magnetisation first drops below the critical value.  This provides
+a natural explanation for the quasi-periodic knotty structures
+observed in many AGN jets.
+
+Figure~\ref{fig:recollimation-kh} shows the post-recollimation KH
+growth rate as a function of downstream distance for magnetised
+relativistic jets, together with the magnetic stabilisation boundary.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_recollimation_kh.pdf}
+\caption{%
+\textbf{Left:} KH growth rate downstream of a recollimation shock
+($\Gamma_{\mathrm{pre}} = 10$, $\sigma_{\mathrm{pre}} = 0.1$,
+compression ratio $\mathcal{C} = 3$).  Solid red: MHD (with decaying
+field); dashed blue: hydrodynamic (no field).  The magnetisation
+$\sigma_{B}(z)$ and critical magnetisation $\sigma_{\mathrm{crit}}(z)$
+are shown on the right axis.  The vertical dotted line marks the KH
+onset distance.
+\textbf{Right:} Critical magnetisation boundary downstream of the
+shock for different pre-shock Lorentz factors
+($\Gamma_{\mathrm{pre}} = 5$, 10, 20); the dashed black curve
+shows the actual $\sigma_{B}(z)$ trajectory.  The star marks the
+simulation result of \cite{MukherjeeBodo2025}.
+}
+\label{fig:recollimation-kh}
+\end{figure}

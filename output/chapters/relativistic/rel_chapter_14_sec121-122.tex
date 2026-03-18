@@ -635,6 +635,86 @@ astrophysical contexts:
   experiments~\citep{Bernstein1958,Frieman1960}.
 \end{itemize}
 
+%----------------------------------------------------------------------
+\subsection{Deep calculation: $\delta^{2}W$ for neutron stars
+  with BDNK dissipation}\label{sec:rel-122-deep-ns}
+%----------------------------------------------------------------------
+
+We compute the second-variation energy functional $\delta^{2}W$ for
+neutron star models and map the stability boundary in the
+mass--radius ($M$--$R$) parameter space.
+
+\paragraph{Polytropic model.}
+For an $n=1$ polytrope ($\gamma = 2$, $P = K\rho^{2}$), the TOV
+equation admits semi-analytic solutions.  The mass--radius curves for
+several representative equations of state (soft APR, medium SLy,
+stiff MS1) are computed numerically.  The \emph{turning-point
+theorem} (Friedman, Ipser, Sorkin 1988) states that the stability
+boundary corresponds to $dM/d\rho_{c} = 0$: the maximum mass along
+each $M(R)$ curve.
+
+\paragraph{Stability criterion in the $M$--$R$ plane.}
+The sign of $\delta^{2}W$ is determined by
+\begin{equation}
+\label{eq:rel-14-delta2W-MR}
+\delta^{2}W
+  \propto \bigl(\gamma_{\mathrm{eff}} - \gamma_{c}\bigr)
+  \times |\mathfrak{W}_{\mathrm{eff}}|,
+\end{equation}
+where $\gamma_{c} = 4/3 + (38/21)\,GM/(Rc^{2})$
+(eq.~\eqref{eq:rel-13-gamma-c}).  At fixed EOS, increasing
+compactness $\mathcal{C} = GM/(Rc^{2})$ raises $\gamma_{c}$; when
+$\gamma_{\mathrm{eff}} < \gamma_{c}$, the configuration is unstable
+($\delta^{2}W < 0$).
+
+\paragraph{BDNK dissipation.}
+From the quadratic dispersion
+relation~\eqref{eq:rel14-dispersion-visc}, the stability boundary
+$\delta^{2}W = 0$ is independent of the viscosity coefficients
+$\shearvisc$ and $\bulkvisc$.  BDNK dissipation modifies the damping
+time of stable modes:
+\begin{equation}
+\label{eq:rel-14-tau-damp}
+\tau_{\mathrm{damp}}
+  = \frac{2\mathcal{I}}{\Phi_{\mathrm{rel}}}
+  \sim \frac{\enthalpy\,R^{3}}{\shearvisc},
+\end{equation}
+which for typical NS parameters ($\shearvisc \sim 10^{18}$--$10^{25}$
+$\mathrm{g\,cm^{-1}\,s^{-1}}$ depending on temperature) gives
+damping times of milliseconds to seconds --- consistent with observed
+neutron-star oscillation quality factors.
+
+\paragraph{Comparison with observed neutron stars.}
+Figure~\ref{fig:energy-principle-ns-deep} overlays observed
+neutron-star masses from pulsar timing (J0348+0432, J0740+6620,
+J1614$-$2230) and NICER radius measurements (J0030+0451,
+J0437$-$4715) on the $\delta^{2}W$ stability map.  All observed
+systems lie firmly in the stable region ($\delta^{2}W > 0$), as
+expected.  The stability boundary (black curve) separates the
+physically realisable ($M < M_{\max}$) from the unstable
+($M > M_{\max}$) configurations.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\textwidth]{fig_energy_principle_ns.pdf}
+\caption{%
+  \textbf{Left:} Neutron star mass--radius curves for four
+  representative equations of state.  Circles mark the maximum mass
+  (stability boundary) for each EOS.  Observed NS measurements
+  (purple error ellipses) are overlaid.  The dashed line marks
+  the causality limit $c_{s} = c$; the black shaded region is
+  inside the Schwarzschild radius.
+  \textbf{Right:} Contour map of $\delta^{2}W$ (normalised) in the
+  $M$--$R$ plane.  Red/yellow: unstable ($\delta^{2}W < 0$);
+  green/blue: stable ($\delta^{2}W > 0$).  The solid black curve
+  is the marginal stability boundary $\delta^{2}W = 0$.  White
+  curves are EOS tracks; white stars mark observed NSs.  The BDNK
+  viscous correction modifies damping rates but leaves the black
+  boundary unchanged.
+}
+\label{fig:energy-principle-ns-deep}
+\end{figure}
+
 \bigskip
 \noindent\textbf{References for \S\S\,\ref{sec:rel-121}--\ref{sec:rel-122}.}\quad
 The classical energy principle for ideal MHD was established by
@@ -646,6 +726,9 @@ The relativistic variational formulation for self-gravitating fluids
 is due to Schutz (1970, \emph{Phys.\ Rev.\ D}\ \textbf{2},
 2762)~\citep{Schutz1970} and Friedman and Schutz (1978,
 \emph{Ap.\ J.}\ \textbf{222}, 281)~\citep{FriedmanSchutz1978}.
+The Lagrangian perturbation theory of nonrelativistic fluids is
+developed in Friedman and Schutz (1978, \emph{Ap.\ J.}\ \textbf{221},
+937)~\citep{FriedmanSchutz1978b}.
 The BDNK causal dissipative framework is developed in
 \citet{BemficaDN2018}, \citet{Kovtun2019}, and
 \citet{BemficaDN2019}.

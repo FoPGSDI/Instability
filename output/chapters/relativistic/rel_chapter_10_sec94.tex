@@ -476,3 +476,69 @@ damping timescale as functions of the effective Reynolds number.
   second-order theory (dashed, $\tau_{\pi}/\tau_{0} = 0.1$).}
 \label{fig:viscous-RT-NS}
 \end{figure}
+
+%% ================================================================
+\subsection{Deep calculation: BDNK viscous RT in NS merger ejecta}
+\label{sec:rel-10-94-deep-merger}
+
+We now present a detailed calculation of viscous RT mixing in
+neutron star merger ejecta, using nuclear transport coefficients
+in the BDNK framework.
+
+\paragraph{Physical model.}
+At the moment of merger, the contact interface between the two
+neutron star cores has a density $\rho \sim 10^{10}\;\mathrm{g\,cm^{-3}}$,
+an expansion velocity $v_{\mathrm{exp}} \sim 0.1\,c$, and an
+effective gravitational acceleration
+$g_{\mathrm{eff}} \sim GM_{\mathrm{rem}}/R_{\mathrm{contact}}^{2}
+\sim 5\times 10^{13}\;\mathrm{cm\,s^{-2}}$ \citep{Radice2018}.
+The post-merger remnant has mass $M_{\mathrm{rem}} \approx 2.5\,M_{\odot}$
+and the contact radius $R_{\mathrm{contact}} \approx 20\;\mathrm{km}$.
+
+\paragraph{Nuclear transport coefficients.}
+The shear viscosity of dense nuclear matter spans
+$\eta \sim 10^{15}$--$10^{18}\;\mathrm{g\,cm^{-1}\,s^{-1}}$
+depending on temperature and density \citep{Alford2018}.
+In the BDNK framework, the kinematic viscosity
+$\nu = \eta/[(\varepsilon + p)/c^{2}]$ uses the full relativistic
+enthalpy density, which exceeds the rest-mass density by a factor
+$(1+\xi)$ with $\xi \approx 0.08$ for the merger ejecta.
+
+\paragraph{Mixing length evolution.}
+The RT mixing length grows self-similarly as
+$h(t) \sim \alpha\,\mathcal{A}\,g\,t^{2}$ with
+$\alpha \approx 0.05$ from numerical simulations.  Viscous
+damping suppresses growth at small scales, with the viscous cutoff
+length $\ell_{\mathrm{visc}} \sim (\nu^{2}/(g\mathcal{A}))^{1/3}$.
+The competition between RT growth and viscous damping determines the
+final degree of mixing in the ejecta, which in turn affects the
+nucleosynthesis yields and kilonova light curves.
+
+\paragraph{BDNK vs Israel--Stewart.}
+At high wavenumbers, the Israel--Stewart theory introduces a
+frequency-dependent effective viscosity
+$\eta_{\mathrm{eff}} = \eta/(1+\tau_{\pi}\sigma)$ that artificially
+enhances the growth rate compared with the BDNK prediction.  This
+difference is most pronounced for $\tau_{\pi}\sigma \gtrsim 1$,
+i.e.\ for modes growing faster than the IS relaxation time.
+The BDNK theory avoids this artifact entirely.
+
+Figure~\ref{fig:ns-merger-deep} presents the mixing length
+evolution, fastest-growing wavelength, viscous dispersion relation,
+and the BDNK--IS comparison.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_ns_merger_mixing.pdf}
+\caption{Deep calculation: Viscous RT instability in NS merger ejecta
+  with BDNK viscosity.
+  \textit{(a)}~RT mixing length vs.\ time post-merger for different
+  nuclear shear viscosities.
+  \textit{(b)}~Fastest-growing wavelength $\lambda_{\max}$ vs.\ time.
+  \textit{(c)}~Viscous RT dispersion relation $\sigma(k)$ at
+  $t = 1\;\mathrm{ms}$ for different viscosities.
+  \textit{(d)}~BDNK vs.\ Israel--Stewart comparison: the IS theory
+  with relaxation times $\tau_{\pi}$ introduces spurious growth
+  enhancement at high~$k$.}
+\label{fig:ns-merger-deep}
+\end{figure}

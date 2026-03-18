@@ -40,23 +40,23 @@ km = 1e5  # cm
 eos_models = {
     'APR': {
         'Gamma': 2.58,
-        'rho_c': 1.05e15,   # central rest-mass density for 1.4 Msun
+        'rho_c': 1.5e15,   # central rest-mass density for ~1.4 Msun
         'K_factor': 1.0,
         'p_nuc': 3.5e33,    # pressure at rho_0 in dyne/cm^2
         'color': '#F44336', 'ls': '-',
         'label': r'APR ($1.4\,M_\odot$)',
     },
     'SLy': {
-        'Gamma': 2.05,
-        'rho_c': 2.5e15,
+        'Gamma': 2.35,
+        'rho_c': 3.0e15,
         'K_factor': 1.0,
-        'p_nuc': 2.0e33,
+        'p_nuc': 2.5e33,
         'color': '#2196F3', 'ls': '--',
         'label': r'SLy ($1.4\,M_\odot$)',
     },
     'BSk21': {
         'Gamma': 2.60,
-        'rho_c': 1.15e15,   # for 2.0 Msun
+        'rho_c': 2.5e15,   # for ~2.0 Msun
         'K_factor': 1.0,
         'p_nuc': 3.0e33,
         'color': '#4CAF50', 'ls': '-.',

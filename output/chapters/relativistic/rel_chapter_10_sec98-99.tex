@@ -690,3 +690,85 @@ frequencies for neutron stars across a range of masses.
   comparing relativistic (solid) and Newtonian (dashed) predictions.}
 \label{fig:NS-oscillation-modes}
 \end{figure}
+
+%% ================================================================
+\subsection{Deep calculation: NS $f$-mode and $g$-mode frequencies
+with BDNK damping and GW detectability}
+\label{sec:rel-10-98-deep-modes}
+
+We now present a comprehensive calculation of the neutron star
+$f$-mode and $g$-mode oscillation frequencies for three
+representative equations of state, including BDNK viscous damping
+and gravitational-wave detectability estimates.
+
+\paragraph{Equation of state models.}
+We consider three nuclear EOSs spanning the range of stiffness
+consistent with current observational constraints:
+\begin{itemize}
+  \item \textbf{APR4} (soft): $R_{1.4} \approx 11.0\;\mathrm{km}$,
+  \item \textbf{SLy4} (moderate): $R_{1.4} \approx 11.7\;\mathrm{km}$,
+  \item \textbf{H4} (stiff): $R_{1.4} \approx 13.5\;\mathrm{km}$.
+\end{itemize}
+For each EOS, the mass-radius relation is approximated by an
+analytic fit calibrated to full numerical solutions.  The
+compactness $\mathcal{C} = GM/(Rc^{2})$ ranges from $\sim 0.10$
+(light, stiff) to $\sim 0.30$ (heavy, soft).
+
+\paragraph{$f$-mode frequencies.}
+The relativistic Kelvin frequency~\eqref{eq:rel-10-258R}
+for the $\ell = 2$ fundamental mode gives
+$f_{f} \sim 1.5$--$3.0\;\mathrm{kHz}$ across the mass range
+$1.0$--$2.4\,M_{\odot}$.  The relativistic correction
+$\beta_{2}\,\mathcal{C}$ shifts the frequency by
+$\sim 15$--$25\%$ compared with the Newtonian prediction,
+with softer EOSs (smaller radii, larger compactness) showing
+larger corrections \citep{Radice2018}.
+
+\paragraph{$g$-mode frequencies.}
+The gravity ($g$-) modes arise from the buoyancy of composition
+gradients in the neutron star interior.  Their frequencies scale as
+$f_{g} \sim 0.3$--$0.8\;\mathrm{kHz}$, significantly below the
+$f$-mode.  The $g$-modes are potentially detectable in post-merger
+gravitational-wave signals if the remnant survives collapse for
+$\gtrsim 10\;\mathrm{ms}$.
+
+\paragraph{BDNK viscous damping.}
+The damping timescale~\eqref{eq:rel-10-291R} for the $\ell = 2$
+$f$-mode, using a fiducial shear viscosity
+$\eta = 10^{18}\;\mathrm{g\,cm^{-1}\,s^{-1}}$ and the BDNK
+kinematic viscosity $\nu = \eta/[(\varepsilon + p)/c^{2}]$,
+yields $\tau_{f} \sim 10^{6}$--$10^{7}\;\mathrm{s}$.  In the
+Israel--Stewart theory with $\tau_{\pi} = 10^{-4}\;\mathrm{s}$,
+the effective viscosity is reduced at the $f$-mode frequency,
+yielding longer damping times---an artifact of the relaxation
+mechanism absent in the BDNK formulation.
+
+\paragraph{Gravitational-wave detectability.}
+The GW strain from an excited $f$-mode at distance~$d$ scales as
+$h \sim (G/c^{4})\,\epsilon\,MR^{2}\omega^{2}/d$, where
+$\epsilon$ is the fractional excitation amplitude.  For a 1\%
+excitation at $10\;\mathrm{Mpc}$, the strain is
+$h \sim 10^{-24}$--$10^{-23}$, within reach of third-generation
+detectors such as the Einstein Telescope at frequencies
+$f \sim 2$--$3\;\mathrm{kHz}$.
+
+Figure~\ref{fig:ns-modes-gw-deep} presents the mode frequencies,
+BDNK damping timescales, GW sensitivity comparison, and
+relativistic corrections as functions of NS mass and compactness.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_ns_modes_gw.pdf}
+\caption{Deep calculation: NS oscillation modes and GW detectability.
+  \textit{(a)}~$f$-mode and $g$-mode frequencies vs.\ NS mass for
+  three EOSs (APR4, SLy4, H4).
+  \textit{(b)}~BDNK viscous damping timescale vs.\ mass;
+  dashed curves show the Israel--Stewart prediction with
+  $\tau_{\pi} = 10^{-4}\;\mathrm{s}$.
+  \textit{(c)}~GW strain vs.\ frequency, overlaid on LIGO~O4,
+  LIGO~A+, and Einstein Telescope sensitivity curves; markers
+  show $f$-mode and $g$-mode signals at $10$ and $50\;\mathrm{Mpc}$.
+  \textit{(d)}~Relativistic corrections to mode frequency and
+  damping timescale vs.\ compactness for $\ell = 2$, $3$, $4$.}
+\label{fig:ns-modes-gw-deep}
+\end{figure}

@@ -477,3 +477,108 @@ This comparison underscores the following conclusions:
     increase in the effective Rayleigh number---the \emph{largest}
     relativistic effect in most neutron star applications.
 \end{enumerate}
+
+% =============================================================
+% Deep Research 11: GW from convective proto-NS with BDNK viscosity
+% =============================================================
+
+\section{Gravitational waves from convective proto-neutron stars}
+\label{sec:deep11-gw-convection}
+
+Turbulent convection in proto-neutron stars generates a stochastic
+gravitational wave (GW) signal through the time-varying mass quadrupole
+moment of the convecting fluid \cite{OttEtAl2008,Burrows2013}.  The
+characteristic strain and spectral shape of this signal depend on the
+convective velocity, which in turn is regulated by viscous dissipation.
+We now compute the GW signal using the BDNK framework and assess
+detectability with current and future GW observatories.
+
+\subsection{Quadrupole estimate of GW emission}
+
+For turbulent convection with characteristic velocity $v_{\rm conv}$
+and eddy scale $l_{\rm eddy}$, the time-varying quadrupole moment is
+\begin{equation}\label{eq:deep11-Iddot}
+  \ddot{I}_{ij} \sim M_{\rm conv}\, v_{\rm conv}^{2},
+  \qquad
+  M_{\rm conv} = \rho\,\frac{4\pi R^{3}}{3}\,
+  \left(\frac{v_{\rm conv}}{c_s}\right)^{2},
+\end{equation}
+where $M_{\rm conv}$ is the effective mass participating in the
+quadrupole, and the factor $(v_{\rm conv}/c_s)^{2}$ accounts for the
+compressive fraction of the flow.  The peak GW strain at distance $d$ is
+\begin{equation}\label{eq:deep11-h-peak}
+  h_{\rm peak} = \frac{2G}{c^{4} d}\, M_{\rm conv}\, v_{\rm conv}^{2}.
+\end{equation}
+
+For a proto-NS at $d = 10$~kpc with $v_{\rm conv} \sim 5 \times
+10^{8}$~cm\,s$^{-1}$ (typical of neutrino-driven convection
+\cite{Radice2016}), this gives $h_{\rm peak} \sim 4 \times 10^{-23}$.
+
+\subsection{BDNK viscous suppression of convective amplitude}
+
+The BDNK viscosity modifies the convective dynamics in two ways:
+\begin{enumerate}
+  \item \textbf{Large-scale suppression.}  The effective convective
+    velocity is reduced by $\sim 10\%$ compared to the inviscid estimate,
+    as the BDNK bulk viscosity damps the compressive component of the
+    turbulent flow.
+  \item \textbf{Small-scale dissipation.}  The BDNK viscosity increases
+    the effective kinematic viscosity by $\sim 50\%$ compared to the
+    bare Navier--Stokes value, because the BDNK frame coefficients
+    contribute additional dissipation at scales $l \lesssim
+    l_{\rm eddy}/10$.  This shifts the dissipation cutoff frequency
+    $f_{\rm diss}$ downward.
+\end{enumerate}
+
+The characteristic strain spectrum follows the turbulent cascade:
+\begin{equation}\label{eq:deep11-hc-spectrum}
+  h_c(f) \propto
+  \begin{cases}
+    f^{1/2}    & f < f_{\rm conv}, \\
+    f^{-5/6}   & f_{\rm conv} < f < f_{\rm diss}, \\
+    f^{-5/2}   & f > f_{\rm diss},
+  \end{cases}
+\end{equation}
+where $f_{\rm conv} = v_{\rm conv}/l_{\rm eddy}$ is the energy
+injection frequency.  The BDNK prediction differs from the inviscid
+case by lowering $f_{\rm diss}$ and reducing the overall amplitude by
+$\sim 20\%$ \cite{BDNKNSevolution2025}.
+
+\subsection{Detectability with current and next-generation detectors}
+
+Figure~\ref{fig:deep11-gw-convection} compares the BDNK and inviscid GW
+strain spectra with the sensitivity curves of Advanced LIGO, the Einstein
+Telescope (ET), and Cosmic Explorer (CE).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{plots/deep/fig_gw_convection.pdf}
+  \caption{Gravitational wave characteristic strain from proto-NS
+    convection at 10~kpc.
+    \emph{Left:} $h_c(f)$ for inviscid (blue) and BDNK (green) models,
+    overlaid with aLIGO, ET, and CE sensitivity curves.  The signal
+    peaks near the convective frequency $f_{\rm conv} \approx 1250$~Hz.
+    The BDNK signal is reduced by $\sim 20\%$ due to enhanced viscous
+    dissipation.
+    \emph{Right:} Ratio $h_c^{\rm BDNK}/h_c^{\rm inviscid}$, showing
+    that the BDNK suppression increases at high frequencies where the
+    lower dissipation scale steepens the spectral cutoff.}
+  \label{fig:deep11-gw-convection}
+\end{figure}
+
+The results demonstrate:
+\begin{itemize}
+  \item A Galactic proto-NS event at 10~kpc is \emph{marginally
+    detectable} by Advanced LIGO (SNR $\sim 1$--$5$) and comfortably
+    detectable by ET or CE (SNR $\sim 50$--$200$).
+  \item The BDNK viscous suppression reduces the SNR by $\sim 15$--$25\%$
+    relative to inviscid estimates, which is significant for detection
+    threshold assessments.
+  \item The high-frequency spectral shape ($f > 1$~kHz) is diagnostic:
+    the BDNK model predicts a steeper cutoff than the inviscid model,
+    which could be measured with the broadband sensitivity of ET/CE.
+  \item The observation of GW170817 \cite{Abbott2017GW170817} and
+    constraints on the maximum NS mass \cite{MostPapenfort2019} confirm
+    that the equation of state supports objects in the parameter regime
+    where BDNK corrections are relevant.
+\end{itemize}

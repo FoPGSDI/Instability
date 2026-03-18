@@ -16,6 +16,7 @@ from SHARED_PLOT_STYLE import setup_style, COLORS, c_cgs, G_cgs, M_sun, pi, k_B
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
+from matplotlib.colors import LogNorm
 
 setup_style()
 
@@ -57,7 +58,9 @@ Pr2 = nu_eff_pns / eta_mag_pns   # magnetic Prandtl
 # Dimensionless parameters
 # ============================================================
 Ta_rel_pns = 4 * Omega_pns**2 * d_pns**4 / nu_eff_pns**2
-Q_rel_pns = B_pns**2 * d_pns**2 / (4 * pi * (w_pns / c_cgs**2) * nu_eff_pns * eta_mag_pns)
+# Q_rel = Q_class / xi (see Ch IV tex derivation: Q_rel = Q * rho c^2 / w)
+Q_class_pns_raw = B_pns**2 * d_pns**2 / (4 * pi * rho_core * nu_shear * eta_mag_pns)
+Q_rel_pns = Q_class_pns_raw / xi_pns
 
 # Neutrino-driven temperature gradient (Pons et al. 1999)
 beta_pns = 0.1  # K/cm (typical proto-NS convective driving)

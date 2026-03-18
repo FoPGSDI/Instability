@@ -503,3 +503,73 @@ relativistic Atwood numbers.
   star of mass $1.4\,M_{\odot}$ and shock radius $150\;\mathrm{km}$.}
 \label{fig:supernova-RT}
 \end{figure}
+
+%% ================================================================
+\subsection{Deep calculation: CCSN RT growth with nuclear EOS}
+\label{sec:rel-92-deep-ccsn}
+
+We now present a more detailed calculation of the RT growth rate in
+the core-collapse supernova environment, incorporating the nuclear
+equation of state and comparing the growth timescale with the
+convective overturn timescale---the key criterion for determining
+whether RT instability can seed the large-scale asymmetries observed
+in supernova remnants.
+
+\paragraph{Model parameters.}
+We adopt a proto-neutron star of mass $M_{\mathrm{PNS}} = 1.4\,M_{\odot}$
+with the accretion shock located at $R_{\mathrm{shock}} = 200\;\mathrm{km}$.
+The effective gravitational acceleration at the shock is
+$g_{\mathrm{eff}} = GM_{\mathrm{PNS}}/R_{\mathrm{shock}}^{2}
+\approx 6.6\times 10^{11}\;\mathrm{cm\,s^{-2}}$.  A strong-shock
+compression ratio $\rho_{\mathrm{post}}/\rho_{\mathrm{pre}} = 7$
+is assumed, consistent with the Rankine--Hugoniot conditions for
+a radiation-dominated shock \citep{Duffell2011}.
+
+\paragraph{Nuclear EOS corrections.}
+For the hot post-shock nuclear matter at temperatures
+$T \sim 5$--$8\;\mathrm{MeV}$, the relativistic parameter
+$\xi = p/(\rho c^{2})$ ranges from $\sim 0.02$ (near the
+gain radius) to $\sim 0.15$ (immediately behind the shock).
+The nuclear EOS includes contributions from degenerate neutrons,
+thermal radiation, and electron--positron pairs.  These
+contributions modify the relativistic Atwood number
+$\mathcal{A}_{\mathrm{rel}} = (w_{2}-w_{1})/(w_{2}+w_{1})$
+relative to the classical value.
+
+\paragraph{Compressibility and Richtmyer--Meshkov coupling.}
+In the compressible regime, the growth rate is modified at high
+wavenumbers $k > k_{J} \sim g\mathcal{A}/c_{s}^{2}$ where
+$c_{s}$ is the post-shock sound speed
+\citep{Duffell2011,Matsumoto2021}.  Additionally, the passage of the
+shock through the composition interface generates an impulsive
+Richtmyer--Meshkov (RM) contribution \citep{Matsumoto2021} that is
+linear in~$k$ at early times, transitioning to RT-dominated growth
+at late times.
+
+Figure~\ref{fig:ccsn-RT-deep} presents a four-panel analysis:
+(a)~the growth rate $\sigma(k)$ for different values of the
+nuclear EOS parameter~$\xi$; (b)~the relativistic Atwood number
+as a function of~$\xi$ for several compression ratios;
+(c)~the growth timescale compared with the convective overturn
+and advection timescales as functions of the spherical harmonic
+order~$\ell$; and (d)~the compressible and RM corrections to the
+growth rate.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_ccsn_RT_growth.pdf}
+\caption{Deep calculation: RT instability in core-collapse supernovae
+  with nuclear EOS.
+  \textit{(a)}~Growth rate $\sigma(k)$ for
+  $R_{\mathrm{shock}}=200\;\mathrm{km}$, $\rho_{2}/\rho_{1}=7$,
+  and several values of the nuclear EOS parameter~$\xi$.
+  \textit{(b)}~Relativistic Atwood number vs.\ $\xi$ for different
+  compression ratios; the shaded band indicates the CCSN post-shock
+  regime.
+  \textit{(c)}~Growth timescale vs.\ spherical harmonic order
+  $\ell$, compared with the convective overturn ($\tau_{\mathrm{conv}}$)
+  and advection ($\tau_{\mathrm{adv}}$) timescales.
+  \textit{(d)}~Compressible corrections (Duffell 2011) and
+  Richtmyer--Meshkov coupling (Matsumoto et~al.\ 2021).}
+\label{fig:ccsn-RT-deep}
+\end{figure}
