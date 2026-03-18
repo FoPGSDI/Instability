@@ -1,0 +1,421 @@
+% Relativistic Chapter VII, §67: Stability of inviscid relativistic Couette flow
+% Relativistic generalization of Chandrasekhar, Chapter VII §67 (pp.~319--753)
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\section{Analytical discussion of the stability of inviscid relativistic
+  Couette flow}
+\label{sec:rel-7-67}
+
+We now consider the stability of a stationary, purely azimuthal,
+relativistic flow between two coaxial cylinders of radii $R_1$ and~$R_2$.
+In cylindrical coordinates $(r,\theta,z)$ the background four-velocity
+is
+\begin{equation}
+\label{eq:rel-7-33}
+u^\mu = \Lf\bigl(c,\,0,\,V(r),\,0\bigr),\qquad
+V(r) = r\,\Omega(r),\qquad
+\Lf = \Bigl(1-\frac{V^2}{c^2}\Bigr)^{-1/2},
+\end{equation}
+where $\Omega(r)$ is an arbitrary angular-velocity profile and
+$\Lf$ denotes the Lorentz factor of the background flow.
+The flow is sustained by a radial pressure gradient that balances
+the relativistic centrifugal force (cf.\ the relativistic Euler
+equation projected onto the radial direction):
+\begin{equation}
+\label{eq:rel-7-33b}
+\frac{1}{\enthalpy}\frac{dp}{dr}
+= \Lf^{2}\,\frac{V^{2}}{r},
+\end{equation}
+where $\enthalpy = (\varepsilon + p)/c^{2}$ is the relativistic
+enthalpy density.  In the limit $V/c\to0$ (i.e.\ $\Lf\to1$,
+$\enthalpy\to\rho$) this reduces to the classical balance
+$\rho^{-1}dp/dr = V^{2}/r$.
+
+Throughout this section the fluid is taken to be a \emph{perfect}
+(inviscid, non-heat-conducting) relativistic fluid whose equation of
+state is barotropic, $p = p(\varepsilon)$, with adiabatic sound speed
+$\cs^{2}=(\partial p/\partial\varepsilon)_s\le c^{2}$.
+Because the flow is incompressible in the sense that the
+baryon density is uniform (the classical Couette assumption),
+we work with an effective incompressible relativistic formulation
+in which the enthalpy density $\enthalpy$ plays the role of the
+inertial mass density.
+
+%% ----------------------------------------------------------------
+\subsection*{(a) \emph{Lagrangian displacement formulation in special
+  relativity}}
+\label{sec:rel-7-67a}
+
+Consider an infinitesimal perturbation of~\eqref{eq:rel-7-33}.
+Let the Eulerian perturbations of the three-velocity components be
+$\delta v_r$, $\delta v_\theta$, $\delta v_z$, and write
+$\varpi = \delta p/(\Lf^{2}\enthalpy)$ for the relativistic
+pressure perturbation (the classical limit gives $\varpi\to\delta p/\rho$
+as required).  Linearising the relativistic Euler equations about the
+background flow, one obtains the perturbation equations in the
+co-rotating frame.  Because the background depends only on~$r$,
+we decompose every perturbation quantity in normal modes
+\begin{equation}
+\label{eq:rel-7-39}
+\propto \exp\!\bigl[i(\sigma t + m\theta + kz)\bigr],
+\end{equation}
+where $m$ is an integer and $k$ is a real axial wave number.  The
+Doppler-shifted frequency is
+\begin{equation}
+\label{eq:rel-7-44}
+\sigma(r) = p + m\,\Omega(r),
+\end{equation}
+with $p$ the frequency in the laboratory frame.
+
+In full analogy with the classical treatment, we introduce the
+\emph{relativistic Lagrangian displacement} $\boldsymbol{\xi}$ through
+\begin{equation}
+\label{eq:rel-7-45}
+\delta v_r = i\sigma\,\xi_r,\qquad
+\delta v_\theta = i\sigma\,\xi_\theta
+  - r\frac{d\Omega}{dr}\,\xi_r,\qquad
+\delta v_z = i\sigma\,\xi_z.
+\end{equation}
+This definition ensures that $\boldsymbol{\xi}$ describes the actual
+fluid-element displacement to first order in the perturbation
+amplitude.  The relativistic solenoidal condition
+$\nabla_\mu(\enthalpy\,\delta u^\mu)=0$, when projected onto the
+spatial sector, yields
+\begin{equation}
+\label{eq:rel-7-46}
+\frac{d\xi_r}{dr} + \frac{\xi_r}{r}
++ \frac{im}{r}\,\xi_\theta + ik\,\xi_z = 0.
+\end{equation}
+
+In terms of $\boldsymbol{\xi}$ the linearised relativistic momentum
+equations become
+\begin{equation}
+\label{eq:rel-7-47}
+\bigl[\sigma^{2}-\Phi_{\mathrm{rel}}(r)\bigr]\,\xi_r
+= \frac{d\varpi}{dr}
+  + \frac{2m\,\Omega}{r\,\sigma}\,\varpi,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-48}
+\sigma^{2}\,\xi_\theta - 2i\,\Omega\,\sigma\,\xi_r
+= \frac{im}{r}\,\varpi,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-49}
+\sigma^{2}\,\xi_z = ik\,\varpi,
+\end{equation}
+where $\Phi_{\mathrm{rel}}(r)$ is the \emph{relativistic Rayleigh
+discriminant}:
+\begin{equation}
+\label{eq:rel-7-53}
+\boxed{%
+\Phi_{\mathrm{rel}}(r)
+= \frac{2\,\Lf^{4}\,\Omega}{r}\,
+  \frac{d}{dr}\!\bigl(r^{2}\,\Lf^{2}\,\Omega\bigr).}
+\end{equation}
+In the non-relativistic limit $\Lf\to1$ this reduces to the
+classical Rayleigh discriminant
+$\Phi(r)=(2\Omega/r)\,d(r^{2}\Omega)/dr$.
+
+\medskip
+\noindent\textbf{Remark (relativistic corrections in $\Phi_{\mathrm{rel}}$).}
+The additional $\Lf$-factors encode two distinct relativistic effects:
+(i) the increase of inertia with velocity ($\Lf^{2}$ per factor of
+$\enthalpy$), and (ii) the modification of angular-momentum transport
+due to the non-linear velocity-addition law.  Writing
+$\ell_{\mathrm{rel}}=\Lf^{2}\,r^{2}\,\Omega$ for the specific
+relativistic angular momentum, one recognises
+$\Phi_{\mathrm{rel}} = (2\Lf^{2}\Omega/r)\,d\ell_{\mathrm{rel}}/dr$.
+
+Combining equations~\eqref{eq:rel-7-46}--\eqref{eq:rel-7-49} in
+the same manner as in the classical analysis, one derives the
+companion equation
+\begin{equation}
+\label{eq:rel-7-54}
+\frac{1}{r}\frac{d}{dr}(r\,\xi_r)
+- \frac{2m\,\Omega}{\sigma\,r}\,\xi_r
+= \frac{1}{\sigma^{2}}
+  \!\left(\frac{m^{2}}{r^{2}}+k^{2}\right)\varpi.
+\end{equation}
+Equations \eqref{eq:rel-7-47} and \eqref{eq:rel-7-54}, together with
+the boundary conditions
+\begin{equation}
+\label{eq:rel-7-55}
+\xi_r = 0 \quad\text{for } r = R_1 \text{ and } R_2,
+\end{equation}
+constitute a self-adjoint system for real~$\sigma$, exactly as in the
+non-relativistic case.  Their solution can therefore be cast as a
+variational problem---the entire merit of introducing the Lagrangian
+displacement.
+
+%% ================================================================
+\subsection*{(b) \emph{The case $m=0$ (axisymmetric perturbations):
+  the relativistic Rayleigh criterion}}
+\label{sec:rel-7-67b}
+
+When $m=0$ we have $\sigma = p$ and equations~\eqref{eq:rel-7-47},
+\eqref{eq:rel-7-54} simplify to
+\begin{equation}
+\label{eq:rel-7-56}
+\bigl[p^{2}-\Phi_{\mathrm{rel}}(r)\bigr]\,\xi_r
+= \frac{d\varpi}{dr},
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-57}
+\frac{1}{r}\frac{d}{dr}(r\,\xi_r)
+= \frac{k^{2}}{p^{2}}\,\varpi.
+\end{equation}
+Eliminating $\varpi$ yields the relativistic Sturm--Liouville equation
+\begin{equation}
+\label{eq:rel-7-58}
+\frac{d}{dr}\!\left\{
+\frac{1}{r}\frac{d}{dr}(r\,\xi_r)\right\}
+- k^{2}\,\xi_r
+= -\frac{k^{2}}{p^{2}}\,\Phi_{\mathrm{rel}}(r)\,\xi_r.
+\end{equation}
+By the standard Sturm--Liouville theory applied to the boundary
+conditions~\eqref{eq:rel-7-55} one deduces:
+
+\emph{The characteristic values of $k^{2}\!/p^{2}$ are all positive if
+$\Phi_{\mathrm{rel}}(r)>0$ throughout $(R_1,R_2)$, all negative if
+$\Phi_{\mathrm{rel}}(r)<0$ throughout, and of both signs if
+$\Phi_{\mathrm{rel}}$ changes sign in the interval.}
+
+Multiplying \eqref{eq:rel-7-58} by $r\,\xi_r$ and integrating, one
+obtains the relativistic variational expression
+\begin{equation}
+\label{eq:rel-7-60}
+\frac{p^{2}}{k^{2}}
+= \frac{\displaystyle\int_{R_1}^{R_2}
+    \Phi_{\mathrm{rel}}(r)\,r\,\xi_r^{2}\,dr}
+  {\displaystyle\int_{R_1}^{R_2}\!\left\{
+    \frac{1}{r}\!\left[\frac{d}{dr}(r\,\xi_r)\right]^{2}
+    + k^{2}\,r\,\xi_r^{2}\right\}dr}.
+\end{equation}
+Since the denominator is manifestly positive, the sign of $p^{2}$ is
+governed entirely by the sign of
+\begin{equation}
+\label{eq:rel-7-61}
+I_1 = \int_{R_1}^{R_2}
+  \Phi_{\mathrm{rel}}(r)\,r\,\xi_r^{2}\,dr.
+\end{equation}
+
+\begin{quote}
+\textbf{Relativistic Rayleigh criterion.}\quad
+\emph{A necessary and sufficient condition for the stability of an
+inviscid, relativistic, axisymmetric Couette flow against
+axisymmetric perturbations is that the relativistic specific angular
+momentum $\ell_{\mathrm{rel}}(r)=\Lf^{2}\,r^{2}\,\Omega$ be a
+non-decreasing function of~$r$ throughout the flow domain:}
+\begin{equation}
+\label{eq:rel-rayleigh}
+\boxed{%
+\frac{d}{dr}\!\bigl(\Lf^{2}\,r^{2}\,\Omega\bigr)\ge 0
+\quad\text{for all } r\in[R_1,R_2].}
+\end{equation}
+\emph{Equivalently, $\Phi_{\mathrm{rel}}(r)\ge 0$ everywhere.
+If $\Phi_{\mathrm{rel}}<0$ anywhere, the flow is unstable.}
+\end{quote}
+
+\noindent\textbf{Non-relativistic limit.}\quad
+When $V/c\to0$ we have $\Lf\to1$ and the criterion~\eqref{eq:rel-rayleigh}
+reduces to the classical Rayleigh criterion
+$d(r^{2}\Omega)/dr\ge0$.
+
+\noindent\textbf{Physical interpretation.}\quad
+In relativity the ``effective angular momentum'' is not $r^{2}\Omega$
+but $\Lf^{2}r^{2}\Omega$, reflecting the relativistic increase of
+inertia.  A flow that is marginally stable classically can therefore
+become \emph{unstable} at relativistic velocities if the Lorentz-factor
+gradient is sufficiently steep and negative.  Conversely, a classically
+unstable arrangement can be \emph{stabilised} if $\Lf^{2}$ increases
+outward rapidly enough.
+
+%% ================================================================
+\subsection*{(c) \emph{The case $m\neq0$ (non-axisymmetric
+  perturbations): relativistic Howard semicircle theorem}}
+\label{sec:rel-7-67c}
+
+For $m\neq 0$ the problem is treated, following the classical analysis,
+as a characteristic-value problem for~$k^{2}$ at a given (possibly
+complex) frequency~$p$.  Equations~\eqref{eq:rel-7-47}
+and~\eqref{eq:rel-7-54}, together with the boundary
+conditions~\eqref{eq:rel-7-55}, form a Hermitian system when $p$ is
+real; the characteristic values of~$k^{2}$ are therefore real for real~$p$.
+
+The variational expression~\eqref{eq:rel-7-60} generalises to
+\begin{equation}
+\label{eq:rel-7-66}
+k^{2}
+= \frac{\displaystyle\int_{R_1}^{R_2}
+    r\!\left[(\Phi_{\mathrm{rel}}-\sigma^{2})\,|\xi_r|^{2}
+    - \frac{m^{2}|\varpi|^{2}}{r^{2}\sigma^{2}}\right]dr}
+  {\displaystyle\int_{R_1}^{R_2}
+    r\,|\varpi|^{2}/\sigma^{2}\,dr},
+\end{equation}
+with the subsidiary relation~\eqref{eq:rel-7-47} determining
+$\xi_r$ in terms of~$\varpi$.
+
+Using the standard procedure of Howard (1961), adapted to the
+relativistic discriminant, one derives the following bound on unstable
+modes.
+
+\begin{quote}
+\textbf{Relativistic Howard semicircle theorem.}\quad
+\emph{Let $p = p_r + i\,p_i$ with $p_i>0$ (instability).
+Then the complex frequency lies inside the semicircle}
+\begin{equation}
+\label{eq:rel-howard}
+\boxed{%
+\bigl(p_r + m\,\Omega_{\min}\bigr)
+\bigl(p_r + m\,\Omega_{\max}\bigr)
++ p_i^{2}\;\le\;0,}
+\end{equation}
+\emph{where $\Omega_{\min}$ and $\Omega_{\max}$ are the minimum and
+maximum values of $\Omega(r)$ in $[R_1,R_2]$.}
+\end{quote}
+
+\noindent\emph{Proof (sketch).}\quad
+Multiply the governing equation by $r\,\xi_r^{*}/\sigma$ and integrate.
+The imaginary part of the resulting integral identity is
+\begin{equation}
+\label{eq:rel-howard-imag}
+p_i\!\int_{R_1}^{R_2}
+  \frac{r\,|\xi_r|^{2}}{|\sigma|^{2}}
+  \bigl[\Phi_{\mathrm{rel}}(r)-|\sigma|^{2}\bigr]\,dr = 0.
+\end{equation}
+For $p_i\neq0$ the integral must vanish, which requires $|\sigma|^{2}$
+to lie between the extreme values of $\Phi_{\mathrm{rel}}$.
+Since $\Phi_{\mathrm{rel}}\le
+4\Lf^{4}\Omega^{2}\!\bigl[1+O(r\Omega'/\Omega)\bigr]$, one can bound
+$|p+m\Omega|^{2}$ from above and below, yielding the
+semicircle~\eqref{eq:rel-howard}.  The relativistic corrections enter
+only through the modified discriminant and leave the algebraic structure
+of Howard's argument intact.  In the limit $\Lf\to1$ one recovers the
+classical Howard semicircle.\qed
+
+\noindent\textbf{Consequence.}\quad
+The range of unstable real frequencies $p_r$ is confined to the interval
+$[-m\,\Omega_{\max},\,-m\,\Omega_{\min}]$, and the growth rate $p_i$
+is bounded by
+\begin{equation}
+\label{eq:rel-howard-bound}
+p_i \le \frac{|m|}{2}\,(\Omega_{\max}-\Omega_{\min}).
+\end{equation}
+This is the same bound as classically; the relativistic
+effects do not enlarge the unstable semicircle (they modify
+\emph{which} profiles are unstable via $\Phi_{\mathrm{rel}}$, but the
+frequency bounds remain controlled by $\Omega_{\max}-\Omega_{\min}$).
+
+%% ================================================================
+\subsection*{(d) \emph{Energy principle for relativistic rotating flow}}
+\label{sec:rel-7-67d}
+
+The self-adjoint character of the system
+\eqref{eq:rel-7-47}--\eqref{eq:rel-7-54} permits a formulation as an
+energy principle.  Define the quadratic form
+\begin{equation}
+\label{eq:rel-7-energy}
+\delta^{2}W[\boldsymbol{\xi}]
+= \int_{R_1}^{R_2}\!\bigl\{
+  \Lf^{2}\,\enthalpy\,\Phi_{\mathrm{rel}}\,r\,|\xi_r|^{2}
+  + \Lf^{2}\,\enthalpy\,r\,\sigma^{2}
+    \bigl(|\xi_\theta|^{2}+|\xi_z|^{2}\bigr)
+  + r\,|\delta p|^{2}/(\Lf^{2}\,\enthalpy\,\cs^{2})
+\bigr\}\,dr,
+\end{equation}
+where the three terms represent, respectively, the potential energy
+associated with the angular-momentum stratification, the kinetic
+energy of the perturbation, and the acoustic compression energy.
+(In the incompressible limit $\cs\to\infty$ the last term vanishes.)
+
+The system is linearly stable if and only if $\delta^{2}W>0$ for all
+trial displacements~$\boldsymbol{\xi}$ satisfying~\eqref{eq:rel-7-46}
+and the boundary conditions~\eqref{eq:rel-7-55}.  For axisymmetric
+perturbations ($m=0$) this reduces directly to the requirement
+$\Phi_{\mathrm{rel}}\ge0$, recovering the relativistic Rayleigh
+criterion.
+
+For non-axisymmetric perturbations the energy principle provides a
+sharper sufficiency condition than the discriminant criterion alone.
+Specifically, writing $\delta^{2}W = \delta^{2}W_{\mathrm{pot}}
++ \delta^{2}W_{\mathrm{kin}}$ and using the Schwarz inequality, one
+arrives at:
+\begin{equation}
+\label{eq:rel-energy-suff}
+\Phi_{\mathrm{rel}}(r) > \frac{m^{2}}{r^{2}}
+  \max_{r}\!\left(\frac{4\,\Lf^{4}\,\Omega^{2}}
+  {\Phi_{\mathrm{rel}}}\right)^{-1}
+\end{equation}
+as a sufficient condition for the stability of mode~$m$, which is
+automatically satisfied when $\Phi_{\mathrm{rel}}$ is large and
+positive (i.e.\ far from marginal stability).
+
+%% ================================================================
+\subsection*{(e) \emph{Causality constraint on perturbation modes}}
+\label{sec:rel-7-67e}
+
+A feature absent from the classical analysis is the requirement that
+all perturbation phase velocities remain subluminal.  For a normal
+mode of the form~\eqref{eq:rel-7-39}, the axial and azimuthal phase
+speeds are, respectively,
+\begin{equation}
+\label{eq:rel-7-phase}
+v_{\mathrm{ph},z} = -\frac{\operatorname{Re}(p)}{k},\qquad
+v_{\mathrm{ph},\theta}
+  = -\frac{\operatorname{Re}(p)\,r}{m}.
+\end{equation}
+Causality demands
+\begin{equation}
+\label{eq:rel-7-causality}
+\boxed{%
+|v_{\mathrm{ph},z}|\le c
+\qquad\text{and}\qquad
+\bigl|v_{\mathrm{ph},\theta}+V(r)\bigr|\le c,}
+\end{equation}
+where the second condition ensures that the perturbation, as seen in
+the laboratory frame, does not exceed~$c$.
+
+For stable modes ($p$ real), the Howard semicircle
+theorem~\eqref{eq:rel-howard} already confines $p_r$ to the range
+$[-m\Omega_{\max},\,-m\Omega_{\min}]$, so that
+$|v_{\mathrm{ph},\theta}+V|\le r\,\Omega_{\max}+V<c$ whenever the
+background flow itself is subluminal.  The axial causality bound
+restricts the admissible wave numbers to
+\begin{equation}
+\label{eq:rel-7-kbound}
+|k| \ge \frac{|m|\,\Omega_{\max}}{c}.
+\end{equation}
+Modes with $|k|$ below this threshold would require superluminal
+axial phase speeds and are therefore excluded from the physical
+spectrum.
+
+For unstable modes ($p_i>0$), the group velocity
+\begin{equation}
+\label{eq:rel-7-group}
+v_g = \frac{\partial\,\operatorname{Re}(p)}{\partial k}
+\end{equation}
+must also satisfy $|v_g|\le c$.  In the relativistic framework this is
+guaranteed by the hyperbolic character of the underlying equations:
+the linearised relativistic Euler system (being a first-order symmetric
+hyperbolic system) has a well-posed initial-value problem with a finite
+domain of dependence determined by the sound cones.
+
+\medskip
+\noindent\textbf{Summary.}\quad
+The classical results of \S\,67 carry over to the relativistic regime
+with two essential modifications:
+\begin{enumerate}
+\item The Rayleigh discriminant $\Phi(r)$ is replaced everywhere by
+  its relativistic counterpart $\Phi_{\mathrm{rel}}(r)$, which
+  involves the Lorentz factor~$\Lf$ of the background flow.
+  Consequently the stability boundary shifts: flows that are
+  classically stable may become unstable (and vice versa) at
+  relativistic rotation speeds.
+\item A new constraint---\emph{causality}---restricts the admissible
+  perturbation spectrum, excluding modes whose phase or group velocity
+  would exceed~$c$.  This constraint is automatically enforced by the
+  hyperbolic structure of the relativistic equations.
+\end{enumerate}
+In the non-relativistic limit $V/c\to0$ all expressions reduce to
+those of~\S\,67 of the original text.
