@@ -1,5 +1,7 @@
 % rel_chapter_5_sec53-54.tex
 % Relativistic overstability with rotation + magnetic field (Ch V §53-54)
+% BDNK conversion: IS relaxation replaced by BDNK first-order
+%   constitutive relations (Bemfica et al. 2018, Kovtun 2019)
 % Conventions: (-,+,+,+) signature, c kept explicit, u^μ u_μ = -c²
 % See RELATIVISTIC_CONVENTIONS.md for notation and macros.
 
@@ -11,13 +13,15 @@
 In the classical treatment of \S\,53, overstability in a rotating, magnetised
 layer of liquid metal was analysed using the Navier--Stokes--Fourier system,
 which is inherently acausal (infinite signal speeds for heat and viscous
-stress).  For a relativistic treatment the Israel--Stewart causal dissipation
+stress).  For a relativistic treatment the BDNK
+(Bemfica--Disconzi--Noronha--Kovtun) first-order causal dissipation
 framework replaces Fourier's law and the Newtonian stress--strain relation
-with relaxation equations possessing finite propagation speeds.  The combined
-effects of rotation (Taylor number $T$) and magnetic field (Chandrasekhar
-number $Q$) must now be augmented by the three relaxation times
-$\tau_{\Pi}$, $\taupi$, and $\tauq$ and by causality bounds on the
-Alfv\'en and sound speeds.
+with first-order constitutive relations in a general hydrodynamic frame
+\citep{Bemfica2018,Kovtun2019}.  No relaxation times are introduced;
+causality follows from coupled inequalities on the transport coefficients
+and frame coefficients.  The combined effects of rotation (Taylor number $T$)
+and magnetic field (Chandrasekhar number $Q$) are augmented only by the
+BDNK causality bounds on the Alfv\'en and sound speeds.
 
 \subsection{Linearised relativistic perturbation equations}
 
@@ -40,67 +44,58 @@ The background energy--momentum tensor is
 \end{equation}
 where $b^{\mu}$ is the magnetic-field 4-vector (cf.\ Chapter~\ref{ch:rel-mhd-framework}).
 
-Linearising the Israel--Stewart equations about this equilibrium, the
-perturbation in the heat flux $\delta q^{\mu}$ obeys
+In the BDNK formalism, the dissipative fluxes are given by
+first-order constitutive relations \citep{Bemfica2018,Kovtun2019}:
 \begin{equation}
-  \tauq\,u^{\alpha}_0\,\nabla_{\alpha}\,\delta q^{\mu}
-  + \delta q^{\mu}
-  = -\kappa_T\!\left(\Delta^{\mu\nu}_0\,\nabla_{\nu}\delta T
-    + \frac{T_0}{c^{2}}\,u^{\mu}_0\,u^{\alpha}_0\,\nabla_{\alpha}\delta T
-  \right),
-  \label{eq:rel53-IS-heat}
+  Q^{\mu}
+  = -\kappa_T\,T\,\Delta^{\mu\nu}_0\,\partial_{\nu}(\mu/T)
+    + \text{frame corrections},
+  \label{eq:rel53-BDNK-heat}
 \end{equation}
-and analogously for the shear-stress perturbation $\delta\pi^{\mu\nu}$:
 \begin{equation}
-  \taupi\,u^{\alpha}_0\,\nabla_{\alpha}\,\delta\pi^{\langle\mu\nu\rangle}
-  + \delta\pi^{\mu\nu}
-  = 2\,\shearvisc\,\delta\sigma^{\mu\nu}.
-  \label{eq:rel53-IS-shear}
+  \pi^{\mu\nu}
+  = -2\,\shearvisc\,\sigma^{\mu\nu},
+  \label{eq:rel53-BDNK-shear}
 \end{equation}
-The bulk viscous perturbation $\delta\Pi$ satisfies
 \begin{equation}
-  \tau_{\Pi}\,u^{\alpha}_0\,\nabla_{\alpha}\,\delta\Pi + \delta\Pi
-  = -\bulkvisc\,\nabla_{\mu}\,\delta u^{\mu}.
-  \label{eq:rel53-IS-bulk}
+  \Pi_{\mathrm{bulk}}
+  = -\bulkvisc\,\nabla_{\mu}u^{\mu}.
+  \label{eq:rel53-BDNK-bulk}
 \end{equation}
+These are algebraic (not differential) relations: no relaxation times
+$\tauq$, $\taupi$, $\tau_{\Pi}$ appear.  The frame corrections in
+\eqref{eq:rel53-BDNK-heat} ensure strong hyperbolicity of the full
+system.
 
-\subsection{Israel--Stewart relaxation effects on oscillatory modes}
+\subsection{BDNK first-order dissipation and oscillatory modes}
 
-The most distinctive feature of the relativistic formulation is that
-each dissipative channel introduces a relaxation time.  In the frequency
-domain, replacing $u^{\alpha}_0\nabla_{\alpha}\to -i\omega$ in the
-co-rotating frame, the Israel--Stewart closures \eqref{eq:rel53-IS-heat}---%
-\eqref{eq:rel53-IS-bulk} introduce frequency-dependent effective
-transport coefficients:
+The distinctive feature of the BDNK formulation is that the transport
+coefficients are \emph{frequency-independent}:
 \begin{equation}
-  \kappa_T^{\mathrm{eff}}(\omega)
-  = \frac{\kappa_T}{1 - i\omega\tauq},\qquad
-  \shearvisc^{\mathrm{eff}}(\omega)
-  = \frac{\shearvisc}{1 - i\omega\taupi},\qquad
-  \bulkvisc^{\mathrm{eff}}(\omega)
-  = \frac{\bulkvisc}{1 - i\omega\tau_{\Pi}}.
-  \label{eq:rel53-eff-transport}
+  \kappa_T^{\mathrm{BDNK}} = \kappa_T,\qquad
+  \shearvisc^{\mathrm{BDNK}} = \shearvisc,\qquad
+  \bulkvisc^{\mathrm{BDNK}} = \bulkvisc.
+  \label{eq:rel53-BDNK-transport}
 \end{equation}
-These reduce to the classical (Navier--Stokes--Fourier) values when
-$\omega\tau\to 0$ and impose an upper cutoff $\omega_{\max}\sim 1/\tau$
-beyond which dissipation is suppressed --- precisely the mechanism that
-restores causality.
+No frequency-dependent ``effective'' transport coefficients arise, because
+the BDNK constitutive relations are algebraic (first-order gradient
+expansion) rather than differential (relaxation equations).  Causality
+is ensured not by frequency-dependent damping but by the BDNK frame
+coefficients, which make the full system of conservation laws strongly
+hyperbolic \citep{Bemfica2018,Kovtun2019,HoultKovtun2020}.
 
 For overstable modes of frequency $\omega = \omega_r + i\omega_i$ (with
-$\omega_i>0$ the growth rate), the classical analysis of \S\,53 had
-$\sigma = i\sigma_i$ (purely imaginary in the marginal state).  In the
-relativistic theory the marginal condition $\omega_i = 0$ still picks out
-neutral oscillatory modes, but their real frequencies are modified:
+$\omega_i>0$ the growth rate), the marginal condition $\omega_i = 0$
+picks out neutral oscillatory modes.  In the BDNK formalism, the
+oscillation frequencies receive relativistic corrections only from the
+modified inertia $\enthalpy/c^{2}$ and the bounded Alfv\'en speed:
 \begin{equation}
   \omega_r^{(\mathrm{rel})} = \omega_r^{(\mathrm{class})}
-  \left[1 + \omega_r^{2}\,\tauq^{2}\,
-  \frac{p_1\,(1-p_1)}{(1+\omega_r^{2}\tauq^{2})}\right]^{1/2}
-  + \mathcal{O}(v^{2}/c^{2}).
+  \left[1 + \mathcal{O}(v^{2}/c^{2})\right].
   \label{eq:rel53-freq-shift}
 \end{equation}
-Since $\tauq>0$, the effect is always to \emph{increase} the oscillation
-frequency relative to the classical prediction --- the causal heat-flux
-propagation stiffens the restoring mechanism.
+The BDNK characteristic equation has the \emph{same polynomial order}
+as the classical one---no spurious relaxation modes appear.
 
 \subsection{Relativistic characteristic equation}
 
@@ -120,15 +115,14 @@ exterior), the relativistic analogue of equation~(62) of \S\,53 is
   \Bigr\},
   \label{eq:rel53-chareq}
 \end{align}
-where the relativistic Prandtl-like ratios carry relaxation corrections,
+where the relativistic Prandtl-like ratios are (in the BDNK formalism)
+frequency-independent constants:
 \begin{equation}
-  p_{1}^{(\mathrm{eff})} = \frac{\shearvisc^{\mathrm{eff}}}
-  {\kappa_T^{\mathrm{eff}}}
-  = p_1\,\frac{1-i\omega\tauq}{1-i\omega\taupi},\qquad
-  p_{2}^{(\mathrm{eff})} = \frac{\shearvisc^{\mathrm{eff}}}
-  {\eta^{\mathrm{eff}}}
-  = p_2\,\frac{1-i\omega\tau_{\eta}}{1-i\omega\taupi},
-  \label{eq:rel53-peff}
+  p_{1}^{(\mathrm{rel})} = \frac{\shearvisc}{\kappa_T}\,
+  \frac{c^{2}}{\enthalpy} = \frac{p_1}{h},\qquad
+  p_{2}^{(\mathrm{rel})} = \frac{\shearvisc}{\eta}\,
+  \frac{c^{2}}{\enthalpy} = \frac{p_2}{h},
+  \label{eq:rel53-prel}
 \end{equation}
 and the dimensionless numbers acquire relativistic corrections:
 \begin{align}
@@ -146,47 +140,35 @@ coefficients of order unity determined by the equation of state.
 
 For liquid metals such as mercury, $p_2\ll p_1\ll 1$.  In the non-relativistic
 regime (\S\,53(a)), all terms proportional to $p_2$ were dropped.  In the
-relativistic extension, the magnetic relaxation time $\tau_{\eta}$ is
-likewise negligible (it scales with the resistive diffusion time, far shorter
-than other hydrodynamic scales), so $p_2^{(\mathrm{eff})}\to p_2$.  However
-the \emph{thermal} relaxation time $\tauq$ can be non-negligible even for
-liquid metals when the oscillation frequency $\omega_r$ is high enough.
+BDNK relativistic extension, the Prandtl ratios are simply
+$p_{1}^{(\mathrm{rel})}=p_1/h$ and $p_{2}^{(\mathrm{rel})}=p_2/h$, with
+no frequency-dependent corrections.
 
-Suppressing $p_2$ as in the classical case, the relativistic analogue of
+Suppressing $p_2$ as in the classical case, the BDNK relativistic analogue of
 equation~\eqref{eq:5-70} for $\sigma_i^{2}$ becomes
 \begin{equation}
   \sigma_i^{2} = \frac{T_{\mathrm{rel}}}{1{+}x}\;
-  \frac{(1{+}x)^{2}(1{-}p_1^{(\mathrm{eff})}) - p_1^{(\mathrm{eff})}\,Q_{\mathrm{rel}}}
-  {(1{+}x)(1{+}p_1^{(\mathrm{eff})})+p_1^{(\mathrm{eff})}\,Q_{\mathrm{rel}}}
+  \frac{(1{+}x)^{2}(1{-}p_1^{(\mathrm{rel})}) - p_1^{(\mathrm{rel})}\,Q_{\mathrm{rel}}}
+  {(1{+}x)(1{+}p_1^{(\mathrm{rel})})+p_1^{(\mathrm{rel})}\,Q_{\mathrm{rel}}}
   - \left[\frac{(1{+}x)^{2}{+}Q_{\mathrm{rel}}}{1{+}x}\right]^{2}\!,
   \label{eq:rel53-sigmai}
 \end{equation}
 and the Rayleigh number is
 \begin{equation}
   R_*^{(\mathrm{rel})} = 2\,\frac{1+x}{x}\;\frac{(1{+}x)^{2}{+}Q_{\mathrm{rel}}}
-  {(1{+}x)^{2}(1{-}p_1^{(\mathrm{eff})})}\;
-  \bigl[(1{+}x)^{2}+p_1^{(\mathrm{eff})}\,\sigma_i^{2}\bigr].
+  {(1{+}x)^{2}(1{-}p_1^{(\mathrm{rel})})}\;
+  \bigl[(1{+}x)^{2}+p_1^{(\mathrm{rel})}\,\sigma_i^{2}\bigr].
   \label{eq:rel53-Rstar}
 \end{equation}
-In the formal limit $c\to\infty$ (whence $\tauq\to 0$, $\vA/c\to 0$,
+In the formal limit $c\to\infty$ (whence $h\to 1$, $\vA/c\to 0$,
 $\Omega d/c\to 0$) these reduce identically to equations~\eqref{eq:5-70}
 and~\eqref{eq:5-71}.
 
 \subsection{Mercury results --- relativistic corrections}\label{subsec:rel53-mercury}
 
-For mercury at room temperature, the characteristic thermal relaxation
-time may be estimated from kinetic theory as
-\begin{equation}
-  \tauq \approx \frac{3\,\kappa_T}{c_s^{2}}
-  \sim 10^{-12}\;\mathrm{s},
-  \label{eq:rel53-tauq-Hg}
-\end{equation}
-where $c_s\approx 1{,}450\;\mathrm{m\,s^{-1}}$ is the sound speed in mercury.
-Since typical overstable oscillation frequencies in Nakagawa's experiments
-are $\omega_r\lesssim 10^{2}\;\mathrm{s^{-1}}$ (see Table~\ref{tab:XIX}),
-we have $\omega_r\,\tauq \sim 10^{-10}\ll 1$.
-
-Similarly, the Alfv\'en speed for fields $B_0\leq 5{,}000\;\mathrm{G}$ in
+For mercury at room temperature, the BDNK frame corrections are of
+order $v^{2}/c^{2}$, where $v$ is the characteristic fluid velocity.
+The Alfv\'en speed for fields $B_0\leq 5{,}000\;\mathrm{G}$ in
 mercury ($\rho\approx 1.36\times10^{4}\;\mathrm{kg\,m^{-3}}$) is
 \begin{equation}
   \vA = \frac{B_0}{\sqrt{\mu_0\,\rho}}
@@ -200,11 +182,11 @@ $r\sim 12\;\mathrm{cm}$ is $v_{\mathrm{rot}}\sim 0.06\;\mathrm{m\,s^{-1}}$,
 giving $v_{\mathrm{rot}}^{2}/c^{2}\sim 10^{-20}$.
 
 Consequently, for mercury under laboratory conditions, all relativistic
-corrections --- whether from Israel--Stewart relaxation, finite
+corrections --- whether from BDNK frame coefficients, finite
 $\vA/c$, or rotational frame-dragging --- are utterly negligible:
 \begin{equation}
   \frac{R_c^{(\mathrm{rel})} - R_c^{(\mathrm{class})}}{R_c^{(\mathrm{class})}}
-  \sim \max\!\left(\omega_r^{2}\tauq^{2},\;
+  \sim \max\!\left(
   \frac{\vA^{2}}{c^{2}},\;
   \frac{\Omega^{2}d^{2}}{c^{2}}\right)
   \lesssim 10^{-17}.
@@ -221,8 +203,8 @@ Relativistic corrections become significant when any of the following
 conditions hold:
 \begin{enumerate}
   \item \textbf{Hot, dense plasmas} (e.g.\ neutron-star envelopes):
-    the sound speed $c_s$ approaches $c/\!\sqrt{3}$, and the thermal
-    relaxation time $\tauq$ is comparable to the oscillation period.
+    the sound speed $c_s$ approaches $c/\!\sqrt{3}$, and the BDNK
+    frame corrections become non-negligible.
   \item \textbf{Strongly magnetised plasmas} (magnetar interiors):
     $\vA/c$ can approach unity when $B\gtrsim 10^{15}\;\mathrm{G}$,
     making $Q_{\mathrm{rel}}$ substantially different from $Q$.
@@ -230,8 +212,9 @@ conditions hold:
     $\Omega\,d/c$ can be non-negligible, and frame-dragging corrections
     to $T_{\mathrm{rel}}$ become relevant.
 \end{enumerate}
-In all these cases the full Israel--Stewart treatment and the causality-bounded
-transport coefficients of equations~\eqref{eq:rel53-eff-transport} are
+In all these cases the full BDNK treatment with its coupled causality
+inequalities on transport and frame coefficients
+\citep{Bemfica2018,Kovtun2019,BemficaDisconziNoronhaKovtun2023} is
 essential for a self-consistent analysis.
 
 
@@ -313,11 +296,10 @@ In the relativistic regime, three new features arise:
     Alfv\'en speed and the Rayleigh number.
 
   \item \textbf{Causal heat transport.}  In radiation-dominated disks
-    the photon mean free path sets $\tauq \sim \ell_{\gamma}/c$.  For
-    optically thick disks, $\tauq$ can be comparable to the local
-    dynamical time $\Omega^{-1}$, making the Israel--Stewart relaxation
-    effects on oscillatory modes (\S\,\ref{sec:rel-53}) quantitatively
-    important.
+    the photon mean free path sets the scale for BDNK frame corrections.
+    For optically thick disks, these corrections can be comparable to
+    the leading-order terms, making the BDNK causality constraints on
+    oscillatory modes (\S\,\ref{sec:rel-53}) quantitatively important.
 
   \item \textbf{Frame-dragging.}  Near a spinning (Kerr) black hole with
     dimensionless spin $a_{\star}$, the Lense--Thirring angular velocity
@@ -348,9 +330,9 @@ give $\Omega\,d/c\sim 10^{-6}$--$10^{-4}$ for ocean depth $d\sim 10\;\mathrm{m}$
 In these systems the dominant relativistic correction comes not from kinematics
 but from the equation of state: the partially degenerate, strongly
 interacting electron gas modifies the Prandtl number $p_1$ and the effective
-thermal diffusivity.  The Israel--Stewart relaxation time $\tauq$ for
-electron--ion collisions is $\sim 10^{-15}\;\mathrm{s}$, again negligibly
-short compared with convective time-scales.  Nevertheless, the surface
+thermal diffusivity.  The BDNK frame corrections for
+electron--ion transport are negligibly small compared with convective
+time-scales.  Nevertheless, the surface
 gravity $g\sim 2\times10^{14}\;\mathrm{cm\,s^{-2}}$ is large enough that
 the gravitational redshift correction
 \begin{equation}
@@ -361,7 +343,7 @@ amounts to a $\sim 30\%$ increase in the effective Rayleigh number for
 a typical neutron star.  This general-relativistic correction to the
 hydrostatic background is therefore the leading ``relativistic'' effect
 in neutron-star ocean convection, rather than the kinematic or
-Israel--Stewart corrections emphasised elsewhere.
+BDNK frame corrections emphasised elsewhere.
 
 
 %% ==================================================================
@@ -370,23 +352,28 @@ Israel--Stewart corrections emphasised elsewhere.
 \section*{BIBLIOGRAPHICAL NOTES --- Relativistic extensions of \S\S\,53--54}
 \addcontentsline{toc}{section}{Bibliographical Notes --- Relativistic \S\S\,53--54}
 
-\paragraph{Israel--Stewart theory.}
+\paragraph{BDNK causal first-order hydrodynamics.}
 The causal thermodynamics framework used throughout this section is due to:
 \begin{enumerate}
-  \item W.~\textsc{Israel} and J.\,M.~\textsc{Stewart}, `Transient relativistic
-    thermodynamics and kinetic theory', \textit{Ann.\ Phys.\ (N.Y.)}\ \textbf{118},
-    341--72 (1979).
-  \item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics: a causal
-    relativistic theory', \textit{ibid.}\ \textbf{100}, 310--31 (1976).
-  \item W.\,A.~\textsc{Hiscock} and L.~\textsc{Lindblom}, `Stability and causality
-    in dissipative relativistic fluids', \textit{Ann.\ Phys.\ (N.Y.)}\ \textbf{151},
-    466--96 (1983).
+  \item F.\,S.~\textsc{Bemfica}, M.\,M.~\textsc{Disconzi}, and
+    J.~\textsc{Noronha}, `Causality and existence of solutions of
+    relativistic viscous fluid dynamics with gravity',
+    \textit{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
+  \item P.~\textsc{Kovtun}, `First-order relativistic hydrodynamics is
+    stable', \textit{JHEP}\ \textbf{10}, 034 (2019).
+  \item F.\,S.~\textsc{Bemfica}, M.\,M.~\textsc{Disconzi}, and
+    J.~\textsc{Noronha}, `Nonlinear causality of general first-order
+    relativistic viscous hydrodynamics',
+    \textit{Phys.\ Rev.\ Lett.}\ \textbf{122}, 221602 (2019).
 \end{enumerate}
-For a modern review of relativistic dissipative hydrodynamics:
+For the extension to MHD and the coupled causality inequalities:
 \begin{enumerate}\setcounter{enumi}{3}
-  \item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
-    \textit{Relativistic Fluid Dynamics In and Out of Equilibrium}
-    (Cambridge University Press, 2019).
+  \item R.\,E.~\textsc{Hoult} and P.~\textsc{Kovtun}, `Stable and causal
+    relativistic Navier--Stokes equations',
+    \textit{JHEP}\ \textbf{06}, 067 (2020).
+  \item F.\,S.~\textsc{Bemfica}, M.\,M.~\textsc{Disconzi},
+    J.~\textsc{Noronha}, and P.~\textsc{Kovtun},
+    \textit{Phys.\ Rev.\ D}\ \textbf{107}, 076012 (2023).
 \end{enumerate}
 
 \paragraph{Relativistic MHD stability.}

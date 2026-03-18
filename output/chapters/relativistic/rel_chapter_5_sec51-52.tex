@@ -1,6 +1,8 @@
 % rel_chapter_5_sec51-52.tex
 % Relativistic Perturbation Equations with Rotation + Magnetic Field (Ch V, §51--52)
 % Agent 21: rotation + magnetic field perturbation equations and stationary convection
+% BDNK conversion: IS relaxation replaced by BDNK first-order
+%   constitutive relations (Bemfica et al. 2018, Kovtun 2019)
 %
 % Conventions: (-,+,+,+) signature, c kept explicit, u^μ u_μ = -c²
 % See RELATIVISTIC_CONVENTIONS.md for notation and macros.
@@ -17,8 +19,9 @@ non-relativistic regime.  The perturbation equations that result
 magnetic, and temperature perturbations through the Coriolis and
 Lorentz forces simultaneously.  In the present chapter we derive the
 fully relativistic counterparts of these equations, using the
-Israel--Stewart causal dissipation formalism and covariant MHD
-developed in the relativistic framework chapters.
+BDNK (Bemfica--Disconzi--Noronha--Kovtun) first-order causal
+dissipation formalism and covariant MHD developed in the relativistic
+framework chapters.
 
 Throughout, we keep the speed of light $c$ explicit, so that every
 non-relativistic limit ($v/c\to 0$, $\vA/c\to 0$) can be read off
@@ -104,7 +107,7 @@ equation~(21):
 \end{multline}
 where $\delta p^{*} = \delta p + B_{0}\,h_{3}/c^{2}$ is the total
 (fluid + magnetic) pressure perturbation, $\alpha$ is the coefficient
-of thermal expansion, and we have used the Israel--Stewart shear
+of thermal expansion, and we have used the BDNK shear
 viscosity $\shearvisc$ in place of the Newtonian $\rho\nu$.  The
 factors $\relcorr{\cdot}$ denote multiplicative relativistic
 corrections.
@@ -139,19 +142,20 @@ where $\eta$ is the magnetic diffusivity.  The relativistic
 correction arises from the coupling between the magnetic 4-vector
 evolution and the 4-acceleration; it is suppressed by $\vA^{2}/c^{2}$.
 
-The linearized \emph{energy equation} with Israel--Stewart causal heat
-conduction replaces the classical equation~(23):
+The linearized \emph{energy equation} with BDNK causal heat
+transport replaces the classical equation~(23):
 \begin{equation}
   \frac{\partial\Theta}{\partial t}
-  + \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
   = \beta\,w + \kappa\,\nabla^{2}\Theta
   + \order{v^{2}/c^{2}},
   \label{eq:rel51-energy}
 \end{equation}
-where $\tauq$ is the heat-flux relaxation time from the Israel--Stewart
-theory.  The term $\tauq\,\partial^{2}\Theta/\partial t^{2}$ converts
-the parabolic heat equation into a \emph{hyperbolic} (telegraph)
-equation, ensuring finite propagation speed for thermal signals.
+In the BDNK formalism \citep{Bemfica2018,Kovtun2019}, the heat
+equation retains its standard first-order form---no relaxation time
+$\tauq$ or telegrapher modification appears.  Causality of thermal
+signal propagation is guaranteed by the BDNK frame coefficients,
+which ensure strong hyperbolicity of the full conservation-law system
+with all characteristic speeds bounded by~$c$.
 
 The \emph{divergence-free conditions} remain:
 \begin{equation}
@@ -218,8 +222,7 @@ with $D = \dd/\dd z'$, the system
 \eqref{eq:rel51-energy}--\eqref{eq:rel51-doublecurl} becomes:
 
 \begin{equation}
-  \bigl(D^{2}-a^{2}-p_{1}\sigma
-    - \tauq\,p_{1}\,\sigma^{2}/d^{2}\bigr)\,\Theta
+  \bigl(D^{2}-a^{2}-p_{1}\sigma\bigr)\,\Theta
   = -\frac{\beta\,d^{2}}{\kappa}\,W,
   \label{eq:rel51-35}
 \end{equation}
@@ -299,8 +302,7 @@ algebraic procedure as in the classical theory
 (cf.\ equations~(40)--(43) of Chapter~V), we obtain the
 \emph{relativistic master equation}:
 \begin{multline}
-  \bigl(D^{2}-a^{2}-p_{1}\sigma
-    -\tauq\,p_{1}\sigma^{2}/d^{2}\bigr)\\
+  \bigl(D^{2}-a^{2}-p_{1}\sigma\bigr)\\
   \times\bigl\{(D^{2}-a^{2})
     \bigl[(D^{2}-a^{2}-\sigma)(D^{2}-a^{2}-p_{2}\sigma)
       -\Qrel\,D^{2}\bigr]^{2}\\
@@ -312,18 +314,18 @@ algebraic procedure as in the classical theory
   \label{eq:rel51-master}
 \end{multline}
 This is formally identical to Chandrasekhar's equation~(43), with the
-replacements $R\to\Rarel$, $T\to\Tarel$, $Q\to\Qrel$, and the addition
-of the Israel--Stewart term $\tauq\,p_{1}\sigma^{2}/d^{2}$ in the
-thermal operator.
+replacements $R\to\Rarel$, $T\to\Tarel$, $Q\to\Qrel$.  In the BDNK
+formalism, no additional Israel--Stewart relaxation term appears in the
+thermal operator---causality is ensured by the frame coefficients, not
+by modifying the PDE structure.
 
 \begin{causalitycheck}
-\textbf{Thermal modes:} The Israel--Stewart term converts the heat
-operator from $(D^{2}-a^{2}-p_{1}\sigma)$ to
-$(D^{2}-a^{2}-p_{1}\sigma - \tauq p_{1}\sigma^{2}/d^{2})$, which is a
-second-order polynomial in~$\sigma$.  The thermal signal speed is
-$v_{\mathrm{th}} = \sqrt{\kappa/\tauq}$, and the condition
-$v_{\mathrm{th}} \le c$ is satisfied provided
-$\tauq \ge \kappa/c^{2}$.
+\textbf{Thermal modes:} In the BDNK formalism, the heat operator
+remains first-order in~$\sigma$: $(D^{2}-a^{2}-p_{1}\sigma)$.
+Causality of thermal signal propagation is guaranteed by the BDNK
+frame coefficients, which ensure strong hyperbolicity of the full
+conservation-law system with all characteristic speeds $\le c$
+\citep{Bemfica2018,Kovtun2019}.
 
 \textbf{Alfv\'en and magnetosonic modes:} The magnetic sector
 produces the relativistic Alfv\'en speed
@@ -389,11 +391,12 @@ The boundary conditions are identical in form to the classical ones
 thermal, and electromagnetic matching conditions that are
 frame-independent at leading order.
 
-Note that the Israel--Stewart relaxation term drops out entirely at
-$\sigma=0$: the marginal-stability criterion for stationary convection
-is \emph{insensitive} to the causal modification of heat transport.
-This is exactly as expected---the relaxation time affects only the
-time-dependent behaviour.
+Note that at $\sigma=0$ the dissipative terms vanish regardless of
+the causal formalism used (BDNK or Israel--Stewart): the
+marginal-stability criterion for stationary convection is
+\emph{insensitive} to the specific causal modification of heat
+transport.  This is exactly as expected---dissipative corrections
+affect only the time-dependent behaviour.
 
 \subsection{Two free boundaries: relativistic critical Rayleigh number}
 \label{sec:two-free-bdry}
@@ -563,7 +566,7 @@ boundaries:}
 \item The effective inertia $\enthalpy^{*}_{0}$ replaces $\rho_{0}$,
   raising $R_{c}$ and lowering $Q$ and~$T$ relative to classical
   values.
-\item The Israel--Stewart heat relaxation does not affect the
+\item Dissipative (BDNK) corrections do not affect the
   stationary-convection boundary ($\sigma=0$).
 \item The Alfv\'en speed is bounded: $\vA < c$, preventing unphysical
   divergence of the Lorentz force coupling at strong fields.
@@ -579,7 +582,8 @@ boundaries:}
 As a consistency check, we verify that all results reduce to
 Chandrasekhar's in the non-relativistic limit.  Setting
 $\varepsilon_{0}\to\rho_{0}c^{2}$, $p_{0}\ll\rho_{0}c^{2}$,
-$B_{0}^{2}\ll 4\pi\rho_{0}c^{2}$, and $\tauq\to 0$:
+$B_{0}^{2}\ll 4\pi\rho_{0}c^{2}$ (and the BDNK frame corrections
+vanish at $\order{v^{2}/c^{2}}$):
 \begin{align}
   \enthalpy^{*}_{0} &\NRlimit \rho_{0},\\
   \nu_{\mathrm{eff}} &\NRlimit \nu,\\
@@ -590,16 +594,16 @@ $B_{0}^{2}\ll 4\pi\rho_{0}c^{2}$, and $\tauq\to 0$:
 \end{align}
 and equation~\eqref{eq:rel52-57} reduces identically to
 Chandrasekhar's equation~(57).  The master equation
-\eqref{eq:rel51-master} (with $\tauq\to 0$) reduces to
-equation~(43).\qed
+\eqref{eq:rel51-master} reduces to equation~(43).\qed
 
 \begin{causalitycheck}
 \textbf{Final causality summary for all perturbation modes in
 \S\S\,51--52:}
 \begin{enumerate}
-\item \textbf{Thermal diffusion:} Governed by the telegraph equation
-  with signal speed $v_{\mathrm{th}}=\sqrt{\kappa/\tauq}\le c$
-  (by requiring $\tauq\ge\kappa/c^{2}$).
+\item \textbf{Thermal diffusion:} In BDNK, the first-order heat
+  equation has causal signal propagation guaranteed by the frame
+  coefficients; all thermal characteristic speeds $\le c$
+  \citep{Bemfica2018,Kovtun2019}.
 \item \textbf{Alfv\'en waves:} Propagation speed
   $\vA = B_{0}c/\sqrt{4\pi(\varepsilon_{0}+p_{0})+B_{0}^{2}} < c$.
 \item \textbf{Fast magnetosonic:} $\vf^{2}=\cs^{2}+\vA^{2}
@@ -607,10 +611,11 @@ equation~(43).\qed
 \item \textbf{Slow magnetosonic:} $\vs^{2}=\cs^{2}\vA^{2}/\vf^{2}
   < \min(\cs^{2},\vA^{2}) < c^{2}$.
 \item \textbf{Inertial waves:} Group speed $\sim\Omega d\ll c$.
-\item \textbf{Viscous diffusion:} Israel--Stewart shear relaxation
-  bounds the viscous signal speed at
-  $v_{\mathrm{visc}}=\sqrt{\shearvisc/(\enthalpy^{*}_{0}\taupi)}
-  \le c$ (requiring $\taupi\ge\shearvisc/(\enthalpy^{*}_{0}c^{2})$).
+\item \textbf{Viscous diffusion:} In the BDNK formalism, the viscous
+  signal speed is bounded by~$c$ through the coupled inequalities on
+  $\shearvisc$ and the frame coefficients
+  \citep{BemficaDisconziNoronhaKovtun2023}; no separate relaxation
+  time $\taupi$ is required.
 \end{enumerate}
 All six mode families satisfy the causality bound $v\le c$.
 \end{causalitycheck}

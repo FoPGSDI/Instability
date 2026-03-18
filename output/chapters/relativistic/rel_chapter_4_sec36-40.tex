@@ -1,6 +1,8 @@
 % =============================================================
 % Relativistic Hydromagnetic Equations (Ch IV, §36--40)
 % Agent 16: Covariant MHD, Alfven waves, causality
+% BDNK conversion: IS relaxation replaced by BDNK first-order
+%   constitutive relations (Bemfica et al. 2018, Kovtun 2019)
 % =============================================================
 
 \chapter{RELATIVISTIC HYDROMAGNETIC STABILITY}
@@ -426,21 +428,27 @@ effective phase speed (differential effect), precisely as in the classical
 case (equation~(66) of Ch.~IV).
 
 \begin{relcorrection}
-\textbf{Israel--Stewart causal dissipation.}
+\textbf{BDNK causal dissipation.}
 The Navier--Stokes form of viscous and resistive damping used above is
-acausal at high frequencies.  A fully consistent treatment replaces the
-instantaneous constitutive relations with the Israel--Stewart relaxation
-equations:
+acausal at high frequencies.  In the BDNK (Bemfica--Disconzi--Noronha--Kovtun)
+first-order formalism, causality is restored not by introducing relaxation
+equations but by working in a \emph{general hydrodynamic frame} with
+first-order constitutive relations:
 \[
-  \taupi\, u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
-    + \pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu},
+  \Pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu},
   \qquad
-  \tau_{\eta}\,u^{\alpha}\nabla_{\alpha}e^{\langle\mu\rangle}
-    + e^{\mu} = \sigma^{-1}\,J^{\langle\mu\rangle}_{\perp},
+  Q^{\mu} = -\thermcond\,T\,\Delta^{\mu\alpha}\partial_{\alpha}(\mu/T)
+    + \text{frame corrections},
 \]
-where $\taupi>0$ and $\tau_{\eta}>0$ are relaxation times.  These render
-the full dissipative MHD system hyperbolic, with all characteristic speeds
-bounded by $c$.
+where the frame coefficients (energy correction $\varepsilon_1$,
+temperature-gradient coefficient $\beta_1$, etc.) are chosen so that the
+full system of conservation laws is \emph{strongly hyperbolic}, with all
+characteristic speeds bounded by~$c$.  No additional dynamical degrees
+of freedom (relaxation times $\taupi$, $\tauq$) are introduced; the only
+dynamical variables remain $(\edensity, n, u^{\mu})$.  Causality is
+guaranteed by coupled inequalities on $(\shearvisc, \bulkvisc, \thermcond)$
+and the frame coefficients
+\citep{Bemfica2018,Kovtun2019,BemficaDisconziNoronha2019}.
 \end{relcorrection}
 
 
@@ -572,8 +580,10 @@ is unaffected by relativistic corrections.
       $\vs^{2}=\cs^{2}\vA^{2}\cos^{2}\theta/\vf^{2}<c^{2}$.
 \item \textbf{Flux freezing:}
       $d\Phi/d\tau=0$ (relativistic Alfv\'en theorem).
-\item \textbf{Dissipation:} Israel--Stewart causal relaxation replaces
-      Navier--Stokes for finite $\nu$, $\eta$.
+\item \textbf{Dissipation:} BDNK first-order causal constitutive relations
+      replace Navier--Stokes for finite $\nu$, $\eta$; no relaxation
+      times are needed --- causality follows from the choice of
+      hydrodynamic frame and coupled transport-coefficient inequalities.
 \item \textbf{Equipartition, force-free, Taylor--Proudman:} Classical
       results carry over with $\rho\to(\edensity+p)/c^{2}$.
 \end{enumerate}

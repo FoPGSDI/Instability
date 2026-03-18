@@ -1,5 +1,7 @@
 % rel_chapter_4_sec45-46.tex
 % Agent 18: Relativistic Q-law and Overstability (Ch IV §45-46)
+% BDNK conversion: IS relaxation replaced by BDNK first-order
+%   constitutive relations (Bemfica et al. 2018, Kovtun 2019)
 % Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
 
 \section{The $\pi^{2}Q$-law and invariant --- relativistic derivation}
@@ -43,10 +45,13 @@ the temperature perturbation $\Theta$, and the magnetic scalar $K$
 follow from the relativistic MHD energy-momentum conservation
 $\nabla_{\nu}T^{\mu\nu}_{\mathrm{total}} = 0$ together with the
 induction equation.  In the inviscid limit ($\nu\to 0$) and for
-stationary onset ($p = 0$), the Israel--Stewart relaxation terms drop
-out and the perturbation equations reduce to the \emph{same structure}
+stationary onset ($p = 0$), the dissipative terms vanish
+and the perturbation equations reduce to the \emph{same structure}
 as in the classical case, up to the replacement of $\rho_{0}$ by the
-effective inertial mass density $w_{0}/c^{2}$.  Specifically, in
+effective inertial mass density $w_{0}/c^{2}$.  This identity at
+$\sigma=0$ holds for any causal dissipation formalism---whether
+Israel--Stewart or BDNK---since the dissipative contributions are
+proportional to~$\sigma$.  Specifically, in
 dimensionless form (with $d$ as the unit of length) the vertical
 velocity satisfies
 \begin{equation}
@@ -202,44 +207,52 @@ oscillations of increasing amplitude (overstability) in the relativistic
 regime.  The classical treatment (\S\,46) showed that for two free
 boundaries and $p_{2} > p_{1}$ (i.e.\ $\kappa > \eta$), oscillatory
 onset is preferred at sufficiently large~$Q$.  The relativistic
-generalisation introduces two new features:
+generalisation within the BDNK formalism introduces two features:
 \begin{enumerate}
-  \item The Israel--Stewart relaxation times $\tauq$, $\taupi$, and
-    $\tauPi$ raise the order of the characteristic equation, because
-    each dissipative flux now obeys a \emph{hyperbolic} evolution equation
-    rather than an instantaneous constitutive relation.
+  \item The BDNK first-order constitutive relations
+    ($\Pi^{\mu\nu}=-2\shearvisc\,\sigma^{\mu\nu}$,
+    $Q^{\mu}=-\thermcond T\Delta^{\mu\alpha}\partial_{\alpha}(\mu/T)
+    +\text{frame terms}$)
+    do \emph{not} raise the order of the characteristic equation beyond
+    the classical (Navier--Stokes) form.  The dispersion relation has the
+    same number of roots as in the classical theory---no spurious
+    relaxation modes appear.
   \item \emph{Causality} imposes an upper bound on the phase velocity
-    of any oscillatory mode: $v_{\mathrm{ph}} \le c$.
+    of any oscillatory mode: $v_{\mathrm{ph}} \le c$, guaranteed by
+    the BDNK coupled inequalities on transport and frame coefficients
+    \citep{Bemfica2018,Kovtun2019}.
 \end{enumerate}
 
 %------------------------------------------------------------------
-\subsection{Relativistic perturbation equations with Israel--Stewart
+\subsection{Relativistic perturbation equations with BDNK
             dissipation}
 \label{subsec:rel-46-perturb}
 
 The linearised equations for the perturbations
-$(W, \Theta, K, \bulkP, \shearten, \heatflux)$
+$(W, \Theta, K)$
 about a static equilibrium with a vertical magnetic field are obtained
 from $\covdu T^{\mu\nu}_{\mathrm{total}} = 0$ supplemented by the
-Israel--Stewart relaxation equations:
+BDNK first-order constitutive relations
+\citep{Bemfica2018,Kovtun2019,HoultKovtun2020}:
 \begin{align}
-  \tauq\,\dot{q}^{\langle\mu\rangle} + q^{\mu}
-  &= -\kappa\!\left(\Delta^{\mu\nu}\nabla_{\nu}T
-     + \frac{T}{c^{2}}\,u^{\mu}\,\dot{u}_{\mu}\right) ,
-  \label{eq:rel-IS-heat}\\[4pt]
-  \taupi\,\dot{\pi}^{\langle\mu\nu\rangle} + \pi^{\mu\nu}
-  &= 2\,\shearvisc\,\sigma^{\mu\nu} ,
-  \label{eq:rel-IS-shear}\\[4pt]
-  \tauPi\,\dot{\Pi} + \Pi
+  Q^{\mu}
+  &= -\thermcond\,T\,\Delta^{\mu\nu}\partial_{\nu}(\mu/T)
+     + \text{frame corrections} ,
+  \label{eq:rel-BDNK-heat}\\[4pt]
+  \Pi^{\mu\nu}
+  &= -2\,\shearvisc\,\sigma^{\mu\nu} ,
+  \label{eq:rel-BDNK-shear}\\[4pt]
+  \Pi_{\mathrm{bulk}}
   &= -\bulkvisc\,\nabla_{\mu}u^{\mu} .
-  \label{eq:rel-IS-bulk}
+  \label{eq:rel-BDNK-bulk}
 \end{align}
-When linearised and decomposed into normal modes
-$\sim \exp(\sigma t + i\,\mathbf{k}\cdot\mathbf{x})$, each relaxation
-equation introduces a factor $(1 + \tau\,\sigma)$ that multiplies the
-corresponding dissipative term.  In contrast, the classical (Eckart)
-theory corresponds to the limit $\tau\to 0$ where the dissipative
-fluxes respond instantaneously.
+These are \emph{algebraic} relations (no time derivatives of the
+dissipative fluxes), so they do not introduce additional dynamical
+degrees of freedom.  When linearised and decomposed into normal modes
+$\sim \exp(\sigma t + i\,\mathbf{k}\cdot\mathbf{x})$, the dissipative
+terms enter at the same order as in the classical Navier--Stokes theory.
+Causality is guaranteed not by relaxation times but by the BDNK frame
+coefficients, which ensure strong hyperbolicity of the full system.
 
 %------------------------------------------------------------------
 \subsection{The relativistic characteristic equation}
@@ -255,65 +268,47 @@ system yields the characteristic equation.  Let
   Q_{1} = \frac{\Qrel}{\pi^{2}},
   \label{eq:rel-scaled-vars}
 \end{equation}
-and define the Israel--Stewart correction factors
-\begin{equation}
-  \mathcal{T}_{q} = 1 + i\,\tauq\,\pi^{2}\sigma_{1} ,\quad
-  \mathcal{T}_{\pi} = 1 + i\,\taupi\,\pi^{2}\sigma_{1} ,\quad
-  \mathcal{T}_{\Pi} = 1 + i\,\tauPi\,\pi^{2}\sigma_{1} .
-  \label{eq:rel-IS-factors}
-\end{equation}
-Then the relativistic characteristic equation takes the form
+The BDNK characteristic equation takes the form
 \begin{multline}
-  (1+x)\bigl(1+x+i\,h\,\sigma_{1}\,\mathcal{T}_{\pi}\bigr)
+  (1+x)\bigl(1+x+i\,h\,\sigma_{1}\bigr)
   \Bigl[\bigl(1+x+i\,p_{2}^{(\mathrm{rel})}\sigma_{1}\bigr)
-        \bigl(1+x+i\,\sigma_{1}\,\mathcal{T}_{\pi}\bigr)
+        \bigl(1+x+i\,\sigma_{1}\bigr)
   + Q_{1}\Bigr] \\
   = R_{1}\,x\,
-    \bigl(1+x+i\,p_{2}^{(\mathrm{rel})}\sigma_{1}\bigr)
-    \,\mathcal{T}_{q} ,
+    \bigl(1+x+i\,p_{2}^{(\mathrm{rel})}\sigma_{1}\bigr) ,
   \label{eq:rel-char-full}
 \end{multline}
 where $h = w_{0}/(\rho_{0}c^{2})$ is the specific enthalpy and
 \begin{equation}
-  p_{1}^{(\mathrm{rel})} = \frac{\kappa}{\nu}\,
-    \frac{1}{h\,\mathcal{T}_{q}/\mathcal{T}_{\pi}} ,\quad
-  p_{2}^{(\mathrm{rel})} = \frac{\eta}{\nu}\,
-    \frac{1}{h} ,
+  p_{1}^{(\mathrm{rel})} = \frac{\kappa}{\nu\,h} ,\quad
+  p_{2}^{(\mathrm{rel})} = \frac{\eta}{\nu\,h} ,
   \label{eq:rel-p1p2}
 \end{equation}
 are the relativistic Prandtl ratios.
 
 \begin{relcorrection}
-Equation~\eqref{eq:rel-char-full} is of \emph{higher order} in
-$\sigma_{1}$ than its classical counterpart~(4-222).  Each
-Israel--Stewart factor $\mathcal{T}$ contributes one additional power of
-$\sigma_{1}$.  The classical equation is fourth-order in $\sigma_{1}$
-(once $\sigma$ is treated as the unknown); the relativistic equation is
-generically \emph{seventh-order} (three relaxation times contribute three
-additional roots).  The extra roots correspond to transient relaxation
-modes that decay on time-scales $\sim\tau_{q}^{-1}$, $\tau_{\pi}^{-1}$,
-$\tau_{\Pi}^{-1}$.
+Equation~\eqref{eq:rel-char-full} has the \emph{same order} in
+$\sigma_{1}$ as its classical counterpart~(4-222): it is fourth-order
+in~$\sigma_{1}$.  This is a key advantage of the BDNK formalism over
+Israel--Stewart: no spurious relaxation modes appear, and the dispersion
+relation contains only the physical hydrodynamic modes.  Causality is
+ensured not by additional dynamical degrees of freedom but by the BDNK
+coupled inequalities on transport coefficients and frame coefficients
+\citep{Bemfica2018,Kovtun2019,BemficaDisconziNoronhaKovtun2023}.
 \end{relcorrection}
 
 %------------------------------------------------------------------
-\subsection{Reduction to the Eckart (instantaneous) limit}
-\label{subsec:rel-46-eckart}
+\subsection{Relation to the classical characteristic equation}
+\label{subsec:rel-46-classical}
 
-In the formal limit $\tauq, \taupi, \tauPi \to 0$ (Eckart theory), we
-have $\mathcal{T}_{q}, \mathcal{T}_{\pi}, \mathcal{T}_{\Pi} \to 1$,
-and equation~\eqref{eq:rel-char-full} reduces to
-\begin{multline}
-  (1+x)(1+x+i\,h\,\sigma_{1})
-  \bigl[(1+x+i\,p_{2}^{(0)}\sigma_{1})
-        (1+x+i\,\sigma_{1}) + Q_{1}\bigr] \\
-  = R_{1}\,x\,(1+x+i\,p_{2}^{(0)}\sigma_{1}) ,
-  \label{eq:rel-char-eckart}
-\end{multline}
-where $p_{2}^{(0)} = \eta/(\nu h)$.  This is structurally identical to the
+Equation~\eqref{eq:rel-char-full} is structurally identical to the
 classical equation~(4-224) with the replacements
 $p_{1}\to p_{1}/h$ and $p_{2}\to p_{2}/h$ and an overall factor of $h$
-multiplying the inertial term.  In the further limit $h\to 1$ the
-classical equation~(4-224) is recovered exactly.
+multiplying the inertial term.  In the non-relativistic limit $h\to 1$
+the classical equation~(4-224) is recovered exactly.  Unlike the
+Israel--Stewart formulation, no additional ``Eckart limit'' needs to be
+taken---the BDNK characteristic equation is already of the same
+polynomial order as the classical one.
 
 %------------------------------------------------------------------
 \subsection{Critical conditions: overstability vs.\ stationary onset}
@@ -321,12 +316,11 @@ classical equation~(4-224) is recovered exactly.
 
 To determine when overstability is preferred, we seek solutions of the
 characteristic equation with $\sigma_{1}$ real (purely oscillatory
-marginal state).  For clarity we work first in the Eckart limit; the
-effect of finite $\tau$ is discussed in \S\,\ref{subsec:rel-46-IS-effect}.
+marginal state).
 
-\subsubsection{Eckart limit}
+\subsubsection{BDNK critical conditions}
 
-Separating real and imaginary parts of~\eqref{eq:rel-char-eckart} with
+Separating real and imaginary parts of~\eqref{eq:rel-char-full} with
 $\sigma_{1}\in\mathbb{R}$, one obtains the analogue of the classical
 equations~(4-226)--(4-231):
 \begin{equation}
@@ -463,47 +457,37 @@ in the $(R_{c}, Q)$-plane are:
 \end{relcorrection}
 
 %------------------------------------------------------------------
-\subsection{Effect of Israel--Stewart relaxation times}
-\label{subsec:rel-46-IS-effect}
+\subsection{BDNK causality constraints on overstable modes}
+\label{subsec:rel-46-BDNK-causality}
 
-When $\tauq$, $\taupi$, $\tauPi > 0$, the characteristic
-equation~\eqref{eq:rel-char-full} has additional roots.  Physically,
-these extra modes correspond to relaxation oscillations of the
-dissipative fluxes themselves.  The stability picture is modified as
-follows:
+In the BDNK formalism, the characteristic equation~\eqref{eq:rel-char-full}
+has \emph{no additional roots} beyond the standard hydrodynamic modes.
+Causality is instead enforced by coupled inequalities on the transport
+coefficients $(\shearvisc, \bulkvisc, \thermcond)$ and the BDNK frame
+coefficients $(\varepsilon_1, \beta_1, \alpha_1)$:
 
 \begin{enumerate}
-  \item \textbf{Higher-order polynomial:} The characteristic equation
-    becomes seventh-order in $\sigma_{1}$ (three additional roots from
-    the three relaxation channels).  The three extra roots have
-    $\mathrm{Re}(\sigma) < 0$ for $\tau > 0$ and represent \emph{stable}
-    transient modes that decay on the relaxation time-scales.
+  \item \textbf{Same polynomial order as classical:} The characteristic
+    equation remains fourth-order in $\sigma_{1}$, with no spurious
+    relaxation modes.  Every root corresponds to a physical hydrodynamic
+    mode.
 
-  \item \textbf{Modified critical Rayleigh number:} The Israel--Stewart
-    corrections modify the effective Prandtl ratios through the factors
-    $\mathcal{T}_{q}$, $\mathcal{T}_{\pi}$ evaluated at the oscillation
-    frequency.  For marginal overstability ($\sigma_{1}$ real), the
-    effective ratios become frequency-dependent:
+  \item \textbf{Frequency-independent Prandtl ratios:} The relativistic
+    Prandtl ratios $p_{1}^{(\mathrm{rel})} = \kappa/(\nu h)$ and
+    $p_{2}^{(\mathrm{rel})} = \eta/(\nu h)$ are constants (not
+    frequency-dependent), simplifying the overstability analysis.
+
+  \item \textbf{Causality conditions:} The BDNK coupled inequalities
+    \citep{BemficaDisconziNoronhaKovtun2023} require
     \begin{equation}
-      p_{1}^{(\mathrm{IS})}(\sigma_{1})
-      = \frac{\kappa}{\nu\,h}\,
-        \frac{1+\taupi^{2}\pi^{4}\sigma_{1}^{2}}
-             {1+\tauq^{2}\pi^{4}\sigma_{1}^{2}} ,\qquad
-      p_{2}^{(\mathrm{IS})}(\sigma_{1})
-      = \frac{\eta}{\nu\,h}\,
-        \frac{1}{1+\taupi^{2}\pi^{4}\sigma_{1}^{2}} .
-      \label{eq:rel-p-IS}
+      \shearvisc > 0, \quad
+      \bulkvisc + \tfrac{2}{3}\shearvisc > 0, \quad
+      \text{frame coefficients satisfy specific bounds},
+      \label{eq:rel-BDNK-causality-conditions}
     \end{equation}
-    The condition for overstability now depends on the oscillation
-    frequency: high-frequency modes ``see'' modified Prandtl numbers,
-    and overstability may be either promoted or suppressed depending on
-    the hierarchy $\tauq \gtrless \taupi$.
-
-  \item \textbf{New stability boundary:} When $\tauq \gg \taupi$, the
-    heat flux relaxation is slower than the viscous relaxation, and the
-    overstable branch is \emph{suppressed} at high~$Q$.  Conversely, when
-    $\tauq \ll \taupi$, the Israel--Stewart corrections lower the critical
-    $R$ for overstability, making oscillatory onset easier to achieve.
+    which replace the Israel--Stewart requirements $\taupi>0$, $\tauq>0$,
+    $\tauPi>0$.  These ensure that all characteristic speeds of the
+    full nonlinear system are bounded by~$c$.
 \end{enumerate}
 
 %------------------------------------------------------------------
@@ -558,21 +542,17 @@ accretion discs near compact objects) where $\nu$ can be relativistically
 large, the causality constraint may exclude long-wavelength overstable
 modes.
 
-Additionally, the Israel--Stewart formalism guarantees that the
-\emph{group velocity} of all dissipative modes is bounded by
-\begin{equation}
-  v_{\mathrm{group}}^{(\mathrm{IS})}
-  \le \sqrt{\frac{\kappa}{\tauq}} \le c
-  \quad\text{and}\quad
-  v_{\mathrm{group}}^{(\mathrm{IS})}
-  \le \sqrt{\frac{\nu}{\taupi}} \le c ,
-  \label{eq:rel-IS-group-bound}
-\end{equation}
-provided the relaxation times satisfy the thermodynamic stability
-conditions $\tauq \ge \kappa\,w_{0}/(c^{2}\,T^{2}\,(\partial s/\partial T)_{p})$
-and similarly for $\taupi$.  This ensures that the additional roots
-of the seventh-order characteristic equation do not introduce
-superluminal signal propagation.
+The BDNK formalism guarantees that the
+\emph{group velocity} of all dissipative modes is bounded by~$c$,
+provided the transport coefficients and frame coefficients satisfy
+the coupled BDNK inequalities
+\citep{Bemfica2018,Kovtun2019,BemficaDisconziNoronhaKovtun2023}.
+Unlike the Israel--Stewart approach, no separate group-velocity
+bounds involving relaxation times need to be checked---the BDNK
+strong hyperbolicity proof covers all modes simultaneously.
+Since the characteristic equation has the same number of roots as
+the classical one, there are no spurious relaxation modes whose
+causality would need to be verified separately.
 \end{causalitycheck}
 
 %------------------------------------------------------------------
@@ -580,16 +560,16 @@ superluminal signal propagation.
 \label{subsec:rel-46-NR}
 
 In the limit $c\to\infty$ (equivalently $h\to 1$, $\vA^{(\mathrm{rel})}
-\to V_{A}$, $\tauq,\taupi,\tauPi\to 0$):
+\to V_{A}$):
 \begin{itemize}
   \item $\Qrel\to Q$, $\Rarel\to R$, recovering the classical
     definitions.
-  \item $p_{1}^{(0)}\to p_{1} = \kappa/\nu$, \;
-    $p_{2}^{(0)}\to p_{2} = \eta/\nu$.
-  \item Equation~\eqref{eq:rel-char-eckart} $\to$ equation~(4-224).
+  \item $p_{1}^{(\mathrm{rel})}\to p_{1} = \kappa/\nu$, \;
+    $p_{2}^{(\mathrm{rel})}\to p_{2} = \eta/\nu$.
+  \item Equation~\eqref{eq:rel-char-full} $\to$ equation~(4-224).
   \item Equations~\eqref{eq:rel-sigma1-sq}--\eqref{eq:rel-R1-overstab}
     $\to$ equations~(4-230)--(4-231).
-  \item The causality bounds become trivially satisfied.
-  \item The Israel--Stewart corrections and extra roots vanish.
+  \item The BDNK causality bounds become trivially satisfied.
+  \item The BDNK frame coefficients vanish at $\order{v^{2}/c^{2}}$.
 \end{itemize}
 All classical results of \S\S\,45--46 are thus recovered.

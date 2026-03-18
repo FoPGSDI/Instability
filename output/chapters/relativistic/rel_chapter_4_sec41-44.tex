@@ -6,11 +6,14 @@
 % This file provides the relativistic generalization of Chapter IV,
 % §41--44 of Chandrasekhar's \emph{Hydrodynamic and Hydromagnetic
 % Stability}.  The classical Boussinesq MHD perturbation equations
-% are replaced by a covariant Israel--Stewart formulation that
-% respects causality; the Chandrasekhar number $Q$ acquires
+% are replaced by a covariant BDNK (Bemfica--Disconzi--Noronha--Kovtun)
+% first-order causal formulation; the Chandrasekhar number $Q$ acquires
 % Alfv\'en-speed corrections; the variational principle and
 % exact solutions (two free / two rigid boundaries) are re-derived;
 % and every perturbation mode is checked against the causal bound.
+% BDNK conversion: IS relaxation equations removed; first-order
+%   constitutive relations used throughout (Bemfica et al. 2018,
+%   Kovtun 2019).
 %
 % Requires: rel_preamble.tex (loaded by rel_main.tex)
 % =====================================================================
@@ -37,14 +40,19 @@ relativistic setting, but two new features appear.
   the statement that perturbations propagate as relativistic Alfv\'en
   waves whose group velocity cannot exceed~$c$.
 
-\item \textbf{Causal heat transport.}  The buoyancy--dissipation
-  balance that sets the critical temperature gradient now involves
-  the Israel--Stewart heat-flux relaxation time $\tauq$.  Because
-  heat pulses travel at a finite speed
-  $v_{q}=\sqrt{\thermcond T/(\enthalpy\,\tauq)}$, the possibility
+\item \textbf{Causal heat transport.}  In the BDNK formalism,
+  the buoyancy--dissipation balance that sets the critical temperature
+  gradient involves a first-order heat flux
+  $Q^{\mu} = -\thermcond\,T\,\Delta^{\mu\alpha}\partial_{\alpha}(\mu/T)
+  + \text{frame terms}$,
+  with no relaxation time.  Causality is ensured by coupled inequalities
+  on the transport coefficients and frame coefficients
+  \citep{Bemfica2018,Kovtun2019}, which guarantee that all signal
+  speeds---including thermal---remain bounded by~$c$.  The possibility
   of overstability (oscillatory onset) acquires a causal upper
-  frequency bound, in contrast to the Newtonian case where
-  overstability modes can, in principle, have unbounded frequency.
+  frequency bound through the BDNK dispersion relation, which has
+  \emph{fewer} modes than the Israel--Stewart formalism (no spurious
+  relaxation modes).
 \end{enumerate}
 
 \noindent
@@ -89,8 +97,9 @@ $p\to p_{0}+\delta p$, etc.  In the rest frame of the background
 fluid, denote the spatial perturbation velocity
 $\delta u^{i}=(u,v,w)$ and the magnetic-field perturbation
 $\delta b^{i}=(h_{x},h_{y},h_{z})$.  Including both viscous and
-resistive dissipation through the Israel--Stewart formalism
-(see~\S\,33 of the relativistic conventions), the linearized
+resistive dissipation through the BDNK first-order causal formalism
+(see~\S\,33 of the relativistic conventions and
+\citealt{Bemfica2018,Kovtun2019}), the linearized
 equations are:
 
 \medskip
@@ -132,18 +141,20 @@ $F^{\mu\nu}u_{\nu}=0$ and Ohm's law are covariant statements.
 \end{equation}
 
 \medskip
-\noindent\textbf{Israel--Stewart heat equation:}
+\noindent\textbf{BDNK heat equation:}
 \begin{equation}\label{eq:rel-91}
-  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
-  + \frac{\partial\Theta}{\partial t}
-  = \kappa_{T}\,\nabla^{2}\Theta + \beta\,w
-  + \tauq\,\beta\,\frac{\partial w}{\partial t},
+  \frac{\partial\Theta}{\partial t}
+  = \kappa_{T}\,\nabla^{2}\Theta + \beta\,w,
 \end{equation}
 where $\kappa_{T}$ is the thermal diffusivity.
-In the Navier--Stokes limit $\tauq\to 0$ this reduces to the
-classical equation~(\ref{eq:4-91}).  The $\tauq$-terms convert the
-parabolic heat equation into a \emph{hyperbolic} telegrapher-type
-equation, ensuring finite propagation speed for thermal signals.
+This is the standard first-order heat equation, identical in form to the
+classical equation~(\ref{eq:4-91}).  In the BDNK formalism, causality of
+thermal signal propagation is guaranteed not by a telegrapher-type
+modification but by the choice of hydrodynamic frame: the frame
+coefficients ensure that the coupled conservation-law system is strongly
+hyperbolic with all characteristic speeds bounded by~$c$
+\citep{Bemfica2018,Kovtun2019,HoultKovtun2020}.  No additional relaxation
+time $\tauq$ appears.
 
 \medskip
 \noindent\textbf{Continuity (incompressibility in relativistic
@@ -191,10 +202,8 @@ where $\nu_{\text{rel}}=\shearvisc\,c^{2}/\enthalpy_{0}$ is the
 relativistic kinematic viscosity.
 The normal-mode equations become:
 \begin{align}
-  \bigl(\tauq\,\sigma^{2}\nu_{\text{rel}}/d^{2}
-        + p_{1}\sigma+a^{2}-D^{2}\bigr)\,\Theta
-  &= \frac{\beta d^{2}}{\kappa_{T}}
-     \bigl(1+\tauq\,\sigma\,\nu_{\text{rel}}/d^{2}\bigr)\,W,
+  \bigl(p_{1}\sigma+a^{2}-D^{2}\bigr)\,\Theta
+  &= \frac{\beta d^{2}}{\kappa_{T}}\,W,
   \label{eq:rel-119}\\[4pt]
   (D^{2}-a^{2}-p_{2}\sigma)\,K
   &= -\frac{Bd}{\eta}\,DW,
@@ -272,9 +281,8 @@ a material interface.
 \subsection*{(a) \emph{Marginal-state equations}}
 
 Setting $\sigma=0$ (stationary marginal state) in
-equations~(\ref{eq:rel-119})--(\ref{eq:rel-121}), the
-Israel--Stewart terms drop out (the $\tauq$-terms are proportional
-to~$\sigma$), and we recover the \emph{same} structure as the
+equations~(\ref{eq:rel-119})--(\ref{eq:rel-121}),
+we recover the \emph{same} structure as the
 classical equations~(\ref{eq:4-128})--(\ref{eq:4-132}), but with
 $\Qrel$ replacing~$Q$ and the relativistic Rayleigh number
 \begin{equation}\label{eq:rel-Rarel-def}
@@ -302,10 +310,11 @@ $R\to\Rarel$ and $Q\to\Qrel$.
 
 \begin{relcorrection}
 The formal identity of the marginal-state equation with the
-classical one is a consequence of the Israel--Stewart terms
-vanishing at $\sigma=0$.  All relativistic corrections to the
-\emph{stationary} onset therefore enter exclusively through
-the modified dimensionless parameters $\Rarel$ and $\Qrel$.
+classical one holds because dissipative terms vanish at $\sigma=0$,
+regardless of whether one uses BDNK or Israel--Stewart dissipation.
+All relativistic corrections to the \emph{stationary} onset
+therefore enter exclusively through the modified dimensionless
+parameters $\Rarel$ and $\Qrel$.
 \end{relcorrection}
 
 As in the classical theory, $X=Z=0$ for stationary convection.
@@ -544,15 +553,12 @@ causal bound $v_{\text{phase}}\le c$.
   \]
 
 \item \textbf{Thermal modes.}
-  The Israel--Stewart heat equation~(\ref{eq:rel-91}) is a
-  telegrapher equation with characteristic speed
-  \[
-    v_{q}^{2}
-    = \frac{\kappa_{T}}{\tauq}
-    \le c^{2}
-    \quad\text{(guaranteed by the Israel--Stewart constraint
-    $\tauq\ge\kappa_{T}/c^{2}$).}  \quad\checkmark
-  \]
+  In the BDNK formalism, the heat equation~(\ref{eq:rel-91}) is
+  first-order (no telegrapher modification).  Causality of thermal
+  signal propagation is guaranteed by the BDNK frame coefficients,
+  which ensure strong hyperbolicity of the full conservation-law
+  system with all characteristic speeds $\le c$
+  \citep{Bemfica2018,Kovtun2019}.  \checkmark
 
 \item \textbf{Magnetosonic modes.}
   The fast magnetosonic speed in the relativistic theory is
@@ -566,9 +572,10 @@ causal bound $v_{\text{phase}}\le c$.
 
 \item \textbf{Overstable modes} (to be analyzed in \S\,46).
   For complex $\sigma=\sigma_{r}+i\sigma_{i}$, the group velocity
-  of the perturbation is bounded by $\max(\vA,\vf,v_{q})<c$.  The
-  Israel--Stewart relaxation times $\tauq$, $\taupi$ ensure that
-  the dispersion relation has no superluminal roots.
+  of the perturbation is bounded by $\max(\vA,\vf)<c$.  The
+  BDNK coupled inequalities on transport and frame coefficients
+  ensure that the dispersion relation has no superluminal roots
+  \citep{BemficaDisconziNoronhaKovtun2023}.
   \checkmark
 \end{enumerate}
 
@@ -582,18 +589,18 @@ manifestly causal.
 \subsection*{Summary of relativistic modifications (\S\S\,41--44)}
 
 \begin{enumerate}
-  \item The perturbation equations acquire the Israel--Stewart
-    heat-relaxation term ($\tauq$-dependent), converting the heat
-    equation from parabolic to hyperbolic.
+  \item The perturbation equations use the BDNK first-order causal
+    constitutive relations; the heat equation retains its standard
+    first-order form, with causality ensured by the BDNK frame
+    coefficients rather than by a telegrapher-type modification.
   \item All inertial terms replace $\rho_{0}$ with
     $\enthalpy_{0}/c^{2}$.
   \item The Chandrasekhar number becomes
     $\Qrel = Q\,\rdensity c^{2}/\enthalpy_{0}$, incorporating
     Alfv\'en-speed corrections.
-  \item For stationary convection ($\sigma=0$), the
-    Israel--Stewart terms vanish, and the eigenvalue problem is
-    formally identical to the classical one with
-    $(R,Q)\to(\Rarel,\Qrel)$.
+  \item For stationary convection ($\sigma=0$), dissipative terms
+    vanish, and the eigenvalue problem is formally identical to the
+    classical one with $(R,Q)\to(\Rarel,\Qrel)$.
   \item The $\pi^{2}Q$ law $\Rarel^{(c)}\to\pi^{2}\Qrel$
     persists for strong fields.
   \item The critical temperature gradient is reduced by a factor

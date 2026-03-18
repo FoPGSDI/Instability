@@ -1,5 +1,7 @@
 % rel_chapter_4_sec47-48.tex
 % Agent 19: Relativistic H-g directions and experiments (Ch IV §47-48)
+% BDNK conversion: IS relaxation replaced by BDNK first-order
+%   constitutive relations (Bemfica et al. 2018, Kovtun 2019)
 % Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
 
 \section{The case when \texorpdfstring{$\mathbf{H}$}{H} and
@@ -139,16 +141,18 @@ $\vA^{2}/c^{2}$ represent (i) the magnetic tension correction from the
 field momentum carried by Poynting flux, and (ii) the relativistic
 inertial correction replacing $\rho_{0}$ by $\rho_{\mathrm{eff}}$.
 
-\paragraph{Heat equation (Israel--Stewart causal form).}
-The classical diffusion equation $\nabla^{2}\Theta = -(\beta/\kappa)\,w$
-is replaced by the Israel--Stewart causal heat equation:
+\paragraph{Heat equation (BDNK causal form).}
+In the BDNK formalism, the heat equation retains its standard
+first-order form:
 \begin{equation}
-  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
-  + \frac{\partial\Theta}{\partial t}
+  \frac{\partial\Theta}{\partial t}
   = \kappa\,\nabla^{2}\Theta + \beta\,w\,,
-  \label{eq:rel-heat-IS}
+  \label{eq:rel-heat-BDNK}
 \end{equation}
-where $\tauq$ is the heat-flux relaxation time.  For the marginal state
+with no additional relaxation time.  Causality of thermal signal
+propagation is guaranteed by the BDNK frame coefficients, which
+ensure strong hyperbolicity of the full conservation-law system
+\citep{Bemfica2018,Kovtun2019}.  For the marginal state
 ($\partial/\partial t = 0$), this reduces identically to the classical
 form.
 
@@ -255,9 +259,9 @@ as required.
 Eq.~\eqref{eq:rel-overstable-shift} preserves causality: the group
 velocity of overstable perturbations satisfies
 $v_{g} = \partial\sigma/\partial k \leq \vA < c$ for all wave numbers
-$k$.  The Israel--Stewart heat relaxation time $\tauq$ ensures that
-thermal signals likewise propagate at finite speed
-$v_{\mathrm{th}} = \sqrt{\kappa/\tauq} \leq c$.
+$k$.  In the BDNK formalism, thermal signals propagate at finite speed
+bounded by~$c$, guaranteed by the coupled inequalities on transport
+and frame coefficients \citep{Bemfica2018,Kovtun2019}.
 \end{causalitycheck}
 
 %------------------------------------------------------------------
@@ -322,10 +326,10 @@ The relativistic correction to the Chandrasekhar number is of order
 $10^{-20}$ for the Nakagawa and Lehnert--Little experiments, many
 orders of magnitude below any conceivable experimental precision.  The
 classical theory as developed in \S\S\,41--48 is therefore exact for all
-practical purposes in the laboratory.  Similarly, the Israel--Stewart
-heat-relaxation time for mercury is $\tauq \sim 10^{-12}$~s, far below
-any hydrodynamic time scale of interest; the causal heat equation
-reduces to the classical Fourier law.
+practical purposes in the laboratory.  In the BDNK formalism, the
+frame corrections for mercury are of order $v^{2}/c^{2}\sim 10^{-20}$,
+far below any conceivable experimental precision; the causal first-order
+theory reduces to the classical Fourier--Navier--Stokes system.
 \end{relcorrection}
 
 The experimental confirmations described in \S\,48 --- the
@@ -482,17 +486,23 @@ treatment of:
   Magnetohydrodynamics}, W.\,A.\ Benjamin, New York, 1967.
 \end{enumerate}
 
-\noindent The Israel--Stewart causal dissipation theory that replaces
+\noindent The BDNK first-order causal dissipation theory that replaces
 the acausal Fourier--Navier--Stokes transport equations is developed in:
 \begin{enumerate}
 \setcounter{enumi}{2}
-\item W. \textsc{Israel} and J.\,M. \textsc{Stewart},
-  `Transient relativistic thermodynamics and kinetic theory',
-  \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{118}, 341--72 (1979).
+\item F.\,S. \textsc{Bemfica}, M.\,M. \textsc{Disconzi}, and
+  J. \textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous fluid
+  dynamics with gravity',
+  \emph{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
 
-\item W.~A. \textsc{Hiscock} and L. \textsc{Lindblom},
-  `Stability and causality in dissipative relativistic fluids',
-  \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{151}, 466--96 (1983).
+\item P. \textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable',
+  \emph{JHEP}\ \textbf{10}, 034 (2019).
+
+\item R.\,E. \textsc{Hoult} and P. \textsc{Kovtun},
+  `Stable and causal relativistic Navier--Stokes equations',
+  \emph{JHEP}\ \textbf{06}, 067 (2020).
 \end{enumerate}
 
 \paragraph{\S\,48, astrophysical applications.}
