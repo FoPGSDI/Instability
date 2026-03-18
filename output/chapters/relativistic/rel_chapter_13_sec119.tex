@@ -1,0 +1,436 @@
+% Relativistic Chapter XIII, §119: Jeans Gravitational Instability Criterion
+% Relativistic generalization of Chandrasekhar, Chapter XIII §119
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\section{Relativistic Jeans gravitational instability criterion}
+\label{sec:rel-13-119}
+
+%% ================================================================
+\subsection{Classical Jeans instability: a brief recapitulation}
+\label{sec:rel-13-119a}
+
+In Chapter~XIII, \S119 of the non-relativistic treatment,
+Chandrasekhar derives the gravitational instability of an infinite
+homogeneous medium at rest---Jeans's instability.  In the Newtonian
+theory the perturbation equations for the velocity $\mathbf{u}$,
+the density fluctuation $\delta\rho$, and the gravitational
+potential fluctuation $\delta\mathfrak{B}$ are
+\begin{equation}
+\label{eq:rel-13-79}
+  \rho\frac{\partial\mathbf{u}}{\partial t}
+  = -\operatorname{grad}\delta p
+    + \rho\,\operatorname{grad}\delta\mathfrak{B},
+\end{equation}
+\begin{equation}
+\label{eq:rel-13-80}
+  \frac{\partial}{\partial t}\delta\rho
+  = -\rho\,\operatorname{div}\mathbf{u},
+\end{equation}
+\begin{equation}
+\label{eq:rel-13-81}
+  \nabla^{2}\delta\mathfrak{B} = -4\pi G\,\delta\rho.
+\end{equation}
+With the adiabatic relation $\delta p = \cs^{2}\,\delta\rho$
+(where $\cs^{2}=\gamma p/\rho$ is the squared sound speed), one
+obtains the dispersion relation
+\begin{equation}
+\label{eq:rel-13-87-cl}
+  \omega^{2} = \cs^{2}\,k^{2} - 4\pi G\rho.
+\end{equation}
+The Jeans wavenumber $k_{J}$ and Jeans length $\lambda_{J}$ are
+\begin{equation}
+\label{eq:jeans-classical}
+  k_{J}^{2} = \frac{4\pi G\rho}{\cs^{2}},
+  \qquad
+  \lambda_{J}
+  = \frac{2\pi}{k_{J}}
+  = \cs\sqrt{\frac{\pi}{G\rho}}\,.
+\end{equation}
+Modes with $k < k_{J}$ (wavelengths exceeding $\lambda_{J}$)
+are gravitationally unstable: the self-gravity of the density
+perturbation overwhelms the restoring pressure force and the
+perturbation grows exponentially.
+
+%% ================================================================
+\subsection{Why a relativistic treatment is necessary}
+\label{sec:rel-13-119b}
+
+In general relativity, the source of gravity is not merely mass
+density but energy density---and, crucially, \emph{pressure itself
+gravitates}.  This has two profound consequences for Jeans
+instability:
+
+\begin{enumerate}
+\item \textbf{Inertia of energy.}  The gravitating mass density
+  is replaced by the relativistic enthalpy density
+  $\enthalpy = (\varepsilon + p)/c^{2}$, where $\varepsilon$ is
+  the total energy density (including rest-mass energy) and $p$ is
+  the pressure.  This enhances the gravitational source for any
+  medium in which the pressure is non-negligible compared with the
+  energy density (e.g.\ radiation-dominated plasmas, neutron-star
+  interiors, the early universe).
+
+\item \textbf{Pressure as a source of gravity.}  In the Newtonian
+  theory, pressure enters only as a \emph{restoring} force opposing
+  gravitational collapse.  In general relativity, pressure also
+  appears in the gravitational source term.  The Tolman--Oppenheimer
+  --Volkoff equation, for instance, contains the combination
+  $(\varepsilon + 3p)/(2c^{2})$ as the active gravitational mass
+  density, reflecting the trace of the energy-momentum tensor.
+  When the pressure is large, gravity is \emph{enhanced} and the
+  medium becomes more susceptible to collapse---the opposite of the
+  na\"{\i}ve expectation from Newtonian intuition.
+\end{enumerate}
+
+This is the key Chandrasekhar insight: \textbf{in general
+relativity, pressure destabilises rather than stabilises}.  At
+sufficiently high densities, no amount of pressure can prevent
+gravitational collapse---the physics underlying the Chandrasekhar
+mass limit for white dwarfs and the Tolman--Oppenheimer--Volkoff
+limit for neutron stars.
+
+Relativistic Jeans instability is directly relevant to:
+\begin{itemize}
+\item structure formation in the radiation-dominated early
+  universe, where $p = \varepsilon/3$;
+\item neutron-star interiors, where $p/\varepsilon \sim 0.1$--$0.3$;
+\item quark--gluon plasmas produced in heavy-ion collisions.
+\end{itemize}
+
+%% ================================================================
+\subsection{Relativistic perturbation equations}
+\label{sec:rel-13-119c}
+
+We work in a flat Friedmann-like background (Minkowski spacetime
+perturbed by weak self-gravity) with signature $(-,+,+,+)$ and
+keep $c$ explicit throughout.  The background is a homogeneous
+perfect fluid at rest with energy density $\varepsilon$, pressure
+$p$, and four-velocity $u^{\mu} = (c, 0, 0, 0)$.  The
+energy-momentum tensor is
+\begin{equation}
+\label{eq:rel-13-Tmunu}
+  T^{\mu\nu}
+  = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}u^{\nu}
+    + p\,g^{\mu\nu}.
+\end{equation}
+
+In the weak-field, slow-motion limit the relativistic analogue of
+Poisson's equation~\eqref{eq:rel-13-81} is obtained from the
+linearised Einstein equations.  The $00$-component of the
+Einstein equation gives
+\begin{equation}
+\label{eq:rel-13-poisson-rel}
+  \nabla^{2}\delta\Phi
+  = -4\pi G\,\frac{\delta\varepsilon + 3\,\delta p}{2\,c^{2}}\,,
+\end{equation}
+where $\delta\Phi$ is the Newtonian-limit gravitational potential.
+For a perfect fluid with adiabatic perturbations $\delta p =
+\cs^{2}\,\delta\varepsilon/c^{2}$ (since $\cs^{2} = (\partial
+p/\partial\varepsilon)_{s}\,c^{2}$ in the relativistic convention
+of~RELATIVISTIC\_CONVENTIONS.md), this becomes
+\begin{equation}
+\label{eq:rel-13-poisson-rel2}
+  \nabla^{2}\delta\Phi
+  = -\frac{4\pi G}{2\,c^{2}}
+    \bigl(1 + 3\,\cs^{2}/c^{2}\bigr)\,\delta\varepsilon\,.
+\end{equation}
+
+Simultaneously, the relativistic Euler equation for the
+perturbations reads (in the rest frame of the background fluid)
+\begin{equation}
+\label{eq:rel-13-euler-rel}
+  \frac{\varepsilon + p}{c^{2}}\,
+  \frac{\partial\mathbf{u}}{\partial t}
+  = -\operatorname{grad}\delta p
+    + \frac{\varepsilon + p}{c^{2}}\,
+      \operatorname{grad}\delta\Phi\,,
+\end{equation}
+and the energy conservation equation is
+\begin{equation}
+\label{eq:rel-13-cont-rel}
+  \frac{\partial}{\partial t}\delta\varepsilon
+  = -(\varepsilon + p)\,\operatorname{div}\mathbf{u}\,.
+\end{equation}
+Note that the inertia in eq.~\eqref{eq:rel-13-euler-rel} is the
+enthalpy density $\enthalpy = (\varepsilon + p)/c^{2}$, not the
+rest-mass density $\rho$.  Likewise, eq.~\eqref{eq:rel-13-cont-rel}
+involves $(\varepsilon + p)$ rather than $\rho$ in the source term.
+
+%% ================================================================
+\subsection{Relativistic dispersion relation}
+\label{sec:rel-13-119d}
+
+Taking the divergence of eq.~\eqref{eq:rel-13-euler-rel},
+substituting eq.~\eqref{eq:rel-13-cont-rel} and
+eq.~\eqref{eq:rel-13-poisson-rel2}, and seeking plane-wave
+solutions $\delta\varepsilon \propto
+e^{i(\mathbf{k}\cdot\mathbf{x} - \omega t)}$, we obtain the
+\textbf{relativistic Jeans dispersion relation}:
+\begin{equation}
+\label{eq:rel-13-dispersion}
+\boxed{
+  \omega^{2}
+  = \cs^{2}\,k^{2}
+    - \frac{4\pi G}{c^{2}}\,
+      (\varepsilon + p)\,
+      \frac{1 + 3\,\cs^{2}/c^{2}}{2}\,.
+}
+\end{equation}
+
+To make the structure transparent, define the relativistic
+enthalpy density $\enthalpy \equiv (\varepsilon + p)/c^{2}$ and
+the ``active gravitational factor''
+$\mathcal{A} \equiv (1 + 3\,\cs^{2}/c^{2})/2$.  Then:
+\begin{equation}
+\label{eq:rel-13-dispersion-compact}
+  \omega^{2}
+  = \cs^{2}\,k^{2}
+    - 4\pi G\,\enthalpy\,\mathcal{A}\,.
+\end{equation}
+In the Newtonian limit $p \ll \varepsilon \approx \rho c^{2}$,
+$\cs^{2} \ll c^{2}$, we recover the classical result~\eqref{eq:rel-13-87-cl}:
+\begin{equation}
+  \omega^{2}
+  \;\xrightarrow{\;c\to\infty\;}
+  \;\cs^{2}\,k^{2} - 4\pi G\rho\,.
+\end{equation}
+
+%% ================================================================
+\subsection{Relativistic Jeans wavenumber, length, and mass}
+\label{sec:rel-13-119e}
+
+Instability ($\omega^{2} < 0$) occurs for all wavenumbers
+$k < k_{J,\mathrm{rel}}$, where
+\begin{equation}
+\label{eq:rel-13-kJ}
+\boxed{
+  k_{J,\mathrm{rel}}^{2}
+  = \frac{4\pi G}{c^{2}\,\cs^{2}}\,
+    (\varepsilon + p)\,
+    \frac{1 + 3\,\cs^{2}/c^{2}}{2}\,.
+}
+\end{equation}
+Equivalently,
+\begin{equation}
+\label{eq:rel-13-kJ-expanded}
+  k_{J,\mathrm{rel}}^{2}
+  = \frac{4\pi G\,\enthalpy}{\cs^{2}}\,
+    \Bigl(
+      1 + \frac{3\,\cs^{2}}{2\,c^{2}}
+      + \mathcal{O}\bigl(\cs^{4}/c^{4}\bigr)
+    \Bigr).
+\end{equation}
+Comparing with the classical expression
+$k_{J}^{2} = 4\pi G\rho/\cs^{2}$, we see two relativistic
+enhancements:
+\begin{enumerate}
+\item $\rho \to \enthalpy = (\varepsilon + p)/c^{2}$: the inertia
+  of internal energy and pressure increases the effective
+  gravitating mass;
+\item the factor $\mathcal{A} = (1 + 3\cs^{2}/c^{2})/2 > 1/2$:
+  pressure enters the gravitational source term,
+  \emph{further enhancing the effective gravity}.
+\end{enumerate}
+Both effects act in the same direction: they
+\textbf{increase} $k_{J}$, meaning instability sets in at
+\textbf{shorter} wavelengths than Newtonian theory predicts.
+
+The relativistic Jeans length and Jeans mass are
+\begin{equation}
+\label{eq:rel-13-lambdaJ}
+  \lambda_{J,\mathrm{rel}}
+  = \frac{2\pi}{k_{J,\mathrm{rel}}}
+  = \cs\,
+    \sqrt{
+      \frac{\pi\,c^{2}}
+           {G\,(\varepsilon + p)\,\mathcal{A}}
+    }
+  \;<\; \lambda_{J,\mathrm{classical}}\,,
+\end{equation}
+\begin{equation}
+\label{eq:rel-13-MJ}
+  M_{J,\mathrm{rel}}
+  = \frac{4\pi}{3}\,\enthalpy\,
+    \Bigl(\frac{\lambda_{J,\mathrm{rel}}}{2}\Bigr)^{\!3}
+  \;<\; M_{J,\mathrm{classical}}\,.
+\end{equation}
+The inequalities hold because the relativistic corrections to
+gravity are always positive for physically reasonable equations of
+state ($\varepsilon > 0$, $p \geq 0$).
+
+\paragraph{Key physical consequence.}
+In general relativity the Jeans mass is \emph{smaller} than its
+Newtonian counterpart.  Put differently, lumps of matter that
+would be Jeans-stable in Newtonian gravity are already unstable
+when relativistic gravity is properly accounted for.  This is the
+\emph{pressure-destabilisation} effect: the very pressure that
+supports the medium against collapse simultaneously contributes to
+the gravitational source, weakening the net restoring force.
+
+%% ================================================================
+\subsection{The pressure-destabilisation mechanism in detail}
+\label{sec:rel-13-119f}
+
+To see why pressure aids collapse in general relativity, consider
+the energy argument of Chandrasekhar.  A perturbation of
+wavenumber $k$ involves:
+\begin{itemize}
+\item \textbf{Pressure work (restoring):} proportional to
+  $\cs^{2}\,k^{2}$, independent of $G$.
+\item \textbf{Gravitational energy release (destabilising):}
+  proportional to $4\pi G\,\enthalpy\,\mathcal{A}/c^{2}$.
+\end{itemize}
+In the Newtonian limit $\mathcal{A} \to 1/2$ and $\enthalpy \to \rho$,
+so the gravitational term is $\sim 4\pi G\rho$, and only the
+\emph{mass} contributes to gravity.  In the relativistic case:
+\begin{equation}
+  4\pi G\,\enthalpy\,\mathcal{A}
+  = \frac{4\pi G}{c^{2}}\,
+    \frac{(\varepsilon + p)(1 + 3\cs^{2}/c^{2})}{2}\,,
+\end{equation}
+where the pressure appears \emph{both} in $\enthalpy$ (inertial
+contribution) \emph{and} in $\mathcal{A}$ (active gravitational
+contribution).  When $p$ is increased at fixed $\varepsilon$:
+\begin{enumerate}
+\item the restoring force increases as $\cs^{2}k^{2}$, but only
+  linearly in the sound speed;
+\item the gravitational source increases through both $\enthalpy$
+  and $\mathcal{A}$, and for a stiff equation of state
+  ($\cs^{2} \lesssim c^{2}$) this increase can dominate.
+\end{enumerate}
+The net result is that the critical wavenumber $k_{J,\mathrm{rel}}$
+grows with increasing pressure-to-energy ratio $p/\varepsilon$,
+and the Jeans mass decreases.  This is the mechanism behind the
+Chandrasekhar and Tolman--Oppenheimer--Volkoff mass limits.
+
+%% ================================================================
+\subsection{Causality constraints}
+\label{sec:rel-13-119g}
+
+The relativistic treatment imposes strict constraints on
+perturbation propagation that have no classical analogue:
+
+\begin{enumerate}
+\item \textbf{Perturbation speed.}  Sound waves---the restoring
+  mechanism against gravitational collapse---propagate at
+  $\cs$, which must satisfy the \emph{causality bound}
+  \begin{equation}
+  \label{eq:rel-13-causality-cs}
+    \cs^{2}
+    = \biggl(\frac{\partial p}{\partial\varepsilon}\biggr)_{\!s}
+    \leq c^{2}\,.
+  \end{equation}
+  An equation of state violating this bound would permit
+  superluminal signal propagation and is unphysical.  This places
+  an upper limit on the stiffness of matter and hence on the
+  maximum sound speed available for gravitational support.
+
+\item \textbf{Gravitational response.}  In general relativity,
+  changes in the gravitational field propagate at the speed of
+  light $c$, not instantaneously as in Newtonian gravity.  The
+  gravitational potential perturbation $\delta\Phi$ satisfies a
+  wave equation with speed $c$.  In the quasi-static limit used
+  in the derivation above (wavelengths much smaller than the
+  Hubble radius), retardation effects are negligible and the
+  Poisson-equation form~\eqref{eq:rel-13-poisson-rel} is valid.
+  For cosmological-scale perturbations, the full linearised
+  Einstein equations must be used, introducing additional
+  relativistic corrections.
+
+\item \textbf{Maximum sound speed and minimum Jeans mass.}
+  Setting $\cs = c$ (the stiffest causal equation of state) in
+  eq.~\eqref{eq:rel-13-kJ} gives the \emph{maximum possible}
+  Jeans wavenumber:
+  \begin{equation}
+  \label{eq:rel-13-kJ-max}
+    k_{J,\max}^{2}
+    = \frac{4\pi G\,(\varepsilon + p)}{c^{4}}\,
+      \frac{1 + 3}{2}
+    = \frac{8\pi G\,(\varepsilon + p)}{c^{4}}\,,
+  \end{equation}
+  and hence the minimum Jeans mass below which no causal equation
+  of state can stabilise a self-gravitating configuration.
+\end{enumerate}
+
+%% ================================================================
+\subsection{Limiting cases}
+\label{sec:rel-13-119h}
+
+\paragraph{(a) Non-relativistic limit.}
+For $p \ll \varepsilon \approx \rho c^{2}$ and
+$\cs^{2} \ll c^{2}$:
+\begin{equation}
+  k_{J,\mathrm{rel}}^{2}
+  \to \frac{4\pi G\rho}{\cs^{2}}
+  = k_{J}^{2}\,,
+  \qquad
+  \omega^{2}
+  \to \cs^{2}k^{2} - 4\pi G\rho\,,
+\end{equation}
+recovering the Jeans criterion of \S\ref{sec:rel-13-119a}.
+
+\paragraph{(b) Ultra-relativistic (radiation-dominated) limit.}
+For a radiation fluid, $p = \varepsilon/3$ and
+$\cs^{2} = c^{2}/3$:
+\begin{equation}
+\label{eq:rel-13-radiation}
+  k_{J,\mathrm{rad}}^{2}
+  = \frac{4\pi G}{c^{4}/3}\,
+    \frac{4\varepsilon/3 \cdot (1+1)}{2}
+  = \frac{4\pi G}{c^{4}/3}\,\frac{4\varepsilon}{3}
+  = \frac{16\pi G\varepsilon}{c^{4}}\,,
+\end{equation}
+and the Jeans length is
+$\lambda_{J,\mathrm{rad}} = (c/2)\sqrt{\pi/(G\varepsilon/c^{2})}$.
+The numerical factor differs from the Newtonian result by a factor
+of order unity, but the important point is that $\varepsilon$
+(not $\rho$) is the gravitating source, and the effective gravity
+is enhanced by the radiation pressure.
+
+\paragraph{(c) Maximally stiff equation of state.}
+For $\cs = c$ (the causal limit, e.g.\ a free scalar field),
+with $p = \varepsilon$:
+\begin{equation}
+  k_{J,\max}^{2}
+  = \frac{4\pi G \cdot 2\varepsilon}{c^{2}\cdot c^{2}}
+    \cdot \frac{1+3}{2}
+  = \frac{16\pi G\varepsilon}{c^{4}}\,.
+\end{equation}
+This coincides with the radiation result, a reflection of the fact
+that both the causal-limit fluid and radiation give the largest
+possible gravitational source at given $\varepsilon$.
+
+%% ================================================================
+\subsection{Summary of relativistic Jeans criterion}
+\label{sec:rel-13-119-summary}
+
+The main results of this section are:
+
+\begin{enumerate}
+\item The \textbf{relativistic Jeans dispersion relation}
+  is eq.~\eqref{eq:rel-13-dispersion}:
+  \[
+    \omega^{2}
+    = \cs^{2}k^{2}
+      - \frac{4\pi G(\varepsilon+p)}{c^{2}}\,
+        \frac{1 + 3\cs^{2}/c^{2}}{2}\,.
+  \]
+
+\item The \textbf{relativistic Jeans wavenumber}
+  is eq.~\eqref{eq:rel-13-kJ}:
+  \[
+    k_{J,\mathrm{rel}}^{2}
+    = \frac{4\pi G(\varepsilon+p)}{\cs^{2}\,c^{2}}\,
+      \frac{1 + 3\cs^{2}/c^{2}}{2}\,.
+  \]
+
+\item \textbf{Pressure destabilises} in general relativity:
+  $M_{J,\mathrm{rel}} < M_{J,\mathrm{classical}}$ because
+  pressure contributes to the gravitational source.  This is the
+  physical mechanism behind the Chandrasekhar and
+  Tolman--Oppenheimer--Volkoff mass limits.
+
+\item \textbf{Causality constraint}: perturbations propagate at
+  $\cs \leq c$; the maximum Jeans wavenumber occurs at $\cs = c$
+  and sets the minimum mass that can be gravitationally stable.
+\end{enumerate}
