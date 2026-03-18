@@ -1,0 +1,513 @@
+% =============================================================
+%  Relativistic modification of Chapter VII, §71
+%  Narrow gap Couette solutions — relativistic formulation
+%
+%  Original: Chandrasekhar, §71 "The solution for the case of a
+%            narrow gap when the marginal state is stationary"
+%  This file extends the analysis to a relativistic fluid using
+%  the Israel–Stewart causal dissipation framework.
+%
+%  Key modification: the inertia ρ is replaced by (ε+p)/c² in
+%  the Taylor number definition and the perturbation equations,
+%  yielding Ta_rel and modified critical Taylor numbers.
+% =============================================================
+
+\section{Narrow gap Couette solutions for the marginal stationary
+state --- relativistic}\label{sec:rel-71}
+
+In \S\,\ref{sec:7-71} we derived the equations governing the onset of
+instability in the narrow-gap limit and obtained the critical Taylor
+number~$T_{c}$ as a function of~$\mu = \Omega_{2}/\Omega_{1}$.  We now
+extend these results to a relativistic fluid in which the effective
+inertia is $\enthalpy/c^{2} = (\edensity + p)/c^{2}$ rather than the
+rest-mass density~$\rdensity$ alone.  As in the preceding relativistic
+sections we keep~$c$ explicit so that every correction can be traced to
+its physical origin; the non-relativistic limit is recovered by
+letting $c \to \infty$.
+
+Throughout this section the notation of \S\,\ref{sec:7-71} is retained:
+$d = R_{2} - R_{1}$ is the gap width,
+$\zeta = (r - R_{1})/d$,
+$a = k\,d$ is the dimensionless wave number, and
+$D = \dd/\dd\zeta$.
+
+%--------------------------------------------------------------
+\subsection{Relativistic perturbation equations in the narrow gap}
+\label{sec:rel-71-equations}
+%--------------------------------------------------------------
+
+For a relativistic perfect fluid in circular Couette flow the
+energy-momentum tensor is
+\begin{equation}
+\label{eq:rel-7-191}
+\emt = (\edensity + p)\,\frac{u^{\mu}\,u^{\nu}}{c^{2}} + p\,\metric.
+\end{equation}
+In the narrow-gap approximation the curvature terms are negligible
+and the background angular velocity profile retains the classical form
+\begin{equation}
+\label{eq:rel-7-192}
+\Omega(\zeta)
+  = \Omega_{1}\bigl[1 - (1-\mu)\,\zeta\bigr],
+\end{equation}
+but the linearised momentum equations acquire the replacement
+$\rdensity \to \enthalpy/c^{2}$ in every inertial term.
+Defining the \emph{relativistic kinematic viscosity}
+\begin{equation}
+\label{eq:rel-7-193}
+\nu_{\mathrm{rel}}
+  = \frac{\shearvisc}{\enthalpy/c^{2}}
+  = \frac{\shearvisc\,c^{2}}{\edensity + p},
+\end{equation}
+where $\shearvisc$ is the dynamic shear viscosity, the narrow-gap
+perturbation equations~\eqref{eq:7-196}--\eqref{eq:7-197} become
+\begin{equation}
+\label{eq:rel-7-196}
+\bigl(D^{2} - a^{2} - \sigma_{\mathrm{rel}}\bigr)
+\bigl(D^{2} - a^{2}\bigr)\,u
+  = (1 + \alpha\,\zeta)\,v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-197}
+\bigl(D^{2} - a^{2} - \sigma_{\mathrm{rel}}\bigr)\,v
+  = -T_{\mathrm{rel}}\,a^{2}\,u,
+\end{equation}
+with
+\begin{equation}
+\label{eq:rel-7-198}
+\sigma_{\mathrm{rel}} = \frac{p\,d^{2}}{\nu_{\mathrm{rel}}}
+\end{equation}
+and the \emph{relativistic Taylor number}
+\begin{equation}
+\label{eq:rel-7-199}
+\boxed{\;
+T_{\mathrm{rel}}
+  = \frac{4\,A\,\Omega_{1}}{\nu_{\mathrm{rel}}^{\,2}}\,d^{4}
+  = \frac{4\,A\,\Omega_{1}\,(\edensity+p)^{2}}
+         {\shearvisc^{2}\,c^{4}}\,d^{4}.
+\;}
+\end{equation}
+Comparing with the classical Taylor number~\eqref{eq:7-198},
+\begin{equation}
+\label{eq:rel-7-200}
+T_{\mathrm{rel}}
+  = T_{\mathrm{cl}}
+    \left(\frac{\edensity + p}{\rdensity\,c^{2}}\right)^{\!2}
+  = T_{\mathrm{cl}}
+    \left(1 + \frac{\edensity + p - \rdensity c^{2}}
+                    {\rdensity\,c^{2}}\right)^{\!2}.
+\end{equation}
+For a non-relativistic fluid $\edensity + p \approx \rdensity c^{2}$
+and $T_{\mathrm{rel}} \to T_{\mathrm{cl}}$ as expected.  The
+correction is always \emph{positive}: thermal and pressure
+contributions to the inertia raise the effective Taylor number,
+making the flow \emph{more unstable} at a given angular velocity.
+
+\begin{relcorrection}
+The classical Taylor number
+$T = 4A\Omega_{1}d^{4}/\nu^{2}$
+is replaced by
+$T_{\mathrm{rel}} = 4A\Omega_{1}d^{4}/\nu_{\mathrm{rel}}^{2}$,
+where $\nu_{\mathrm{rel}} = \shearvisc\,c^{2}/(\edensity+p)$.
+The ratio $T_{\mathrm{rel}}/T_{\mathrm{cl}}
+= [(\edensity+p)/(\rdensity c^{2})]^{2}$ quantifies the
+relativistic enhancement of centrifugal instability.
+\end{relcorrection}
+
+The parameter $\alpha = -(1-\mu)$ is \emph{unchanged} because it
+characterises the angular-velocity profile, not the fluid inertia.
+
+The boundary conditions remain
+\begin{equation}
+\label{eq:rel-7-201}
+u = Du = v = 0
+\quad\text{for } \zeta = 0 \text{ and } 1.
+\end{equation}
+
+%--------------------------------------------------------------
+\subsection{Characteristic value problem: the relativistic
+critical Taylor number}\label{sec:rel-71-eigenvalue}
+%--------------------------------------------------------------
+
+Setting $\sigma_{\mathrm{rel}} = 0$ (stationary marginal state)
+the equations to be solved are identical in \emph{form} to the
+classical equations~\eqref{eq:7-201}--\eqref{eq:7-202}, with
+$T_{\mathrm{cl}}$ replaced everywhere by~$T_{\mathrm{rel}}$:
+\begin{equation}
+\label{eq:rel-7-202}
+(D^{2}-a^{2})^{2}\,u = (1+\alpha\,\zeta)\,v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-203}
+(D^{2}-a^{2})\,v = -T_{\mathrm{rel}}\,a^{2}\,u.
+\end{equation}
+The sine-series expansion $v = \sum_{m} C_{m}\sin m\pi\zeta$ and
+the subsequent Galerkin procedure of \S\,\ref{sec:7-71}\,(a) carry
+over verbatim; the secular determinant~\eqref{eq:7-213} now
+determines $T_{\mathrm{rel}}$ instead of~$T_{\mathrm{cl}}$.
+
+\paragraph{First approximation.}
+The $(1,1)$-element of the secular matrix yields the relativistic
+analogue of equation~\eqref{eq:7-215}:
+\begin{equation}
+\label{eq:rel-7-215}
+T_{\mathrm{rel}}
+  = \frac{2}{2+\alpha}\,
+    \frac{(\pi^{2}+a^{2})^{3}}{a^{2}
+      \bigl[1
+       - 16a^{2}\pi^{2}\cosh^{2}\!\tfrac{1}{2}a
+         /(\pi^{2}+a^{2})^{2}(\sinh a + a)\bigr]}.
+\end{equation}
+Since the right-hand side is identical to the classical expression
+(differing only in the interpretation of~$T$), the \emph{critical
+relativistic Taylor number} is
+\begin{equation}
+\label{eq:rel-7-216}
+\boxed{\;
+T_{c}^{\mathrm{rel}}
+  = \frac{3430}{1+\mu}
+    \left(\frac{\edensity+p}{\rdensity\,c^{2}}\right)^{\!2},
+  \qquad
+  a_{\min} = 3{\cdot}12.
+\;}
+\end{equation}
+Equivalently, in terms of the classical critical Taylor number
+$T_{c}^{\mathrm{cl}} = 3430/(1+\mu)$, we have
+\begin{equation}
+\label{eq:rel-7-217}
+\frac{T_{c}^{\mathrm{rel}}}{T_{c}^{\mathrm{cl}}}
+  = \left(\frac{\edensity+p}{\rdensity\,c^{2}}\right)^{\!2}
+  = 1 + \frac{2(\edensity + p - \rdensity c^{2})}{\rdensity c^{2}}
+      + \order{c^{-4}}.
+\end{equation}
+
+\begin{relcorrection}
+The critical Taylor number for the onset of instability is
+\emph{raised} by the factor $[(\edensity+p)/(\rdensity c^{2})]^{2}$
+relative to the classical value.  The wave number at onset is
+unaffected to leading relativistic order.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{Numerical results: $T_{c}^{\mathrm{rel}}$ versus
+$T_{c}^{\mathrm{cl}}$}\label{sec:rel-71-numerical}
+%--------------------------------------------------------------
+
+Because the secular determinant~\eqref{eq:7-213} is structurally
+unchanged—only the meaning of~$T$ differs—all classical numerical
+results of Table~\ref{tab:XXXII} and Table~\ref{tab:XXXIII} carry
+over to the relativistic case upon multiplication by the
+enthalpy-inertia factor.  We define the \emph{relativistic
+correction parameter}
+\begin{equation}
+\label{eq:rel-7-218}
+\xi \;=\; \frac{\edensity + p}{\rdensity\,c^{2}} - 1
+      \;=\; \frac{\edensity + p - \rdensity c^{2}}{\rdensity\,c^{2}},
+\end{equation}
+so that
+\begin{equation}
+\label{eq:rel-7-219}
+T_{c}^{\mathrm{rel}}
+  = T_{c}^{\mathrm{cl}}\,(1+\xi)^{2}
+  \approx T_{c}^{\mathrm{cl}}
+          \bigl(1 + 2\xi + \xi^{2}\bigr).
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{Ratio of relativistic to classical critical Taylor numbers
+for representative values of the correction parameter~$\xi$.}
+\label{tab:rel-XXXII}
+\begin{tabular}{ccl}
+\hline
+$\xi$ & $(1+\xi)^{2}$ &
+  Typical physical regime \\
+\hline
+$10^{-10}$ & $\approx 1$ &
+  Terrestrial laboratory fluid \\
+$10^{-5}$ & $1 + 2\times 10^{-5}$ &
+  White-dwarf interior \\
+$10^{-2}$ & $1{\cdot}0201$ &
+  Neutron-star outer core \\
+$0{\cdot}1$ & $1{\cdot}21$ &
+  Hot neutron-star interior \\
+$0{\cdot}5$ & $2{\cdot}25$ &
+  Quark--gluon plasma \\
+$1{\cdot}0$ & $4{\cdot}0$ &
+  Ultra-relativistic limit ($p \sim \edensity$) \\
+\hline
+\end{tabular}
+\end{table}
+
+The table shows that the relativistic correction is negligible for
+terrestrial fluids but can be substantial in astrophysical settings
+where~$p/\edensity$ is not small.
+
+The variation with~$\mu$ remains identical to the classical case at
+every order of approximation.  In particular the successive Galerkin
+approximations converge at the same rate because the matrix
+structure of the secular equation is unchanged; only the diagonal
+and off-diagonal entries are rescaled uniformly by the
+enthalpy-inertia factor.  The coefficients $\mathscr{C}_{m}$ listed
+in Table~\ref{tab:XXXIII} are therefore also unchanged.
+
+%--------------------------------------------------------------
+\subsection{Alternative method of solution}\label{sec:rel-71-alternative}
+%--------------------------------------------------------------
+
+The alternative formulation of \S\,\ref{sec:7-71}\,(c), in which
+$u$ is eliminated between equations~\eqref{eq:rel-7-202}
+and~\eqref{eq:rel-7-203} to obtain a sixth-order equation for~$v$
+alone, carries over to the relativistic case with no modification
+beyond the substitution $T_{\mathrm{cl}} \to T_{\mathrm{rel}}$.
+The resulting equation is
+\begin{equation}
+\label{eq:rel-7-220}
+(D^{2}-a^{2})^{3}\,v = -T_{\mathrm{rel}}\,a^{2}(1+\alpha\,\zeta)\,v,
+\end{equation}
+with boundary conditions
+\begin{equation}
+\label{eq:rel-7-221}
+v = (D^{2}-a^{2})\,v = D(D^{2}-a^{2})\,v = 0
+\quad\text{for } \zeta = 0 \text{ and } 1.
+\end{equation}
+
+The secular equation~\eqref{eq:7-228}, with~$T$ interpreted as
+$T_{\mathrm{rel}}$, again yields numerical values that are
+`practically indistinguishable' from those of the first method,
+exactly as in the classical theory.  Explicitly, for
+$\mu = -0{\cdot}5$ and $a = 3{\cdot}20$:
+\begin{equation}
+\label{eq:rel-7-230}
+T_{\mathrm{rel}} = (1+\xi)^{2} \times
+\begin{cases}
+6417{\cdot}8 & \text{(6th-order method, 3rd approximation)},\\
+6417{\cdot}1 & \text{(4th-order method, 3rd approximation)}.
+\end{cases}
+\end{equation}
+The near-equality of the two methods persists because the
+relativistic modification is a uniform multiplicative rescaling
+that does not alter the matrix structure or the rate of convergence
+of the Galerkin expansion.
+
+%--------------------------------------------------------------
+\subsection{Approximate solution for $\mu \to 1$}\label{sec:rel-71-approx}
+%--------------------------------------------------------------
+
+The perturbation expansion developed in
+\S\,\ref{sec:7-71}\,(d)---which exploits the proximity of the
+narrow-gap Couette problem to the B\'enard problem when
+$\mu \to 1$---generalises in a straightforward manner.
+
+Introducing the shifted coordinate $x = \zeta - \tfrac{1}{2}$ and
+\begin{equation}
+\label{eq:rel-7-234}
+\lambda_{\mathrm{rel}}
+  = \tfrac{1}{2}\,T_{\mathrm{rel}}\,a^{2}(1+\mu),
+\qquad
+\epsilon = -\frac{2(1-\mu)}{1+\mu},
+\end{equation}
+equation~\eqref{eq:rel-7-220} becomes
+\begin{equation}
+\label{eq:rel-7-235}
+(D^{2}-a^{2})^{3}\,v
+  = -\lambda_{\mathrm{rel}}\,(1+\epsilon\,x)\,v.
+\end{equation}
+This is \emph{identical in form} to the classical
+equation~\eqref{eq:7-233}: only the characteristic value
+$\lambda_{\mathrm{rel}}$ carries the relativistic content through
+its dependence on~$T_{\mathrm{rel}}$.
+
+The perturbation theory then proceeds exactly as before.  The
+zero-order characteristic value is
+$\lambda_{0} = R_{c}\,a^{2} = 1708\,a^{2}$ (for $a = 3{\cdot}117$),
+the first-order correction vanishes ($\lambda^{(1)} = 0$) by the
+parity argument, and the second-order correction is given by
+equation~\eqref{eq:7-258}.  Consequently,
+\begin{equation}
+\label{eq:rel-7-263}
+\boxed{\;
+T_{c}^{\mathrm{rel}}
+  = \frac{3416}{1+\mu}
+    \left(\frac{\edensity+p}{\rdensity\,c^{2}}\right)^{\!2}
+    \!\left\{1 - 7{\cdot}61 \times 10^{-2}
+      \left(\frac{1-\mu}{1+\mu}\right)^{\!2}\right\}.
+\;}
+\end{equation}
+The relativistic correction enters as a \emph{multiplicative
+prefactor} that does not disturb the~$\mu$-dependent structure of
+the perturbation series.  The reason is clear: the enthalpy-inertia
+factor $(\edensity+p)/c^{2}$ is spatially uniform in the narrow-gap
+limit and therefore commutes with the differential operators in the
+eigenvalue problem.
+
+\begin{relcorrection}
+For $\mu \to 1$ the approximate formula
+$T_{c}^{\mathrm{cl}} = 3416/(1+\mu)$
+generalises to
+$T_{c}^{\mathrm{rel}} = 3416\,(\edensity+p)^{2}/
+[\rdensity^{2}c^{4}(1+\mu)]$,
+with $\order{\epsilon^{2}}$ corrections identical to those in the
+classical theory.  The first-order correction in~$\epsilon$
+vanishes by the same symmetry argument as in the classical case.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{Asymptotic behaviour for $(1-\mu) \to \infty$}
+\label{sec:rel-71-asymptotic}
+%--------------------------------------------------------------
+
+In the regime of strong counter-rotation,
+$(1-\mu) \to \infty$, the classical analysis of
+\S\,\ref{sec:7-71}\,(e) established the asymptotic relations
+\begin{equation}
+\label{eq:rel-7-264}
+T_{c}^{\mathrm{cl}} \to \tau\,(1-\mu)^{4},
+\qquad
+a(T_{c}) \to q\,(1-\mu),
+\end{equation}
+with $\tau \approx 1182$ and $q \approx 2{\cdot}035$.
+
+\paragraph{Physical origin of the scaling.}
+The instability is localised to a layer of thickness
+$d_{0} = d/(1-\mu)$ adjoining the inner cylinder, where the
+Rayleigh discriminant is violated.  Since the Taylor number scales
+as the fourth power of the effective gap, the $(1-\mu)^{4}$
+behaviour follows.
+
+In the relativistic theory the same physical picture holds.  The
+angular-velocity profile~\eqref{eq:rel-7-192} is unmodified and the
+nodal surface remains at $\zeta = 1/(1-\mu)$.  The only change is
+the replacement of~$\nu$ by~$\nu_{\mathrm{rel}}$ in the definition
+of~$T$.  Hence
+\begin{equation}
+\label{eq:rel-7-267}
+\boxed{\;
+T_{c}^{\mathrm{rel}}
+  \;\to\; \tau\,(1-\mu)^{4}
+    \left(\frac{\edensity+p}{\rdensity\,c^{2}}\right)^{\!2}
+  \quad\text{as } (1-\mu) \to \infty,
+\;}
+\end{equation}
+with $\tau \approx 1182$ unchanged, and
+\begin{equation}
+\label{eq:rel-7-268}
+a\bigl(T_{c}^{\mathrm{rel}}\bigr)
+  \;\to\; q\,(1-\mu),
+  \quad q \approx 2{\cdot}035.
+\end{equation}
+The wave number at onset is unaffected because it is determined by
+the geometry of the unstable layer, not by the magnitude of the
+inertia.
+
+\paragraph{Analytical structure.}
+With the substitution $x = a\,\zeta$,
+equation~\eqref{eq:rel-7-220} becomes
+\begin{equation}
+\label{eq:rel-7-270}
+(D^{2}-1)^{3}\,v
+  = -\frac{T_{\mathrm{rel}}}{a^{4}}
+    \!\left(1 - \frac{1-\mu}{a}\,x\right) v.
+\end{equation}
+In the limit $(1-\mu) \to \infty$, $a \to \infty$ with
+$\gamma = (1-\mu)/a$ and
+$\lambda_{\mathrm{rel}} = T_{\mathrm{rel}}/a^{4}$ held fixed, one
+obtains the semi-infinite eigenvalue problem
+\begin{equation}
+\label{eq:rel-7-273}
+(D^{2}-1)^{3}\,v = -\lambda_{\mathrm{rel}}\,(1-\gamma\,x)\,v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-274}
+v = (D^{2}-1)\,v = D(D^{2}-1)\,v = 0
+\quad\text{for } x = 0 \text{ and } \infty.
+\end{equation}
+The structure is identical to the classical
+equations~\eqref{eq:7-273}--\eqref{eq:7-274}; hence $\tau$ and $q$
+are the same universal constants as in the Newtonian theory.  The
+enthalpy-inertia correction enters only through
+$\lambda_{\mathrm{rel}} = T_{\mathrm{rel}}/a^{4}$ and therefore
+factors out of the minimisation
+$\tau = \min_{\gamma}\{\lambda_{\mathrm{rel}}/\gamma^{4}\}$.
+
+\begin{relcorrection}
+The asymptotic relations
+$T_{c} \sim \tau(1-\mu)^{4}$ and
+$a(T_{c}) \sim q(1-\mu)$ for $(1-\mu) \to \infty$ persist in
+the relativistic theory with the same universal constants
+$\tau \approx 1182$ and $q \approx 2{\cdot}035$.
+The relativistic correction is an overall multiplicative factor
+$[(\edensity+p)/(\rdensity c^{2})]^{2}$ on~$T_{c}$, reflecting
+the enhanced inertia.  The wave number is unaffected because the
+geometry of the unstable layer is independent of the equation of
+state.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{Summary and discussion}\label{sec:rel-71-summary}
+%--------------------------------------------------------------
+
+The relativistic generalisation of the narrow-gap Couette stability
+problem is governed by a single modification: the replacement of the
+rest-mass density~$\rdensity$ by the relativistic inertia
+$(\edensity + p)/c^{2}$ in the definition of the Taylor number.
+This replacement:
+
+\begin{enumerate}
+\item Multiplies all critical Taylor numbers by the universal
+  factor $[(\edensity+p)/(\rdensity c^{2})]^{2}$.
+
+\item Leaves the wave number at onset, the convergence of the
+  Galerkin expansion, and the eigenfunction coefficients
+  $\mathscr{C}_{m}$ unchanged.
+
+\item Preserves the validity of both the first method (4th-order
+  system for~$u,v$) and the alternative method (6th-order system
+  for~$v$ alone) at equal rates of convergence.
+
+\item Preserves the approximate formula
+  $T_{c} = 3416\,(1+\xi)^{2}/(1+\mu)$ for $\mu \to 1$, including
+  the vanishing of the first-order correction in~$\epsilon$.
+
+\item Preserves the asymptotic scaling
+  $T_{c} \sim \tau(1-\mu)^{4}(1+\xi)^{2}$ for
+  $(1-\mu) \to \infty$, with the same universal constants as in
+  the classical theory.
+\end{enumerate}
+
+The physical reason for this structural simplicity is that, in the
+narrow-gap limit, the enthalpy-inertia factor is spatially uniform
+and therefore acts as a constant rescaling of the effective
+viscosity.  The eigenvalue problem is consequently \emph{isospectral}
+to the classical one up to this overall factor.
+
+For astrophysical applications---accretion discs, neutron-star
+interiors, and the quark--gluon plasma---the correction can be
+significant.  In the ultra-relativistic limit
+$p \sim \edensity/3$ (radiation-dominated fluid) one has
+$\xi \approx 1/3$, giving
+$T_{c}^{\mathrm{rel}}/T_{c}^{\mathrm{cl}} \approx 16/9 \approx
+1{\cdot}78$.
+
+\paragraph{Israel--Stewart causal corrections.}
+The analysis above used the Eckart (first-order) dissipation
+framework, in which the viscous stress is proportional to the
+instantaneous strain rate.  In the Israel--Stewart second-order
+theory (cf.\ \S\,\ref{sec:rel-framework-hydro}), the shear stress
+satisfies a relaxation equation with relaxation time~$\taupi$:
+\begin{equation}
+\label{eq:rel-7-IS}
+\taupi\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu}
+  = 2\,\shearvisc\,\sigma^{\mu\nu}.
+\end{equation}
+In the marginal stationary state ($\sigma_{\mathrm{rel}} = 0$) the
+time derivatives vanish and the Israel--Stewart equation reduces to
+$\pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu}$, which is the
+Navier--Stokes relation.  Therefore the critical Taylor number for
+\emph{stationary} onset is unaffected by the causal relaxation
+terms.
+
+For the \emph{oscillatory} marginal state (which will be examined
+in the relativistic extension of~\S\,72), the relaxation
+time~$\taupi$ will enter non-trivially and modify the conditions
+for the onset of overstability.
