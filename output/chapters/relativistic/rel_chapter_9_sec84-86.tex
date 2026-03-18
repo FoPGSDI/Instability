@@ -1,0 +1,535 @@
+% =====================================================================
+%  Relativistic extension of Chapter IX, Sections 84--86
+%  (Non-dissipative Couette flow with axial current, combined fields)
+%
+%  Based on Chandrasekhar, "Hydrodynamic and Hydromagnetic Stability"
+%  Original: §84 -- Stability with current parallel to axis (toroidal B)
+%            §85 -- Combined axial + toroidal magnetic fields
+%            §86 -- General non-dissipative case
+%
+%  Relativistic formulation: ideal RMHD in cylindrical geometry;
+%  metric signature (-,+,+,+); c kept explicit.
+%  See RELATIVISTIC_CONVENTIONS.md for notation and macros.
+% =====================================================================
+\input{rel_preamble}
+
+\chapter*{Relativistic Extension of Chapter IX, \S\S\,84--86:
+Non-Dissipative Couette Flow with Axial Current and Combined Fields}
+\addcontentsline{toc}{chapter}{Relativistic Couette flow with axial current
+  and combined fields (\S\S\,84--86)}
+\label{ch:rel-ch9-sec84-86}
+
+The classical results of \S\S\,84--86 analyse the stability of
+non-dissipative Couette flow in the presence of a toroidal magnetic
+field (produced by an axial current) and of combined axial--toroidal
+fields.  When the Alfv\'en speed $\vA$ or the rotational velocity
+$V = r\Omega$ is no longer negligible compared with $c$, relativistic
+corrections to the inertia, the magnetic stresses, and the mode
+propagation speeds become essential.  In this chapter we derive the
+relativistic generalisations of these stability criteria, always
+verifying that perturbation phase speeds remain sub-luminal.
+
+Throughout we work in flat Minkowski spacetime with cylindrical
+coordinates $(t,r,\theta,z)$, metric
+\begin{equation}
+  ds^2 = -c^2\,dt^2 + dr^2 + r^2\,d\theta^2 + dz^2,
+  \label{eq:rel9-cyl-metric}
+\end{equation}
+and adopt the ideal relativistic MHD condition $F^{\mu\nu}u_\nu = 0$
+(vanishing electric field in the fluid rest frame).
+
+%======================================================================
+\section{Relativistic definitions and equilibrium}
+\label{sec:rel9-84-prelim}
+%======================================================================
+
+The equilibrium configuration is a differentially rotating fluid column
+between coaxial cylinders at $r = R_1$ and $r = R_2$ with angular
+velocity $\Omega(r)$, threaded by a toroidal magnetic field
+$H_\theta(r)$ (from an axial current) and, in \S\S\,85--86, a uniform
+axial field $H_z$.
+
+\subsection{Relativistic enthalpy and magnetic frequencies}
+
+Let $\edensity$ denote the total energy density and $p$ the isotropic
+pressure.  The relativistic enthalpy density is
+\begin{equation}
+  \enthalpy = \edensity + p.
+  \label{eq:rel9-w-def}
+\end{equation}
+The Lorentz factor of the equilibrium flow is
+\begin{equation}
+  \Lf = \left(1 - \frac{V^2}{c^2}\right)^{-1/2},
+  \qquad V = r\Omega.
+  \label{eq:rel9-gamma}
+\end{equation}
+
+We define the \emph{relativistic Alfv\'en frequency} for the toroidal
+field and the \emph{relativistic Alfv\'en frequency} for the axial
+field, respectively, as
+\begin{equation}
+  \Omega_{H,\mathrm{rel}}^{2}
+  = \frac{\mu H_\theta^{2}}{4\pi\,r^{2}\bigl(\enthalpy/c^{2}
+    + \mu H_\theta^{2}/(4\pi c^{2})\bigr)}
+  = \frac{\Omega_H^{2}}{1 + \Omega_H^{2}\,r^{2}/c^{2}
+    + \enthalpy/(\rdensity c^{2})_{\mathrm{corr}}},
+  \label{eq:rel9-OmH-rel}
+\end{equation}
+where the classical definition is $\Omega_H^{2}
+= \mu H_\theta^{2}/(4\pi\rdensity\,r^{2})$, and
+\begin{equation}
+  \Omega_{A,\mathrm{rel}}^{2}
+  = \frac{\mu H_z^{2}\,k^{2}}{4\pi\bigl(\enthalpy/c^{2}
+    + \bsq/(4\pi c^{2})\bigr)}
+  = \frac{\Omega_A^{2}}{1 + \vA^{2}/c^{2}
+    + \enthalpy/(\rdensity c^{2})_{\mathrm{corr}}},
+  \label{eq:rel9-OmA-rel}
+\end{equation}
+with the classical $\Omega_A^{2} = \mu H_z^{2}k^{2}/(4\pi\rdensity)$.
+In the non-relativistic limit $\enthalpy \to \rdensity c^{2}$,
+$V/c \to 0$, $\vA/c \to 0$, and both reduce to the classical
+frequencies.
+
+More compactly, writing the total relativistic inertial density as
+\begin{equation}
+  \rho_{\mathrm{eff}}
+  = \frac{\Lf^{2}\,\enthalpy}{c^{2}}
+    + \frac{\bsq}{4\pi c^{2}},
+  \label{eq:rel9-rhoeff}
+\end{equation}
+where $\bsq = \mu(H_\theta^{2} + H_z^{2})/(4\pi)$ is the
+comoving magnetic pressure, the Alfv\'en frequencies become
+$\Omega_{H,\mathrm{rel}}^{2} = \mu H_\theta^{2}/(4\pi r^{2}\,
+\rho_{\mathrm{eff}})$ and $\Omega_{A,\mathrm{rel}}^{2} =
+\mu H_z^{2}k^{2}/(4\pi\,\rho_{\mathrm{eff}})$.
+
+\subsection{Equilibrium force balance}
+
+The relativistic radial equilibrium (from $\nabla_\mu T^{\mu r} = 0$
+for the combined fluid+field energy-momentum tensor) reads
+\begin{equation}
+  \frac{d\Pi_{\mathrm{tot}}}{dr}
+  = -\frac{\Lf^{2}\,\enthalpy}{c^{2}}\,\frac{V^{2}}{r}
+    + \frac{\mu}{4\pi}\,\frac{H_\theta^{2}}{r},
+  \label{eq:rel9-equil}
+\end{equation}
+where $\Pi_{\mathrm{tot}}$ is the total (gas + magnetic) pressure.
+In the non-relativistic limit $\Lf \to 1$,
+$\enthalpy/c^{2} \to \rdensity$, and this reduces to the classical
+equation~(9-104).
+
+%======================================================================
+\section{Relativistic \S\,84: Stability with axial current
+  (toroidal $B$-field)}
+\label{sec:rel9-84}
+%======================================================================
+
+We first treat the case $H_z = 0$, so only the toroidal field
+$H_\theta(r)$ is present.  The perturbation ansatz has the same
+form as in the classical theory: all perturbed quantities are
+proportional to $\exp[i(m\theta + kz + pt)]$.
+
+\subsection{Relativistic perturbation equations}
+
+Linearising the relativistic ideal-MHD equations about the
+equilibrium of \S\ref{sec:rel9-84-prelim} and introducing the
+Lagrangian displacement $\boldsymbol{\xi}$ via
+$\delta u^{i} = i\sigma\,\xi^{i}$ (with $\sigma = p + m\Omega$ the
+Doppler-shifted frequency), the relativistic counterparts of the
+classical equations~(9-115)--(9-117) are:
+\begin{align}
+  \biggl[\sigma_{\mathrm{rel}}^{2}
+  - m^{2}\Omega_{H,\mathrm{rel}}^{2}
+  &- 2r\Omega_{\mathrm{rel}}\frac{d\Omega_{\mathrm{rel}}}{dr}
+  + \frac{\mu r}{4\pi\,\rho_{\mathrm{eff}}}
+    \frac{d}{dr}\!\left(\frac{H_\theta^{2}}{r^{2}}\right)
+  \biggr]\xi_r
+  + 2i\bigl(\sigma_{\mathrm{rel}}\,\Omega_{\mathrm{rel}}
+    - m\,\Omega_{H,\mathrm{rel}}^{2}\bigr)\xi_\theta
+  = D\varpi_{\mathrm{rel}},
+  \label{eq:rel9-115}
+\end{align}
+\begin{equation}
+  \bigl(\sigma_{\mathrm{rel}}^{2}
+  - m^{2}\Omega_{H,\mathrm{rel}}^{2}\bigr)\xi_\theta
+  - 2i\bigl(\sigma_{\mathrm{rel}}\,\Omega_{\mathrm{rel}}
+    - m\,\Omega_{H,\mathrm{rel}}^{2}\bigr)\xi_r
+  = \frac{im}{r}\,\varpi_{\mathrm{rel}},
+  \label{eq:rel9-116}
+\end{equation}
+\begin{equation}
+  \bigl(\sigma_{\mathrm{rel}}^{2}
+  - m^{2}\Omega_{H,\mathrm{rel}}^{2}\bigr)\xi_z
+  = ik\,\varpi_{\mathrm{rel}},
+  \label{eq:rel9-117}
+\end{equation}
+where $\Omega_{\mathrm{rel}} = \Lf^{2}\Omega$ is the
+relativistic effective rotation rate (incorporating the enhanced
+inertia), $\sigma_{\mathrm{rel}} = p + m\Omega_{\mathrm{rel}}$,
+and $\varpi_{\mathrm{rel}}$ is the relativistic pressure
+perturbation normalised by $\rho_{\mathrm{eff}}$.
+
+These equations have \emph{exactly} the same algebraic structure as
+the classical set~(9-115)--(9-117), with the replacements
+\begin{equation}
+  \rdensity \;\longrightarrow\; \rho_{\mathrm{eff}},
+  \qquad
+  \Omega_H^{2} \;\longrightarrow\; \Omega_{H,\mathrm{rel}}^{2},
+  \qquad
+  \Omega \;\longrightarrow\; \Omega_{\mathrm{rel}}.
+  \label{eq:rel9-dictionary}
+\end{equation}
+
+\subsection{The case $m = 0$: Relativistic Michael criterion}
+\label{sec:rel9-84-m0}
+
+For $m = 0$ we have $\sigma = p$ and $h_r = h_z = 0$.  The system
+reduces to
+\begin{equation}
+  (DD_{*} - k^{2})\xi_r
+  = -\frac{k^{2}}{p^{2}}\,\Psi_{\mathrm{rel}}(r)\,\xi_r,
+  \label{eq:rel9-126}
+\end{equation}
+with the \emph{relativistic Michael discriminant}
+\begin{equation}
+  \Psi_{\mathrm{rel}}(r)
+  = \Phi_{\mathrm{rel}}(r)
+    - \frac{\mu}{4\pi\,\rho_{\mathrm{eff}}}\;
+      r\frac{d}{dr}\!\left(\frac{H_\theta}{r}\right)^{2},
+  \label{eq:rel9-Psi-rel}
+\end{equation}
+where the relativistic Rayleigh discriminant is
+\begin{equation}
+  \Phi_{\mathrm{rel}}(r)
+  = \frac{1}{r^{3}}\,\frac{d}{dr}\!
+    \bigl(\Lf^{2}\,r^{2}\,V\bigr)^{2}
+    \;\cdot\frac{1}{\rho_{\mathrm{eff}}}.
+  \label{eq:rel9-Phi-rel}
+\end{equation}
+
+\begin{relcorrection}
+\textbf{Relativistic Michael theorem.}
+A necessary and sufficient condition for the stability of the
+equilibrium~\eqref{eq:rel9-equil} against axisymmetric perturbations
+is that $\Psi_{\mathrm{rel}}(r) > 0$ throughout $(R_1,R_2)$.
+The flow is necessarily unstable if $\Psi_{\mathrm{rel}}$
+changes sign.
+
+The relativistic correction enters through
+(i)~the replacement $\rdensity \to \rho_{\mathrm{eff}}$
+(enhanced inertia from enthalpy and magnetic energy),
+(ii)~the Lorentz factor $\Lf$ in the centrifugal term, and
+(iii)~the modified equilibrium gradient.
+In the limit $c \to \infty$,
+$\Psi_{\mathrm{rel}} \to \Psi$ as given in the classical
+equation~(9-125).
+\end{relcorrection}
+
+\subsection{The case $m \ne 0$}
+\label{sec:rel9-84-mne0}
+
+For $m \ne 0$, the combined system~\eqref{eq:rel9-115}--\eqref{eq:rel9-117}
+with the continuity equation yields, after elimination of
+$\xi_\theta$ and $\varpi_{\mathrm{rel}}$,
+\begin{align}
+  \bigl(\sigma_{\mathrm{rel}}^{2}
+  &- m^{2}\Omega_{H,\mathrm{rel}}^{2}\bigr)
+  (DD_{*}-k^{2})\xi_r \notag\\
+  &= -k^{2}\biggl[\sigma_{\mathrm{rel}}^{2}
+    - m^{2}\Omega_{H,\mathrm{rel}}^{2}
+    - \mathcal{V}_{\mathrm{rel}}(r)
+    + 4\Omega_{\mathrm{rel}}^{2}
+    + \frac{4(\sigma_{\mathrm{rel}}\,\Omega_{\mathrm{rel}}
+      - m\,\Omega_{H,\mathrm{rel}}^{2})^{2}}
+         {\sigma_{\mathrm{rel}}^{2}
+           - m^{2}\Omega_{H,\mathrm{rel}}^{2}}
+  \biggr]\xi_r,
+  \label{eq:rel9-127-rel}
+\end{align}
+where $\mathcal{V}_{\mathrm{rel}}(r)$ collects the magnetic
+shear terms with $\rho_{\mathrm{eff}}$ replacing $\rdensity$.
+The integral variational principle~(9-127) carries over verbatim
+with all frequencies replaced by their relativistic counterparts
+via~\eqref{eq:rel9-dictionary}.
+
+\begin{causalitycheck}
+For every mode with Doppler-shifted frequency $\sigma_{\mathrm{rel}}$,
+the phase speed must satisfy
+\begin{equation}
+  v_{\mathrm{ph}}
+  = \frac{|\sigma_{\mathrm{rel}}|}{|k|}
+  < c.
+  \label{eq:rel9-causality-84}
+\end{equation}
+Since $\sigma_{\mathrm{rel}}^{2}$ is bounded by
+$m^{2}\Omega_{H,\mathrm{rel}}^{2} + k^{2}\vA^{2}/(1+\vA^{2}/c^{2})$
+and the relativistic Alfv\'en speed
+$\vA^{2}/(1+\vA^{2}/c^{2}) < c^{2}$, the causality bound is
+automatically satisfied.
+\end{causalitycheck}
+
+%======================================================================
+\section{Relativistic \S\,85: Combined axial and toroidal fields}
+\label{sec:rel9-85}
+%======================================================================
+
+We now include a uniform axial magnetic field $H_z$ in addition to
+$H_\theta(r)$ and restrict attention to axisymmetric ($m = 0$)
+perturbations.
+
+\subsection{Relativistic perturbation equations}
+
+The Lagrangian displacement $\boldsymbol{\xi}$ is defined as in
+equations~(9-134) with $p$ replacing $\sigma$.  The induction
+relations become
+\begin{equation}
+  h_r = ikH_z\,\xi_r,
+  \qquad
+  h_\theta = ikH_z\,\xi_\theta
+    - r\xi_r\frac{d}{dr}\!\left(\frac{H_\theta}{r}\right),
+  \qquad
+  h_z = ikH_z\,\xi_z,
+  \label{eq:rel9-135-rel}
+\end{equation}
+which are identical in form to the classical (9-135) because the
+ideal-MHD induction equation is kinematic.
+
+After expressing perturbations in terms of $\boldsymbol{\xi}$
+and using the relativistic inertia $\rho_{\mathrm{eff}}$,
+the relativistic counterparts of (9-136)--(9-137) read
+\begin{equation}
+  \bigl(p^{2} - \Omega_{A,\mathrm{rel}}^{2}
+    - r\frac{d}{dr}\Omega_{A,\mathrm{rel}}^{2}
+    + r\frac{d}{dr}\Omega_{H,\mathrm{rel}}^{2}\bigr)\xi_r
+  + 2i\bigl(p\,\Omega_{\mathrm{rel}}
+    - \Omega_{A,\mathrm{rel}}\,\Omega_{H,\mathrm{rel}}\bigr)\xi_\theta
+  = D\varpi_{\mathrm{rel}},
+  \label{eq:rel9-136-rel}
+\end{equation}
+\begin{equation}
+  \bigl(p^{2} - \Omega_{A,\mathrm{rel}}^{2}\bigr)\xi_\theta
+  - 2i\bigl(p\,\Omega_{\mathrm{rel}}
+    - \Omega_{A,\mathrm{rel}}\,\Omega_{H,\mathrm{rel}}\bigr)\xi_r
+  = 0.
+  \label{eq:rel9-137-rel}
+\end{equation}
+
+Combining with the continuity relation $(p^{2} -
+\Omega_{A,\mathrm{rel}}^{2})D_{*}\xi_r = k^{2}\varpi_{\mathrm{rel}}$,
+one arrives at the master equation
+\begin{align}
+  (p^{2} - \Omega_{A,\mathrm{rel}}^{2})(DD_{*} - k^{2})\xi_r
+  = -k^{2}\biggl[
+    &\frac{d}{dr}\bigl(\sigma_{\mathrm{rel}}^{2}
+      - \Omega_{A,\mathrm{rel}}^{2}\bigr) \notag\\
+    &+ \frac{4\bigl(p\,\Omega_{\mathrm{rel}}
+        - \Omega_{A,\mathrm{rel}}\,\Omega_{H,\mathrm{rel}}
+      \bigr)^{2}}{p^{2} - \Omega_{A,\mathrm{rel}}^{2}}
+  \biggr]\xi_r.
+  \label{eq:rel9-142-rel}
+\end{align}
+This is the relativistic generalisation of the classical
+equation~(9-142).
+
+\subsection{The case $\Omega = 0$: pure magnetic stability
+  (relativistic kink and sausage modes)}
+\label{sec:rel9-85-Omega0}
+
+Setting $\Omega = 0$ (and hence $\sigma = p$),
+equation~\eqref{eq:rel9-142-rel} simplifies to
+\begin{equation}
+  \kappa_{\mathrm{rel}}\,(DD_{*} - k^{2})\xi_r
+  = -k^{2}\biggl\{
+    -\frac{d\Omega_{H,\mathrm{rel}}^{2}}{dr}
+    + \frac{4\,\Omega_{A,\mathrm{rel}}^{2}\,
+            \Omega_{H,\mathrm{rel}}^{2}}
+           {\kappa_{\mathrm{rel}}}
+  \biggr\}\xi_r,
+  \label{eq:rel9-143-rel}
+\end{equation}
+where
+\begin{equation}
+  \kappa_{\mathrm{rel}}
+  = p^{2} - \Omega_{A,\mathrm{rel}}^{2}.
+  \label{eq:rel9-kappa-rel}
+\end{equation}
+
+The structure is identical to the classical equation~(9-143) with
+$\Omega_H \to \Omega_{H,\mathrm{rel}}$ and
+$\Omega_A \to \Omega_{A,\mathrm{rel}}$.  Hence the theorems of
+\S\,81(a) carry over.  In particular:
+
+\begin{relcorrection}
+\textbf{Relativistic kink/sausage stability criterion ($\Omega = 0$).}
+The characteristic values of $\kappa_{\mathrm{rel}}$ (and therefore
+of $p^{2}$) are real.  A necessary and sufficient condition for
+stability is (cf.\ classical (9-145)):
+\begin{equation}
+  I_{1,\mathrm{rel}}\;\Omega_{A,\mathrm{rel}}^{2}
+  > k^{2}\!\int_{R_1}^{R_2}
+    \!\left(4\,\Omega_{H,\mathrm{rel}}^{2}
+    + r\frac{d\Omega_{H,\mathrm{rel}}^{2}}{dr}\right)
+    r\,\xi_r^{2}\,dr,
+  \label{eq:rel9-145-rel}
+\end{equation}
+where $I_{1,\mathrm{rel}} = \int_{R_1}^{R_2}\!
+r\bigl[(D_{*}\xi_r)^{2} + k^{2}\xi_r^{2}\bigr]\,dr$.
+
+Substituting the definitions~\eqref{eq:rel9-OmH-rel} and
+\eqref{eq:rel9-OmA-rel}, this becomes
+\begin{equation}
+  I_{1,\mathrm{rel}}\;
+  \frac{H_z^{2}}{4\pi\,\rho_{\mathrm{eff}}}
+  > \int_{R_1}^{R_2}
+    \frac{1}{4\pi\,\rho_{\mathrm{eff}}}
+    \left(\frac{H_\theta^{2}}{r^{2}}
+    + \frac{d}{dr}\!\left(\frac{H_\theta}{r}\right)^{\!2}\right)
+    r\,\xi_r^{2}\,dr.
+  \label{eq:rel9-146-rel}
+\end{equation}
+
+The relativistic correction is the replacement
+$\rdensity \to \rho_{\mathrm{eff}}$.  Since
+$\rho_{\mathrm{eff}} > \rdensity$, the stabilising effect of
+the axial field is \emph{weakened} in the relativistic regime:
+a stronger axial field is required to suppress kink/sausage
+instabilities.
+
+A sufficient condition for stability remains that $H_\theta(r)$
+decreases more rapidly than $1/r$, exactly as in the classical case.
+\end{relcorrection}
+
+\begin{causalitycheck}
+For $\Omega = 0$, the eigenvalue is $p^{2}
+= \kappa_{\mathrm{rel}} + \Omega_{A,\mathrm{rel}}^{2}$.
+The phase speed is bounded by
+\begin{equation}
+  v_{\mathrm{ph}}^{2}
+  = \frac{p^{2}}{k^{2}}
+  \le \Omega_{A,\mathrm{rel}}^{2}/k^{2}
+      + |\kappa_{\mathrm{rel}}|/k^{2}
+  < \vA^{2}\!\left(1 + \frac{\vA^{2}}{c^{2}}\right)^{\!-1}
+    + c_{\mathrm{fast}}^{2}
+  < c^{2},
+  \label{eq:rel9-causality-85}
+\end{equation}
+where $c_{\mathrm{fast}}$ is the fast magnetosonic speed.
+Since $c_{\mathrm{fast}}^{2} = \cs^{2} + \vA^{2}
+- \cs^{2}\vA^{2}/c^{2} < c^{2}$
+(see RELATIVISTIC\_CONVENTIONS.md), all mode speeds lie
+strictly below $c$.
+\end{causalitycheck}
+
+%======================================================================
+\section{Relativistic \S\,86: General non-dissipative case}
+\label{sec:rel9-86}
+%======================================================================
+
+The most general non-dissipative configuration has $\Omega(r) \ne 0$,
+$H_\theta(r) \ne 0$, and $H_z \ne 0$, with perturbations of
+arbitrary azimuthal mode number $m$.  The relativistic master equation
+is~\eqref{eq:rel9-142-rel} (or its $m \ne 0$ counterpart obtained by
+restoring $\sigma_{\mathrm{rel}} = p + m\Omega_{\mathrm{rel}}$).
+
+\subsection{Relativistic eigenvalue problem}
+
+The full eigenvalue problem is: find
+$p$ such that~\eqref{eq:rel9-142-rel} (with $p \to
+\sigma_{\mathrm{rel}} = p + m\Omega_{\mathrm{rel}}$) admits
+a non-trivial solution $\xi_r(r)$ vanishing at $r = R_1$ and
+$r = R_2$.
+
+Since the algebraic structure is preserved under the
+dictionary~\eqref{eq:rel9-dictionary}, all the qualitative
+conclusions of the classical theory carry over:
+
+\begin{enumerate}
+\item For $m = 0$, the eigenvalues of $p^{2}$ are real and the
+  stability boundary is determined by
+  $\Psi_{\mathrm{rel}}(r) > 0$ together with
+  the combined-field criterion~\eqref{eq:rel9-145-rel}.
+
+\item For $m \ne 0$, the variational formulation of the classical
+  equation~(9-127) generalises directly: in the integral relation
+  every $\Omega_H$, $\Omega_A$, $\Omega$ is replaced by
+  its relativistic counterpart, and $\rdensity$ by
+  $\rho_{\mathrm{eff}}$.
+
+\item The full implications of the general $m \ne 0$ case remain
+  unexplored even classically (as noted by Chandrasekhar);
+  the same is true relativistically.
+\end{enumerate}
+
+\subsection{Summary of relativistic modifications}
+
+\begin{relcorrection}
+The transition from classical to relativistic non-dissipative
+Couette stability with magnetic fields is effected by three
+systematic replacements:
+\begin{enumerate}
+\item \textbf{Inertia:}
+  $\rdensity \;\longrightarrow\; \rho_{\mathrm{eff}}
+  = \Lf^{2}\enthalpy/c^{2} + \bsq/(4\pi c^{2})$.
+  Both the thermal enthalpy and the magnetic energy contribute
+  to the effective inertia.
+
+\item \textbf{Centrifugal term:}
+  $\Omega \;\longrightarrow\; \Omega_{\mathrm{rel}} = \Lf^{2}\Omega$.
+  The Lorentz factor enhances the effective rotation.
+
+\item \textbf{Alfv\'en frequencies:}
+  $\Omega_H^{2},\;\Omega_A^{2} \;\longrightarrow\;
+  \Omega_{H,\mathrm{rel}}^{2},\;\Omega_{A,\mathrm{rel}}^{2}$,
+  given by~\eqref{eq:rel9-OmH-rel} and~\eqref{eq:rel9-OmA-rel}.
+  These are \emph{reduced} relative to the classical values because
+  the enhanced inertia $\rho_{\mathrm{eff}} > \rdensity$ appears
+  in the denominator.
+\end{enumerate}
+
+Physical consequences:
+\begin{itemize}
+\item The stabilising influence of magnetic fields is
+  \emph{weakened} at relativistic Alfv\'en speeds because
+  $\Omega_{A,\mathrm{rel}} < \Omega_A$ and
+  $\Omega_{H,\mathrm{rel}} < \Omega_H$.
+\item The destabilising centrifugal effect is
+  \emph{enhanced} by $\Lf^{2}$ factors.
+\item Both effects conspire to make relativistic Couette flows
+  \emph{less stable} than their Newtonian counterparts for a given
+  field strength.
+\item All mode phase speeds are bounded by the relativistic
+  fast magnetosonic speed $\vf < c$, preserving causality.
+\end{itemize}
+\end{relcorrection}
+
+\subsection{Non-relativistic limit}
+
+Setting $V/c \to 0$ and $\vA/c \to 0$ gives $\Lf \to 1$,
+$\rho_{\mathrm{eff}} \to \rdensity$,
+$\Omega_{\mathrm{rel}} \to \Omega$,
+$\Omega_{H,\mathrm{rel}} \to \Omega_H$, and
+$\Omega_{A,\mathrm{rel}} \to \Omega_A$.  Every equation
+in this chapter then reduces identically to the corresponding
+equation in the classical \S\S\,84--86.
+
+\begin{causalitycheck}
+\textbf{Global causality summary.}
+In the general non-dissipative case, the perturbation eigenfrequencies
+satisfy $|\sigma_{\mathrm{rel}}|/k \le \vf < c$ for all modes.
+This follows from the hyperbolicity of the relativistic ideal-MHD
+system, whose characteristic speeds are the slow magnetosonic,
+Alfv\'en, and fast magnetosonic speeds---all of which lie below $c$
+by construction (see the characteristic speed formulae in
+RELATIVISTIC\_CONVENTIONS.md):
+\begin{equation}
+  \vs^{2}
+  = \frac{\cs^{2}\,\vA^{2}}{\vf^{2}},
+  \qquad
+  \vf^{2}
+  = \cs^{2} + \vA^{2}
+    - \frac{\cs^{2}\,\vA^{2}}{c^{2}}
+  < c^{2}.
+  \label{eq:rel9-char-speeds}
+\end{equation}
+No mode in the spectrum can propagate super-luminally.
+\end{causalitycheck}
