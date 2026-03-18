@@ -705,3 +705,85 @@ the following checks must be performed:
 Failure of any of these checks indicates either an inadmissible EOS,
 incorrect transport coefficients, or an invalid choice of BDNK frame
 coefficients.
+
+
+%------------------------------------------------------------------
+\subsection{Application: Equation of State Comparison}
+\label{subsec:eos-application}
+
+Figure~\ref{fig:eos-comparison} compares the squared sound speed
+$\cs^2/c^2$ as a function of energy density for three representative
+equations of state relevant to relativistic stability analysis.
+
+The \textbf{ideal relativistic gas} ($\Gamma$-law) interpolates between
+the non-relativistic regime ($\cs^2 \ll c^2$) at low energy density
+and the ultrarelativistic limit ($\cs^2 \to c^2/3$ for $\Gamma = 4/3$)
+at high energy density.
+
+The \textbf{QGP} (quark-gluon plasma) equation of state, inspired by
+lattice QCD calculations \citep{BazavovEtAl2014,BorsanyiEtAl2014},
+shows a characteristic dip in $\cs^2$ near the QCD crossover transition
+at $\varepsilon \approx \varepsilon_{\mathrm{nuc}}$, before recovering
+toward the conformal limit $\cs^2/c^2 = 1/3$ at high energy density.
+This non-monotonic behaviour has significant consequences for the
+stability of QGP flows in heavy-ion collisions and early-universe
+dynamics.
+
+The \textbf{nuclear matter} equation of state (APR-like stiff EOS
+\citep{AkmalPR1998}) shows steady stiffening with increasing density,
+with $\cs^2/c^2$ reaching $\sim 0.8$ at several times nuclear
+saturation density.  Observational constraints from neutron star
+masses \citep{LattimerPrakash2016,RileyEtAl2021} require such
+stiffening to support stars above $2\,M_\odot$.  The causality
+bound $\cs^2 \le c^2$ places a fundamental upper limit on the
+stiffness of nuclear matter.
+
+All three EOS satisfy the causality constraint $\cs^2/c^2 \le 1$
+and the thermodynamic stability condition $\cs^2 \ge 0$ (Le
+Chatelier's principle, eq.~\ref{eq:le-chatelier}).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_eos_comparison.pdf}
+  \caption{Squared sound speed $\cs^2/c^2$ as a function of energy
+    density (in units of nuclear saturation energy density
+    $\varepsilon_{\mathrm{nuc}} \approx 150$\,MeV/fm$^3$) for three
+    representative equations of state: ideal relativistic gas (blue),
+    quark-gluon plasma (brown), and nuclear matter (pink).  The
+    causality bound $\cs^2 = c^2$ (red line) and the conformal limit
+    $\cs^2/c^2 = 1/3$ (gray dotted) are shown.  The QCD crossover
+    produces a pronounced dip in the QGP sound speed near
+    $\varepsilon \approx \varepsilon_{\mathrm{nuc}}$.}
+  \label{fig:eos-comparison}
+\end{figure}
+
+%------------------------------------------------------------------
+\subsection*{References for This Section}
+
+\begin{itemize}
+  \item Bemfica, Disconzi \& Noronha, \textit{Phys.\ Rev.\ D}
+    \textbf{98}, 104064 (2018) \citep{BemficaDN2018}
+  \item Kovtun, \textit{JHEP} \textbf{10}, 034 (2019) \citep{Kovtun2019}
+  \item Hoult \& Kovtun, \textit{JHEP} \textbf{06}, 067 (2020)
+    \citep{HoultKovtun2020}
+  \item Bemfica, Disconzi, Noronha \& Kovtun, \textit{Phys.\ Rev.\ D}
+    \textbf{107}, 076012 (2023) \citep{BemficaDNK2023}
+  \item Israel \& Stewart, \textit{Ann.\ Phys.}\ \textbf{118}, 341
+    (1979) \citep{IsraelStewart1979}
+  \item Rezzolla \& Zanotti, \textit{Relativistic Hydrodynamics},
+    Oxford (2013) \citep{RezzollaZanotti2013}
+  \item Akmal, Pandharipande \& Ravenhall, \textit{Phys.\ Rev.\ C}
+    \textbf{58}, 1804 (1998) \citep{AkmalPR1998}
+  \item Lattimer \& Prakash, \textit{Phys.\ Rep.}\ \textbf{621}, 127
+    (2016) \citep{LattimerPrakash2016}
+  \item Riley et~al., \textit{Astrophys.\ J.\ Lett.}\ \textbf{918},
+    L27 (2021) \citep{RileyEtAl2021}
+  \item Bazavov et~al., \textit{Phys.\ Rev.\ D} \textbf{90}, 094503
+    (2014) \citep{BazavovEtAl2014}
+  \item Bors\'anyi et~al., \textit{Phys.\ Lett.\ B} \textbf{730}, 99
+    (2014) \citep{BorsanyiEtAl2014}
+  \item Weinberg, \textit{Gravitation and Cosmology}, Wiley (1972)
+    \citep{Weinberg1972}
+  \item Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability},
+    Oxford (1961) \citep{Chandrasekhar1961}
+\end{itemize}
