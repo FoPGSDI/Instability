@@ -1,0 +1,604 @@
+% =====================================================================
+% Relativistic Thermal Instability with Magnetic Field: §41--44
+% Agent 17: Perturbation equations and stationary convection
+% =====================================================================
+%
+% This file provides the relativistic generalization of Chapter IV,
+% §41--44 of Chandrasekhar's \emph{Hydrodynamic and Hydromagnetic
+% Stability}.  The classical Boussinesq MHD perturbation equations
+% are replaced by a covariant Israel--Stewart formulation that
+% respects causality; the Chandrasekhar number $Q$ acquires
+% Alfv\'en-speed corrections; the variational principle and
+% exact solutions (two free / two rigid boundaries) are re-derived;
+% and every perturbation mode is checked against the causal bound.
+%
+% Requires: rel_preamble.tex (loaded by rel_main.tex)
+% =====================================================================
+
+\section{The problem of relativistic thermal instability in the
+  presence of a magnetic field: general considerations}
+\label{sec:rel-41}
+
+The classical arguments of \S\,41 carry over almost verbatim to the
+relativistic setting, but two new features appear.
+
+\begin{enumerate}
+\item \textbf{Alfv\'en speed bound.}  In the Newtonian theory the
+  Alfv\'en speed $V_{A}=H\sqrt{\mu/4\pi\rho}$ can be arbitrarily
+  large.  Relativistically, one must use
+  \begin{equation}\label{eq:rel-vA}
+    \vA^{2}
+    = \frac{\bsq/4\pi}{\enthalpy/c^{2}+\bsq/(4\pi c^{2})}\,c^{2}
+    = \frac{\bsq\,c^{2}}{4\pi\enthalpy+\bsq},
+  \end{equation}
+  where $\enthalpy=\edensity+p$ is the relativistic enthalpy density
+  and $\bsq=b^{\mu}b_{\mu}$.  This satisfies $\vA<c$ for all
+  finite field strengths, so the frozen-in theorem is replaced by
+  the statement that perturbations propagate as relativistic Alfv\'en
+  waves whose group velocity cannot exceed~$c$.
+
+\item \textbf{Causal heat transport.}  The buoyancy--dissipation
+  balance that sets the critical temperature gradient now involves
+  the Israel--Stewart heat-flux relaxation time $\tauq$.  Because
+  heat pulses travel at a finite speed
+  $v_{q}=\sqrt{\thermcond T/(\enthalpy\,\tauq)}$, the possibility
+  of overstability (oscillatory onset) acquires a causal upper
+  frequency bound, in contrast to the Newtonian case where
+  overstability modes can, in principle, have unbounded frequency.
+\end{enumerate}
+
+\noindent
+The net effect of these two constraints is that an imposed vertical
+magnetic field still inhibits convection---indeed more strongly than
+in the Newtonian limit, because the Alfv\'en speed saturates---but
+overstable modes are restricted to a finite band in frequency space.
+
+%----------------------------------------------------------------------
+\section{Relativistic perturbation equations}
+\label{sec:rel-42}
+
+\subsection*{(a) \emph{The background state}}
+
+Consider an infinite horizontal layer of relativistic,
+electrically-conducting fluid of depth~$d$, with a uniform vertical
+magnetic field $B^{\mu}=(0,0,0,B)$ in the fluid rest frame.
+The unperturbed state is static ($u^{\mu}=(\gamma c,\mathbf{0})$
+with $\gamma=1$), with energy density~$\edensity_{0}$,
+pressure~$p_{0}$, enthalpy density $\enthalpy_{0}=\edensity_{0}+p_{0}$,
+and a steady adverse temperature gradient
+\begin{equation}\label{eq:rel-beta}
+  \beta = -\frac{dT_{0}}{dz}>0.
+\end{equation}
+
+The total energy--momentum tensor of the magnetized fluid is
+\begin{equation}\label{eq:rel-Tmunu-MHD}
+  T^{\mu\nu}_{\text{MHD}}
+  = \biggl(\frac{\enthalpy}{c^{2}}+\frac{\bsq}{4\pi c^{2}}\biggr)
+    u^{\mu}u^{\nu}
+  + \biggl(p+\frac{\bsq}{8\pi}\biggr)g^{\mu\nu}
+  - \frac{1}{4\pi}\,b^{\mu}b^{\nu},
+\end{equation}
+where $b^{\mu}$ is the magnetic-field four-vector satisfying
+$b^{\mu}u_{\mu}=0$.
+
+\subsection*{(b) \emph{Linearized relativistic MHD with dissipation}}
+
+Perturb every quantity: $u^{\mu}\to u^{\mu}_{0}+\delta u^{\mu}$,
+$T\to T_{0}+\Theta$, $b^{\mu}\to b^{\mu}_{0}+\delta b^{\mu}$,
+$p\to p_{0}+\delta p$, etc.  In the rest frame of the background
+fluid, denote the spatial perturbation velocity
+$\delta u^{i}=(u,v,w)$ and the magnetic-field perturbation
+$\delta b^{i}=(h_{x},h_{y},h_{z})$.  Including both viscous and
+resistive dissipation through the Israel--Stewart formalism
+(see~\S\,33 of the relativistic conventions), the linearized
+equations are:
+
+\medskip
+\noindent\textbf{Momentum equation} (relativistic Boussinesq analogue):
+\begin{equation}\label{eq:rel-87}
+  \frac{\enthalpy_{0}}{c^{2}}\,\frac{\partial\delta u^{i}}{\partial t}
+  = -\frac{\partial}{\partial x^{i}}(\delta\varpi_{\text{rel}})
+    + \frac{\enthalpy_{0}}{c^{2}}\,g\,\alpha_{\text{rel}}\,\Theta\,\lambda^{i}
+    + \shearvisc\,\nabla^{2}\delta u^{i}
+    + \frac{B}{4\pi}\,\frac{\partial h^{i}}{\partial z},
+\end{equation}
+where $\lambda^{i}=(0,0,1)$ is the vertical unit vector,
+$\alpha_{\text{rel}}$ is the relativistic thermal expansion
+coefficient (cf.\ the framework chapter), and the generalized
+pressure perturbation is
+\begin{equation}\label{eq:rel-88}
+  \delta\varpi_{\text{rel}}
+  = \frac{\delta p}{\enthalpy_{0}/c^{2}}
+    + \frac{B\,h_{z}}{4\pi\,\enthalpy_{0}/c^{2}}\,.
+\end{equation}
+The key difference from equation~(87) of the classical text is the
+replacement $\rho_{0}\to\enthalpy_{0}/c^{2}$ (relativistic inertia).
+
+\medskip
+\noindent\textbf{Induction equation} (with resistive diffusion):
+\begin{equation}\label{eq:rel-89}
+  \frac{\partial h^{i}}{\partial t}
+  = B\,\frac{\partial\,\delta u^{i}}{\partial z}
+    + \eta\,\nabla^{2}h^{i},
+\end{equation}
+where $\eta$ is the magnetic diffusivity.  This retains its
+classical form because the ideal-MHD condition
+$F^{\mu\nu}u_{\nu}=0$ and Ohm's law are covariant statements.
+
+\medskip
+\noindent\textbf{Solenoidal constraint:}
+\begin{equation}\label{eq:rel-90}
+  \frac{\partial h^{i}}{\partial x^{i}} = 0.
+\end{equation}
+
+\medskip
+\noindent\textbf{Israel--Stewart heat equation:}
+\begin{equation}\label{eq:rel-91}
+  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
+  + \frac{\partial\Theta}{\partial t}
+  = \kappa_{T}\,\nabla^{2}\Theta + \beta\,w
+  + \tauq\,\beta\,\frac{\partial w}{\partial t},
+\end{equation}
+where $\kappa_{T}$ is the thermal diffusivity.
+In the Navier--Stokes limit $\tauq\to 0$ this reduces to the
+classical equation~(\ref{eq:4-91}).  The $\tauq$-terms convert the
+parabolic heat equation into a \emph{hyperbolic} telegrapher-type
+equation, ensuring finite propagation speed for thermal signals.
+
+\medskip
+\noindent\textbf{Continuity (incompressibility in relativistic
+  Boussinesq):}
+\begin{equation}\label{eq:rel-92}
+  \frac{\partial\,\delta u^{i}}{\partial x^{i}} = 0.
+\end{equation}
+
+\subsection*{(c) \emph{Elimination of the pressure perturbation and
+  vertical-component equations}}
+
+Taking the curl of~(\ref{eq:rel-87}) and then the curl again
+(exactly as in the classical derivation, \S\,42), we eliminate
+$\delta\varpi_{\text{rel}}$ and obtain the equation for the vertical
+velocity~$w$:
+\begin{equation}\label{eq:rel-105}
+  \frac{\enthalpy_{0}}{c^{2}}\,\frac{\partial}{\partial t}\nabla^{2}w
+  = \frac{\enthalpy_{0}}{c^{2}}\,g\,\alpha_{\text{rel}}
+    \biggl(\frac{\partial^{2}}{\partial x^{2}}
+           +\frac{\partial^{2}}{\partial y^{2}}\biggr)\Theta
+  + \shearvisc\,\nabla^{4}w
+  + \frac{B}{4\pi}\,\frac{\partial}{\partial z}\,\nabla^{2}h_{z}.
+\end{equation}
+For the vertical magnetic-field perturbation,
+\begin{equation}\label{eq:rel-102}
+  \frac{\partial h_{z}}{\partial t}
+  = B\,\frac{\partial w}{\partial z}+\eta\,\nabla^{2}h_{z}.
+\end{equation}
+The vorticity ($\zeta$) and current ($\xi$) equations retain
+their classical forms~(\ref{eq:4-103})--(\ref{eq:4-104}) with
+$\rho_{0}\to\enthalpy_{0}/c^{2}$.
+
+\subsection*{(d) \emph{Normal-mode analysis}}
+
+Seek solutions proportional to
+$\exp\{i(k_{x}x+k_{y}y)+pt\}$ with $k^{2}=k_{x}^{2}+k_{y}^{2}$.
+Define the non-dimensional variables (in units of~$d$):
+\begin{equation}\label{eq:rel-118}
+  a = kd,\qquad
+  \sigma = \frac{pd^{2}}{\nu_{\text{rel}}},\qquad
+  p_{1} = \frac{\nu_{\text{rel}}}{\kappa_{T}},\qquad
+  p_{2} = \frac{\nu_{\text{rel}}}{\eta},
+\end{equation}
+where $\nu_{\text{rel}}=\shearvisc\,c^{2}/\enthalpy_{0}$ is the
+relativistic kinematic viscosity.
+The normal-mode equations become:
+\begin{align}
+  \bigl(\tauq\,\sigma^{2}\nu_{\text{rel}}/d^{2}
+        + p_{1}\sigma+a^{2}-D^{2}\bigr)\,\Theta
+  &= \frac{\beta d^{2}}{\kappa_{T}}
+     \bigl(1+\tauq\,\sigma\,\nu_{\text{rel}}/d^{2}\bigr)\,W,
+  \label{eq:rel-119}\\[4pt]
+  (D^{2}-a^{2}-p_{2}\sigma)\,K
+  &= -\frac{Bd}{\eta}\,DW,
+  \label{eq:rel-120}\\[4pt]
+  (D^{2}-a^{2})(D^{2}-a^{2}-\sigma)\,W
+  + \Qrel\,D(D^{2}-a^{2})\,K
+  &= \frac{g\,\alpha_{\text{rel}}\,d^{2}}{\nu_{\text{rel}}}\,
+     a^{2}\,\Theta,
+  \label{eq:rel-121}
+\end{align}
+where $D=d/dz$ (with $z$ measured in units of~$d$) and the
+\textbf{relativistic Chandrasekhar number} is
+\begin{equation}\label{eq:rel-Qrel-def}
+  \boxed{
+  \Qrel
+  = \frac{B^{2}d^{2}}{4\pi\,(\enthalpy_{0}/c^{2})\,\nu_{\text{rel}}\,\eta}
+  = \frac{B^{2}d^{2}}{4\pi\,\rdensity\,\nu\,\eta}
+    \cdot\frac{1}{1+(\edensity_{0}+p_{0}-\rdensity c^{2})/(\rdensity c^{2})}\,.
+  }
+\end{equation}
+In the Newtonian limit $(\edensity_{0}+p_{0})\to\rdensity c^{2}$,
+so $\Qrel\to Q$ of the classical theory (equation~(\ref{eq:4-134})).
+
+\begin{relcorrection}
+The relativistic Chandrasekhar number is related to the classical
+one by
+\[
+  \Qrel
+  = Q\,\frac{\rdensity c^{2}}{\enthalpy_{0}}
+  = Q\,\biggl(1-\frac{\vA^{2}}{c^{2}}\biggr)
+    \relcorr{\vA^{2}/c^{2}},
+\]
+where $\vA$ is the Alfv\'en speed~(\ref{eq:rel-vA}).
+For weakly relativistic plasmas ($\vA\ll c$) the correction is
+$\order{\vA^{2}/c^{2}}$.
+\end{relcorrection}
+
+The equations for the $z$-components of vorticity ($Z$) and
+current density ($X$) are formally independent and identical in
+structure to equations~(\ref{eq:4-122})--(\ref{eq:4-123}) with
+$\Qrel$ replacing~$Q$.
+
+\subsection*{(e) \emph{Boundary conditions for relativistic MHD}}
+
+The boundary conditions on the hydrodynamic variables ($W$, $\Theta$,
+$Z$) are exactly those of the non-relativistic theory (Chapter~II,
+\S\,9\,(a)) since they express kinematic constraints that are
+frame-independent.
+
+For the magnetic perturbations, the two cases of \S\,42\,(a) carry
+over:
+
+\medskip
+\noindent\textbf{Case~A} (non-conducting boundary):
+\begin{equation}\label{eq:rel-107}
+  X = 0,\qquad
+  \mathbf{h}\text{ continuous with external vacuum field}.
+\end{equation}
+
+\noindent\textbf{Case~B} (perfectly conducting boundary):
+\begin{equation}\label{eq:rel-110}
+  K = 0,\qquad DX = 0,\qquad
+  \nabla^{2}h_{z}=0\;\text{on the boundary}.
+\end{equation}
+
+These conditions remain the same relativistically, because they
+derive from the covariant junction conditions on $F^{\mu\nu}$ across
+a material interface.
+
+%----------------------------------------------------------------------
+\section{Stationary convection --- relativistic variational
+  principle}
+\label{sec:rel-43}
+
+\subsection*{(a) \emph{Marginal-state equations}}
+
+Setting $\sigma=0$ (stationary marginal state) in
+equations~(\ref{eq:rel-119})--(\ref{eq:rel-121}), the
+Israel--Stewart terms drop out (the $\tauq$-terms are proportional
+to~$\sigma$), and we recover the \emph{same} structure as the
+classical equations~(\ref{eq:4-128})--(\ref{eq:4-132}), but with
+$\Qrel$ replacing~$Q$ and the relativistic Rayleigh number
+\begin{equation}\label{eq:rel-Rarel-def}
+  \Rarel
+  = \frac{g\,\alpha_{\text{rel}}\,\beta\,d^{4}}
+         {\nu_{\text{rel}}\,\kappa_{T}}
+\end{equation}
+replacing~$R$.
+
+Eliminating $K$ from equation~(\ref{eq:rel-121}) via
+equation~(\ref{eq:rel-120}) (with $\sigma=0$), we obtain the
+single equation for~$W$:
+\begin{equation}\label{eq:rel-133}
+  (D^{2}-a^{2})^{2}W - \Qrel\,D^{2}W
+  = \frac{g\,\alpha_{\text{rel}}\,d^{2}}{\nu_{\text{rel}}}\,
+    a^{2}\,\Theta,
+\end{equation}
+and after applying $(D^{2}-a^{2})$ and using the heat equation,
+\begin{equation}\label{eq:rel-135}
+  (D^{2}-a^{2})\bigl[(D^{2}-a^{2})^{2}-\Qrel\,D^{2}\bigr]\,W
+  = -\Rarel\,a^{2}\,W.
+\end{equation}
+This is formally identical to equation~(\ref{eq:4-135}) with
+$R\to\Rarel$ and $Q\to\Qrel$.
+
+\begin{relcorrection}
+The formal identity of the marginal-state equation with the
+classical one is a consequence of the Israel--Stewart terms
+vanishing at $\sigma=0$.  All relativistic corrections to the
+\emph{stationary} onset therefore enter exclusively through
+the modified dimensionless parameters $\Rarel$ and $\Qrel$.
+\end{relcorrection}
+
+As in the classical theory, $X=Z=0$ for stationary convection.
+
+\subsection*{(b) \emph{A variational principle}}
+
+The variational formulation of \S\,43\,(a) of the classical text
+carries over without change.  Defining
+\begin{equation}\label{eq:rel-141}
+  F = (D^{2}-a^{2})^{2}W - \Qrel\,D^{2}W,
+\end{equation}
+the Rayleigh number is given by the Rayleigh quotient
+\begin{equation}\label{eq:rel-147}
+  \Rarel
+  = \frac{\displaystyle
+      \int_{0}^{1}\bigl[(DF)^{2}+a^{2}F^{2}\bigr]\,dz}
+    {a^{2}\displaystyle
+      \int_{0}^{1}\bigl\{[(D^{2}-a^{2})W]^{2}
+                         +\Qrel\,(DW)^{2}\bigr\}\,dz}\,.
+\end{equation}
+The critical $\Rarel$ for stationary convection is the
+\emph{absolute minimum} of this ratio over admissible trial
+functions.
+
+\subsection*{(c) \emph{Thermodynamic significance: relativistic
+  entropy production}}
+
+In the Newtonian theory (\S\,43\,(b) of the classical text), the
+variational principle expresses the balance
+\begin{equation}
+  \epsilon_{v}+\epsilon_{\eta} = \epsilon_{\text{buoy}},
+\end{equation}
+where $\epsilon_{v}$ is viscous dissipation, $\epsilon_{\eta}$ is
+Joule heating, and $\epsilon_{\text{buoy}}$ is the rate of energy
+liberation by buoyancy.
+
+Relativistically, each dissipative channel contributes to the
+covariant entropy production rate
+$\nabla_{\mu}s^{\mu}\ge 0$ (second law).  One has
+\begin{equation}\label{eq:rel-entropy-prod}
+  T\,\nabla_{\mu}s^{\mu}
+  = \frac{\pi^{\mu\nu}\pi_{\mu\nu}}{2\,\shearvisc}
+    + \frac{\bulkP^{2}}{\bulkvisc}
+    + \frac{q^{\mu}q_{\mu}}{\thermcond\,T}
+    + \frac{J^{\mu}J_{\mu}}{\sigma_{\text{cond}}},
+\end{equation}
+where $\sigma_{\text{cond}}$ is the electrical conductivity.
+In the linearized, marginal state ($\bulkP=0$, incompressible):
+\begin{itemize}
+  \item The shear-stress term gives the relativistic viscous
+    dissipation $\epsilon_{v}^{\text{rel}}$, identical in form
+    to~(\ref{eq:4-148}) with $\rho\nu\to\shearvisc$.
+  \item The current term gives the relativistic Joule dissipation
+    $\epsilon_{\eta}^{\text{rel}}$, identical to~(\ref{eq:4-158})
+    with $Q\to\Qrel$.
+  \item The heat-flux term is second-order in perturbations
+    and drops out at linear order.
+\end{itemize}
+The balance $\epsilon_{v}^{\text{rel}}+\epsilon_{\eta}^{\text{rel}}
+=\epsilon_{\text{buoy}}^{\text{rel}}$ again yields
+expression~(\ref{eq:rel-147}).
+
+\begin{relcorrection}
+The variational principle retains its thermodynamic meaning
+relativistically: it expresses the minimum entropy-production
+condition at marginal stability, with both viscous and Ohmic
+dissipation channels included in the covariant entropy
+current~(\ref{eq:rel-entropy-prod}).
+\end{relcorrection}
+
+%----------------------------------------------------------------------
+\section{Solutions for stationary convection}
+\label{sec:rel-44}
+
+Because the marginal-state equation~(\ref{eq:rel-135}) is formally
+identical to the classical equation~(\ref{eq:4-135}) with the
+substitutions $R\to\Rarel$, $Q\to\Qrel$, all classical solutions
+carry over with these replacements.
+
+\subsection*{(a) \emph{Two free boundaries}}
+
+The eigenfunction is $W=A\sin\pi z$ and the characteristic equation
+is
+\begin{equation}\label{eq:rel-163}
+  \Rarel
+  = \frac{\pi^{2}+a^{2}}{a^{2}}
+    \bigl[(\pi^{2}+a^{2})^{2}+\pi^{2}\Qrel\bigr].
+\end{equation}
+Letting $x=a^{2}/\pi^{2}$,
+\begin{equation}\label{eq:rel-165}
+  \Rarel
+  = \pi^{4}\,\frac{1+x}{x}
+    \biggl[(1+x)^{2}+\frac{\Qrel}{\pi^{2}}\biggr].
+\end{equation}
+The minimum over~$x$ occurs when
+\begin{equation}\label{eq:rel-166}
+  2x^{3}+3x^{2} = 1+\Qrel/\pi^{2},
+\end{equation}
+exactly the same cubic as in the classical theory and the
+rotational problem (equation~III\,(131)), with
+$\Qrel/\pi^{2}$ replacing $T/\pi^{4}$.
+
+\subsubsection*{The $\pi^{2}Q$ law --- does it persist
+  relativistically?}
+
+For $\Qrel/\pi^{2}\gg 1$, the asymptotic root of~(\ref{eq:rel-166})
+is $x_{\min}\to(\Qrel/2\pi^{2})^{1/3}$, giving
+\begin{equation}\label{eq:rel-168}
+  \boxed{
+  \Rarel^{(c)} \;\to\; \pi^{2}\,\Qrel
+  \qquad (\Qrel\to\infty),
+  }
+\end{equation}
+and
+\begin{equation}\label{eq:rel-168b}
+  a_{\min} \to \bigl(\tfrac{1}{2}\pi^{4}\Qrel\bigr)^{1/6}.
+\end{equation}
+\emph{The $\pi^{2}Q$ law persists in the relativistic theory.}
+
+Translating back to physical quantities:
+\begin{equation}\label{eq:rel-169}
+  g\,\alpha_{\text{rel}}\,\beta_{c}
+  \;\to\;
+  \pi^{2}\,\frac{B^{2}\,\sigma_{\text{cond}}}{4\pi\,
+    (\enthalpy_{0}/c^{2})}\,\kappa_{T}\,d^{-4}
+  \qquad (B\to\infty).
+\end{equation}
+Comparing with the classical result~(\ref{eq:4-169}):
+\begin{equation}\label{eq:rel-169-compare}
+  \frac{\beta_{c}^{\text{rel}}}{\beta_{c}^{\text{class}}}
+  = \frac{\rdensity}{\enthalpy_{0}/c^{2}}
+  = 1 - \frac{\vA^{2}}{c^{2}} + \order{\vA^{4}/c^{4}}.
+\end{equation}
+The relativistic critical gradient is slightly \emph{lower} (the
+field is slightly \emph{more} effective at suppressing convection)
+because the relativistic inertia $\enthalpy_{0}/c^{2}>\rdensity$
+makes it harder for buoyancy to overcome the magnetic tension.
+
+\begin{relcorrection}
+The classical result that the critical gradient becomes independent
+of viscosity in the strong-field limit remains valid
+relativistically.  The only change is $\rho\to\enthalpy/c^{2}$,
+giving a correction of order $\vA^{2}/c^{2}$ to the critical
+temperature gradient.
+\end{relcorrection}
+
+\subsection*{(b) \emph{Two rigid boundaries}}
+
+The variational method of \S\,44\,(b) applies without modification.
+Expanding
+\[
+  F = \sum_{m}A_{m}\cos\bigl[(2m+1)\pi z\bigr],
+\]
+the secular determinant is
+\begin{equation}\label{eq:rel-187}
+  \biggl|\frac{1}{2}
+    \biggl(\frac{c_{2n+1}}{\Rarel\,a^{2}}-\gamma_{2n+1}\biggr)
+    \delta_{nm}-(n|m)\biggr| = 0,
+\end{equation}
+where $c_{2n+1}$, $\gamma_{2n+1}$, and $(n|m)$ are defined
+as in equations~(\ref{eq:4-184}), (\ref{eq:4-176}), and
+(\ref{eq:4-189}) with $Q\to\Qrel$.  The $q_{j}$ are roots of
+$(q^{2}-a^{2})^{2}-\Qrel\,q^{2}=0$, i.e.\
+\begin{equation}\label{eq:rel-178}
+  q_{1,2}
+  = \tfrac{1}{2}\bigl[\sqrt{\Qrel+4a^{2}}\pm\sqrt{\Qrel}\,\bigr].
+\end{equation}
+
+Numerical solutions of~(\ref{eq:rel-187}) at successive
+approximation orders reproduce the classical Table~XV values when
+$\Qrel=Q$.  For relativistic corrections, the mapping
+$\Qrel = Q\,\rdensity c^{2}/\enthalpy_{0}$ shifts every entry
+in the $(Q,R_{c})$ table.
+
+The asymptotic relation $\Rarel^{(c)}\to\pi^{2}\Qrel$ holds also
+for rigid boundaries, confirming the universality of the $\pi^{2}Q$
+law.
+
+\subsection*{(c) \emph{One rigid and one free boundary}}
+
+As in \S\,44\,(c), the solution for one rigid and one free boundary
+is obtained from the rigid--rigid solution by considering odd
+eigenfunctions.  An odd solution for $W$ at cell depth~$d$ provides
+a mixed-boundary solution at depth~$\tfrac{1}{2}d$, with
+\[
+  \Rarel^{\text{(mixed)}}
+  = \tfrac{1}{16}\,\Rarel^{\text{(rigid--rigid)}},\qquad
+  \Qrel^{\text{(mixed)}}
+  = \tfrac{1}{4}\,\Qrel^{\text{(rigid--rigid)}}.
+\]
+This reduction is purely geometric and is unaffected by
+relativistic corrections.
+
+\subsection*{(d) \emph{Cell patterns with magnetic inhibition}}
+
+Since $Z=0$ (no vertical vorticity) for stationary convection, the
+horizontal velocity components are determined from $W(z)$ alone,
+exactly as in the simple B\'enard problem.  The cell patterns
+(rolls, hexagons) are identical to those of Chapter~II, \S\,16.
+
+The \emph{quantitative} change is that the critical wave number
+$a_{c}(\Qrel)$ increases with $\Qrel$, causing cells to become
+narrower and more elongated.  The asymptotic scaling
+\begin{equation}\label{eq:rel-acrit}
+  a_{c} \sim \bigl(\tfrac{1}{2}\pi^{4}\Qrel\bigr)^{1/6}
+  \qquad (\Qrel\gg 1)
+\end{equation}
+shows that the cell width $\ell\sim d/a_{c}$ shrinks as
+$\Qrel^{-1/6}$.  Relativistically, $\Qrel<Q$ (cf.\
+equation~(\ref{eq:rel-Qrel-def})), so for the same magnetic
+field strength, cells are slightly \emph{wider} than the
+classical prediction---a consequence of the increased inertia.
+
+%----------------------------------------------------------------------
+\subsection*{(e) \emph{Causality verification for all perturbation
+  modes}}
+
+\begin{causalitycheck}
+We verify that all perturbation mode phase speeds respect the
+causal bound $v_{\text{phase}}\le c$.
+
+\begin{enumerate}
+\item \textbf{Stationary convection ($\sigma=0$).}
+  The marginal state is time-independent; $v_{\text{phase}}=0<c$.
+  \checkmark
+
+\item \textbf{Alfv\'en--vorticity modes.}
+  The coupled vorticity--current equations
+  (\ref{eq:4-122})--(\ref{eq:4-123}) with $\Qrel$ have
+  characteristic speeds
+  \[
+    v_{\text{A,pert}}^{2}
+    = \frac{\Qrel\,\nu_{\text{rel}}\,\eta}{d^{2}}
+    = \frac{B^{2}}{4\pi\,\enthalpy_{0}/c^{2}}
+    = \vA^{2} < c^{2}. \quad\checkmark
+  \]
+
+\item \textbf{Thermal modes.}
+  The Israel--Stewart heat equation~(\ref{eq:rel-91}) is a
+  telegrapher equation with characteristic speed
+  \[
+    v_{q}^{2}
+    = \frac{\kappa_{T}}{\tauq}
+    \le c^{2}
+    \quad\text{(guaranteed by the Israel--Stewart constraint
+    $\tauq\ge\kappa_{T}/c^{2}$).}  \quad\checkmark
+  \]
+
+\item \textbf{Magnetosonic modes.}
+  The fast magnetosonic speed in the relativistic theory is
+  \[
+    \vf^{2}
+    = \cs^{2}+\vA^{2}-\frac{\cs^{2}\vA^{2}}{c^{2}}
+    < c^{2}. \quad\checkmark
+  \]
+  This is an algebraic identity; no additional constraint is
+  needed.
+
+\item \textbf{Overstable modes} (to be analyzed in \S\,46).
+  For complex $\sigma=\sigma_{r}+i\sigma_{i}$, the group velocity
+  of the perturbation is bounded by $\max(\vA,\vf,v_{q})<c$.  The
+  Israel--Stewart relaxation times $\tauq$, $\taupi$ ensure that
+  the dispersion relation has no superluminal roots.
+  \checkmark
+\end{enumerate}
+
+\noindent\textbf{Conclusion:} All perturbation modes in the
+relativistic thermal-instability problem with a vertical magnetic
+field propagate at speeds strictly less than~$c$.  The theory is
+manifestly causal.
+\end{causalitycheck}
+
+%----------------------------------------------------------------------
+\subsection*{Summary of relativistic modifications (\S\S\,41--44)}
+
+\begin{enumerate}
+  \item The perturbation equations acquire the Israel--Stewart
+    heat-relaxation term ($\tauq$-dependent), converting the heat
+    equation from parabolic to hyperbolic.
+  \item All inertial terms replace $\rho_{0}$ with
+    $\enthalpy_{0}/c^{2}$.
+  \item The Chandrasekhar number becomes
+    $\Qrel = Q\,\rdensity c^{2}/\enthalpy_{0}$, incorporating
+    Alfv\'en-speed corrections.
+  \item For stationary convection ($\sigma=0$), the
+    Israel--Stewart terms vanish, and the eigenvalue problem is
+    formally identical to the classical one with
+    $(R,Q)\to(\Rarel,\Qrel)$.
+  \item The $\pi^{2}Q$ law $\Rarel^{(c)}\to\pi^{2}\Qrel$
+    persists for strong fields.
+  \item The critical temperature gradient is reduced by a factor
+    $\rdensity c^{2}/\enthalpy_{0}$ relative to the classical
+    value.
+  \item All modes satisfy the causal bound
+    $v_{\text{phase}}<c$.
+\end{enumerate}

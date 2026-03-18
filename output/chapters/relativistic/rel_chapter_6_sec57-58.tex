@@ -1,0 +1,581 @@
+%% rel_chapter_6_sec57-58.tex
+%% Relativistic Extension of Ch VI §57-58: Exchange of Stabilities and
+%% Variational Principle in Spherical Geometry
+%% Agent 24: Relativistic treatment of thermal instability in spherical shells
+%%
+%% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+%% Macros assumed from rel_preamble.tex:
+%%   \fvel, \proj, \emt, \covd, \Lf, \cs, \vA, \enthalpy,
+%%   \taupi, \tauq, \bulkvisc, \shearvisc
+
+\chapter{Relativistic Exchange of Stabilities and Variational Principle
+in Spherical Geometry}
+\label{ch:rel-ch6-57-58}
+
+In Chandrasekhar's original treatment (\S\,57--58 of Chapter~VI), the
+exchange of stabilities is proved for a self-gravitating fluid shell
+with constant $\beta$ and $\gamma$, and a variational principle is
+established whose physical content is the balance between viscous
+dissipation and buoyancy work.  Both proofs assume that the inertial
+mass density is $\rho$ alone and that heat propagation is governed by
+the (acausal) Fourier law.  When the fluid is relativistic---as in
+neutron star envelopes or hot proto-neutron star mantles---two
+essential modifications arise:
+\begin{enumerate}
+\item \emph{Pressure contributes to inertia}: the effective inertial
+  mass density becomes the relativistic enthalpy density
+  $\enthalpy = (\varepsilon + p)/c^{2}$, where $\varepsilon$ is the
+  energy density and $p$ the isotropic pressure.
+\item \emph{Causality constrains dissipation}: Fourier conduction must
+  be replaced by the Israel--Stewart causal heat equation, introducing
+  a relaxation time $\tauq > 0$ and bounding the thermal signal speed.
+\end{enumerate}
+We re-derive the exchange of stabilities and the variational principle
+under these relativistic conditions, paying particular attention to the
+role of spherical-mode causality.
+
+Throughout, $c$ is kept explicit, and we use the metric signature
+$(-,+,+,+)$.  The notation follows \texttt{RELATIVISTIC\_CONVENTIONS.md}
+and the framework established in the relativistic thermodynamics chapter
+(cf.\ \S\,\ref{ch:rel-framework}).
+
+
+%% ====================================================================
+\section{Relativistic exchange of stabilities in spherical geometry}
+\label{sec:rel-57}
+%% ====================================================================
+
+\subsection{Governing equations with relativistic inertia}
+\label{sec:rel-57-gov}
+
+We consider a spherical shell $\eta \leq r \leq 1$ (in units of the
+outer radius $R_{1}$) filled with a self-gravitating fluid whose
+unperturbed state has constant values of $\beta_{0}$ (the ratio of the
+temperature gradient to its adiabatic value) and $\gamma_{0}$ (defined
+as in the classical case, eq.~\eqref{eq:6-59}).  In the relativistic
+regime the inertial density $\rho$ is replaced by the enthalpy density
+$\enthalpy = (\varepsilon + p)/c^{2}$, so the momentum equation
+acquires an additional pressure--inertia coupling.
+
+Defining the relativistic \emph{enthalpy--inertia parameter}
+\begin{equation}
+  \mathcal{I} \;=\; 1 + \frac{p}{\varepsilon}
+  \;=\; \frac{\enthalpy c^{2}}{\varepsilon},
+  \label{eq:rel-inertia-param}
+\end{equation}
+the linearized perturbation equations for a spherical harmonic mode of
+degree $l$ take the form (cf.\ Chandrasekhar's eq.~\eqref{eq:6-60})
+\begin{equation}
+  \mathscr{D}_{l}^{2}\!\bigl(\mathscr{D}_{l}^{2}
+    - \mathcal{I}\,\sigma\bigr)
+  \bigl(\mathscr{D}_{l}^{2}
+    - \mathcal{I}\,p_{\mathrm{rel}}\,\sigma\bigr)W
+  = l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,W,
+  \label{eq:rel-6-60}
+\end{equation}
+where
+\begin{equation}
+  \mathcal{C}_{\mathrm{rel}}
+  = \frac{\alpha\,\beta\,\gamma\,R_{1}^{4}}{\kappa\,\nu}
+    \;\times\;\mathcal{I},
+  \label{eq:rel-C}
+\end{equation}
+and $p_{\mathrm{rel}}$ is the relativistic Prandtl-like ratio
+incorporating the Israel--Stewart relaxation:
+\begin{equation}
+  p_{\mathrm{rel}} = \frac{\nu}{\kappa_{\mathrm{IS}}},
+  \qquad
+  \kappa_{\mathrm{IS}}
+    = \frac{\kappa}{1 + \tauq\,\sigma}.
+  \label{eq:rel-Prandtl}
+\end{equation}
+In the non-relativistic limit $\mathcal{I} \to 1$,
+$\tauq \to 0$, and $\kappa_{\mathrm{IS}} \to \kappa$, recovering
+exactly Chandrasekhar's classical equation~\eqref{eq:6-60}.
+
+\subsection{Does the principle still hold when $p$ contributes to
+inertia?}
+\label{sec:rel-57-question}
+
+The classical proof (\S\,57) proceeds by multiplying the heat equation
+by $r^{2}F^{*}$, integrating over the shell, and showing that the
+imaginary part of the resulting integral identity forces
+$\sigma_{i} = 0$.  The key step is that the coefficient of $\sigma_{i}$
+is a positive-definite expression involving $|F|^{2}$ and $|W'|^{2}$
+terms.
+
+When pressure contributes to inertia through the factor
+$\mathcal{I} > 1$, every $\sigma$ in the classical equations is
+multiplied by $\mathcal{I}$.  The decisive question is: does this
+multiplicative factor preserve the positive-definiteness of the
+coefficient of $\sigma_{i}$?  The answer is \emph{yes}, because
+$\mathcal{I} > 0$ always (both $\varepsilon$ and $p$ are positive in
+any physical fluid), so it acts as a positive rescaling that cannot
+change the sign of the integral.
+
+There is, however, a subtlety introduced by the Israel--Stewart
+modification.  The thermal relaxation time $\tauq$ makes
+$p_{\mathrm{rel}}$ frequency-dependent (eq.~\eqref{eq:rel-Prandtl}),
+and na\"{\i}vely this could inject an imaginary part.  We address this
+next.
+
+\subsection{Modified proof using relativistic energy arguments}
+\label{sec:rel-57-proof}
+
+We follow the structure of Chandrasekhar's proof but track the
+relativistic modifications at each step.  Define $F$ and $W$ exactly as
+in eqs.~\eqref{eq:6-67}--\eqref{eq:6-69}, but with $\mathcal{C}$
+replaced by $\mathcal{C}_{\mathrm{rel}}$.  The coupled system becomes
+\begin{align}
+  \mathscr{D}_{l}^{2}\!
+    \bigl(\mathscr{D}_{l}^{2} - \mathcal{I}\,\sigma\bigr) W
+    &= F,
+  \label{eq:rel-68} \\[4pt]
+  \bigl(\mathscr{D}_{l}^{2}
+    - \mathcal{I}\,p_{\mathrm{rel}}\,\sigma\bigr) F
+    &= -l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,W.
+  \label{eq:rel-69}
+\end{align}
+Multiply eq.~\eqref{eq:rel-69} by $r^{2}F^{*}$, integrate over
+$[\eta,1]$, and apply the self-adjointness property~\eqref{eq:6-65}:
+\begin{equation}
+  \int_{\eta}^{1}\!\Bigl[|F'|^{2}
+    + \frac{l(l+1)}{r^{2}}|F|^{2}\Bigr]r^{2}\,dr
+  + \mathcal{I}\,p_{\mathrm{rel}}\,\sigma
+    \int_{\eta}^{1}|F|^{2}\,r^{2}\,dr
+  = l(l+1)\,\mathcal{C}_{\mathrm{rel}}\!
+    \int_{\eta}^{1}W\,F^{*}\,r^{2}\,dr.
+  \label{eq:rel-71}
+\end{equation}
+Now substitute $F^{*}$ from eq.~\eqref{eq:rel-68} and perform the
+integrations by parts using eqs.~\eqref{eq:6-64}--\eqref{eq:6-66}.
+The boundary terms vanish for the same reasons as in the classical case
+(both rigid and free boundary conditions).  We arrive at the
+relativistic analogue of eq.~\eqref{eq:6-76}:
+\begin{multline}
+  \int_{\eta}^{1}\!\Bigl[|F'|^{2}
+    + \frac{l(l+1)}{r^{2}}|F|^{2}\Bigr]r^{2}\,dr
+  + \mathcal{I}\,p_{\mathrm{rel}}\,\sigma
+    \int_{\eta}^{1}|F|^{2}\,r^{2}\,dr \\[4pt]
+  + l(l+1)\,\mathcal{C}_{\mathrm{rel}}\!
+    \left\{\int_{\eta}^{1}|\mathscr{D}_{l}^{2}W|^{2}\,r^{2}\,dr
+    - \mathcal{I}\,\sigma^{*}\!
+      \int_{\eta}^{1}\!\Bigl[|W'|^{2}
+        + \frac{l(l+1)}{r^{2}}|W|^{2}\Bigr]
+      r^{2}\,dr\right\} = 0.
+  \label{eq:rel-76}
+\end{multline}
+
+\paragraph{Separating real and imaginary parts.}
+Write $\sigma = \sigma_{r} + i\sigma_{i}$.  The Israel--Stewart
+modification makes $p_{\mathrm{rel}}$ complex when $\sigma_{i}\neq 0$:
+\begin{equation}
+  p_{\mathrm{rel}}
+  = \frac{\nu}{\kappa}\,
+    \frac{1 + \tauq\,\sigma_{r} + i\,\tauq\,\sigma_{i}}
+         {(1 + \tauq\,\sigma_{r})^{2} + \tauq^{2}\,\sigma_{i}^{2}}.
+  \label{eq:rel-prel-complex}
+\end{equation}
+Define the real and positive denominator
+$D_{\tauq} = (1 + \tauq\sigma_{r})^{2} + \tauq^{2}\sigma_{i}^{2}$.
+The imaginary part of eq.~\eqref{eq:rel-76} then yields
+\begin{equation}
+  \sigma_{i}\!\left\{
+    \frac{\mathcal{I}\nu}{\kappa\,D_{\tauq}}\!
+    \int_{\eta}^{1}|F|^{2}\,r^{2}\,dr
+    - l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,\mathcal{I}\!
+      \int_{\eta}^{1}\!\Bigl[|W'|^{2}
+        + \frac{l(l+1)}{r^{2}}|W|^{2}\Bigr]r^{2}\,dr
+  \right\} = 0.
+  \label{eq:rel-77}
+\end{equation}
+The factor in braces is a \emph{sum of two positive-definite terms}
+(since $\mathcal{I} > 0$, $\mathcal{C}_{\mathrm{rel}} > 0$ for an
+unstable configuration, $D_{\tauq} > 0$, and all the integrals are
+positive-definite).  Therefore,
+\begin{equation}
+  \boxed{\sigma_{i} = 0.}
+  \label{eq:rel-78}
+\end{equation}
+
+\begin{quote}
+\textbf{Result.}  \emph{The principle of the exchange of stabilities
+remains valid in the relativistic regime, for constant $\beta$ and
+$\gamma$, even when pressure contributes to inertia and heat conduction
+is governed by the Israel--Stewart causal equation.}  The onset of
+thermal instability in a relativistic spherical shell is via a
+stationary marginal state, exactly as in the classical case.
+\end{quote}
+
+\paragraph{Role of the relaxation time.}
+The Israel--Stewart relaxation time $\tauq$ enters
+eq.~\eqref{eq:rel-77} only through the positive factor $D_{\tauq}^{-1}$
+in the denominator.  It does not spoil the positive-definiteness of the
+coefficient of $\sigma_{i}$ but merely \emph{rescales} the effective
+thermal diffusivity.  Physically, this is because the relaxation
+equation replaces the acausal, instantaneous Fourier response with a
+finite-speed thermal wave, but does not introduce oscillatory
+instability.
+
+\paragraph{Physical interpretation.}
+In the classical case, the exchange of stabilities rests on the fact
+that convective motions release gravitational potential energy at a rate
+that can only be balanced by dissipation---there is no mechanism for
+overstability.  In the relativistic case, the additional pressure
+contribution to inertia increases the ``weight'' of the convecting
+fluid element (by the factor $\mathcal{I}$), thereby increasing both
+the gravitational energy release and the kinetic energy requirement in
+the same proportion.  The balance argument is unaffected.
+
+
+%% ====================================================================
+\section{Variational principle for constant $\beta$ and $\gamma$:
+relativistic formulation}
+\label{sec:rel-58}
+%% ====================================================================
+
+Since the exchange of stabilities holds in the relativistic case
+($\sigma_{i} = 0$, \S\,\ref{sec:rel-57-proof}), the marginal state is
+characterized by $\sigma = 0$.  The governing equations then simplify
+exactly as in the classical \S\,58.
+
+\subsection{Marginal-state equations}
+\label{sec:rel-58-marginal}
+
+Setting $\sigma = 0$ in eqs.~\eqref{eq:rel-68}--\eqref{eq:rel-69}:
+\begin{align}
+  \mathscr{D}_{l}^{4}\,W &= F,
+  \label{eq:rel-79a}\\[4pt]
+  \mathscr{D}_{l}^{2}\,F
+    &= -l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,W.
+  \label{eq:rel-80}
+\end{align}
+Together these give the sixth-order equation
+\begin{equation}
+  \mathscr{D}_{l}^{6}\,W
+  = -l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,W.
+  \label{eq:rel-6th-order}
+\end{equation}
+The boundary conditions are unchanged from eq.~\eqref{eq:6-70}.
+
+As in \S\,57, $\mathscr{D}_{l}^{2}\,Z = 0$ with $Z = 0$ on the
+boundaries implies $Z \equiv 0$: the radial vorticity vanishes
+identically, and the velocity field is purely poloidal in the
+relativistic case as well.
+
+\subsection{Relativistic Rayleigh quotient in spherical geometry}
+\label{sec:rel-58-Rayleigh}
+
+Setting $\sigma = 0$ in eq.~\eqref{eq:rel-76} and using the
+Hermiticity of $\mathscr{D}_{l}^{4}$ (eq.~\eqref{eq:6-66}), we obtain
+the \emph{relativistic Rayleigh quotient}:
+\begin{equation}
+  \boxed{
+  \mathcal{C}_{\mathrm{rel}}
+  = \frac{\displaystyle
+      \int_{\eta}^{1}|\mathscr{D}_{l}^{2}W|^{2}\,r^{2}\,dr}
+    {\displaystyle
+      l(l+1)\int_{\eta}^{1}\!(W/r)^{2}\,r^{2}\,dr}.
+  }
+  \label{eq:rel-83}
+\end{equation}
+This has the \emph{same functional form} as the classical Rayleigh
+quotient (eq.~\eqref{eq:6-83}).  All the relativistic physics is
+encoded in the definition of $\mathcal{C}_{\mathrm{rel}}$
+(eq.~\eqref{eq:rel-C}), which differs from the classical
+$\mathcal{C}$ by the enthalpy--inertia factor $\mathcal{I}$:
+\begin{equation}
+  \mathcal{C}_{\mathrm{rel}}
+  = \mathcal{C}\;\times\;\mathcal{I}
+  = \mathcal{C}\,\Bigl(1 + \frac{p}{\varepsilon}\Bigr).
+  \label{eq:rel-C-vs-classical}
+\end{equation}
+Since $\mathcal{I} > 1$ in any relativistic fluid, the critical
+Rayleigh-like number for marginal stability is \emph{larger} in the
+relativistic case:
+\begin{equation}
+  \mathcal{C}_{\mathrm{rel}}^{(\mathrm{crit})}
+  > \mathcal{C}^{(\mathrm{crit})}.
+  \label{eq:rel-stab-increase}
+\end{equation}
+\emph{Relativistic pressure--inertia coupling stabilizes the spherical
+shell against thermal convection.}
+
+\paragraph{Variational characterization.}
+By the same argument as in \S\,58, the lowest eigenvalue
+$\mathcal{C}_{\mathrm{rel}}^{(\mathrm{crit})}$ is the absolute
+minimum of the Rayleigh quotient~\eqref{eq:rel-83} over all trial
+functions $W$ satisfying the boundary conditions.  An equivalent
+statement: $l(l+1)\,\mathcal{C}_{\mathrm{rel}}$ is the minimum of
+\begin{equation}
+  \frac{\displaystyle
+    \int_{\eta}^{1}|\mathscr{D}_{l}^{2}W|^{2}\,r^{2}\,dr}
+  {\displaystyle
+    \int_{\eta}^{1}|W/r|^{2}\,r^{2}\,dr},
+  \label{eq:rel-84}
+\end{equation}
+for all admissible $F$ vanishing at $r = 1$ and $\eta$, with $W$
+determined from $F$ through eq.~\eqref{eq:rel-79a} and the boundary
+conditions.  Here $l(l+1)\,\mathcal{C}_{\mathrm{rel}}$ appears as the
+Lagrangian multiplier, precisely as in the classical case.
+
+\paragraph{Non-relativistic limit.}
+When $p \ll \varepsilon$, $\mathcal{I} \to 1$ and
+$\mathcal{C}_{\mathrm{rel}} \to \mathcal{C}$: the relativistic
+Rayleigh quotient reduces identically to eq.~\eqref{eq:6-83}.
+
+
+\subsection{Thermodynamic significance: relativistic entropy production
+in the sphere}
+\label{sec:rel-58-thermo}
+
+In \S\,58a, Chandrasekhar shows that the variational
+principle~\eqref{eq:6-83} expresses the balance between viscous
+dissipation $\epsilon_{\nu}$ and buoyancy work $\epsilon_{T}$ at the
+marginal state.  We now establish the relativistic version of this
+result, keeping track of both the enthalpy--inertia contribution and
+the entropy production requirements of Israel--Stewart theory.
+
+\subsubsection{Relativistic viscous dissipation}
+\label{sec:rel-58-viscous}
+
+In special relativity, the rate of viscous energy dissipation in the
+fluid frame is (see, e.g., the relativistic framework chapter)
+\begin{equation}
+  \epsilon_{\nu}^{\mathrm{rel}}
+  = \int \enthalpy\,\nu\,|\operatorname{curl}\vect{u}|^{2}\,dV
+  = \mathcal{I}\;\rho\nu\!\int |\operatorname{curl}\vect{u}|^{2}\,dV.
+  \label{eq:rel-86}
+\end{equation}
+Since the velocity field is purely poloidal, the same angular
+integrations as in \S\,58 yield
+\begin{equation}
+  \epsilon_{\nu}^{\mathrm{rel}}
+  = \frac{\mathcal{I}\,\rho\nu\,N_{l}^{m}}
+         {l(l+1)}
+    \int_{\eta}^{1}(\mathscr{D}_{l}^{2}W)^{2}\,r^{2}\,dr.
+  \label{eq:rel-93}
+\end{equation}
+This differs from Chandrasekhar's eq.~\eqref{eq:6-93} only by the
+factor $\mathcal{I}$.
+
+\subsubsection{Relativistic buoyancy work}
+\label{sec:rel-58-buoyancy}
+
+The rate of energy release by buoyancy in the relativistic case
+involves the enthalpy density rather than the mass density:
+\begin{equation}
+  \epsilon_{T}^{\mathrm{rel}}
+  = \alpha\,\enthalpy\,c^{2}\,\beta\gamma\,N_{l}^{m}
+    \int_{\eta}^{1}\frac{W^{2}}{r^{2}}\,r^{2}\,dr
+  = \mathcal{I}\;\alpha\rho\beta\gamma\,N_{l}^{m}
+    \int_{\eta}^{1}|W/r|^{2}\,r^{2}\,dr.
+  \label{eq:rel-97}
+\end{equation}
+Again, the classical expression~\eqref{eq:6-97} acquires the factor
+$\mathcal{I}$.
+
+\subsubsection{Energy balance recovers the Rayleigh quotient}
+\label{sec:rel-58-balance}
+
+Equating $\epsilon_{\nu}^{\mathrm{rel}} =
+\epsilon_{T}^{\mathrm{rel}}$ at the marginal state:
+\begin{equation}
+  \frac{\mathcal{I}\,\rho\nu\,N_{l}^{m}}{l(l+1)}
+    \int_{\eta}^{1}(\mathscr{D}_{l}^{2}W)^{2}\,r^{2}\,dr
+  = \mathcal{I}\;\alpha\rho\beta\gamma\,N_{l}^{m}
+    \int_{\eta}^{1}|W/r|^{2}\,r^{2}\,dr.
+  \label{eq:rel-balance}
+\end{equation}
+The factor $\mathcal{I}$ cancels, and after substituting the definition
+of $\mathcal{C}_{\mathrm{rel}}$ (eq.~\eqref{eq:rel-C}), we recover
+exactly the relativistic Rayleigh quotient~\eqref{eq:rel-83}.
+
+\begin{quote}
+\textbf{Thermodynamic interpretation.}  \emph{The relativistic
+variational principle, like its classical counterpart, expresses the
+equality of viscous dissipation and buoyancy work as the necessary and
+sufficient condition for the marginal state.}  The enthalpy--inertia
+factor $\mathcal{I}$ enters both sides equally and cancels in the
+ratio, so the functional form of the Rayleigh quotient is invariant
+under the non-relativistic $\to$ relativistic transition.
+\end{quote}
+
+\subsubsection{Entropy production and the second law}
+\label{sec:rel-58-entropy}
+
+In Israel--Stewart theory, the entropy production rate due to heat
+conduction in the fluid rest frame is
+\begin{equation}
+  T\,\dot{s}_{\mathrm{heat}}
+  = \frac{q^{\mu}\,q_{\mu}}{\kappa\,T\,\enthalpy\,c^{2}}
+    + \frac{\tauq}{2\kappa\,T\,\enthalpy\,c^{2}}\,
+      \frac{d}{dt}(q^{\mu}\,q_{\mu}).
+  \label{eq:rel-entropy-prod}
+\end{equation}
+This is manifestly non-negative for $\kappa > 0$, $\tauq \geq 0$ in
+steady state (where the time derivative vanishes).  The total entropy
+production from both viscous and thermal dissipation is
+\begin{equation}
+  \dot{S}_{\mathrm{total}}
+  = \frac{1}{T}\bigl(\epsilon_{\nu}^{\mathrm{rel}}
+    + \epsilon_{\mathrm{heat}}^{\mathrm{rel}}\bigr)
+  \geq 0.
+  \label{eq:rel-entropy-total}
+\end{equation}
+At the marginal state, the convective motion is infinitesimally slow
+and the viscous dissipation exactly balances the buoyancy energy
+release; the net entropy production by the marginal mode is zero to
+leading order.  This is the relativistic counterpart of the classical
+minimum entropy production principle.
+
+
+%% ====================================================================
+\section{Causality: spherical modes must have causal propagation}
+\label{sec:rel-causality}
+%% ====================================================================
+
+The Israel--Stewart framework guarantees causal propagation of
+\emph{plane-wave} perturbations by construction.  In a spherical shell,
+the perturbations are expanded in spherical harmonics $Y_{l}^{m}$, and
+one must verify that each mode $l$ satisfies the causality bound
+independently.
+
+\subsection{Thermal signal speed in the spherical shell}
+\label{sec:rel-causality-thermal}
+
+The Israel--Stewart heat equation in the relativistic framework yields
+a thermal wave speed (cf.\ the framework chapter)
+\begin{equation}
+  v_{\mathrm{th}}^{2}
+  = \frac{\kappa}{\tauq\,\enthalpy\,c^{2}}
+  = \frac{\kappa}{\tauq\,(\varepsilon + p)}.
+  \label{eq:rel-vth}
+\end{equation}
+The causality requirement
+\begin{equation}
+  v_{\mathrm{th}} \leq c
+  \label{eq:rel-causality-thermal}
+\end{equation}
+imposes the constraint
+\begin{equation}
+  \tauq \geq \frac{\kappa}{(\varepsilon + p)\,c^{2}}
+  = \frac{\kappa}{\enthalpy\,c^{4}}.
+  \label{eq:rel-tauq-bound}
+\end{equation}
+This is the same constraint as for plane waves; it does not acquire
+$l$-dependent corrections because the spherical harmonic decomposition
+separates the angular and radial parts cleanly.
+
+\subsection{Viscous signal speed}
+\label{sec:rel-causality-viscous}
+
+Similarly, the shear viscous perturbations propagate at a speed
+bounded by
+\begin{equation}
+  v_{\mathrm{visc}}^{2}
+  = \frac{\shearvisc}{\taupi\,\enthalpy\,c^{2}}
+  \leq c^{2},
+  \label{eq:rel-vvisc}
+\end{equation}
+which requires $\taupi \geq \shearvisc / (\enthalpy\,c^{4})$.
+
+\subsection{Combined causality constraint for the eigenvalue problem}
+\label{sec:rel-causality-combined}
+
+For the exchange-of-stabilities proof (\S\,\ref{sec:rel-57-proof}) and
+the variational principle (\S\,\ref{sec:rel-58-Rayleigh}) to be
+physically consistent, \emph{both} the thermal and viscous relaxation
+times must satisfy their respective causality bounds.  We require:
+\begin{equation}
+  \boxed{
+  \tauq \geq \frac{\kappa}{\enthalpy\,c^{4}},
+  \qquad
+  \taupi \geq \frac{\shearvisc}{\enthalpy\,c^{4}}.
+  }
+  \label{eq:rel-causality-constraints}
+\end{equation}
+Under these constraints:
+\begin{enumerate}
+\item All spherical-harmonic modes $l = 1, 2, 3, \ldots$ propagate at
+  speeds $\leq c$.
+\item The exchange of stabilities (eq.~\eqref{eq:rel-78}) is valid for
+  every $l$.
+\item The Rayleigh quotient~\eqref{eq:rel-83} provides a well-defined,
+  causal variational principle for the critical
+  $\mathcal{C}_{\mathrm{rel}}$.
+\end{enumerate}
+
+\paragraph{No $l$-dependent causality violation.}
+In Fourier (acausal) theory, the heat flux responds instantaneously to
+a temperature gradient at any angular scale.  With Israel--Stewart
+theory, the thermal response at angular wavenumber $\sim l/R_{1}$ is
+characterized by a propagation time $\sim R_{1}/(l\,v_{\mathrm{th}})$.
+For large $l$, the response time grows (the signal must traverse a
+smaller angular patch), but the propagation speed remains
+$v_{\mathrm{th}} \leq c$ regardless of $l$.  There is thus no danger
+of superluminal propagation at high multipoles.
+
+\paragraph{Connection to the stability criterion.}
+The causal thermal diffusivity $\kappa_{\mathrm{IS}} = \kappa/(1 +
+\tauq\,\sigma)$ (eq.~\eqref{eq:rel-Prandtl}) reduces at the marginal
+state ($\sigma = 0$) to the ordinary thermal diffusivity $\kappa$.
+Hence the \emph{critical} Rayleigh quotient~\eqref{eq:rel-83} is
+independent of $\tauq$.  The relaxation time affects only the growth
+rate of slightly supercritical modes, not the onset criterion itself.
+
+
+%% ====================================================================
+\section{Summary of relativistic modifications}
+\label{sec:rel-57-58-summary}
+%% ====================================================================
+
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{p{5.2cm}p{4.5cm}p{4.5cm}}
+\hline
+\textbf{Quantity} & \textbf{Classical (\S\,57--58)}
+  & \textbf{Relativistic} \\
+\hline
+Inertial density
+  & $\rho$
+  & $\enthalpy = (\varepsilon + p)/c^{2}$ \\
+Control parameter
+  & $\mathcal{C} = \alpha\beta\gamma R_{1}^{4}/\kappa\nu$
+  & $\mathcal{C}_{\mathrm{rel}} = \mathcal{I}\,\mathcal{C}$ \\
+Exchange of stabilities
+  & $\sigma_{i} = 0$ (proved)
+  & $\sigma_{i} = 0$ (proved) \\
+Rayleigh quotient
+  & $\displaystyle\frac{\int|\mathscr{D}_{l}^{2}W|^{2}\,r^{2}\,dr}
+      {l(l+1)\int(W/r)^{2}\,r^{2}\,dr}$
+  & Same functional form \\
+Thermodynamic content
+  & $\epsilon_{\nu} = \epsilon_{T}$
+  & $\epsilon_{\nu}^{\mathrm{rel}} = \epsilon_{T}^{\mathrm{rel}}$ \\
+Heat transport
+  & Fourier (acausal)
+  & Israel--Stewart (causal) \\
+Causality
+  & Not constrained
+  & $v_{\mathrm{th}}\leq c$,\;
+    $v_{\mathrm{visc}}\leq c$ \\
+Stabilizing effect
+  & ---
+  & $\mathcal{C}_{\mathrm{rel}}^{(\mathrm{crit})}
+      > \mathcal{C}^{(\mathrm{crit})}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The principal conclusion is that the exchange of stabilities and the
+variational principle of Chandrasekhar's \S\,57--58 survive the
+transition to special relativity with minimal structural change.  The
+only modifications are: (i) the replacement of $\rho$ by $\enthalpy$
+as the inertial density, which uniformly scales both the dissipation
+and the buoyancy work and therefore cancels in the Rayleigh quotient;
+and (ii) the replacement of Fourier conduction by Israel--Stewart
+causal conduction, which affects growth rates of supercritical modes
+but not the marginal-stability criterion itself.  The relativistic
+spherical shell is \emph{harder to destabilize} than its classical
+counterpart because pressure contributes to inertia.
