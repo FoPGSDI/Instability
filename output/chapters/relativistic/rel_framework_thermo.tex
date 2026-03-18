@@ -1,6 +1,7 @@
 % rel_framework_thermo.tex
-% Agent 3: Relativistic Thermodynamics and Causality Framework
+% Agent 3: Relativistic Thermodynamics and Causality Framework (BDNK)
 % Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+% Causality: BDNK first-order formalism, see BDNK_CONVENTIONS.md
 
 \section{Relativistic Thermodynamics and Causality Framework}
 \label{sec:rel-thermo-framework}
@@ -14,6 +15,15 @@ be replaced by its relativistic counterpart.  This section establishes
 the relativistic thermodynamic framework and, critically, identifies the
 causality constraints that any physically admissible equation of state or
 transport law must satisfy.
+
+We adopt the BDNK (Bemfica--Disconzi--Noronha--Kovtun) formalism for
+dissipative relativistic hydrodynamics.  Unlike the Israel--Stewart (IS)
+theory, which promotes dissipative fluxes to independent dynamical
+degrees of freedom with relaxation equations, BDNK achieves causal
+propagation at \emph{first order} in the gradient expansion through a
+judicious choice of hydrodynamic frame.  The result is a theory with
+\emph{only} the conservation laws as evolution equations, no spurious
+relaxation modes, and a rigorous proof of strong hyperbolicity.
 
 %------------------------------------------------------------------
 \subsection{Relativistic Thermodynamics}
@@ -162,12 +172,12 @@ Two important limits:
 
 
 %------------------------------------------------------------------
-\subsection{Thermal Conduction: From Fourier to Israel--Stewart}
+\subsection{Thermal Conduction: From Fourier to BDNK}
 \label{subsec:heat-conduction}
 
 The treatment of heat conduction illustrates, in the most transparent
 way, the necessity of causal transport theory in the relativistic
-regime.
+regime and the elegance of the BDNK resolution.
 
 \subsubsection{Classical Fourier Law (Acausal)}
 The Fourier law
@@ -183,130 +193,138 @@ instantaneously to all points in space.  In the non-relativistic
 limit this is an excellent approximation; in the relativistic regime
 it is \emph{acausal} and therefore inadmissible.
 
-\subsubsection{Cattaneo Equation (Causal, Non-Relativistic)}
-Cattaneo's modification introduces a relaxation time $\tau_{q}$:
-\begin{equation}
-  \tau_{q}\,\frac{\partial\vect{q}}{\partial t}
-  + \vect{q}
-  = -\kappa\,\nabla T \,.
-  \label{eq:cattaneo}
-\end{equation}
-Combined with the energy equation, this yields the \emph{telegraph
-equation}
-\begin{equation}
-  \tau_{q}\,\frac{\partial^{2} T}{\partial t^{2}}
-  + \frac{\partial T}{\partial t}
-  = \chi\,\nabla^{2} T \,,
-  \label{eq:telegraph}
-\end{equation}
-which is \emph{hyperbolic}: thermal disturbances propagate at a finite
-speed
-\begin{equation}
-  v_{T} = \sqrt{\frac{\kappa}{\tau_{q}\,c_{v}}}
-        = \sqrt{\frac{\chi}{\tau_{q}}}\,.
-  \label{eq:thermal-wave-speed}
-\end{equation}
-Causality requires $v_{T} \le c$, i.e.,
-\begin{equation}
-  \tau_{q} \;\ge\; \frac{\kappa}{c_{v}\,c^{2}}
-           = \frac{\chi}{c^{2}}\,.
-  \label{eq:tauq-bound}
-\end{equation}
+The relativistic generalization of Fourier's law in the Landau frame
+(Eckart theory) is likewise acausal and, moreover, suffers from
+generic short-wavelength instabilities that render it unusable even
+for numerical computation.
 
-\subsubsection{Israel--Stewart Theory (Fully Relativistic)}
-\label{subsubsec:IS-heat}
+\subsubsection{BDNK Resolution: Causality Through Frame Choice}
+\label{subsubsec:BDNK-heat}
 
-The Israel--Stewart formulation upgrades the Cattaneo equation to full
-covariance.  The heat flux 4-vector $q^{\mu}$ (satisfying
-$q^{\mu}u_{\mu} = 0$) obeys
+The BDNK formalism resolves the acausality of Fourier's law
+\emph{without} introducing relaxation equations.  The key insight is
+that the Eckart and Landau frame choices artificially constrain
+the energy-momentum tensor decomposition, removing degrees of
+freedom that are needed to make the first-order system
+well-posed.
+
+In the BDNK general frame, the heat flux 4-vector $Q^{\mu}$
+(satisfying $Q^{\mu}u_{\mu} = 0$) is given by
 \begin{equation}
-  \tau_{q}\,u^{\alpha}\nabla_{\alpha}\,q^{\langle\mu\rangle}
-  + q^{\mu}
-  = -\kappa\!\left(
-      \Delta^{\mu\nu}\nabla_{\nu}T
-      + T\,\frac{u^{\mu}\,a_{\nu}\,u^{\nu}}{c^{2}}
-    \right),
-  \label{eq:IS-heat}
+  Q^{\mu}
+  = -\kappa\,T\,\Delta^{\mu\alpha}\,\partial_{\alpha}\!\left(\frac{\mu}{T}\right)
+    + \mathcal{F}^{\mu}[\varepsilon_{1}, \beta_{1}, \alpha_{1}]\,,
+  \label{eq:BDNK-heat}
 \end{equation}
-where $a^{\mu} = u^{\alpha}\nabla_{\alpha}u^{\mu}$ is the 4-acceleration,
-$\Delta^{\mu\nu} = g^{\mu\nu} + u^{\mu}u^{\nu}/c^{2}$ is the spatial
-projection tensor, and the angle brackets denote the symmetric,
-trace-free, transverse projection:
+where $\Delta^{\mu\nu} = g^{\mu\nu} + u^{\mu}u^{\nu}/c^{2}$ is the
+spatial projection tensor, $\kappa \ge 0$ is the thermal conductivity,
+and $\mathcal{F}^{\mu}$ collects the \emph{frame correction terms}
+that depend on the BDNK frame coefficients $\varepsilon_{1}$,
+$\beta_{1}$, and $\alpha_{1}$.  These frame coefficients modify
+the off-equilibrium definitions of energy density and pressure:
 \begin{equation}
-  q^{\langle\mu\rangle}
-  = \Delta^{\mu}{}_{\nu}\,q^{\nu}\,.
-  \label{eq:angle-bracket-proj}
+  E = \varepsilon + \varepsilon_{1}\,,\qquad
+  P = p + \Pi_{\text{bulk}}\,,
+  \label{eq:BDNK-EP}
 \end{equation}
-The second term on the right-hand side of Eq.~\eqref{eq:IS-heat},
-proportional to $a_{\nu}u^{\nu}/c^{2}$, has no Newtonian counterpart;
-it arises from the Tolman--Ehrenfest effect (temperature gradient in a
-gravitational field at thermal equilibrium) and is essential for
-thermodynamic consistency in curved spacetime.
+where $\varepsilon_{1}$ is a first-order correction
+\begin{equation}
+  \varepsilon_{1}
+  = -\zeta_{1}\,\nabla_{\mu}u^{\mu}
+    - \beta_{1}\,\frac{u^{\mu}\partial_{\mu}T}{T}
+    - \alpha_{1}\,u^{\mu}\partial_{\mu}\!\left(\frac{\mu}{T}\right).
+  \label{eq:eps1-BDNK}
+\end{equation}
+In the Landau or Eckart frames, specific choices force $Q^{\mu} = 0$
+or $\varepsilon_{1} = 0$, thereby removing the degrees of freedom
+needed for a well-posed initial-value problem.  In the BDNK general
+frame, these coefficients are free to be chosen such that the
+\emph{full system} of conservation equations,
+\begin{equation}
+  \nabla_{\mu}T^{\mu\nu} = 0\,,\qquad
+  \nabla_{\mu}(n\,u^{\mu}) = 0\,,
+  \label{eq:BDNK-conservation}
+\end{equation}
+forms a \emph{strongly hyperbolic} system.  No additional evolution
+equations for $Q^{\mu}$ are needed: the conservation laws alone are
+the complete equations of motion.
+
+\subsubsection{Comparison with the Telegraph Equation}
+In the Israel--Stewart approach, the Cattaneo-type relaxation leads
+to the telegraph equation
+$\tau_{q}\,\partial^{2}T/\partial t^{2} + \partial T/\partial t
+= \chi\,\nabla^{2}T$, which achieves causality by converting the
+parabolic diffusion equation into a hyperbolic wave equation with a
+finite propagation speed $v_{T} = \sqrt{\chi/\tau_{q}}$.
+
+The BDNK approach achieves the same physical goal by a fundamentally
+different mechanism.  The linearized system for temperature
+perturbations takes the form of a \emph{first-order} dissipative
+equation
+\begin{equation}
+  \frac{\partial T}{\partial t}
+  = \kappa_{\text{eff}}\,\nabla^{2}T\,,
+  \label{eq:BDNK-thermal-lin}
+\end{equation}
+where the effective thermal diffusivity $\kappa_{\text{eff}}$
+incorporates the BDNK frame coefficients.  Although this appears
+parabolic, the coupling to the momentum and continuity equations
+through the frame terms renders the \emph{full coupled system}
+strongly hyperbolic.  The characteristic speeds of this system are
+determined by the roots of the characteristic polynomial of the
+first-order conservation equations, and these roots are guaranteed
+to be real and bounded by $c$ when the BDNK conditions are
+satisfied.  There is no separate ``thermal wave speed''
+$v_{T} = \sqrt{\chi/\tau_{q}}$; instead, the maximum signal speed
+emerges from the coupled hydrodynamic system.
 
 \subsubsection{Entropy Production}
 The second law of thermodynamics requires non-negative entropy
-production.  For the heat flux, the entropy production rate is
+production.  In the BDNK framework, the entropy current is
 \begin{equation}
-  \sigma_{s} = -\,q^{\mu}\,\nabla_{\mu}\!\left(\frac{1}{T}\right)
-             = \frac{q^{\mu}\,\nabla_{\mu}T}{T^{2}} \;\ge\; 0 \,.
-  \label{eq:entropy-production-heat}
+  S^{\mu} = s\,u^{\mu} - \frac{\mu}{T}\,J^{\mu}
+            + \frac{Q^{\mu}}{T}\,,
+  \label{eq:BDNK-entropy-current}
 \end{equation}
-This is guaranteed when $\kappa \ge 0$ and $\tau_{q} > 0$, as the
-Israel--Stewart equation then drives $q^{\mu}$ toward the Fourier
-value $q^{\mu}_{\text{(Fourier)}}$ on a timescale $\tau_{q}$.
+where $J^{\mu} = n\,u^{\mu}$ is the baryon current.  The entropy
+production rate satisfies
+\begin{equation}
+  \nabla_{\mu}S^{\mu}
+  = \frac{\Pi^{\mu\nu}\Pi_{\mu\nu}}{2\,\eta\,T}
+    + \frac{\Pi_{\text{bulk}}^{2}}{\zeta\,T}
+    + \frac{Q^{\mu}Q_{\mu}}{\kappa\,T^{2}}
+  \;\ge\; 0
+  \label{eq:BDNK-entropy-production}
+\end{equation}
+provided $\eta \ge 0$, $\zeta \ge 0$, and $\kappa \ge 0$.  The BDNK
+frame coefficients $(\varepsilon_{1}, \beta_{1}, \alpha_{1})$ do not
+enter the entropy production at leading order---they contribute only
+at second order in gradients and thus do not constrain the sign of
+$\nabla_{\mu}S^{\mu}$.
 
 
 %------------------------------------------------------------------
-\subsection{Viscosity: Relativistic Treatment}
+\subsection{Viscosity: BDNK First-Order Treatment}
 \label{subsec:rel-viscosity}
 
 The dissipative part of the energy-momentum tensor includes both
-\emph{bulk viscous pressure} $\Pi$ and the \emph{shear stress tensor}
-$\pi^{\mu\nu}$.  As with heat conduction, the Navier--Stokes
-constitutive relations are acausal; the Israel--Stewart relaxation
-equations restore causality.
-
-\subsubsection{Bulk Viscosity}
-The bulk viscous pressure satisfies
-\begin{equation}
-  \tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi
-  + \Pi
-  = -\zeta\,\nabla_{\mu}u^{\mu}\,,
-  \label{eq:IS-bulk}
-\end{equation}
-where $\zeta \ge 0$ is the bulk viscosity coefficient and
-$\tau_{\Pi} > 0$ is the bulk relaxation time.  The expansion scalar
-$\theta \equiv \nabla_{\mu}u^{\mu}$ drives bulk viscous effects; it
-vanishes for incompressible flow but is generically nonzero in
-relativistic hydrodynamics (even for ``nearly incompressible'' flows,
-because $\varepsilon + p$ depends on velocity through the Lorentz
-factor).
-
-The signal speed associated with bulk-viscous perturbations is
-\begin{equation}
-  v_{\Pi} = \sqrt{\frac{\zeta}{\tau_{\Pi}\,w/c^{2}}}
-  \label{eq:bulk-signal-speed}
-\end{equation}
-and causality requires $v_{\Pi} \le c$.
-
-Entropy production from bulk viscosity:
-\begin{equation}
-  \sigma_{s}^{(\Pi)} = -\frac{\Pi\,\nabla_{\mu}u^{\mu}}{T} \;\ge\; 0\,.
-  \label{eq:entropy-bulk}
-\end{equation}
+\emph{bulk viscous pressure} $\Pi_{\text{bulk}}$ and the
+\emph{shear stress tensor} $\Pi^{\mu\nu}$.  In the BDNK formalism,
+these are given by first-order constitutive relations with no
+relaxation equations required.
 
 \subsubsection{Shear Viscosity}
-The shear stress tensor $\pi^{\mu\nu}$ (symmetric, traceless,
-transverse: $\pi^{\mu\nu}u_{\nu} = 0$, $\pi^{\mu}{}_{\mu} = 0$) obeys
+The shear stress tensor $\Pi^{\mu\nu}$ (symmetric, traceless,
+transverse: $\Pi^{\mu\nu}u_{\nu} = 0$, $\Pi^{\mu}{}_{\mu} = 0$) is
+given directly by the first-order gradient expansion:
 \begin{equation}
-  \tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\,\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu}
-  = 2\,\eta\,\sigma^{\mu\nu}\,,
-  \label{eq:IS-shear}
+  \boxed{\;
+  \Pi^{\mu\nu} = -2\,\eta\,\sigma^{\mu\nu}
+  \;}
+  \label{eq:BDNK-shear}
 \end{equation}
-where $\eta \ge 0$ is the (dynamic) shear viscosity coefficient,
-$\tau_{\pi} > 0$ is the shear relaxation time, and $\sigma^{\mu\nu}$
-is the shear tensor:
+where $\eta \ge 0$ is the (dynamic) shear viscosity coefficient and
+$\sigma^{\mu\nu}$ is the shear tensor:
 \begin{equation}
   \sigma^{\mu\nu}
   = \Delta^{\mu\alpha}\Delta^{\nu\beta}
@@ -316,31 +334,174 @@ is the shear tensor:
     \right).
   \label{eq:shear-tensor}
 \end{equation}
-The signal speed for shear perturbations is
-\begin{equation}
-  v_{\pi} = \sqrt{\frac{\eta}{\tau_{\pi}\,w/c^{2}}}\,,
-  \label{eq:shear-signal-speed}
-\end{equation}
-and causality requires $v_{\pi} \le c$, equivalently
-\begin{equation}
-  \tau_{\pi} \;\ge\; \frac{\eta}{w}\,.
-  \label{eq:taupi-bound}
-\end{equation}
+This is formally identical to the Navier--Stokes constitutive
+relation.  The crucial difference from the acausal Eckart/Landau
+first-order theories is that in the BDNK framework, the fluid
+4-velocity $u^{\mu}$ is defined in a \emph{general frame} (neither
+Landau nor Eckart), and the frame coefficients in the energy and
+pressure ensure that the coupled system is hyperbolic.
 
+No shear relaxation time $\tau_{\pi}$ is needed.  The Israel--Stewart
+equation $\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
++ \pi^{\mu\nu} = 2\eta\,\sigma^{\mu\nu}$ is replaced entirely by the
+algebraic relation~\eqref{eq:BDNK-shear} together with the BDNK frame
+conditions.
+
+\subsubsection{Bulk Viscosity}
+The bulk viscous pressure is
+\begin{equation}
+  \Pi_{\text{bulk}} = -\zeta\,\nabla_{\mu}u^{\mu}\,,
+  \label{eq:BDNK-bulk}
+\end{equation}
+where $\zeta \ge 0$ is the bulk viscosity coefficient and
+$\theta \equiv \nabla_{\mu}u^{\mu}$ is the expansion scalar.  Again,
+no bulk relaxation time $\tau_{\Pi}$ is required; causality is
+ensured by the BDNK frame coefficients.
+
+\subsubsection{Full BDNK Energy-Momentum Tensor}
+Collecting the pieces, the full dissipative energy-momentum tensor in
+the BDNK general frame is
+\begin{equation}
+  T^{\mu\nu}
+  = \frac{E}{c^{2}}\,u^{\mu}u^{\nu}
+    + P\,\Delta^{\mu\nu}
+    + \frac{2\,Q^{(\mu}\,u^{\nu)}}{c}
+    + \Pi^{\mu\nu}\,,
+  \label{eq:BDNK-Tmunu}
+\end{equation}
+where $E = \varepsilon + \varepsilon_{1}$ and
+$P = p + \Pi_{\text{bulk}}$ include the first-order corrections.  The
+evolution of the system is governed \emph{solely} by the conservation
+laws~\eqref{eq:BDNK-conservation}; there are no additional relaxation
+equations for $Q^{\mu}$, $\Pi_{\text{bulk}}$, or $\Pi^{\mu\nu}$.
+
+\subsubsection{Entropy Production from Viscosity}
 Entropy production from shear viscosity:
 \begin{equation}
-  \sigma_{s}^{(\pi)} = \frac{\pi^{\mu\nu}\pi_{\mu\nu}}{2\,\eta\,T}
+  \sigma_{s}^{(\pi)} = \frac{\Pi^{\mu\nu}\Pi_{\mu\nu}}{2\,\eta\,T}
   \;\ge\; 0\,.
   \label{eq:entropy-shear}
 \end{equation}
+Entropy production from bulk viscosity:
+\begin{equation}
+  \sigma_{s}^{(\Pi)} = \frac{\Pi_{\text{bulk}}^{2}}{\zeta\,T}
+  = \frac{\zeta\,(\nabla_{\mu}u^{\mu})^{2}}{T} \;\ge\; 0\,.
+  \label{eq:entropy-bulk}
+\end{equation}
 
-\subsubsection{Summary: All Relaxation Times Must Be Positive}
-The three relaxation times $\tau_{q}$, $\tau_{\Pi}$, and $\tau_{\pi}$
-are not free parameters in the relativistic theory: they are
-\emph{required} by causality and thermodynamic stability.  Setting
-any $\tau \to 0$ recovers the acausal first-order theories
-(Eckart/Landau--Lifshitz), which are known to exhibit unphysical
-instabilities.
+
+%------------------------------------------------------------------
+\subsection{BDNK Causality Conditions}
+\label{subsec:BDNK-causality}
+
+The central achievement of the BDNK formalism is that causality and
+well-posedness are established through conditions on the transport
+and frame coefficients, without introducing new dynamical degrees
+of freedom.
+
+\subsubsection{Strong Hyperbolicity}
+The system of conservation equations~\eqref{eq:BDNK-conservation}
+with the BDNK constitutive relations is \emph{strongly hyperbolic}
+(and hence the initial-value problem is well-posed) if and only if
+the following conditions hold simultaneously:
+
+\begin{enumerate}
+  \item \textbf{Positive shear viscosity:}
+  \begin{equation}
+    \eta > 0\,.
+    \label{eq:BDNK-eta-cond}
+  \end{equation}
+
+  \item \textbf{Positive bulk--shear combination:}
+  \begin{equation}
+    \zeta + \tfrac{2}{3}\,\eta > 0\,.
+    \label{eq:BDNK-bulk-shear-cond}
+  \end{equation}
+
+  \item \textbf{Frame coefficient inequalities:} The BDNK frame
+  coefficients $(\varepsilon_{1}, \beta_{1}, \alpha_{1})$ must
+  satisfy a set of coupled nonlinear inequalities that ensure all
+  characteristic speeds of the system remain real and bounded by $c$.
+  Schematically, for a single-component fluid with thermal
+  conductivity $\kappa$, the conditions take the form
+  \begin{equation}
+    \mathcal{C}(\eta,\,\zeta,\,\kappa;\,\varepsilon_{1},\,\beta_{1},\,\alpha_{1};\,\varepsilon,\,p,\,w,\,\cs^{2}) > 0\,,
+    \label{eq:BDNK-coupled-ineq}
+  \end{equation}
+  where $\mathcal{C}$ denotes the set of constraints derived from the
+  requirement that all eigenvalues of the principal symbol of the
+  system be real and distinct (strong hyperbolicity).
+\end{enumerate}
+
+\subsubsection{Characteristic Speeds}
+\label{subsubsec:BDNK-char-speeds}
+The characteristic speeds of the BDNK system are determined by the
+roots of the characteristic polynomial of the first-order
+conservation equations.  For a single-component relativistic fluid,
+this is a polynomial whose degree equals the number of independent
+hydrodynamic variables (e.g., $\varepsilon$, $n$, $u^{i}$).
+
+In contrast to Israel--Stewart, which introduces extra dynamical
+variables ($q^{\mu}$, $\pi^{\mu\nu}$, $\Pi$) and thereby increases
+the degree of the characteristic polynomial (producing additional
+``relaxation modes''), BDNK has \emph{only} the physical
+hydrodynamic modes:
+\begin{itemize}
+  \item \textbf{Sound modes}: speeds modified by viscosity and thermal
+    conductivity through the transport and frame coefficients, but
+    bounded by $c$ when the BDNK conditions hold.
+  \item \textbf{Shear (diffusive) modes}: at low wavenumber $k$ the
+    dispersion relation is $\omega = -i\,\eta\,k^{2}/(w/c^{2}) + O(k^{3})$;
+    at high $k$ the modes become propagating with speeds bounded by $c$.
+  \item \textbf{Thermal mode}: similarly diffusive at low $k$ and causal
+    at high $k$, with no independent ``thermal wave speed.''
+\end{itemize}
+The absence of spurious modes is a significant advantage for stability
+analysis: every mode of the BDNK system has a direct physical
+interpretation, and there are no unphysical growing modes that can
+contaminate numerical simulations.
+
+\subsubsection{Comparison with Israel--Stewart Causality Conditions}
+The IS theory requires three strictly positive relaxation times:
+\begin{equation}
+  \tau_{q} > 0\,,\qquad
+  \tau_{\Pi} > 0\,,\qquad
+  \tau_{\pi} > 0\,,
+  \tag{IS causality}
+  \label{eq:IS-causality-old}
+\end{equation}
+together with signal-speed bounds $v_{T} \le c$, $v_{\Pi} \le c$,
+$v_{\pi} \le c$ that depend on ratios of transport coefficients to
+relaxation times.  In IS, causality is only established for the
+\emph{linearized} theory around equilibrium.
+
+The BDNK conditions~\eqref{eq:BDNK-eta-cond}--\eqref{eq:BDNK-coupled-ineq}
+replace the IS conditions entirely.  The key differences are:
+\begin{enumerate}
+  \item No relaxation times appear; causality comes from the
+    interplay of transport coefficients and frame coefficients.
+  \item The causality proof is \emph{nonlinear}---it holds for
+    arbitrary solutions, not only perturbations around equilibrium.
+  \item The conditions are \emph{coupled}: one cannot check causality
+    of the heat, bulk, and shear sectors independently.  This is
+    physically natural, since in a relativistic fluid all dissipative
+    channels are coupled through the energy-momentum tensor.
+\end{enumerate}
+
+\subsubsection{Conformal Fluid (Simplified Case)}
+For a conformal fluid ($\zeta = 0$, $\varepsilon = 3p$,
+$\cs^{2} = c^{2}/3$), the BDNK causality conditions simplify
+considerably:
+\begin{equation}
+  \eta > 0\,,\qquad
+  \text{frame coefficients chosen such that }
+  v_{\text{char}}^{2} \le c^{2}\,,
+  \label{eq:BDNK-conformal}
+\end{equation}
+where $v_{\text{char}}$ denotes the characteristic speeds of the
+coupled sound--shear system.  This case is particularly relevant for
+the quark-gluon plasma and ultrarelativistic astrophysical
+environments.
 
 
 %------------------------------------------------------------------
@@ -409,8 +570,11 @@ generalization requires:
 \begin{enumerate}
   \item Replacing $\rho$ by $w/c^{2}$ in the buoyancy term and in the
     inertia;
-  \item Using the causal heat equation~\eqref{eq:IS-heat} in place of
-    Fourier's law;
+  \item Using the BDNK causal heat
+    equation~\eqref{eq:BDNK-heat} in place of Fourier's law---note
+    that unlike the Israel--Stewart telegraph equation, the BDNK
+    treatment keeps the system first-order while still ensuring causal
+    heat propagation;
   \item Including the $O(v^{2}/c^{2})$ corrections to the thermal
     expansion coefficient:
     $\alpha_{\text{rel}} = \alpha\,[1 + O(\varepsilon_{\text{th}}/\rho_{0}c^{2})]$;
@@ -419,9 +583,11 @@ generalization requires:
     \times [1 + O(v^{2}/c^{2})]$.
 \end{enumerate}
 The dominant relativistic effect on thermal instability is the
-\emph{finite propagation speed of heat}, which modifies the onset
-criterion and the preferred wavenumber.  This is discussed in detail
-in the companion sections on relativistic B\'enard convection.
+\emph{finite propagation speed of heat}, which in the BDNK framework
+arises from the coupled characteristic speeds of the full
+conservation system rather than from an independent thermal wave speed.
+This is discussed in detail in the companion sections on relativistic
+B\'enard convection.
 
 
 %------------------------------------------------------------------
@@ -429,35 +595,50 @@ in the companion sections on relativistic B\'enard convection.
 \label{subsec:causality-summary}
 
 Table~\ref{tab:causality-bounds} collects all signal speeds and their
-relativistic bounds.
+relativistic bounds in the BDNK framework.
 
 \begin{table}[htbp]
 \centering
-\caption{Signal speeds in relativistic dissipative hydrodynamics.
-  All must satisfy $v \le c$.  The third column shows the modification
-  relative to the classical (acausal) theory.}
+\caption{Signal speeds in BDNK relativistic dissipative hydrodynamics.
+  All characteristic speeds must satisfy $v \le c$.  The third column shows the
+  modification relative to the classical (acausal) theory.  Unlike Israel--Stewart,
+  the dissipative signal speeds are not given by simple formulas involving
+  relaxation times but emerge from the characteristic polynomial of the full
+  first-order system.}
 \label{tab:causality-bounds}
 \begin{tabular}{llll}
 \hline\hline
-\textbf{Mode} & \textbf{Signal speed} & \textbf{Classical limit} &
+\textbf{Mode} & \textbf{Signal speed (BDNK)} & \textbf{Classical limit} &
   \textbf{Causality bound} \\
 \hline
 Sound &
   $\cs = \sqrt{(\partial p/\partial\varepsilon)_{s}}$ &
   $\sqrt{\gamma p/\rho}$ &
   $\cs \le c$ \\[4pt]
-Thermal wave &
-  $v_{T} = \sqrt{\kappa/(\tau_{q}\,c_{v})}$ &
+Thermal &
+  From characteristic polynomial &
   $\infty$ (Fourier) &
-  $v_{T} \le c$ \\[4pt]
+  Bounded by $c$ via BDNK \\[2pt]
+  &
+  (coupled to sound \& shear) &
+  &
+  frame conditions \\[4pt]
 Bulk viscous &
-  $v_{\Pi} = \sqrt{\zeta\,c^{2}/(\tau_{\Pi}\,w)}$ &
+  From characteristic polynomial &
   $\infty$ (Navier--Stokes) &
-  $v_{\Pi} \le c$ \\[4pt]
+  Bounded by $c$ via BDNK \\[2pt]
+  &
+  (coupled to sound) &
+  &
+  frame conditions \\[4pt]
 Shear viscous &
-  $v_{\pi} = \sqrt{\eta\,c^{2}/(\tau_{\pi}\,w)}$ &
+  From characteristic polynomial &
   $\infty$ (Navier--Stokes) &
-  $v_{\pi} \le c$ \\[4pt]
+  Bounded by $c$ via BDNK \\[2pt]
+  &
+  (decoupled in linearized theory) &
+  &
+  frame conditions \\[4pt]
 Alfv\'en &
   $\vA = c\sqrt{b^{2}/(4\pi w + b^{2})}$ &
   $B/\sqrt{4\pi\rho}$ &
@@ -471,16 +652,21 @@ Fast magnetosonic &
 \end{table}
 
 \subsubsection{Classical-to-Relativistic Modification Summary}
-The key modifications that the relativistic framework imposes on each
-classical transport equation are:
+The key modifications that the BDNK relativistic framework imposes on
+each classical transport equation are:
 \begin{enumerate}
-  \item \textbf{Fourier $\to$ Israel--Stewart (heat):}
-    Add relaxation term $\tau_{q}\,u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle}$;
-    include Tolman--Ehrenfest acceleration term.
-  \item \textbf{Navier--Stokes (bulk) $\to$ Israel--Stewart:}
-    Add relaxation term $\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi$.
-  \item \textbf{Navier--Stokes (shear) $\to$ Israel--Stewart:}
-    Add relaxation term $\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}$.
+  \item \textbf{Fourier $\to$ BDNK (heat):}
+    Replace Fourier's law with the BDNK constitutive
+    relation~\eqref{eq:BDNK-heat} in a general hydrodynamic frame;
+    causality follows from the coupled frame conditions, not from a
+    relaxation term.
+  \item \textbf{Navier--Stokes (bulk) $\to$ BDNK:}
+    The constitutive relation $\Pi_{\text{bulk}} = -\zeta\,\nabla_{\mu}u^{\mu}$
+    is retained at first order; causality is ensured by the BDNK frame
+    coefficients acting on the full system.
+  \item \textbf{Navier--Stokes (shear) $\to$ BDNK:}
+    The constitutive relation $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$
+    is retained at first order; no relaxation time $\tau_{\pi}$ is needed.
   \item \textbf{Mass density $\to$ enthalpy density:}
     Replace $\rho$ by $w/c^{2} = (\varepsilon+p)/c^{2}$ in all inertial
     terms.
@@ -491,30 +677,31 @@ classical transport equation are:
     Replace Schwarzschild/Ledoux criteria with versions using $w$.
 \end{enumerate}
 
-\subsubsection{Causality Verification Checklist}
+\subsubsection{BDNK Causality Verification Checklist}
 \label{subsubsec:causality-checklist}
-For any relativistic stability calculation, the following checks must
-be performed:
+For any relativistic stability calculation in the BDNK framework,
+the following checks must be performed:
 \begin{enumerate}
   \item[\ding{51}] $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$ satisfies
     $0 \le \cs^{2} \le c^{2}$.
-  \item[\ding{51}] All relaxation times are strictly positive:
-    $\tau_{q} > 0$, $\tau_{\Pi} > 0$, $\tau_{\pi} > 0$.
-  \item[\ding{51}] Thermal wave speed
-    $v_{T} = \sqrt{\kappa/(\tau_{q}\,c_{v})} \le c$.
-  \item[\ding{51}] Bulk viscous signal speed
-    $v_{\Pi} = \sqrt{\zeta\,c^{2}/(\tau_{\Pi}\,w)} \le c$.
-  \item[\ding{51}] Shear viscous signal speed
-    $v_{\pi} = \sqrt{\eta\,c^{2}/(\tau_{\pi}\,w)} \le c$.
-  \item[\ding{51}] Entropy production rates
-    $\sigma_{s}^{(q)} \ge 0$,
-    $\sigma_{s}^{(\Pi)} \ge 0$,
-    $\sigma_{s}^{(\pi)} \ge 0$.
+  \item[\ding{51}] Shear viscosity is strictly positive: $\eta > 0$.
+  \item[\ding{51}] Bulk--shear combination is positive:
+    $\zeta + \tfrac{2}{3}\eta > 0$.
+  \item[\ding{51}] BDNK frame coefficients
+    $(\varepsilon_{1}, \beta_{1}, \alpha_{1})$ satisfy the coupled
+    strong-hyperbolicity inequalities~\eqref{eq:BDNK-coupled-ineq}.
+  \item[\ding{51}] All characteristic speeds from the principal symbol
+    satisfy $|v_{\text{char}}| \le c$.
+  \item[\ding{51}] Entropy production rate
+    $\nabla_{\mu}S^{\mu} \ge 0$
+    (guaranteed by $\eta, \zeta, \kappa \ge 0$).
   \item[\ding{51}] If MHD: Alfv\'en speed $\vA < c$; fast magnetosonic
     speed $v_{f} < c$.
   \item[\ding{51}] Non-relativistic limits recover the classical
-    Chandrasekhar equations.
+    Chandrasekhar equations (BDNK frame corrections vanish at
+    $O(v^{2}/c^{2})$).
 \end{enumerate}
 \noindent
-Failure of any of these checks indicates either an inadmissible EOS
-or incorrect transport coefficients.
+Failure of any of these checks indicates either an inadmissible EOS,
+incorrect transport coefficients, or an invalid choice of BDNK frame
+coefficients.
