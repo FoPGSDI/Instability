@@ -497,3 +497,65 @@ These results connect Chandrasekhar's classical analysis directly to
 modern high-energy astrophysics and provide a framework within which
 numerical simulations of relativistic jet stability (e.g.\ Perucho et
 al.\ 2004, 2010; Millas et al.\ 2017) can be interpreted analytically.
+
+% ===================================================================
+\section{Astrophysical application: GRB jet stability and structured outflows}
+\label{sec:rel-11-104-grb}
+
+Gamma-ray burst (GRB) jets represent the most extreme astrophysical
+realisation of relativistic shear layers, with bulk Lorentz factors
+$\Gamma \sim 100$--$1000$.  The stability of these jets against
+Kelvin--Helmholtz modes is critical for determining whether the outflow
+remains collimated over the $\sim 10^{16}\,$cm propagation distance
+required to reach the photospheric radius and produce the observed
+gamma-ray emission.
+
+\paragraph{Structured jets.}
+Modern GRB models invoke \emph{structured jets} with an angular
+profile $\Gamma(\theta)$ that decreases from a high-$\Gamma$ core
+to a mildly relativistic cocoon
+\cite{AloyEtAl2000, ZhangWoosleyMacFadyen2003, MorsonyLazzatiBegelman2007}.
+A Gaussian profile $\Gamma(\theta) = 1 + (\Gamma_{\mathrm{core}}-1)
+\exp(-\theta^{2}/2\theta_{c}^{2})$ with core angle $\theta_{c} \sim 0.1\,$rad
+is commonly adopted.  The local KH growth rate at angle $\theta$ is
+then determined by the local Lorentz factor through
+equation~\eqref{eq:rel-104-26}:
+\begin{equation}
+  \sigma_{\mathrm{lab}}(\theta) \sim \frac{k\,c_{s}}{\Gamma(\theta)^{2}}\,.
+\end{equation}
+The jet core ($\Gamma \sim 300$) is highly stable with
+$\sigma_{\mathrm{lab}} \sim 10^{-5}\,k\,c_{s}$, while the jet wings
+($\Gamma \sim 2$--$10$) are vulnerable to KH disruption.
+
+\paragraph{Compressible stabilisation.}
+For a hot GRB jet with $c_{s} = c/\sqrt{3}$ (ultra-relativistic equation
+of state), the compressible stabilisation
+threshold~\eqref{eq:rel-104-24} gives $V_{0} > c/2$, corresponding to
+$\Gamma > 2/\sqrt{3} \approx 1.15$.  Thus virtually all of the GRB
+outflow exceeds the compressible stabilisation threshold, and the KH
+instability is limited to modes that are subsonic in one of the two
+rest frames.  For a cold jet ($c_{s} \ll c$), compressibility offers
+no protection and KH modes grow at all shear velocities, albeit
+with correspondingly small growth rates.
+
+Figure~\ref{fig:grb-jet-growth-rate} displays the KH growth rate as a
+function of $\Gamma$ for hot and cold jets with both top-hat and
+Gaussian structure, together with a stability map in the
+$(\Gamma, c_{s}/c)$ parameter space.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{plots/ch11/fig_grb_jet_growth_rate.pdf}
+\caption{%
+\textbf{Left:} Lab-frame KH growth rate (normalised to $k\,c$) vs.\
+Lorentz factor for hot ($c_{s}=c/\sqrt{3}$) and cold ($c_{s}=0.1\,c$)
+jets, including Gaussian structured profiles with
+$\Gamma_{\mathrm{core}} = 100$ and 300.
+The shaded band marks the GRB regime ($\Gamma \sim 100$--$1000$).
+\textbf{Right:} Stability map in the $(\Gamma,\,c_{s}/c)$ plane; the
+colour scale shows $\log_{10}(\sigma_{\mathrm{lab}}/kc)$, with dashed
+lines marking the compressible stabilisation boundary for $c_{s}=c/\sqrt{3}$
+and $c_{s}=0.1\,c$.
+}
+\label{fig:grb-jet-growth-rate}
+\end{figure}
