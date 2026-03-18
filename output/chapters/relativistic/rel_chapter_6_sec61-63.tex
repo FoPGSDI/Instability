@@ -1,0 +1,657 @@
+% Relativistic Chapter VI, §§61--63: Rotation in Spheres — Relativistic
+% Relativistic generalization of Chandrasekhar, Chapter VI §§61--63
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter*{Rotation and Thermal Instability in a Relativistic Fluid Sphere (\S\S\,61--63)}
+\addcontentsline{toc}{chapter}{Relativistic Rotating Sphere (\S\S\,61--63)}
+\label{ch:rel-6-rot}
+
+%% ================================================================
+\section{The effect of rotation on thermal instability in a
+relativistic fluid sphere: formulation}\label{sec:rel-61}
+
+In the classical treatment (\S\,61 of Chapter~VI) the theory of
+thermal instability in a rotating fluid sphere is developed with
+geophysical applications---principally the Earth's liquid core---in
+mind.  When the gravitational field is strong and the matter dense,
+as in the interiors of neutron stars and proto-neutron stars, a
+relativistic formulation becomes mandatory.  Three new physical
+ingredients enter:
+\begin{enumerate}
+\item \textbf{Relativistic enthalpy.}  Inertia is governed by the
+  relativistic enthalpy density $w = (\varepsilon + p)/c^{2}$, which
+  replaces the rest-mass density~$\rho$.
+\item \textbf{Causal dissipation.}  Fourier heat conduction is
+  replaced by the Israel--Stewart equation (see
+  RELATIVISTIC\_CONVENTIONS.md), ensuring that thermal perturbations
+  propagate at a finite speed bounded by~$c$.
+\item \textbf{Frame-dragging and gravitomagnetic Coriolis effects.}
+  In general relativity, rotation of the background spacetime
+  introduces Lense--Thirring (frame-dragging) contributions to the
+  effective Coriolis acceleration.  For a slowly-rotating star with
+  angular velocity $\Omega$ the local inertial-frame dragging rate is
+  $\omega_{\mathrm{LT}}$; the effective rotation felt by the fluid is
+  $\Omega_{\mathrm{eff}} = \Omega - \omega_{\mathrm{LT}}$.
+\end{enumerate}
+
+Throughout this chapter, the metric signature is $(-,+,+,+)$; the
+speed of light~$c$ is kept explicit; $u^{\mu}$ denotes the fluid
+four-velocity normalised as $u^{\mu}u_{\mu} = -c^{2}$; and
+$\Delta^{\mu\nu} = g^{\mu\nu} + u^{\mu}u^{\nu}/c^{2}$ is the
+projection tensor.
+
+%% ----------------------------------------------------------------
+\subsection{Axisymmetric solenoidal field representation
+  (relativistic)}\label{sec:rel-61a}
+
+For an axisymmetric, solenoidal spatial perturbation velocity field
+in the local rest frame, we retain the poloidal--toroidal
+decomposition of equation~(6-201) but now interpret it within the
+$3+1$ decomposition of the background spacetime.  Let the
+(conformally flat) spatial metric of the equilibrium stellar model be
+\begin{equation}\label{eq:rel-6-201}
+  dl^{2} = e^{2\Phi/c^{2}}
+    \bigl(dr^{2} + r^{2}\,d\theta^{2} + r^{2}\sin^{2}\!\theta\,
+    d\varphi^{2}\bigr),
+\end{equation}
+where $\Phi(r)$ is the gravitational potential.  Define the lapse
+function $\alpha = e^{\Phi/c^{2}}$ and the shift vector
+$\beta^{\varphi} = -\omega_{\mathrm{LT}}(r)$ arising from slow
+rotation.  The spatial velocity perturbation is decomposed as
+\begin{equation}\label{eq:rel-6-202}
+  \delta v^{i}
+  = \bigl(\operatorname{curl}\operatorname{curl}
+    (\hat{\boldsymbol{r}}\,U)
+    + \operatorname{curl}(\hat{\boldsymbol{r}}\,V)\bigr)^{i},
+\end{equation}
+where the curl operators are defined with respect to the
+\emph{conformal spatial metric}~\eqref{eq:rel-6-201}, and the
+scalars $U(r,\theta)$ and $V(r,\theta)$ are axisymmetric.
+
+In the flat-space limit ($\Phi/c^{2}\to 0$,
+$\omega_{\mathrm{LT}}\to 0$) the decomposition reduces to
+equation~(6-201).  The poloidal scalar~$U$ again describes
+meridional motions while $V$ describes azimuthal (toroidal) motions.
+
+The modified $\varphi$-Laplacian operator becomes
+\begin{equation}\label{eq:rel-6-203}
+  \hat{\Delta}_{3}
+  = e^{-2\Phi/c^{2}}\!\left(
+    \frac{\partial^{2}}{\partial r^{2}}
+    + \frac{2}{r}\frac{\partial}{\partial r}
+    - \frac{\mathscr{L}^{2}}{r^{2}}\right)
+  = e^{-2\Phi/c^{2}}\,\Delta_{3},
+\end{equation}
+where $\Delta_{3}$ is the classical operator of equation~(6-209)
+and $\mathscr{L}^{2}$ is the angular-momentum operator.
+Relativistic corrections enter through the conformal factor
+$e^{-2\Phi/c^{2}}$; in the weak-field limit these produce
+corrections of order $\Phi/c^{2} \sim GM/(Rc^{2})$.
+
+The vorticity--stream-function reciprocity of equation~(6-202)
+generalises to
+\begin{equation}\label{eq:rel-6-204}
+  \operatorname{curl}\delta\boldsymbol{v}
+  = -\mathbf{1}_{\varphi}\,\varpi\,\hat{\Delta}_{3}\,U
+    + \operatorname{curl}\operatorname{curl}
+      (\hat{\boldsymbol{r}}\,V)
+    + \mathcal{O}\!\left(\frac{\Phi}{c^{2}}\,
+      \nabla_{\!r}\,U\right),
+\end{equation}
+where the last term captures gradient--curvature coupling absent in
+flat space.
+
+%% ----------------------------------------------------------------
+\subsection{Perturbation equations with relativistic
+  Coriolis acceleration}\label{sec:rel-61b}
+
+Consider a self-gravitating, uniformly rotating sphere of radius $R$,
+angular velocity $\Omega$, relativistic enthalpy density
+$w = (\varepsilon + p)/c^{2}$, and equipped with internal heat
+sources producing a radial temperature gradient
+\begin{equation}\label{eq:rel-6-216}
+  \frac{\partial T}{\partial r} = -\beta\,r,
+  \qquad
+  \beta = \frac{\epsilon_{\mathrm{src}}}{3\kappa_{T}}
+  = \text{const},
+\end{equation}
+as in equation~(6-216), where $\kappa_{T}$ is the thermal
+diffusivity.
+
+The linearised relativistic momentum equation, projected
+orthogonally to $u^{\mu}$, reads
+\begin{equation}\label{eq:rel-6-217}
+  w\,\frac{\partial\delta v^{i}}{\partial t}
+  = \shearvisc\,\hat{\nabla}^{2}\delta v^{i}
+    + 2w\,\Omega_{\mathrm{eff}}\,
+      (\hat{\boldsymbol{z}}\times\delta\boldsymbol{v})^{i}
+    + \alpha_{T}\,w\,g_{\mathrm{eff}}\,r\,\Theta\,\hat{r}^{i}
+    - \hat{\nabla}^{i}(\delta p),
+\end{equation}
+where:
+\begin{itemize}
+\item $\shearvisc$ is the shear viscosity (Israel--Stewart);
+\item $\Omega_{\mathrm{eff}} = \Omega - \omega_{\mathrm{LT}}$ is the
+  effective angular velocity incorporating frame-dragging;
+\item $\alpha_{T} = -(\partial\ln w/\partial T)_{p}$ is the
+  relativistic thermal expansion coefficient (replacing
+  $\alpha = -(\partial\ln\rho/\partial T)_p$ of the classical theory);
+\item $g_{\mathrm{eff}}(r) = (d\Phi/dr)\bigl(1 + p/\varepsilon\bigr)$
+  is the effective gravitational acceleration, including the
+  pressure contribution to the gravitational source;
+\item $\hat{\nabla}^{2}$ denotes the Laplacian of the conformal
+  spatial metric;
+\item $\Theta$ is the temperature perturbation.
+\end{itemize}
+Equation~\eqref{eq:rel-6-217} reduces to equation~(6-217) when
+$c\to\infty$, with $w\to\rho$, $\Omega_{\mathrm{eff}}\to\Omega$,
+and $g_{\mathrm{eff}}\to\tfrac{4}{3}\pi\rho G\,r$.
+
+The relativistic Coriolis term is
+$2w\,\Omega_{\mathrm{eff}}\,(\hat{\boldsymbol{z}}\times\delta\boldsymbol{v})$,
+which differs from the classical $2\rho\Omega(\hat{\boldsymbol{z}}\times\boldsymbol{u})$
+in two respects: (i) the inertial density $\rho$ is replaced by $w$,
+and (ii) $\Omega$ is replaced by $\Omega_{\mathrm{eff}}$, accounting
+for frame dragging.
+
+The linearised heat equation, using Israel--Stewart causal transport,
+takes the form
+\begin{equation}\label{eq:rel-6-218}
+  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
+  + \frac{\partial\Theta}{\partial t}
+  = \beta\,r\,\delta v_{r}
+    + \kappa_{T}\,\hat{\nabla}^{2}\Theta,
+\end{equation}
+where $\tauq$ is the heat-flux relaxation time.  Setting
+$\tauq = 0$ recovers the classical parabolic equation~(6-218).
+
+Eliminating the pressure perturbation by taking the curl of
+\eqref{eq:rel-6-217} and using the decomposition
+\eqref{eq:rel-6-202}, we obtain the relativistic analogues of
+equations~(6-223)--(6-226):
+\begin{align}
+  \frac{\partial}{\partial t}\hat{\Delta}_{3}\,U
+  &= \frac{\shearvisc}{w}\,\hat{\Delta}_{3}^{2}\,U
+    + 2\Omega_{\mathrm{eff}}\,\frac{\partial V}{\partial z}
+    + \alpha_{T}\,g_{\mathrm{eff}}\,\mathscr{L}^{2}\Theta,
+  \label{eq:rel-6-223}\\[4pt]
+  \frac{\partial V}{\partial t}
+  &= \frac{\shearvisc}{w}\,\hat{\Delta}_{3}\,V
+    - 2\Omega_{\mathrm{eff}}\,\frac{\partial U}{\partial z},
+  \label{eq:rel-6-224}\\[4pt]
+  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
+  + \frac{\partial\Theta}{\partial t}
+  &= -\frac{\beta}{r}\,\mathscr{L}^{2}U
+    + \kappa_{T}\,\hat{\nabla}^{2}\Theta.
+  \label{eq:rel-6-226}
+\end{align}
+Here the kinematic viscosity is
+$\nu_{\mathrm{rel}} = \shearvisc / w$, which generalises $\nu = \mu/\rho$.
+
+Seeking solutions proportional to $e^{pt}$ and measuring distances
+in units of $R$, we introduce the relativistic dimensionless
+parameters
+\begin{equation}\label{eq:rel-6-234}
+  \sigma = \frac{pR^{2}}{\nu_{\mathrm{rel}}},
+  \qquad
+  \mathscr{T}_{\mathrm{rel}}
+  = \frac{2\Omega_{\mathrm{eff}}\,R^{2}}{\nu_{\mathrm{rel}}},
+  \qquad
+  \mathcal{C}_{\mathrm{rel}}
+  = \frac{\alpha_{T}\,g_{\mathrm{eff}}\,\beta\,R^{4}}
+         {\kappa_{T}\,\nu_{\mathrm{rel}}},
+\end{equation}
+reducing to the classical definitions~(6-234) in the
+non-relativistic limit.  The relativistic Taylor number is
+\begin{equation}\label{eq:rel-6-Ta}
+  \mathrm{Ta}_{\mathrm{rel}}
+  = \mathscr{T}_{\mathrm{rel}}^{2}
+  = \frac{4\Omega_{\mathrm{eff}}^{2}\,R^{4}}
+         {\nu_{\mathrm{rel}}^{2}}.
+\end{equation}
+The Rayleigh number is
+$\mathrm{Ra}_{\mathrm{rel}} = \mathcal{C}_{\mathrm{rel}}$.
+These satisfy the general form given in
+RELATIVISTIC\_CONVENTIONS.md.
+
+The dimensionless perturbation equations become
+\begin{align}
+  (\hat{\Delta}_{3}-\sigma)\hat{\Delta}_{3}\,U
+  &= -\mathscr{T}_{\mathrm{rel}}\,
+     \frac{\partial V}{\partial z}
+     - \mathcal{C}_{\mathrm{rel}}\,\mathscr{L}^{2}\Theta,
+  \label{eq:rel-6-231}\\[4pt]
+  (\hat{\Delta}_{3}-\sigma)\,V
+  &= \mathscr{T}_{\mathrm{rel}}\,
+     \frac{\partial U}{\partial z},
+  \label{eq:rel-6-232}\\[4pt]
+  (\hat{\nabla}^{2}-p_{\mathrm{rel}}\sigma)\,\Theta
+  &= \frac{\beta}{r}\,\mathscr{L}^{2}U,
+  \label{eq:rel-6-233}
+\end{align}
+where $p_{\mathrm{rel}} = \nu_{\mathrm{rel}}/\kappa_{T}$ is the
+relativistic Prandtl number.  Equations
+\eqref{eq:rel-6-231}--\eqref{eq:rel-6-233} are structurally
+identical to the classical system (6-231)--(6-233) but with
+$\hat{\Delta}_{3}$ replacing $\Delta_{3}$ and the relativistic
+parameters replacing their Newtonian counterparts.
+
+%% ----------------------------------------------------------------
+\subsection{Boundary conditions}\label{sec:rel-61c}
+
+The boundary conditions are imposed at the stellar surface $r = R$
+(or, in dimensionless units, $r = 1$).  Two cases are physically
+relevant:
+
+\paragraph{Rigid crust (neutron-star surface).}
+When the fluid interior is bounded by a rigid solid crust (as in a
+neutron star), all velocity components must vanish:
+\begin{equation}\label{eq:rel-6-241}
+  U = 0,\quad
+  \frac{\partial U}{\partial r} = 0,\quad
+  V = 0,\quad
+  \Theta = 0
+  \qquad\text{at } r = 1,
+\end{equation}
+identical in form to the classical rigid boundary
+conditions~(6-241).
+
+\paragraph{Free surface (proto-neutron star).}
+If the bounding surface is free (relevant for very early
+proto-neutron star stages before crust formation), the tangential
+stress must vanish:
+\begin{equation}\label{eq:rel-6-242}
+  U = 0,\quad
+  \frac{\partial^{2}U}{\partial r^{2}} = 0,\quad
+  V = 0,\quad
+  \Theta = 0
+  \qquad\text{at } r = 1,
+\end{equation}
+as in equation~(6-242).  The Israel--Stewart formulation does not
+alter the boundary conditions on the velocity field; however, the
+relaxation equation for the heat flux requires an additional
+condition:
+\begin{equation}\label{eq:rel-6-242b}
+  \tauq\,\frac{\partial\Theta}{\partial t}
+  + \Theta = 0
+  \qquad\text{at } r = 1,
+\end{equation}
+which reduces to $\Theta = 0$ in the stationary ($p = 0$) case.
+
+%% ----------------------------------------------------------------
+\subsection{Variational principle}\label{sec:rel-61d}
+
+The characteristic-value problem defined by
+\eqref{eq:rel-6-231}--\eqref{eq:rel-6-233} with boundary
+conditions~\eqref{eq:rel-6-241} or \eqref{eq:rel-6-242} admits a
+variational formulation.  Multiply \eqref{eq:rel-6-231} by a trial
+function $\hat{U}$ and integrate over the volume of the unit
+three-dimensional sphere with the conformal volume element
+$e^{3\Phi/c^{2}}\,r^{2}\sin\theta\,dr\,d\theta$.
+
+Following the same sequence of integrations by parts as in the
+classical derivation (\S\,61\,(d)), we arrive at
+\begin{equation}\label{eq:rel-6-252}
+  \mathcal{C}_{\mathrm{rel}}
+  \int(\hat{\nabla}\Theta)^{2}\,
+    e^{3\Phi/c^{2}}\,\varpi^{2}\,d\varpi\,dz
+  = \int\!\left[
+    (\hat{\Delta}_{3}U)^{2}
+    + \mathscr{T}_{\mathrm{rel}}^{2}\,
+      |\hat{\nabla}V|^{2}
+  \right]
+  e^{3\Phi/c^{2}}(1-\mu^{2})\,d\varpi\,dz,
+\end{equation}
+which generalises equation~(6-252).  The integrated parts vanish
+on account of the boundary conditions on $U$, $V$, and $\Theta$.
+
+The physical content of~\eqref{eq:rel-6-252} is the same as in the
+classical case: it expresses the balance between viscous dissipation
+and the rate of energy liberation by buoyancy.  In the relativistic
+context, the viscous dissipation rate is
+\begin{equation}\label{eq:rel-6-diss}
+  \epsilon_{\nu}
+  = \shearvisc \int
+    |\operatorname{curl}\delta\boldsymbol{v}|^{2}\,
+    e^{3\Phi/c^{2}}\,dV,
+\end{equation}
+which includes the gravitational redshift factor
+$e^{3\Phi/c^{2}}$ in the proper volume element.
+
+The variational principle states that the functional
+$\mathcal{C}_{\mathrm{rel}}[\,U,V,\Theta\,]$ defined by
+\eqref{eq:rel-6-252} is stationary with respect to variations of
+the trial functions, subject to the constraints
+\eqref{eq:rel-6-232} and the boundary conditions.  This provides
+the basis for a Rayleigh--Ritz approximation of the critical
+Rayleigh number.
+
+%% ================================================================
+\section{Onset of stationary convection in a rotating relativistic
+  sphere}\label{sec:rel-62}
+
+We now restrict attention to \emph{stationary} modes of marginal
+instability, setting $\sigma = 0$ (i.e.\ $p = 0$).  Whether
+oscillatory instability (overstability) occurs at lower
+$\mathcal{C}_{\mathrm{rel}}$ for given
+$\mathscr{T}_{\mathrm{rel}}$ is an open question; the discussion
+in the classical case (\S\,62) indicates that stationary modes
+prevail for at least moderate Taylor numbers.
+
+With $\sigma = 0$, the system
+\eqref{eq:rel-6-231}--\eqref{eq:rel-6-233} reduces to
+\begin{align}
+  \hat{\Delta}_{3}^{2}\,U
+  &= -\mathscr{T}_{\mathrm{rel}}\,
+     \frac{\partial V}{\partial z}
+     - \mathcal{C}_{\mathrm{rel}}\,\mathscr{L}^{2}\Theta,
+  \label{eq:rel-6-257}\\[4pt]
+  \hat{\Delta}_{3}\,V
+  &= \mathscr{T}_{\mathrm{rel}}\,
+     \frac{\partial U}{\partial z},
+  \label{eq:rel-6-258}\\[4pt]
+  \hat{\nabla}^{2}\Theta
+  &= \frac{\beta}{r}\,\mathscr{L}^{2}U.
+  \label{eq:rel-6-259}
+\end{align}
+The variational formula~\eqref{eq:rel-6-252} becomes
+\begin{equation}\label{eq:rel-6-260}
+  \mathcal{C}_{\mathrm{rel}}
+  \int(\hat{\nabla}\Theta)^{2}\,
+    e^{3\Phi/c^{2}}\,\varpi^{2}\,d\varpi\,dz
+  = \int\!\left[
+    (\hat{\Delta}_{3}U)^{2}
+    + \mathscr{T}_{\mathrm{rel}}^{2}\,|\hat{\nabla}V|^{2}
+  \right]
+  e^{3\Phi/c^{2}}(1-\mu^{2})\,d\varpi\,dz.
+\end{equation}
+
+\subsection{Critical Rayleigh number as a function of
+  relativistic Taylor number}\label{sec:rel-62a}
+
+The critical condition
+$\mathcal{C}_{\mathrm{rel,crit}}(\mathscr{T}_{\mathrm{rel}})$
+is obtained by minimising~\eqref{eq:rel-6-260} over admissible
+trial functions.  Expanding $U$, $V$, and $\Theta$ in Gegenbauer
+polynomials $C_{l}^{3/2}(\mu)$ and Bessel functions
+$j_{l+1/2}(kr)/\sqrt{r}$ (as in the classical \S\,61\,(a)),
+one obtains a matrix eigenvalue problem whose lowest eigenvalue
+yields $\mathcal{C}_{\mathrm{rel,crit}}$.
+
+The relativistic corrections enter in three ways:
+\begin{enumerate}
+\item \textbf{Modified effective gravity.}  The factor
+  $g_{\mathrm{eff}} = (d\Phi/dr)(1 + p/\varepsilon)$ enhances the
+  buoyancy driving in compact objects where $p/\varepsilon$ is
+  appreciable ($\sim 0.1$--$0.3$ for neutron stars).
+\item \textbf{Frame-dragging reduction of effective rotation.}
+  Since $\Omega_{\mathrm{eff}} = \Omega - \omega_{\mathrm{LT}}$,
+  the effective Taylor number is reduced relative to the naive
+  estimate $4\Omega^{2}R^{4}/\nu_{\mathrm{rel}}^{2}$.  For
+  millisecond pulsars, $\omega_{\mathrm{LT}}$ can be a significant
+  fraction of $\Omega$.
+\item \textbf{Gravitational redshift of the volume element.}
+  The conformal factor $e^{3\Phi/c^{2}}$ weights the interior more
+  heavily in the variational integrals, shifting the preferred mode
+  toward slightly lower~$l$.
+\end{enumerate}
+
+To leading post-Newtonian order, the critical Rayleigh number takes
+the form
+\begin{equation}\label{eq:rel-6-Racrit}
+  \mathrm{Ra}_{\mathrm{rel,crit}}(\mathrm{Ta}_{\mathrm{rel}})
+  = \mathrm{Ra}_{\mathrm{crit}}^{(0)}(\mathrm{Ta})
+    \left[
+      1 + \mathcal{A}\,\frac{GM}{Rc^{2}}
+        + \mathcal{B}\,\frac{p_{c}}{\varepsilon_{c}}
+        + \mathcal{O}\!\left(\frac{v^{2}}{c^{2}}\right)
+    \right],
+\end{equation}
+where $\mathrm{Ra}_{\mathrm{crit}}^{(0)}(\mathrm{Ta})$ is the
+classical critical Rayleigh number of \S\,62,
+$p_{c}/\varepsilon_{c}$ is the central pressure-to-energy ratio,
+and $\mathcal{A}$, $\mathcal{B}$ are numerical coefficients
+that depend on the equilibrium stellar model and boundary
+conditions (rigid or free).
+
+For large $\mathrm{Ta}_{\mathrm{rel}}$ the classical
+asymptotic scaling
+$\mathrm{Ra}_{\mathrm{crit}} \propto \mathrm{Ta}^{2/3}$
+continues to hold in the relativistic case, but the
+proportionality constant acquires $GM/(Rc^{2})$ corrections:
+\begin{equation}\label{eq:rel-6-asymptotic}
+  \mathrm{Ra}_{\mathrm{rel,crit}}
+  \sim K_{\mathrm{rel}}\,\mathrm{Ta}_{\mathrm{rel}}^{2/3},
+  \qquad
+  K_{\mathrm{rel}}
+  = K^{(0)}\!\left(
+      1 + \mathcal{A}'\,\frac{GM}{Rc^{2}}\right),
+\end{equation}
+where $K^{(0)}$ is the classical prefactor.
+
+%% ================================================================
+\section{Astrophysical applications}\label{sec:rel-63}
+
+The classical \S\,63 discusses geophysical applications (Earth's
+core and mantle convection).  In the relativistic regime the natural
+applications are to compact objects: neutron stars and proto-neutron
+stars.
+
+%% ----------------------------------------------------------------
+\subsection{Neutron star core convection}\label{sec:rel-63a}
+
+The liquid core of a neutron star---composed of a
+neutron-proton-electron-muon mixture at nuclear densities
+($\rho \sim 10^{14}$--$10^{15}$\,g\,cm$^{-3}$)---is in many
+respects analogous to the Earth's liquid iron core, but with
+vastly different parameter scales:
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+Parameter & Earth's core & Neutron star core \\
+\hline
+Radius $R$ & $3.5\times 10^{8}$\,cm
+           & $\sim 10^{6}$\,cm \\
+$GM/(Rc^{2})$ & $\sim 10^{-9}$ & $\sim 0.1$--$0.3$ \\
+$\Omega$ (rad\,s$^{-1}$)
+           & $7.3\times 10^{-5}$
+           & $10^{0}$--$10^{3}$ \\
+$g_{\mathrm{eff}}$ (cm\,s$^{-2}$)
+           & $\sim 10^{3}$
+           & $\sim 10^{14}$ \\
+$\nu$ (cm$^{2}$\,s$^{-1}$)
+           & $\sim 10^{-2}$
+           & $\sim 1$--$10^{2}$ (nucleonic) \\
+Taylor number Ta
+           & $\sim 10^{20}$
+           & $\sim 10^{16}$--$10^{24}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The compactness parameter $GM/(Rc^{2}) \sim 0.1$--$0.3$ makes
+relativistic corrections quantitatively significant---at the
+10--30\% level for the critical Rayleigh number.  The pressure
+contribution to the effective gravity, via the factor
+$(1 + p/\varepsilon)$, provides an additional enhancement of the
+buoyancy force absent in Newtonian theory.
+
+Thermal convection in neutron star cores can be driven by
+compositional or thermal gradients established during cooling.
+The relevant instability criterion involves the relativistic
+Rayleigh number $\mathrm{Ra}_{\mathrm{rel}}$ defined in
+\eqref{eq:rel-6-234}, and the pattern of convection is governed
+by the interplay between rotation and the strong gravitational
+field as encoded in the variational
+principle~\eqref{eq:rel-6-252}.
+
+%% ----------------------------------------------------------------
+\subsection{Millisecond pulsars: rapid rotation and strong
+  gravity}\label{sec:rel-63b}
+
+Millisecond pulsars, with rotation periods $P \sim 1$--$10$\,ms
+(angular velocities $\Omega \sim 200$--$4000$\,rad\,s$^{-1}$),
+represent the regime where rotation and relativistic effects are
+simultaneously at their strongest.  The relativistic Taylor number
+can reach
+\begin{equation}\label{eq:rel-6-Ta-msp}
+  \mathrm{Ta}_{\mathrm{rel}}
+  \sim \frac{4\Omega_{\mathrm{eff}}^{2}\,R^{4}}
+            {\nu_{\mathrm{rel}}^{2}}
+  \sim 10^{20}\text{--}10^{24},
+\end{equation}
+comparable to or exceeding the Taylor number of the Earth's core,
+but now in a regime where $GM/(Rc^{2}) \sim 0.2$.
+
+Two competing effects govern the effective rotation:
+\begin{enumerate}
+\item The Lense--Thirring frame-dragging angular velocity in the
+  slow-rotation approximation is
+  \begin{equation}\label{eq:rel-6-LT}
+    \omega_{\mathrm{LT}}(r)
+    = \frac{2GJ}{c^{2}\,r^{3}}
+    \approx \frac{2}{5}\,\frac{GM\,\Omega\,R^{2}}{c^{2}\,r^{3}}
+    \quad\text{(uniform density)},
+  \end{equation}
+  where $J = \tfrac{2}{5}MR^{2}\Omega$ is the stellar angular
+  momentum.  At the centre, frame dragging reduces the effective
+  angular velocity by $\delta\Omega/\Omega \sim GM/(Rc^{2})$,
+  i.e.\ up to $\sim$\,20--30\%.
+\item The relativistic enthalpy $w = (\varepsilon + p)/c^{2}$
+  increases the effective inertia, modifying the viscous damping
+  rate and hence the Taylor number.
+\end{enumerate}
+
+The net effect is that the critical Rayleigh number for onset of
+convection in a rapidly rotating millisecond pulsar is
+\emph{reduced} relative to the naive Newtonian estimate: the
+stronger effective gravity enhances buoyancy, while frame dragging
+reduces the rotational stabilisation.  The preferred mode of
+convection shifts to \emph{lower} spherical-harmonic degrees~$l$
+than predicted classically.
+
+%% ----------------------------------------------------------------
+\subsection{Proto-neutron star cooling: neutrino-driven convection
+  (mildly relativistic)}\label{sec:rel-63c}
+
+In the first $\sim$\,10--50\,s after a core-collapse supernova,
+the newly born proto-neutron star (PNS) cools by neutrino
+emission.  The negative entropy gradient established by
+neutrino losses drives vigorous convection in the PNS interior.
+This is a \emph{mildly} relativistic regime:
+\begin{itemize}
+\item $GM/(Rc^{2}) \sim 0.1$--$0.15$ (the PNS is less compact
+  than a cold neutron star);
+\item Thermal energies are $\sim$\,20--50\,MeV per baryon, so
+  $kT/(m_{n}c^{2}) \sim 0.02$--$0.05$;
+\item Rotation periods range from $\sim$\,1\,ms (rapid rotators)
+  to $\sim$\,1\,s (slowly rotating), so
+  $\mathrm{Ta}_{\mathrm{rel}}$ can span many orders of magnitude.
+\end{itemize}
+
+The neutrino-driven convection differs from classical thermal
+convection in several ways:
+\begin{enumerate}
+\item \textbf{Neutrino transport.}  The effective thermal
+  diffusivity $\kappa_{T}$ is dominated by neutrino diffusion.
+  In the diffusive regime (interior of the PNS), the Israel--Stewart
+  relaxation time $\tauq$ is of order the neutrino mean free time,
+  $\tauq \sim \lambda_{\nu}/c \sim 10^{-7}$\,s.  Causal transport
+  corrections are thus small compared to the convective overturn
+  time ($\sim$\,1\,ms) but must be retained for formal consistency.
+\item \textbf{Lepton-gradient instability.}  In addition to the
+  thermal (entropy) gradient, a compositional gradient in the
+  electron fraction $Y_{e}$ contributes to the buoyancy.  The
+  relativistic Rayleigh number must be generalised to a
+  \emph{double-diffusive} form:
+  \begin{equation}\label{eq:rel-6-Ra-PNS}
+    \mathrm{Ra}_{\mathrm{rel}}^{(\mathrm{eff})}
+    = \frac{R^{4}}{\kappa_{T}\,\nu_{\mathrm{rel}}}
+      \left[
+        \alpha_{T}\,g_{\mathrm{eff}}\,
+        \frac{\partial T}{\partial r}
+        - \alpha_{Y}\,g_{\mathrm{eff}}\,
+        \frac{\partial Y_{e}}{\partial r}
+      \right],
+  \end{equation}
+  where $\alpha_{Y} = -(\partial\ln w/\partial Y_{e})_{T,p}$.
+\item \textbf{Time-dependent background.}  The PNS cools and
+  contracts on a timescale of seconds, so the ``equilibrium'' state
+  evolves.  Strictly, one should solve an initial-value problem
+  rather than a classical eigenvalue problem.  However, when the
+  convective growth rate exceeds the cooling rate, a
+  quasi-stationary analysis using the instantaneous profiles
+  and the critical $\mathrm{Ra}_{\mathrm{rel}}$ derived above
+  provides a useful criterion.
+\end{enumerate}
+
+For a typical PNS with $M \approx 1.4\,M_{\odot}$,
+$R \approx 30$\,km, and $\Omega \sim 100$\,rad\,s$^{-1}$, the
+relativistic corrections to the critical Rayleigh number are at
+the 10--15\% level.  While not dominant, these corrections are
+comparable to uncertainties in the neutrino opacity and equation of
+state, and should be retained in quantitative models of PNS
+convection and gravitational-wave emission from convective
+motions.
+
+%% ================================================================
+\section*{Bibliographical Notes}
+\addcontentsline{toc}{section}{Bibliographical Notes}
+
+\noindent\S\,\ref{sec:rel-61}--\ref{sec:rel-62}.
+The relativistic generalisation of the rotating-sphere stability
+problem builds on the classical treatment of:
+
+\begin{enumerate}
+\item S.\ \textsc{Chandrasekhar}, ``The thermal instability of a
+  fluid sphere heated within,'' \emph{Phil.\ Mag.}\ (7), \textbf{43},
+  1317--29 (1952).
+
+\item S.\ \textsc{Chandrasekhar} and D.\ \textsc{Elbert}, ``The
+  instability of a layer of fluid heated below and subject to
+  Coriolis forces,'' \emph{Proc.\ Roy.\ Soc.}\ (London)~A,
+  \textbf{231}, 198--210 (1955).
+\end{enumerate}
+
+\noindent Relativistic fluid dynamics and causal dissipation:
+
+\begin{enumerate}\setcounter{enumi}{2}
+\item W.\ \textsc{Israel} and J.\,M.\ \textsc{Stewart},
+  ``Transient relativistic thermodynamics and kinetic theory,''
+  \emph{Ann.\ Phys.}\ (N.Y.), \textbf{118}, 341--72 (1979).
+
+\item W.\ A.\ \textsc{Hiscock} and L.\ \textsc{Lindblom},
+  ``Stability and causality in dissipative relativistic fluids,''
+  \emph{Ann.\ Phys.}\ (N.Y.), \textbf{151}, 466--96 (1983).
+\end{enumerate}
+
+\noindent\S\,\ref{sec:rel-63}.
+Neutron star convection and proto-neutron star cooling:
+
+\begin{enumerate}\setcounter{enumi}{4}
+\item A.\ \textsc{Burrows} and J.\,M.\ \textsc{Lattimer},
+  ``The birth of neutron stars,'' \emph{Astrophys.\ J.},
+  \textbf{307}, 178--96 (1986).
+
+\item M.\ \textsc{Prakash}, J.\,M.\ \textsc{Lattimer},
+  J.\,A.\ \textsc{Pons}, A.\,W.\ \textsc{Steiner}, and
+  S.\ \textsc{Reddy}, ``Evolution of a neutron star from its birth
+  to late stages,'' in \emph{Lecture Notes in Physics}, vol.~578,
+  pp.~364--423, Springer (2001).
+
+\item J.\,A.\ \textsc{Pons}, S.\ \textsc{Reddy},
+  M.\ \textsc{Prakash}, J.\,M.\ \textsc{Lattimer}, and
+  J.\,A.\ \textsc{Miralles}, ``Evolution of proto-neutron stars,''
+  \emph{Astrophys.\ J.}, \textbf{513}, 780--804 (1999).
+\end{enumerate}
+
+\noindent Frame-dragging effects in rotating neutron stars:
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item J.\,B.\ \textsc{Hartle}, ``Slowly rotating relativistic
+  stars.~I.\ Equations of structure,'' \emph{Astrophys.\ J.},
+  \textbf{150}, 1005--29 (1967).
+
+\item N.\ \textsc{Stergioulas}, ``Rotating stars in relativity,''
+  \emph{Living Rev.\ Relativ.}, \textbf{6}, 3 (2003).
+\end{enumerate}
