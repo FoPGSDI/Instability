@@ -10,8 +10,6 @@
 %  Noronha--Kovtun) first-order causal framework;
 %  metric signature (-,+,+,+); c kept explicit.
 % =====================================================================
-\input{rel_preamble}
-
 \section{Oscillation periods of a rotating relativistic fluid column}
 \label{sec:rel-7-68}
 
@@ -19,7 +17,7 @@ In the classical theory (\S~68), the oscillation frequencies of a
 rotating column of liquid are derived from the linearised perturbation
 equations for an incompressible fluid.  In the relativistic regime,
 the finite inertia of pressure---through the relativistic enthalpy
-density $\enthalpy = \edensity + p$---and the requirement that all
+density $\enthalpy = (\edensity + p)/c^{2}$---and the requirement that all
 signal speeds remain bounded by~$c$ introduce corrections that become
 significant in astrophysical settings (neutron-star interiors, accretion
 disks around compact objects, quark--gluon plasmas in rotating
@@ -33,8 +31,8 @@ u^\mu = \Lf\bigl(c,\,0,\,r\Omega(r),\,0\bigr),\qquad
 \Lf = \frac{1}{\sqrt{1 - r^2\Omega^2/c^2}},
 \end{equation}
 where $\Omega(r)$ is the angular velocity profile.  The relativistic
-enthalpy density is $\enthalpy = \edensity + p$, and the effective
-inertia for centrifugal balance is $\enthalpy/c^2$ rather than the
+enthalpy density is $\enthalpy = (\edensity + p)/c^{2}$, and the effective
+inertia for centrifugal balance is $\enthalpy$ rather than the
 rest-mass density~$\rdensity$.
 
 \subsection{Relativistic perturbation equations}
@@ -76,7 +74,7 @@ The relativistic Rayleigh discriminant is
 \begin{equation}
 \label{eq:rel-7-68-Phi}
 \Phi_{\mathrm{rel}}(r)
-= \frac{\Lf^4}{r^3}\frac{d}{dr}\!\bigl(r^2\Omega\Lf^2\bigr)^2
+= \frac{\Lf^2}{r^3}\frac{d}{dr}\!\bigl(r^2\Omega\Lf^2\bigr)^2
 = \Lf^4\,\Phi(r)\,\bigl[1 + \order{r^2\Omega^2/c^2}\bigr],
 \end{equation}
 where $\Phi(r) = r^{-3}d(r^2\Omega)^2/dr$ is the classical Rayleigh
@@ -175,17 +173,17 @@ For $v_{\mathrm{rot}} = r\Omega \sim 0.1\,c$ (neutron-star context),
 the frequency is reduced by $\sim 2\%$.
 \end{relcorrection}
 
-\subsection{Case $\Omega = A + B/r^4$ and $m=0$: relativistic modification}
+\subsection{Case $\Omega = A + B/r^2$ and $m=0$: relativistic modification}
 \label{sec:rel-7-68-viscous-Omega}
 
 When the angular velocity follows the viscous Couette profile
-$\Omega(r) = A + B/r^4$ (cf.\ equation~\eqref{eq:7-20}), the
-classical Rayleigh discriminant is $\Phi = 4A(A+B/r^4)$
+$\Omega(r) = A + B/r^2$ (cf.\ equation~\eqref{eq:7-20}), the
+classical Rayleigh discriminant is $\Phi = 4A(A+B/r^2)$
 (equation~\eqref{eq:7-104}).  The relativistic generalisation is
 \begin{equation}
 \label{eq:rel-7-68-Phi-viscous}
 \Phi_{\mathrm{rel}}
-= 4A\!\left(A + \frac{B}{r^4}\right)
+= 4A\!\left(A + \frac{B}{r^2}\right)
   \Lf^4(r)
   \left[1 + \frac{r^2\Omega^2(r)}{c^2}\right]
 = \Phi(r)\,\Lf^4(r)\relcorr{r^2\Omega^2/c^2},
@@ -197,7 +195,7 @@ The governing equation for $\xi_r$ (cf.\ equation~\eqref{eq:7-105}) becomes
 \begin{equation}
 \label{eq:rel-7-68-105}
 (DD_* - k^2)\xi_r
-= -\frac{4k^2}{p^2}\,A\!\left(A + \frac{B}{r^4}\right)
+= -\frac{4k^2}{p^2}\,A\!\left(A + \frac{B}{r^2}\right)
   \Lf^4(r)\relcorr{r^2\Omega^2/c^2}\;\xi_r,
 \end{equation}
 with boundary conditions $\xi_r = 0$ at $r = R_1$ and $R_2$ unchanged.
@@ -353,7 +351,7 @@ analysis must be generalised to include the metric curvature
 terms in the Rayleigh discriminant; the result is that $\Phi$ is
 replaced by $\kappa_r^2$ of equation~\eqref{eq:rel-7-68-kappa-r}.
 
-For the viscous Couette profile $\Omega = A + B/r^4$, which in a
+For the viscous Couette profile $\Omega = A + B/r^2$, which in a
 disk context corresponds to a deviation from Keplerian rotation
 (e.g.\ due to pressure gradients), the relativistic oscillation
 frequencies of \S~\ref{sec:rel-7-68-viscous-Omega} encode the
@@ -433,7 +431,7 @@ The main results of the relativistic generalisation of \S~68 are:
   the Bessel-function structure of the eigenmodes are unchanged to
   leading relativistic order.
 
-\item \textbf{Viscous Couette profile ($\Omega = A+B/r^4$, $m=0$):}
+\item \textbf{Viscous Couette profile ($\Omega = A+B/r^2$, $m=0$):}
   The narrow-gap oscillation frequencies are modified by
   $\lambda \to \lambda_{\mathrm{rel}} = \lambda\,\Lf_0^4[1+\order{\bar{r}^2\Omega_1^2/c^2}]$.
   The Airy-function eigenvalue structure is preserved.  For wide gaps,

@@ -27,11 +27,13 @@ amplitude -- \emph{overstability} -- when the dissipative fluxes obey
 the BDNK causal first-order constitutive relations rather than the
 instantaneous Fourier/Navier--Stokes relations.
 
-\subsection{BDNK perturbation equations with rotation}
+\subsection{Perturbation equations with rotation: Israel--Stewart
+vs.\ BDNK}
 
-Recall that in the BDNK framework the linearised heat-flux
-perturbation $\delta q^{\mu}$ satisfies the relaxation equation
-(cf.\ \S\,33 of the relativistic conventions)
+For comparison with the BDNK first-order theory, we first present
+the Israel--Stewart relaxation framework, in which the linearised
+heat-flux perturbation $\delta q^{\mu}$ satisfies the relaxation
+equation
 \begin{equation}\label{eq:rel-3-IS-heat}
   \tauq\,\frac{\partial}{\partial t}\,\delta q^{\mu}
   + \delta q^{\mu}
@@ -67,7 +69,8 @@ $\propto e^{\sigma t}$.
 
 The key consequence is that the characteristic equation, which is
 cubic in $\sigma$ classically (cf.\ equation~\eqref{eq:rel-3-char-classical}),
-becomes \emph{quintic} in the BDNK formalism.
+remains \emph{cubic} in the BDNK first-order formalism (unlike the
+Israel--Stewart formulation, which would produce a quintic).
 
 \subsection{The characteristic equation for two free boundaries}
 
@@ -125,12 +128,12 @@ relaxation modes appear.
 
 \subsection{Oscillatory solutions: $\sigma = i\omega + \gamma$}
 
-We seek solutions of~\eqref{eq:rel-3-quintic} of the form
+We seek solutions of~\eqref{eq:rel-3-cubic} of the form
 $\sigma = i\omega + \gamma$ with $\omega$ real (oscillation frequency)
 and $\gamma$ real (growth rate).  The marginal overstable state
 corresponds to $\gamma = 0$, i.e.\ $\sigma = i\omega$.
 
-Substituting $\sigma = i\omega$ into~\eqref{eq:rel-3-quintic} and
+Substituting $\sigma = i\omega$ into~\eqref{eq:rel-3-cubic} and
 separating real and imaginary parts yields two coupled algebraic
 equations in $(\omega^{2}, \Rarel)$:
 \begin{equation}\label{eq:rel-3-omega-eq}
@@ -196,32 +199,30 @@ acquires a relativistic correction:
 \begin{equation}\label{eq:rel-3-pstar}
   p^{*}_{\mathrm{rel}}
   = 0.67659
-    + \frac{2}{3}\,\frac{\tauq}{\taupi}\,
+    + c_{\mathrm{fr}}\,
       \frac{p_{0}}{\rdensity c^{2}}
-    + \order{\left(\frac{p_{0}}{\rdensity c^{2}}\right)^{2}}.
+    + \order{\left(\frac{p_{0}}{\rdensity c^{2}}\right)^{2}},
 \end{equation}
-The leading term is the classical value~(233).
+where $c_{\mathrm{fr}}$ is a dimensionless coefficient determined by the
+BDNK frame coefficients.  The leading term is the classical value~(233).
 
 \subsection{Comparison with classical: BDNK vs.\ Israel--Stewart modes}
 
-The quintic~\eqref{eq:rel-3-quintic} has five roots.  In the regime
-$\tauq,\taupi \ll d^{2}/\nu$ (relaxation times much shorter than the
-diffusion time across the layer), the roots decompose as follows:
+The cubic~\eqref{eq:rel-3-cubic} has three roots.  In the regime
+$\vA \ll c$ and $v \ll c$, the roots are:
 \begin{enumerate}
-  \item \textbf{Three ``hydrodynamic'' modes} -- these are continuous
+  \item \textbf{Three hydrodynamic modes} -- these are continuous
     deformations of the classical cubic roots.  They govern the
     onset of stationary convection ($\sigma_{\mathrm{real}} = 0$) or
     overstability ($\sigma = \pm i\omega$).
-  \item \textbf{Two ``relaxation'' modes} at
-    $\sigma \approx -1/\tauq$ and $\sigma \approx -1/\taupi$.  These
-    are strongly damped transient modes representing the decay of
-    initial deviations of the heat flux and viscous stress from
-    their Navier--Stokes values.  They play no role in the onset of
-    instability but are essential for causality.
 \end{enumerate}
+Unlike the Israel--Stewart formulation (which produces a quintic with
+two additional relaxation modes at $\sigma \approx -1/\tauq$ and
+$\sigma \approx -1/\taupi$), the BDNK first-order theory yields
+\emph{no spurious relaxation modes}.
 
 The three hydrodynamic-mode eigenvalues acquire perturbative corrections
-at $\order{\tauq\,\nu/d^{2}}$ and $\order{p_{0}/(\rdensity c^{2})}$.
+at $\order{p_{0}/(\rdensity c^{2})}$.
 
 %% ====================================================================
 
@@ -315,17 +316,16 @@ onset occurs remains unchanged:
 \end{enumerate}
 
 The justification proceeds exactly as in \S\,29\,$(a)$: the
-quintic~\eqref{eq:rel-3-quintic} at $\Rarel = 0$ has all roots with
+cubic~\eqref{eq:rel-3-cubic} at $\Rarel = 0$ has all roots with
 $\mathrm{Re}(\sigma)<0$ (absolute stability), and as $\Rarel$
 increases, either a real root passes through zero (stationary onset,
 $D=0$ in the notation of~(241)) or the real part of a
 complex-conjugate pair passes through zero (overstable onset,
 $BC-D=0$).
 
-The two additional relaxation-mode roots remain at
-$\mathrm{Re}(\sigma) < 0$ for all~$\Rarel$, since they are controlled
-by $\tauq^{-1}$ and $\taupi^{-1}$ which are independent of the
-Rayleigh number.
+In the BDNK first-order formalism, no additional relaxation-mode
+roots appear; the characteristic equation has the same number of
+roots as the classical one.
 
 %% ====================================================================
 
@@ -366,21 +366,20 @@ with $\hat{p}\sigma$ as in~\eqref{eq:rel-3-hatsigma-def}.
 
 \subsection{Numerical results: two free boundaries}
 
-For $p = 0.025$ (mercury) and the BDNK causal modifications
-times estimated as $\tauq \sim 10^{-11}\,\mathrm{s}$ and
-$\taupi \sim 10^{-12}\,\mathrm{s}$ (appropriate for liquid metals
-at laboratory conditions), the relativistic corrections to the
+For $p = 0.025$ (mercury) and with BDNK frame coefficients
+appropriate for liquid metals at laboratory conditions, the
+relativistic corrections to the
 critical Rayleigh number for overstability are:
 \begin{equation}\label{eq:rel-3-Rc-free-free}
   R_{c,\mathrm{rel}}^{(o)}
   = R_{c}^{(o)}\!\left[
-    1 + \xi_{\mathrm{IS}}\,\frac{p_{0}}{\rdensity c^{2}}
-    + \xi_{\tau}\,\frac{\tauq\,\nu}{d^{2}}
+    1 + \xi_{\mathrm{rel}}\,\frac{p_{0}}{\rdensity c^{2}}
+    + \xi_{\mathrm{fr}}\,\frac{v^{2}}{c^{2}}
   \right]
   + \order{\left(\frac{p_{0}}{\rdensity c^{2}}\right)^{2}},
 \end{equation}
 where $R_{c}^{(o)}$ is the classical value from Table~XI and the
-dimensionless coefficients $\xi_{\mathrm{IS}}$, $\xi_{\tau}$ are
+dimensionless coefficients $\xi_{\mathrm{rel}}$, $\xi_{\mathrm{fr}}$ are
 functions of $x_{\min}$, $p$, and $T_{1}$.
 
 In the large-rotation limit $p^{2}T\to\infty$, the asymptotic
@@ -450,7 +449,7 @@ $R_{c}^{(o)}$ scaling ($T\to\infty$)
   & $\propto T_{\mathrm{rel}}^{2/3}\relcorr{p_{0}/\rdensity c^{2}}$ \\
 $|\sigma|$ scaling ($T\to\infty$)
   & $\propto T^{1/2}$
-  & $\propto T_{\mathrm{rel}}^{1/2}\relcorr{\tauq\nu/d^{2}}$ \\
+  & $\propto T_{\mathrm{rel}}^{1/2}\relcorr{p_{0}/\rdensity c^{2}}$ \\
 $T^{(p)}$ threshold & Table~X
   & Table~X$\;\times\relcorr{p_{0}/\rdensity c^{2}}$ \\
 \hline
@@ -478,10 +477,10 @@ bound applies throughout the overstability analysis:
     so the effective thermal propagation speed
     $v_{\mathrm{eff}} \sim \omega/k \sim (\kappa_{T}\omega)^{1/2}
     \ll v_{\mathrm{th}} \le c$.
-  \item The two relaxation modes have $|\mathrm{Re}(\sigma)|\sim
-    1/\tauq$ and $1/\taupi$; their group velocities are bounded by
-    $v_{\mathrm{th}}$ and the corresponding viscous characteristic
-    speed $v_{\mathrm{visc}}=\sqrt{\shearvisc/(\taupi\rdensity)}\le c$.
+  \item In the BDNK first-order formalism, no spurious relaxation
+    modes appear; the dissipative signal speeds are bounded by~$c$
+    through the coupled inequalities on the transport and frame
+    coefficients.
   \item The cubic dispersion relation~\eqref{eq:rel-3-cubic}
     yields only physical hydrodynamic modes, all with phase velocities
     $|\omega/k| \le c$ for real~$k$.

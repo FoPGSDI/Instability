@@ -7,7 +7,7 @@
 % stationary (non-oscillatory) convection.
 %
 % Conventions: see RELATIVISTIC_CONVENTIONS.md and rel_preamble.tex
-% Metric signature: (-,+,+,+); c kept explicit; Israel–Stewart dissipation.
+% Metric signature: (-,+,+,+); c kept explicit; BDNK first-order causal dissipation.
 % =====================================================================
 
 \section{Thermal instability in a rotating relativistic fluid: general considerations}
@@ -91,7 +91,7 @@ where the last term encodes the BDNK heat-flux correction
 Coriolis terms replaces the Newtonian $\rho_0$.
 
 The heat equation, in the BDNK causal first-order framework, becomes
-a BDNK causal first-order heat equation rather than the parabolic Fourier law:
+the BDNK causal heat equation rather than the parabolic Fourier law:
 \begin{equation}\label{eq:rel-3-79}
   \tauq\,\frac{\partial^2\Theta}{\partial t^2}
   + \frac{\partial\Theta}{\partial t}
@@ -157,13 +157,14 @@ transport and frame coefficients are satisfied
 (Bemfica et al.\ 2018; Kovtun 2019).
 
 \begin{causalitycheck}
-The BDNK causal modifications time $\tauq$ ensures that the heat mode
-propagates at speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq} \leq c$.
-In the normal-mode equations, the factor $(1+\tauq\,p)$ regularises
-the spectrum: for $|p| \to \infty$ the temperature equation becomes
-$\tauq\,p\,(D^2 - a^2)\Theta \approx -(\beta d^2/\kappa)\,W$, giving
-a finite propagation speed rather than the instantaneous diffusion of
-the Fourier law.  All perturbation modes therefore respect causality.
+In the BDNK first-order causal framework, the thermal signal
+propagation speed is bounded by~$c$, as guaranteed by the coupled
+inequalities on the transport and frame coefficients
+(Bemfica et al.\ 2018; Kovtun 2019).
+In the normal-mode equations, the BDNK frame coefficients ensure
+that the heat mode has a finite propagation speed rather than
+the instantaneous diffusion of the Fourier law.
+All perturbation modes therefore respect causality.
 \end{causalitycheck}
 
 
@@ -525,12 +526,12 @@ At marginal stability ($p = 0$) the time-derivative terms vanish, so
 causality is automatically satisfied for the stationary mode.
 
 \textbf{2. Viscous (shear) modes.}
-In the BDNK framework the shear stress obeys
-$\taupi\,\dot\pi^{\langle\mu\nu\rangle} + \pi^{\mu\nu} =
-2\shearvisc\,\sigma^{\mu\nu}$, giving a shear signal speed
-$v_{\mathrm{shear}} = \sqrt{\shearvisc/(\enthalpy\,\taupi/c^2)}$.
-The constraint $\taupi \geq \shearvisc\,c^2/\enthalpy\cdot c^{-2}
-= \shearvisc/\enthalpy$ ensures $v_{\mathrm{shear}} \leq c$.
+In the BDNK first-order framework the shear stress is given by the
+algebraic constitutive relation
+$\pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu}$ (no relaxation
+equation).  The viscous signal speed is bounded by~$c$ through the
+BDNK coupled inequalities on the transport and frame coefficients
+(Bemfica et al.\ 2018; Kovtun 2019).
 At marginal stability these modes are not excited.
 
 \textbf{3. Inertial (Coriolis) waves.}
@@ -544,8 +545,8 @@ threatened.
 \textbf{4. Combined modes.}
 The full dispersion relation obtained from
 equations~\eqref{eq:rel-3-93}--\eqref{eq:rel-3-95} is a polynomial in
-$\sigma$ with finite-order terms only (the BDNK causal modifications
-times ensure that the highest power of $\sigma$ has a positive
+$\sigma$ with finite-order terms only (the BDNK frame coefficients
+ensure that the highest power of $\sigma$ has a positive
 coefficient).  By the standard argument for symmetric hyperbolic systems,
 all characteristic speeds are bounded by the maximum of the individual
 signal speeds, which are all $\leq c$.
@@ -576,8 +577,8 @@ and in the general time-dependent regime.
         with modified prefactors containing $\enthalpy/\rdensity c^2$.
   \item Cell patterns (\S\,28) are qualitatively unchanged; spirals are
         wound more tightly by the factor $\sqrt{\Tarel/\mathscr{T}}$.
-  \item All modes are causal when BDNK causal modifications times
-        satisfy the standard lower bounds.
+  \item All modes are causal when the BDNK frame coefficients
+        satisfy the standard coupled inequalities.
   \item In the non-relativistic limit
         $\enthalpy \to \rdensity c^2$, all results
         reduce to those of Chandrasekhar's original \S\S\,24--28.

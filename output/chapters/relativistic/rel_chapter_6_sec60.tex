@@ -58,7 +58,7 @@ e^{-2\Lambda} = 1-\frac{2Gm(r)}{rc^{2}}.
 The \emph{effective gravitational acceleration} measured by a static
 observer is the Tolman--redshift-corrected quantity
 \begin{equation}\label{eq:rel-60-4}
-g_{\mathrm{eff}}(r) = \frac{e^{-\Lambda}}{(\varepsilon+p)}\,\frac{dp}{dr}
+g_{\mathrm{eff}}(r) = -\frac{c^{2}}{\varepsilon+p}\,e^{-\Lambda}\,\frac{dp}{dr}
   = \frac{G\bigl[m(r)c^{2}+4\pi r^{3}p\bigr]}
         {r^{2}c^{2}\sqrt{1-2Gm/(rc^{2})}}.
 \end{equation}
@@ -84,7 +84,7 @@ equilibrium).  Writing $T(r) = T_{0}\,e^{\Phi(1)-\Phi(r)}$ for the
 Tolman equilibrium, the \emph{convectively unstable} gradient becomes
 \begin{equation}\label{eq:rel-60-7}
 \beta_{\mathrm{rel}}(r) = -e^{-\Lambda}\frac{dT}{dr}
-  - T\,e^{-\Lambda}\frac{d\Phi}{dr}
+  + \frac{T}{c^{2}}\,e^{-\Lambda}\frac{d\Phi}{dr}
   = -e^{-\Lambda}\frac{dT}{dr}
   + \frac{T\,g_{\mathrm{eff}}}{c^{2}}
   \relcorr{Gm/(rc^{2})},
@@ -127,10 +127,11 @@ $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ without a relaxation
 equation), and the relativistic angular operator is
 \begin{equation}\label{eq:rel-60-11}
 \mathscr{D}_{l,\mathrm{rel}}^{2} \equiv
-  e^{-2\Lambda}\frac{d^{2}}{dr^{2}}
-  +\frac{2}{r}\,e^{-2\Lambda}\frac{d}{dr}
-  -\frac{l(l+1)}{r^{2}}
-  - \frac{2}{r}\,\frac{d\Lambda}{dr}\,e^{-2\Lambda}\frac{d}{dr}.
+  e^{-2\Lambda}\!\left(\frac{d^{2}}{dr^{2}}
+  + \left[\frac{2}{r} - \frac{d\Lambda}{dr}
+          + \frac{1}{c^{2}}\frac{d\Phi}{dr}\right]
+    \frac{d}{dr}\right)
+  -\frac{l(l+1)}{r^{2}}.
 \end{equation}
 In the weak-field limit $\Lambda\to 0$ we recover
 $\mathscr{D}_{l,\mathrm{rel}}^{2}\to\mathscr{D}_{l}^{2}$.
