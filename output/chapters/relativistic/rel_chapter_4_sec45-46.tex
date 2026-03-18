@@ -1,0 +1,595 @@
+% rel_chapter_4_sec45-46.tex
+% Agent 18: Relativistic Q-law and Overstability (Ch IV §45-46)
+% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+
+\section{The $\pi^{2}Q$-law and invariant --- relativistic derivation}
+\label{sec:rel-45}
+
+In the classical theory (\S\,45) Chandrasekhar showed that for large
+Chandrasekhar numbers $Q\to\infty$, the critical Rayleigh number for the
+onset of stationary convection obeys $R_{c}\to\pi^{2}Q$, independently of
+the boundary conditions.  The physical origin of this law is the dominance
+of Ohmic (Joule) dissipation over viscous dissipation in the limit of
+strong magnetic fields or vanishing viscosity.  We now re-derive these
+results within the relativistic magneto-hydrodynamic framework, where the
+role of inertia is played by the \emph{relativistic enthalpy density}
+$w = \varepsilon + p$ rather than the rest-mass density $\rho_{0}$ alone,
+and where the magnetic field enters through the covariant description in
+terms of the magnetic four-vector $b^{\mu}$.
+
+%------------------------------------------------------------------
+\subsection{Relativistic MHD perturbation equations for the inviscid limit}
+\label{subsec:rel-45-inviscid}
+
+In the relativistic framework the equilibrium is characterised by the
+enthalpy density $w_{0} = \varepsilon_{0} + p_{0}$, the background
+magnetic four-vector $b^{\mu}_{0}$ with $b^{2}_{0} = b^{\mu}_{0}\,b_{0\mu}$,
+the thermal diffusivity $\kappa$, and the magnetic diffusivity
+$\eta = c^{2}/(4\pi\sigma_{\mathrm{e}})$, where $\sigma_{\mathrm{e}}$ is
+the electrical conductivity.  The relativistic Chandrasekhar number is
+\begin{equation}
+  \Qrel = \frac{b^{2}_{0}\,d^{2}}{4\pi\,(w_{0}/c^{2})\,\nu\,\eta}
+        = \frac{\mu H^{2} d^{2}}{\rho_{0}\,\nu\,\eta}
+          \left[\frac{\rho_{0}\,c^{2}}{w_{0}}\right] ,
+  \label{eq:rel-Qrel-def}
+\end{equation}
+where the factor $\rho_{0}c^{2}/w_{0} = 1/h$ (with $h$ the specific
+enthalpy) encodes the relativistic correction.  In the non-relativistic
+limit $h\to 1$ and $\Qrel\to Q$.
+
+For a fluid layer of depth $d$ with an imposed vertical magnetic field,
+the linearised perturbation equations for the vertical velocity $W$,
+the temperature perturbation $\Theta$, and the magnetic scalar $K$
+follow from the relativistic MHD energy-momentum conservation
+$\nabla_{\nu}T^{\mu\nu}_{\mathrm{total}} = 0$ together with the
+induction equation.  In the inviscid limit ($\nu\to 0$) and for
+stationary onset ($p = 0$), the Israel--Stewart relaxation terms drop
+out and the perturbation equations reduce to the \emph{same structure}
+as in the classical case, up to the replacement of $\rho_{0}$ by the
+effective inertial mass density $w_{0}/c^{2}$.  Specifically, in
+dimensionless form (with $d$ as the unit of length) the vertical
+velocity satisfies
+\begin{equation}
+  D^{2}(D^{2}-a^{2})W = \frac{\Rarel}{\Qrel}\,a^{2}\,W ,
+  \label{eq:rel-inviscid-W}
+\end{equation}
+with boundary conditions $W = 0$ and $D^{2}W = 0$ at $z = 0$ and $z=1$.
+Here $D = \dd/\dd z$, $a$ is the horizontal wave number, and
+\begin{equation}
+  \Rarel = \frac{g\,\alpha\,\beta\,d^{4}}{\nu\,\kappa}
+           \left[\frac{\rho_{0}\,c^{2}}{w_{0}}\right]
+  \label{eq:rel-Rarel-Q}
+\end{equation}
+is the relativistic Rayleigh number (cf.\ RELATIVISTIC\_CONVENTIONS.md).
+
+The structural identity of~\eqref{eq:rel-inviscid-W} with the classical
+equation~(4-197) is a direct consequence of the fact that in a static
+equilibrium, the relativistic effects modify only the definition of
+the dimensionless groups and not the operator structure.
+
+%------------------------------------------------------------------
+\subsection{Origin of the law: magnetic tension vs.\ relativistic inertia}
+\label{subsec:rel-45-origin}
+
+The lowest eigenfunction of~\eqref{eq:rel-inviscid-W} is again
+$W = A\sin\pi z$, yielding the characteristic equation
+\begin{equation}
+  \frac{\Rarel}{\Qrel}
+  = \frac{\pi^{2}(\pi^{2}+a^{2})}{a^{2}} .
+  \label{eq:rel-RoverQ}
+\end{equation}
+The minimum occurs as $a\to\infty$:
+\begin{equation}
+  \boxed{\;\Rarel \;\to\; \pi^{2}\,\Qrel \quad (a\to\infty).}
+  \label{eq:rel-pi2Q-law}
+\end{equation}
+
+The physical interpretation is entirely analogous to the classical one,
+but cast in relativistic language:
+\begin{itemize}
+  \item The \emph{restoring force} is the magnetic tension
+    $\sim b^{2}_{0}/(4\pi)$, which opposes bending of field lines.
+  \item The \emph{inertia} resisting convective motions is
+    $w_{0}/c^{2} = (\varepsilon_{0}+p_{0})/c^{2}$, not merely
+    $\rho_{0}$.  In a relativistically hot plasma (radiation-dominated,
+    or with strong internal energy), $w_{0} \gg \rho_{0}\,c^{2}$ and
+    the effective inertia is enhanced, meaning that a stronger
+    temperature gradient is needed to overcome the magnetic suppression.
+  \item The critical temperature gradient becomes
+    \begin{equation}
+      g\,\alpha\,\beta_{c}
+      = \pi^{2}\,
+        \frac{b_{0}^{2}\,\sigma_{\mathrm{e}}}{w_{0}/c^{2}}\,
+        \kappa\,d^{-4}
+      = \pi^{2}\,
+        \frac{\mu^{2}H^{2}\sigma_{\mathrm{e}}}{\rho_{0}\,h}\,
+        \kappa\,d^{-4} ,
+      \label{eq:rel-beta-c-inviscid}
+    \end{equation}
+    which differs from the classical result~(4-202) by the factor
+    $1/h$.  This is a genuine relativistic effect: the enhanced inertia
+    makes the fluid \emph{harder} to destabilise.
+\end{itemize}
+
+In complete analogy with the classical discussion, including the viscous
+correction at one higher order yields
+\begin{equation}
+  \Rarel = \frac{\pi^{2}+a^{2}}{a^{2}}\,
+           \bigl(a^{4} + \Qrel\,\pi^{2}\bigr) ,
+  \label{eq:rel-higher-order}
+\end{equation}
+and the critical wave number at marginal stability scales as
+\begin{equation}
+  a_{c}^{(\mathrm{rel})} \to
+  \bigl(\tfrac{1}{2}\,\pi^{4}\,\Qrel\bigr)^{1/6}
+  \quad (\Qrel\to\infty) .
+  \label{eq:rel-ac-asymptotic}
+\end{equation}
+The effective kinematic viscosity imparted by the magnetic field is
+\begin{equation}
+  \nu_{\mathrm{eff}}^{(\mathrm{rel})}
+  = \mathrm{const.}\;\frac{(\mu H d)^{2}}{w_{0}/c^{2}}
+  = \frac{\rho_{0}\,c^{2}}{w_{0}}\;\nu_{\mathrm{eff}}^{(\mathrm{class})} ,
+  \label{eq:rel-nu-eff}
+\end{equation}
+which is \emph{reduced} relative to the classical value by the factor
+$1/h$, reflecting the greater difficulty of accelerating a relativistic
+fluid.
+
+%------------------------------------------------------------------
+\subsection{The invariant in the relativistic eigenvalue problem}
+\label{subsec:rel-45-invariant}
+
+In the classical theory, Chandrasekhar identified the invariant
+(eq.~(4-215)--(4-219)):
+\[
+  \Psi^{(\mathrm{class})}
+  = \eta\times\text{(magnetic energy in }\mathbf{h}_{1}^{(0)})
+  + \nu\times\text{(kinetic energy in }\mathbf{u}_{\perp})
+  = \tfrac{1}{2}\rho_{0}\,\nu\,W_{0}^{2} ,
+\]
+independent of $Q$.
+
+In the relativistic formulation, the energy densities must be
+computed from the full energy-momentum tensor.  The magnetic energy
+density in the fluid frame is $b_{1}^{2}/(8\pi)$ where $b_{1}^{\mu}$
+is the perturbed magnetic four-vector, and the kinetic energy density
+of horizontal motions is $\tfrac{1}{2}(w_{0}/c^{2})\,|\mathbf{u}_{\perp}|^{2}$.
+The relativistic invariant is therefore
+\begin{equation}
+  \Psi^{(\mathrm{rel})}
+  = \eta\,\frac{1}{8\pi}
+    \langle\langle |b_{1\perp}|^{2}\rangle\rangle
+  + \nu\,\frac{w_{0}}{2\,c^{2}}
+    \langle\langle |\mathbf{u}_{\perp}|^{2}\rangle\rangle ,
+  \label{eq:rel-invariant-def}
+\end{equation}
+where $\langle\langle\cdot\rangle\rangle$ denotes averaging over both
+the horizontal plane and the vertical direction.
+
+Using the eigenfunctions for two free boundaries and the relation between
+$a$ and $\Qrel$ at marginal stability, one finds by a computation
+entirely parallel to the classical one that
+\begin{equation}
+  \boxed{\;
+  \Psi^{(\mathrm{rel})}
+  = \frac{1}{2}\,\frac{w_{0}}{c^{2}}\,\nu\,W_{0}^{2}
+  = \frac{1}{2}\,\rho_{0}\,h\,\nu\,W_{0}^{2} ,\;}
+  \label{eq:rel-invariant-result}
+\end{equation}
+independently of $\Qrel$.  This reduces to the classical invariant
+$\tfrac{1}{2}\rho_{0}\nu W_{0}^{2}$ when $h\to 1$.
+
+\begin{relcorrection}
+The relativistic invariant~\eqref{eq:rel-invariant-result} differs from
+its classical counterpart by the factor $h = w_{0}/(\rho_{0}c^{2})$.
+Physically, the invariance reflects a balance between magnetic energy
+(which is frame-independent to leading order) and kinetic energy
+(which involves the full relativistic inertia $w_{0}/c^{2}$).  In a
+radiation-dominated plasma where $w_{0}\approx 4p_{0}$, the invariant
+can be several times larger than the classical prediction at the same
+$W_{0}$.
+\end{relcorrection}
+
+
+%==================================================================
+\section{Overstability (oscillatory onset) with magnetic field ---
+         relativistic treatment}
+\label{sec:rel-46}
+
+We now turn to the question of whether instability can arise as
+oscillations of increasing amplitude (overstability) in the relativistic
+regime.  The classical treatment (\S\,46) showed that for two free
+boundaries and $p_{2} > p_{1}$ (i.e.\ $\kappa > \eta$), oscillatory
+onset is preferred at sufficiently large~$Q$.  The relativistic
+generalisation introduces two new features:
+\begin{enumerate}
+  \item The Israel--Stewart relaxation times $\tauq$, $\taupi$, and
+    $\tauPi$ raise the order of the characteristic equation, because
+    each dissipative flux now obeys a \emph{hyperbolic} evolution equation
+    rather than an instantaneous constitutive relation.
+  \item \emph{Causality} imposes an upper bound on the phase velocity
+    of any oscillatory mode: $v_{\mathrm{ph}} \le c$.
+\end{enumerate}
+
+%------------------------------------------------------------------
+\subsection{Relativistic perturbation equations with Israel--Stewart
+            dissipation}
+\label{subsec:rel-46-perturb}
+
+The linearised equations for the perturbations
+$(W, \Theta, K, \bulkP, \shearten, \heatflux)$
+about a static equilibrium with a vertical magnetic field are obtained
+from $\covdu T^{\mu\nu}_{\mathrm{total}} = 0$ supplemented by the
+Israel--Stewart relaxation equations:
+\begin{align}
+  \tauq\,\dot{q}^{\langle\mu\rangle} + q^{\mu}
+  &= -\kappa\!\left(\Delta^{\mu\nu}\nabla_{\nu}T
+     + \frac{T}{c^{2}}\,u^{\mu}\,\dot{u}_{\mu}\right) ,
+  \label{eq:rel-IS-heat}\\[4pt]
+  \taupi\,\dot{\pi}^{\langle\mu\nu\rangle} + \pi^{\mu\nu}
+  &= 2\,\shearvisc\,\sigma^{\mu\nu} ,
+  \label{eq:rel-IS-shear}\\[4pt]
+  \tauPi\,\dot{\Pi} + \Pi
+  &= -\bulkvisc\,\nabla_{\mu}u^{\mu} .
+  \label{eq:rel-IS-bulk}
+\end{align}
+When linearised and decomposed into normal modes
+$\sim \exp(\sigma t + i\,\mathbf{k}\cdot\mathbf{x})$, each relaxation
+equation introduces a factor $(1 + \tau\,\sigma)$ that multiplies the
+corresponding dissipative term.  In contrast, the classical (Eckart)
+theory corresponds to the limit $\tau\to 0$ where the dissipative
+fluxes respond instantaneously.
+
+%------------------------------------------------------------------
+\subsection{The relativistic characteristic equation}
+\label{subsec:rel-46-chareq}
+
+For two free boundaries with $W = A\sin\pi z$, the elimination of
+$\Theta$, $K$, and the dissipative perturbations from the linearised
+system yields the characteristic equation.  Let
+\begin{equation}
+  x = \frac{a^{2}}{\pi^{2}},\quad
+  i\sigma_{1} = \frac{\sigma}{\pi^{2}},\quad
+  R_{1} = \frac{\Rarel}{\pi^{4}},\quad
+  Q_{1} = \frac{\Qrel}{\pi^{2}},
+  \label{eq:rel-scaled-vars}
+\end{equation}
+and define the Israel--Stewart correction factors
+\begin{equation}
+  \mathcal{T}_{q} = 1 + i\,\tauq\,\pi^{2}\sigma_{1} ,\quad
+  \mathcal{T}_{\pi} = 1 + i\,\taupi\,\pi^{2}\sigma_{1} ,\quad
+  \mathcal{T}_{\Pi} = 1 + i\,\tauPi\,\pi^{2}\sigma_{1} .
+  \label{eq:rel-IS-factors}
+\end{equation}
+Then the relativistic characteristic equation takes the form
+\begin{multline}
+  (1+x)\bigl(1+x+i\,h\,\sigma_{1}\,\mathcal{T}_{\pi}\bigr)
+  \Bigl[\bigl(1+x+i\,p_{2}^{(\mathrm{rel})}\sigma_{1}\bigr)
+        \bigl(1+x+i\,\sigma_{1}\,\mathcal{T}_{\pi}\bigr)
+  + Q_{1}\Bigr] \\
+  = R_{1}\,x\,
+    \bigl(1+x+i\,p_{2}^{(\mathrm{rel})}\sigma_{1}\bigr)
+    \,\mathcal{T}_{q} ,
+  \label{eq:rel-char-full}
+\end{multline}
+where $h = w_{0}/(\rho_{0}c^{2})$ is the specific enthalpy and
+\begin{equation}
+  p_{1}^{(\mathrm{rel})} = \frac{\kappa}{\nu}\,
+    \frac{1}{h\,\mathcal{T}_{q}/\mathcal{T}_{\pi}} ,\quad
+  p_{2}^{(\mathrm{rel})} = \frac{\eta}{\nu}\,
+    \frac{1}{h} ,
+  \label{eq:rel-p1p2}
+\end{equation}
+are the relativistic Prandtl ratios.
+
+\begin{relcorrection}
+Equation~\eqref{eq:rel-char-full} is of \emph{higher order} in
+$\sigma_{1}$ than its classical counterpart~(4-222).  Each
+Israel--Stewart factor $\mathcal{T}$ contributes one additional power of
+$\sigma_{1}$.  The classical equation is fourth-order in $\sigma_{1}$
+(once $\sigma$ is treated as the unknown); the relativistic equation is
+generically \emph{seventh-order} (three relaxation times contribute three
+additional roots).  The extra roots correspond to transient relaxation
+modes that decay on time-scales $\sim\tau_{q}^{-1}$, $\tau_{\pi}^{-1}$,
+$\tau_{\Pi}^{-1}$.
+\end{relcorrection}
+
+%------------------------------------------------------------------
+\subsection{Reduction to the Eckart (instantaneous) limit}
+\label{subsec:rel-46-eckart}
+
+In the formal limit $\tauq, \taupi, \tauPi \to 0$ (Eckart theory), we
+have $\mathcal{T}_{q}, \mathcal{T}_{\pi}, \mathcal{T}_{\Pi} \to 1$,
+and equation~\eqref{eq:rel-char-full} reduces to
+\begin{multline}
+  (1+x)(1+x+i\,h\,\sigma_{1})
+  \bigl[(1+x+i\,p_{2}^{(0)}\sigma_{1})
+        (1+x+i\,\sigma_{1}) + Q_{1}\bigr] \\
+  = R_{1}\,x\,(1+x+i\,p_{2}^{(0)}\sigma_{1}) ,
+  \label{eq:rel-char-eckart}
+\end{multline}
+where $p_{2}^{(0)} = \eta/(\nu h)$.  This is structurally identical to the
+classical equation~(4-224) with the replacements
+$p_{1}\to p_{1}/h$ and $p_{2}\to p_{2}/h$ and an overall factor of $h$
+multiplying the inertial term.  In the further limit $h\to 1$ the
+classical equation~(4-224) is recovered exactly.
+
+%------------------------------------------------------------------
+\subsection{Critical conditions: overstability vs.\ stationary onset}
+\label{subsec:rel-46-critical}
+
+To determine when overstability is preferred, we seek solutions of the
+characteristic equation with $\sigma_{1}$ real (purely oscillatory
+marginal state).  For clarity we work first in the Eckart limit; the
+effect of finite $\tau$ is discussed in \S\,\ref{subsec:rel-46-IS-effect}.
+
+\subsubsection{Eckart limit}
+
+Separating real and imaginary parts of~\eqref{eq:rel-char-eckart} with
+$\sigma_{1}\in\mathbb{R}$, one obtains the analogue of the classical
+equations~(4-226)--(4-231):
+\begin{equation}
+  p_{1}^{(0)\,2}\,\sigma_{1}^{2}
+  = \frac{p_{2}^{(0)}-p_{1}^{(0)}}{1+p_{2}^{(0)}}\,Q_{1}
+    - (1+x)^{2} ,
+  \label{eq:rel-sigma1-sq}
+\end{equation}
+and
+\begin{equation}
+  R_{1}^{(\mathrm{ov})}
+  = \frac{(1+p_{2}^{(0)})(p_{1}^{(0)}+p_{2}^{(0)})}{p_{1}^{(0)\,2}}
+    \,\frac{1+x}{x}\,
+    \left[(1+x)^{2}
+    + Q_{1}\,\frac{p_{1}^{(0)\,2}}{(1+p_{1}^{(0)})(p_{1}^{(0)}+p_{2}^{(0)})}\right] .
+  \label{eq:rel-R1-overstab}
+\end{equation}
+
+The condition for overstability to exist is $\sigma_{1}^{2} > 0$, which
+requires
+\begin{equation}
+  p_{2}^{(0)} > p_{1}^{(0)}
+  \quad\Longleftrightarrow\quad
+  \frac{\eta}{\nu h} > \frac{\kappa}{\nu h}
+  \quad\Longleftrightarrow\quad
+  \eta > \kappa .
+  \label{eq:rel-overstab-condition}
+\end{equation}
+This is the \emph{same} condition as in the classical theory ($\kappa <
+\eta$), since the factor $1/h$ cancels.  Physically, the ratio of thermal
+to magnetic diffusivity governs whether oscillatory modes can be sustained,
+and this ratio is unaffected by the relativistic enhancement of inertia.
+
+\emph{However}, the critical $Q$ at which overstability becomes the
+preferred mode, $Q^{(\mathrm{tr})}$, is shifted.  Since
+$p_{1}^{(0)} = \kappa/(\nu h)$ and $p_{2}^{(0)} = \eta/(\nu h)$, the
+transition Chandrasekhar number satisfies
+\begin{equation}
+  Q_{\mathrm{rel}}^{(\mathrm{tr})}
+  = h^{2}\;Q_{\mathrm{class}}^{(\mathrm{tr})}
+    \bigl[1 + \order{v^{2}/c^{2}}\bigr] ,
+  \label{eq:rel-Qtr}
+\end{equation}
+so that in a relativistically hot plasma ($h>1$), a \emph{stronger}
+magnetic field is needed before oscillatory onset is preferred.
+
+\subsubsection{Role of the Prandtl and magnetic Prandtl numbers}
+
+Define the relativistic Prandtl number and magnetic Prandtl number:
+\begin{equation}
+  \mathrm{Pr}_{\mathrm{rel}} = \frac{\nu\,h}{\kappa}
+  = h\,\mathrm{Pr}_{\mathrm{class}} ,\qquad
+  \mathrm{Pm}_{\mathrm{rel}} = \frac{\nu\,h}{\eta}
+  = h\,\mathrm{Pm}_{\mathrm{class}} .
+  \label{eq:rel-Pr-Pm}
+\end{equation}
+In terms of these, the condition for overstability becomes simply
+\begin{equation}
+  \mathrm{Pr}_{\mathrm{rel}} > \mathrm{Pm}_{\mathrm{rel}}
+  \quad\Longleftrightarrow\quad
+  \kappa < \eta ,
+  \label{eq:rel-overstab-Pr-Pm}
+\end{equation}
+and the asymptotic ($\Qrel\to\infty$) behaviours are
+\begin{align}
+  R_{c}^{(\mathrm{ov,rel})}
+  &\to \pi^{2}\,
+       \frac{(1+\mathrm{Pm}_{\mathrm{rel}}^{-1})}
+            {(1+\mathrm{Pr}_{\mathrm{rel}}^{-1})\,
+             \mathrm{Pm}_{\mathrm{rel}}^{-1}}\;\Qrel ,
+  \label{eq:rel-Rc-ov-asymp}\\[4pt]
+  a_{c}^{(\mathrm{ov,rel})}
+  &\to \left[\frac{\pi^{4}}{2}\,
+       \frac{\mathrm{Pr}_{\mathrm{rel}}^{-2}}
+            {(1+\mathrm{Pr}_{\mathrm{rel}}^{-1})
+             (\mathrm{Pr}_{\mathrm{rel}}^{-1}+\mathrm{Pm}_{\mathrm{rel}}^{-1})}
+       \;\Qrel\right]^{1/6} .
+  \label{eq:rel-ac-ov-asymp}
+\end{align}
+
+The gyration frequency at marginal overstability for $\Qrel\to\infty$ is
+\begin{equation}
+  |p|^{(\mathrm{rel})} \to
+  \left[\frac{\mathrm{Pm}_{\mathrm{rel}}^{-1}
+              -\mathrm{Pr}_{\mathrm{rel}}^{-1}}
+             {\mathrm{Pm}_{\mathrm{rel}}^{-1}
+              (1+\mathrm{Pr}_{\mathrm{rel}}^{-1})}
+  \right]^{1/2}
+  \frac{\vA^{(\mathrm{rel})}}{d} ,
+  \label{eq:rel-gyration}
+\end{equation}
+where the relativistic Alfv\'en speed is
+\begin{equation}
+  \vA^{(\mathrm{rel})}
+  = \frac{b_{0}\,c}{\sqrt{4\pi\,w_{0} + b_{0}^{2}}}
+  \;\le\; c .
+  \label{eq:rel-Alfven}
+\end{equation}
+In the non-relativistic limit $w_{0}\to\rho_{0}c^{2}$ and
+$b_{0}^{2}\ll 4\pi w_{0}$, so
+$\vA^{(\mathrm{rel})}\to H\sqrt{\mu/(4\pi\rho_{0})} = V_{A}$, recovering
+the classical result~(4-243).
+
+%------------------------------------------------------------------
+\subsection{Comparison: classical vs.\ relativistic critical curves}
+\label{subsec:rel-46-comparison}
+
+\begin{relcorrection}
+The key differences between the classical and relativistic critical curves
+in the $(R_{c}, Q)$-plane are:
+
+\begin{enumerate}
+  \item \textbf{Stationary branch:} Both follow $R_{c}\sim\pi^{2}Q$ for
+    large~$Q$, but with different proportionality constants.  The
+    relativistic curve lies above the classical one by a factor~$h$
+    (the increased inertia raises the critical $R$).
+
+  \item \textbf{Overstable branch:} The overstable branch is also shifted
+    upward by a factor involving~$h$.  The branch point $Q^{(\mathrm{tr})}$
+    at which overstability becomes preferred moves to
+    $Q_{\mathrm{rel}}^{(\mathrm{tr})} \approx h^{2}\,
+    Q_{\mathrm{class}}^{(\mathrm{tr})}$.
+
+  \item \textbf{Wave numbers:} The critical wave numbers $a_{c}$ at onset
+    retain the same power-law dependence $\sim Q^{1/6}$ but with $\Qrel$
+    in place of $Q$, giving slightly different numerical prefactors.
+
+  \item \textbf{Oscillation frequency:} The gyration frequency of
+    overstable oscillations is controlled by the relativistic Alfv\'en
+    speed $\vA^{(\mathrm{rel})} < V_{A}$, so that relativistic oscillation
+    frequencies are \emph{lower} than their classical counterparts at the
+    same field strength.
+\end{enumerate}
+\end{relcorrection}
+
+%------------------------------------------------------------------
+\subsection{Effect of Israel--Stewart relaxation times}
+\label{subsec:rel-46-IS-effect}
+
+When $\tauq$, $\taupi$, $\tauPi > 0$, the characteristic
+equation~\eqref{eq:rel-char-full} has additional roots.  Physically,
+these extra modes correspond to relaxation oscillations of the
+dissipative fluxes themselves.  The stability picture is modified as
+follows:
+
+\begin{enumerate}
+  \item \textbf{Higher-order polynomial:} The characteristic equation
+    becomes seventh-order in $\sigma_{1}$ (three additional roots from
+    the three relaxation channels).  The three extra roots have
+    $\mathrm{Re}(\sigma) < 0$ for $\tau > 0$ and represent \emph{stable}
+    transient modes that decay on the relaxation time-scales.
+
+  \item \textbf{Modified critical Rayleigh number:} The Israel--Stewart
+    corrections modify the effective Prandtl ratios through the factors
+    $\mathcal{T}_{q}$, $\mathcal{T}_{\pi}$ evaluated at the oscillation
+    frequency.  For marginal overstability ($\sigma_{1}$ real), the
+    effective ratios become frequency-dependent:
+    \begin{equation}
+      p_{1}^{(\mathrm{IS})}(\sigma_{1})
+      = \frac{\kappa}{\nu\,h}\,
+        \frac{1+\taupi^{2}\pi^{4}\sigma_{1}^{2}}
+             {1+\tauq^{2}\pi^{4}\sigma_{1}^{2}} ,\qquad
+      p_{2}^{(\mathrm{IS})}(\sigma_{1})
+      = \frac{\eta}{\nu\,h}\,
+        \frac{1}{1+\taupi^{2}\pi^{4}\sigma_{1}^{2}} .
+      \label{eq:rel-p-IS}
+    \end{equation}
+    The condition for overstability now depends on the oscillation
+    frequency: high-frequency modes ``see'' modified Prandtl numbers,
+    and overstability may be either promoted or suppressed depending on
+    the hierarchy $\tauq \gtrless \taupi$.
+
+  \item \textbf{New stability boundary:} When $\tauq \gg \taupi$, the
+    heat flux relaxation is slower than the viscous relaxation, and the
+    overstable branch is \emph{suppressed} at high~$Q$.  Conversely, when
+    $\tauq \ll \taupi$, the Israel--Stewart corrections lower the critical
+    $R$ for overstability, making oscillatory onset easier to achieve.
+\end{enumerate}
+
+%------------------------------------------------------------------
+\subsection{Causality constraint on oscillatory modes}
+\label{subsec:rel-46-causality}
+
+\begin{causalitycheck}
+Every oscillatory mode at marginal stability has a real frequency
+$\omega = \pi^{2}\nu\sigma_{1}/d^{2}$ and a horizontal wave number
+$k = a/d$.  The horizontal phase velocity is
+\begin{equation}
+  v_{\mathrm{ph}} = \frac{\omega}{k}
+  = \frac{\pi^{2}\nu\,\sigma_{1}}{a\,d} .
+  \label{eq:rel-vph}
+\end{equation}
+
+\textbf{Requirement:} $v_{\mathrm{ph}} \le c$ for all physically
+admissible overstable modes.
+
+In the asymptotic regime $\Qrel\to\infty$, the oscillation frequency
+scales as $|\sigma_{1}|\sim \vA^{(\mathrm{rel})}\,d/(\nu\pi^{2})$
+(from~\eqref{eq:rel-gyration}) and $a\sim\Qrel^{1/6}$, so
+\begin{equation}
+  v_{\mathrm{ph}}
+  \sim \frac{\vA^{(\mathrm{rel})}}{a_{c}\,d/d}
+  = \frac{\vA^{(\mathrm{rel})}}{a_{c}} .
+  \label{eq:rel-vph-asymp}
+\end{equation}
+Since $\vA^{(\mathrm{rel})} < c$ (cf.\ eq.~\eqref{eq:rel-Alfven}) and
+$a_{c}\to\infty$ as $\Qrel\to\infty$, the phase velocity satisfies
+$v_{\mathrm{ph}}\to 0$ in the strong-field limit.  Thus \emph{the
+asymptotic overstable modes are automatically subluminal}.
+
+For finite~$\Qrel$, the causality bound $v_{\mathrm{ph}} \le c$ imposes
+the constraint
+\begin{equation}
+  \sigma_{1}^{2} \le \frac{c^{2}\,a^{2}}{\pi^{4}\nu^{2}} ,
+  \label{eq:rel-causality-bound}
+\end{equation}
+which, combined with~\eqref{eq:rel-sigma1-sq}, gives a lower bound on
+the wave number:
+\begin{equation}
+  a^{2} \ge \frac{\pi^{4}\nu^{2}}{c^{2}}\,
+  \frac{1}{p_{1}^{(0)\,2}}\,
+  \left[\frac{p_{2}^{(0)}-p_{1}^{(0)}}{1+p_{2}^{(0)}}\,Q_{1}
+        - (1+x)^{2}\right] .
+  \label{eq:rel-a-causality-lower}
+\end{equation}
+Under terrestrial conditions ($\nu/c \sim 10^{-12}$\,s) this bound is
+never restrictive, but in astrophysical settings (neutron star envelopes,
+accretion discs near compact objects) where $\nu$ can be relativistically
+large, the causality constraint may exclude long-wavelength overstable
+modes.
+
+Additionally, the Israel--Stewart formalism guarantees that the
+\emph{group velocity} of all dissipative modes is bounded by
+\begin{equation}
+  v_{\mathrm{group}}^{(\mathrm{IS})}
+  \le \sqrt{\frac{\kappa}{\tauq}} \le c
+  \quad\text{and}\quad
+  v_{\mathrm{group}}^{(\mathrm{IS})}
+  \le \sqrt{\frac{\nu}{\taupi}} \le c ,
+  \label{eq:rel-IS-group-bound}
+\end{equation}
+provided the relaxation times satisfy the thermodynamic stability
+conditions $\tauq \ge \kappa\,w_{0}/(c^{2}\,T^{2}\,(\partial s/\partial T)_{p})$
+and similarly for $\taupi$.  This ensures that the additional roots
+of the seventh-order characteristic equation do not introduce
+superluminal signal propagation.
+\end{causalitycheck}
+
+%------------------------------------------------------------------
+\subsection{Non-relativistic limit}
+\label{subsec:rel-46-NR}
+
+In the limit $c\to\infty$ (equivalently $h\to 1$, $\vA^{(\mathrm{rel})}
+\to V_{A}$, $\tauq,\taupi,\tauPi\to 0$):
+\begin{itemize}
+  \item $\Qrel\to Q$, $\Rarel\to R$, recovering the classical
+    definitions.
+  \item $p_{1}^{(0)}\to p_{1} = \kappa/\nu$, \;
+    $p_{2}^{(0)}\to p_{2} = \eta/\nu$.
+  \item Equation~\eqref{eq:rel-char-eckart} $\to$ equation~(4-224).
+  \item Equations~\eqref{eq:rel-sigma1-sq}--\eqref{eq:rel-R1-overstab}
+    $\to$ equations~(4-230)--(4-231).
+  \item The causality bounds become trivially satisfied.
+  \item The Israel--Stewart corrections and extra roots vanish.
+\end{itemize}
+All classical results of \S\S\,45--46 are thus recovered.
