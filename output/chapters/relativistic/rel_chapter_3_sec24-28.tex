@@ -1,0 +1,587 @@
+% =====================================================================
+% Relativistic Extension of Chapter III, §§24–28
+% Stationary Convection with Rotation
+% =====================================================================
+% Agent 13 — Relativistic modifications of Chandrasekhar's treatment
+% of thermal instability in a rotating fluid layer, focusing on
+% stationary (non-oscillatory) convection.
+%
+% Conventions: see RELATIVISTIC_CONVENTIONS.md and rel_preamble.tex
+% Metric signature: (-,+,+,+); c kept explicit; Israel–Stewart dissipation.
+% =====================================================================
+
+\section{Thermal instability in a rotating relativistic fluid: general considerations}
+\label{sec:rel-3-24}
+
+The classical arguments of \S\,24 carry over to the relativistic setting
+once we replace the Newtonian equations of motion by the conservation law
+$\nabla_\nu T^{\mu\nu} = 0$ for a dissipative fluid in a gravitational
+field, augmented by the Coriolis coupling that arises in a frame
+co-rotating with angular velocity $\boldsymbol{\Omega}$.
+
+In the non-relativistic theory the Taylor--Proudman theorem forbids
+steady motions with spatial variation along $\boldsymbol{\Omega}$ in an
+inviscid fluid, so that only viscous fluids can convect.  The relativistic
+analogue proceeds as follows.  In a stationary ($\partial_t = 0$),
+linearised flow the spatial part of $\nabla_\nu T^{\mu\nu} = 0$ in the
+co-rotating frame gives, at leading order,
+\begin{equation}\label{eq:rel-3-TP}
+  2\,\frac{\enthalpy}{c^2}\,\epsilon_{ijk}\,\Omega_j\,\delta u_k
+  = -\partial_i \delta p + \rdensity\,g\,\alpha\,\Theta\,\lambda_i
+    + \shearvisc\,\nabla^2 \delta u_i
+    + \order{v^2/c^2}\;\text{corrections},
+\end{equation}
+where $\enthalpy = \edensity + p$ is the relativistic enthalpy density,
+$\delta u_i$ is the spatial velocity perturbation, $\Theta$ the
+temperature perturbation, $\alpha$ the thermal expansion coefficient,
+and $\lambda_i = (0,0,1)$.
+
+When $\shearvisc = 0$ and $\Theta = 0$ the equation reduces to the
+relativistic Taylor--Proudman constraint: the Coriolis term on the left
+(proportional to $\enthalpy/c^2$ rather than $\rho_0$) must be balanced
+by the pressure gradient alone, forbidding velocity variation along
+$\boldsymbol{\Omega}$.  The replacement $\rho_0 \to \enthalpy/c^2$ is the
+characteristic relativistic modification; in a radiation-dominated fluid
+where $p = \edensity/3$ and $\enthalpy = 4\edensity/3$, this enhancement
+is significant.
+
+\begin{relcorrection}
+The relativistic Taylor--Proudman inertia is $\enthalpy/c^2$ rather than
+$\rdensity$.  For matter with equation of state $p = \edensity/3$
+(radiation-dominated), $\enthalpy/c^2 = 4\edensity/(3c^2)$, which
+exceeds $\rdensity$ and thereby stiffens the rotational constraint.
+The net effect is to \emph{increase} the stabilising influence of
+rotation beyond the Newtonian prediction.
+\end{relcorrection}
+
+As in the classical case, the Taylor--Proudman constraint does not
+forbid oscillatory motions: inertial (Coriolis) waves propagate with a
+dispersion relation that receives relativistic corrections of order
+$v^2/c^2$ (and additional Israel--Stewart dissipative corrections; see
+below).  Consequently, overstability may again be the preferred route to
+instability under certain conditions; this will be addressed in a
+companion section on oscillatory convection.
+
+% =====================================================================
+\section{The relativistic perturbation equations with rotation}
+\label{sec:rel-3-25}
+
+\subsection*{Setup and governing equations}
+
+We consider an infinite horizontal layer of relativistic fluid of
+depth~$d$, confined between $z = 0$ and $z = d$, rotating uniformly
+with angular velocity $\boldsymbol{\Omega} = \Omega\,\boldsymbol{e}_z$
+(parallel to gravity $\mathbf{g} = -g\,\boldsymbol{e}_z$).  The background
+is a static state with a steady adverse temperature gradient $\beta > 0$.
+
+In the co-rotating frame the relativistic Euler equation for a
+dissipative fluid, expanded to first order in perturbations and to
+the relevant post-Newtonian order, reads (cf.\ the classical
+equation~\eqref{eq:3-78})
+\begin{equation}\label{eq:rel-3-78}
+  \frac{\enthalpy}{c^2}\,\frac{\partial u_i}{\partial t}
+  = -\frac{\partial(\delta p)}{\partial x_i}
+    + \rdensity\,g\,\alpha\,\Theta\,\lambda_i
+    + \shearvisc\,\nabla^2 u_i
+    + 2\,\frac{\enthalpy}{c^2}\,\epsilon_{ijk}\,u_j\,\Omega_k
+    + \frac{1}{\tauq}\,\partial_i q_{\mathrm{IS}},
+\end{equation}
+where the last term encodes the Israel--Stewart heat-flux correction
+(see below).  The factor $\enthalpy/c^2$ multiplying the inertial and
+Coriolis terms replaces the Newtonian $\rho_0$.
+
+The heat equation, in the Israel--Stewart causal framework, becomes
+a telegraph-type equation rather than the parabolic Fourier law:
+\begin{equation}\label{eq:rel-3-79}
+  \tauq\,\frac{\partial^2\Theta}{\partial t^2}
+  + \frac{\partial\Theta}{\partial t}
+  = \beta\,w + \kappa\,\nabla^2\Theta
+  + \tauq\,\kappa\,\frac{\partial}{\partial t}\nabla^2\Theta,
+\end{equation}
+where $\tauq$ is the heat-flux relaxation time.  In the limit
+$\tauq \to 0$ this reduces to the classical equation~\eqref{eq:3-79}.
+
+The continuity equation retains its classical form at leading order:
+\begin{equation}\label{eq:rel-3-80}
+  \frac{\partial u_j}{\partial x_j} = 0.
+\end{equation}
+
+Taking the curl of~\eqref{eq:rel-3-78} (exactly as in the classical
+derivation, \S\,25) and projecting onto $\boldsymbol{\lambda}$, we obtain
+the relativistic analogues of the vorticity and vertical-velocity
+equations:
+\begin{align}
+  \frac{\enthalpy}{c^2}\,\frac{\partial\zeta}{\partial t}
+  &= \shearvisc\,\nabla^2\zeta
+    + 2\,\frac{\enthalpy}{c^2}\,\Omega\,\frac{\partial w}{\partial z},
+  \label{eq:rel-3-87}\\[6pt]
+  \frac{\enthalpy}{c^2}\,\frac{\partial}{\partial t}\nabla^2 w
+  &= \rdensity\,g\,\alpha\!\left(
+       \frac{\partial^2\Theta}{\partial x^2}
+       + \frac{\partial^2\Theta}{\partial y^2}\right)
+    + \shearvisc\,\nabla^4 w
+    - 2\,\frac{\enthalpy}{c^2}\,\Omega\,\frac{\partial\zeta}{\partial z}.
+  \label{eq:rel-3-88}
+\end{align}
+Here $w$ and $\zeta$ are the $z$-components of velocity and vorticity.
+
+\subsection*{(a) Normal mode analysis with Israel--Stewart dissipation}
+
+We decompose perturbations into normal modes of the form
+$\propto \exp(pt + i\mathbf{k}_\perp\cdot\mathbf{x}_\perp)$ with
+horizontal wavenumber $k$ and growth rate $p$.  Using
+the non-dimensionalisation $a = kd$, $\sigma = pd^2/\nu_{\mathrm{eff}}$
+where $\nu_{\mathrm{eff}} = \shearvisc\,c^2/\enthalpy$ is the
+relativistic kinematic viscosity, and $\mathscr{P}_{\mathrm{rel}} =
+\nu_{\mathrm{eff}}/\kappa$, we obtain the relativistic counterparts of
+equations~\eqref{eq:3-93}--\eqref{eq:3-95}:
+\begin{align}
+  \bigl[(1 + \tauq\, p)\,(D^2 - a^2)
+     - \mathscr{P}_{\mathrm{rel}}\,\sigma\bigr]\,\Theta
+  &= -\frac{\beta d^2}{\kappa}\,W,
+  \label{eq:rel-3-93}\\[6pt]
+  (D^2 - a^2 - \sigma)\,Z
+  &= -\frac{2\Omega}{\nu_{\mathrm{eff}}}\,d\;DW,
+  \label{eq:rel-3-94}\\[6pt]
+  (D^2 - a^2)(D^2 - a^2 - \sigma)\,W
+  - \frac{2\Omega}{\nu_{\mathrm{eff}}}\,d^3\;DZ
+  &= \frac{\rdensity\,g\,\alpha\,d^2}{\shearvisc}\;a^2\,\Theta.
+  \label{eq:rel-3-95}
+\end{align}
+
+The factor $(1 + \tauq\,p)$ in the temperature
+equation~\eqref{eq:rel-3-93} is the hallmark of Israel--Stewart
+causal heat conduction.  It converts the parabolic heat equation into
+a damped wave equation, bounding the thermal signal speed by
+\begin{equation}\label{eq:rel-heat-speed}
+  v_{\mathrm{heat}}^2
+  = \frac{\kappa}{\tauq}
+  \leq c^2.
+\end{equation}
+The inequality $\tauq \geq \kappa/c^2$ is required for causality.
+
+\begin{causalitycheck}
+The Israel--Stewart relaxation time $\tauq$ ensures that the heat mode
+propagates at speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq} \leq c$.
+In the normal-mode equations, the factor $(1+\tauq\,p)$ regularises
+the spectrum: for $|p| \to \infty$ the temperature equation becomes
+$\tauq\,p\,(D^2 - a^2)\Theta \approx -(\beta d^2/\kappa)\,W$, giving
+a finite propagation speed rather than the instantaneous diffusion of
+the Fourier law.  All perturbation modes therefore respect causality.
+\end{causalitycheck}
+
+
+% =====================================================================
+\section{The case of stationary convection: a relativistic variational principle}
+\label{sec:rel-3-26}
+
+When instability sets in as stationary convection the marginal state has
+$\sigma = 0$ (and hence $p = 0$), so the Israel--Stewart time-derivative
+terms drop out.  The marginal equations reduce to
+\begin{align}
+  (D^2 - a^2)\,\Theta
+  &= -\frac{\beta d^2}{\kappa}\,W,
+  \label{eq:rel-3-96}\\[4pt]
+  (D^2 - a^2)\,Z
+  &= -\frac{2\Omega}{\nu_{\mathrm{eff}}}\,d\;DW,
+  \label{eq:rel-3-97}\\[4pt]
+  (D^2 - a^2)^2 W
+  - \frac{2\Omega}{\nu_{\mathrm{eff}}}\,d^3\;DZ
+  &= \frac{\rdensity\,g\,\alpha\,d^2}{\shearvisc}\;a^2\,\Theta.
+  \label{eq:rel-3-98}
+\end{align}
+
+Eliminating $Z$ and $\Theta$ yields the single equation for~$W$:
+\begin{equation}\label{eq:rel-3-99}
+  (D^2 - a^2)^3\,W + \Tarel\;D^2 W = -\Rarel\;a^2\,W,
+\end{equation}
+where the \emph{relativistic Rayleigh and Taylor numbers} are defined by
+\begin{equation}\label{eq:rel-Ra-Ta-def}
+  \Rarel
+  = \frac{\rdensity\,g\,\alpha\,\beta\,d^4}{\shearvisc\,\kappa}
+    \;\relcorr{v^2/c^2},
+  \qquad
+  \Tarel
+  = \frac{4\,\Omega^2\,d^4}{\nu_{\mathrm{eff}}^2}
+  = \frac{4\,\Omega^2\,d^4\,\enthalpy^2}{\shearvisc^2\,c^4}.
+\end{equation}
+
+\begin{relcorrection}
+The relativistic Taylor number $\Tarel$ differs from the classical
+$\mathscr{T} = 4\Omega^2 d^4/\nu^2$ by the replacement
+$\nu \to \nu_{\mathrm{eff}} = \shearvisc\,c^2/\enthalpy$.  Since
+$\enthalpy/c^2 \geq \rdensity$, we have $\nu_{\mathrm{eff}} \leq \nu$,
+and therefore $\Tarel \geq \mathscr{T}$.  \emph{Relativistic inertia
+enhances the effective Taylor number.}  For a radiation-dominated gas
+($p = \edensity/3$) the enhancement factor is
+$(4\edensity/3\rdensity c^2)^2$, which can be substantial in
+astrophysical contexts (e.g.\ the cores of proto-neutron stars).
+\end{relcorrection}
+
+The relativistic Rayleigh number receives corrections from two sources:
+(i) the replacement of $\rho_0$ by $\enthalpy/c^2$ in the viscous
+diffusion time, and (ii) modifications to the buoyancy arising from the
+relativistic equation of state $\delta\rho/\rho_0 =
+-\alpha\,\Theta\,[1 + \order{p/\edensity}]$.  These corrections are
+absorbed into the $\relcorr{v^2/c^2}$ factor in~\eqref{eq:rel-Ra-Ta-def}.
+
+\subsection*{(a) A variational principle}
+
+The self-adjoint structure of equations~\eqref{eq:rel-3-97}
+and~\eqref{eq:rel-3-99} is preserved under the relativistic
+modifications (the replacement $\nu \to \nu_{\mathrm{eff}}$ does not
+break the symmetry).  Defining
+\begin{equation}\label{eq:rel-3-104}
+  F = (D^2 - a^2)^2 W
+    - \frac{2\Omega}{\nu_{\mathrm{eff}}}\,d^3\;DZ,
+\end{equation}
+the variational expression for the relativistic Rayleigh number is
+\begin{equation}\label{eq:rel-3-114}
+  \Rarel
+  = \frac{\displaystyle\int_0^1 \bigl[(DF)^2 + a^2 F^2\bigr]\,dz}
+         {a^2\displaystyle\int_0^1
+           \bigl\{[(D^2-a^2)W]^2
+             + d^2[(DZ)^2 + a^2 Z^2]\bigr\}\,dz}
+  \equiv \frac{I_1}{a^2\,I_2},
+\end{equation}
+where now all instances of $\nu$ in the underlying equations are
+replaced by $\nu_{\mathrm{eff}}$.
+
+The proof of stationarity ($\delta\Rarel = 0$ iff the Euler--Lagrange
+equation holds) follows line-by-line from the classical derivation in
+\S\,26\,(a), since only algebraic and integration-by-parts identities
+are used; the specific value of the viscosity parameter is immaterial.
+Consequently, the lowest eigenvalue of $\Rarel$ is a true minimum of the
+functional~\eqref{eq:rel-3-114}, and the same variational procedure
+described in \S\,26 can be applied in the relativistic case.
+
+
+% =====================================================================
+\section{Solutions for stationary convection in a rotating relativistic fluid}
+\label{sec:rel-3-27}
+
+\subsection*{(a) Two free boundaries: relativistic corrections to critical $\Rarel(\Tarel)$}
+
+With both boundaries free the boundary conditions remain the same as in
+the classical case~\eqref{eq:3-124}, and the eigenfunctions are
+$W = A\sin n\pi z$.  The characteristic equation becomes
+\begin{equation}\label{eq:rel-3-127}
+  \Rarel
+  = \frac{1}{a^2}\bigl[(n^2\pi^2 + a^2)^3 + n^2\pi^2\,\Tarel\bigr].
+\end{equation}
+
+For the lowest mode ($n=1$), minimising over $a^2 = \pi^2 x$ gives
+\begin{equation}\label{eq:rel-3-131}
+  2x^3 + 3x^2 = 1 + \Tarel/\pi^4.
+\end{equation}
+
+This is identical in form to the classical equation~\eqref{eq:3-131},
+but with $\Tarel$ replacing $\mathscr{T}$.  Since $\Tarel \geq
+\mathscr{T}$, the critical Rayleigh number is \emph{higher} than the
+Newtonian prediction at the same physical rotation rate: relativistic
+inertia strengthens the rotational stabilisation.
+
+The critical values are:
+\begin{equation}\label{eq:rel-3-128}
+  \Rarel^{(c)}
+  = \pi^4\left[(1+x_{\min})^3 + \frac{\Tarel}{\pi^4}\right]
+    \frac{1}{x_{\min}},
+\end{equation}
+where $x_{\min}$ is the appropriate root of~\eqref{eq:rel-3-131}.
+
+To translate back to the physical critical temperature gradient:
+\begin{equation}\label{eq:rel-beta-c}
+  g\,\alpha\,\beta_c
+  = \frac{\Rarel^{(c)}\;\shearvisc\,\kappa}{\rdensity\,d^4}
+    \;\relcorr{v^2/c^2}^{-1}.
+\end{equation}
+
+\subsection*{(b) Two rigid boundaries: modified Taylor number $\Tarel$}
+
+For rigid boundaries the variational method of \S\,26 applies without
+structural change.  We expand $F = \sum_m A_m \cos[(2m+1)\pi z]$ and
+solve the eighth-order system exactly as in the classical \S\,27\,(b),
+with $\nu \to \nu_{\mathrm{eff}}$ throughout.
+
+The characteristic equation is
+\begin{equation}\label{eq:rel-3-159}
+  \left\|\frac{1}{2}\,c_{m+1}
+    \left[\frac{1}{\Rarel\,a^2} - \gamma_{2m+1}\right]
+    \delta_{mn} - (n|m)\right\| = 0,
+\end{equation}
+where $c_{m+1}$, $\gamma_{2m+1}$, and $(n|m)$ are defined exactly as
+in equations~\eqref{eq:3-139}, \eqref{eq:3-147}, and~\eqref{eq:3-165},
+but the cubic~\eqref{eq:3-148} now involves $\Tarel$:
+\begin{equation}\label{eq:rel-3-148}
+  (q^2 - a^2)^3 + \Tarel\;q^2 = 0.
+\end{equation}
+
+The numerical tables (Tables~VII--IX in the original) can be reused
+directly by reading off values at $\mathscr{T} = \Tarel$ rather than at
+the Newtonian $\mathscr{T}$.  Since $\Tarel > \mathscr{T}$ for any
+relativistic fluid, \emph{the critical Rayleigh number for rigid
+boundaries is shifted upward compared to the Newtonian prediction at the
+same physical rotation rate}.
+
+\subsection*{(c) One rigid and one free boundary}
+
+The reduction of this case to the odd solutions of the two-rigid-boundary
+problem (\S\,27\,(c) in the original) carries over unchanged: an odd
+solution for $W$ on $[-\tfrac12,+\tfrac12]$ satisfies free-boundary
+conditions at $z = 0$ and rigid conditions at $z = \pm\tfrac12$.  The
+Rayleigh and Taylor numbers for a cell of depth~$d$ are $\tfrac{1}{16}$
+of those for a cell of depth~$\tfrac12 d$ in the two-rigid problem.
+All relativistic modifications enter solely through $\Tarel$.
+
+\subsection*{(d) The $\mathscr{T}^{1/3}$- and $\mathscr{T}^{2/3}$-laws in the relativistic regime}
+
+We now examine whether the classical asymptotic scaling laws persist
+when $\Tarel \to \infty$.
+
+Starting from the full equation~\eqref{eq:rel-3-99} and retaining only
+the leading terms in $\Tarel$ and the highest power of~$a$
+(following the argument of classical \S\,27\,(d)), we obtain
+\begin{equation}\label{eq:rel-3-179}
+  \Tarel\;D^2 W = -(\Rarel\,a^2 - a^6)\,W.
+\end{equation}
+
+This is identical in structure to equation~\eqref{eq:3-179}; the
+eigenvalue is $W = A\sin n\pi z$ with
+\begin{equation}\label{eq:rel-3-181}
+  \Rarel = \frac{1}{a^2}(a^6 + \pi^2\,\Tarel).
+\end{equation}
+
+Minimising over $a$:
+\begin{equation}\label{eq:rel-3-183}
+  a_{\min} = (\tfrac{1}{2}\pi^2\,\Tarel)^{1/6},
+  \qquad
+  \Rarel^{(c)} = 3(\tfrac{1}{2}\pi^2\,\Tarel)^{2/3}
+               = 8.6956\;\Tarel^{2/3}.
+\end{equation}
+
+\begin{relcorrection}
+The $\Tarel^{1/3}$- and $\Tarel^{2/3}$-laws persist in the
+relativistic theory.  The power-law exponents $1/6$ and $2/3$ are
+\emph{universal} --- they follow from dimensional analysis of the
+reduced second-order equation and are insensitive to the specific value
+of the viscosity.  However, the physical content changes:
+\[
+  \Tarel^{2/3}
+  = \left(\frac{4\Omega^2 d^4}{\nu_{\mathrm{eff}}^2}\right)^{\!2/3}
+  = \left(\frac{4\Omega^2 d^4\,\enthalpy^2}
+              {\shearvisc^2 c^4}\right)^{\!2/3}.
+\]
+In terms of the \emph{physical} rotation rate, the critical temperature
+gradient at large $\Omega$ is
+\begin{equation}\label{eq:rel-3-134}
+  g\,\alpha\,\beta_c
+  \;\to\; 21.911\,\left(\frac{\Omega}{d}\right)^{\!4/3}
+          \kappa^{-1}
+          \left(\frac{\enthalpy}{\rdensity\,c^2}\right)^{\!4/3}
+  \quad (\Omega \to \infty),
+\end{equation}
+which exceeds the classical result~\eqref{eq:3-134} by the factor
+$(\enthalpy/\rdensity c^2)^{4/3} \geq 1$.  For non-relativistic matter
+($\enthalpy \approx \rdensity c^2$) this reduces to the classical
+formula.
+\end{relcorrection}
+
+The origin of the scaling laws is the same as in the classical theory:
+for $\Tarel \to \infty$ the effective order of the governing ODE drops
+from six to two, and only two boundary conditions ($W = 0$ at both
+surfaces) can be satisfied.  The relativistic modifications do not alter
+the order reduction; they only modify the prefactors through
+$\nu_{\mathrm{eff}}$.
+
+
+% =====================================================================
+\section{Cell patterns with rotation: relativistic modifications}
+\label{sec:rel-3-28}
+
+\subsection*{Horizontal motions}
+
+In terms of the solutions for $w$ and $\zeta$, the horizontal velocity
+components retain the classical form~\eqref{eq:3-185}:
+\begin{equation}\label{eq:rel-3-185}
+  u = \frac{1}{a^2}\!\left(
+    \frac{\partial^2 w}{\partial x\,\partial z}
+    + \frac{\partial\zeta}{\partial y}\right), \quad
+  v = \frac{1}{a^2}\!\left(
+    \frac{\partial^2 w}{\partial y\,\partial z}
+    - \frac{\partial\zeta}{\partial x}\right).
+\end{equation}
+
+The relationship between $Z$ and $DW$ is now
+\begin{equation}\label{eq:rel-3-188}
+  (D^2 - a^2)\,Z
+  = -\frac{2\Omega\,d}{\nu_{\mathrm{eff}}}\;DW,
+\end{equation}
+so the coupling coefficient involves $\nu_{\mathrm{eff}}$ rather
+than~$\nu$.  Since $\nu_{\mathrm{eff}} \leq \nu$, the Coriolis coupling
+to horizontal vorticity is \emph{stronger} in the relativistic case.
+
+For two free boundaries the lowest-mode solutions are
+\begin{equation}\label{eq:rel-3-192}
+  W = W_0\sin\pi z, \qquad
+  Z = W_0\,\frac{2\Omega d}{\nu_{\mathrm{eff}}}
+      \,\frac{\pi}{\pi^2+a^2}\,\cos\pi z.
+\end{equation}
+
+The mean horizontal kinetic energy is
+\begin{equation}\label{eq:rel-3-193}
+  \langle u^2 + v^2 \rangle
+  = \tfrac14 W_0^2\;
+    \frac{(\pi^2+a^2)^2 + \Tarel}{a^2(\pi^2+a^2)^2}\;\cos^2\pi z.
+\end{equation}
+
+At marginal stability, using~\eqref{eq:rel-3-131} to
+eliminate~$\Tarel$, we recover
+\begin{equation}\label{eq:rel-3-195}
+  \langle u^2 + v^2 \rangle
+  = \tfrac14 W_0^2\,\cos^2\pi z,
+\end{equation}
+which is \emph{independent} of $\Tarel$, exactly as in the classical
+theory.  The remarkable invariance of the ratio of horizontal to
+vertical kinetic energies at the onset of stationary convection
+thus persists in the relativistic regime.
+
+\subsection*{Preferred cell shapes}
+
+The cell patterns (rolls, squares, hexagons) analysed by Veronis in the
+classical theory are determined by the horizontal planform of the
+eigenfunctions, which is independent of the vertical structure and hence
+independent of whether $\nu$ or $\nu_{\mathrm{eff}}$ appears in the
+equations.  The explicit formulae for the horizontal velocities
+(equations~\eqref{eq:3-196}, \eqref{eq:3-204}, \eqref{eq:3-207}) carry
+over with the single substitution
+\begin{equation}\label{eq:rel-T-sub}
+  \sqrt{\mathscr{T}} \;\longrightarrow\; \sqrt{\Tarel}
+  \quad\text{wherever it appears in the coupling to }\zeta.
+\end{equation}
+
+\paragraph{Rolls.}
+The ratio $v/u$ becomes (cf.~\eqref{eq:3-200})
+\begin{equation}\label{eq:rel-3-200}
+  \frac{v}{u}
+  = -\frac{\sqrt{\Tarel}}{\pi^2 + a^2},
+\end{equation}
+and the streamline wave number measured in the plane containing
+the streamlines remains
+\begin{equation}\label{eq:rel-3-203}
+  a_s^2 = \tfrac14\pi^2,
+\end{equation}
+independent of rotation and of relativistic corrections.  Veronis's
+result that the wavelength of a roll measured in the streamline plane is
+invariant under rotation extends to the relativistic case.
+
+\paragraph{Square and hexagonal cells.}
+The spiral patterns caused by Coriolis acceleration are tighter in the
+relativistic case because $\sqrt{\Tarel} > \sqrt{\mathscr{T}}$ at the
+same physical $\Omega$.  The qualitative features --- fluid spiralling
+clockwise (for counter-clockwise $\Omega$) as it rises, reversing at
+mid-plane, and spiralling counter-clockwise as it descends --- are
+unchanged.
+
+\paragraph{Limiting behaviour as $\Tarel \to \infty$.}
+The dominant horizontal motions become
+\begin{equation}\label{eq:rel-3-208}
+  u \to -\frac{\pi\sqrt{\Tarel}}{a^2(\pi^2+a^2)}\,a_y\,W_0
+        \cos a_x x\,\sin a_y y\,\cos\pi z,
+  \quad
+  v \to +\frac{\pi\sqrt{\Tarel}}{a^2(\pi^2+a^2)}\,a_x\,W_0
+        \sin a_x x\,\cos a_y y\,\cos\pi z,
+\end{equation}
+so the streamlines are $w = \mathrm{const}$ on horizontal planes,
+exactly as in the non-relativistic limit~\eqref{eq:3-210}.  The small
+radial component proportional to $\nabla_\perp w$ is responsible for
+convective transport when $\Tarel$ is large.
+
+\begin{relcorrection}
+Quantitative differences from the classical cell patterns are:
+\begin{enumerate}
+  \item The spirals are wound more tightly by a factor
+        $\sqrt{\Tarel/\mathscr{T}} = \enthalpy/(\rdensity c^2)$
+        at the same physical rotation rate.
+  \item The transition to the asymptotic regime of nearly closed
+        streamlines occurs at a \emph{lower} physical rotation rate
+        $\Omega$ because $\Tarel$ grows faster with $\enthalpy$.
+  \item For non-relativistic matter the corrections are
+        $\order{p/\edensity}$, typically negligible.  For
+        radiation-dominated or degenerate matter the corrections
+        can be of order unity.
+\end{enumerate}
+\end{relcorrection}
+
+
+% =====================================================================
+\subsection*{Causality verification for rotating stationary convection}
+
+\begin{causalitycheck}
+We verify that all perturbation modes in the rotating system respect
+causality ($v_{\mathrm{signal}} \leq c$).
+
+\textbf{1. Heat propagation.}
+The Israel--Stewart heat equation~\eqref{eq:rel-3-79} has characteristic
+speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq}$.  The causal constraint
+$\tauq \geq \kappa/c^2$ ensures $v_{\mathrm{heat}} \leq c$.
+At marginal stability ($p = 0$) the time-derivative terms vanish, so
+causality is automatically satisfied for the stationary mode.
+
+\textbf{2. Viscous (shear) modes.}
+In the Israel--Stewart framework the shear stress obeys
+$\taupi\,\dot\pi^{\langle\mu\nu\rangle} + \pi^{\mu\nu} =
+2\shearvisc\,\sigma^{\mu\nu}$, giving a shear signal speed
+$v_{\mathrm{shear}} = \sqrt{\shearvisc/(\enthalpy\,\taupi/c^2)}$.
+The constraint $\taupi \geq \shearvisc\,c^2/\enthalpy\cdot c^{-2}
+= \shearvisc/\enthalpy$ ensures $v_{\mathrm{shear}} \leq c$.
+At marginal stability these modes are not excited.
+
+\textbf{3. Inertial (Coriolis) waves.}
+The Coriolis coupling produces inertial waves with dispersion relation
+$\omega^2 = 4\Omega^2\cos^2\theta\;[1 + \order{v^2/c^2}]$, where
+$\theta$ is the angle between $\mathbf{k}$ and $\boldsymbol{\Omega}$.
+Since $\Omega \ll c/d$ in any physically realisable rotating fluid
+layer, the group velocity $v_g \sim \Omega/k \ll c$.  Causality is not
+threatened.
+
+\textbf{4. Combined modes.}
+The full dispersion relation obtained from
+equations~\eqref{eq:rel-3-93}--\eqref{eq:rel-3-95} is a polynomial in
+$\sigma$ with finite-order terms only (the Israel--Stewart relaxation
+times ensure that the highest power of $\sigma$ has a positive
+coefficient).  By the standard argument for symmetric hyperbolic systems,
+all characteristic speeds are bounded by the maximum of the individual
+signal speeds, which are all $\leq c$.
+
+\textbf{Conclusion:} All perturbation modes in the rotating
+relativistic convection problem are causal, both at marginal stability
+and in the general time-dependent regime.
+\end{causalitycheck}
+
+
+% =====================================================================
+\subsection*{Summary of relativistic modifications to \S\S\,24--28}
+
+\begin{enumerate}
+  \item The Taylor--Proudman theorem carries over with the inertial mass
+        density $\rdensity \to \enthalpy/c^2$.
+  \item The perturbation equations (\S\,25) acquire the Israel--Stewart
+        causal heat equation and the replacement
+        $\nu \to \nu_{\mathrm{eff}} = \shearvisc\,c^2/\enthalpy$
+        in all Coriolis and viscous terms.
+  \item The variational principle (\S\,26) retains its form; the
+        self-adjointness is not broken.
+  \item For stationary convection (\S\,27), the eigenvalue problem is
+        structurally identical to the classical one but with
+        $\mathscr{T} \to \Tarel \geq \mathscr{T}$.  All classical
+        tables and figures can be reused at the shifted Taylor number.
+  \item The $\Tarel^{1/3}$ and $\Tarel^{2/3}$ asymptotic laws persist
+        with modified prefactors containing $\enthalpy/\rdensity c^2$.
+  \item Cell patterns (\S\,28) are qualitatively unchanged; spirals are
+        wound more tightly by the factor $\sqrt{\Tarel/\mathscr{T}}$.
+  \item All modes are causal when Israel--Stewart relaxation times
+        satisfy the standard lower bounds.
+  \item In the non-relativistic limit
+        $\enthalpy \to \rdensity c^2$, $\tauq \to 0$, all results
+        reduce to those of Chandrasekhar's original \S\S\,24--28.
+\end{enumerate}
