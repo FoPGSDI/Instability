@@ -573,3 +573,92 @@ and the classical equations of Chapter~VI are recovered exactly.
 At the marginal state ($p = 0$), the BDNK and IS formulations yield
 identical equations, so all critical Rayleigh numbers and onset
 criteria are independent of the choice of causal framework.
+
+%------------------------------------------------------------------
+\subsection{Astrophysical application: neutron star convection setup}
+\label{subsec:rel-56-astro}
+
+The formalism developed above finds its primary astrophysical
+application in neutron star interiors, where convective instability
+may be driven by thermal or compositional gradients during cooling
+or accretion episodes.  The essential prerequisite for any stability
+analysis is the construction of the unperturbed TOV equilibrium
+profile---the relativistic generalisation of the classical hydrostatic
+background.
+
+For a typical neutron star with $M \approx 1.4\,M_{\odot}$ and
+$R \approx 10$~km, the compactness is $\mathcal{C} \approx 0.21$,
+placing the system firmly in the regime where the TOV corrections
+are quantitatively significant.  The Schwarzschild interior solution
+(uniform energy density) provides a useful analytic benchmark:
+figure~\ref{fig:tov-profiles} displays the radial profiles of
+energy density, pressure, and the metric potential $\Phi(r)/c^{2}$
+for several compactness values spanning the range from mildly
+relativistic ($\mathcal{C} = 0.05$) to strongly compact
+($\mathcal{C} = 0.30$).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{plots/ch6/fig_tov_profiles.pdf}
+\caption{TOV equilibrium profiles for the Schwarzschild interior
+  (uniform energy density) solution at four compactness values
+  $\mathcal{C} = GM/(Rc^{2})$.
+  \emph{Left:} Energy density (constant) and enthalpy density
+  $(\varepsilon+p)/\varepsilon_{c}$.
+  \emph{Centre:} Pressure profile $p(r)/\varepsilon_{c}$.
+  \emph{Right:} Metric potential $\Phi(r)/c^{2}$.
+  The steepening of $p(r)$ and deepening of the potential well
+  with increasing compactness control the relativistic corrections
+  to convective stability
+  (cf.\ \S\,\ref{subsec:rel-56-summary}).}
+\label{fig:tov-profiles}
+\end{figure}
+
+Several features are noteworthy for the stability analysis:
+\begin{enumerate}
+\item[(i)] The central pressure rises steeply with compactness
+  (diverging at the Buchdahl limit $\mathcal{C} = 4/9$), so
+  the enthalpy--inertia factor $\mathcal{I} = 1 + p/\varepsilon$
+  is substantially greater than unity in the interior.
+
+\item[(ii)] The metric potential $\Phi(r)$ is more negative in
+  the interior for larger $\mathcal{C}$, producing a stronger
+  Tolman redshift correction to the temperature
+  gradient~\eqref{eq:rel6-beta}.
+
+\item[(iii)] The effective gravitational acceleration
+  $g_{\mathrm{eff}}$~\eqref{eq:rel6-geff} receives both a
+  pressure-source contribution and a curvature factor
+  $(1-2Gm/(rc^{2}))^{-1}$, both of which amplify buoyancy
+  driving in compact stars relative to the Newtonian estimate.
+\end{enumerate}
+
+These profiles form the background on which the perturbation
+equations~\eqref{eq:rel6-W-eq}--\eqref{eq:rel6-Theta-eq} are
+solved.  Realistic nuclear equations of state (APR, SLy, BSk;
+see~\cite{Lattimer2001,Haensel2007}) produce non-uniform
+$\varepsilon(r)$ profiles, but the qualitative structure of the
+relativistic corrections is captured by the uniform-density model
+shown here.
+
+\begin{thebibliography}{99}
+\bibitem{Lattimer2001}
+J.\,M.~Lattimer and M.~Prakash,
+``Neutron star structure and the equation of state,''
+\emph{Astrophys.\ J.} \textbf{550}, 426--442 (2001).
+
+\bibitem{Haensel2007}
+P.~Haensel, A.\,Y.~Potekhin, and D.\,G.~Yakovlev,
+\emph{Neutron Stars~1: Equation of State and Structure},
+Springer (2007).
+
+\bibitem{OppenheimerVolkoff1939}
+J.\,R.~Oppenheimer and G.\,M.~Volkoff,
+``On massive neutron cores,''
+\emph{Phys.\ Rev.} \textbf{55}, 374--381 (1939).
+
+\bibitem{Tolman1939}
+R.\,C.~Tolman,
+``Static solutions of Einstein's field equations for spheres of fluid,''
+\emph{Phys.\ Rev.} \textbf{55}, 364--373 (1939).
+\end{thebibliography}
