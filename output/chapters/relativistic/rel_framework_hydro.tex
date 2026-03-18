@@ -1083,6 +1083,121 @@ maximum characteristic speed, but causality is never violated.
   \label{fig:bdnk-char-speeds}
 \end{figure}
 
+
+%% ====================================================================
+\section{Unified Extended Irreversible Thermodynamics and Stability}
+\label{sec:ueit-stability}
+%% ====================================================================
+
+The relationship between the BDNK and Israel--Stewart formalisms used
+throughout this book can be understood at a deeper level through the
+Unified Extended Irreversible Thermodynamics (UEIT) framework developed
+by \citet{GavassinoUEIT2021}.  UEIT provides a common language that
+encompasses Israel--Stewart theory, Carter's variational multifluid
+approach, radiation hydrodynamics, and the BDNK first-order theories
+as special cases of a single thermodynamic structure.
+
+\subsection{Hydrodynamics as an effective field theory}
+\label{subsec:hydro-eft}
+
+In the UEIT perspective, any relativistic dissipative hydrodynamic theory
+is a classical effective field theory characterized by:
+\begin{enumerate}
+  \item A set of macroscopic fields $\varphi_i$ (e.g.\ $u^\mu$, $T$, $n$,
+    plus possible non-equilibrium fields like the heat flux $q^\mu$);
+  \item Constitutive relations expressing the stress-energy tensor
+    $T^{\mu\nu}$ and entropy current $s^\mu$ in terms of $\varphi_i$
+    and their gradients;
+  \item Evolution equations that ensure energy-momentum conservation
+    $\nabla_\mu T^{\mu\nu} = 0$, particle conservation
+    $\nabla_\mu(n u^\mu) = 0$, and the second law
+    $\nabla_\mu s^\mu \ge 0$.
+\end{enumerate}
+The key insight is that \emph{Lyapunov stability of thermodynamic
+equilibrium follows directly from the second law of thermodynamics},
+provided the non-equilibrium entropy has a maximum at equilibrium.
+This is not an additional requirement but a consequence of the
+thermodynamic consistency of the theory.
+
+\subsection{Why Eckart/Landau theories are unstable}
+\label{subsec:eckart-instability-ueit}
+
+The UEIT framework explains the Hiscock--Lindblom instability of
+first-order Eckart/Landau theories as follows.  In these theories,
+the ``slow limit'' approximation---dropping time derivatives of the
+dissipative fluxes---converts the hyperbolic system into a parabolic
+one.  While this is harmless in a single reference frame, the
+relativity of simultaneity means that different observers impose
+initial conditions on different spacelike hypersurfaces.  A mode
+that is well-behaved (decaying) in one frame can appear as a growing
+mode in a boosted frame, because the parabolic system allows
+instantaneous propagation.
+
+\citet{GavassinoDissipationCausality2021} proved this connection
+rigorously: \emph{two observers can disagree on whether a state is
+stable only if perturbations can exit the light cone}.  Thus,
+dissipation without causality leads to frame-dependent stability
+assessments---a physical absurdity.  The two main theorems are:
+\begin{enumerate}
+  \item \textbf{Causal + stable in one frame $\Rightarrow$ stable
+    in all frames.}  If a causal theory has a stable equilibrium in
+    one inertial frame, that equilibrium is stable in every inertial
+    frame.
+  \item \textbf{Acausal + dissipative $\Rightarrow$ unstable in some
+    frame.}  If a dissipative theory allows superluminal propagation,
+    there always exists a Lorentz frame in which the equilibrium is
+    unstable.
+\end{enumerate}
+These results validate the central premise of this book: the BDNK
+framework, being causal by construction, is automatically stable in
+all frames, whereas acausal first-order theories (Eckart, Landau)
+are not merely inconvenient but fundamentally unphysical.
+
+\subsection{GENERIC Theory and Israel--Stewart: The Equivalence}
+\label{subsec:generic-is-equivalence}
+
+A further clarification of the formalism landscape comes from
+\citet{GavassinoGENERIC2023}, who demonstrated that the GENERIC
+(General Equation for Non-Equilibrium Reversible-Irreversible
+Coupling) relativistic hydrodynamic theory for liquids---developed
+by \"Ottinger and collaborators---is, in the linear regime, a
+\emph{particular realization of the Israel--Stewart theory} with
+constrained parameters.  Specifically:
+\begin{enumerate}
+  \item The GENERIC field equations, when linearized around equilibrium,
+    can be recast into a symmetric-hyperbolic form that is a special
+    case of the Israel--Stewart system;
+  \item The conditions for linear stability (in an arbitrary frame)
+    and relativistic causality of the GENERIC theory are derived from
+    the maximum entropy principle;
+  \item The GENERIC theory naturally describes viscoelastic behavior:
+    at low frequencies ($\omega\tau \ll 1$) it reduces to a viscous
+    fluid (Navier--Stokes), while at high frequencies ($\omega\tau \gg 1$)
+    it describes an elastic solid (Hooke's law)---exactly the behavior
+    of liquids in the Maxwell model.
+\end{enumerate}
+This equivalence has an important consequence for the stability
+analyses in this book: the physical predictions of IS and GENERIC
+are identical in the linear regime.  The choice between them is a
+matter of theoretical convenience, not physical content---precisely
+the ``universality'' identified for the IS/BDNK comparison.
+
+\subsection*{References for this section}
+
+\begin{itemize}
+  \item Gavassino \& Antonelli, ``Unified Extended Irreversible
+    Thermodynamics and the stability of relativistic theories for
+    dissipation,'' \textit{Front.\ Astron.\ Space Sci.}\ \textbf{8},
+    686344 (2021). [arXiv:2105.15184]
+  \item Gavassino, ``Can we make sense of dissipation without
+    causality?'' \textit{Phys.\ Rev.\ X} \textbf{12}, 041001
+    (2022). [arXiv:2111.05254]
+  \item Gavassino \& Antonelli, ``Relativistic Liquids: GENERIC or
+    EIT?'' \textit{Class.\ Quant.\ Grav.}\ \textbf{40}, 075012
+    (2023). [arXiv:2209.12865]
+\end{itemize}
+
+
 %% ====================================================================
 \section{BDNK Frame Coefficient Constraints}
 \label{sec:bdnk-parameter-space}

@@ -27,20 +27,20 @@ Integrate the theoretical framework and results of Lorenzo Gavassino's ~48 paper
 
 ### Flow stability (Ch VII-IX)
 - [VALIDATED] 2512.10420 "Stationary Couette flows" → rel_chapter_7 (DIRECTLY relevant!)
-- [HYPOTHESIS] 2003.04609 "Bulk viscosity" → rel_chapter_7, rel_chapter_9
-- [HYPOTHESIS] 2501.12543 "Extending IS: causal bulk viscosity" → rel_chapter_8, rel_chapter_9
+- [VALIDATED] 2003.04609 "Bulk viscosity" → rel_chapter_7 §72-73, rel_chapter_9 §87-89
+- [VALIDATED] 2501.12543 "Extending IS: causal bulk viscosity" → rel_chapter_8 §80, rel_chapter_9 §87-89
 
 ### Superposed fluids (Ch X-XI)
 - [HYPOTHESIS] 2508.04918 "Acausality instabilities" → rel_chapter_10, rel_chapter_11
 
 ### Jets and gravitational (Ch XII-XIV)
 - [HYPOTHESIS] 2507.19985 "Superflows in GR" → rel_chapter_12
-- [HYPOTHESIS] 2305.04119 "Bulk rheology: NS mergers to cosmology" → rel_chapter_13
-- [HYPOTHESIS] 2304.05455 "Burgers-type bulk viscosity in NS" → rel_chapter_12, rel_chapter_13
+- [VALIDATED] 2305.04119 "Bulk rheology: NS mergers to cosmology" → rel_chapter_13 §119
+- [VALIDATED] 2304.05455 "Burgers-type bulk viscosity in NS" → rel_chapter_12 §110, rel_chapter_13 §119
 
 ### Neutron star specific
-- [VALIDATED] 2012.10288 "Superfluid dynamics in NS crusts" → rel_chapter_6 (crust convection)
-- [VALIDATED] 2204.11809/10 "Simulating bulk viscosity in NS" → rel_chapter_7, rel_chapter_9
-- [VALIDATED] 2001.08951 "Mutual friction coupling" → rel_chapter_3
+- [VALIDATED] 2012.10288 "Superfluid dynamics in NS crusts" → rel_chapter_6 §60 (crust convection)
+- [VALIDATED] 2204.11809/10 "Simulating bulk viscosity in NS" → rel_chapter_7 §72-73, rel_chapter_12 §110
+- [VALIDATED] 2001.08951 "Mutual friction coupling" → rel_chapter_3 §19-23
 
-## Status: PENDING — agents to be deployed
+## Batch 3 Status: COMPLETE — 8 papers integrated (2003.04609, 2304.05455, 2305.04119, 2501.12543, 2204.11809, 2204.11810, 2012.10288, 2001.08951)

@@ -835,3 +835,54 @@ combined relativistic + superfluid corrections to the critical Rayleigh
 number may differ by a factor of 2--5 from the single-fluid GR result
 of \S\,\ref{sec:rel-60-Ra}, depending on the entrainment model and the
 temperature profile.
+
+%% ================================================================
+\subsection{Stability of Carter's multifluid: the Gavassino theorem}
+\label{sec:rel-60-carter-stability}
+%% ================================================================
+
+The entrainment correction above relies on the stability of the
+underlying two-fluid (Carter) formulation.
+Gavassino (\citealt{GavassinoCarter2022}, arXiv:2202.06760) has
+derived the complete stability and causality conditions for Carter's
+multifluid theory with an arbitrary number of species, using the
+Gibbs stability criterion (maximisation of entropy at equilibrium).
+
+\paragraph{Entrainment matrix positivity.}
+In Carter's theory, the currents $n_X^a$ (where $X$ runs over all
+species including entropy) are related to the momenta $\mu^X_a$ by an
+entrainment matrix $\mathcal{K}^{XY}$:
+$\mu^X_a = \mathcal{K}^{XY} n_{Ya}$.
+The central stability condition is:
+\begin{quote}
+\textit{The entrainment matrix $\mathcal{K}^{XY}$ must be positive
+definite for the multifluid equilibrium to be thermodynamically stable.}
+\end{quote}
+This confirms a widespread intuition in the neutron star community and
+provides a rigorous criterion for assessing whether approximate
+entrainment models (which often set some off-diagonal coefficients to
+zero) preserve stability.
+
+\paragraph{Stability implies causality.}
+Gavassino further proves that thermodynamic stability implies linear
+causality: if the entropy is maximised at equilibrium (with $E^\mu$
+future-directed non-spacelike), then all characteristic speeds are
+subluminal.  This extends the ``stability $\Rightarrow$ causality''
+theorem of \citet{GavassinoCausality2021} to the multifluid sector.
+
+\paragraph{Application to NS crusts.}
+For the neutron star crust two-fluid model (neutrons + ions/entropy),
+the entrainment matrix is $2 \times 2$, and the stability condition
+reduces to:
+\begin{equation}
+\label{eq:rel-60-carter-stability}
+\mathcal{K}^{nn} > 0\,,\qquad
+\mathcal{K}^{pp} > 0\,,\qquad
+\mathcal{K}^{nn}\mathcal{K}^{pp} > (\mathcal{K}^{np})^2\,.
+\end{equation}
+The last condition (positive determinant) constrains the magnitude of
+the neutron-proton entrainment relative to the diagonal elements.
+Violation of this condition---which can occur in certain dense matter
+models at high density---signals a dynamical instability of the
+two-fluid system, potentially triggering rapid relative flow and
+angular momentum redistribution.
