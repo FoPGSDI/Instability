@@ -1,0 +1,672 @@
+% Chapter V, Sections 51--52
+% Chandrasekhar, "Hydrodynamic and Hydromagnetic Stability"
+% FROM BELOW: 4. ROTATION AND MAGNETIC FIELD
+
+\newcommand{\figurePlaceholder}[2]{%
+  \begin{center}
+    \fbox{\parbox{0.85\textwidth}{\centering\textbf{[Figure~#1]}\\[4pt]#2}}
+  \end{center}
+}
+
+\section*{\S\,51. The perturbation equations}
+
+% [Continues from previous page]
+\noindent
+\ldots\ last chapters, that the basic perturbation equations are (cf.\ equations
+III~(78)--(80) and IV~(87)--(92)):
+\begin{equation}
+  \frac{\partial u_i}{\partial t}
+  = -\frac{\partial}{\partial x_i}(\delta\varpi)
+  + g\alpha\Theta\,\delta_{i3}
+  + \nu\nabla^{2}u_i
+  + 2\epsilon_{ijk}\,u_j\,\Omega_k
+  + \frac{\mu H_j}{4\pi\rho}\,\frac{\partial h_i}{\partial x_j},
+  \label{eq:5-21}
+\end{equation}
+\begin{equation}
+  \frac{\partial h_i}{\partial t}
+  = H_j\,\frac{\partial u_i}{\partial x_j}+\eta\nabla^{2}h_i,
+  \label{eq:5-22}
+\end{equation}
+\begin{equation}
+  \frac{\partial\Theta}{\partial t}
+  = \beta w + \kappa\nabla^{2}\Theta,
+  \label{eq:5-23}
+\end{equation}
+\begin{equation}
+  \frac{\partial u_i}{\partial x_i} = 0, \quad\text{and}\quad
+  \frac{\partial h_i}{\partial x_i} = 0.
+  \label{eq:5-24}
+\end{equation}
+
+By taking the curl of equation~\eqref{eq:5-21}, we can eliminate the term
+in~$\delta\varpi$; we thus obtain (cf.\ equations III~(82) and IV~(93))
+\begin{equation}
+  \frac{\partial\omega_i}{\partial t}
+  = g\alpha\,\epsilon_{ijk}\,\frac{\partial\Theta}{\partial x_j}\,\lambda_k
+  + \nu\nabla^{2}\omega_i
+  + 2\Omega_j\,\frac{\partial u_i}{\partial x_j}
+  + \frac{\mu H_j}{4\pi\rho}\,\frac{\partial v_i}{\partial x_j},
+  \label{eq:5-25}
+\end{equation}
+where
+\begin{equation}
+  \boldsymbol{\omega} = \operatorname{curl}\mathbf{u}
+  \quad\text{and}\quad
+  \mathbf{v} = \operatorname{curl}\mathbf{h}.
+  \label{eq:5-26}
+\end{equation}
+
+Taking the curl of equation~\eqref{eq:5-25} once again, we obtain
+(cf.\ equations III~(83) and IV~(95))
+\begin{equation}
+  \frac{\partial}{\partial t}\nabla^{2}u_i
+  = g\alpha\!\left(
+      \lambda_i\,\nabla^{2}\Theta
+      - \lambda_j\,\frac{\partial^{2}\Theta}{\partial x_i\,\partial x_j}
+    \right)
+  + \nu\nabla^{4}u_i
+  - 2\Omega_j\,\frac{\partial\omega_i}{\partial x_j}
+  + \frac{\mu H_j}{4\pi\rho}\,\frac{\partial}{\partial x_j}\,\nabla^{2}h_i.
+  \label{eq:5-27}
+\end{equation}
+
+Now multiplying equations~\eqref{eq:5-25} and~\eqref{eq:5-27} by~$\delta_{i3}$
+we get
+\begin{equation}
+  \frac{\partial\zeta}{\partial t}
+  = \nu\nabla^{2}\zeta
+  + 2\Omega\,\frac{\partial w}{\partial z}
+  + \frac{\mu H}{4\pi\rho}\,\frac{\partial\xi}{\partial z},
+  \label{eq:5-28}
+\end{equation}
+and
+\begin{equation}
+  \frac{\partial}{\partial t}\nabla^{2}w
+  = g\alpha\!\left(
+      \frac{\partial^{2}\Theta}{\partial x^{2}}
+      + \frac{\partial^{2}\Theta}{\partial y^{2}}
+    \right)
+  + \nu\nabla^{4}w
+  - 2\Omega\,\frac{\partial\zeta}{\partial z}
+  + \frac{\mu H}{4\pi\rho}\,\frac{\partial}{\partial z}\,\nabla^{2}h_3,
+  \label{eq:5-29}
+\end{equation}
+where $\zeta$ and~$\xi/4\pi$ are the $z$-components of the vorticity and the
+current density, respectively.  Equations~\eqref{eq:5-28} and~\eqref{eq:5-29}
+replace equations~IV~(99) and~(100); the remaining equations IV~(96)--(98) are
+unaffected.
+
+We shall restrict our discussion of this problem to the case when
+$\mathbf{g}$, $\mathbf{H}$, and~$\boldsymbol{\Omega}$ act in the same
+direction.  In this case the relevant equations are:
+\begin{equation}
+  \frac{\partial\Theta}{\partial t}
+  = \kappa\nabla^{2}\Theta + \beta w,
+  \label{eq:5-30}
+\end{equation}
+\begin{equation}
+  \frac{\partial h_3}{\partial t}
+  = \eta\nabla^{2}h_3 + H\,\frac{\partial w}{\partial z},
+  \label{eq:5-31}
+\end{equation}
+\begin{equation}
+  \frac{\partial\xi}{\partial t}
+  = \eta\nabla^{2}\xi + H\,\frac{\partial\zeta}{\partial z},
+  \label{eq:5-32}
+\end{equation}
+\begin{equation}
+  \frac{\partial\zeta}{\partial t}
+  = \nu\nabla^{2}\zeta
+  + 2\Omega\,\frac{\partial w}{\partial z}
+  + \frac{\mu H}{4\pi\rho}\,\frac{\partial\xi}{\partial z},
+  \label{eq:5-33}
+\end{equation}
+and
+\begin{equation}
+  \frac{\partial}{\partial t}(\nabla^{2}w)
+  = g\alpha\!\left(
+      \frac{\partial^{2}\Theta}{\partial x^{2}}
+      + \frac{\partial^{2}\Theta}{\partial y^{2}}
+    \right)
+  + \nu\nabla^{4}w
+  - 2\Omega\,\frac{\partial\zeta}{\partial z}
+  + \frac{\mu H}{4\pi\rho}\,\frac{\partial}{\partial z}\,\nabla^{2}h_3.
+  \label{eq:5-34}
+\end{equation}
+
+Analysing the disturbances into two-dimensional waves, and considering
+disturbances characterized by a particular wave number, we find that
+equations~\eqref{eq:5-30}--\eqref{eq:5-34} give
+\begin{equation}
+  (D^{2}-a^{2}-p_1\,\sigma)\,\Theta
+  = -\left(\frac{\beta d^{2}}{\kappa}\right)W,
+  \label{eq:5-35}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-p_2\,\sigma)\,K
+  = -\left(\frac{Hd}{\eta}\right)DW,
+  \label{eq:5-36}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-p_2\,\sigma)\,X
+  = -\left(\frac{Hd}{\eta}\right)DZ,
+  \label{eq:5-37}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2}-\sigma)\,Z
+  = -\left(\frac{2\Omega d^{2}}{\nu}\right)DW
+  - \left(\frac{\mu Hd}{4\pi\rho\nu}\right)DX,
+  \label{eq:5-38}
+\end{equation}
+and
+\begin{multline}
+  (D^{2}-a^{2})
+  (D^{2}-a^{2}-\sigma)\,W
+  + \left(\frac{\mu Hd}{4\pi\rho\nu}\right)
+  D(D^{2}-a^{2})\,K \\
+  - \left(\frac{2\Omega d^{2}}{\nu}\right)DZ
+  = \left(\frac{g\alpha d^{2}}{\nu}\right)a^{2}\Theta,
+  \label{eq:5-39}
+\end{multline}
+where the notation is the same as in equations~IV~(118)--(123).
+
+Eliminating $X$ between equations~\eqref{eq:5-37} and~\eqref{eq:5-38},
+and similarly~$K$ between equations~\eqref{eq:5-36}
+and~\eqref{eq:5-39}, we obtain
+\begin{multline}
+  \bigl[(D^{2}-a^{2}-\sigma)(D^{2}-a^{2}-p_2\,\sigma)
+    -QD^{2}\bigr]Z \\
+  = -\left(\frac{2\Omega d^{2}}{\nu}\right)
+  D(D^{2}-a^{2}-p_2\,\sigma)\,W
+  \label{eq:5-40}
+\end{multline}
+and
+\begin{multline}
+  \bigl[D^{2}-a^{2}\bigr]
+  \bigl[(D^{2}-a^{2}-\sigma)(D^{2}-a^{2}-p_2\,\sigma)
+    -QD^{2}\bigr]W \\
+  -\left(\frac{2\Omega d^{2}}{\nu}\right)
+  D(D^{2}-a^{2}-p_2\,\sigma)\,Z
+  = \left(\frac{g\alpha d^{2}}{\nu}\right)
+  a^{2}(D^{2}-a^{2}-p_2\,\sigma)\,\Theta.
+  \label{eq:5-41}
+\end{multline}
+
+Eliminating $Z$ between these last two equations, we have
+\begin{multline}
+  \bigl\{(D^{2}\!-\!a^{2})
+    \bigl[(D^{2}\!-\!a^{2}\!-\!\sigma)(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)
+      -QD^{2}\bigr]^{2} \\
+  +\,T D^{2}(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)^{2}\bigr\}W \\
+  = \left(\frac{g\alpha d^{2}}{\nu}\right)
+  a^{2}\bigl[(D^{2}\!-\!a^{2}\!-\!\sigma)(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)
+    -QD^{2}\bigr]
+  (D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)\,\Theta.
+  \label{eq:5-42}
+\end{multline}
+
+Finally, eliminating~$\Theta$ between equations~\eqref{eq:5-35}
+and~\eqref{eq:5-42} we obtain
+\begin{multline}
+  (D^{2}\!-\!a^{2}\!-\!p_1\,\sigma)
+  \bigl\{(D^{2}\!-\!a^{2})
+    \bigl[(D^{2}\!-\!a^{2}\!-\!\sigma)(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)
+      -QD^{2}\bigr]^{2} \\
+  +\,T D^{2}(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)^{2}\bigr\}W \\
+  = -\mathit{Ra}^{2}
+    \bigl[(D^{2}\!-\!a^{2}\!-\!\sigma)(D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)
+    -QD^{2}\bigr]
+    (D^{2}\!-\!a^{2}\!-\!p_2\,\sigma)\,W.
+  \label{eq:5-43}
+\end{multline}
+
+Solutions of the foregoing equations must be sought which satisfy the
+boundary conditions given in equations~II~(95) and~(96) and IV~(124)
+and~(125).
+
+It may be recalled here that all equations following~\eqref{eq:5-21} apply only if
+$\mathbf{g}$, $\mathbf{H}$, and~$\boldsymbol{\Omega}$ are parallel.  The
+generalization to the case when $\mathbf{g}$, $\mathbf{H}$,
+and~$\boldsymbol{\Omega}$ are coplanar is immediate.  By restricting oneself
+to the onset of convection in the form of infinitely extended rolls (along
+directions parallel to the plane containing $\mathbf{g}$, $\mathbf{H}$,
+and~$\boldsymbol{\Omega}$), instead of cells, one can readily verify that the
+same set of equations applies to this more general case if we interpret $H$
+and~$\Omega$ in all the equations to mean the components of~$\mathbf{H}$
+and~$\boldsymbol{\Omega}$ in the direction of the vertical.  The restriction
+to the onset of convection in the form of rolls when $\mathbf{g}$,
+$\mathbf{H}$, and~$\boldsymbol{\Omega}$ are coplanar can very likely be
+justified in the way in which the same restriction was justified in
+Chapter~IV, \S\,47 for the case when $\mathbf{H}$ alone was acting.
+However, when $\mathbf{g}$, $\mathbf{H}$, and~$\boldsymbol{\Omega}$ are not
+coplanar, the solution of the problem will require an explicit minimizing of
+the Rayleigh number as a function of the two wave numbers characterizing the
+disturbance in two directions at right angles to one another and in the
+horizontal plane.  But it is unlikely that the solution will exhibit any
+essentially new feature not already disclosed by the solution for the case
+when $\mathbf{g}$, $\mathbf{H}$, and~$\boldsymbol{\Omega}$ are parallel.
+
+\section*{\S\,52. The case when instability sets in as stationary convection}
+
+We shall first consider the case when instability sets in as ordinary
+convection.  The case when it sets in as overstability is considered in the
+following section.
+
+When instability sets in as ordinary convection, the marginal state will be
+characterized by $\sigma = 0$; and the basic equations are:
+\begin{equation}
+  (D^{2}-a^{2})\,\Theta
+  = -\left(\frac{\beta d^{2}}{\kappa}\right)W,
+  \label{eq:5-44}
+\end{equation}
+\begin{equation}
+  \bigl[(D^{2}-a^{2})^{2}-QD^{2}\bigr]Z
+  = -\left(\frac{2\Omega d}{\nu}\right)D(D^{2}-a^{2})\,W,
+  \label{eq:5-45}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2})\,K
+  = -\left(\frac{Hd}{\eta}\right)DW,
+  \label{eq:5-46}
+\end{equation}
+\begin{equation}
+  (D^{2}-a^{2})\,X
+  = -\left(\frac{Hd}{\eta}\right)DZ,
+  \label{eq:5-47}
+\end{equation}
+and
+\begin{multline}
+  (D^{2}-a^{2})
+  \bigl\{\bigl[(D^{2}-a^{2})^{2}-QD^{2}\bigr]^{2}
+  +T D^{2}(D^{2}-a^{2})^{2}\bigr\}W \\
+  = -\mathit{Ra}^{2}\bigl\{(D^{2}-a^{2})^{2}-QD^{2}\bigr\}W.
+  \label{eq:5-48}
+\end{multline}
+
+According to equations~II~(95) and~(96) and IV~(124) and~(125), the
+boundary conditions with respect to which equations~\eqref{eq:5-44}--\eqref{eq:5-48}
+must be solved are:
+\begin{equation}
+  W = 0 \quad\text{and}\quad \Theta = 0 \quad\text{for } z = 0 \text{ and } 1,
+  \label{eq:5-49}
+\end{equation}
+\begin{equation}
+  \left.
+  \begin{aligned}
+    &\textit{either}\quad DW = 0 \quad\text{and}\quad Z = 0
+      \quad\text{(on a rigid boundary)} \\
+    &\textit{or}\quad D^{2}W = 0 \quad\text{and}\quad DZ = 0
+      \quad\text{(on a free boundary)}
+  \end{aligned}
+  \right\}
+  \label{eq:5-50}
+\end{equation}
+and
+\begin{equation}
+  \left.
+  \begin{aligned}
+    &\textit{either}\quad DX = 0 \;\text{and}\; K = 0
+      \;\text{(on a perfectly conducting boundary)}, \\
+    &\textit{or}\quad X = 0
+      \;\text{(on a boundary adjoining a non-conducting medium)}.
+  \end{aligned}
+  \right\}
+  \label{eq:5-51}
+\end{equation}
+
+The foregoing equations and boundary conditions constitute a characteristic
+value problem in a differential equation of order ten.  In spite of a
+variational formulation which is possible (see Appendix~II), the problem is
+clearly of considerable complexity.  For this reason, we shall restrict
+ourselves to the case when both the bounding surfaces are free and the medium
+adjoining the fluid is non-conducting.  While this is admittedly an artificial
+case to consider, we do not expect to lose any of the essential features of the
+problem on this account; for, we have seen in Chapters~III and~IV that the
+solutions obtained for different sets of boundary conditions all exhibit the
+same dependence on the parameters of the problem such as $\mathrm{p}$, $T$,
+and~$Q$.
+
+\subsection*{(a) \textit{The solution for the case of two free boundaries}}
+
+As in Chapter~III, \S\,27\,(a) and Chapter~IV, \S\,44\,(a), it can be shown
+that for this case, the proper solutions of
+equations~\eqref{eq:5-44}--\eqref{eq:5-48} are given by
+\begin{equation}
+  W = W_0\sin n\pi z,
+  \label{eq:5-52}
+\end{equation}
+\begin{equation}
+  \Theta = \frac{\beta}{\kappa}\,
+  \frac{d^{2}}{n^{2}\pi^{2}+a^{2}}\,W_0\sin n\pi z,
+  \label{eq:5-53}
+\end{equation}
+\begin{equation}
+  Z = \frac{2\Omega d}{\nu}\,
+  \frac{n\pi(n^{2}\pi^{2}+a^{2})}{(n^{2}\pi^{2}+a^{2})^{2}+Qn^{2}\pi^{2}}\,
+  W_0\cos n\pi z,
+  \label{eq:5-54}
+\end{equation}
+\begin{equation}
+  K = \frac{Hd}{\eta}\,
+  \frac{n\pi}{n^{2}\pi^{2}+a^{2}}\,
+  W_0\cos n\pi z + \text{constant} \times \cosh az,
+  \label{eq:5-55}
+\end{equation}
+and
+\begin{equation}
+  X = \frac{2\Omega d}{\nu}\,\frac{Hd}{\eta}\,
+  \frac{n^{2}\pi^{2}}{(n^{2}\pi^{2}+a^{2})^{2}+Q n^{2}\pi^{2}}\,
+  W_0\sin n\pi z,
+  \label{eq:5-56}
+\end{equation}
+where $n$ is an integer.  The corresponding characteristic equation is
+obtained by substituting the solution~\eqref{eq:5-52} for~$W$ in
+equation~\eqref{eq:5-48}.  We find
+\begin{equation}
+  R = \frac{%
+    (n^{2}\pi^{2}+a^{2})
+    \bigl\{\bigl[(n^{2}\pi^{2}+a^{2})^{2}+Qn^{2}\pi^{2}\bigr]^{2}
+    +Tn^{2}\pi^{2}(n^{2}\pi^{2}+a^{2})\bigr\}}{%
+    a^{2}\bigl[(n^{2}\pi^{2}+a^{2})^{2}+Qn^{2}\pi^{2}\bigr]}.
+  \label{eq:5-57}
+\end{equation}
+
+Letting $a^{2} = \pi^{2}x$, we can rewrite equation~\eqref{eq:5-57} in
+the form
+\begin{equation}
+  R = \pi^{4}\,\frac{n^{2}+x}{x}
+  \left[
+    (n^{2}+x)^{2}
+    + \frac{Qn^{2}}{\pi^{2}}
+  \right]
+  + \frac{T}{x}\,
+  \frac{1}{1/n^{2}+Q/\pi^{2}(n^{2}+x)^{2}}.
+  \label{eq:5-58}
+\end{equation}
+
+From this equation it follows that instability first sets in for the lowest
+mode $n = 1$.  The corresponding expression for~$R$ is
+\begin{equation}
+  R = \pi^{4}\,\frac{%
+    (1+x)
+    \bigl\{\bigl[(1+x)^{2}+Q_1\bigr]^{2}
+    +T_1(1+x)\bigr\}}{%
+    x\bigl[(1+x)^{2}+Q_1\bigr]},
+  \label{eq:5-59}
+\end{equation}
+where
+\begin{equation}
+  x = \frac{a^{2}}{\pi^{2}}, \quad
+  Q_1 = \frac{Q}{\pi^{2}}, \quad\text{and}\quad
+  T_1 = \frac{T}{\pi^{4}}.
+  \label{eq:5-60}
+\end{equation}
+
+As a function of~$x$, $R$ given by equation~\eqref{eq:5-59} attains its
+extremal value when
+\begin{equation}
+  2x^{3}+3x^{2}-1
+  = Q_1 + T_1\,
+  \frac{(1+x)^{4}-Q_1(x^{2}-1)}{%
+    \bigl[(1+x)^{2}+Q_1\bigr]^{2}}.
+  \label{eq:5-61}
+\end{equation}
+
+\figurePlaceholder{47}{The critical Rayleigh number $R_c$ for the cases of
+ordinary cellular convection (solid line) and overstability (for
+$\mathrm{p} = 0.025$) (broken line) as a function of
+$Q_1\,(= Q/\pi^{2})$ for various assigned values of
+$T_1\,(= T/\pi^{4})$.  The curves are labeled by the values of~$T_1$ to which
+they refer.  For a given value of~$T_1$, instability will set in as
+overstability for all values of~$Q_1$ less than that at the point of
+intersection of the corresponding full-line and dashed curves; for all larger
+values of~$Q_1$, it will set in as ordinary convection.}
+
+However, this equation is not very useful for determining the critical Rayleigh
+numbers for assigned values of~$Q_1$ and~$T_1$.  It is more convenient to
+evaluate~$R$ directly as a function of~$x$ (in accordance with
+equation~\eqref{eq:5-59}) and locate the minimum numerically.  The critical
+numbers listed in Table~XVIII and illustrated in Figs.~47 and~48 were
+determined in this fashion.
+
+It is apparent from Table~XVIII and Figs.~47 and~48 that the solution
+
+% ----------------------------------------------------------------
+% TABLE XVIII
+% ----------------------------------------------------------------
+\begin{table}[p]
+\centering
+\caption{The critical Rayleigh numbers and the wave numbers of the associated
+disturbance for the onset of instability as stationary convection for various
+values of $Q_1\,(= Q/\pi^{2})$ and $T_1\,(= T/\pi^{4})$.}
+\label{tab:XVIII}
+
+\medskip
+\small
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 0$} & \multicolumn{3}{c}{$T_1 = 10$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 0     & $3{\cdot}70$  &           & 0     & $4{\cdot}31$  &           \\
+ 10    & $3{\cdot}97$  & $6{\cdot}95\times10^{3}$ & 10    & $4{\cdot}56$  &           \\
+ 40    &               &           & 40    &               &           \\
+ 100   & $5{\cdot}67$  &           & 100   & $5{\cdot}96$  &           \\
+ 1{,}000 & $8{\cdot}59$ &          & 1{,}000 & $8{\cdot}65$ &          \\
+ 10{,}000 & $12{\cdot}6$ &$1{\cdot}06\times10^{6}$& 10{,}000 & $12{\cdot}6$  & \\
+ 50{,}000 & $16{\cdot}8$ &$5{\cdot}09\times10^{6}$& 50{,}000 & $16{\cdot}8$  & \\
+ 100{,}000 & $18{\cdot}94$&$1{\cdot}01\times10^{7}$& 100{,}000 & $18{\cdot}94$ & \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 50$} & \multicolumn{3}{c}{$T_1 = 100$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 0    & $5{\cdot}04$  & $3{\cdot}88\times10^{4}$ & 0    & $5{\cdot}73$ &$1{\cdot}03\times10^{5}$\\
+ 10   & $5{\cdot}30$  &                          & 10   & $5{\cdot}92$ &           \\
+ 40   & $5{\cdot}96$  & $6{\cdot}43\times10^{4}$ & 40   & $6{\cdot}45$ &           \\
+ 100  & $6{\cdot}95$  &                          & 100  & $7{\cdot}20$ &           \\
+ 1{,}000 & $10{\cdot}13$ & $1{\cdot}14\times10^{5}$& 1{,}000 &             &           \\
+ 10{,}000 & $12{\cdot}6$ &                        & 10{,}000 & $12{\cdot}6$ &          \\
+ 50{,}000 & $16{\cdot}8$ &                        & 50{,}000 & $16{\cdot}8$ &          \\
+ 100{,}000 & $18{\cdot}94$ &                      & 100{,}000 & $18{\cdot}94$ &        \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 500$} & \multicolumn{3}{c}{$T_1 = 1{,}000$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 0    & $7{\cdot}90$  & $5{\cdot}03\times10^{5}$ & 0    & $9{\cdot}05$  & $2{\cdot}05\times10^{6}$\\
+ 10   & $7{\cdot}98$  &                          & 20   & $9{\cdot}14$  &           \\
+ 20   & $8{\cdot}08$  & $1{\cdot}73\times10^{5}$ & 40   & $9{\cdot}28$  &           \\
+ 40   & $8{\cdot}39$  &                          & 50   & $9{\cdot}36$  &           \\
+ 50   & $8{\cdot}60$  & $2{\cdot}05\times10^{5}$ & 80   & $9{\cdot}60$  &           \\
+ 80   & $9{\cdot}19$  &                          & 100  & $9{\cdot}80$  &           \\
+ 100  & $9{\cdot}52$  & $3{\cdot}45\times10^{5}$ & 500  & $11{\cdot}78$ &           \\
+ 500  & $11{\cdot}46$ & $6{\cdot}93\times10^{5}$ & 1{,}000 & $12{\cdot}94$ &        \\
+ 1{,}000 & $12{\cdot}77$ & $1{\cdot}08\times10^{6}$& 10{,}000 & $18{\cdot}0$ &      \\
+ 10{,}000 & $17{\cdot}8$ & $8{\cdot}65\times10^{6}$& 50{,}000 &             &       \\
+ 50{,}000 & $16{\cdot}8$ &                        & 100{,}000 & $18{\cdot}94$ &      \\
+ 100{,}000 & $18{\cdot}94$ & $1{\cdot}01\times10^{7}$ & & & \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 1{,}500$} & \multicolumn{3}{c}{$T_1 = 2{,}000$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 0    & $9{\cdot}87$  & $4{\cdot}05\times10^{6}$ & 0    & $10{\cdot}5$ & $6{\cdot}78\times10^{6}$\\
+ 10   & $9{\cdot}90$  &                          & 10   & $10{\cdot}5$ &           \\
+ 20   & $9{\cdot}95$  &                          & 20   & $10{\cdot}5$ &           \\
+ 30   & $10{\cdot}0$  & $4{\cdot}53\times10^{6}$ & 30   & $10{\cdot}5$ &           \\
+ 40   & $10{\cdot}1$  &                          & 40   & $10{\cdot}6$ &           \\
+ 50   & $10{\cdot}1$  & $5{\cdot}14\times10^{6}$ & 50   & $10{\cdot}6$ & $8{\cdot}17\times10^{6}$\\
+ 80   & $10{\cdot}4$  &                          & 80   & $10{\cdot}8$ &           \\
+ 100  & $10{\cdot}6$  & $6{\cdot}55\times10^{6}$ & 100  & $10{\cdot}9$ &           \\
+ 500  & $12{\cdot}20$ &                          & 500  & $12{\cdot}57$ &          \\
+ 1{,}000 & $13{\cdot}25$ &                       & 1{,}000 & $13{\cdot}60$ &       \\
+ 10{,}000 & $18{\cdot}2$ &$8{\cdot}65\times10^{6}$& 10{,}000 & $18{\cdot}3$ &     \\
+ 50{,}000 & $16{\cdot}94$ &                      & 50{,}000 &              &       \\
+ 100{,}000 & $18{\cdot}94$ & $1{\cdot}02\times10^{7}$ & 100{,}000 & $18{\cdot}94$ & \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 5{,}000$} & \multicolumn{3}{c}{$T_1 = 10{,}000$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 10   & $12{\cdot}02$ & $4{\cdot}00\times10^{7}$ & 10   & $12{\cdot}98$ & $6{\cdot}09\times10^{7}$\\
+ 20   & $9{\cdot}95$  &                          & 20   &              & $8{\cdot}88\times10^{7}$\\
+ 40   & $9{\cdot}82$  & $4{\cdot}00\times10^{7}$ & 40   & $11{\cdot}09$ &           \\
+ 50   & $7{\cdot}00$  & $3{\cdot}93\times10^{7}$ & 50   & $8{\cdot}69$  &           \\
+ 80   & $4{\cdot}94$  &                          & 80   & $8{\cdot}68$  &           \\
+ 100  & $4{\cdot}55$  & $3{\cdot}77\times10^{7}$ & 100  & $3{\cdot}77$  &           \\
+ 200  & $4{\cdot}13$  &                          & 200  & $4{\cdot}73$  & $7{\cdot}21\times10^{7}$\\
+ 500  & $5{\cdot}66$  &                          & 500  & $5{\cdot}31$  &           \\
+ 1{,}000 & $7{\cdot}22$ & $6{\cdot}89\times10^{7}$& 1{,}000 & $6{\cdot}51$ &       \\
+ 10{,}000 & $12{\cdot}6$ & $1{\cdot}21\times10^{8}$& 10{,}000 &            &       \\
+ 50{,}000 &             &                        & 50{,}000 &              &       \\
+ 100{,}000 & $18{\cdot}94$ &$1{\cdot}03\times10^{7}$& 100{,}000 & $18{\cdot}94$ & \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 50{,}000$} & \multicolumn{3}{c}{$T_1 = 100{,}000$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 10   & $19{\cdot}3$ & $1{\cdot}86\times10^{8}$ & 10   & $18{\cdot}9$ & $4{\cdot}15\times10^{8}$\\
+ 20   & $19{\cdot}1$ &                          & 20   & $18{\cdot}8$ &           \\
+ 40   & $19{\cdot}1$ & $1{\cdot}81\times10^{8}$ & 40   & $18{\cdot}4$ &           \\
+ 50   & $14{\cdot}9$  & $1{\cdot}86\times10^{8}$& 50   & $18{\cdot}2$ & $3{\cdot}96\times10^{8}$\\
+ 80   & $14{\cdot}8$  &                         & 80   &              &           \\
+ 100  & $14{\cdot}54$ & $3{\cdot}86\times10^{8}$& 100  & $3{\cdot}54$ & $1{\cdot}37\times10^{8}$\\
+ 200  & $3{\cdot}97$ & $5{\cdot}94\times10^{7}$ & 200  & $3{\cdot}48$ &           \\
+ 500  & $3{\cdot}71$  &                         & 500  & $4{\cdot}33$ &           \\
+ 1{,}000 & $3{\cdot}09$ &                       & 1{,}000 & $3{\cdot}97$ & $1{\cdot}37\times10^{8}$\\
+ 4{,}000 &             &                        & 4{,}000 &              &           \\
+ 10{,}000 & $10{\cdot}5$ &$1{\cdot}08\times10^{8}$& 10{,}000 &            &          \\
+ 30{,}000 &             &                        & 30{,}000 &              &         \\
+ 50{,}000 & $16{\cdot}6$ &                       & 50{,}000 &              &         \\
+ 100{,}000 & $18{\cdot}94$ & $1{\cdot}03\times10^{7}$ & 100{,}000 & $18{\cdot}94$ & \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 10^{5}$} & \multicolumn{3}{c}{$T_1 = 10^{6}$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 10   & $47{\cdot}8$ & $1{\cdot}85\times10^{8}$ & 10   & $41{\cdot}01$ &           \\
+ 50   & $47{\cdot}2$ &                          & 50   & $41{\cdot}01$ &           \\
+ 80   & $47{\cdot}2$ &                          & 80   & $35{\cdot}43$ &           \\
+ 100  & $47{\cdot}3$ & $1{\cdot}44\times10^{8}$ & 100  &              &           \\
+ 200  & $37{\cdot}1$ &                          & 200  &              &           \\
+ 300  & $3{\cdot}35$ &                          & 300  & $3{\cdot}19$ &           \\
+ 500  & $3{\cdot}12$ &                          & 500  & $3{\cdot}10$ &           \\
+ 1{,}000 & $3{\cdot}35$ &$9{\cdot}03\times10^{7}$& 1{,}000 &            &          \\
+ 5{,}000 & $5{\cdot}13$ &                       & 5{,}000 &              &         \\
+ 10{,}000 & $9{\cdot}33$ &$1{\cdot}06\times10^{8}$& 10{,}000 &           &          \\
+ 100{,}000 & $17{\cdot}9$ &                     & 100{,}000 &             &          \\
+ 1{,}000{,}000 & $18{\cdot}94$ &                & 1{,}000{,}000 & $18{\cdot}94$ &   \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r|r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c|}{$T_1 = 10^{7}$} & \multicolumn{3}{c}{$T_1 = 10^{8}$} \\
+$Q_1$ & $a$ & $R_c$ & $Q_1$ & $a$ & $R_c$ \\
+\hline
+ 10   & $60{\cdot}96$ & $3{\cdot}97\times10^{9}$ & 50   & $88{\cdot}47$ &           \\
+ 50   & $60{\cdot}23$ &                          & 100  & $88{\cdot}45$ &           \\
+ 100  & $60{\cdot}14$ & $3{\cdot}97\times10^{9}$ & 200  & $88{\cdot}43$ &           \\
+ 500  & $60{\cdot}86$ & $1{\cdot}38\times10^{9}$ & 500  & $88{\cdot}34$ &$1{\cdot}93\times10^{9}$\\
+ 800  & $60{\cdot}86$ & $4{\cdot}86\times10^{8}$ & 1{,}000 & $88{\cdot}24$ &       \\
+ 1{,}000 & $3{\cdot}47$ &                       & 3{,}000 & $3{\cdot}96$ &          \\
+ 5{,}000 & $3{\cdot}14$ &$3{\cdot}96\times10^{8}$& 5{,}000 & $3{\cdot}15$ &        \\
+ 10{,}000 & $3{\cdot}74$ &                      & 10{,}000 & $3{\cdot}36$ &$1{\cdot}03\times10^{8}$\\
+ 100{,}000 & $17{\cdot}4$ & $1{\cdot}03\times10^{8}$ & 100{,}000 &         &        \\
+ 1{,}000{,}000 & $18{\cdot}94$ &                & 1{,}000{,}000 &$18{\cdot}94$&     \\
+\hline
+\end{tabular}
+
+\bigskip
+\begin{tabular}{r@{\quad}r@{\quad}r}
+\hline
+\multicolumn{3}{c}{$T_1 = 10^{9}$} \\
+$Q_1$ & $a$ & $R_c$ \\
+\hline
+ 50   & $130{\cdot}2$  & $8{\cdot}35\times10^{9}$ \\
+ 100  & $130{\cdot}2$  &           \\
+ 500  & $130{\cdot}9$  & $8{\cdot}15\times10^{9}$ \\
+ 1{,}000 & $130{\cdot}2$  &       \\
+ 2{,}000 & $130{\cdot}9$  & $8{\cdot}54\times10^{9}$ \\
+ 5{,}000 & $130{\cdot}9$ & $7{\cdot}79\times10^{9}$ \\
+ 10{,}000 & $3{\cdot}14$  & $3{\cdot}56\times10^{8}$\\
+ 50{,}000 & $3{\cdot}14$  &       \\
+ 100{,}000 & $3{\cdot}71$ & $5{\cdot}07\times10^{8}$ \\
+ 300{,}000 & $7{\cdot}47$ & $3{\cdot}43\times10^{8}$ \\
+ 1{,}000{,}000 & $17{\cdot}2$  &  \\
+ 3{,}000{,}000 & $18{\cdot}94$ & $3{\cdot}43\times10^{8}$ \\
+ 10{,}000{,}000 &             &   \\
+ 30{,}000{,}000 & $44{\cdot}6$ & $8{\cdot}94\times10^{8}$ \\
+ 300{,}000{,}000 &              & $8{\cdot}90$  \\
+\hline
+\end{tabular}
+\end{table}
+
+% ----------------------------------------------------------------
+% Figures 47 and 48
+% ----------------------------------------------------------------
+
+\figurePlaceholder{48}{The dependence on $Q_1$ (for various assigned values
+of~$T_1$) of the wave number~$a$ (in the unit $1/d$) of the disturbance at
+which instability first sets in as convection (solid line) and as
+overstability (for $\mathrm{p} = 0{\cdot}025$) (broken line).  It will be
+observed that a discontinuous change in~$a$ occurs when (for increasing~$Q_1$)
+the manner of instability changes from overstability to cellular convection.}
+
+of the problem presents some very unexpected features.  These result from
+the fact that the curve $R(a)$ defined by equations~\eqref{eq:5-59}
+and~\eqref{eq:5-60} has, for certain ranges of the parameters~$Q_1$
+and~$T_1$, \emph{two minima} (see Fig.~49); and the minimum giving the lower
+Rayleigh number, when $Q_1$ is less than a certain value, gives the higher
+Rayleigh number when $Q_1$ is larger than this value.  Thus, for
+$T_1 = 10^{4}$ and $Q_1 = 80$, the two minima occur
+
+\figurePlaceholder{49}{The dependence of the Rayleigh number~$R_c$ for the
+onset of instability on the wave number when $T_1 = 10^{4}$ and $Q_1$ has the
+values 40 (curve labelled~a), 100 (curve labelled~b), and 200 (curve
+labelled~c).  The abscissa is related to the wave number~$a$ by
+$x = a^{2}/\pi^{2}$.  Notice the occurrence of two minima and their relative
+disposition.}
+
+for $a = 18{\cdot}3$ and $3{\cdot}38$ where
+$R = 4{\cdot}00\times10^{4}$ and $4{\cdot}78\times10^{4}$, respectively;
+while, for $Q_1 = 100$ the two minima occur for $a = 18{\cdot}2$ and
+$3{\cdot}37$, where $R = 3{\cdot}98\times10^{4}$ and
+$3{\cdot}93\times10^{4}$, respectively.  Consequently, for $Q_1$ slightly
+less than~100, the wave number of the cells which appear at marginal
+stability will suddenly decrease from $a = 18{\cdot}2$ to $a = 3{\cdot}4$.
+In other words, if we start with an initial situation in which
+$T_1 = 10^{4}$ and no magnetic field is present, and gradually increase the
+strength of the magnetic field, then at first the cells which appear at
+marginal stability will be elongated; and when the magnetic field has
+increased to a value corresponding to $Q_1 = 100$, cells of two very
+different sizes will appear simultaneously: one set which will be highly
+elongated and another set which will, relatively, be highly flattened.  As the
+magnetic field increases

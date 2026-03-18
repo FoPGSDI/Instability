@@ -1,0 +1,898 @@
+% Chapter II, Part 2: The Benard Problem (Sections 13-18 + Bibliographical Notes)
+% PDF pages 59-91, book pages 43-75
+% Continues from chapter_2_part1.tex (equations up to 227)
+
+% SKELETON -- sections to be filled incrementally
+
+%%---------------------------------------------------------------------
+%% §15 continued
+%%---------------------------------------------------------------------
+
+The Rayleigh number obtained is also of interest (cf.\ Chapter~VII, 71\,(d)).
+The corresponding solutions for $W$ and $\Theta$ are
+\begin{align}
+\label{eq:2-225}
+W &= \sin q_0\,z - 0{\cdot}045302\sinh q_1\,z\cos q_2\,z + 0{\cdot}012173\cosh q_1\,z\sin q_2\,z, \notag\\
+(a^2 R)^{-1}F &= \sin q_0\,z + 0{\cdot}033193\sinh q_1\,z\cos q_2\,z + {} \notag\\
+&\qquad\qquad\qquad{} + 0{\cdot}033146\cosh q_1\,z\sin q_2\,z,
+\end{align}
+where
+\begin{equation}
+\label{eq:2-225p}
+q_0 = 7{\cdot}2569;\quad q_1 = 7{\cdot}3711;\quad q_2 = 3{\cdot}6643.
+\end{equation}
+
+\figurePlaceholder{4}{The proper solutions for $W$ (curve 1) and $(a^2 R)^{-1}F$ (curve 2) for the state of marginal stability for the case when one bounding surface is rigid and the other is free.}
+
+\subsection*{(c) The solution for one rigid and one free boundary}
+
+The solution for the case when the top surface (for example) is free
+and the bottom surface is rigid can be deduced from the results for the
+first odd mode given in the last subsection: for it is evident that this odd
+solution satisfies at $z = 0$ the boundary conditions appropriate for a
+free surface, i.e.\ $W$, $D^2W$, and $(D^2 - a^2)^2W$ all vanish at $z = 0$.
+Accordingly, an odd solution for the case of two rigid boundaries, applicable
+to a cell depth~$d$, also provides a solution for the present case applicable,
+however, to a cell depth~$\tfrac{1}{2}d$. When $a$ and $R$ are defined (as usual) with
+respect to the depth of the layer, we can infer from the results given in
+Table~\ref{tab:2-I} that for the present case
+\begin{equation}
+\label{eq:2-226b}
+a = 5{\cdot}365/2 = 2{\cdot}682_4 \quad\text{and}\quad R_c = 17\,610{\cdot}39/16 = 1100{\cdot}65.
+\end{equation}
+
+\subsection*{(d) Summary of the results for the three cases}
+
+The results for the three cases we have considered are summarized in
+Table~\ref{tab:2-III}.
+
+\begin{table}[htbp]
+\centering
+\caption{The parameters characterizing the marginal state for three cases}
+\label{tab:2-III}
+\medskip
+\begin{tabular}{@{}l ccc@{}}
+\toprule
+Nature of the bounding surfaces & $R_c$ & $a$ & $2a/\pi$ \\
+\midrule
+Both free        & $657{\cdot}511$  & $2{\cdot}2214$ & $2{\cdot}828$ \\
+Both rigid       & $1707{\cdot}762$ & $3{\cdot}117$  & $2{\cdot}016$ \\
+One rigid and one free & $1100{\cdot}65$  & $2{\cdot}682$  & $2{\cdot}342$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%---------------------------------------------------------------------
+\section{The cell patterns}\label{sec:16}
+%%---------------------------------------------------------------------
+
+We have seen that at the onset of instability the disturbances which
+will be manifested will be characterized by a particular wave number.
+Nevertheless, the pattern which the convection cells will exhibit is
+completely unspecified. This arises from the fact that a given wave
+vector~$\mathbf{a}$ can be resolved into two orthogonal components in infinitely
+many ways; and, moreover, the waves corresponding to differing resolutions
+can be superposed with arbitrary amplitudes and phases. The
+present theory is unable to distinguish between these infinitely many
+possibilities. However, if we should specify from considerations of
+symmetry, or otherwise, the kind of cell patterns that can prevail, then
+the theory can describe the details of the resulting cell structures. Thus,
+it may be reasonable to argue that since there are no points or directions
+in the horizontal plane which are preferred, the entire layer in the
+marginal state must be tessellated into regular polygons with the cell-walls
+being surfaces of symmetry. Such complete symmetry will
+require that the polygons be either equilateral triangles, squares, or
+regular hexagons.\footnote{If $n$ is the number of sides of the regular polygon, then the angle at a vertex
+$(= \pi(1-2/n))$ must divide $2\pi$ an integral number of times. Hence we must have
+$1 - 2/n = 2/m$, where $m$ is an integer; this relation can be satisfied only for $n = 3$, 4,
+and 6, when $m = 6$, 4, and 3, respectively.} The structures of the cells in these special cases
+are worth examining.
+
+First, it may be useful to state precisely what we mean when we say
+that a certain periodic cell pattern is presented. We mean that there is
+a unit cell which repeats itself regularly; that the walls of the unit cell
+are vertical and are surfaces of symmetry; that on the cell-walls the
+normal gradient of the vertical velocity vanishes; and, finally, that the
+cells occur contiguously.
+
+The condition that the normal gradient of vertical velocity vanishes
+on the cell-walls requires
+\begin{equation}
+\label{eq:2-227b}
+(\mathbf{n}\cdot\boldsymbol{\nabla}_1)w = 0,
+\end{equation}
+where $\mathbf{n}$ is a unit vector normal to the cell-walls and
+\begin{equation}
+\label{eq:2-228}
+\boldsymbol{\nabla}_1 = \biggl(\frac{\partial}{\partial x},\,\frac{\partial}{\partial y},\,0\biggr).
+\end{equation}
+
+For the problem under consideration, the condition~(\ref{eq:2-227b}) is equivalent
+to requiring that the component of the horizontal velocity normal to
+the cell-wall vanishes. To see this, we recall that according to equations
+(91) and (171)
+\begin{equation}
+\label{eq:2-229}
+w = F(x,y)\,W(z) \quad (\nabla_1^2\,F = -a^2 F),
+\end{equation}
+\begin{equation}
+\label{eq:2-230}
+\text{and}\qquad u = \frac{1}{a^2}\frac{\partial^2 w}{\partial x\partial z} \quad\text{and}\quad v = \frac{1}{a^2}\frac{\partial^2 w}{\partial y\partial z}.
+\end{equation}
+Therefore,
+\begin{equation}
+\label{eq:2-231}
+\nabla_1 w = W\nabla_1 F, \qquad \mathbf{u}_1 = \frac{DW}{a^2}\nabla_1 F,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-232}
+\mathbf{u}_1 = \frac{1}{a^2}\frac{DW}{W}\,\nabla_1 w.
+\end{equation}
+The vanishing of $\nabla_1 w$ along a certain direction implies the vanishing
+of $\mathbf{u}_1$ along the same direction; and conversely.
+
+\subsection*{(a) Rolls}
+
+A particularly simple pattern occurs when all the quantities depend
+on only one of the two horizontal coordinates, say~$x$. In this case the
+cells are infinitely elongated and it is more appropriate to call them \emph{rolls}.
+
+Let
+\begin{equation}
+\label{eq:2-233}
+w = W(z)\cos\frac{2\pi}{L}\,x,
+\end{equation}
+where $L$ $(= 2\pi/a)$ is a constant. Corresponding to this solution for~$w$,
+\begin{equation}
+\label{eq:2-234}
+u = -\frac{DW}{a^2}\,\frac{2\pi}{L}\sin\frac{2\pi}{L}\,x \quad\text{and}\quad v = 0.
+\end{equation}
+There are, therefore, no horizontal motions along the direction of the
+rolls; also
+\begin{equation}
+\label{eq:2-235}
+u = 0 \quad\text{for}\quad x = \pm(n+\tfrac{1}{2})L\ \text{and}\ \pm nL,
+\end{equation}
+where $n$ is an integer. For values of $x$ given in~(\ref{eq:2-235}), the gradient of
+$w$ normal to the roll is zero; the width of the roll is therefore~$L$; it is the
+same as the wavelength of the disturbance.
+
+\subsection*{(b) Rectangular and square cells}
+
+Consider the solution
+\begin{equation}
+\label{eq:2-236}
+w = W(z)\cos\frac{2\pi}{L_x}\,x\cos\frac{2\pi}{L_y}\,y,
+\end{equation}
+where $L_x$ and $L_y$ are the wavelengths of the disturbance in the $x$- and
+the $y$-directions; they are related to $a$ by
+\begin{equation}
+\label{eq:2-237}
+a^2 = 4\pi^2\!\left(\frac{1}{L_x^2}+\frac{1}{L_y^2}\right)\!.
+\end{equation}
+According to the solution~(\ref{eq:2-236}),
+
+$w = W(z)$ at the points, $(\pm nL_x,\,0)$, $[\pm(n+\tfrac{1}{2})L_y,\,\pm\tfrac{1}{2}L_y]$, etc.,
+
+$w = -W(z)$ at the points, $[\pm(n+\tfrac{1}{2})L_x,\,0]$, $(\pm nL_x,\,\pm\tfrac{1}{2}L_y)$, etc.,
+\begin{equation}
+\label{eq:2-238}
+\end{equation}
+and \quad $w = 0$ along the lines, $x = \pm\tfrac{1}{4}L_x$, $\pm\tfrac{3}{4}L_x$, etc.; and
+\begin{equation}
+\label{eq:2-239}
+y = \pm\tfrac{1}{4}L_y,\quad \pm\tfrac{3}{4}L_y,\quad\text{etc.},
+\end{equation}
+where $n$ is an integer.
+
+The horizontal components of the velocity are given by
+\begin{equation}
+\label{eq:2-240}
+\begin{split}
+u &= -\frac{DW}{a^2}\,\frac{2\pi}{L_x}\sin\frac{2\pi}{L_x}\,x\cos\frac{2\pi}{L_y}\,y,\\
+v &= -\frac{DW}{a^2}\,\frac{2\pi}{L_y}\cos\frac{2\pi}{L_x}\,x\sin\frac{2\pi}{L_y}\,y.
+\end{split}
+\end{equation}
+Hence, $u = 0$ along the lines $x = 0$, $\pm\tfrac{1}{2}L_x$, $\pm L_x$, etc.; and
+\begin{equation}
+\label{eq:2-241}
+y = \pm\tfrac{1}{4}L_y,\quad \pm\tfrac{3}{4}L_y,\quad\text{etc.},
+\end{equation}
+and \quad $v = 0$ along the lines $y = 0$, $\pm\tfrac{1}{2}L_y$, $\pm L_y$, etc.; and
+\begin{equation}
+\label{eq:2-242}
+x = \pm\tfrac{1}{4}L_x,\quad \pm\tfrac{3}{4}L_x,\quad\text{etc.}
+\end{equation}
+From the proportionality of $\mathbf{u}_1$ and $\boldsymbol{\nabla}_1 w$, it follows that
+$\partial w/\partial x = 0$ along the lines $v$ is zero,
+\begin{equation}
+\label{eq:2-242b}
+\text{and}\qquad \partial w/\partial y = 0 \quad\text{along the lines}\ u\ \text{is zero.}
+\end{equation}
+The cells are, therefore, rectangles with sides of lengths $L_x$ and $L_y$; and
+the pattern of the motions in the cell, centred at $x = 0$ and $y = 0$, and
+bounded by $x = \pm\tfrac{1}{2}L_x$ and $y = \pm\tfrac{1}{2}L_y$, is repeated in all the others.
+From the expressions for $u$ and $v$ given in~(\ref{eq:2-240}), we find
+\begin{equation}
+\label{eq:2-243}
+L_x u \pm L_y v = -\frac{2\pi}{a^2}\,DW\sin 2\pi\!\left(\frac{x}{L_x}\pm\frac{y}{L_y}\right)\!;
+\end{equation}
+and it follows from this equation that
+\begin{equation}
+\label{eq:2-244}
+L_x u + L_y v = 0 \quad\text{for}\quad x/L_x + y/L_y = 0 \quad\text{and}\quad \pm\tfrac{1}{2},
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-245}
+L_x u - L_y v = 0 \quad\text{for}\quad x/L_x - y/L_y = 0 \quad\text{and}\quad \pm\tfrac{1}{2};
+\end{equation}
+in other words, the streamlines intersect a principal diagonal in directions
+which are normal to the other.
+
+The streamlines of the motion in the horizontal plane are determined
+by the equation
+\begin{equation}
+\label{eq:2-246}
+\frac{dx}{dy} = \frac{u}{v} = \frac{L_y}{L_x}\,\frac{\sin(2\pi x/L_x)}{\sin(2\pi y/L_y)}\,\frac{\cos(2\pi y/L_y)}{\cos(2\pi x/L_x)}.
+\end{equation}
+
+\figurePlaceholder{5}{The streamlines in the horizontal plane for a rectangular cell.}
+
+\figurePlaceholder{6}{The streamlines in the horizontal plane for a square cell.}
+
+On integrating this equation, we obtain
+\begin{equation}
+\label{eq:2-247}
+\frac{\sin\dfrac{2\pi x}{L_x}}{\sin\dfrac{2\pi y}{L_y}} = \text{constant}\biggl|\sin\frac{2\pi y}{L_y}\biggr|^{L_x^2/L_y^2}.
+\end{equation}
+The streamlines derived from this equation are illustrated in Fig.~5 for
+the case $L_y = \sqrt{3}\,L_x/2$.
+The solution for the case of square cells can be obtained from the
+foregoing by setting $L_x = L_y$. The corresponding streamlines of the
+motion are illustrated in Fig.~6.
+
+\subsection*{(c) Hexagonal cells}
+
+The solution for the hexagonal pattern was discovered by Christopherson. His solution is
+\begin{equation}
+\label{eq:2-248}
+w = \tfrac{1}{3}W(z)\biggl\{2\cos\frac{2\pi}{\sqrt{3}L}\,x\cos\frac{2\pi}{3L}\,y + \cos\frac{4\pi}{3L}\,y\biggr\}.
+\end{equation}
+Alternative forms of this solution are
+\begin{equation}
+\label{eq:2-249}
+w = \tfrac{1}{3}W(z)\biggl\{\cos\frac{4\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x + \tfrac{1}{2}y\Bigr) + \cos\frac{4\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x - \tfrac{1}{2}y\Bigr) + \cos\frac{4\pi}{3L}\,y\biggr\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-250}
+w = \tfrac{1}{3}W(z)\biggl\{4\cos\frac{2\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x - \tfrac{1}{2}y\Bigr)\cos\frac{2\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x + \tfrac{1}{2}y\Bigr)\cos\frac{2\pi}{3L}\,y - 1\biggr\}.
+\end{equation}
+
+We shall presently show that $L$ measures the side of the hexagon. But
+first we shall verify that the solution~(\ref{eq:2-248}) does, indeed, represent a
+periodic disturbance of a given total wave number~$a$. We have
+\begin{align}
+\label{eq:2-251}
+\nabla_1^2\,w &= -\tfrac{1}{3}W(z)\biggl\{\biggl(\frac{2\pi}{\sqrt{3}L}\biggr)^{\!2}(3+1)\cos\frac{2\pi}{\sqrt{3}L}\,x\cos\frac{4\pi}{3L}\,y + \frac{4\pi}{3L}\cos\frac{4\pi}{3L}\,y\biggr\} \notag\\
+&= -\biggl(\frac{4\pi}{3L}\biggr)^{\!2}w.
+\end{align}
+Hence,
+\begin{equation}
+\label{eq:2-252}
+a = 4\pi/3L.
+\end{equation}
+
+The basic hexagonal symmetry of the solution expressed by~(\ref{eq:2-249}) becomes
+apparent when we write
+\begin{equation}
+\label{eq:2-253}
+x = \varpi\cos\theta \quad\text{and}\quad y = \varpi\sin\theta.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:2-254}
+\frac{\sqrt{3}}{2}\,x \pm \tfrac{1}{2}y = \varpi\sin(60^\circ \pm \theta),
+\end{equation}
+and we can rewrite equation~(\ref{eq:2-249}) in the form
+\begin{equation}
+\label{eq:2-255}
+w = \tfrac{1}{3}W(z)\biggl\{\cos\biggl[\frac{4\pi\varpi}{3L}\sin(\theta+120^\circ)\biggr] + \cos\biggl[\frac{4\pi\varpi}{3L}\sin(\theta+60^\circ)\biggr] + \cos\biggl[\frac{4\pi\varpi}{3L}\sin\theta\biggr]\biggr\},
+\end{equation}
+from which it is apparent that
+\begin{equation}
+\label{eq:2-256}
+w(\varpi,\,\theta) = w(\varpi,\,\theta+60^\circ).
+\end{equation}
+In addition to this invariance for rotation by $60^\circ$ about the origin, the
+solution exhibits periodicity in the $x$- and $y$-directions as well; thus
+\begin{equation}
+\label{eq:2-257}
+w(x+nL\sqrt{3},\; y+3mL) = w(x,y),
+\end{equation}
+where $n$ and $m$ are (arbitrary) integers. The wavelength of the periodicity
+in the $y$-direction is seen to be $\sqrt{3}$ times the wavelength in the $x$-direction.
+
+We next observe that according to equation~(\ref{eq:2-250})
+\begin{equation}
+\label{eq:2-258}
+w(0) = W(z);
+\end{equation}
+also, along the three pairs of lines,
+\begin{equation}
+\label{eq:2-259}
+y = \pm\tfrac{1}{2}L, \quad x\sqrt{3}+y = \pm\tfrac{3}{2}L, \quad x\sqrt{3}-y = \pm\tfrac{3}{2}L,
+\end{equation}
+which describes the hexagon $GHIJKL$ (see Fig.~7$a$),
+\begin{equation}
+\label{eq:2-260}
+w = -\tfrac{1}{2}W(z);
+\end{equation}
+and at the six points,
+\begin{equation}
+\label{eq:2-261}
+\Bigl(\frac{\sqrt{3}}{2}\,L,\;\pm\tfrac{1}{2}L\Bigr), \quad (0,\,\pm L), \quad \Bigl(-\frac{\sqrt{3}}{2}\,L,\;\pm\tfrac{1}{2}L\Bigr),
+\end{equation}
+which are the vertices of the hexagon $ABCDEF$,
+\begin{equation}
+\label{eq:2-262}
+w = -\tfrac{1}{4}W(z).
+\end{equation}
+
+The horizontal components of the velocity are given by
+\begin{equation}
+\label{eq:2-263}
+u = \frac{1}{a^2}\frac{\partial^2 w}{\partial x\partial z} = -\frac{DW}{3a^2}\,\frac{4\pi}{L\sqrt{3}}\sin\frac{2\pi}{L\sqrt{3}}\,x\cos\frac{2\pi}{3L}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-264}
+v = \frac{1}{a^2}\frac{\partial^2 w}{\partial y\partial z} = -\frac{DW}{3a^2}\,\frac{4\pi}{3L}\biggl(\cos\frac{2\pi}{L\sqrt{3}}\,x + 2\cos\frac{2\pi}{3L}\,y\biggr)\sin\frac{2\pi}{3L}\,y.
+\end{equation}
+From these equations it follows that
+
+$u = 0$ \quad for \quad $x = 0$, $x = \pm\tfrac{\sqrt{3}}{2}L$ \quad and \quad $y = \pm\tfrac{3}{2}L$,
+\begin{equation}
+\label{eq:2-264b}
+\end{equation}
+and
+
+$v = 0$ \quad for \quad $y = 0$ \quad and \quad $y = \pm\tfrac{3}{2}L$.
+
+There is thus no flow across $OD$ ($u = 0$ for $x = 0$), $BC$ ($u = 0$ for
+$x = L\sqrt{3}/2$), and $OI$ ($v = 0$ for $y = 0$). From the invariance of the
+solution for rotations by $60^\circ$, we conclude that there is no flow across \emph{any}
+of the sides of the six equilateral triangles which form the hexagon
+$ABCDEF$, nor across any of the perpendiculars drawn from the centre
+of the hexagon to the sides. From the proportionality of $\mathbf{u}_1$ and $\boldsymbol{\nabla}_1 w$,
+it follows that the walls of the prisms, whose sections are the six equilateral
+triangles, are surfaces of symmetry. Again, from the fact that the
+flow is normal to $KJ$ ($u = 0$ for $y = 3L/4$), we conclude that there
+is no flow \emph{along} the sides of the inscribed hexagon $GHIJKL$; and this is
+consistent with the fact that $w$ is constant along these same sides.
+
+In Fig.~7$b$ the flow pattern in the horizontal plane is illustrated.
+The nature of the flow in the vertical planes is somewhat more
+complicated. However, in the planes $x = 0$ and $y = 0$ they are two-dimensional
+and can be described simply. Thus
+\begin{equation}
+\label{eq:2-265}
+\left.
+\begin{aligned}
+u &= 0\\
+v &= -\frac{DW}{3a^2}\,\frac{4\pi}{3L}\biggl(1+2\cos\frac{2\pi}{3L}\,y\biggr)\sin\frac{2\pi}{3L}\,y\\
+w &= \tfrac{1}{3}W\biggl(2\cos\frac{2\pi}{3L}\,y + \cos\frac{4\pi}{3L}\,y\biggr)
+\end{aligned}
+\right\}\quad (x = 0),
+\end{equation}
+
+\figurePlaceholder{7a}{The geometry of the hexagonal cells.}
+
+and
+\begin{equation}
+\label{eq:2-266}
+\left.
+\begin{aligned}
+u &= -\frac{DW}{3a^2}\,\frac{4\pi}{L\sqrt{3}}\sin\frac{2\pi}{L\sqrt{3}}\,x\\
+v &= 0\\
+w &= \tfrac{1}{3}W\biggl(2\cos\frac{2\pi}{L\sqrt{3}}\,x + 1\biggr)
+\end{aligned}
+\right\}\quad (y = 0).
+\end{equation}
+
+For $v$ and $w$ given by~(\ref{eq:2-265}), the equation, $dy/v = dz/w$, governing the
+streamlines in the $(y,z)$-plane can be readily integrated to give
+\begin{equation}
+\label{eq:2-267}
+\biggl|\frac{1+2\cos(2\pi y/3L)}{1+\cos(2\pi y/3L)}\biggr|^3\sin\frac{2\pi}{3L}\,y\biggr|^s W(z) = \text{constant}.
+\end{equation}
+
+\figurePlaceholder{7b}{The curves of constant $w$ (normalized to unity at the centre) in the horizontal plane for a hexagonal cell. The curves labelled 1, 2, \ldots, 12 are for values of $w = 0{\cdot}75$, $0{\cdot}50$, $0{\cdot}25$, $0$, $-0{\cdot}20$, $-0{\cdot}25$, $-0{\cdot}30$, $-0{\cdot}325$, $-0{\cdot}38$, $-0{\cdot}40$, $-0{\cdot}44$, and $-0{\cdot}48$, respectively. The value of $w$ on the inscribed hexagon (shown by broken lines) is $-\tfrac{1}{2}$ and at the vertices of the principal hexagon it has the value $-\tfrac{1}{4}$. The streamlines are orthogonal to the curves of constant $w$.}
+
+Similarly, from~(\ref{eq:2-266}) it follows that the streamlines in the $(x,z)$-plane
+are given by
+\begin{equation}
+\label{eq:2-268}
+\biggl\{\biggl(1-\cos\frac{2\pi}{L\sqrt{3}}\,x\biggr)\sin\frac{2\pi}{L\sqrt{3}}\,x\biggr\}^{\frac{1}{3}} W(z) = \text{constant}.
+\end{equation}
+The streamlines of the flow derived from equations~(\ref{eq:2-267}) and~(\ref{eq:2-268}) are
+illustrated in Fig.~8.
+
+\subsection*{(d) Triangular cells}
+
+This case does not need a separate discussion. The pattern which we
+considered as hexagonal can be considered, equally, as triangular. The
+unit cell is then represented by the equilateral triangle $OMN$ (see Fig.~7$a$)
+whose sides are of length $L\sqrt{3}$. Along the sides of this triangle there are
+no transverse motions; and at its vertices $w$ takes the same value (which
+is twice that at the centroid~$C$ and of the opposite sign).
+
+\subsection*{(e) More general cell patterns}
+
+A generalization of Christopherson's solution was discovered by
+Bisshopp. Bisshopp's solution appears to give the most general cell
+
+\figurePlaceholder{8}{The streamlines in a hexagonal cell in the planes of symmetry at the onset of instability for the first even mode. The streamlines (normalized to unity at the maxima) are computed in accordance with equations~(\ref{eq:2-267}) (the patterns on the right) and~(\ref{eq:2-268}) (the patterns at the bottom); the curves are labelled by the values of the constants to which they refer.}
+
+\noindent
+patterns which exhibit definite periodicities in the $x$- and $y$-directions
+and are characterized by a given total wave number~$a$.
+
+Starting with a term having the periodicity of the assigned wave
+number~$a$ in a particular direction (say, the $y$-direction), we write the
+solution in the form
+\begin{equation}
+\label{eq:2-269}
+w = W(z)\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y + \cos\,a(y-y_0)\biggr\},
+\end{equation}
+where $m$ is an integer greater than 1 and $A$ and $y_0$ are constants. The
+solution~(\ref{eq:2-269}) is constructed so as to satisfy two conditions: \emph{first}, any
+periodic term which we may add to $\cos a(y-y_0)$ has a wave number in
+the $y$-direction which is a divisor of~$a$ (for, only then can we include
+the periodicity already implied by $\cos a(y-y_0)$); and \emph{second} the added term
+has a periodicity in the $x$-direction of a wave number such as to make the
+total wave number~$a$. These conditions are manifestly satisfied by the
+solution~(\ref{eq:2-269}). Thus
+\begin{equation}
+\label{eq:2-270}
+\nabla_1^2\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y = -a^2\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-271}
+\nabla_1^2\,w = -a^2 w
+\end{equation}
+as required.
+
+The wavelengths of the disturbance in the $x$- and the $y$-directions are
+\begin{equation}
+\label{eq:2-272}
+\lambda_x = \frac{2\pi}{a}\,\frac{m}{\sqrt{m^2-1}} \quad\text{and}\quad \lambda_y = \frac{2\pi}{a}\,m.
+\end{equation}
+
+\figurePlaceholder{9}{A complex cell pattern derived from the solution $w = \tfrac{1}{2}W_s\{\cos[\tfrac{1}{2}a(\sqrt{8}+y)] + \cos[\tfrac{1}{2}a(\sqrt{8}-y)] + \cos ay\}$.}
+
+The components of the horizontal velocity are
+\begin{equation}
+\label{eq:2-273}
+u = \frac{DW}{a}\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}} A \times
+\sin\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-274}
+v = \frac{DW}{a}\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\frac{1}{m}\sin\frac{a}{m}\,y +
+\sin a(y-y_0)\biggr\}.
+\end{equation}
+The velocities transverse to the lines
+\begin{equation}
+\label{eq:2-275}
+x = \pm\tfrac{1}{2}n\lambda_x \quad\text{and}\quad y = \pm\tfrac{1}{2}n\lambda_y
+\end{equation}
+(where $n$ is an integer) will vanish if $y_0 = 0$.
+Accordingly, the solution
+\begin{equation}
+\label{eq:2-276}
+w = W(z)\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y + \cos ay\biggr\}
+\end{equation}
+describes a cell pattern in which the unit cell is a rectangle with sides
+$\lambda_x$ and $\lambda_y$ along the two directions. However, the motions inside the unit
+cells are far more complicated than in the simple rectangular cells
+considered in \S\,(b).
+
+Finally, it may be noted that we recover Christopherson's solution
+(\ref{eq:2-248}) as a special case of~(\ref{eq:2-276}) by setting $A = 2$ and $m = 2$. An example
+of these more general cell patterns is shown in Fig.~9.
+
+%%---------------------------------------------------------------------
+\section{The variational solution}\label{sec:17}
+%%---------------------------------------------------------------------
+
+In \S~15 we have seen how the characteristic value problem underlying
+the determination of the critical Rayleigh number for the onset of
+instability can be solved exactly. In this section we shall describe an
+alternative method based on the variational principles of \S~13. While this
+is necessarily an approximate method, it appears that by a judicious
+procedure, the method can lead to results of high precision. This is of
+some importance since most of the other problems we shall encounter
+do not easily lend themselves to an exact solution; and variational
+methods appear to be the only practicable ones. It is therefore fortunate
+that there is this one case in which the results of the approximate
+method can be compared with those of an exact calculation and some
+idea gained as to the accuracy which can be attained in the solution of
+similar problems by the variational method.
+
+Consider then the problem appropriate to the case when the liquid is
+confined between two rigid boundaries at $z = \pm\tfrac{1}{2}$. The problem then is
+to solve the equations
+\begin{equation}
+\label{eq:2-277}
+(D^2 - a^2)^2 W = F
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-278}
+(D^2 - a^2) F = -Ra^2 W,
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:2-279}
+F = 0 \quad\text{and}\quad W = DW = 0 \quad\text{for}\quad z = \pm\tfrac{1}{2}.
+\end{equation}
+
+As we have already pointed out in \S~15, the solutions of equations
+(\ref{eq:2-277}) and~(\ref{eq:2-278}) satisfying the boundary conditions~(\ref{eq:2-279}) are either even or
+odd. Consider the even solutions. Then $F$ is even and since it is required
+to vanish at $z = \pm\tfrac{1}{2}$, we can expand it in a cosine series in the form
+\begin{equation}
+\label{eq:2-280}
+F = \sum_0^\infty A_m \cos[(2m+1)\pi z].
+\end{equation}
+The summation over $m$ in~(\ref{eq:2-280}) may be assumed to run from zero to
+infinity; but this is not necessary since we shall consider the coefficients
+$A_m$ as variational parameters (see below).
+
+With $F$ given by~(\ref{eq:2-280}), we \emph{determine} $W$ as a solution of the equation
+\begin{equation}
+\label{eq:2-281}
+(D^2 - a^2)^2 W = \sum_m A_m \cos[(2m+1)\pi z]
+\end{equation}
+which satisfies the remaining boundary conditions on~$W$. In view of the
+linearity of equation~(\ref{eq:2-281}), we can express $W$ as a sum in the form
+\begin{equation}
+\label{eq:2-282}
+W = \sum_m A_m\,W_m(z),
+\end{equation}
+where $W_m$ is a solution of the equation
+\begin{equation}
+\label{eq:2-283}
+(D^2 - a^2)^2 W_m = \cos[(2m+1)\pi z]
+\end{equation}
+which satisfies the boundary conditions
+\begin{equation}
+\label{eq:2-284}
+W_m = DW_m = 0 \quad\text{for}\quad z = \pm\tfrac{1}{2};
+\end{equation}
+since equation~(\ref{eq:2-283}) is of the fourth order, such a solution can be found
+and is in fact uniquely determined. We shall presently obtain the
+solution explicitly.
+
+The variational principle formulated in \S~13 is equivalent to minimizing
+\begin{equation}
+\label{eq:2-285}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} [(DF)^2 + a^2 F^2]\,dz,
+\end{equation}
+for such variations of $F$ which preserve the constancy of
+\begin{equation}
+\label{eq:2-286}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} [(D^2 - a^2)W]^2\,dz.
+\end{equation}
+Introducing $Ra^2$ as a Lagrangian undetermined multiplier, we can
+equally minimize
+\begin{equation}
+\label{eq:2-287}
+J = \int_{-\frac{1}{2}}^{+\frac{1}{2}} [(DF)^2 + a^2 F^2]\,dz - Ra^2 \int_{-\frac{1}{2}}^{+\frac{1}{2}} [(D^2 - a^2)W]^2\,dz,
+\end{equation}
+for entirely arbitrary variations of~$F$. When we choose for $F$ a \emph{trial
+function} with a certain number of parameters, the method is to minimize
+with respect to those parameters. Thus, if the expansion~(\ref{eq:2-280}) for $F$
+is considered as a trial function, then the coefficients of the expansion
+$A_m$ play the role of the variational parameters and the minimization of
+$J$ is with respect to them.
+
+When $F$ and $W$ satisfy the boundary conditions required of them and
+are related as in equation~(\ref{eq:2-277}), an alternative form for $J$ is
+\begin{equation}
+\label{eq:2-288}
+J = -\int_{-\frac{1}{2}}^{+\frac{1}{2}} F(D^2 - a^2)F\,dz - Ra^2 \int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz.
+\end{equation}
+
+We shall now evaluate the integrals on the right-hand side of~(\ref{eq:2-288})
+when $F$ and $W$ are given by equations~(\ref{eq:2-280}) and~(\ref{eq:2-282}). We have
+\begin{equation}
+\label{eq:2-289}
+-\int_{-\frac{1}{2}}^{+\frac{1}{2}} F(D^2 - a^2)F\,dz = \int_{-\frac{1}{2}}^{+\frac{1}{2}} dz\,\sum A_m\cos[(2m+1)\pi z] \times
+\sum A_n[(2n+1)^2\pi^2+a^2]\cos[(2n+1)\pi z] = \frac{1}{2}\sum_m \frac{A_m^2}{\gamma_{2m+1}},
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-290}
+\gamma_{2m+1} = \frac{1}{(2m+1)^2\pi^2+a^2}.
+\end{equation}
+Next, considering the second integral on the right-hand side of~(\ref{eq:2-288}), we
+have
+\begin{equation}
+\label{eq:2-291}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz = \sum A_n \int_{-\frac{1}{2}}^{+\frac{1}{2}} dz\cos[(2n+1)\pi z]\;\sum A_m\,W_m(z).
+\end{equation}
+Letting
+\begin{equation}
+\label{eq:2-292}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{\cos[(2n+1)\pi z]\}W_m(z)\,dz,
+\end{equation}
+we can write
+\begin{equation}
+\label{eq:2-293}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz = \sum\sum A_n(n|m)A_m.
+\end{equation}
+The matrix $(n|m)$ which we have defined in~(\ref{eq:2-292}) is symmetric: for,
+\begin{align}
+\label{eq:2-294}
+(n|m) &= \int_{-\frac{1}{2}}^{+\frac{1}{2}} W_m(z)\cos[(2n+1)\pi z]\,dz \notag\\
+&= \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{(D^2-a^2)^2 W_n(z)\}\{(D^2-a^2)^2 W_m(z)\}\,dz,
+\end{align}
+and the symmetry is apparent.
+
+Returning to equation~(\ref{eq:2-288}) and making use of equations~(\ref{eq:2-289}) and
+(\ref{eq:2-293}), we have
+\begin{equation}
+\label{eq:2-295}
+J = \frac{1}{2}\sum_m \frac{A_m^2}{\gamma_{2m+1}} - Ra^2 \sum\sum A_n(n|m)A_m;
+\end{equation}
+and we must minimize this expression with respect to the parameters~$A_n$.
+Therefore, requiring
+\begin{equation}
+\label{eq:2-296}
+\frac{\partial J}{\partial A_n} = 0 \qquad (n = 0, 1, \ldots),
+\end{equation}
+we obtain
+\begin{equation}
+\label{eq:2-297}
+\sum_m \biggl[\frac{\delta_{mn}}{2a^2\gamma_{2m+1}\,R} - 2(n|m)\biggr] A_m = 0 \qquad (n = 0, 1, \ldots).
+\end{equation}
+This represents a system of linear homogeneous equations for the
+coefficients~$A_n$. For a non-zero solution of these equations to exist, the
+determinant of the system must vanish. We thus obtain the condition
+\begin{equation}
+\label{eq:2-298}
+\left|\frac{\delta_{mn}}{a^2 A_n^2 \gamma_{2m+1}} - 2(n|m)\right| = 0
+\end{equation}
+which is in the form of a \emph{characteristic equation} of a matrix.
+
+Restricting ourselves to the first $n$ coefficients $A_0, A_1, \ldots, A_n$ in~(\ref{eq:2-280})
+and setting the others equal to zero is the same as considering a trial
+function for $F$ with $n$ parameters. The minimization of $J$ is then with
+respect to these $n$ parameters; and the order of the resulting `secular'
+determinant~(\ref{eq:2-298}) will also be~$n$.
+
+While we have derived the condition~(\ref{eq:2-298}) as a consequence of the
+variational principle, it is of some significance to observe that it follows
+also from equation~(\ref{eq:2-278}) by equating the Fourier coefficients of either
+side. Thus substituting for $F$ and $W$ in accordance with equations
+(\ref{eq:2-280}) and~(\ref{eq:2-282}) in equation~(\ref{eq:2-278}), we have
+\begin{equation}
+\label{eq:2-299}
+\sum \frac{A_m}{\gamma_{2m+1}}\cos[(2m+1)\pi z] = Ra^2 \sum A_m\,W_m(z).
+\end{equation}
+Multiplying this equation by $\cos[(2n+1)\pi z]$ and integrating over the
+range of $z$, we obtain
+\begin{equation}
+\label{eq:2-300}
+\frac{1}{2}\,\frac{A_n}{\gamma_{2m+1}} = Ra^2 \sum (n|m)A_m \qquad (n = 0, 1, 2, \ldots);
+\end{equation}
+this represents the same set of equations as~(\ref{eq:2-297}) and leads to the same
+secular determinant~(\ref{eq:2-298}). The present method of deriving the condition
+(\ref{eq:2-298}) is applicable even if a variational principle does not underlie the
+problem. But the existence of a variational principle ensures that by
+keeping more and more terms in the Fourier expansion~(\ref{eq:2-280}) for $F$ and
+solving the secular determinant~(\ref{eq:2-298}) for~$R$, we approach the true
+characteristic value \emph{monotonically from above}.
+
+We now return to equation~(\ref{eq:2-283}) to determine the explicit form of
+the solution for $W_m$ and of the matrix $(n|m)$.
+
+The general solution of equation~(\ref{eq:2-283}) which is even in $z$ is
+\begin{equation}
+\label{eq:2-301}
+W_m = P_m \cosh az + Q_m\,z\sinh az + \gamma_{2m+1}^2 \cos[(2m+1)\pi z],
+\end{equation}
+where $\gamma_{2m+1}$ is defined in~(\ref{eq:2-290}) and $P_m$ and $Q_m$ are constants of integration
+which are to be determined by the boundary conditions~(\ref{eq:2-284}). These
+latter conditions give
+\begin{equation}
+\label{eq:2-302}
+P_m \cosh\tfrac{1}{2}a + \tfrac{1}{2}Q_m \sinh\tfrac{1}{2}a = 0
+\end{equation}
+and
+\begin{equation}
+P_m\,a\sinh\tfrac{1}{2}a + Q_m(\tfrac{1}{2}a\cosh\tfrac{1}{2}a + \sinh\tfrac{1}{2}a) = (2m+1)\pi\gamma_{2m+1}^2\,(-1)^m.
+\end{equation}
+Solving these equations for $P_m$ and $Q_m$, we find
+\begin{equation}
+\label{eq:2-303}
+P_m = (-1)^{m+1}\frac{(2m+1)\pi\gamma_{2m+1}^2}{a + \sinh a}\sinh\tfrac{1}{2}a,
+\end{equation}
+and
+\begin{equation}
+Q_m = (-1)^m\frac{2(2m+1)\pi\gamma_{2m+1}^2}{a + \sinh a}\cosh\tfrac{1}{2}a.
+\end{equation}
+
+The matrix element $(n|m)$ is now given by
+\begin{equation}
+\label{eq:2-304}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{P_m \cosh az + Q_m\,z\sinh az + \gamma_{2m+1}^2\cos[(2m+1)\pi z]\} \times \cos[(2n+1)\pi z]\,dz
+\end{equation}
+or,
+\begin{equation}
+\label{eq:2-305}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} + P_m \int_{-\frac{1}{2}}^{+\frac{1}{2}} \cosh az\cos[(2n+1)\pi z]\,dz +
+Q_m \int_{-\frac{1}{2}}^{+\frac{1}{2}} z\sinh az\cos[(2n+1)\pi z]\,dz.
+\end{equation}
+
+The integrals on the right-hand side of~(\ref{eq:2-305}) are readily evaluated. We
+find
+\begin{equation}
+\label{eq:2-306}
+\begin{split}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} \cosh az\cos[(2n+1)\pi z]\,dz &= 2(-1)^n(2n+1)\pi\gamma_{2n+1}\cosh\tfrac{1}{2}a,\\
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} z\sinh az\cos[(2n+1)\pi z]\,dz &= (-1)^n(2n+1)\pi\gamma_{2n+1}(\sinh\tfrac{1}{2}a - 4a\gamma_{2n+1}\cosh\tfrac{1}{2}a).
+\end{split}
+\end{equation}
+We thus have
+\begin{equation}
+\label{eq:2-307}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} + (2n+1)\pi\gamma_{2n+1}(-1)^n \times
+\bigl[2P_m\cosh\tfrac{1}{2}a + Q_m(\sinh\tfrac{1}{2}a - 4a\gamma_{2n+1}\cosh\tfrac{1}{2}a)\bigr].
+\end{equation}
+Substituting for $P_m$ and $Q_m$ from~(\ref{eq:2-303}) in the foregoing equation and
+simplifying, we find
+\begin{equation}
+\label{eq:2-308}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} - 8a(-1)^{n+m}(2n+1)(2m+1)\pi^2\gamma_{2n+1}^2\gamma_{2m+1}^2\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}.
+\end{equation}
+This is symmetrical in $n$ and $m$ as required.
+The explicit form of the secular determinant~(\ref{eq:2-298}) is, therefore,
+\begin{equation}
+\label{eq:2-309}
+\left|\left(\frac{1}{a^2 R\gamma_{2m+1}} - \gamma_{2m+1}^2\right)\delta_{mn} +
+(-1)^{n+m} 16a\pi^2 (2n+1)(2m+1)\gamma_{2n+1}^2\gamma_{2m+1}^2\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}\right| = 0.
+\end{equation}
+
+A first approximation to $R$ will be given by setting the $(0,0)$ element
+of the secular matrix equal to zero and ignoring all the others. This
+corresponds to the choice of $\cos\pi z$ as a trial function for~$F$, i.e.\ one
+with \emph{no} variational parameters. The corresponding result is
+\begin{equation}
+\label{eq:2-310}
+\frac{1}{a^2 R\gamma_1} = \gamma_1^2 - 16a\pi^2\gamma_1^4\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}.
+\end{equation}
+Or, since $\gamma_1 = (\pi^2 + a^2)^{-1}$,
+\begin{equation}
+\label{eq:2-311}
+R = \frac{(\pi^2 + a^2)^3}{a^2\{1 - 16a\pi^2\cosh^2\!\tfrac{1}{2}a/[(\pi^2+a^2)^2(\sinh a+a)]\}}.
+\end{equation}
+This formula gives
+\begin{equation}
+\label{eq:2-312}
+R = 1715{\cdot}08 \quad\text{for}\quad a = 3{\cdot}117;
+\end{equation}
+this should be contrasted with the result $(1707{\cdot}76)$ of the exact calculation
+for the same value of~$a$. Thus, even with no variational parameters,
+the method achieves an accuracy somewhat better than $\tfrac{1}{2}$ per cent.
+This accuracy is attained largely on account of the fact that in the
+process of applying the variational method, we solved the fourth-order
+differential equation~(\ref{eq:2-277}) relating $F$ and~$W$, i.e.\ in effect we solved
+`two-thirds' of the problem exactly!
+
+By including additional terms in the expansion for $F$, we can naturally
+reach higher precision in the deduced values of~$R$. This is illustrated
+in Table~\ref{tab:2-IV}.
+
+\begin{table}[htbp]
+\centering
+\caption{Rayleigh numbers derived by the variational method}
+\label{tab:2-IV}
+\medskip
+\begin{tabular}{@{}l l l@{}}
+\toprule
+\multicolumn{3}{c}{(i) The even mode} \\
+\multicolumn{3}{c}{$a = 3{\cdot}117$} \\
+\midrule
+First approximation  & $R = 1715{\cdot}08$ & \\
+Second approximation & $R = 1707{\cdot}938$ & $A_1/A_0 = +0{\cdot}028923$ \\
+Third approximation  & $R = 1707{\cdot}775$ & $A_1/A_0 = +0{\cdot}028963;$ \\
+                     &                      & $A_2/A_0 = -0{\cdot}002594$ \\
+Exact value          & $R = 1707{\cdot}76$  & \\
+\midrule
+\multicolumn{3}{c}{(ii) The odd mode} \\
+\multicolumn{3}{c}{$a = 5{\cdot}365$} \\
+\midrule
+First approximation  & $R = 17803{\cdot}24$ & \\
+Second approximation & $R = 17\,611{\cdot}74$ & $A_1/A_0 = +0{\cdot}06304$ \\
+Third approximation  & $R = 17\,611{\cdot}84$ & $A_1/A_0 = +0{\cdot}069943;$ \\
+                     &                        & $A_2/A_0 = -0{\cdot}002085$ \\
+Exact value          & $R = 17\,610{\cdot}39$ & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The odd mode (in terms of which we found in \S~15 the solution for
+the case of one rigid and one free boundary) can also be obtained by the
+variational method. Thus, we now assume for $F$ an expansion of the
+form
+\begin{equation}
+\label{eq:2-313}
+F = \sum A_m \sin 2m\pi z.
+\end{equation}
+The corresponding solution for $W_m$ is
+\begin{equation}
+\label{eq:2-314}
+W_m = P_m \sinh az + Q_m\,z\cosh az + \gamma_{2m}^*\sin 2m\pi z,
+\end{equation}
+where $P_m$ and $Q_m$ are constants of integration and
+\begin{equation}
+\label{eq:2-315}
+\gamma_{2m}^* = \frac{1}{4m^2\pi^2 + a^2}.
+\end{equation}
+The boundary conditions determine $P_m$ and $Q_m$. We find
+\begin{equation}
+\label{eq:2-316}
+\begin{split}
+P_m &= (-1)^{m+1}\frac{2m\pi\gamma_{2m}^{*2}}{\sinh a - a}\cosh\tfrac{1}{2}a,\\
+Q_m &= (-1)^{m+1}\frac{4m\pi\gamma_{2m}^{*2}}{\sinh a - a}\sinh\tfrac{1}{2}a.
+\end{split}
+\end{equation}
+
+The matrix element $(n|m)$ is now given by
+\begin{equation}
+\label{eq:2-317}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \sin 2n\pi z\{P_m \sinh az + Q_m\,z\cosh az + \gamma_{2m}^*\sin 2m\pi z\}\,dz.
+\end{equation}
+On evaluating the integrals, we find
+\begin{equation}
+\label{eq:2-318}
+(n|m) = \tfrac{1}{2}\gamma_{2m}^{*2}\,\delta_{mn} - 32(-1)^{n+m} amn\pi^2 \gamma_{2n}^*\gamma_{2m}^*\,\frac{\sinh^2\!\tfrac{1}{2}a}{\sinh a - a};
+\end{equation}
+and the secular determinant takes the form
+\begin{equation}
+\label{eq:2-319}
+\left|\left(\frac{1}{a^2 R\gamma_{2m}} - \gamma_{2m}^{*2}\right)\delta_{mn} + (-1)^{n+m} 64an^2\pi^2\,\frac{\sinh^2\!\tfrac{1}{2}a}{\sinh a - a}\,mn\pi^2\gamma_{2n}^*\gamma_{2m}^*\right| = 0.
+\end{equation}
+
+The first approximation to $R$ will be given by setting the $(1,1)$ element
+of the secular matrix equal to zero and ignoring all the others. Thus
+we obtain
+\begin{equation}
+\label{eq:2-320}
+R = \frac{1}{a^2\gamma_2^{*}\{1 - 64a\pi^2\gamma_2^{*4}\tfrac{1}{4}a/(\sinh a - a)\}},
+\end{equation}
+or, substituting for $\gamma_{2}^*$, we have
+\begin{equation}
+\label{eq:2-321}
+R = \frac{(4\pi^2+a^2)^3}{a^2\{1 - 64a\pi^2\sinh^2\!\tfrac{1}{2}a/[(4\pi^2+a^2)^2(\sinh a - a)]\}}.
+\end{equation}
+This formula gives
+\begin{equation}
+\label{eq:2-322}
+R = 17\,803{\cdot}24 \quad\text{for}\quad a = 5{\cdot}365;
+\end{equation}
+this should be contrasted with the result $17\,610{\cdot}39$ of the exact calculation.
+The results obtained by including further terms in the expansion
+of~$F$ are given in Table~\ref{tab:2-IV}. Again, we observe the high precision which
+can be reached by the variational method.
+
+%% §18 Experiments on the onset of thermal instability in fluids
+
+%% Bibliographical Notes
