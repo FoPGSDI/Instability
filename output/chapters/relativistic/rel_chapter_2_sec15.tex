@@ -367,14 +367,94 @@ $R_{c}^{(\mathrm{rel})} = 1707.76\times 4/3 = 2277.0$ (rigid; 33\% increase).
 \label{fig:critical-Ra-table}
 \end{figure}
 
+% -----------------------------------------------------------------
+\subsection{Systematic relativistic corrections to critical Ra for astrophysical systems}
+\label{sec:rel-15-systematic}
+% -----------------------------------------------------------------
+
+We now evaluate the relativistic correction factor $(1+\Xi)$ for six
+representative physical systems spanning over 10 orders of magnitude in the
+compactness parameter $\Xi = p_0/(\varepsilon_0 c^2)$.
+Table~\ref{tab:rel-15-systematic} presents the results for the
+rigid-rigid boundary case ($R_c^{(\mathrm{class})} = 1707.762$).
+
+\begin{table}[htbp]
+\centering
+\caption{Relativistic corrections to the critical Rayleigh number for six
+  representative systems.  The compactness parameter
+  $\Xi = p_0/(\varepsilon_0 c^2)$ determines the correction factor
+  $(1+\Xi)$.  Both rigid boundaries are assumed.}
+\label{tab:rel-15-systematic}
+\medskip
+\begin{tabular}{@{}l c c c c@{}}
+\toprule
+System & $\Xi$ & $R_c^{(\mathrm{rel})}/R_c^{(\mathrm{class})}$
+  & $R_c^{(\mathrm{rel})}$ & Correction \\
+\midrule
+Water (lab, 20$^\circ$C) & $\sim 10^{-10}$ & $1 + 10^{-10}$ & 1707.762 & $\sim 10^{-8}\%$ \\[3pt]
+Mercury (lab, 20$^\circ$C) & $\sim 3\times 10^{-9}$ & $1 + 3\times 10^{-9}$ & 1707.762 & $\sim 10^{-7}\%$ \\[3pt]
+Liquid metal reactor & $\sim 5\times 10^{-8}$ & $1 + 5\times 10^{-8}$ & 1707.762 & $\sim 10^{-6}\%$ \\[3pt]
+NS crust ($\rho \sim 10^{10}$\,g/cm$^3$) & 0.015 & 1.015 & 1733.4 & 1.5\% \\[3pt]
+NS core ($\rho \sim 10^{14}$\,g/cm$^3$) & 0.14 & 1.14 & 1946.8 & 14\% \\[3pt]
+QGP ($T \sim 200$\,MeV) & 0.333 & 1.333 & 2277.0 & 33\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\noindent\textbf{Key findings:}
+\begin{enumerate}
+\item For terrestrial fluids (water, mercury, liquid metal reactors),
+  the relativistic correction is utterly negligible ($< 10^{-6}\%$).
+  The classical Chandrasekhar result applies without modification.
+
+\item For the neutron star crust, the correction is 1.5\%, which is
+  comparable to the uncertainty in the transport coefficients and may
+  be observationally relevant for precision modelling of thermal
+  evolution and X-ray burst light curves.
+
+\item For the neutron star core, the 14\% correction is significant
+  and must be included in any quantitative study of convective stability
+  during proto-neutron star cooling~\cite{BurrowsLattimer1986}.
+
+\item For the quark--gluon plasma at RHIC/LHC temperatures, the 33\%
+  correction demonstrates that relativistic effects are of leading order.
+  The BDNK formalism~\cite{BemficaDNK2023ideal} provides the
+  theoretically correct framework for these calculations.
+
+\item The correction factor $(1+\Xi)$ is independent of the boundary
+  type: it multiplies $R_c^{(\mathrm{class})}$ uniformly for free,
+  rigid, and mixed boundary conditions.
+\end{enumerate}
+
+The BDNK and Israel--Stewart formalisms agree exactly on these critical
+values (since they are computed at $\sigma = 0$), as established in
+\S\,\ref{sec:rel-12c}.  The distinction between formalisms matters only
+for the transient approach to the marginal state and the mode structure
+away from criticality.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_Ra_correction_systems.pdf}
+\caption{(a)~Ratio $R_c^{(\mathrm{rel})}/R_c^{(\mathrm{class})}
+  = 1 + \Xi$ for six astrophysical systems.  (b)~Compactness parameter
+  $\Xi$ on a logarithmic scale; the dashed line marks the 1\% correction
+  threshold.}
+\label{fig:Ra-correction-systems}
+\end{figure}
+
 \section*{References}
 
 \begin{enumerate}
 \item F.~S.~Bemfica et al., \textit{Phys.\ Rev.\ D} \textbf{98}, 104064 (2018).
 \item P.~Kovtun, \textit{JHEP} \textbf{10}, 034 (2019).
+\item F.~S.~Bemfica, M.~M.~Disconzi, J.~Noronha, and P.~Kovtun,
+  \textit{Phys.\ Rev.\ D} \textbf{107}, 076012 (2023).
+\item A.~Pandya, E.~R.~Most, and F.~Pretorius, arXiv:2209.09265 (2022).
+\item R.~E.~Hoult and P.~Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106}, 066023 (2022).
 \item S.~Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability}, OUP (1961).
 \item P.~Douchin and P.~Haensel, \textit{Astron.\ Astrophys.}\ \textbf{380}, 151 (2001).
 \item A.~Akmal, V.~R.~Pandharipande, and D.~G.~Ravenhall, \textit{Phys.\ Rev.\ C} \textbf{58}, 1804 (1998).
 \item P.~Romatschke and U.~Romatschke, \textit{Relativistic Fluid Dynamics}, CUP (2019).
 \item L.~Rezzolla and O.~Zanotti, \textit{Relativistic Hydrodynamics}, OUP (2013).
+\item A.~Burrows and J.~M.~Lattimer, \textit{Astrophys.\ J.}\ \textbf{307}, 178 (1986).
 \end{enumerate}

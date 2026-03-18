@@ -508,12 +508,114 @@ dashed curves show IS relaxation modes absent in BDNK.}
 \label{fig:bdnk-vs-classical-dispersion}
 \end{figure}
 
+%----------------------------------------------------------------------
+\section{Full BDNK dispersion relation for thermal convection}
+\label{sec:rel-12e}
+%----------------------------------------------------------------------
+
+We now compute the complete BDNK dispersion relation including the
+frame coefficients, displaying all three physical modes explicitly.
+This extends the analysis of~\S\,\ref{sec:rel-10c} by retaining the
+full $k$-dependence from the BDNK constitutive
+relations~\cite{BemficaDNK2023ideal,HoultKovtun2022}.
+
+\subsection{The BDNK cubic dispersion relation}
+
+For plane-wave perturbations $\propto \exp[i(\mathbf{k}\cdot\mathbf{x}
+- \omega t)]$ about a static equilibrium, the linearised BDNK equations
+yield a cubic dispersion relation in $\omega$:
+\begin{equation}
+\label{eq:rel-bdnk-cubic}
+\omega^3 + i\,(\Gamma_s + \Gamma_T)\,k^2\,\omega^2
+- \bigl(c_s^2\,k^2 + \Gamma_s\,\Gamma_T\,k^4\bigr)\,\omega
+- i\,c_s^2\,\Gamma_T\,k^4 = 0,
+\end{equation}
+where $c_s$ is the adiabatic sound speed,
+$\Gamma_s = \frac{4}{3}\nu_{\mathrm{rel}}$ is the sound attenuation
+coefficient, $\Gamma_T = \kappa_T$ is the thermal diffusion coefficient,
+and $k = |\mathbf{k}|$.  The BDNK frame coefficients enter through
+corrections to the coefficient of $\omega^2$:
+\begin{equation}
+\label{eq:rel-bdnk-frame-correction}
+(\Gamma_s + \Gamma_T) \to (\Gamma_s + \Gamma_T)
+  \bigl(1 + a_E\,\nu_{\mathrm{rel}}\,k^2/c^2\bigr),
+\end{equation}
+where $a_E$ is the dimensionless BDNK frame parameter.  This correction
+ensures that the maximum characteristic speed saturates at $c$ for
+$k \to \infty$, rather than diverging as in the acausal Eckart theory.
+
+\subsection{The three physical modes}
+
+The three roots of~\eqref{eq:rel-bdnk-cubic} correspond to:
+
+\paragraph{(i) Two sound modes ($\omega_\pm$).}
+At low $k$ these are propagating modes with
+\begin{equation}
+\label{eq:rel-bdnk-sound}
+\omega_\pm = \pm c_s\,k - \tfrac{i}{2}\,\Gamma_s\,k^2
+  + \mathcal{O}(k^3).
+\end{equation}
+The real part gives propagation at the sound speed; the imaginary part
+gives viscous damping.  The BDNK frame corrections enter at
+$\mathcal{O}(k^3)$ and ensure $|\mathrm{Re}\,\omega/k| \leq c$.
+
+\paragraph{(ii) One thermal mode ($\omega_T$).}
+This is a purely damped mode:
+\begin{equation}
+\label{eq:rel-bdnk-thermal}
+\omega_T = -i\,\kappa_T\,k^2
+  + i\,\bigl(\kappa_T^2/c^2\bigr)\,k^4
+  + \mathcal{O}(k^6).
+\end{equation}
+The leading term is Fourier diffusion; the $k^4$ correction is the
+BDNK causality term.  There is no second thermal mode (unlike
+Israel--Stewart, which has an additional transient relaxation mode at
+$\omega \sim -i/\tau_q$).
+
+\subsection{Damping rates at $k = k_{\mathrm{crit}}$ for NS crust}
+
+For the inner neutron star crust at $\rho \sim 10^{13}\;\mathrm{g\,cm^{-3}}$,
+$T \sim 10^9$\,K, and ocean depth $d = 10$\,m, the critical wavenumber is
+$k_{\mathrm{crit}} = \pi/d \approx 3.1 \times 10^{-3}\;\mathrm{cm^{-1}}$.
+With $c_s \approx 2.4 \times 10^{9}\;\mathrm{cm\,s^{-1}}$,
+$\nu_{\mathrm{rel}} \approx 10^5\;\mathrm{cm^2\,s^{-1}}$, and
+$\kappa_T \approx 10^5\;\mathrm{cm^2\,s^{-1}}$:
+\begin{align}
+\omega_+ &\approx +7.5 \times 10^6 - 6.5 \times 10^{-1}\,i
+  \;\mathrm{s^{-1}} \quad\text{(forward sound)}, \nonumber\\
+\omega_- &\approx -7.5 \times 10^6 - 6.5 \times 10^{-1}\,i
+  \;\mathrm{s^{-1}} \quad\text{(backward sound)}, \nonumber\\
+\omega_T &\approx -9.7 \times 10^{-1}\,i
+  \;\mathrm{s^{-1}} \quad\text{(thermal diffusion)}.
+\label{eq:rel-bdnk-ns-modes}
+\end{align}
+The sound modes propagate at $\sim 10^{9}\;\mathrm{cm\,s^{-1}}$ with
+viscous damping times of $\sim 1.5$\,s, while the thermal mode decays
+on a time scale of $\sim 1$\,s.  All signal speeds are far below~$c$,
+confirming that BDNK causality corrections are negligible at these
+macroscopic scales.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_bdnk_full_dispersion.pdf}
+\caption{Full BDNK dispersion relation for NS crust parameters.
+  (a)~$|\mathrm{Re}(\omega)|$ vs.~$k$: two sound modes follow
+  $c_s k$ at low $k$.  (b)~$|\mathrm{Im}(\omega)|$ vs.~$k$: damping
+  rates follow $\kappa_T k^2$ (thermal) and $\Gamma_s k^2$ (sound).
+  (c)~Mode trajectories in the complex $\omega$ plane.
+  (d)~Numerical values at $k_{\mathrm{crit}}$.}
+\label{fig:bdnk-full-dispersion}
+\end{figure}
+
 \section*{References}
 
 \begin{enumerate}
 \item F.~S.~Bemfica et al., \textit{Phys.\ Rev.\ D} \textbf{98}, 104064 (2018).
 \item P.~Kovtun, \textit{JHEP} \textbf{10}, 034 (2019).
-\item F.~S.~Bemfica et al., \textit{Phys.\ Rev.\ D} \textbf{107}, 076012 (2023).
+\item F.~S.~Bemfica, M.~M.~Disconzi, J.~Noronha, and P.~Kovtun,
+  \textit{Phys.\ Rev.\ D} \textbf{107}, 076012 (2023).
+\item R.~E.~Hoult and P.~Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106}, 066023 (2022).
+\item A.~Pandya, E.~R.~Most, and F.~Pretorius, arXiv:2209.09265 (2022).
 \item W.~Israel and J.~M.~Stewart, \textit{Ann.\ Phys.}\ \textbf{118}, 341 (1979).
 \item S.~Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability}, OUP (1961).
 \item P.~Romatschke and U.~Romatschke, \textit{Relativistic Fluid Dynamics}, CUP (2019).

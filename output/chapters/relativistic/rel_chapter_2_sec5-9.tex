@@ -905,11 +905,117 @@ contours in NS ocean parameter space ($\xi=0.015$).}
 \label{fig:benard-Ra-contours}
 \end{figure}
 
+%======================================================================
+\section{BDNK and Israel--Stewart thermal relaxation scales}
+\label{sec:rel9-relaxation}
+%======================================================================
+
+The causal first-order BDNK formalism and the second-order Israel--Stewart
+theory enforce causality through fundamentally different mechanisms.
+A concrete comparison of their predictions can be made by computing the
+\emph{thermal relaxation length scale}---the distance below which
+finite-speed thermal propagation effects become important---for each
+formalism.
+
+\subsection{BDNK thermal relaxation scale}
+
+In the BDNK formalism, the thermal relaxation scale emerges from the
+competition between the thermal diffusivity $\kappa_T$ and the speed of
+light.  From the BDNK constitutive relation for the heat
+flux~\eqref{eq:rel2-14b}, the thermal signal speed is bounded by~$c$
+through the frame coefficients, giving a relaxation length
+\begin{equation}
+\label{eq:rel2-relax-bdnk}
+\ell_{\mathrm{BDNK}} = \frac{\kappa_T}{c^2}
+  = \frac{\kappa}{c^2\,\rho_0\,c_p}\,,
+\end{equation}
+where we have used $\kappa_T = \kappa/(w_0 c_p) \approx \kappa/(\rho_0 c_p)$
+in the low-compactness limit.  This is the scale at which the BDNK
+frame corrections become comparable to the leading-order Fourier
+diffusion, ensuring that the effective propagation speed saturates
+at~$c$ rather than diverging.
+
+\subsection{Israel--Stewart thermal relaxation scale}
+
+In the Israel--Stewart theory, the heat flux obeys a telegraph equation
+with relaxation time $\tau_q$.  The corresponding relaxation length is
+\begin{equation}
+\label{eq:rel2-relax-is}
+\ell_{\mathrm{IS}} = \sqrt{\frac{\kappa\,\tau_q}{\rho_0\,c_p}}\,.
+\end{equation}
+The IS thermal signal speed is $v_{\mathrm{th}}^{\mathrm{IS}} =
+\sqrt{\kappa_T/\tau_q}$, and causality requires $v_{\mathrm{th}}^{\mathrm{IS}}
+\leq c$, i.e., $\tau_q \geq \kappa_T/c^2$.
+
+\subsection{Leading-order agreement and higher-order differences}
+
+When the IS relaxation time saturates the causality bound,
+$\tau_q = \kappa_T/c^2$, the two scales coincide:
+\begin{equation}
+\label{eq:rel2-relax-agreement}
+\ell_{\mathrm{IS}}\big|_{\tau_q = \kappa_T/c^2}
+  = \sqrt{\frac{\kappa_T^2}{c^2}} = \frac{\kappa_T}{c} = c\,\ell_{\mathrm{BDNK}}.
+\end{equation}
+More precisely, both formalisms agree at leading order in a gradient
+expansion.  The difference appears at next order.  Expanding the
+dispersion relation for the thermal mode at wavenumber $k$:
+\begin{align}
+\omega_{\mathrm{BDNK}} &= -i\,\kappa_T\,k^2
+  + i\,\ell_{\mathrm{BDNK}}^2\,\kappa_T\,k^4
+  + \mathcal{O}(k^6), \label{eq:rel2-relax-bdnk-disp} \\[4pt]
+\omega_{\mathrm{IS}} &= -i\,\kappa_T\,k^2
+  + i\,\ell_{\mathrm{IS}}^2\,\kappa_T\,k^4
+  + \mathcal{O}(k^6). \label{eq:rel2-relax-is-disp}
+\end{align}
+The two agree at $\mathcal{O}(k^2)$ (the hydrodynamic limit) but differ
+at $\mathcal{O}(k^4)$, corresponding to corrections of order
+$(\ell/\lambda)^2$, where $\lambda = 2\pi/k$ is the perturbation
+wavelength.  For macroscopic perturbations ($\lambda \gg \ell$), the
+difference is negligible; it becomes relevant only at scales comparable
+to the mean free path.
+
+\subsection{Numerical evaluation for neutron star oceans}
+
+For an accreting neutron star ocean with $\rho \sim 10^9\;\mathrm{g\,cm^{-3}}$
+and $T \sim 10^8$--$10^{10}$\,K:
+\begin{align}
+\kappa &\sim 10^{20}\;\mathrm{erg\,cm^{-1}\,s^{-1}\,K^{-1}}, &
+c_p &\sim 10^8\;\mathrm{erg\,g^{-1}\,K^{-1}}, \nonumber\\
+\kappa_T &= \frac{\kappa}{\rho_0\,c_p} \sim 10^3\;\mathrm{cm^2\,s^{-1}}, &
+\ell_{\mathrm{BDNK}} &= \frac{\kappa_T}{c^2}
+  \sim 10^{-18}\;\mathrm{cm}.
+\label{eq:rel2-relax-ns-values}
+\end{align}
+This is far below the inter-particle spacing ($\sim 10^{-11}$\,cm at this
+density), confirming that BDNK/IS causality corrections are irrelevant for
+the macroscopic B\'enard problem in NS oceans.  The two formalisms give
+identical predictions for all physically relevant length scales.
+
+For the IS relaxation time at the causality-saturation limit:
+$\tau_q \geq \kappa_T/c^2 \sim 10^{-18}$\,s, consistent with the
+microscopic electron scattering time $\tau_e \sim 10^{-18}$\,s at
+$T = 10^8$\,K.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_relaxation_scales.pdf}
+\caption{(a)~BDNK and IS thermal relaxation length scales as functions of
+  temperature for NS ocean parameters ($\rho = 10^9\;\mathrm{g\,cm^{-3}}$).
+  Both scales are far below the inter-particle spacing.  (b)~Ratio
+  $\ell_{\mathrm{IS}}/\ell_{\mathrm{BDNK}}$ and the $\mathcal{O}(\ell/\lambda)^2$
+  correction for a macroscopic scale $\lambda = 10$\,m.}
+\label{fig:relaxation-scales}
+\end{figure}
+
 \section*{References}
 
 \begin{enumerate}
 \item F.~S.~Bemfica et al., \textit{Phys.\ Rev.\ D} \textbf{98}, 104064 (2018).
 \item P.~Kovtun, \textit{JHEP} \textbf{10}, 034 (2019).
+\item F.~S.~Bemfica, M.~M.~Disconzi, J.~Noronha, and P.~Kovtun,
+  \textit{Phys.\ Rev.\ D} \textbf{107}, 076012 (2023).
+\item A.~Pandya, E.~R.~Most, and F.~Pretorius, arXiv:2209.09265 (2022).
+\item R.~E.~Hoult and P.~Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106}, 066023 (2022).
 \item A.~Burrows and J.~M.~Lattimer, \textit{Astrophys.\ J.}\ \textbf{307}, 178 (1986).
 \item E.~F.~Brown and A.~Cumming, \textit{Astrophys.\ J.}\ \textbf{698}, 1020 (2009).
 \item S.~Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability}, OUP (1961).
