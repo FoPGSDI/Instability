@@ -832,3 +832,138 @@ Lab MRI: Ji et al.~\cite{Ji2001}, Nornberg et al.~\cite{Nornberg2010}.
 Dead zones: Balbus \& Hawley~\cite{BalbusHawley1998}, Lesur~\cite{Lesur2021}.
 MRI stresses: Pessah, Chan \& Psaltis~\cite{PessahChanPsaltis2008}.
 BDNK: Bemfica et al.~\cite{BemficaDN2018}, Kovtun~\cite{Kovtun2019}.
+
+%% ================================================================
+\section{Bulk viscosity in magnetised neutron star matter}
+\label{sec:rel-9-bulk-MHD}
+%% ================================================================
+
+The MHD Couette analysis of the preceding sections has focused on shear
+viscosity and resistivity.  In neutron star interiors, however, bulk
+viscosity arising from out-of-equilibrium $\beta$-reactions can be
+comparable to or larger than the shear viscosity, and its interaction
+with a strong magnetic field modifies the dissipative MHD stability
+problem.
+
+\subsection{Non-perturbative bulk viscosity formalism}
+\label{sec:rel-9-bulk-formalism}
+
+The thermodynamic framework of \citet{GavassinoBulkViscosity2020} maps
+any source of bulk viscosity onto a set of effective chemical reactions
+governed by telegraph-type relaxation equations
+(equation~\eqref{eq:rel-7-telegraph}).  The resulting Israel--Stewart
+model is causal and symmetric-hyperbolic
+\citep{GavassinoBulkViscosity2020,GavassinoExtendingIS2025}, making it
+suitable for coupling to the relativistic MHD system.
+
+The extension by \citet{GavassinoExtendingIS2025} is of particular
+relevance here.  Standard Israel--Stewart theory develops pathologies
+(superluminal signal propagation, violation of the second law) when
+the bulk stress $\Pi$ becomes comparable to the equilibrium pressure
+$P$.  This can occur in the post-merger environment when strong MHD
+turbulence drives rapid compressions and rarefactions.
+\citet{GavassinoExtendingIS2025} constructs a class of causal,
+stable, symmetric-hyperbolic models that extend IS theory to
+arbitrarily large $|\Pi|$, with the key property that the total
+pressure $P+\Pi$ is prevented from becoming negative or exceeding the
+energy density by the structure of the evolution equations themselves.
+For a polytropic equilibrium EOS with index $\Gamma$, the extended
+model preserves causality and the second law for all continuously
+differentiable flows.
+
+\subsection{Bulk viscosity and the MRI dead zone}
+\label{sec:rel-9-bulk-MRI}
+
+The MRI growth rate $\sigma_{\mathrm{MRI}}$ is limited by all
+dissipative processes: shear viscosity ($\eta$), resistivity
+($\eta_{\mathrm{m}}$), and bulk viscosity ($\zeta$).  When bulk
+viscosity is included, the effective viscous damping rate becomes
+\begin{equation}
+\label{eq:rel-9-nu-eff}
+\nu_{\mathrm{eff}} = \frac{\eta}{\varepsilon+p}
+  + \frac{\zeta_{\mathrm{eff}}(\omega)}{\varepsilon+p}\,
+  \left(\frac{k_{\parallel}}{k}\right)^{2},
+\end{equation}
+where $k_{\parallel}/k$ is the compressive fraction of the wavevector.
+For compressible perturbations ($k_{\parallel}\neq 0$), the
+frequency-dependent bulk viscosity (equation~\eqref{eq:rel-7-zeta-eff})
+adds to the damping, widening the dead zone boundary:
+\begin{equation}
+\label{eq:rel-9-Rm-bulk}
+Rm_{\mathrm{crit}}^{\mathrm{bulk}}
+= Rm_{\mathrm{crit,rel}}\left(
+  1 + \frac{\zeta}{\eta}\frac{1}{1+\omega^{2}\tau_{M}^{2}}
+  \right).
+\end{equation}
+In the hot interior of a NS merger remnant, where $T\sim 10$--$50\,$MeV,
+the ratio $\zeta/\eta$ can reach values of order 10--100 on timescales
+comparable to the MRI growth time
+\citep{GavassinoBulkViscosity2020,CamelioGavassinoBulkII2022}.  This
+suggests that bulk viscosity may significantly suppress the MRI in the
+early post-merger phase, with implications for the efficiency of
+angular-momentum transport and the lifetime of the remnant.
+
+The rheological analysis of \citet{GavassinoNoronhaRheology2023}
+further shows that NS matter behaves as a relativistic pseudoplastic
+material: the effective bulk viscosity coefficient
+$\zeta_{\mathrm{eff}} = -\Pi/\theta$ decreases with increasing
+expansion rate $\theta = \nabla_{\mu}u^{\mu}$, so that the MRI
+suppression is strongest at low compression frequencies and weakest
+during violent post-merger dynamics.
+
+%% =====================================================================
+%%  Gavassino integration: Plasma oscillations within IS theory
+%%  Paper 46: arXiv:2511.14344
+%% =====================================================================
+\section{Plasma oscillations and non-hydrodynamic modes in resistive MHD}
+\label{sec:rel-9-plasma-oscillations}
+
+\begin{relcorrection}
+\textbf{Oscillatory non-hydrodynamic modes in charged fluids.}
+The MHD stability analyses of this chapter assume that all
+non-hydrodynamic modes (gapped excitations absent in the
+Navier--Stokes limit) are purely decaying.  However,
+Gavassino~\cite{GavassinoPlasmaOscillationsIS2025} has demonstrated
+that this assumption can fail in resistive MHD when the
+Israel--Stewart relaxation equation for the electric current couples
+to the Amp\`ere--Maxwell law.
+
+The mechanism is as follows.  In the Drude model for electrical
+conduction, the current relaxation equation
+$\tau\,\dot{J}^j + J^j = \sigma\,E^j$ combines with the
+displacement-current term $\partial_t E^j = -J^j$ (at zero
+wavenumber) to produce the system
+\begin{equation}
+  \tau\,\ddot{E}^j + \dot{E}^j + \frac{n_e e^2}{m_e}\,E^j = 0,
+  \label{eq:rel-9-plasma-osc}
+\end{equation}
+which describes damped harmonic oscillations at the plasma frequency
+$\omega_p^2 = n_e e^2/m_e$, provided
+$\omega_p\,\tau > \tfrac{1}{2}$.  These are ordinary plasma
+oscillations, arising naturally within the Israel--Stewart framework
+rather than being an artifact of it.
+
+The oscillatory character is explained by the \emph{Onsager--Casimir
+principle}: the distribution function $f$ is even under PT
+transformation, while the electric field $E^j$ is odd.  This
+distinct symmetry prevents the two degrees of freedom from coupling
+purely dissipatively, and the resulting anti-symmetric coupling
+generates oscillations.
+
+\paragraph{Implications for MHD stability.}
+Two key consequences for the analyses in this chapter:
+\begin{enumerate}
+  \item In a kinetic theory of charged particles, there can be
+    \emph{at most one pair} of oscillatory non-hydrodynamic modes
+    per spatial dimension; all other modes lie on the imaginary axis.
+    This constrains the complexity of the non-hydrodynamic spectrum
+    that must be captured by truncated theories.
+  \item The plasma oscillation frequency $\omega_p$ sets a natural
+    scale separating ``MHD-like'' behaviour ($\omega \ll \omega_p$)
+    from the regime where displacement-current effects modify the
+    stability boundaries.  For neutron star interiors,
+    $\omega_p \sim 10^{21}\,\mathrm{s}^{-1}$, far above any MHD
+    frequency of interest, confirming that the MRI and dead-zone
+    analyses above remain unaffected by plasma oscillation effects.
+\end{enumerate}
+\end{relcorrection}

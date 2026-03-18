@@ -1,0 +1,963 @@
+% I dedicate this paper to my lovely bears Orsetto and Lovlino <3
+
+%\documentclass[useAMS,usenatbib,prd,preprint]{revtex4-1}
+\documentclass[a4paper, amsfonts, amssymb, amsmath, reprint, showkeys, nofootinbib, twoside,notitlepage,onecolumn]{revtex4-2}
+%\documentclass[prd, amsfonts, amssymb, amsmath, preprint, showkeys, nofootinbib, twoside]{revtex4-1}
+
+
+\def\aj{{AJ}}                   % Astronomical Journal
+
+\def\actaa{{Acta Astron.}}      % Acta Astronomica
+\def\araa{{ARA\&A}}             % Annual Review of Astron and Astrophys
+\def\apj{{ApJ}}                 % Astrophysical Journal
+\def\apjl{{ApJ}}                % Astrophysical Journal, Letters
+\def\apjs{{ApJS}}               % Astrophysical Journal, Supplement
+\def\ao{{Appl.~Opt.}}           % Applied Optics
+\def\apss{{Ap\&SS}}             % Astrophysics and Space Science
+\def\aap{{A\&A}}                % Astronomy and Astrophysics
+\def\aapr{{A\&A~Rev.}}          % Astronomy and Astrophysics Reviews
+\def\aaps{{A\&AS}}              % Astronomy and Astrophysics, Supplement
+\def\azh{{AZh}}                 % Astronomicheskii Zhurnal
+\def\baas{{BAAS}}               % Bulletin of the AAS
+\def\bac{{Bull. astr. Inst. Czechosl.}}
+                % Bulletin of the Astronomical Institutes of Czechoslovakia 
+\def\caa{{Chinese Astron. Astrophys.}}
+                % Chinese Astronomy and Astrophysics
+\def\cjaa{{Chinese J. Astron. Astrophys.}}
+                % Chinese Journal of Astronomy and Astrophysics
+\def\icarus{{Icarus}}           % Icarus
+\def\jcap{{J. Cosmology Astropart. Phys.}}
+                % Journal of Cosmology and Astroparticle Physics
+\def\jrasc{{JRASC}}             % Journal of the RAS of Canada
+\def\memras{{MmRAS}}            % Memoirs of the RAS
+\def\mnras{{MNRAS}}             % Monthly Notices of the RAS
+\def\na{{New A}}                % New Astronomy
+\def\nar{{New A Rev.}}          % New Astronomy Review
+\def\pra{{Phys.~Rev.~A}}        % Physical Review A: General Physics
+\def\prb{{Phys.~Rev.~B}}        % Physical Review B: Solid State
+\def\prc{{Phys.~Rev.~C}}        % Physical Review C
+\def\prd{{Phys.~Rev.~D}}        % Physical Review D
+\def\pre{{Phys.~Rev.~E}}        % Physical Review E
+\def\prl{{Phys.~Rev.~Lett.}}    % Physical Review Letters
+\def\pasa{{PASA}}               % Publications of the Astron. Soc. of Australia
+\def\pasp{{PASP}}               % Publications of the ASP
+\def\pasj{{PASJ}}               % Publications of the ASJ
+\def\rmxaa{{Rev. Mexicana Astron. Astrofis.}}%
+                % Revista Mexicana de Astronomia y Astrofisica
+\def\qjras{{QJRAS}}             % Quarterly Journal of the RAS
+\def\skytel{{S\&T}}             % Sky and Telescope
+\def\solphys{{Sol.~Phys.}}      % Solar Physics
+\def\sovast{{Soviet~Ast.}}      % Soviet Astronomy
+\def\ssr{{Space~Sci.~Rev.}}     % Space Science Reviews
+\def\zap{{ZAp}}                 % Zeitschrift fuer Astrophysik
+\def\nat{{Nature}}              % Nature
+\def\iaucirc{{IAU~Circ.}}       % IAU Cirulars
+\def\aplett{{Astrophys.~Lett.}} % Astrophysics Letters
+\def\apspr{{Astrophys.~Space~Phys.~Res.}}
+                % Astrophysics Space Physics Research
+\def\bain{{Bull.~Astron.~Inst.~Netherlands}} 
+                % Bulletin Astronomical Institute of the Netherlands
+\def\fcp{{Fund.~Cosmic~Phys.}}  % Fundamental Cosmic Physics
+\def\gca{{Geochim.~Cosmochim.~Acta}}   % Geochimica Cosmochimica Acta
+\def\grl{{Geophys.~Res.~Lett.}} % Geophysics Research Letters
+\def\jcp{{J.~Chem.~Phys.}}      % Journal of Chemical Physics
+\def\jgr{{J.~Geophys.~Res.}}    % Journal of Geophysics Research
+\def\jqsrt{{J.~Quant.~Spec.~Radiat.~Transf.}}
+                % Journal of Quantitiative Spectroscopy and Radiative Transfer
+\def\memsai{{Mem.~Soc.~Astron.~Italiana}}
+                % Mem. Societa Astronomica Italiana
+\def\nphysa{{Nucl.~Phys.~A}}   % Nuclear Physics A
+\def\physrep{{Phys.~Rep.}}   % Physics Reports
+\def\physscr{{Phys.~Scr}}   % Physica Scripta
+\def\planss{{Planet.~Space~Sci.}}   % Planetary Space Science
+\def\procspie{{Proc.~SPIE}}   % Proceedings of the SPIE
+
+
+\bibliographystyle{apsrev4-1}
+
+
+
+\usepackage{amsmath,amstext}
+\usepackage[T1]{fontenc}
+%\usepackage{apjfonts} 
+%\usepackage[figure,figure*]{hypcap}
+
+%\usepackage{amsbsy}
+\usepackage{amssymb}
+%\usepackage{amsmath}
+\input{epsf}
+\usepackage{graphicx}
+\usepackage{ae,aecompl}
+
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{cleveref}
+\usepackage{tensor}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mhchem}
+\usepackage{cancel}
+\usepackage{amsthm}
+\usepackage{upgreek}
+\usepackage{mathrsfs}
+\usepackage{slashed}
+
+
+\usepackage{color}
+\newcommand{\todo}[1]{{\textcolor{blue}{\texttt{TODO: #1}} }}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\vect}[1]{\mathbf{{#1}}}
+\newcommand{\parallelsum}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\spc}{\quad \quad \quad}
+\newcommand{\paral}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\facciatabianca}{\newpage\shipout\null\stepcounter{page}}
+\newcommand{\riga}{\textcolor{white}{-}}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}} 
+
+\newcommand{\Kn}{{\textup{Kn}}}
+\newcommand{\w}{{\mathfrak{w}}}
+\newcommand{\q}{{\mathfrak{q}}}
+\def\deq{\hat{\delta}}
+
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\beq{\begin{eqnarray}}
+\def\eeq{\end{eqnarray}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\theoremstyle{corollary}
+\newtheorem{corollary}{Corollary}
+
+\begin{document}
+\title{Dispersion relations of relativistic radiation hydrodynamics}
+\author{ L.~Gavassino}
+\affiliation{
+Department of Mathematics, Vanderbilt University, Nashville, TN, USA
+}
+
+
+\begin{abstract}
+We compute the linearised dispersion relations of shear waves, heat waves, and sound waves in relativistic ``matter+radiation'' fluids with grey absorption opacities. This is done by solving radiation hydrodynamics perturbatively in the ratio ``radiation stress-energy''/``matter stress-energy''. The resulting expressions $\omega \, {=} \, \omega(k)$ accurately describe the hydrodynamic evolution for any $k\, {\in}\, \mathbb{R}$. General features of the dynamics (e.g., covariant stability, propagation speeds, and damping of discontinuities) are argued directly from the analytic form of these dispersion relations.
+\end{abstract} 
+
+
+
+
+
+\maketitle
+
+
+\section{Introduction}\label{Introne}
+\vspace{-0.2cm}
+
+Every fluid is filled with a gas of thermal photons. Such photons must participate in the motion of the fluid, since they can exchange energy and momentum with the other constituent particles. On Earth, the backreaction that these photons exert on the motion of matter is usually small, and may be neglected. However, if one considers hotter environments, such as stars (especially the most massive ones\footnote{\label{footnes1}The dimensionless number that quantifies the importance of radiation-hydrodynamic effects in an astrophysical gas or plasma is the ratio $\mathcal{R}=\text{``Radiation pressure''}/\text{``Gas pressure''} \sim T^4/(nT)$, where $T$ is the temperature and $n$ the gas number density (natural units are adopted, so that $c{=}\hbar{=}k_B{=}1$). For atmospheric air, one has $\mathcal{R}\sim 10^{-11}$. In a star with mass $M$ and composition $\mu$, the ratio $\mathcal{R}$ is related to Eddington's $\beta$-parameter by the identity $\beta=(1{+}\mathcal{R})^{-1}$, and we have $\mathcal{R}(1{+}\mathcal{R})^3  \approx 0.003 \, \mu^4 (M/M_\odot)^2$ \cite[\S 5.6]{Prialnik2009}.}), photons can become the main engine driving a flow. The branch of fluid mechanics that studies the impact of thermal photons on the macroscopic motion of fluids is called ``radiation hydrodynamics'', and its applications span the whole field of relativistic astrophysics \cite{Pomraning1973,mihalas_book,CastorRadiationBook_2004,Thomas1930,Weinberg1971,UdeyIsrael1982,Thorne1981,AnileRadiazion1992,Farris2008,Sadowski2013}.
+
+From a fundamental physics perspective, radiation hydrodynamics is also particularly interesting in that it is a hybrid model, where matter is governed by fluid mechanics (relativistic or not), and radiation is governed by relativistic kinetic theory \cite{Groot1980RelativisticKT}. Thus, solving the equations of radiation hydrodynamics requires solving the hydrodynamic equations for the matter fields, coupled with the full Boltzmann equation for the radiation distribution function $f(x^\alpha,p^\alpha)$, which counts how many photons are found at a spacetime location $x^\alpha$ and occupy a state with four-momentum $p^\alpha$ \cite[\S 22.6]{MTW_book}. This gives rise to a very rich phenomenology, which is usually not observed within hydrodynamics or ideal-gas kinetic theory alone, but explicitly involves the combination of the two. 
+
+%This is computationally very expensive. Hence, in numerical simulations, one usually relies on approximate descriptions of radiation, where photons are modeled as an effective ``hydrodynamic'' component \cite{Thomas1930,Weinberg1971,UdeyIsrael1982,Thorne1981,AnileRadiazion1992,Farris2008,Sadowski2013}.
+
+In this article, we study the collective excitations of radiation-hydrodynamic systems in full special relativity. Specifically, we linearize the equations of motion about global equilibrium, and we compute the dispersion relations of those quasi-normal modes that involve a fluctuation of the matter component. These are the so-called ``hydrodynamic modes'' \cite{McLennan1965,Kurkela:2017xis,Grozdanov2019,Romatschke:2015gic,GavassinoNonHydro2022,GavassinoGapless2024rck,GavassinoChapmanEnskog2024xwf}, and they are 5 in total, which can be classified as follows: 2 shear waves, 1 heat wave, and 2 sound waves. We will show that, if \textbf{(a)} scattering is neglected, \textbf{(b)} the opacity is grey, and \textbf{(c)} the stress-energy tensor of radiation is small compared to that of matter (e.g. $\mathcal{R}\, {\lesssim}\, 0.01$, see footnote \ref{footnes1}), then the linearised dispersion relations are ($\omega\,{=}\,$``frequency''$+i \times$ ``growing rate''$\,{\in}\, \mathbb{C}$, $k\,{=}\,$``wavenumber''$\,{\in}\, \mathbb{R}$, $\tau \, {=}\,$``photon mean free path''$\, >0$):
+\begin{flalign}\label{mainformula}
+\text{Shear waves:} \quad \quad \omega(k) =-i \dfrac{15D_s}{2\tau^2} \bigg[ \dfrac{2}{3}+\dfrac{1}{(k\tau)^2}-\bigg( 1{+}\dfrac{1}{(k\tau)^2} \bigg) \dfrac{\arctan(k\tau)}{k\tau}  \bigg] \, , &&
+\end{flalign}
+\begin{flalign}\label{mainformula2}
+\text{Heat waves:} \quad \quad \, \, \omega(k) =-i \dfrac{3D_h}{\tau^2} \bigg[1-\dfrac{\arctan(k\tau)}{k\tau} \bigg]\, , &&
+\end{flalign}
+\begin{flalign}\label{mainformula3}
+\text{Sound waves:} \quad \! \quad  \omega(k) = c_s k -i \dfrac{15 D_s}{2\tau^2} \bigg[ \dfrac{1}{3}-\dfrac{1{-}ic_s k\tau}{(k\tau)^2} +\dfrac{(1{-}ic_s k\tau)^2}{(k\tau)^3} \arctan\bigg(\dfrac{k\tau}{1{-}ic_s k\tau} \bigg)   \bigg] \, , &&
+\end{flalign}
+where $D_s$ and $D_h$ are two effective (radiation-induced) diffusivities, and $c_s$ is the sound speed of matter alone\footnote{\label{kpvanishes}Equation \eqref{mainformula3} is derived under the additional assumption that the isobaric thermal expansivity of the matter component vanishes.}. Then, we will discuss the mathematical properties and physical implications of \eqref{mainformula}-\eqref{mainformula3}.
+
+
+%We will discuss the physical implications of \eqref{mainformula}-\eqref{mainformula3}, comparing them with previous predictions from the literature. 
+
+Some of the results of this article are not entirely new. For example, equation \eqref{mainformula2} for heat waves was computed for the first time by \citet{Spiegel1957}. However, our work differs from the previous literature in two aspects. First, the matter component is evolved self-consistently, and no dynamic constraint is assumed, while previous analyses make restrictive assumptions on the flow. For example, \citet{Spiegel1957} holds the matter component at rest and, as a result, their coefficient $D_h$ is, strictly speaking, incorrect. Secondly, our treatment of both radiation and matter is fully relativistic. This is especially important for sound waves, whose speed may become comparable to the speed of radiation itself. Furthermore, in relativity, accelerations are sources of heat \cite{Eckart40,GavassinoLyapunov_2020}, which increases the damping rate of sound waves.
+
+
+
+Throughout the article, we work in Minkowski spacetime, with metric signature $(-,+,+,+)$, and we adopt natural\ units, such that $c=\hbar=k_B=1$. Greek indices run from 0 to 3 (with $x^0=t$), while Latin indices run from 1 to 3.
+
+
+\section{Derivation of the disperison relations}\label{derivZia}
+
+In this section, we derive the dispersion relations \eqref{mainformula}-\eqref{mainformula3} by solving the equations of radiation hydrodynamics.
+
+As explained in the introduction, we are dealing with a ``radiation+matter'' fluid, i.e. an interacting mixture of two distinct physical components: a material medium $M$ with negligibly short mean free path, plus a radiation gas $R$ of photons with finite mean free path $\tau>0$. 
+
+%The medium $M$ is modeled as an ideal fluid in local thermodynamic equilibrium (because its relaxation timescale is assumed instantaneous), while $R$ is in general out of local equilibrium and is described using relativistic kinetic theory. This means that we will track the full radiation distribution function $f(x^\alpha,p^\alpha)$ explicitly, where $p^\alpha$ is the photon four-momentum (with $p^\alpha p_\alpha=0$).
+
+
+\subsection{The Matter (M) sector}\label{Mmmmm}
+
+The medium $M$ is an ideal fluid in local thermodynamic equilibrium (because its relaxation times are instantaneous), with a well-defined flow velocity field $u^\mu$, and with thermodynamic fields $\{\rho,P,s,n,T,\mu \}$, representing respectively energy density, pressure, entropy density, baryon density, temperature, and baryon chemical potential. These fields are related by usual thermodynamic identities, like the first law of thermodynamics, the Gibbs-Duhem relation, and the Euler relation, respectively:
+\begin{equation}
+\begin{split}
+d\rho ={}& T \, ds +\mu \, dn \, , \\
+dP ={}& s \, dT +n \, d\mu \, , \\
+\rho{+}P ={}& Ts +\mu n \, . \\
+\end{split}
+\end{equation}
+By assumption, the stress-energy tensor and baryon current associated with $M$ are those of an ideal fluid:
+\begin{equation}
+\begin{split}
+T_M^{\mu \nu}={}& (\rho{+}P)u^\mu u^\nu +P g^{\mu \nu} \, ,\\
+J_M^\mu ={}& n u^\mu \, . \\
+\end{split}
+\end{equation}
+
+
+\subsection{The Radiation (R) sector}
+
+The kinetic state of the radiation component $R$ is fully characterized by its invariant distribution function $f(x^\alpha,p^\alpha)$ \cite{MTW_book}, where $p^\alpha$ is the photon four-momentum (with $p^\alpha p_\alpha=0$).
+We assume that matter-radiation interactions occur solely through the absorption and emission of photons by the medium $M$ [see section \ref{Introne}, assumption \textbf{(a)}]. Then, recalling that $M$ is in local equilibrium, the radiative Boltzmann equation for photons is given by \cite[\S 92]{mihalas_book},
+\begin{equation}\label{Boltzmann}
+p^\mu \partial_\mu f = \dfrac{p^\mu u_\mu}{\tau} (f-f_{\text{eq}}) \, ,
+\end{equation}
+where we recall that $u^\mu$ is the flow velocity of the medium $M$. For simplicity, we make the standard ``grey opacity'' assumption [see section \ref{Introne}, assumption \textbf{(b)}], according to which $\tau$ is a constant, independent of $p^\mu$. Note that the right-hand side of \eqref{Boltzmann} can be divided into two parts. The part ``$p^\mu u_\mu f/\tau $'' is the sink term describing absorption processes, while the part ``$-p^\mu u_\mu f_{\text{eq}}/\tau$'' is the source term describing emission processes. As usual, the second term is related to the first by the Kirchhoff-Planck relation \cite[\S 72]{mihalas_book}, according to which the source and the sink must cancel out when radiation is in thermal equilibrium with matter, namely when $f$ coincides with the Planckian distribution
+\begin{equation}\label{equilub}
+    f_\text{eq}= \dfrac{1}{e^{-\beta_\nu p^\nu} -1}   \spc (\text{with }\beta_\nu=u_\nu/T) \, ,
+\end{equation}
+where the field $\beta^\nu$ is the ``inverse-temperature four-vector'' \cite{Israel_Stewart_1979,BecattiniBeta2016,GavassinoTermometri} of the medium. 
+The stress-energy tensor and baryon current of radiation can be expressed in terms of the kinetic distribution function $f$ as follows \cite[\S 91]{mihalas_book}\cite[\S 6.3]{CastorRadiationBook_2004}:
+\begin{equation}\label{stressOne}
+\begin{split}
+T_R^{\mu \nu} ={}& 2 \int \dfrac{d^3 p}{(2\pi)^3 p^0} \, p^\mu p^\nu \, f \, , \\
+J_R^\mu ={}& 0 \, .
+\end{split}
+\end{equation}
+The factor $2$ in the definition of $T_R^{\mu \nu}$ accounts for the spin degeneracy\footnote{We define $f$ as the average occupation number of single-photon states, and we assume that both spin polarizations have equal occupation.}. The baryon current $J_R^\mu$ of radiation vanishes because the photon is its own antiparticle, and thus cannot carry conserved quantum numbers. 
+
+\subsection{Linearised equations of motion}
+
+The dynamical degrees of freedom of radiation hydrodynamics are $\Psi=\{\rho,u^\mu,n,f \}$. Therefore, the conservation laws $\partial_\mu (T_M^{\mu \nu}{+}T_R^{\mu \nu})=0$ and $\partial_\mu (J_M^\mu {+}J_R^\mu)=0$, plus the Boltzmann equation \eqref{Boltzmann}, are enough to fully determine the evolution. We linearized all these equations of motion around a uniform equilibrium state with $u^\mu=(1,0,0,0)$, $\rho =\text{const}$, $n=\text{const}$, and $f=f_\text{eq}$. The result is reported below:
+\begin{flalign}\label{settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad \partial_t \delta \rho+(\rho{+}P)\partial_j \delta u^j + \int \dfrac{2d^3 p}{(2\pi)^3} p^\mu \partial_\mu \delta f =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{settantadue}
+\boxed{u^1} \quad (\rho{+}P)\partial_t \delta u^1+\partial_1 \delta P + \int \dfrac{2d^3 p}{(2\pi)^3} \dfrac{p^1}{p^0} p^\mu \partial_\mu \delta f =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{settantatre}
+\boxed{u^2} \quad (\rho{+}P)\partial_t \delta u^2+\partial_2 \delta P + \int \dfrac{2d^3 p}{(2\pi)^3} \dfrac{p^2}{p^0} p^\mu \partial_\mu \delta f =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{settantquattro}
+\boxed{u^3} \quad (\rho{+}P)\partial_t \delta u^3+\partial_3 \delta P + \int \dfrac{2d^3 p}{(2\pi)^3} \dfrac{p^3}{p^0} p^\mu \partial_\mu \delta f =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{settantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad  \partial_t \delta n +n\partial_j \delta u^j =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{settantasei}
+\boxed{f^{\textcolor{white}{1}}} \quad \dfrac{\tau}{p^0} p^\mu \partial_\mu \delta f + \delta f =f_\text{eq}(1{+}f_{\text{eq}}) \, p^\nu \delta \beta_\nu \, , &&
+\end{flalign}
+where ``$\delta \Psi$'' is the linear perturbation to $\Psi$, and the boxes before the equations serve to keep track of which degree of freedom is evolved by which equation. We search for solutions in the form of sinusoidal waves that propagate in direction 1. This just means that we assume that all quantities have a spacetime dependence of the form $e^{i(kx^1-\omega t)}$, with $k \in \mathbb{R}$ and $\omega \in \mathbb{C}$. With this assumption, equation \eqref{settantasei} reduces to
+\begin{equation}\label{df}
+\delta f= \dfrac{f_\text{eq}(1+f_{\text{eq}}) p^\nu \delta \beta_\nu}{1-i\omega \tau +ik\tau p^1/p^0} \, .
+\end{equation}
+Adopting the decomposition $p^\mu =p^0 \Omega^\mu$, with $\Omega^0=\Omega^j \Omega_j=1$, equations \eqref{settatntuno}-\eqref{settantcinque} become
+\begin{flalign}\label{2settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \omega \delta \rho-k (\rho{+}P) \delta u^1 + \dfrac{\pi T^5}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^\nu \delta \beta_\nu}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{2settantadue}
+\boxed{u^1} \quad  \omega (\rho{+}P) \delta u^1-k \delta P + \dfrac{\pi T^5}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^1 \Omega^\nu \delta \beta_\nu}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{2settantatre}
+\boxed{u^2} \quad  \omega (\rho{+}P) \delta u^2 + \dfrac{\pi T^5}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1)\Omega^2 \Omega^\nu \delta \beta_\nu}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{2settantquattro}
+\boxed{u^3} \quad \omega(\rho{+}P) \delta u^3 + \dfrac{\pi T^5}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^3 \Omega^\nu \delta \beta_\nu}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{2settantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad   \dfrac{\delta n}{n} = \dfrac{k}{\omega}  \delta u^1  \, , &&
+\end{flalign}
+where we have evaluated the integral in the variable $p^0$. The above equations are exact (within the model assumptions), and they can be used to compute all the (gapless \cite{GavassinoNonHydro2022}) dispersion relations of radiation hydrodynamics. The integration element $d^2 \Omega$ is the solid angle in spherical coordinates.
+
+
+\subsection{Shear waves}\label{shearone}
+
+Let us solve equations \eqref{2settatntuno}-\eqref{2settantcinque} for a transversal wave that fluctuates in direction 3, namely for a configuration such that $\delta u^1=\delta u^2=0 \neq \delta u^3$. Then, equation \eqref{2settantcinque} immediately gives $\delta n=0$. Furthermore, $\delta \beta_\nu =T^{-1}(\delta T/T,0,0,\delta u^3)$. Therefore, we have 
+\begin{flalign}\label{3settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \omega \delta \rho + \dfrac{\pi T^4}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) (\delta T/T{+}\Omega^3 \delta u_3)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{3settantadue}
+\boxed{u^1} \quad  -k \delta P + \dfrac{\pi T^4}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^1 (\delta T/T{+}\Omega^3 \delta u_3)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{3settantatre}
+\boxed{u^2} \quad   \dfrac{\pi T^4}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1)\Omega^2 (\delta T/T{+}\Omega^3 \delta u_3)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{3settantquattro}
+\boxed{u^3} \quad \omega(\rho{+}P) \delta u^3 + \dfrac{\pi T^4}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^3 (\delta T/T{+}\Omega^3 \delta u_3)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, . &&
+\end{flalign}
+Equation \eqref{3settantatre} is an identity ``$\, 0{=}0\,$'' due to the factor $\Omega^2$ (the second component of $\Omega^j$) in the integrand, which averages to zero when integrated over the sphere. For a similar reason, the term $\Omega^3 \delta u_3$ averages to zero in equations \eqref{3settatntuno} and \eqref{3settantadue}, which are simultaneously satisfied only when $\delta T=0$ (which implies $\delta \rho{=}\delta P{=}0$, since $\delta n$ also vanishes). Hence, we are left only with equation \eqref{3settantquattro}, where $\delta u^3$ cancels out. Introducing the real dimensionless quantities $\Gamma=-i\omega \tau$ and $\q=k\tau$, we obtain the following \textit{exact} dispersion relation, expressed in an implicit form:
+\begin{equation}\label{www}
+\Gamma +\dfrac{2\pi^2 T^4}{15(\rho{+}P)} \bigg[ \dfrac{2}{3}+\dfrac{1{+}\Gamma}{\q^2}-\bigg( 1{+}\dfrac{(1{+}\Gamma)^2}{\q^2} \bigg) \dfrac{1}{\q} \arctan\bigg( \dfrac{\q}{1{+}\Gamma}\bigg)  \bigg]=0  \, .
+\end{equation}
+This relation can be converted into an exact parametric expression $\{k(r),\omega(r)\}$, see \cite{GavassinoShearRadiation2024jej}. Here, we will examine the limit of \eqref{www} when $T_R^{00}/T_M^{00}\ll 1$ [see section \ref{Introne}, assumption \textbf{(c)}], which will give us a simple formula for $\omega(k)$. To this end, we first fix the value of $\q {\in} \mathbb{R}\backslash \{0\}$, and treat it as a constant. Then, we define a small free parameter
+\begin{equation}\label{lambo}
+    \lambda = \dfrac{2\pi^2 T^4}{15(\rho{+}P)} \sim \dfrac{T_R^{00}}{T_M^{00}} \, .
+\end{equation}
+This allows us to interpret $\Gamma$ a function of $\lambda$, which may be Taylor expanded in $\lambda$, namely $\Gamma(\lambda)=\Gamma(0)+\lambda  \Gamma'(0)+\mathcal{O}(\lambda^2)$. To compute $\Gamma(0)$ and $\Gamma'(0)$, we only need to regard \eqref{www} as an implicit function $F(\lambda,\Gamma(\lambda))=0$. Setting $\lambda=0$, we immediately obtain $\Gamma(0)=0$. Differentiating in $\lambda$ at $0$, we obtain 
+\begin{equation}
+\Gamma'(0)=-\dfrac{\partial_\lambda F(0,0)}{\partial_\Gamma F(0,0)}= -\bigg[ \dfrac{2}{3}+\dfrac{1}{\q^2}-\bigg( 1{+}\dfrac{1}{\q^2} \bigg) \dfrac{\arctan(\q)}{\q}  \bigg] \, . 
+\end{equation}
+Thus, we have an approximate formula for the frequency: $\omega=i\lambda \Gamma'(0)/\tau+\mathcal{O}(\lambda^2)$. Explicitly, this reads
+\begin{equation}\label{seriaccio}
+\begin{split}
+\omega ={}& -i  \dfrac{2\pi^2 T^4}{15(\rho{+}P)\tau} \bigg[ \dfrac{2}{3}+\dfrac{1}{(k\tau)^2}-\bigg( 1{+}\dfrac{1}{(k\tau)^2} \bigg) \dfrac{\arctan(k\tau)}{k\tau}  \bigg] +\mathcal{O}(\lambda^2) \\
+={}& -i  \dfrac{4\pi^2 T^4}{225(\rho{+}P)\tau} \bigg[(k\tau)^2 -\dfrac{3(k\tau)^4}{7} + \dfrac{5(k\tau)^6}{21} -...\bigg] +\mathcal{O}(\lambda^2) \, , \\
+\end{split}
+\end{equation}
+where the series in the second line converges for $|k\tau|<1$. Direct inspection of the first term of such series allows us to read out the diffusion coefficient \cite{HellerBounds2023} of shear waves, namely
+\begin{equation}\label{diffuzio}
+D_s = \dfrac{4\pi^2 T^4 \tau}{225(\rho{+}P)} \, ,
+\end{equation}
+and this finally leads us to the formula we were looking for (note that $ D_s/\tau \sim \lambda$):
+\begin{equation}
+\omega =-i \dfrac{15D_s}{2\tau^2} \bigg[ \dfrac{2}{3}+\dfrac{1}{(k\tau)^2}-\bigg( 1{+}\dfrac{1}{(k\tau)^2} \bigg) \dfrac{\arctan(k\tau)}{k\tau}  \bigg] +\mathcal{O}(D_s^2/\tau^2) \, .
+\end{equation}
+We stress that this formula is a good approximation of kinetic theory for arbitrary values of $k \in \mathbb{R}$.
+
+We also remark that \eqref{mainformula} coincides with the corresponding formula of \cite{GavassinoShearRadiation2024jej}. This is reassuring, since the analysis of \cite{GavassinoShearRadiation2024jej} was based on a purely geometrical argument, while here we have solved all the equations explicitly.
+
+
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=0.62\textwidth]{zeropoint1.pdf}
+% \includegraphics[width=0.62\textwidth]{onepointzero.pdf}
+% 	\caption{Comparison between the exact shear-wave dispersion relation \eqref{www} and the approximate formula \eqref{mainformula}, respectively for $\lambda=0.1$ (upper panel) and $\lambda=1$ (lower panel). The orange surface is the function $F(\Gamma,\q,\lambda)$ appearing on the left-hand side of equation \eqref{www}, while the light blue surface is just the plane $F=0$. Their intersection gives the exact relation $\Gamma(\q,\lambda)$. The dark blue line is the approximate dispersion relation \eqref{mainformula}. We see that, for small $\lambda$ (upper panel), the two curves are indistinguishable. Instead, for $\lambda=1$ (lower panel), there is some small disagreement for intermediate values of $\q$ (namely for $1{<}q{\leq} 15$). However, at very large $\q$, the agreement is again perfect.}
+% 	\label{fig:approximation}
+% 	\end{center}
+% \end{figure}
+
+
+
+\subsection{Heat waves}\label{heattoneee}
+
+Let us now derive the dispersion relation of heat waves. To this end, we go back to the original system \eqref{2settatntuno}-\eqref{2settantcinque}. However, this time, we consider a longitudinal wave, i.e. a sinusoidal perturbation with vanishing tranversal velocities: $\delta u^2=\delta u^3=0$. Then, the fluctuation to the inverse-temperature four-vector is just $\delta \beta_\nu =T^{-1}(\delta T/T,\delta u^1,0,0)$, and equations \eqref{2settantatre}-\eqref{2settantquattro}  become trivial identities ``$\, 0{=}0\,$'' (again, the integrals vanish because the components $\Omega^2$ and $\Omega^3$ average to zero when integrated over all angles). With the aid of the first law of thermodynamics \cite{Hishcock1983,MTW_book}
+\begin{equation}\label{griguzzone}
+\begin{split}
+\delta \rho ={}& \dfrac{\rho{+}P}{n} \,  \delta n + nT \, \delta \mathfrak{s} \, , \\
+\end{split}
+\end{equation}
+where $\mathfrak{s}$ is the specific entropy of the fluid component, we can rewrite the system \eqref{2settatntuno}-\eqref{2settantcinque} as follows:
+\begin{flalign}\label{7settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \omega \, \delta \mathfrak{s} + \dfrac{\pi T^3}{15 \, n} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) (\delta T/T{+}\Omega^1 \delta u_1)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{7settantadue}
+\boxed{u^1} \quad  \omega (\rho{+}P) \delta u^1-k \delta P + \dfrac{\pi T^4}{15} \int_{\mathcal{S}^2} \dfrac{(\omega{-}k \Omega^1) \Omega^1 (\delta T/T{+}\Omega^1 \delta u_1)}{1{-}i \omega \tau {+} ik\tau \Omega^1} \, d^2 \Omega  =0 \, , &&
+\end{flalign}
+\begin{flalign}\label{7settantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad     \dfrac{\delta n}{n} = \dfrac{k}{\omega}  \delta u^1  \, . &&
+\end{flalign}
+This can be viewed as a system in the fluid variables $\{\delta \mathfrak{s},\delta P,\delta u^1 \}$, if one recalls the thermodynamic identities \cite{GavassinoNonHydro2022}
+\begin{equation}\label{gringuzzino}
+\dfrac{\delta T}{T} =  \dfrac{\kappa_p}{nc_p} \, \delta P + \dfrac{\delta \mathfrak{s}}{c_p} \, , \spc 
+\dfrac{\delta n}{n} = \dfrac{\delta P}{c_s^2 (\rho{+}P)} - \dfrac{T\kappa_p}{c_p} \, \delta \mathfrak{s} \, , 
+\end{equation}
+where $c_p$, $c_s^2$ and $\kappa_p$ are respectively the specific heat at constant pressure, the adiabatic speed of sound squared, and the isobaric thermal expansivity (a.k.a. expansion coefficient) of the matter component. Thus, introducing again the dimensionless quantities $\Gamma=-i\omega \tau$ and $\q=k\tau$, and defining a new small parameter [see section \ref{Introne}, assumption \textbf{(c)}]
+\begin{equation}\label{nuino}
+    \nu = \dfrac{4\pi^2 T^3}{15 \, nc_p} \sim \dfrac{T_R^{11}}{T_M^{11}}  \, ,
+\end{equation}
+we can rewrite the system \eqref{7settatntuno}-\eqref{7settantcinque} in the following (exact) form:
+\begin{flalign}\label{8settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \Gamma  =- \nu \int_{-1}^1 \dfrac{\Gamma{+}i\q \xi}{1{+}\Gamma {+} i \q \xi} \bigg[1+ \dfrac{\kappa_p}{n}  \delta P  +\xi c_p \delta u^1   \bigg]  \, \dfrac{d\xi}{2}  \, , &&
+\end{flalign}
+\begin{flalign}\label{8settantadue}
+\boxed{u^1} \quad   \bigg[1{+} \dfrac{\Gamma^2}{c_s^2 \q^2}\bigg]\delta P - \dfrac{\Gamma^2}{\q^2} \dfrac{T\kappa_p }{c_p} (\rho{+}P) =i \dfrac{nT \nu}{\q} \int_{-1}^1 \dfrac{(\Gamma{+} i\q \xi) \xi}{1{+}\Gamma {+} i \q \xi} \bigg[ 1+\dfrac{\kappa_p}{n}  \delta P  +\xi c_p \delta u^1   \bigg] \, \dfrac{d\xi}{2}   \, , &&
+\end{flalign}
+\begin{flalign}\label{8settantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad     \delta u^1 = i\dfrac{\Gamma}{\q} \bigg[\dfrac{\delta P}{c_s^2 (\rho{+}P)} - \dfrac{T\kappa_p}{c_p} \bigg]    \, , &&
+\end{flalign}
+where we have employed the linearity of the equations to formally set $\delta \mathfrak{s}=1$.\footnote{\label{uonno}In this way, we are also forcing the system to give us the heat wave as our only solution. In fact, the system \eqref{7settatntuno}-\eqref{7settantcinque} possesses three linearly independent solutions, where two solutions are sound waves, and the remaining one is the heat wave. In the limit as $\nu \rightarrow 0$, the sound waves become adiabatic, and thus have $\delta \mathfrak{s}=0$. Therefore, if we set $\delta \mathfrak{s}=1$, and Taylor-expand the system for small $\nu$, we automatically rule out the sound waves.} Similarly to what we did in the previous subsection, we fix the value of $\q \in \mathbb{R}\backslash \{0\}$ (which may be large), and consider the list of functions $X(\nu)=\{\Gamma(\nu),\delta P(\nu),\delta u^1(\nu)\}$. We expand all such functions to first order in $\nu$, i.e. $X(\nu)=X(0)+\nu X'(0)+\mathcal{O}(\nu^2)$. The zeroth order is straightforward: equation \eqref{8settatntuno} gives $\Gamma(0)=0$, equation \eqref{8settantadue} gives $\delta P(0)=0$, and equation \eqref{8settantcinque} gives $\delta u^1(0)=0$, which is what we expect from a heat wave in an ideal fluid. At first order, we find
+\newpage
+\begin{flalign}\label{9settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \Gamma'(0)  =-i\q  \int_{-1}^1 \dfrac{ \xi}{1 {+} i \q \xi}  \, \dfrac{d\xi}{2} =- \bigg( 1- \dfrac{\arctan \q }{\q}\bigg)  \, , &&
+\end{flalign}
+\begin{flalign}\label{9settantadue}
+\boxed{u^1} \quad    \delta P'(0) = -nT \int_{-1}^1 \dfrac{ \xi^2}{1 {+} i \q \xi}  \, \dfrac{d\xi}{2} = -\dfrac{nT}{\q^2} \bigg( 1- \dfrac{\arctan \q}{\q} \bigg)  \, , &&
+\end{flalign}
+\begin{flalign}\label{9settantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad     \delta {u^1}'(0) = -i \dfrac{T\kappa_p}{\q c_p}\Gamma'(0) =  i \dfrac{T\kappa_p}{\q c_p} \bigg( 1- \dfrac{\arctan \q }{\q}\bigg)   \, . &&
+\end{flalign}
+Thus, we finally obtain
+\begin{equation}\label{capolavoro}
+\begin{split}
+\omega ={}& -i  \dfrac{4\pi^2 T^3}{15 \, nc_p \tau} \bigg[1{-} \dfrac{\arctan(k\tau)}{k\tau} \bigg]+\mathcal{O}(\nu^2)= -i  \dfrac{4\pi^2 T^3}{15 \, nc_p \tau} \bigg[\dfrac{(k\tau)^2}{3}- \dfrac{(k\tau)^4}{5}+... \bigg]+\mathcal{O}(\nu^2) \, , \\
+\delta P ={}& - \dfrac{4\pi^2 T^4}{15 c_p (k\tau)^2} \bigg[1{-} \dfrac{\arctan(k\tau)}{k\tau} \bigg]+\mathcal{O}(\nu^2) =- \dfrac{4\pi^2 T^4}{15 c_p } \bigg[ \dfrac{1}{3}-\dfrac{(k\tau)^2}{5}+... \bigg]+\mathcal{O}(\nu^2) \, , \\
+\delta u^1 ={}& i  \dfrac{4\pi^2 T^4 \kappa_p}{15 \, nc_p^2 k \tau} \bigg[1{-} \dfrac{\arctan(k\tau)}{k\tau} \bigg]+\mathcal{O}(\nu^2)= i \dfrac{4\pi^2 T^4 \kappa_p}{15 \, nc_p^2 } \bigg[\dfrac{k\tau}{3}- \dfrac{(k\tau)^3}{5}+... \bigg]+\mathcal{O}(\nu^2) \, . \\
+\end{split}
+\end{equation}
+From the truncation of $\omega(k)$ at order $k^2$, we obtain the formula for the diffusion coefficient of heat waves, which reads
+\begin{equation}\label{fourtieight}
+D_h= \dfrac{4\pi^2 T^3 \tau}{45 n c_p} \, .
+\end{equation}
+Similar to the shear case, we see that $D_h/\tau \sim \nu$. Thus, the small-$\nu$ expansion is equivalent to the expansion for small $D_h/\tau$, and we finally obtain
+\begin{equation}
+\omega= -i \dfrac{3D_h}{\tau^2} \bigg[1-\dfrac{\arctan(k\tau)}{k\tau} \bigg] + \mathcal{O}\big(D_h^2/\tau^2\big) \, ,
+\end{equation}
+which is what we wanted to prove. Note that, in the formula for the diffusivity coefficient $D_h$, the specific heat $c_p$ is at constant pressure, and \textit{not} at constant volume\footnote{As mentioned in the introduction, equation \eqref{mainformula2} is formally identical to the quasi-static radiation transport equation given in \cite{Spiegel1957}, which is commonly reported in textbooks \cite[\S 100]{mihalas_book}. However, our coefficient $D_h$ differs from that of \cite{Spiegel1957} by the presence of $c_p$ (instead of $c_v$) in the denominator. This difference arises from the fact that we are evolving the velocity perturbation $\delta u^1$ self-consistently, while in the standard literature one just sets $\delta u^1=0$ to simplify the problem.}, which would otherwise be denoted by $c_v$. This distinction is important because we are dealing with fluids (where indeed heat propagates with $c_p$ \cite[\S 50]{landau6}), while it would be irrelevant in solids \cite[\S 32]{landau7}. We also remark that the dispersion relation given above well approximates kinetic theory for all values of $k\in \mathbb{R}$, including the optically thin limit $|k\tau|\gg 1$.
+
+For completeness, let us comment on the physical interpretation of the perturbations to $P$ and $u^1$ provided in \eqref{capolavoro}. The value of $\delta P$ can be calculated using equation \eqref{8settantadue} alone, which is a rearrangement of \eqref{2settantadue}. The latter is just the conservation of linear momentum in the longitudinal direction, $\partial_t \delta T^{01}+\partial_1 \delta T^{11}=0$. Since the ``acceleration'' term $\partial_t \delta T^{01}\propto \omega \delta u^1$ vanishes to first order in $\nu$, equation \eqref{2settantadue} implies that the perturbations to fluid pressure $\delta P$ and to radiation pressure $\delta P_R$ balance each other, i.e. $\delta T^{11}=\delta P+\delta P_R=0$, so that the composite matter-radiation system is kept at rest, in agreement with the discussion of \citet[\S 50]{landau6}. Indeed, for small $\q$, the radiation gas is in local equilibrium with the fluid (i.e. the black-body formulas apply), and we have, to leading order in $\nu$,
+\begin{equation}
+\delta P = -\delta P_R = -\delta \bigg(\dfrac{\pi^2 T^4}{45} \bigg) = -\dfrac{4\pi^2T^4}{45} \dfrac{\delta T}{T} = -\dfrac{4\pi^2T^4}{45 c_p} \, ,
+\end{equation}
+which agrees with the second line of \eqref{capolavoro}, in the limit $\q \rightarrow 0$.
+
+The value of $\delta u^1$ was calculated from equation \eqref{8settantcinque}, which is a rearrangement of the continuity equation \eqref{settantcinque}. The reason for this small correction to the flow velocity is simple: While the fluid elements are kept at constant pressure (to first order in $\nu$), their specific entropy $\mathfrak{s}$ changes over time due to heat diffusion. Thus, the baryon density $n$ also varies in time, forcing the fluid elements to expand and contract by an amount that is proportional to the following thermodynamic coefficient:
+\begin{equation}
+\dfrac{1}{n}\dfrac{\partial n}{\partial \mathfrak{s}}\bigg|_P = \dfrac{1}{n} \dfrac{\partial n}{\partial T}\bigg|_P \dfrac{\partial T}{\partial \mathfrak{s}}\bigg|_P = -\dfrac{T \kappa_p}{c_p} \, ,
+\end{equation}
+which indeed appears in the formula for $\delta u^1$, see equation \eqref{capolavoro}.
+
+
+\subsection{Sound waves}\label{sounduzzonzone}
+
+We are only left with the problem of computing the dispersion relations of sound waves. Since these waves are longitudinal, the relevant system of equations is again \eqref{7settatntuno}-\eqref{7settantcinque}. To simplify the calculations, we assume that the expansion coefficient $\kappa_p$ vanishes (see footnote \ref{kpvanishes}). Thus, $\delta T/T=\delta \mathfrak{s}/c_p$ and $\delta n/n=\delta P/[c_s^2(\rho{+}P)]$. Furthermore, we use the linearity of the equations to set $\delta P=1$, which allows us to rule out heat waves (see footnote \ref{uonno}). Then, introducing again the small parameter $\lambda$ defined in \eqref{lambo}, and adopting the notation $\w=\omega \tau$ and $\q=k\tau$, we obtain 
+\begin{flalign}\label{j7settatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad   \delta \mathfrak{s} =- \dfrac{\lambda}{nT \w}\int_{-1}^1 \dfrac{(\w{-}\q  \xi)}{1{-}i \w {+} i \q \xi}  \bigg[ (\rho{+}P)\dfrac{\delta \mathfrak{s}}{c_p} + \dfrac{\xi \w}{c_s^2 \q} \bigg] \, d \xi  \, , &&
+\end{flalign}
+\begin{flalign}\label{j7settantadue}
+\boxed{u^1} \quad    \w^2=c_s^2 \q^2 - \lambda c_s^2 \q \int_{-1}^1 \dfrac{(\w{-}\q \xi) \xi }{1{-}i \w {+} i \q \xi} \bigg[(\rho{+}P)\dfrac{\delta \mathfrak{s}}{c_p} + \dfrac{\xi \w}{c_s^2 \q} \bigg] \, d\xi  \, , &&
+\end{flalign}
+As we did in the previous subsections, we fix $\q \in \mathbb{R}\backslash \{0\}$, and view $\delta \mathfrak{s}$ and $\w$ as functions of $\lambda$. At $\lambda=0$, we have $\delta \mathfrak{s}(0)=0$ and $\w(0)=\pm c_s \q$. We consider the ``$+$'' case for clarity. Then, we can take the total derivative of \eqref{j7settatntuno} and \eqref{j7settantadue} with respect to $\lambda$. This allows us to compute $\delta \mathfrak{s}'(0)$ and $\w'(0)$. Below, we report only the formula for the latter:
+\begin{flalign}\label{kj7settantadue}
+\boxed{u^1} \quad   \w'(0)=\q   \int_{-1}^1 \dfrac{(\xi{-}c_s) \xi^2 }{1{+} i \q (\xi{-}c_s)} \, \dfrac{d\xi}{2} =-i \bigg[ \dfrac{1}{3} -\dfrac{1{-}ic_s \q}{\q^2} + \dfrac{(1{-}ic_s\q)^2}{\q^3} \arctan \bigg( \dfrac{\q}{1{-}ic_s \q} \bigg)  \bigg]  \, . &&
+\end{flalign}
+Thus, if we write explicitly the Taylor expansion $\w(\lambda)=\w(0)+\lambda \w'(0)+\mathcal{O}(\lambda^2)$, we finally obtain the desired equation,
+\begin{equation}\label{grube}
+\omega=c_s k -i \dfrac{15 D_s}{2\tau^2} \bigg[ \dfrac{1}{3} -\dfrac{1{-}ic_s k\tau}{(k\tau)^2} + \dfrac{(1{-}ic_sk\tau)^2}{(k\tau)^3} \arctan \bigg( \dfrac{k\tau}{1{-}ic_s k\tau} \bigg)  \bigg]+ \mathcal{O}(D_s^2/\tau^2) \, ,
+\end{equation}
+where $D_s$ is the diffusion coefficient of shear waves, defined in equation \eqref{diffuzio}. Just like the previous dispersion relations, also the formula above remains a valid approximation of photon kinetic theory at arbitrarily large $k\tau$. However, differently from the previous cases, we have made here the additional assumption that $\kappa_p=0$, which means that the matter component is assumed not to expand when its temperature is raised at constant pressure.
+
+We remark that $c_s$ and $D_s$ do \textit{not} coincide with the speed of sound and damping coefficient of the sound waves. In fact, if we truncate the dispersion relation \eqref{grube} to second order in $k\tau$, we indeed obtain the usual sound-type long-wavelength expansion $\omega=c_s^{\text{tot}}k-iD_a k^2 +\mathcal{O}(k^2)$, but $c_s^\text{tot} \neq c_s$ and $D_a \neq D_s$. The zeroth-order transport coefficient $c_s^{\text{tot}}$ is actually the ``conglomerate'' speed of sound (i.e. the speed of sound of the composite ``matter+radiation'' fluid), while the first-order transport coefficient $D_a$ is the diffusivity of acoustic waves. The explicit formulas are, respectively,
+\begin{equation}\label{cstotdaa}
+\begin{split}
+c_s^{\text{tot}}={}& c_s \bigg( 1-\dfrac{5D_s}{2\tau}\bigg) \, , \\
+D_a ={}& \dfrac{D_s}{2}(3+5c_s^2) \, .\\
+\end{split}
+\end{equation}
+Let us verify explicitly that $c_s^\text{tot}$ is indeed the conglomerate speed of sound that we would obtain from thermodynamics alone, treating photons as ``honorary material particles'' \cite{mihalas_book}. To this end, we need to consider a composite ``matter+radiation'' system in thermal equilibrium, whose energy, pressure, and entropy are the sums of the matter and radiation parts, e.g. $\rho_\text{tot}=\rho+T_R^{00}\big(f_\text{eq}(T)\big)$. Then, with the aid of \eqref{griguzzone}, \eqref{gringuzzino}, and \eqref{nuino}, and defined the imperfect differentials $\slashed{d}\mathcal{Q}=Tnd\mathfrak{s}$ and $\slashed{d}\mathcal{W}=(\rho{+}P)dn/n$, we find that
+\begin{equation}\label{grienz}
+\begin{split}
+d\rho_\text{tot}={} &  (1{+}\nu) \,  \slashed{d}\mathcal{Q}  + \slashed{d}\mathcal{W} \, , \\
+dP_\text{tot}={} & \nu  \,  \slashed{d}\mathcal{Q}/3 + c_s^2 \slashed{d}\mathcal{W} \, , \\
+Tn d\mathfrak{s}_\text{tot}={} & (1{+}\nu)\slashed{d}\mathcal{Q} - 5D_s  \slashed{d}\mathcal{W}/\tau  \, , \\
+\end{split}
+\end{equation}
+where we recall that $\kappa_p{=}0$ by assumption. Hence, the speed of sound of the composite fluid is (recall that $D_s/\tau {\sim} \lambda$)
+\begin{equation}
+c_s^\text{tot} =\bigg( \dfrac{\partial P_\text{tot}}{\partial \rho_\text{tot}}\bigg|_{\mathfrak{s}_\text{tot}}\bigg)^{1/2}=\bigg( \dfrac{c_s^2 +\frac{5 \nu D_s}{3\tau (1{+}\nu)}}{1+\frac{5D_s}{\tau}}\bigg)^{1/2} \stackrel{\nu,\lambda \rightarrow 0}{=}  c_s \bigg(1-\dfrac{5D_s}{2\tau} \bigg) +\mathcal{O}[(\nu {+}\lambda)^2]\, ,
+\end{equation}
+which is what we wanted to prove.
+
+
+\section{Optically thick and optically thin limits}
+
+Now that the dispersion relations \eqref{mainformula}, \eqref{mainformula2} and \eqref{mainformula3} have been formally derived, let us discuss their limiting behavior as $k\tau \rightarrow 0$ (``optically thick'' limit) and $k\tau \rightarrow \infty$ (``optically thin'' limit)\footnote{Here, the ``optical thickness'' refers to the geometry of the perturbation $\delta \Psi$, and not that of the background state $\Psi$. In fact, the latter is an infinite uniform fluid, so its optical thickness is infinitely large.}.
+
+\subsection{Optically thick limit of diffusive modes}
+
+We have already shown through equations \eqref{seriaccio} and \eqref{capolavoro} that, for small $k\tau$, the dispersion relations of shear and heat waves acquire the standard diffusive form $\omega = -iD k^2+\mathcal{O}(k^4\tau^4)$. Let us now confirm that the effective shear viscosity $\eta$ and the effective heat conductivity $\kappa$ that one obtains in this limit agree with those provided by \citet{Weinberg1971}, who treated the whole ``matter+radiation'' system as an effective viscous fluid. 
+
+Let us first compute the shear viscosity coefficient $\eta$.
+To this end, we recall that the evolution equation of shear waves in a relativistic viscous fluid (governed by relativistic Navier-Stokes \cite{Weinberg1971,Eckart40}) is
+\begin{equation}
+\partial_t \delta T^{03} +\partial_1 \delta T^{13}= (\rho{+}P)\partial_t \delta u_3 -\eta \partial_1^2 \delta u_3=0 \, .
+\end{equation}
+We note that this has indeed the form of a diffusion equation, with shear diffusivity coefficient $D_s{=}\eta/(\rho{+}P)$ \cite[\S IId]{Weinberg1971}. Thus, if we multiply both sides of \eqref{diffuzio} by $\rho{+}P$, we obtain an effective (Navier-Stokes-type) shear viscosity coefficient,
+\begin{equation}\label{etuzzo}
+\eta = \dfrac{4\pi^2}{225} T^4 \tau = \dfrac{4}{15} a T^4 \tau  \, ,
+\end{equation}
+where $a=\pi^2/15$ is the usual radiation constant \cite{rezzolla_book}. Equation \eqref{etuzzo} agrees with \cite{Weinberg1971,Misner1968,Rebetzky1990}.
+
+Let us now compute the heat conductivity coefficient $\kappa$. This time, it is enough to recall that the heat diffusivity coefficient (as provided in textbooks \cite[\S 50]{landau6}) is $D_h =\kappa/(nc_p)$. Thus, multiplying both side of \eqref{fourtieight} by $nc_p$, we obtain the well-known formula for the radiative heat conductivity \cite{NovikovThorne1973}, in agreement with \cite{Weinberg1971}:
+\begin{equation}\label{kappuzzo}
+\kappa = \dfrac{4\pi^2}{45} T^3 \tau = \dfrac{4}{3} a T^3 \tau  \, .
+\end{equation}
+
+\subsection{Optically thick limit of sound modes}
+
+In section \ref{sounduzzonzone}, we showed that, for small values of $k\tau$, the dispersion relation of sound waves acquires the usual form $\omega=c_s^\text{tot} k-iD_a k^2+\mathcal{O}(k^3\tau^3)$, where $c_s^\text{tot}$ is the speed of sound of the total ``matter+radiation'' in local thermodynamic equilibrium. Thus, to confirm that \eqref{mainformula3} has the expected optically thick limit, we only need to verify that the acoustic diffusivity $D_a$ agrees with the (relativistic) Navier-Stokes prediction with the transport coefficients given in \cite{Weinberg1971,UdeyIsrael1982}. It can be easily verified that, when $\kappa_p=0$, the acoustic diffusivity predicted by Navier-Stokes reads\footnote{While the first two terms in the numerator of \eqref{daa} are well-known, the third term is usually neglected. To see where it comes from, consider that the perturbation to the momentum density is $\delta T^{01}=(\rho{+}P)\delta u^1 {+} \delta q^1$, where $\delta q^1 {=} {-}\kappa (\partial_1 \delta T{+}T\partial_t\delta u^1)$ is the heat flux \cite{Hiscock_Insatibility_first_order}. Since, in our case, $\delta T \approx 0$ and $\partial_t^2 \approx c_s^2 \partial^2_x$, we have that $\partial_t \delta T^{01} \approx(\rho {+}P)\partial_t \delta u^1-c_s^2 T \kappa \partial^2_x \delta u^1$, meaning that $c_s^2 T \kappa$ can be affectively added to the bulk viscosity. Clearly, this is a purely relativistic effect. For more detials, see \cite[Eq.s (2.55) and (2.57)]{Weinberg1971}}
+\begin{equation}\label{daa}
+D_a= \dfrac{\frac{4}{3} \eta{+}\zeta{+}Tc_s^2 \kappa }{2(\rho {+}P)} \, ,
+\end{equation}
+where $\zeta$ is the bulk viscosity coefficient. Comparing \eqref{daa} with \eqref{cstotdaa}, and invoking \eqref{etuzzo} and \eqref{kappuzzo}, we find that
+\begin{equation}\label{zetuzzo}
+\zeta=\dfrac{4\pi^2}{135} T^4 \tau= \dfrac{4}{9} aT^4 \tau \, ,
+\end{equation}
+which agrees with the formula of \cite{Weinberg1971,UdeyIsrael1982} since, in our fluid of interest,
+\begin{equation}
+    \dfrac{\partial P_\text{tot}}{\partial \rho_\text{tot}} \bigg|_n= \dfrac{\nu}{3(1{+}\nu)} \xrightarrow[]{\nu \rightarrow 0} 0 \, ,
+\end{equation}
+see equation \eqref{grienz}. In conclusion, we confirm that, in the opticallly thick limit, radiation hydrodynamics reduces to relativistic Navier-Stokes, and its transport coefficients $\{\eta,\kappa,\zeta \}$ are indeed those provided by \citet{Weinberg1971}. 
+
+
+\subsection{Optically thin limit of shear waves}
+
+
+If we take the limit of \eqref{mainformula} as $k\tau \rightarrow \infty$, we obtain
+\begin{equation}\label{frequencyklarge}
+\omega(k) \longrightarrow -5iD_s/\tau^2 \, .
+\end{equation}
+We can explain this asymptotic behavior with the following simple model. Consider a periodic rectangular shear wave, where layers with velocity $\delta u^3$ alternate with layers with velocity $-\delta u^3$. Suppose that at $t=0$ the photons are in thermal equilibrium with the medium (inside each layer). Then, suppose that they are released, and they travel at the speed of light till time $t \approx \tau$, when they are absorbed by the medium. If $k\tau$ is large, the layers with alternating velocity are very thin, compared to the distance traveled by the photons. Hence, the photons cross many layers before being absorbed, and they roughly have $50$ \% probability of being absorbed by a layer that moves with velocity $\delta u^3$ and $50$ \% probability of being absorbed by a layer that moves with velocity $-\delta u^3$. This means that the part of the fluid that moves with velocity $\delta u^3$ loses half of its photons, and it receives half of the photons that were belonging to the part of the fluid that moves with velocity $-\delta u^3$. This leads to the following change in momentum density:
+\begin{equation}\label{mommuto}
+T^{03}(\tau){-}T^{03}(0) =- \binom{\text{Momentum of}}{\text{photons lost}} + \binom{\text{Momentum of}}{\text{photons gained}} = -\dfrac{1}{2} (+T_R^{03}) + \dfrac{1}{2} (-T_R^{03}) = -T_R^{03} \, .
+\end{equation}
+Recalling that the parameter \eqref{lambo} is small, we have $T^{03} \approx T_M^{03}= (\rho{+}P) \delta u^3$. Since the photons were initially in thermal equilibrium with the medium, we have $\delta T_R^{03}=4aT^4 \delta u^3/3$. Thus, dividing both sides of \eqref{mommuto} by $\tau$, we obtain
+\begin{equation}\label{belluto}
+\partial_t \delta u^3=- 5 \dfrac{D_s}{\tau^2} \delta u^3 \, ,
+\end{equation}
+which results precisely in the relaxation frequency \eqref{frequencyklarge}. Equation \eqref{belluto} may be viewed as the ``shear-wave analog'' of Newton's law of cooling \cite[\S 100]{mihalas_book}.
+
+\subsection{Optically thin limit of sound waves}
+
+If we take the limit of \eqref{mainformula3} as $k\tau \rightarrow \infty$, we obtain
+\begin{equation}
+\omega(k) \longrightarrow c_s k -5 i D_s/(2\tau^2) \, .
+\end{equation}
+To have an intuitive understanding of this behavior, we can invoke a similar model to the one we used for shear waves, just replacing $\delta u^3$ with $\delta u^1$. Then, the calculation of the momentum exchange due to photons is the same as in the previous subsection [equations \eqref{mommuto} and \eqref{belluto}]. The only difference is that, now, the wave is longitudinal, and a change in $T^{01}$ can also be caused by pressure gradients. Hence, equation \eqref{belluto} is now replaced by the following system:
+\begin{equation}\label{bellutowow}
+\begin{split}
+& \dfrac{\partial_t \delta P}{\rho {+} P} +c_s^2 \partial_1 \delta u^1 =0 \\
+& \partial_t \delta u^1+\dfrac{\partial_1 \delta P}{\rho{+}P}=- 5 \dfrac{D_s}{\tau^2} \delta u^1 \, , \\
+\end{split}
+\end{equation}
+where the first line is the continuity equation of baryons (with $\kappa_p =0$). Combining these two equations, we obtain a telegraph-type equation for the velocity:
+\begin{equation}
+\partial^2_t \delta u^1+5\dfrac{D_s}{\tau^2} \partial_t \delta u^1 =c_s^2 \partial^2_1 \delta u^1 \, .
+\end{equation}
+The corresponding dispersion relations can be computed analytically. Recalling that we are working in the limit of very large $k\tau$, we obtain the desired dispersion relation,
+\begin{equation}
+\omega(k)=\pm c_s k -i \dfrac{5D_s}{2\tau^2} \, ,
+\end{equation}
+which is exactly what we were looking for. Note that, while in the optically thick limit the group velocity of \eqref{mainformula3} is the \textit{combined} speed of sound $c_s^{\text{tot}}$ of matter+radiation, in the optically thin limit it is the speed of sound $c_s$ of matter alone. This is because, at small $k\tau$, matter and radiation are tightly coupled and oscillate together, while, at large $k\tau$, radiation effectively decouples and just spreads around uniformly, so that only matter oscillates.
+
+
+\subsection{Optically thin limit of heat waves}
+
+
+
+If we take the limit of \eqref{mainformula2} as $k\tau \rightarrow \infty$, we get
+\begin{equation}\label{frequencyklarge2}
+\omega(k) \longrightarrow -3iD_h/\tau^2 \, .
+\end{equation}
+Also here, there is a simple explanation. Consider a periodic rectangular heat wave, where layers with temperature perturbation $\delta T$ alternate with layers with temperature perturbation $-\delta T$. For simplicity, we set $\kappa_p = 0$, so thermal expansion can be neglected. At $t=0$, the photons are in local equilibrium with the fluid. As before, they then travel at the speed of light till $t \approx \tau$, when they are absorbed. Again, if $k\tau$ is very large, the layers with alternating temperature are very thin and the photons roughly have $50$ \% probability of being absorbed by a layer with temperature $T+\delta T$ and $50$ \% probability of being absorbed by a layer with temperature $T{-}\delta T$. This means that the part of the fluid that has temperature $T{+}\delta T$ loses half of its photons, and receives half of the photons coming from the part of the fluid with temperature $T{-}\delta T$. The resulting change in entropy density is (entropy is conserved in the linear regime):
+\begin{equation}\label{mommuto2}
+\delta s^{0}(\tau){-}\delta s^{0}(0) =- \binom{\text{Entropy of}}{\text{photons lost}} + \binom{\text{Entropy of}}{\text{photons gained}} = -\dfrac{1}{2} (s_R^0+\delta s_R^{0}) + \dfrac{1}{2} (s_R^0-\delta s_R^{0}) = -\delta s_R^{0} \, .
+\end{equation}
+Recalling that the parameter \eqref{fourtieight} is small, we have $s^{0} \approx s_M^{0}=n \mathfrak{s}$. Since the photons were initially in thermal equilibrium with the medium, we have $\delta s_R^{0}=\delta (4aT^3/3)=4aT^2 \delta T$. Thus, dividing both sides of \eqref{mommuto2} by $\tau$, we obtain
+\begin{equation}\label{Newton}
+\partial_t \delta \mathfrak{s}=- 3 D_h \delta \mathfrak{s}/\tau^2 \, ,
+\end{equation}
+which results precisely in the relaxation frequency \eqref{frequencyklarge2}. Equation \eqref{Newton} is just Newton's law of cooling \cite[\S 100]{mihalas_book}.
+
+\vspace{-0.2cm}
+\section{Mathematical discussion (diffusive modes only)}
+\vspace{-0.2cm}
+
+\subsection{Covariant stability of shear and heat waves}
+
+
+\begin{figure}[b!]
+\begin{center}
+\includegraphics[width=0.46\textwidth]{ShearCovStab.pdf}
+\includegraphics[width=0.46\textwidth]{HeatCovStab.pdf}
+	\caption{Graph of the function $G(\q_R,\q_I)$ according to equation \eqref{mainformulacheck} (left panel) and \eqref{mainformulacheck2} (right panel), for $\lambda{=}2.5$ and $\nu{=}0.3$. The blue plane marks level $0$. If the orange surface deeps below the plane, the dispersion relation is not covariantly stable.}
+	\label{fig:covstab}
+	\end{center}
+\end{figure}
+
+A dispersion relation $\omega(k) {:}\,\mathbb{C}\,{\rightarrow}\, \mathbb{C}$ is said to be ``covariantly stable'' if it cannot be Lorentz-transformed into a growing Fourier mode \cite{Hiscock_Insatibility_first_order,GavassinoSuperluminal2021}. It was proven that $\omega(k)$ is covariantly stable if and only if $\mathfrak{Im} \, \omega(k) \leq |\mathfrak{Im} \, k |$ for all $k$ complex \cite{GavassinoBounds2023}. This is equivalent to requiring that the function $G(\q) = |\mathfrak{Im} \, \q|-\mathfrak{Re} \, \Gamma(\q)$ be non-negative for all choices of $\q \in \mathbb{C}$. If we write $\q=\q_R {+}i \q_I$, with $\q_R,\q_I \in \mathbb{R}$, the quantity $G$ is a function from $\mathbb{R}^2$ to $\mathbb{R}$, whose explicit form is
+\begin{flalign}\label{mainformulacheck}
+\text{Shear waves:} \quad \quad G (\q_R,\q_I) = |\q_I|+\lambda \, \mathfrak{Re}\bigg[ \dfrac{2}{3}+\dfrac{1}{(\q_R{+}i\q_I)^2}-\bigg( 1{+}\dfrac{1}{(\q_R{+}i\q_I)^2} \bigg) \dfrac{\arctan(\q_R {+}i \q_I)}{\q_R {+}i\q_I}  \bigg] \, ; &&
+\end{flalign}
+\begin{flalign}\label{mainformulacheck2}
+\text{Heat waves:} \quad \quad \, \, G (\q_R,\q_I) = |\q_I|+\nu \, \mathfrak{Re}\bigg[ 1- \dfrac{\arctan(\q_R {+}i \q_I)}{\q_R {+}i\q_I}  \bigg]\, . &&
+\end{flalign}
+See Figure \ref{fig:covstab} for the 3D plots of these two functions. It turns out that, for shear waves, $G$ is non-negative all the way to $\lambda \gtrsim 2.5$. Thus, the dispersion relation \eqref{mainformula} is covariantly stable also outside its formal regime of applicability. Instead, for heat waves, $G$ always becomes infinitely negative near $\q=\pm i$, meaning that \eqref{mainformula2} is not covariantly stable.
+
+The fact that the dispersion relation for heat waves becomes unstable (in some boosted frame \cite{GavassinoBounds2023}) is a signal that, for $\q \approx \pm i$, our formal derivation of \eqref{mainformula2} breaks down. This is no surprise, since both \eqref{mainformula} and \eqref{mainformula2} were derived assuming that $\q$ was real. To understand the origin of the problem, consider again the integral in equation \eqref{8settatntuno}. If we set $\q= i$, and expand around $\Gamma=0$, the denominator $1{+}\Gamma {+} i \q \xi$ becomes $1- \xi$. When this happens, the integral diverges, since
+\begin{equation}
+\int_{-1}^1 \dfrac{d\xi}{1+\Gamma - \xi} = \ln(2{+}\Gamma)-\ln \Gamma  \xrightarrow[]{\Gamma \longrightarrow 0} +\infty \, .
+\end{equation}
+It follows that, when we look for an approximate solution of the system \eqref{8settatntuno}-\eqref{8settantcinque} with $\q=\pm i$, the equations $F(\Gamma,\delta P,\delta u^1,\nu){=}0$ are irregular at $(0,0,0,0)$, and the assumptions of the implicit function theorem do not hold. 
+
+Acknowledging that the dispersion relation \eqref{mainformula2} of heat waves is not covariantly stable should not prevent us from using it. In fact, equation \eqref{mainformula2} remains a good approximation of kinetic theory whenever $\delta \mathfrak{s}$ is a superposition of modes with $k \in \mathbb{R}$. More precisely: Equation \eqref{mainformula2} can be used to compute $\delta \mathfrak{s}(t,x)$ for $t>0$ whenever $\delta \mathfrak{s}(0,x)$ has a well-defined Fourier transform. Note that, since $-3D_h/\tau^2 \leq \mathfrak{Im} \omega \leq 0$, the spatial profile of $\delta \mathfrak{s}$ has a well-defined Fourier transform at $t>0$ if and only if it has a well-defined Fourier transform at $t=0$.
+
+
+\subsection{Causality considerations}
+
+It was recently shown \cite{GavassinoDispersion2024} that, in a dispersive (stable) system, there is no way to assign a notion of causality to a \textit{single} dispersion relation $\omega_0(k)$. In fact, it was proven in \cite{GavassinoDispersion2024} that (independently from the system's details) the collective excitation $\delta\Psi_0(t,x)$ that propagates according to $\omega_0(k)$ can never be localized, so it is not possible to define a speed of propagation. For example, suppose that the collective excitation of interest is a heat wave, and we have constructed an initial state such that the temperature perturbation $\delta T(0,x)$ is contained within a finite region of space. Then, the perturbation $\delta Y(0,x)$ to some other quantity $Y$ (e.g., the heat flux) \textit{must} cover the whole space. 
+
+%The reason is that, if such dispersion relation $\omega(k)$ is an eigenfrequency of an underlying covariantly stable theory (in our case, radiation kinetic theory), the corresponding eigenfunctions $\delta \Psi(k)$ cannot be combined to form a localized wavepacket, unless $\omega(k)=a+bk$ (with $a,b{=}\text{const}$). In other words, the support of 
+% \begin{equation}
+% \delta \Psi(0,x)= \int \dfrac{d k}{2\pi} \delta \Psi(k) e^{ikx} 
+% \end{equation}
+% is always unbounded in dispersive systems.
+% Thus, it is impossible to assign a ``speed of propagation'' to $\omega(k)$, because the information of the wavepacket $\delta \Psi(0,x)$ is always non-local. 
+Let us confirm that this general result applies also to radiation hydrodynamics. We take, as our collective excitation of interest, the heat waves, with dispersion relation \eqref{mainformula2} (shear and sound waves are analogous). We assume that the initial temperature perturbation $\delta T(0,x)$ has compact support, and we study the initial perturbation to the radiation energy density, $\delta T^{00}_R(0,x)$. Using \eqref{stressOne} and \eqref{df}, we find that, to first order in $\nu$,
+% \begin{equation}
+% \delta T_R^{00}(0,x)= 2\int \dfrac{d k}{2\pi} e^{ikx} \int \dfrac{d^3 p}{(2\pi)^3} f_\text{eq}(1{+}f_{\text{eq}}) \dfrac{(p^0)^2}{T}\dfrac{\delta T(k)/T}{1 {+}ik\tau p^1/p^0} \, .   
+% \end{equation}
+% Integrating over the four-momentum, and changing variable from $k$ to $\q=k\tau$, we obtain
+\begin{equation}\label{relazionarriones}
+\dfrac{\delta T_R^{00}(0,x)}{4aT^3} = \int \dfrac{d \q}{2\pi} e^{i\q x/\tau}\, \delta T(\q) \, \dfrac{\arctan(\q)}{\q}\, .
+\end{equation}
+Now, since $\delta T(0,x)$ is compactly supported, its Fourier transform $\delta T(\q)$ is an entire function of $\q {\in} \mathbb{C}$ \cite[Th 7.1.14]{HormanderOperatorsBook}. Hence, the Fourier transform of $\delta T_R^{00}(0,x)$ is the product of an entire function with the function $\arctan(\q)/\q$, which has two branch cuts, starting at $\q=\pm i$. It follows that the Fourier transform of $\delta T_R^{00}(0,x)$ cannot be entire, meaning that the support of $\delta T_R^{00}(0,x)$ is unbounded (again by \cite[Th 7.1.14]{HormanderOperatorsBook}). For example, if $\delta T(0,x)\propto \delta (x)$, then $\delta T_R^{00}(0,x)\propto -\text{Ei}(-|x/\tau|)/2$, where $\text{Ei}$ is the exponential integral Ei, which has infinite support, see figure \ref{fig:Ei}.
+\begin{figure}[b!]
+\begin{center}
+\includegraphics[width=0.44\textwidth]{Ei.pdf}
+	\caption{Radiation energy density associated to a heat wave (with dispersion relation \eqref{mainformula2}) whose temperature fluctuation is a Dirac delta centered in the origin, namely $\delta T(x) =Q\delta(x/\tau)$. Note that the divergence of $\delta T_R^{00}(x)$ in the origin is logarithmic.}
+	\label{fig:Ei}
+	\end{center}
+\end{figure}
+
+In summary: It is impossible to simultaneously localize the perturbations to the fluid temperature $T$ and to the radiation energy density $T_R^{00}$ without turning on some additional excitation mode that does not follow \eqref{mainformula2}, like, e.g. a non-hydrodynamic mode \cite{GavassinoGapless2024rck}. If all collective excitations that do not follow \eqref{mainformula2} are set to zero, the propagation of $\delta T(t,x)$ is governed by seemingly non-local dynamics, because the relationship \eqref{relazionarriones} between $\delta T$ and $\delta T_R^{00}$ is non-local. Such non-locality does not violate relativistic causality, because \eqref{relazionarriones} describes a correlation, not a direct causation.
+
+
+\subsection{Evolution of jump-discontinuities}
+\vspace{-0.2cm}
+
+The dynamics of jump-discontinuities and wavefronts depends on the asymptotic behaviour of the dispersion relations $\omega(k)$ in the UV limit (i.e. at large $k$). In fact, jump-discontinuities of the fluid variables manifest themselves, in Fourier space, as infinitely long tails (which decay like $\sim 1/k$), and such tails are multiplied by a dynamical factor $e^{-i\omega(k)t}$ that determines the time-dependence of the jump structure. For example, the ordinary diffusion equation ($\omega {\sim} -ik^2$) suppresses all power-law tails at any $t>0$, since it multiplies them by a Gaussian factor $\sim e^{-k^2 t}$. As a result, discontinuities and wedges are immediately smoothed out at positive times \cite[\S 2.3.3]{EvansPDEsBook}. By contrast, Cattaneo's theory of diffusion \cite{cattaneo1958} multiplies the UV tails by a factor $\sim e^{(iak-b)t}$, so jump-discontinuities travel with speed $a\sim \sqrt{D/\tau} \neq 0$ (called ``second sound speed'' \cite{rezzolla_book}), and their magnitude decays exponentially at rate $b$. 
+
+Interestingly, the analytical dispersion relations \eqref{mainformula} and \eqref{mainformula2} of diffusive modes in coupled radiation-matter systems exhibit a different behaviour from both ordinary diffusion and Cattaeo diffusion. In fact, at large $k$, the frequency is just $\omega \sim -ib$, meaning that jump-discontinuities stand still at their initial location (no second sound), and their amplitude decays exponentially by a factor $\sim e^{-bt}$. This behavior is well-illustrated by the numerical example in figure \ref{fig:Comparison}, where we compare a solution of the usual diffusion equation ($\partial_t \delta T=D_h \partial^2_x \delta T$) with initial data $\delta T(0,x)=\Theta(1-x^2)$ and the corresponding solution of radiation hydrodynamics,
+\begin{equation}\label{taintanone}
+    \delta T(t,x)= \int_\mathbb{R}  \dfrac{\sin(k)}{\pi k} e^{ikx-i\omega(k) t} dk \, ,
+\end{equation}
+computed using the dispersion relation \eqref{mainformula2}. As can be seen, discontinuities evolve quite differently. The interested reader can see \cite{GavassinoShearRadiation2024jej} for a similar calculation with shear waves.
+
+\begin{figure}[b!]
+\begin{center}
+\includegraphics[width=0.48\textwidth]{t01.pdf}
+\includegraphics[width=0.48\textwidth]{t05.pdf}
+\includegraphics[width=0.48\textwidth]{t10.pdf}
+\includegraphics[width=0.48\textwidth]{t500.pdf}	\caption{Evolution of the discontinuous temperature profile \eqref{taintanone} with dispersion relation \eqref{mainformula2} (blue) compared with ordinary diffusion, $\omega(k)=-iD_h k^2$ (red). The initial data (dashed black) is $\delta T(0,x)=\Theta(1-x^2)$, and we work in spacetime units so that $\tau=1$. Each panel is a snapshot at a different time, respectivly $D_ht=0.1$ (up-left), $0.5$ (up-right), $1$ (down-left), $50$ (down-right). Note that the down-right panel differs from the others in that (a) the range of both axes is different, (b) we are no longer plotting the initial data, and (c) the blue curve is now dashed, since nearly overlaps the red one.}
+	\label{fig:Comparison}
+	\end{center}
+\end{figure}
+
+
+
+\section{Comparison with M1 closure predictions}
+
+A widely used approximation in radiation-hydrodynamic simulations is the M1 closure scheme \cite{Minerbo1978,Levermore1984,Sadowski2013,Fragile:2014bfa,Fragile:2018xee,Murchikova:2017zsy,Anninos2020,GavassinoRadiazione}. This approach only tracks the first two moments of the radiation distribution function, namely $\{\varepsilon_R(x^\alpha),F^\nu(x^\alpha)\}$, which represent respectively the radiation energy density and the radiation energy flux in the local rest frame of the medium  (with $F^\nu u_\nu =0$). The radiation stress-energy tensor, then, is approximated as follows: 
+\begin{equation}\label{dedkorfc}
+T_R^{\mu \nu}= \dfrac{4}{3} \varepsilon_R u^\mu u^\nu +\dfrac{1}{3}\varepsilon_R g^{\mu \nu } +F^\mu u^\nu + u^\mu F^\nu+ \dfrac{3\chi{-}1}{2} \varepsilon_R \bigg[ \dfrac{F^\mu F^\nu}{F^\alpha F_\alpha} {-}\dfrac{g^{\mu \nu} {+}u^\mu u^\nu}{3} \bigg] \, , 
+\end{equation}
+where $\chi$ is the Eddington factor \cite{Minerbo1978,Levermore1984}, which is assumed to be a function of the scalar $F^\alpha F_\alpha/\varepsilon_R^2$. The last term in \eqref{dedkorfc} is the closure, since it expresses the radiative stress tensor as a function of $\{\varepsilon_R(x^\alpha),F^\nu(x^\alpha)\}$. To derive an equation of motion for $\varepsilon_R$ and $F^\nu$, one can just combine \eqref{Boltzmann} with \eqref{stressOne}, which results in an \textit{exact} balance law:
+\begin{equation}\label{basilisco}
+\partial_\mu T_R^{\mu \nu}= -\dfrac{1}{\tau} (\varepsilon_R {-}aT^4) u^\nu -\dfrac{1}{\tau} F^\nu \, .
+\end{equation}
+Let us compare the hydrodynamic dispersion relations of this approximate ``fluid-type'' model of radiation with \eqref{mainformula}-\eqref{mainformula3}.
+
+\subsection{Linearised radiation-hydrodynamic equations with M1 closure}
+
+Let us linearize equation \eqref{basilisco}, together with the usual conservation laws of energy, momentum, and baryons. In all approaches of interest, one assumes that, for small $F^\nu$, the Eddington factor can be expanded as $\chi \approx 1/3 +z \, F^\alpha F_\alpha/\varepsilon_R^2$, for some number $z$. Hence, in the linear regime, the pressure anisotropy in \eqref{dedkorfc} vanishes, and the M1 closure reduces to the Eddington approximation. Introducing the notation  
+$\delta \mathcal{E}=\delta \varepsilon_R/\varepsilon_R$ and $\delta \mathcal{F}^j =\delta F^j/\varepsilon_R +4\delta u^j/3$, we obtain the following system:
+\begin{flalign}\label{Asettatntuno}
+\boxed{\rho^{\textcolor{white}{1}}} \quad  \omega \, \delta \mathfrak{s} = \dfrac{aT^3}{n} \bigg[  k \, \delta \mathcal{F}^1 - \omega \, \delta \mathcal{E} \bigg]  \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantadue}
+\boxed{u^1} \quad \omega \,  \delta u^1-k\dfrac{ \delta P}{\rho{+}P} =\dfrac{aT^4}{\rho{+}P} \bigg[k \dfrac{1}{3}  \delta \mathcal{E}- \omega \, \delta \mathcal{F}^1    \bigg] \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantatre}
+\boxed{u^j} \quad  \omega \, \delta u^j=-\omega \dfrac{aT^4}{\rho{+}P}  \delta \mathcal{F}^j   \quad \spc \spc \spc \spc  \spc (\text{for } j=2,3) \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantcinque}
+\boxed{n^{\textcolor{white}{1}}} \quad   \delta u^1 = \dfrac{\omega}{k} \dfrac{\delta n}{n} \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantasei}
+\boxed{\varepsilon^{\textcolor{white}{1}}} \quad (1{-}i\omega \tau)\delta \mathcal{E}=4\dfrac{\delta T}{T}-ik\tau  \delta \mathcal{F}^1  \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantasette}
+\boxed{F^1} \quad (1{-}i\omega \tau)\delta \mathcal{F}^1=-\dfrac{1}{3} ik \tau  \delta \mathcal{E}+\dfrac{4}{3}\delta u^1  \, , &&
+\end{flalign}
+\begin{flalign}\label{Asettantotto}
+\boxed{F^j} \quad (1{-}i\omega \tau)\delta \mathcal{F}^j= \dfrac{4}{3} \delta u^j \spc \spc \spc \spc \spc \quad (\text{for } j=2,3) \, , &&
+\end{flalign}
+where, as usual, we have assumed that all perturbed fields have a spacetime dependence of the form $e^{ikx^1-i\omega t}$.
+
+
+\subsection{Shear waves}
+
+In \cite{AndersonSpiegel1972,GavassinoRadiazione,GavassinoFronntiers2021}, it was argued that the optically thick limit of a radiation-hydrodynamic system with M1 closure is a viscous fluid, with the same values of $\zeta$ and $\kappa$ as in \cite{Weinberg1971}, but with $\eta=0$. Hence, the damping of shear waves cannot be correctly described by M1 models. Indeed, it was shown in \cite{GavassinoShearRadiation2024jej} that shear waves with M1 closure do not decay. This can be seen directly from the system \eqref{Asettatntuno}-\eqref{Asettantotto}. The two pairs of degrees of freedom $\{\delta u^2,\delta \mathcal{F}^2 \}$ and $\{\delta u^3,\delta \mathcal{F}^3 \}$ fully decouple from all other degrees of freedom, and their fluctuations are shear modes, governed by equations \eqref{Asettantatre} and \eqref{Asettantotto}. We find that the state $\delta \mathcal{F}^3(k)=4\delta u^3(k)/3$ solves equations \eqref{Asettantatre} and \eqref{Asettantotto} with $\omega(k)=0$ for all $k$, meaning that M1 fluids possess shear wave solutions that survive forever, in sharp contrast with \eqref{mainformula}. 
+
+
+\subsection{Heat waves}
+
+The M1 closure scheme is known to describe heat propagation quite accurately, both in the optically thick and in the optically thin limit \cite{Sadowski2013}. Indeed, the dispersion relation \eqref{mainformula2} and its M1 analogue are textbook material \cite[\S 100]{mihalas_book}. Let us briefly summarize the result.
+
+The derivation of the dispersion relation in M1 systems is analogous to that in section \ref{heattoneee}, namely set $\delta u^2=\delta u^3=0$, and $\delta \mathfrak{s}=1$. Introduce the small parameter $\nu$ defined in equation \eqref{nuino}, and expand all variables to first order in $\nu$. We do not report the intermediate steps (which are not so enlightening) and we just provide the final formula:  
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.51\textwidth]{M1.pdf}
+\includegraphics[width=0.45\textwidth]{M1disc.pdf}
+	\caption{Comparison between the dispersion relation \eqref{mainformula2} computed directly from the radiative transport equation (blue) and the dispersion relation \eqref{m1one} computed assuming M1 closure (red). Left panel: Imaginary part of the dispersion relations, where the reference dashed line is ordinary diffusion, i.e. $\omega=-iD_h k^2$ (the real part vanishes in all models). Right panel: Temperature profile $\delta T(t,x)$ at time $t=\tau^2/(2D_h)$, with initial data $\delta T(0,x)=\Theta(1-x^2)$ (dashed line). The Fourier integral representing both solutions is reported in equation \eqref{taintanone}. As in figure \ref{fig:Comparison}, the spacetime units are chosen such that $\tau=1$.}
+	\label{fig:M1}
+	\end{center}
+\end{figure}
+\begin{equation}\label{m1one}
+\omega=-i \dfrac{D_h k^2}{1{+}(k\tau)^2/3} + \mathcal{O}\big(D_h^2/\tau^2\big)\, ,
+\end{equation}
+where $D_h$ is the same diffusivity coefficient appearing in \eqref{mainformula2}, whose value is provided in equation \eqref{fourtieight}. The behavior of the M1 model in the optically thick limit ($k\tau {\rightarrow} 0$) is consistent with the radiative transport equation. Also the optically thin ($k\tau {\rightarrow} \infty$) limiting behavior is accurate, since $\omega \rightarrow -3iD_h/\tau^2$, in full agreement with equation \eqref{frequencyklarge2}. This implies that discontinuities shrink with the correct relaxation rate, as can be seen from figure \ref{fig:M1}, right panel. The discrepancy between \eqref{mainformula2} and \eqref{m1one} is only relevant in intermediate regimes, where the M1 closure overestimates the damping rate (and therefore the diffusive nature) of heat waves, see figure \ref{fig:M1}, left panel.
+
+\subsection{Sound waves}
+
+The dispersion relation of sound waves in M1 fluids can be computed from \eqref{Asettatntuno}-\eqref{Asettantotto} following the same procedure as in section \ref{sounduzzonzone}. This involves setting $0=\delta u^2=\delta u^3=\delta P-1$, and carrying out a perturbative expansion in the parameter $\lambda$, defined in equation \eqref{lambo}. Assuming that $\kappa_p=0$, one obtains the following formula (see figure \ref{fig:M1sound}):
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.48\textwidth]{M1sound.pdf}
+\includegraphics[width=0.45\textwidth]{M1speed.pdf}
+	\caption{Comparison between the dispersion relation \eqref{mainformula3} computed directly from the radiative transport equation (blue) and the dispersion relation \eqref{muu1one} computed assuming M1 closure (red). The black dashed line is the Navier-Stokes limit $\omega=c_s^{\text{tot}}k-iD_a k^2$, whose coefficients are given in \eqref{cstotdaa}. We have made the following choices: $c_s=1/3$, and $D_s/\tau =1/10$.}
+	\label{fig:M1sound}
+	\end{center}
+\end{figure}
+\begin{equation}\label{muu1one}
+\omega=c_s k -i\dfrac{15D_s}{2\tau^2} \bigg[ \dfrac{1}{3}-\dfrac{1{-}ic_s k\tau}{(k\tau)^2+3(1{-}ic_s k\tau)^2} \bigg] +\mathcal{O}(D_s^2/\tau^2)\, ,
+\end{equation}
+whose optically thin limit agrees with \eqref{mainformula3}.
+For optically thick waves, we have $\omega(k)=c^{\text{tot}}_{M1} k{-}iD_{M1}k^2{+}\mathcal{O}(k^3 \tau^3)$, with
+\begin{equation}\label{csdaaM1}
+\begin{split}
+c^{\text{tot}}_{M1}={}& \bigg(1-\dfrac{5D_s}{2\tau} \bigg) c_s \, , \\
+D_{M1}={}& \dfrac{5}{6}(1+3c_s^2)D_s  \, .\\
+\end{split}
+\end{equation}
+Comparing \eqref{csdaaM1} with \eqref{cstotdaa}, we see that the M1 closure gives the correct conglomerate speed of sound (i.e. $c^\text{tot}_{M1}=c^\text{tot}_s$), but not the correct acoustic diffusivity (i.e. $D_{M1} \neq D_a$).  This is expected, since M1 fluids have vanishing shear viscosity \cite{GavassinoRadiazione}. Indeed, one would obtain the correct value of $D_{M1}$ by simply setting $\eta=0$ in equation \eqref{daa}. 
+
+% \section{Leakage approximation}
+
+% For completeness, let us also discuss another common treatment of radiation the leakage scheme. 
+
+
+% \begin{flalign}\label{leak1}
+% \boxed{\rho^{\textcolor{white}{1}}} \quad \partial_t \delta \rho+(\rho{+}P)\partial_j \delta u^j =- \dfrac{4aT^3}{\tau} \delta T \, , &&
+% \end{flalign}
+% \begin{flalign}\label{leak2}
+% \boxed{u^j} \quad (\rho{+}P)\partial_t \delta u^j+\partial_j \delta P =- \dfrac{4aT^4}{3\tau} \delta u^j \, ,  &&
+% \end{flalign}
+% \begin{flalign}\label{leak4}
+% \boxed{n^{\textcolor{white}{1}}} \quad  \partial_t \delta n +n\partial_j \delta u^j =0 \, , &&
+% \end{flalign}
+
+% \begin{flalign}\label{leakformula}
+% \text{Shear waves:} \quad \quad \omega(k) =-i \dfrac{5D_s}{\tau^2}  \, , &&
+% \end{flalign}
+% \begin{flalign}\label{leakformula2}
+% \text{Heat waves:} \quad \quad \, \, \omega(k) =-i \dfrac{3D_h}{\tau^2} \, , &&
+% \end{flalign}
+% \begin{flalign}\label{leakformula3}
+% \text{Sound waves:} \quad \! \quad  \omega(k) = c_s k -i \dfrac{5 D_s}{2\tau^2}  \, , &&
+% \end{flalign}
+
+
+% \newpage
+
+
+\section{Discussion and Conclusions}
+\vspace{-0.2cm}
+
+We have solved the equations of relativistic radiation hydrodynamics in the linear regime,
+under the assumptions \textbf{(a)}, \textbf{(b)}, and \textbf{(c)} listed in the introduction. Both matter and radiation have been evolved self-consistently, the former being subject to fluid-dynamical conservation laws, and the latter being governed by the relativistic Boltzmann equation. This led us to the dispersion relations \eqref{mainformula}, \eqref{mainformula2}, and \eqref{mainformula3}, which are exact to first order in the dimensionless parameters $D_s/\tau$ and $D_h/\tau$, whose magnitude scales like that of the ratios $T^{\mu \mu}_R/T^{\mu \mu}_M$.
+
+The dispersion relation of shear waves agrees with our recent calculation in \cite{GavassinoShearRadiation2024jej}. The dispersion relation of heat waves agrees with that of \citet{Spiegel1957}, with the specific heat $c_p$ in place of $c_v$ (just as in ordinary fluid mechanics \cite{landau6}). To the best of our knowledge, the formula for the dispersion relation of sound waves in special relativity is completely new, although it is derived under the additional assumption that the matter component does not expand as it absorbs heat (see footnote \ref{kpvanishes}). Despite this limitation in the thermal properties of the matter sector, the radiation sector is evolved exactly, and all radiative corrections to sound propagation (e.g. radiation pressure, radiative viscosity, radiative heat transport, and acceleration-driven heat) are accurately captured, also at relativistic sound-speeds.
+
+What do we learn from equations \eqref{mainformula}-\eqref{mainformula3}? In our opinion, the most important insights come from the observation that all three dispersion relations were computed directly from the exact linearized radiative transport equations \eqref{settatntuno}-\eqref{settantasei} alone, with the aid of perturbation theory techniques. This allows us to apply the ``machinery'' of theoretical relativistic fluid mechanics \cite{MooreCuts2018mma,Romatschke2017,FlorkowskiReview2018,RochaReview2023ilf}, and draw the following conclusions about radiation hydrodynamics as a whole:
+\begin{itemize}
+\item The dispersion relations \eqref{mainformula}-\eqref{mainformula3} are the hydrodynamic poles of the retarded linear response Green function of photon kinetic theory. Hence, if we expand them in Taylor series for small wavenumbers, i.e. $\omega(k){=}\sum_n a_n k^n$, there is a one-to-one correspondence between the Taylor coefficients $a_n$ and the infinite list of Chapman-Enskog transport coefficients of linearised radiation hydrodynamics \cite{McLennan1965,Dudynski1989,Struchtrup2011,HellerHydroHedron2023jtd}. In other words, the full knowledge of the Chapman-Enskog expansion (up to infinite order) is contained within \eqref{mainformula}-\eqref{mainformula3}. 
+\item The radius of convergence of the Taylor series $\omega(k)=\sum_n a_n k^n$ is simply $\tau^{-1}$ for the diffusive modes, while it is $\tau^{-1}/(1{+}c_s)$ for the sound modes. This implies that the Chapman-Enskog expansion is well-defined (in rigorous mathematical terms \cite{McLennan1965,Dudynski1989}) in the linear regime \cite{GavassinoChapmanEnskog2024xwf}. Furthermore, the radiation mean free path $\tau$ marks the breakdown scale of the viscous hydrodynamic approximation.
+\item Given that the Taylor series of $\omega(k)$ has a finite radius of convergence, the dispersion relations \eqref{mainformula}-\eqref{mainformula3} propagate matter waves faster than light \cite{GavassinoDispersion2024}. However, this does not entail superluminal signaling. In fact, if the initial wave profile at $t=0$ is built as a superposition of hydrodynamic excitations that obey \eqref{mainformula}-\eqref{mainformula3}, then the initial radiation field is not compactly supported. Hence, some radiation ``forerunners'' are visible to all observers already $t=0$, and the matter wave transports no new information. 
+\item The transport coefficients $\eta$, $\kappa$, and $\zeta$ computed by \citet{Weinberg1971} coincide with those computed from our dispersion relations, and the latter coefficients are those that one would obtain from the respective Kubo formulas \cite{peliti_book,Czajka:2017bod}.
+\item The sign of the term $(k\tau)^4 $ in equation \eqref{seriaccio} shows that the Super-Burnett approximation (i.e. third-order viscous hydrodynamics \cite{SuperBurnett1993}) is unstable in fluids with radiation.
+\end{itemize}
+
+
+
+% What did we learn from these dispersion relations? First of all, we confirm that, in the optically thick limit, radiation hydrodynamics becomes relativistic Navier-Stokes (in agreement with \citet{Weinberg1971}), and may be therefore modeled using the BDNK formalism \cite{BemficaDNDefinitivo2020}. This is not a surprise, since Navier-Stokes is supposed to be the universal theory of fluids with small gradients, whose mathematical structure follows from symmetries and conservation laws alone \cite{Kovtun2019}. We also found that, away from the optically thick limit, the photon-induced viscosity becomes non-Newtonian. This is also expected, since Navier-Stokes is only the first-order truncation of a series expansion in gradients \cite{Struchtrup2011,Baier2008,GrozdanovStuff2019,GavassinoInfiniteOrder2024pgl}.
+
+% The non-Newtonian character of radiation hydrodynamics is best illustrated by the relaxation rate of shear flows. In fact, for a linearized transversal fluid motion of the form $u_3=u_3(t,x^1)$, the viscous damping formula \eqref{mainformula} predicts the following limiting behaviors: 
+% \begin{equation}\label{suchabomb}
+% \partial_t u_3=
+% \begin{cases}
+% D_s \, \partial^2_1 u_3, & \text{if optically thick (i.e. $\tau \partial_x \rightarrow 0$)}\\
+%  & \\
+% -5 \dfrac{D_s}{\tau^2} u_3, & \text{if optically thin (i.e. $\tau \partial_x \rightarrow \infty$)}
+% \end{cases}
+% \end{equation}
+% A minimal non-Newtonian viscous model that ``interpolates'' \eqref{suchabomb} and reproduces  \eqref{mainformula} reasonably well is
+% \begin{equation}
+% \bigg(\partial_t -D_s \partial^2_x-\dfrac{1}{5} \tau^2 \partial_t \partial^2_x\bigg) u_3=0
+%  \, \spc \Longrightarrow \spc \, \Pi_{13}=-2\eta \sigma_{13}-\dfrac{2}{5} (\rho{+}P)\tau^2 \dot{\sigma}_{13}  \, ,
+% \end{equation}
+% where $\Pi_{13}$ (the stress) and $\sigma_{13}$ (the strain rate) are defined as usual: $(\rho{+}P)\partial_tu_3+\partial_1\Pi_{13}=0$, and $\sigma_{13}=\partial_{(1}u_{3)}$.
+
+% As it turns out, the most common effective (fluid-type) descriptions of radiation fail to reproduce the above behaviour, even qualitatively. For example, the M1 closure scheme \cite{Levermore1984,Sadowski2013} gives $D_s=0$ by construction \cite{AndersonSpiegel1972}, since the radiation pressure tensor is only sensitive to temperature gradients and expansion rates, but not to shear flows. Also, the M2 closure scheme by \citet{UdeyIsrael1982}, which was supposed to capture the non-Newtonian features of radiation viscosity, gives qualitatively wrong predictions, as it incorrectly predicts that optically thin shear waves propagate at speed $\sqrt{D/\tau}$, and decay over one mean free time, namely  \cite{PuKoide2009fj,GavassinoGENERIC2022}
+% \begin{equation}\label{dtu3udey}
+% \partial_t u_3=
+% -\bigg(\dfrac{1}{2\tau} \pm \sqrt{\dfrac{D_s}{\tau}} \partial_x \bigg)u_3 \, .
+% \end{equation}
+% Surely, truncated ``Mn'' ($n>2$) moment-based descriptions with a larger number of dynamical variables \cite{Thorne1981} will eventually reproduce \eqref{suchabomb}. However, we currently don't know how many additional degrees of freedom are needed for this purpose. Hence, the quest for an effective description of radiation viscosity beyond the linear regime is open. 
+
+
+
+
+\section*{Acknowledgements}
+
+This work is partially supported by a Vanderbilt's Seeding Success Grant.
+
+
+
+% \appendix
+
+% \section{Parametric expression for the shear-wave dispersion relation in radiation-dominated systems}\label{appenduzzoa}
+
+% Consider again the implicit function \eqref{www}, which constitutes the dispersion relation of shear waves under arbitrary thermodynamic conditions [i.e., without assuming \textbf{(c)}]. For convenience, let us introduce again the dimensionless parameter $\lambda$, defined in equation \eqref{lambo}. Furthermore, introduce the new free variable $r=\q/(1+\Gamma) \in \mathbb{R}$. Then, equation \eqref{www} generates the following parametric curve:
+% \begin{equation}\label{labireora}
+% \begin{split}
+% \omega(r)={}& -\dfrac{i}{\tau} \bigg[\dfrac{1}{2}{+}\dfrac{\lambda}{3}-\sqrt{\bigg( \dfrac{1}{2}{-}\dfrac{\lambda}{3} \bigg)^2 -\lambda \bigg[\dfrac{1}{r^2}{-}\bigg( 1{+}\dfrac{1}{r^2}  \bigg)\dfrac{\arctan(r)}{r} \bigg] }  \, \, \bigg]     \, , \\
+% k(r)={}& +\dfrac{r}{\tau} \bigg[\dfrac{1}{2}{-}\dfrac{\lambda}{3}+\sqrt{\bigg( \dfrac{1}{2}{-}\dfrac{\lambda}{3} \bigg)^2 -\lambda \bigg[\dfrac{1}{r^2}{-}\bigg( 1{+}\dfrac{1}{r^2}  \bigg)\dfrac{\arctan(r)}{r} \bigg] }  \, \, \bigg] \, . \\
+% \end{split}
+% \end{equation}
+% It is straightforward to verify that this exact solution coincides with the approximate formula \eqref{mainformula} to first order in $\lambda$. Indeed, the two formulas are in good agreement all the way to $\lambda \approx 1$ (see figure \ref{fig:approximation}.). However, when $\lambda$ gets larger than $3/2$, there is a qualitative change of behavior of the function $k(r)$, which becomes bounded at large $r$. This is when radiation begins to dominate the dynamics. Crossed this point, a purely hydrodynamic description is no longer applicable in the optically thin limit, since the hydrodynamic dispersion relation ends at the cutoff scale
+% \begin{equation}
+% \tau_c= k(\infty)^{-1}=\dfrac{2\tau}{\pi} \bigg(\dfrac{2}{3}-\dfrac{1}{\lambda} \bigg) \, .
+% \end{equation}
+% As $\lambda \rightarrow +\infty$, the dispersion relation convergences to that of an ideal ultrarelativistic gas in the relaxation-time approximation, see \cite{Romatschke:2015gic}.
+
+% \begin{figure}[h!]
+% \begin{center}
+% \includegraphics[width=0.50\textwidth]{exact!.pdf}
+% \caption{Comparison between the exact shear-wave dispersion relation \eqref{labireora} (continuous lines) and the approximate formula \eqref{mainformula} (dashed line), respectively for $\lambda=0.1$ (blue), $\lambda=1$ (magenta), $\lambda=3$ (red), and $\lambda=5$ (orange).}
+% 	\label{fig:approximation}
+% 	\end{center}
+% \end{figure}
+
+
+
+
+
+
+
+
+
+
+\bibliography{Biblio}
+
+\label{lastpage}
+
+\end{document}
+
+% ``
+
+
+% \newpage Now, our goal is to describe the propagation of heat in the system, ignoring the fact that radiation may also ``push'' the fluid. Therefore, we assume that the inertia of radiation is negligible compared to that of the fluid\footnote{In other words, we assume that $T\ll m_b=\text{``baryon mass''}$.}, so that $\lambda \approx 0$, with $\lambda$ defined in equation \eqref{lambo}. This allows us to neglect the integral in equation \eqref{7settantadue}. Solving \eqref{7settantadue} and \eqref{7settantcinque}, we thus obtain
+% \begin{equation}
+% \dfrac{\delta P}{\rho{+}P}=\dfrac{\omega}{k}\delta u^1 = -\dfrac{\omega^2}{k^2}\bigg( 1-\dfrac{\omega^2}{c_s^2k^2} \bigg)^{-1} \dfrac{T\kappa_p}{c_p} \, \delta \mathfrak{s} \, .
+% \end{equation}
+% Introducing again the dimensionless variables $\w=\omega\tau$ and $\q=k\tau$, we obtain the following equation
+% \begin{equation}
+% \w  =-i \dfrac{4\pi^2 T^3}{15 \, nc_p} \int_{-1}^1 \dfrac{\w{-}\q  \xi}{1{-}i \w {+} i\q \xi} \bigg[ 1  - \xi T\kappa_p \dfrac{\w}{\q}\bigg( 1{-}\dfrac{\w^2}{c_s^2\q^2} \bigg)^{-1} - (\rho{+}P) \dfrac{T\kappa_p^2}{nc_p} \dfrac{\w^2}{\q^2}\bigg( 1{-}\dfrac{\w^2}{c_s^2\q^2} \bigg)^{-1} \bigg] \, \dfrac{d\xi}{2i} \, .
+% \end{equation}
+% Similarly to what we did in section \eqref{shearone}, we introduce a small parameter
+% %\footnote{Note that, since we previously set $\lambda \approx 0$, while now we are treating $\nu$ as a small but non-vanishing parameter, we need to require that $\lambda \ll \nu$. This is equivalent to imposing $m_b \gg c_p T$, which is of course true at low temperatures.}
+% \begin{equation}
+%     \nu = \dfrac{4\pi^2 T^3}{15 \, nc_p} \, ,
+% \end{equation}
+% and we expand the function $\w(\nu,\q)$ to first order in $\nu$ at fixed $\q$ (which may be large). The final result is
+% \begin{equation}
+% \omega= -i \dfrac{3D_h}{\tau^2} \bigg[1-\dfrac{\arctan(k\tau)}{k\tau} \bigg] + \mathcal{O}\big(D_h^2/\tau^2\big) \, ,
+% \end{equation}
+% with heat diffusivity coefficient
+% \begin{equation}
+% D_h= \dfrac{4\pi^2 T^3 \tau}{45 n c_p} \, .
+% \end{equation}
+% Similar to the shear case, we see that $\nu \sim D_h/\tau$. Thus, expanding in small $\nu$ is equivalent to expanding in small $D_h/\tau$.
+% Furthermore, we remark once more that the dispersion relation well approximates kinetic theory for all values of $k\in \mathbb{R}$, including the ``UV'' limit $|k\tau|\gg 1$.
+
+
+% \newpage
+
+% \begin{flalign}\label{9settatntuno}
+% \boxed{\rho^{\textcolor{white}{1}}} \quad  \w \, \delta \mathfrak{s} -\q \nu \int_{-1}^1 \dfrac{ \xi}{1 {+} i \q \xi} \bigg[  \dfrac{\kappa_p}{n}  \delta P +  \delta \mathfrak{s} \bigg]  \, \dfrac{d\xi}{2} =0 \, , &&
+% \end{flalign}
+% \begin{flalign}\label{9settantadue}
+% \boxed{u^1} \quad \q \delta P - \nu nT \int_{-1}^1 \dfrac{\xi^2}{1 {+} i \q \xi} \bigg[  \dfrac{\kappa_p}{n}  \delta P +  \delta \mathfrak{s} \bigg] \, \dfrac{d\xi }{2} =0 \, , &&
+% \end{flalign}
+
+% \begin{flalign}\label{Asettatntuno}
+% \boxed{\rho^{\textcolor{white}{1}}} \quad  \Gamma  =- \dfrac{aT^3}{n} \bigg[ \Gamma \, \delta \mathcal{E}  +i \q \, \delta \mathcal{F}^1  \bigg]  \, , &&
+% \end{flalign}
+% \begin{flalign}\label{Asettantadue}
+% \boxed{u^1} \quad \bigg[1{+}\dfrac{\Gamma^2}{c_s^2 \q^2} \bigg] \delta P  -\dfrac{\Gamma^2}{\q^2} \dfrac{T\kappa_p}{c_p}(\rho{+}P)  =aT^4 \bigg[i\dfrac{\Gamma}{\q} \, \delta \mathcal{F}^1  -\dfrac{1}{3}  \delta \mathcal{E}  \bigg]  \, , &&
+% \end{flalign}
+% \begin{flalign}\label{Asettantcinque}
+% \boxed{n^{\textcolor{white}{1}}} \quad  \delta u^1 = i\dfrac{\Gamma}{\q} \bigg[\dfrac{\delta P}{c_s^2 (\rho{+}P)} - \dfrac{T\kappa_p}{c_p} \bigg]  \, , &&
+% \end{flalign}
+% \begin{flalign}\label{Asettantasei}
+% \boxed{\varepsilon^{\textcolor{white}{1}}} \quad (1{+}\Gamma)\delta \mathcal{E}=  \dfrac{4}{c_p} -i \q  \delta \mathcal{F}^1 + \dfrac{4\kappa_p}{nc_p} \, \delta P  \, , &&
+% \end{flalign}
+% \begin{flalign}\label{Asettantasette}
+% \boxed{F^1} \quad (1{+}\Gamma)\delta \mathcal{F}^1=-\dfrac{1}{3} i \q  \delta \mathcal{E} + \dfrac{4}{3}   \delta u^1 \, , &&
+% \end{flalign}
+
+
+
+
+% We can estimate the importance of radiation-hydrodynamic phenomena with a simple back-to-the-envelope estimate. In gas, the pressure scales like $nT$, where $n$ is the density of free particles and $T$ is the temperature. If we compare this scaling law with that of black-body photons, whose pressure grows like $T^4$ \cite{PrigoginebookModernThermodynamics2014}, we are naturally led to define the dimensionless ratio\footnote{ Natural ``QFT'' units, $c =\hbar = k_B = 1$, are adopted throughout.}
+% \begin{equation}
+% \mathcal{R} =T^3/n \, .
+% \end{equation}
+% This number quantifies the relative error that we commit if we neglect radiative contributions to the stress-energy tensor. 
+
+% \newpage
+
+% \cite{NovikovThorne1973,Thorne1981,Rampp:2002bq,Sadowski2013,Farris2008}.
+
+% By contrast, radiation hydrodynamics is a key ingredient in an astrophysicist's toolbox.
+
+% \newpage
+% Radiation hydrodynamics is the branch of fluid mechanics that studies the propagation of thermal radiation (photons and neutrinos) across a fluid, and the backreaction that this radiation exerts on the fluid motion \cite{Pomraning1973,mihalas_book,CastorRadiationBook_2004}. It is a crucial tool in the modeling of most high-energy astrophysical phenomena \cite{NovikovThorne1973,Thorne1981,Rampp:2002bq,Sadowski2013,Farris2008}. To see why this is the case, consider the following back-to-the-envelope estimate.
+%Recently, the interest in radiation hydrodynamics has been revived by the need to include neutrino effects in neutron star merger simulations \cite{Fujibayashi:2017xsz}, and event horizon telescope. 
+%\cite{Weinberg1971,UdeyIsrael1982} when temperatures are of the order of $10^6$ Kelvin or higher. In fact, it is at these temperatures that the stress-energy-momentum components of the radiation field become comparable with those of matter, enabling the former to ``drive'' the latter \cite{Pomraning1973,mihalas_book}.
+%One can estimate the importance of radiative effects on the fluid motion with the following back-to-the-envelope estimate. 
+%Consider an ideal gas of massive particles that interact with a gas of black body photons. The pressure of the former is $P=nT$ (with $n=$ ``baryon density'' and $T=$ ``temperature'') while the pressure of a radiation gas in local equilibrium is $P_R=aT^4$ (where $a=\pi^2/15$ is the usual radiation constant\footnote{\footnote{ Natural ``QFT'' units, $c{=}\hbar{=}k_B{=}1$, are adopted throughout.}). Hence, when a fluid becomes very hot, $P_R$ will eventually exceed $P_B$.}. Proper treatment of these processes would require one to solve the Boltzmann equation for the distribution function $f(x^\alpha,p^\alpha)$ of photons or neutrinos. However, this is numerically expensive, and often one needs to rely on approximate techniques (e.g. the method of the moments \cite{ThorneMoments1981,Shibata:2011kx,Sadowski2013}), where radiation is treated as an effective ``fluid component'', subject to its own hydrodynamic equations (coupled with matter). 
+ 
+
+%The importance of radiation for the hydrodynamic evolution of fluids strongly depends on the temperature, because the energy density and pressure of thermal radiation at a given temperature $T$ scale like $T^4$. In Earthly fluids such as air and water, the feedback of (non-solar) thermal radiation on matter is usually very small, and radiation-hydrodynamic effects are often neglected. In low-mass stars such as the Sun, which are quite cold (relative to their density) the role of radiation is mainly to transport heat. However, 
+
+
+
+% In Earthly fluids such as air and water, the feedback of (non-solar) thermal radiation on matter is usually very small, and radiation-hydrodynamic effects are often neglected. By contrast, radiation hydrodynamics is a key ingredient in an astrophysicist's toolbox. This can be explained with the following back-to-the-envelope estimate. 
+
+
+
+
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.49\textwidth]{Dispersions.pdf}
+% \includegraphics[width=0.49\textwidth]{soundplot.pdf}
+% \caption{Hydrodynamic dispersion relations \eqref{mainformula}-\eqref{mainformula3} of an interacting fluid-radiation system according to photon kinetic theory (continuous lines) compared with the diffusive approximation by \citet{Weinberg1971} (dashed lines). Left panel: Imaginary part of $\omega$, where the values of $D/\tau$ have been chosen so that, at small $k$, we recover $\mathfrak{Im}(\omega \tau) \approx -(k\tau)^2$. The following color choices are adopted: magenta for shear waves, red for heat waves, and blue for sound waves. Right panel: The only dispersion relation with non-vanishing real part is the sound wave (blue line). For illustrative purposes, we have chosen a system where the speed of sound of matter is $c_s=1/3$, while $D_s/\tau =1/10$. Note that, in the diffusive approximation, the speed of sound is that of the total matter+radiation system, which happens to be $c_s^{\text{tot}}=1/4$, for the choice of parameters above.}
+% 	\label{fig:Dispersions}
+% 	\end{center}
+% \end{figure}
+
+
+
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.55\textwidth]{Cattaneo.pdf}
+% 	\caption{Comparison between the dispersion relation of heat waves computed from radiative transport (red) with the corresponding dispersion relation from Israel-Stewart theory (blue). The black dashed line marks the real part of $\omega$ according to the Israel-Stewart theory (which is absent in the radiative transport model). The case with shear waves is completely analogous.}
+% 	\label{fig:Cattaneo}
+% 	\end{center}
+% \end{figure}
+

@@ -1007,6 +1007,118 @@ $T = 10^8$\,K.
 \label{fig:relaxation-scales}
 \end{figure}
 
+%======================================================================
+\section{Nonlinear Heat Conduction in the Large-Flux Regime}
+\label{sec:rel-large-flux}
+%======================================================================
+
+The perturbation analysis of the preceding sections assumed that the heat
+flux $q^\mu$ remains small compared to the equilibrium energy density,
+so that the Israel--Stewart or BDNK constitutive relations can be
+linearized.  However, in astrophysical environments with steep thermal
+gradients---neutron star surfaces, the quark--gluon plasma near the
+deconfinement transition, or radiation-dominated accretion flows---the
+heat flux can become a substantial fraction of the local energy density.
+In such \emph{large-flux regimes}, the linear Fourier law and its
+first-order causal generalizations break down, and a nonlinear
+theory of heat conduction is required.
+
+\citet{GavassinoLargeFlux2024} has recently derived a systematic
+procedure for evaluating the constitutive relations of heat-conducting
+fluids in the large-flux regime, working within the GENERIC-Multifluid
+(GM) theory that unifies Carter's two-fluid framework with
+\"Ottinger's GENERIC approach.  The key results are as follows.
+
+\subsubsection{Non-equilibrium free energy}
+The GM theory introduces a \emph{thermal momentum} covector $w_\mu$
+and defines the non-equilibrium temperature $T = -u^\mu w_\mu$.  The
+departure from local equilibrium is parameterized by the scalar
+$w^\mu w_\mu + T^2 \ge 0$, which vanishes in equilibrium.  A
+non-equilibrium free-energy density $\mathfrak{F}(T, n, w^\mu w_\mu)$
+governs the constitutive relations through
+\begin{equation}
+  \mathrm{d}\mathfrak{F}
+  = -s\,\mathrm{d}T + \mu\,\mathrm{d}n
+    + \frac{\sigma}{2}\,\mathrm{d}(w^\mu w_\mu + T^2)\,,
+  \label{eq:GM-free-energy}
+\end{equation}
+where $\sigma > 0$ is a thermodynamic coefficient that reduces to
+$\beta_1/(2T)$ (the Israel--Stewart coefficient) in the small-flux limit.
+
+\subsubsection{Stress-energy tensor at large flux}
+The resulting stress-energy tensor exhibits an \emph{anisotropic pressure}
+along the heat-flux direction:
+\begin{equation}
+  T^{\mu\nu}
+  = P\,g^{\mu\nu} + (\varepsilon + P)\,u^\mu u^\nu
+    + u^\mu q^\nu + q^\mu u^\nu
+    + \frac{q^\mu q^\nu}{\sigma\,T^2}\,,
+  \label{eq:GM-Tmunu}
+\end{equation}
+where the last term---quadratic in the heat flux---represents a
+genuinely nonlinear correction absent in standard Israel--Stewart
+or BDNK.  The longitudinal and transversal pressures are
+\begin{equation}
+  P_L = P + \frac{q^2}{\sigma\,T^2}\,,\qquad P_T = P\,,
+\end{equation}
+so that the pressure anisotropy $P_L - P_T = q^2/(\sigma T^2)$
+is directly measurable in kinetic theory.
+
+\subsubsection{Nonlinear heat equation}
+The equation of motion for the thermal momentum reduces, in the
+Israel--Stewart limit, to the familiar Cattaneo relation, but at
+large flux it takes the form
+\begin{equation}
+  \tau\,\sigma\,T\,\mathcal{L}_u\!\left(\frac{q}{\sigma T}\right)_\nu
+  + q_\nu
+  = -\tau\,\sigma\,T\,\Delta^{\mu}{}_{\nu}
+    \left(T\,u^\lambda\nabla_\lambda u_\mu + \nabla_\mu T\right),
+  \label{eq:GM-heat-eq}
+\end{equation}
+where $\mathcal{L}_u$ is the Lie derivative along $u^\mu$.  The
+coupling to vorticity (through the Lie derivative) is automatic and
+consistent with kinetic theory.
+
+\subsubsection{Flux-limited diffusion models}
+Gavassino evaluates the non-equilibrium free energy from two
+microscopic models of flux-limited diffusion:
+\begin{itemize}
+  \item \textbf{Minerbo closure} (maximum entropy principle): the
+    angular distribution of heat-carrying quasi-particles is
+    $f(\cos\theta) \propto e^{Z\cos\theta}$, yielding a polynomial
+    approximation for $\sigma(w)$.
+  \item \textbf{Levermore closure} (Chapman--Enskog procedure): the
+    angular distribution is
+    $f(\cos\theta) \propto (Z\coth Z - \cos\theta)^{-1}$, producing
+    a qualitatively similar but quantitatively distinct equation of state.
+\end{itemize}
+Both models predict that the non-equilibrium free energy is bounded and
+that the heat flux saturates at a maximum value $q_{\max} = v_{\mathrm{ch}}\,\mathfrak{R}$,
+where $v_{\mathrm{ch}}$ is the characteristic speed of the heat-carrying
+excitations and $\mathfrak{R}$ is their stress content.
+
+\subsubsection{Implications for B\'enard convection}
+For the B\'enard problem studied in this chapter, the large-flux
+corrections become significant when the dimensionless ratio
+$q/(w\,c) \sim \kappa\,\beta\,d/(w\,c)$ is not negligibly small.
+This occurs in:
+\begin{enumerate}
+  \item[(i)] Neutron star ocean layers with extremely steep temperature
+    gradients ($\beta \sim 10^{10}$\,K/cm), where the radiation heat
+    flux can approach the Eddington limit;
+  \item[(ii)] The early stages of proto-neutron star cooling, where
+    neutrino transport operates in a semi-transparent regime with
+    flux-to-energy ratios $\sim 0.1$--$0.3$;
+  \item[(iii)] QGP fireballs in heavy-ion collisions, where temperature
+    gradients across the fireball can be steep enough that $q/(\varepsilon + p)$
+    reaches $\sim 0.01$--$0.1$.
+\end{enumerate}
+In such regimes, the critical Rayleigh number for onset of convection
+receives corrections from the pressure anisotropy $P_L - P_T$, which
+effectively modifies the buoyancy restoring force.  A systematic
+analysis of this nonlinear modification to the B\'enard problem
+remains an open problem.
+
 \section*{References}
 
 \begin{enumerate}
@@ -1022,4 +1134,8 @@ $T = 10^8$\,K.
 \item L.~Rezzolla and O.~Zanotti, \textit{Relativistic Hydrodynamics}, OUP (2013).
 \item W.~Israel and J.~M.~Stewart, \textit{Ann.\ Phys.}\ \textbf{118}, 341 (1979).
 \item S.~L.~Shapiro and S.~A.~Teukolsky, \textit{Black Holes, White Dwarfs, and Neutron Stars}, Wiley (1983).
+\item L.~Gavassino, ``Relativistic heat conduction in the large-flux regime,''
+  \textit{Phys.\ Rev.\ D} \textbf{109}, 096040 (2024). [arXiv:2312.13553]
+\item H.~\"Ottinger, ``Relativistic and nonrelativistic description of fluids with anisotropic heat conduction,''
+  \textit{Physica A} \textbf{254}, 433 (1998).
 \end{enumerate}

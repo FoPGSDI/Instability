@@ -680,6 +680,199 @@ them when $v/c$ or $p/(\rho c^2)$ is not negligible.
 
 
 %% ====================================================================
+\section{The Gavassino Theorem: Thermodynamic Stability Implies Causality}
+\label{sec:gavassino-stability-causality}
+%% ====================================================================
+
+A foundational result that underpins the entire programme of this book
+was established by Gavassino~\citep{GavassinoCausality2021}: if a
+relativistic hydrodynamic theory possesses an entropy current
+$s^{\mu}$ satisfying $\nabla_{\mu} s^{\mu} \ge 0$, and the entropy is
+maximized at equilibrium (Gibbs stability), then perturbations about
+equilibrium \emph{cannot propagate outside the light cone}.  In other
+words, thermodynamic stability alone guarantees causality.
+
+\begin{tcolorbox}[colback=red!5!white, colframe=red!60!black,
+  title={\textbf{Theorem (Gavassino 2021): Stability $\Rightarrow$ Causality}},
+  fonttitle=\bfseries]
+\label{thm:gavassino-stability-causality}
+Let $\varphi^{A}$ denote the linearised perturbation fields about a
+homogeneous equilibrium state, obeying first-order evolution equations
+\begin{equation}
+  M^{\mu}_{AB}\,\partial_{\mu}\varphi^{B} = -\Xi_{AB}\,\varphi^{B}\,,
+  \label{eq:gavassino-eom}
+\end{equation}
+with $M^{0}_{AB}$ invertible.  Suppose there exist constant symmetric
+matrices $E^{\mu}_{AB}$ and $\sigma_{AB}$ such that the
+\emph{information current}
+\begin{equation}
+  E^{\mu} = \tfrac{1}{2}\,E^{\mu}_{AB}\,\varphi^{A}\,\varphi^{B}
+  \label{eq:gavassino-info-current}
+\end{equation}
+is future-directed timelike for all non-vanishing perturbations, and
+the entropy production rate satisfies
+\begin{equation}
+  \partial_{\mu} E^{\mu} = -\sigma_{AB}\,\varphi^{A}\,\varphi^{B}
+  \;\le\; 0\,.
+  \label{eq:gavassino-entropy-prod}
+\end{equation}
+Then:
+\begin{enumerate}
+  \item[\textbf{(I)}] The system~\eqref{eq:gavassino-eom} is
+    \emph{causal}: perturbations propagate within the light cone.
+  \item[\textbf{(II)}] The system can be rewritten in
+    \emph{symmetric-hyperbolic} form:
+    \begin{equation}
+      E^{\mu}_{AB}\,\partial_{\mu}\varphi^{B}
+      = -\sigma_{AB}\,\varphi^{B}
+        - \Xi_{[AB]}\,\varphi^{B}\,,
+      \label{eq:gavassino-symhyp}
+    \end{equation}
+    which is manifestly well-posed (existence, uniqueness, continuous
+    dependence on data).
+\end{enumerate}
+\end{tcolorbox}
+
+\noindent
+The \emph{information current} $E^{\mu}$ is constructed as
+$E^{\mu} = \Phi_{\mathrm{eq}}^{\mu} - \Phi^{\mu}$, where
+$\Phi^{\mu}$ is the grand-canonical potential current and
+$\Phi_{\mathrm{eq}}^{\mu}$ its equilibrium value.  Its time component
+$E^{0}$ is the Gibbs stability functional: positive definiteness of
+$E^{0}$ is precisely the statement that the equilibrium state maximises
+the entropy at fixed energy and particle number
+\citep{GavassinoGibbs2021}.
+
+\subsubsection{Significance for this book}
+This theorem has three profound consequences for the stability
+analyses throughout this book:
+
+\begin{enumerate}
+  \item \textbf{BDNK and IS are both covered.}  The theorem applies to
+    any first-order system with a positive-definite information current.
+    Both the BDNK first-order causal theory
+    \citep{BemficaDN2018,Kovtun2019} and the Israel--Stewart
+    second-order theory \citep{IsraelStewart1979} satisfy the
+    hypotheses, so their causality follows from a single unified
+    argument.
+
+  \item \textbf{Stability checks suffice.}  When verifying that a
+    particular equilibrium configuration (e.g., a stratified neutron
+    star layer) supports causal perturbation propagation, it is
+    \emph{sufficient} to verify the Gibbs stability conditions
+    ($E^{0}_{AB}$ positive definite and $\sigma_{AB}$ positive
+    semidefinite).  There is no need to separately check characteristic
+    speeds.
+
+  \item \textbf{Universality.}  Since the theorem depends only on the
+    existence of an entropy current and Gibbs stability---not on the
+    specific constitutive relations---it provides a
+    \emph{formalism-independent} guarantee that all thermodynamically
+    consistent relativistic hydrodynamic theories are causal in the
+    linear regime.
+\end{enumerate}
+
+\subsubsection{Complementary results}
+
+Gavassino's programme extends this stability--causality connection in
+several directions:
+\begin{itemize}
+  \item \textbf{Gibbs stability criterion}
+    \citep{GavassinoGibbs2021}: A systematic method to construct the
+    Lyapunov functional $E = -\delta S$ for any relativistic fluid
+    theory from the maximum entropy principle.  The functional is
+    guaranteed to be non-increasing by the second law.
+
+  \item \textbf{Entropy has no maximum (Eckart/Landau--Lifshitz
+    instability)} \citep{GavassinoLyapunov2020}: The instability of
+    the Eckart and Landau--Lifshitz first-order theories is traced to
+    the fact that the total entropy, restricted to dynamically
+    accessible states, has no upper bound---the truncation of the
+    entropy current at first order converts the maximum into a saddle
+    point.
+
+  \item \textbf{Onsager--Casimir and symmetric hyperbolicity}
+    \citep{GavassinoCasimir2022}: The Onsager--Casimir reciprocal
+    relations impose symmetry conditions on the principal part of the
+    linearised equations, ensuring symmetric hyperbolicity in the
+    absence of macroscopic magnetic fields.
+
+  \item \textbf{Lorentz invariance of entropy}
+    \citep{GavassinoLorentz2021}: The thermodynamic entropy $S$ is
+    proven to be a Lorentz scalar from first principles (field theory
+    + second law in one frame), without assuming covariance of
+    thermodynamics a priori.  This grounds the entire relativistic
+    thermodynamic framework used in this book.
+\end{itemize}
+
+
+%% ====================================================================
+\section{Gavassino's Universality Classes and Formalism Independence}
+\label{sec:gavassino-universality}
+%% ====================================================================
+
+A second major result, established by Gavassino, Disconzi \&
+Noronha~\citep{GavassinoUniversality1,GavassinoUniversality2},
+resolves a long-standing question in relativistic hydrodynamics: do
+Israel--Stewart (IS) and BDNK give the same physical predictions?
+
+\begin{tcolorbox}[colback=green!5!white, colframe=green!50!black,
+  title={\textbf{Universality Theorem (Gavassino, Disconzi \& Noronha
+    2023)}},
+  fonttitle=\bfseries]
+\label{thm:universality}
+Two relativistic hydrodynamic theories belong to the same
+\emph{universality class} if they have the same degrees of freedom
+(classified by their $SO(3)$ transformation properties), the same
+conservation laws, and a thermodynamically stable equilibrium.  All
+theories in the same universality class are \emph{mathematically
+equivalent} when linearised about homogeneous equilibrium: there
+exists a change of variables mapping the equations of one theory
+into those of the other.
+
+In particular, \textbf{all second-order viscous hydrodynamic theories}
+(IS, BRSSS, DNMR, Chapman--Enskog, etc.)\ \textbf{and the BDNK
+first-order theory are equivalent in the linear regime} when they
+share the same universality class
+$(\mathfrak{g}_{0},\mathfrak{g}_{1},\mathfrak{g}_{2})
+-(\bar{\mathfrak{g}}_{0},\bar{\mathfrak{g}}_{1},
+\bar{\mathfrak{g}}_{2})$.
+\end{tcolorbox}
+
+\noindent
+\textbf{Consequence for critical parameters.}
+Since the onset of hydrodynamic instabilities (convection, rotation,
+magnetic field effects) is determined by the \emph{marginal state}
+$\sigma = 0$ of the linearised equations, and all theories in the same
+universality class have identical linearised equations (up to a change
+of variables), it follows that:
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!50!black,
+  title={\textbf{Formalism-Independence of Critical Parameters}},
+  fonttitle=\bfseries]
+\label{box:formalism-independence}
+The critical Rayleigh number $\mathrm{Ra}_{c}$, critical Taylor
+number $\mathrm{Ta}_{c}$, critical Chandrasekhar number $Q_{c}$, and
+all other critical parameters derived in this book are
+\emph{independent of the choice of dissipative formalism} (BDNK vs.\
+IS vs.\ any other second-order theory).  The only differences between
+formalisms appear in the \emph{non-hydrodynamic sector}---transient
+relaxation modes that lie outside the domain of validity of
+hydrodynamics.
+\end{tcolorbox}
+
+\noindent
+This result justifies our use of the BDNK formalism throughout the
+book without loss of generality: every critical threshold we compute
+would be obtained identically using Israel--Stewart or any other
+thermodynamically consistent theory.  See the accompanying paper
+\citep{GavassinoUniversality2} for explicit demonstrations that
+Hydro+ $\equiv$ IS (bulk viscosity), superfluid hydrodynamics
+$\equiv$ IS (heat conduction, $\kappa \to \infty$), and many other
+surprising equivalences.
+
+
+%% ====================================================================
 \section{Relativistic Boussinesq Approximation}
 \label{sec:rel-boussinesq}
 %% ====================================================================
@@ -1032,6 +1225,229 @@ evolution timescales while correctly reproducing the known cooling
 and spin-down behaviour.
 
 %% ====================================================================
+\section{Information Current and Fluctuating BDNK Hydrodynamics}
+\label{sec:info-current-fluctuations}
+%% ====================================================================
+
+A central advance in the theoretical underpinning of first-order causal
+hydrodynamics is the construction of an \emph{information current}
+$E^{\mu}$ within the BDNK framework
+\citep{GavassinoInfoCurrentBDNK2024}.  The information current quantifies
+the net flow of thermodynamic information carried by perturbations around
+equilibrium.  Given the entropy current $s^{\mu}$ and conserved currents
+$J^{I\mu}$, it is defined as
+\begin{equation}
+  E^{\mu} = -\delta s^{\mu} - \alpha_{I}^{*}\,\delta J^{I\mu}\,,
+  \label{eq:info-current-def}
+\end{equation}
+where $\alpha_{I}^{*}$ are the equilibrium values of the thermodynamic
+conjugates and $\delta$ denotes a finite perturbation from equilibrium.
+The free energy variation is then
+$\delta\Omega = T\!\int_{\Sigma}\! d\Sigma\, n_{\mu}\,E^{\mu}$,
+and the equilibrium probability distribution for fluctuations is
+$p[\delta\phi^{A}] \propto \exp\!\bigl(-\!\int\! d\Sigma\, n_{\mu}\,E^{\mu}\bigr)$.
+
+\subsection{Role in stability and causality}
+
+A relativistic system is linearly causal and stable against fluctuations
+if \citep{GavassinoInfoCurrentBDNK2024}:
+\begin{enumerate}
+  \item $n_{\mu}\,E^{\mu} \ge 0$ for any past-directed timelike $n^{\mu}$
+    (i.e., $E^{\mu}$ is timelike future-directed);
+  \item The bound $n_{\mu}\,E^{\mu} = 0$ is saturated only if
+    $\delta\phi^{A} = 0$ (equilibrium is unique);
+  \item The second law $\partial_{\mu}E^{\mu} \le 0$ holds.
+\end{enumerate}
+In the BDNK framework, the construction of $E^{\mu}$ requires
+UV-regularization: the first-order truncation of the entropy current
+does not produce a timelike $E^{\mu}$ at high gradients, so
+additional second-order terms of the form $\partial\varphi\,\partial\varphi$
+(which lie within the truncation error) must be tuned to make
+$E^{\mu}$ timelike future-directed also in the UV.  This regularization
+is always possible for the physically relevant BDNK theories
+\citep{GavassinoInfoCurrentBDNK2024}.
+
+\subsection{Fluctuating BDNK theory}
+
+Building on the information current, Gavassino et~al.\
+\citep{GavassinoBDNKFluctuations2024} constructed the first
+mathematically consistent theory of stochastic fluctuations within
+BDNK hydrodynamics.  The key result is that the noise correlators
+are guaranteed to be observer-independent for thermodynamically
+stable models: the Martin--Siggia--Rose (MSR) effective action is
+well-defined and the fluctuation-dissipation theorem is satisfied in a
+manifestly covariant manner.
+
+The linearized equations of motion take the form
+\begin{equation}
+  \bigl(E_{AB}^{\mu}\,\partial_{\mu} + \sigma_{AB}\bigr)\,\delta\phi^{B}
+  = \xi_{A}\,,
+  \label{eq:fluctuating-eom}
+\end{equation}
+where $E^{\mu} = \delta\phi^{A}\,E_{AB}^{\mu}\,\delta\phi^{B}/2$,
+$\sigma = \delta\phi^{A}\,\sigma_{AB}\,\delta\phi^{B}$ is the entropy
+production, and $\xi_{A}$ is a Gaussian stochastic source with zero
+mean and correlator
+\begin{equation}
+  \langle\xi_{A}(x)\,\xi_{B}(x')\rangle
+  = 2\,\sigma_{AB}\,\delta^{(4)}(x - x')\,.
+  \label{eq:noise-correlator}
+\end{equation}
+The MSR action for the fluctuating theory is generically bilocal and
+the noise is not white; however, correlators of conserved densities
+remain spatially localized and coincide with those computed in
+fluctuating Israel--Stewart theory
+\citep{GavassinoBDNKFluctuations2024,MullinsHippertGavassinoNoronha2024}.
+
+The effective action approach of Mullins et~al.\
+\citep{MullinsHippertGavassinoNoronha2024,MullinsGavassinoStochastic2024}
+further reveals a $\mathbb{Z}_{2}$ symmetry, analogous to the
+Kubo--Martin--Schwinger (KMS) symmetry, involving time reversal and
+parity, which implements the principle of detailed balance in a
+covariant manner.  This symmetry provides a new guide for constructing
+effective actions for hydrodynamic systems whose dynamics are not solely
+governed by conservation laws.
+
+
+%% ====================================================================
+\section{Regime of Applicability of Israel--Stewart Theory}
+\label{sec:rel-regime-IS}
+%% ====================================================================
+
+A central question for every chapter in this book is: when can we trust
+Israel--Stewart (IS) hydrodynamics, and when must we rely on the
+first-order BDNK framework?  Wagner \& Gavassino
+(\citealt{WagnerGavassinoRegime2024}, arXiv:2309.14828) have provided a
+systematic answer using linear-response theory.
+
+\subsection{The ranking of IS truncations}
+
+Consider a fluid element with internal non-equilibrium degrees of freedom
+$\mathbb{A} = \{\mathbb{A}^1, \mathbb{A}^2, \ldots\}$ driven by a
+gradient $\theta(t)$.  The exact linear-response Green function is a sum
+of exponentials:
+\begin{equation}
+\label{eq:rel-Green-exact}
+G(t) = \Theta(t)\sum_n \frac{\zeta_n}{\tau_n}\,e^{-t/\tau_n}\,,
+\end{equation}
+where $\tau_n$ are the microscopic relaxation times and $\zeta_n$ the
+associated viscous susceptibilities.  Israel--Stewart replaces this with
+a single relaxation:
+$G_{\mathrm{IS}}(t) = \Theta(t)(\zeta/\tau_\Pi)\,e^{-t/\tau_\Pi}$.
+The question is how to choose $\tau_\Pi$ and $\zeta$.  Wagner \& Gavassino
+compare six prescriptions, ranking them in decreasing accuracy:
+\begin{enumerate}
+\item \textbf{IReD} (Inverse Reynolds Dominance): $\zeta = \sum_n \zeta_n$,
+  $\tau_\Pi = \sum_n \zeta_n \tau_n / \sum_m \zeta_m$.  This is the
+  susceptibility-weighted average of relaxation times, and is accurate
+  both in the asymptotic (Navier--Stokes) regime and in the transient regime.
+\item \textbf{DNMR}: $\tau_\Pi = \max\{\tau_n\}$.  Accurate at late
+  times but overestimates the transient timescale when the slowest mode
+  has small susceptibility.
+\item \textbf{Second-order gradient expansion} (non-resummed BRSSS):
+  Often \emph{less} accurate than Navier--Stokes in the transient regime.
+\item \textbf{14-moment approximation}: Least accurate overall.
+\end{enumerate}
+
+\subsection{Criterion for book chapters}
+
+The key finding is that \emph{IS hydrodynamics is falsifiable}: the
+relaxation time $\tau_\Pi$ is an observable quantity (not merely a UV
+regulator), and the IReD prescription gives the optimal match to the
+exact microscopic dynamics.  For each stability problem in this book,
+the IS correction to the perturbation equations is physically meaningful
+whenever the driving force $\theta(t)$ varies on timescales comparable
+to $\tau_\Pi$.  When $\theta$ varies slowly compared to all $\tau_n$,
+Navier--Stokes (and hence BDNK) suffices.
+
+%% ====================================================================
+\section{Convergence and Divergence of the Hydrodynamic Gradient Expansion}
+\label{sec:rel-gradient-expansion}
+%% ====================================================================
+
+The gradient expansion
+$T^{\mu\nu}(\mathrm{Kn}) = T^{\mu\nu}_{\mathrm{ID}} + T^{\mu\nu}_1\,
+\mathrm{Kn} + T^{\mu\nu}_2\,\mathrm{Kn}^2 + \cdots$
+is the foundation upon which Navier--Stokes, Burnett, and higher-order
+hydrodynamics are constructed.  Two recent works by Gavassino clarify
+its convergence properties.
+
+\subsection{Infinite-order hydrodynamics (Gavassino, arXiv:2402.19343)}
+
+Gavassino (\citealt{GavassinoInfiniteOrder2024}) constructs a
+radiation-hydrodynamic model where the gradient expansion can be computed
+analytically to \emph{all} orders.  The key findings are:
+
+\begin{enumerate}
+\item The gradient series is \emph{factorially divergent} for most flows,
+  with coefficients growing as $(n+3)!$ at order $n$.  The divergence
+  originates from particles with arbitrarily long mean free paths
+  (high-energy tails of the kinetic distribution).
+
+\item A UV cutoff $\Lambda$ on particle energies regularizes the series,
+  restoring convergence when $\Lambda/T < \mathrm{Kn}^{-1}$.  The
+  regularized series agrees with the exact non-local constitutive
+  relation to exponential accuracy.
+
+\item The breakdown of the regularized gradient expansion occurs at
+  $\mathrm{Kn} \sim 0.1$---precisely where Navier--Stokes ceases to
+  hold.  Thus, higher-derivative corrections do not extend the regime
+  of applicability of hydrodynamics beyond first order; they merely
+  refine accuracy within the same domain.
+
+\item All odd-order truncations of the gradient series are \emph{elliptic}
+  (acausal, unstable, ill-posed), confirming that only even-order
+  truncations (Navier--Stokes, Burnett, etc.) are physically meaningful.
+\end{enumerate}
+
+\subsection{Convergence criterion (Gavassino, arXiv:2408.14316)}
+
+Gavassino (\citealt{GavassinoConvergence2024}) provides rigorous
+convergence theorems for hydrodynamic dispersion relations in relativistic
+kinetic theory:
+
+\begin{theorem}[Gavassino 2024]
+If the non-hydrodynamic sector has a finite gap $\omega_g = -i/\tau_g$
+at zero wavenumber, then the Taylor series of all hydrodynamic dispersion
+relations has a non-vanishing radius of convergence.  For shear waves,
+$R_{\mathrm{shear}} \geq (2\tau_g)^{-1}$.
+\end{theorem}
+
+The gap exists whenever the total scattering cross-section is bounded
+below by a positive constant at all energies ($\inf_s \sigma_{\mathrm{tot}}
+(s) = \sigma_0 > 0$).  Combined with the gaplessness criterion of
+Gavassino (\citealt{GavassinoGapless2024}, arXiv:2404.12327)---which
+proves that the non-hydrodynamic sector is gapless whenever the
+cross-section vanishes at high energies---these results provide a
+complete picture: standard QFT cross-sections (which decay at high
+energy) lead to gapless non-hydrodynamic sectors and divergent gradient
+expansions, while hard-sphere-type interactions preserve a gap and
+convergence.
+
+\subsection{Stochastic fluctuations in kinetic theory (Rocha, Gavassino,
+  Mullins; arXiv:2405.10878)}
+
+Rocha, Gavassino \& Mullins (\citealt{RochaGavassinoFluctu2024})
+develop a Lorentz-covariant framework for equilibrium fluctuations in
+relativistic kinetic theory using Gavassino's information current.  The
+resulting stochastic theory is proven causal and covariantly stable,
+with predictions independent of the spacetime foliation used to define
+grand-canonical probabilities.  Key results relevant to this book:
+\begin{enumerate}
+\item In a box with $N > 5$ particles, Boltzmann's molecular chaos
+  postulate breaks with probability $\sim N^{-1/2}$, leading to a
+  breakdown of the Boltzmann equation in small systems.
+\item Transient (Israel--Stewart-type) hydrodynamics already accounts
+  for at least 80\% of the equilibrium fluctuations of the stress-energy
+  tensor at any given time---a strong validation of the IS framework.
+\item For systems with energy-dependent mean free paths that diverge at
+  high energy, dehydrodynamization of the stochastic theory occurs: the
+  fluctuation correlation functions develop long tails that decay as
+  power laws rather than exponentials, mirroring the gapless
+  non-hydrodynamic modes of Gavassino (2024).
+\end{enumerate}
+
+%% ====================================================================
 \section*{References for This Chapter}
 %% ====================================================================
 
@@ -1077,4 +1493,22 @@ and spin-down behaviour.
     066023 (2022) \citep{HoultKovtun2022kinetic}
   \item arXiv:2509.15303, Neutron star evolution with BDNK framework
     (2025) \citep{NSevolutionBDNK2025}
+  \item Gavassino, Abboud, Speranza \& Noronha, \textit{Phys.\ Rev.\ D}
+    \textbf{110}, 094013 (2024) \citep{GavassinoInfoCurrentBDNK2024}
+  \item Gavassino, Hippert, Mullins \& Noronha, \textit{Phys.\ Rev.\ D}
+    \textbf{110}, 076009 (2024) \citep{GavassinoBDNKFluctuations2024}
+  \item Mullins, Hippert, Gavassino \& Noronha, \textit{Phys.\ Rev.\ D}
+    \textbf{108}, 116019 (2023) \citep{MullinsHippertGavassinoNoronha2024}
+  \item Mullins, Hippert, Gavassino \& Noronha, \textit{Proc.\ SQM 2023}
+    (2024) \citep{MullinsGavassinoStochastic2024}
+  \item Wagner \& Gavassino, \textit{Phys.\ Rev.\ D} \textbf{109},
+    016019 (2024) \citep{WagnerGavassinoRegime2024}
+  \item Gavassino, \textit{Phys.\ Rev.\ Lett.}\ \textbf{132}, 222302
+    (2024) \citep{GavassinoInfiniteOrder2024}
+  \item Gavassino, \textit{Phys.\ Rev.\ D} \textbf{110}, 056042
+    (2024) \citep{GavassinoConvergence2024}
+  \item Gavassino, \textit{Phys.\ Rev.\ Lett.}\ \textbf{132}, 222301
+    (2024) \citep{GavassinoGapless2024}
+  \item Rocha, Gavassino \& Mullins, \textit{Phys.\ Rev.\ D}
+    \textbf{110}, 036011 (2024) \citep{RochaGavassinoFluctu2024}
 \end{itemize}

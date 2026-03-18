@@ -738,4 +738,100 @@ and observational constraints,''
 R.~Wijnands, N.~Degenaar, and D.~Page,
 ``Cooling of accretion-heated neutron stars,''
 \emph{J.\ Astrophys.\ Astron.} \textbf{38}, 49 (2017).
+\bibitem{GavassinoSuperfluidCrust2021}
+L.~Gavassino, M.~Antonelli, and B.~Haskell,
+``Superfluid dynamics in neutron star crusts: the Iordanskii force and
+chemical gauge covariance,''
+\emph{Universe} \textbf{7}, 28 (2021);
+arXiv:2012.10288.
+
+\bibitem{GavassinoMutualFriction2020}
+L.~Gavassino, M.~Antonelli, P.~M.~Pizzochero, and B.~Haskell,
+``A universal formula for the relativistic correction to the mutual
+friction coupling time-scale in neutron stars,''
+\emph{Mon.\ Not.\ R.\ Astron.\ Soc.} \textbf{494}, 3562--3580 (2020);
+arXiv:2001.08951.
 \end{thebibliography}
+
+%% ================================================================
+\subsection{Superfluid dynamics and entrainment in the NS crust}
+\label{sec:rel-60-superfluid}
+%% ================================================================
+
+The neutron star crust below the neutron drip density
+($\sim 4\times 10^{11}\,\mathrm{g/cm}^{3}$) harbours a superfluid of
+delocalised neutrons coexisting with the crustal ion lattice.  Thermal
+convection in this region is fundamentally a two-fluid phenomenon,
+governed by the relativistic Hall--Vinen--Bekarevich--Khalatnikov (HVBK)
+hydrodynamics developed by \citet{GavassinoSuperfluidCrust2021}.
+
+\paragraph{Two-fluid framework.}
+The effective two-fluid model treats the superfluid neutrons (current
+$n_{n}^{\mu}$) and the ``normal'' component (ions, electrons, thermal
+excitations; current $n_{p}^{\mu}$) as separate dynamical degrees of
+freedom coupled by the \emph{entrainment} effect and by
+\emph{mutual friction} mediated by quantised vortices
+\cite{GavassinoSuperfluidCrust2021}.
+
+The entrainment is parametrised by $\epsilon_{n}$, which relates the
+neutron momentum to a linear combination of both velocities:
+\begin{equation}
+\label{eq:rel-60-entrainment}
+\mu_{\nu}^{n} = \mu_{n}^{(C)}\!\left[
+  (1-\epsilon_{n})\,u_{n\nu}
+  + \frac{\epsilon_{n}}{\Gamma_{np}}\,u_{p\nu}
+\right],
+\end{equation}
+where $\mu_{n}^{(C)}$ is the comoving chemical potential and
+$\Gamma_{np}$ the relative Lorentz factor.  In the inner crust,
+$|\epsilon_{n}|$ can reach values of order $\sim 10$
+\cite{GavassinoSuperfluidCrust2021}, profoundly modifying the effective
+inertia of the superfluid component.
+
+\paragraph{Chemical gauge covariance.}
+A subtle but important feature of the crustal two-fluid model is the
+\emph{chemical gauge freedom} in defining which neutrons are ``free''
+(superfluid) versus ``confined'' (in ions).
+\citet{GavassinoSuperfluidCrust2021} proved that the macroscopic HVBK
+hydrodynamics must include a generalised Iordanskii force to be
+covariant under this chemical gauge transformation.  This result resolves
+a long-standing debate about the forces on quantised vortices:
+the apparently contradictory results of Sonin--Stone and
+Thouless--Ao--Wexler--Geller pertain to different dynamical regimes
+(thermalised vs.\ ballistic), not to fundamentally different physics.
+
+\paragraph{Implications for convective onset.}
+For thermal convection in the NS crust, the two-fluid nature introduces
+two modifications to the critical Rayleigh number:
+\begin{enumerate}
+\item \textbf{Entrainment correction.}  The effective inertia of the
+  superfluid component is modified by $\epsilon_{n}$, changing the
+  buoyancy-driven acceleration.  The ratio of superfluid to normal
+  inertia scales as $(1-\epsilon_{n})$ for the free neutrons, which can
+  reduce the effective gravitational restoring force and thereby
+  lower the convective threshold.
+
+\item \textbf{Mutual friction damping.}  The vortex-mediated coupling
+  between the superfluid and normal components provides an additional
+  dissipative channel.  The mutual friction coefficient $\mathcal{B}$
+  governs the rate at which the two components exchange angular
+  momentum, with a local relaxation time
+  $\tau_{\mathrm{loc}} \sim (\mathcal{R}\,k\,\mathfrak{N}_{Z}\,
+  \Omega)^{-1}$ that depends on the vortex drag parameter
+  $\mathcal{R}$ and the surface density of vortices $\mathfrak{N}_{Z}$
+  \cite{GavassinoMutualFriction2020}.  When this relaxation time is
+  shorter than the convective turnover time, the two components are
+  effectively locked and the single-fluid analysis of
+  \S\,\ref{sec:rel-60-equil}--\ref{sec:rel-60-Ra} applies with the
+  \emph{total} density replacing the normal density.  In the opposite
+  limit, the superfluid decouples from the convective motion, reducing
+  the effective mass participating in buoyancy-driven overturn.
+\end{enumerate}
+
+These effects are particularly relevant for young, hot neutron stars
+(post-supernova, $T\gtrsim 10^{9}\,$K) where the superfluid gap is
+partially suppressed and the two-fluid coupling is weakest.  The
+combined relativistic + superfluid corrections to the critical Rayleigh
+number may differ by a factor of 2--5 from the single-fluid GR result
+of \S\,\ref{sec:rel-60-Ra}, depending on the entrainment model and the
+temperature profile.

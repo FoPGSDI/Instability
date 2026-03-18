@@ -1,0 +1,260 @@
+\documentclass[PRD,onecolumn, nofootinbib]{revtex4-1}
+\usepackage[latin1]{inputenc}
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+% \usepackage{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{array}
+\usepackage{simplewick}
+\usepackage{latexsym}
+\usepackage[all]{xy}
+\usepackage{eufrak}
+\usepackage{euscript}
+\usepackage{enumerate}
+%\usepackage{dsfont}
+\usepackage{slashed}
+\usepackage{hyperref}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[autostyle]{csquotes}
+\usepackage{bm}
+
+\begin{document}
+
+\begin{center}
+
+\Large{Revised Manuscript DB13356 Gavassino}\\
+
+\vspace{0.5cm}
+
+{\bf \Large{Causality constraints on radiative transfer}}\\
+
+\vspace{0.5cm}
+
+\normalsize{L. Gavassino}\\
+
+\vspace{0.5cm}
+
+{\bf \large{Answer to the Referee Report}}\\
+
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent
+Dear Editor,\\
+
+\noindent 
+My answers to all the comments and questions made by the referee can be found below. The referee requested that we clarify some mathematical aspects of the analysis. We implemented all the requested clarifications. Changes in the manuscript are marked in red. \\
+
+
+
+\noindent
+Sincerely,\\
+
+\noindent
+Lorenzo
+
+
+
+
+
+
+
+
+\newpage
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newpage 
+
+\section*{Answers to the Report of Referee}
+
+
+{\bf The author discussed causality constraints on radiative transfer in
+hydrodynamics theory. This is a subtopic of a more generic topic regarding the
+relation between causality (signal propagation no faster than speed of
+light/within light cone), thermodynamic/hydrodynamic stability (perturbation
+away from thermal equilibrium does not grow and remains bounded, or even
+dissipates) and transport coefficients. The paper itself is a direct application
+of Heller et al.'s papers about bounds on transport coefficients due to
+causality. The basic statement from Heller et al.'s paper is that all causal
+dissipative dispersion relations have a finite radius of convergence, known as
+``hydrohedron'', and a rigorous bound can be derived. In this paper, the author
+stated that Spiegel's radiative hydrodynamic model becomes stable if causality
+is taken into account, consistent with the picture of hydrohedron, and the
+original quasi-static approximation will lead to instability. The author
+introduces a relativistic version of radiative hydrodynamic model and proves
+that the model is causal and covariantly stable, thus transport coefficients are
+within the hydrohedron bound. Specific calculations are presented, as well as a
+few discussions.}\\
+
+I thank the referee for devoting time to my manuscript, and for the detailed summary of my work.\\
+
+
+
+{\bf The main idea and story of the paper is clear. However, I have a few questions
+more on details that I hope the author can clarify, before I can recommend for
+publishing}\\
+
+I thank the referee for pointing out these issues that needed clarification.\\
+
+{\bf (1) I cannot find the dispersion relation in Eq. (4) as Spiegel's model in the
+original paper [18]. Instead, I find a relation as $\omega\sim
+\gamma(1-\kappa/k*arccot(\kappa/k))$ (Eq. (29) in [18]). How to relate these two
+equations? If this expression were used in the discussion, the divergence would
+occur when $\kappa/k\to 0$.}\\
+
+They are indeed the same equation, written using different notation. First of all, we note that the quantity $\kappa$ used by Spiegel is the absorption coefficient, which is the inverse of the mean free path $\tau$. Hence $k/\kappa=k\tau$. Secondly, one has that $\text{arccot}(1/x)=\arctan(x)$. Therefore:
+\begin{equation}
+\omega=-i\gamma \bigg[1-\dfrac{\kappa}{k} \text{arccot} \bigg( \dfrac{\kappa}{k}\bigg) \bigg]=-i\gamma \bigg[1-\dfrac{1}{k\tau} \text{arccot} \bigg( \dfrac{1}{k\tau}\bigg) \bigg]= -i\gamma \bigg[1-\dfrac{\arctan(k\tau)}{k\tau} \bigg]\, .
+\end{equation}
+I have added a related footnote.\\
+
+{\bf (2) In discussion on temperature runaways. The author uses a dispersion relation
+from Spiegel's radiative hydrodynamic model Eq. (8), but discusses the
+temperature fluctuation in a plane wave form which results in $e^{\Gamma' t'/\tau}$ under a Lorentz boost. Why should a plane wave be considered here instead of any
+other formula? Is this plane-wave temperature physically due to the radiation
+from the hydrodynamics and it is no longer interacting with the medium? A more
+general question regarding the inequality is that literature (including the
+author, for example, proof of the inequality $Im(\omega)<|Im(k)|)$ always assumes
+a Fourier mode as the solution to the differential equation. It seems to impose
+a stronger prior assumption of the equation in addition to linearized
+perturbation, causality, and instability. Or is this just a requirement if the
+discussion involves tempered distribution?}\\
+
+These are indeed important points. The discussion over Fourier modes being unstable was initiated by \citet{Hiscock_Insatibility_first_order}. They noticed that, in the linear regime, any perturbation in $L^2(\mathbb{R}^3)$ can be decomposed as a linear superposition of Fourier modes (i.e. plane waves $e^{ik_jx^j-i\omega t}$ with $k_j$ real), and they showed that, if one of these modes is growing, then most initial conditions exhibit instabilities. Then, they discovered that a system whose Fourier modes are all decaying in one reference frame may still possess growing Fourier modes in another reference frame, signaling that stability ultimately depends on the observer.
+
+This was the starting point of a long list of papers (see e.g. \cite{Kost2000,PuKoide2009fj,Kovtun2019,BemficaDNDefinitivo2020,GavassinoLyapunov_2020}), where people define a theory to be stable if there is no growing Fourier mode in any reference frame. The specific perturbation $e^{\Gamma' t'/\tau}$ considered by us is indeed a Fourier mode, since its wavevector $k'$ is real (it is 0) in the reference frame $(t',x')$. Hence, by the argument of \citet{Hiscock_Insatibility_first_order}, generic initial conditions in the reference frame $(t',x')$ lead to pathological solutions. The mystery of how a system can be stable in one reference and unstable in another one was resolved only recently \cite{GavassinoSuperluminal2021}. 
+
+I have added a clarification at the beginning of the section.
+
+
+{\bf (3) The author sends $\chi\to 1^-$, which is an assumption, what if this limit can
+never be reached in reality? It seems that at this limit, the velocity for the
+Lorentz boost tends to be zero, which means the same instability should be
+observed even for the observer at the same reference frame. That means one does
+not need another frame to see the incompatibility. How to physically understand
+this?}\\
+
+This is also an important point. The fact that the instability gets \textit{worse} as we send $v$ to 0 is typical of many instabilities related to causality violations. Consider for example the diffusion equation $\partial_t T =D\partial^2_x T$. This equation is famously acausal. Let's boost it. The result is $(\partial_{t'} +v\partial_{x'})T =D\gamma(\partial^2_{x'}+2v\partial_{x'}\partial_{t'} +v^2\partial^2_{t'}) T$. We look for solutions in the form of simple Fourier modes with $k'=0$. One such solution is
+\begin{equation}
+T=e^{\frac{t'}{D\gamma v^2}}.
+\end{equation}
+This Fourier mode is growing. Thus, by the argument of \citet{Hiscock_Insatibility_first_order}, the diffusion equation is unstable in relativity. Indeed, it can be proven \cite{GavassinoSuperluminal2021} that the initial-value problem of the boosted diffusion equation is ill-posed, meaning that it cannot be solved for generic initial data. Furthermore, as can be seen, the instability does not get better when we send $v\rightarrow 0$, it actually gets worse! In \cite{GavassinoSuperluminal2021}, we developed an intuition of how instabilities due to causality violations behave. The conclusions we draw there apply both to the diffusion equation and to Spiegel's model in the same way.
+
+I added a comment after equation (8).\\ 
+
+
+{\bf (4) I am confused about the definition of v in the manuscript. In Eq. (8), the
+author calculates $|Im(k)*\tau|-Im(\omega*\tau)$. It seems that the author assumed
+a real value of $\gamma\Gamma' v$ such that Eq. (8) is real. My understanding is
+that the author assumed $v=k/\omega$, which is complex. I understand that the
+author wants to find a counterexample for instability. However, is it physically
+possible to find such a v approaching $1^-$? In one of the references by the same
+author [15], the real number v is defined as $v=Im(k)/Im(\omega)$ and it was used
+as the Lorentz boost velocity in one of the proofs.}\\
+
+The referee is right to say that $\omega$ and $k$ are in general complex. However, when we make the ansatz (6), i.e. when we require that $T=e^{\Gamma't'/\tau}$ for some observer moving with speed $v$, we end up with equation (7), where $i$ has disappeared. This defines an implicit function $F(v,\Gamma')=0$, where we are free to require that both $v$ and $\Gamma'$ be real. As long as we find a couple $(v,\Gamma')\in \mathbb{R}^2$ that satisfies equation (7), this constitutes a perfectly acceptable solution of Spiegel's theory. In particular, the list of couples $(v(\chi),\Gamma'(\chi))$ defined in equation (8) corresponds to a one-parameter family of perfectly valid solutions of (7), all of which have both $v$ and $\Gamma'$ real. Among such solutions, some of them have $v \lesssim 1$. This proves that such values of $v$ can be explored by Spiegel's theory, with a suitable choice of $k$ and $\omega$.\\
+ 
+
+
+
+{\bf (5) What does the bracket $\{\delta T,\delta f\}$ mean in the paper? I could not
+find a definition of this notation in the manuscript.}\\
+
+It means that I am treating $\delta T$ and $\delta f$ as two components of a single vector. I added a clarification when the notation is first introduced.\\
+
+
+{\bf (6) I suppose $\tilde{\Gamma}$ is $\Gamma'$ under Eq. (8). Under Eq. (23) and Eq.
+(24), the author mentions theorem 2, does the author mean theorem 1?}\\
+
+I thank the referee for the remarks. It is true that $\tilde{\Gamma}$ is $\Gamma'$. In the other two cases, I am actually referring to Theorem 2, because I am explicitly interested in the inequality $|\mathfrak{Im}\omega|\leq \mathfrak{Im} k$.\\ 
+
+{\bf (7) Author proves the inequality in theorem 2 for the model he proposed in Eq.
+(10). Although stability and causality lead to the inequality
+$Im(\omega)<|Im(k)|$, it is not a necessary condition that leads to causality. The
+author's argument for causality and covariant stability in theorem 1 relies on a
+conclusion presented in the author's previous paper about information current,
+more specifically the Gibbs stability criterion and stability-causality
+correspondence. These results come mainly from the same author. However, it
+would be difficult for me to review all these literatures (that will be out of
+scope of the current manuscript). Could the author provide a summary of the main
+statements and physical arguments why that is the case? Isn't it true if theorem
+1 is correct, then theorem 2 is automatically proved even without calculation,
+according to theorem 1 of reference [13]?}\\
+ \newpage
+
+First of all, I confirm the reviewer's suspicion that the proof of Theorem 2 is strictly speaking redundant, being a direct corollary of Theorem 1. However, we feel that it is more useful to have a constructive proof like the one we gave, since equation (17) gives more direct insight into the properties of $\omega$. 
+
+Coming to the request for a summary of the main stability/causality statements. I assume that these are needed only for the purpose of the review process. Hence, I provide a brief overview below, which has not been added to the manuscript, being already contained in previous papers.\\
+
+
+
+
+All we need is a vector field $E^\mu$ that is timelike (or lightlike) future-directed, and that has non-positive divergence: $\partial_\mu E^\mu\leq 0$. This field should be a quadratic form in the variables $\delta \Psi$ that we use to characterize the linear perturbation (i.e. $E^\mu =\frac{1}{2}\Psi^\dagger \mathbb{E}^\mu \Psi$, where $\mathbb{E}^\mu$ are some Hermitian matrices), where the form $E^0$ needs to be positive definite.
+Then, we can immediately prove stability. In fact, if the perturbation decays at spatial infinity, we have
+\begin{equation}
+\dfrac{d}{dt}\int E^0 d^3 x = \int \partial_t E^0 d^3 x= \int \partial_\mu E^\mu d^3 x \leq 0\, .
+\end{equation}
+This tells us that the integral of $E^0$ is non-increasing in time. But since $E^0$ is a positive definite form, the $L^2$ norm $||\delta \Psi||^2$ of the perturbation is related to the integral of $E^0$ by the inequality $\int E^0 d^3 x \geq \lambda_m ||\delta \Psi||^2$, where $\lambda_m$ is the minimal eigenvalue of $\mathbb{E}^0$. This tells us that the $L^2$ norm $||\delta \Psi(t)||^2$ cannot grow above a maximum value $\lambda_m^{-1}\int E^0(t{=}0) d^3 x$, so the instability discussed by \citet{Hiscock_Insatibility_first_order} cannot occur. 
+
+Coming to causality. Let us work for simplicity in one space dimension (the 3D generalization is straightforward). Suppose that, at $t=0$, $\delta \Psi$ vanishes for $x>0$. Then, consider the family of integrals
+\begin{equation}
+I(t)=\int_t^\infty E^0(t,x) dx \, .
+\end{equation}
+Clearly, $I(0)=0$ and $I(t)\geq 0$. However, we also have that
+\begin{equation}
+\begin{split}
+\dfrac{dI(t)}{dt}={}& \int_t^\infty \partial_t E^0(t,x) dx-E^0(t,t) \\
+={}& \int_t^\infty [\partial_\mu E^\mu(t,x)-\partial_x E^1] dx-E^0(t,t) \\
+={}& \int_t^\infty \partial_\mu E^\mu dx-[E^0-E^1]_{\text{at event }(t,t)} \leq 0 \\
+\end{split}
+\end{equation}
+In the last line, we used the fact that $\partial_\mu E^\mu\leq 0$, and that $E^\mu$ is timelike/lightlike future-directed, so $E^0 \geq |E^1|$. But this means that $0=I(0)\geq I(t) \geq 0$, so $I(t)=0$. This implies that $E^0$ (and thus $\delta \Psi$) vanishes in the region $\{x>t>0\}$, proving that the perturbation initially contained in the semi-axis $x<0$ cannot outrun the photon traveling on the line $x=t$.\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{\bf (8) I cannot see how Eq. (27) is obtained from Eq. (24) under the assumption of
+$\lambda\to\infty$. Could the author be a little more detailed on this?}\\
+
+The easiest way to do this is to start from equation (24) and rewrite it as
+\begin{equation}\label{gtreiof}
+ \dfrac{\omega}{\lambda}+i \dfrac{1}{\tau} \bigg[ 1-\dfrac{1}{k\tau}\arctan\bigg(\dfrac{k\tau}{1{-}i\omega \tau}\bigg) \bigg]=0.
+\end{equation}
+Sending $\lambda$ to infinity, the first term goes to zero, and we have
+\begin{equation}
+\arctan\bigg(\dfrac{k\tau}{1{-}i\omega \tau}\bigg)=k\tau \, .
+\end{equation}
+Isolating $\omega$, we obtain the desired equation. This derivation can be made 100\% rigorous by fixing $k$, and regarding \eqref{gtreiof} as an implicit function $F(\lambda^{-1},\omega)=0$. Then, the implicit function theorem guarantees that solutions with small $\lambda^{-1}$ agree (to zeroth order in $\lambda^{-1}$) with the solution at $\lambda^{-1}\equiv 0$, even if physically this exact limit may not be achievable.
+
+I added a clarification.
+
+
+
+\newpage
+\bibliography{Biblio}
+ 
+\end{document}
+

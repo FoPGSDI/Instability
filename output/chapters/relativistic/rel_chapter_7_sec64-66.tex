@@ -471,3 +471,157 @@ foundation for understanding these phenomena.
   a narrow zone for trapped oscillations.}
 \label{fig:isco-rayleigh-kerr}
 \end{figure}
+
+%% ================================================================
+\section{Exact stationary Couette-type solutions: the Gavassino--Niekamp--Schlichting--Denicol theory}
+\label{sec:rel-7-gavassino-couette}
+%% ================================================================
+
+The inviscid analysis of the preceding sections establishes the Rayleigh
+criterion for relativistic circular flows.  However, the base state around
+which one perturbs is itself modified once dissipation is included.
+\citet{GavassinoCouette2025} (Gavassino, Niekamp, Schlichting \& Denicol,
+arXiv:2512.10420) have recently derived \emph{exact} stationary solutions for
+relativistic dissipative Couette-type flows---the relativistic generalization
+of the classical planar Couette profile.  Their results reveal that the
+``inertia of heat'' (the momentum carried by the heat flux) qualitatively
+alters the velocity profile, a purely relativistic effect with no Newtonian
+counterpart.
+
+\subsection{Setup and the role of heat conduction}
+\label{sec:rel-7-gavassino-setup}
+
+Consider a viscous relativistic fluid confined between two infinite parallel
+plates at $x = \pm L/2$, moving in opposite directions with velocities
+$v_y = \pm v$, and maintained at temperatures $T_{\pm}$.  In
+the classical (non-relativistic) theory, the velocity profile is simply
+linear: $u^y = 2vx/L$.  \citet{Rogava1996} derived a relativistic
+generalization by setting the heat conductivity to zero, obtaining
+\begin{equation}
+\label{eq:rel-7-rogava}
+u^y_{\text{Rogava}} = \frac{2vx}{L\sqrt{1-v^2}}\,.
+\end{equation}
+However, Gavassino et al.\ show that setting the heat conductivity $\chi$ to
+zero is inconsistent: viscous heating necessarily warms the fluid interior,
+and a steady state requires finite thermal conductivity to evacuate the
+excess energy through the boundaries.
+
+\subsection{The exact velocity profile}
+\label{sec:rel-7-gavassino-velocity}
+
+Working in the Eckart frame (where the four-velocity is aligned with the
+particle current), Gavassino et al.\ show that the Israel--Stewart
+relaxation terms vanish identically for stationary planar-symmetric
+flows (since $u^\mu \partial_\mu = 0$ when $u^x = 0$).  The momentum
+conservation equation $\partial_x T^{xy} = 0$ gives
+\begin{equation}
+\label{eq:rel-7-gavassino-ode}
+\eta \,\partial_x u = \gamma u \bar{A} - \gamma^2 \bar{C}\,,
+\end{equation}
+where $\bar{A} = T^{xt}/\eta$ and $\bar{C} = T^{xy}/\eta$ are
+constants determined by boundary conditions.
+The crucial point is the term $\gamma u \bar{A}$, which arises from the
+\emph{inertia of heat}: the heat flux $q^x$ carries momentum, contributing
+to $T^{xy}$ through the coupling $u q^x$.  This is absent in
+Rogava's approximation (which sets $q^x = 0$).
+
+For equal boundary temperatures ($T_+ = T_-$), symmetry forces $\bar{A}=0$,
+and the ODE reduces to $\partial_x u = -(1+u^2)\bar{C}$, which integrates
+to the \emph{exact} velocity profile:
+\begin{equation}
+\label{eq:rel-7-gavassino-exact}
+\boxed{u(x) = \tan\!\left[\frac{2x}{L}\,
+    \arctan\!\left(\frac{v}{\sqrt{1-v^2}}\right)\right].}
+\end{equation}
+This is a remarkable result: despite the complexity of relativistic
+dissipative hydrodynamics, the velocity profile is given by a single
+transcendental function.  Key properties:
+\begin{enumerate}
+\item In the non-relativistic limit $v \ll 1$, $\arctan(v/\sqrt{1-v^2})
+  \to v$, and we recover the classical linear profile $u \approx 2vx/L$.
+\item In the ultrarelativistic limit $v \to 1$, $u(x) \to \tan(\pi x/L)$,
+  which remains finite throughout the domain (diverging only at the
+  boundaries), whereas Rogava's approximation \eqref{eq:rel-7-rogava}
+  diverges everywhere except at $x=0$.
+\item The profile is \emph{independent of the thermal conductivity} $\chi$
+  (though it requires $\chi \neq 0$ for consistency).  This universality
+  holds whenever $\eta$ is temperature-independent.
+\end{enumerate}
+
+\subsection{Temperature and heat flux profiles}
+
+The associated temperature and heat flux are also obtained analytically:
+\begin{equation}
+\label{eq:rel-7-gavassino-temp}
+T(x) = T_+ + \frac{\eta}{\chi}\,\ln\!\left[
+  \frac{1}{\sqrt{1-v^2}}\,\cos\!\left(
+    \frac{2x}{L}\,\arctan\!\left(\frac{v}{\sqrt{1-v^2}}\right)
+  \right)\right],
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-gavassino-heat}
+q^x(x) = \frac{2\eta}{L}\,
+  \arctan\!\left(\frac{v}{\sqrt{1-v^2}}\right)\,
+  \tan\!\left[\frac{2x}{L}\,
+    \arctan\!\left(\frac{v}{\sqrt{1-v^2}}\right)\right].
+\end{equation}
+The temperature peaks at the centre (maximum viscous heating) and the
+heat flux is directed outward toward the plates, as expected physically.
+
+\subsection{Implications for perturbation analysis}
+\label{sec:rel-7-gavassino-implications}
+
+The Gavassino et al.\ exact solution has profound implications for the
+stability analysis of relativistic Couette flow developed in the earlier
+sections of this chapter:
+
+\begin{enumerate}
+\item \textbf{Modified base state.}  The inviscid analysis of
+  \S\ref{sec:rel-7-67} uses Rogava's profile \eqref{eq:rel-7-rogava} as
+  the base state.  Gavassino et al.\ show that the correct dissipative
+  base state is \eqref{eq:rel-7-gavassino-exact}, which has a qualitatively
+  different curvature: the $\tan$ profile develops larger gradients near
+  the boundaries than the linear (or Rogava) profile, potentially
+  concentrating perturbation energy near the plates.
+
+\item \textbf{Inertia of heat in the Landau frame.}  In the Landau frame
+  (where $u^\mu$ tracks energy flow), the heat flux causes the velocity
+  to acquire a component $u_L^x \neq 0$ perpendicular to the plates, with
+  \begin{equation}
+  \label{eq:rel-7-landau-deflection}
+  \frac{u_L^x}{u_L^y} = \frac{2\eta}{L(\varepsilon+P)}\,
+    \arctan\!\left(\frac{v}{\sqrt{1-v^2}}\right)
+    \xrightarrow{v\to 1} \frac{\pi\eta}{L(\varepsilon+P)}
+    \sim \text{Kn}\,.
+  \end{equation}
+  This transverse deflection of order the Knudsen number is a genuine
+  relativistic frame effect that must be accounted for when computing
+  perturbation growth rates in the Landau frame.
+
+\item \textbf{Asymmetric profiles from temperature gradients.}
+  When $T_+ \neq T_-$, the heat-inertia coupling breaks the odd
+  symmetry of the velocity profile.  The general solution involves
+  trigonometric and hyperbolic functions (Eq.~(45) of
+  \citealt{GavassinoCouette2025}), with the asymmetry growing with
+  $v$ since the inertia-of-heat term $u q^x$ increases with velocity.
+
+\item \textbf{Robustness of the Israel--Stewart regulator.}
+  A key technical finding is that the IS relaxation terms vanish
+  identically for stationary planar flows (because $u^\mu\partial_\mu = 0$
+  in the Eckart frame).  The dissipative solution is therefore independent
+  of the relaxation times $\tau_\Pi, \tau_q, \tau_\pi$, making it
+  a robust prediction shared by all causal dissipative frameworks
+  (IS, BDNK, DNMR).
+\end{enumerate}
+
+\medskip\noindent\textbf{Connection to regime of applicability.}
+Wagner \& Gavassino (arXiv:2309.14828, \citealt{WagnerGavassinoRegime2024})
+have systematically assessed when Israel--Stewart hydrodynamics is
+trustworthy versus when first-order (BDNK/Navier--Stokes) theories
+suffice.  Their ranking of IS truncations in decreasing accuracy---IReD,
+DNMR, second-order gradient expansion, 14-moment---provides a criterion
+for each section of this book: the IS formulation is falsifiable, the
+relaxation time is observable, and the IReD prescription for transport
+coefficients ($\tau_\Pi = \sum_n \zeta_n \tau_n / \sum_m \zeta_m$) is
+superior to DNMR whenever the slowest non-hydrodynamic mode has small
+coupling to the relevant viscous flux.

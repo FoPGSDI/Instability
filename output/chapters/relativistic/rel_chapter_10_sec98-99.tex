@@ -772,3 +772,62 @@ relativistic corrections as functions of NS mass and compactness.
   damping timescale vs.\ compactness for $\ell = 2$, $3$, $4$.}
 \label{fig:ns-modes-gw-deep}
 \end{figure}
+
+
+%% ====================================================================
+\subsection{Israel--Stewart acausality and nonlinear Rayleigh--Taylor instabilities}
+\label{sec:rel-10-IS-acausality}
+%% ====================================================================
+
+The choice of BDNK over Israel--Stewart theory for the viscous
+Rayleigh--Taylor analysis above is not merely a theoretical preference
+but is motivated by a fundamental pathology of the IS framework that
+manifests precisely in the nonlinear regime relevant to RT mixing.
+
+Gavassino et~al.\ \citep{GavassinoAcausalityIS2025} demonstrated that
+Israel--Stewart theory, while linearly causal near equilibrium, becomes
+acausal when viscous stresses are large---precisely the conditions
+encountered during nonlinear RT development at the mixing interface.
+In a fluid with bulk viscosity $\zeta$ and relaxation time $\tau_{\Pi}$,
+the IS information propagation speed in the local rest frame is
+\begin{equation}
+  w^{2} = c_{s}^{2}
+  + \frac{\zeta}{\tau_{\Pi}\,(\varepsilon + P + \Pi)}\,,
+  \label{eq:IS-info-speed-RT}
+\end{equation}
+where $\Pi$ is the bulk viscous pressure.  When $\Pi \to -(\varepsilon + P)$,
+this speed diverges and causality is necessarily violated for any
+choice of $\zeta/\tau_{\Pi} > 0$.
+
+The key insight is the classification of fluid cells into three regimes
+\citep{GavassinoAcausalityIS2025,GavassinoCausalityHIC2025}:
+\begin{itemize}
+  \item \textbf{``Good'' (causal):} $w^{2} \in [0,1]$---the acoustic
+    cone lies within the light cone.
+  \item \textbf{``Bad'' (acausal but stable):} $w > 1$ but $vw < 1$,
+    where $v$ is the fluid speed in the simulation frame---the acoustic
+    cone exits the light cone but still points to the future.
+  \item \textbf{``Ugly'' (acausal and unstable):} $vw \ge 1$ or
+    $w^{2} < 0$---part of the acoustic cone points to the past,
+    producing \emph{reversed dissipation} and nonlinear blowup.
+\end{itemize}
+In the ``ugly'' regime, signals propagating backward in time undergo
+reversed dissipation: perturbations grow away from equilibrium rather
+than relaxing toward it.  Any numerical noise or physical perturbation
+triggers runaway growth that bears no relation to the physical RT
+instability.
+
+For the Rayleigh--Taylor problem, the density interface experiences
+large pressure gradients and velocity shears during nonlinear
+development.  These drive the IS viscous stresses into the regime
+where $w > 1$, and the relativistic velocities of the mixing fingers
+push $vw$ above unity, triggering the ``ugly'' instability.  The
+resulting blowup is \emph{unrelated} to the physical RT instability
+and constitutes a spurious artifact of the IS formulation.
+
+In the BDNK framework, by contrast, the characteristic speeds depend
+only on the transport coefficients and thermodynamic state---not on
+the viscous stresses---and are bounded by $c$ by construction.  The
+BDNK theory therefore remains well-posed throughout the nonlinear
+RT evolution, and the instability growth rates computed above are
+physically meaningful.

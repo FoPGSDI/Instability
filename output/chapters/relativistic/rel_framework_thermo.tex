@@ -99,6 +99,32 @@ form, as we discuss next.
 
 
 %------------------------------------------------------------------
+\subsection{Lorentz Invariance of Thermodynamic Entropy}
+\label{subsec:entropy-lorentz}
+
+The entire relativistic thermodynamic framework employed in this book
+rests on the Lorentz invariance of the thermodynamic entropy~$S$.
+While this is widely assumed in the literature,
+Gavassino~\citep{GavassinoLorentz2021} provided a rigorous proof from
+first principles, requiring only two assumptions: (i)~there exists at
+least one inertial frame in which the second law $\dot{S} \ge 0$
+holds, and (ii)~the microscopic dynamics is governed by a Lorentz-invariant
+field-theory Lagrangian.  The proof proceeds by showing that
+\emph{adiabatic accelerations} (infinitely slow, mechanically driven
+velocity changes) leave the rest-mass invariant to leading order in
+the coupling strength, so that the entropy change
+$\delta S \sim \epsilon^{2} \ge 0$ for both signs of the coupling
+constant~$\epsilon$, which forces $\delta S = 0$.  By van Kampen's
+argument~\citep{vanKampen1968}, $S = S(M)$ depends only on the
+Lorentz-invariant rest mass, establishing the Lorentz scalar nature
+of~$S$.
+
+This result guarantees that the covariant entropy current
+$s^{\mu} = s\,n\,u^{\mu} + \ldots$ used throughout this book
+transforms correctly under Lorentz boosts, and that the second law
+$\nabla_{\mu}s^{\mu} \ge 0$ is a frame-independent statement.
+
+%------------------------------------------------------------------
 \subsection{Causality Constraints on the Equation of State}
 \label{subsec:eos-causality}
 
@@ -170,6 +196,88 @@ Two important limits:
     treatment.
 \end{enumerate}
 
+
+%------------------------------------------------------------------
+\subsection{The Zeroth Law and Tolman--Ehrenfest Equilibrium}
+\label{subsec:zeroth-law}
+
+Before discussing transport laws, we must first establish what
+\emph{thermal equilibrium} means in a relativistic setting.  This is
+a subtler question than in Newtonian physics, because a moving body's
+temperature is not uniquely defined---the long-standing ``Planck--Ott
+controversy'' concerns whether a moving body appears hotter or cooler.
+
+\citet{GavassinoZerothLaw2020} has resolved this controversy by
+revisiting the zeroth law of thermodynamics within special relativity.
+The key results, essential for the foundations of this book, are:
+
+\subsubsection{Ambiguity of temperature in relativity}
+For an isolated system with energy $E$ and additional constants of
+motion $X_A$ (e.g.\ conserved charges, momentum), the entropy
+$S = S(E, X_A)$ defines the temperature as
+$T^{-1} = (\partial S/\partial E)|_{X_A}$.  However, any other set
+of conserved quantities $Y_B(E, X_A)$ would yield a different
+temperature $T'^{-1} = (\partial S/\partial E)|_{Y_B}$.  This
+ambiguity is resolved by the zeroth law: a ``wall permeable only to
+heat'' (WPOH) conserves all Noether charges $Q_A$ arising from
+internal symmetries, thereby selecting the correct variables and
+removing the ambiguity.
+
+\subsubsection{Covariant equation of state}
+For an isolated relativistic body with total four-momentum $p^\mu$
+and Pauli--Lubanski pseudovector $W^\mu$ (the spin), the covariant
+equation of state takes the form
+\begin{equation}
+  S = S(M, Q_A, W^2)\,,\qquad
+  M = \sqrt{-p^\mu p_\mu}\,,
+  \label{eq:cov-eos}
+\end{equation}
+where $M$ is the invariant mass.  The temperature is then
+\begin{equation}
+  \frac{1}{T} = \frac{\partial S}{\partial M}\bigg|_{Q_A, W^2}\,,
+  \label{eq:rel-temperature}
+\end{equation}
+which is a Lorentz scalar---it is defined in the rest frame of the
+body and does not transform under boosts.
+
+\subsubsection{Resolution of the Planck--Ott controversy}
+Two bodies are in thermal equilibrium if and only if they:
+\begin{enumerate}
+  \item[(a)] are at rest with respect to each other, and
+  \item[(b)] have the same rest-frame temperature $T$.
+\end{enumerate}
+Any configuration in which two interacting bodies maintain a relative
+velocity for infinite time is a \emph{non-ergodic} metastable state,
+for which equilibrium thermodynamics does not apply.  The apparent
+``temperatures'' measured by Planck-type or Ott-type thermometers in
+relative motion correspond to different conserved quantities being held
+fixed during the measurement, and do not represent true thermal equilibrium.
+
+\subsubsection{The Tolman--Ehrenfest condition}
+In a stationary gravitational field with timelike Killing vector
+$\xi^\mu$, the equilibrium condition becomes
+\begin{equation}
+  T\,\sqrt{-\xi_\mu\xi^\mu} = \text{const}\,,
+  \label{eq:tolman-ehrenfest}
+\end{equation}
+which is the Tolman--Ehrenfest law: hotter regions are at lower
+gravitational potential.  This condition is fundamental for:
+\begin{itemize}
+  \item Defining the adverse temperature gradient (relative to the
+    Tolman--Ehrenfest baseline) in the relativistic B\'enard problem
+    (Chapter~II);
+  \item Understanding the equilibrium temperature profile in rotating
+    neutron stars (Chapter~III);
+  \item Correctly formulating the Schwarzschild criterion for
+    convective instability in general-relativistic stellar interiors
+    (Chapter~VI).
+\end{itemize}
+
+The derivation of~\eqref{eq:tolman-ehrenfest} from the maximum entropy
+principle is straightforward: in equilibrium, the four-vector
+$\beta^\mu = u^\mu/T$ must be a Killing vector (ensuring
+$\nabla_\mu s^\mu = 0$).  Since the flow is also along $\xi^\mu$,
+this implies $u^\mu/T \propto \xi^\mu$, giving~\eqref{eq:tolman-ehrenfest}.
 
 %------------------------------------------------------------------
 \subsection{Thermal Conduction: From Fourier to BDNK}
@@ -843,6 +951,198 @@ not only the magnitude of dissipative effects but also the
 environment.
 
 %------------------------------------------------------------------
+\subsection{Transport Bounds from Stability and Causality}
+\label{subsec:transport-bounds}
+
+A deep connection between thermodynamic stability and causality
+constraints on transport coefficients was established by Gavassino
+\citep{GavassinoBounds2023}.  The key result is the fundamental
+inequality
+\begin{equation}
+  \mathfrak{Im}\,\omega(k) \;\le\; |\mathfrak{Im}\,k|\,,
+  \label{eq:fundamental-bound}
+\end{equation}
+which must hold for all dispersion relations $\omega(k)$ of a
+covariantly stable system.  The proof is elegantly simple: if
+\eqref{eq:fundamental-bound} were violated for some complex $k$, a
+Lorentz boost with velocity
+$v = \mathfrak{Im}\,k/\mathfrak{Im}\,\omega$ (subluminal since
+$|v| < 1$ by assumption) would produce a frame in which a real-$k$
+Fourier mode grows exponentially---an instability.  Thus covariant
+stability \emph{alone} implies~\eqref{eq:fundamental-bound}.
+
+This bound was originally derived by Heller, Serantes, Spali\'nski \&
+Withers from microcausality (the vanishing of spacelike commutators
+in quantum field theory).  Gavassino's proof shows that the same
+bounds on transport emerge from requiring the fluid to be stable in
+all inertial frames, without invoking any quantum-field-theoretic
+assumptions.  The two derivations are complementary, reflecting the
+deep connection between causality and covariant stability in
+relativistic systems.
+
+From \eqref{eq:fundamental-bound}, several concrete bounds follow
+\citep{GavassinoBounds2023}:
+\begin{enumerate}
+  \item The infrared sound speed cannot exceed $c$:
+    $c_{s} = \omega'(0) \le c$.
+  \item The diffusion coefficient is non-negative and bounded above:
+    $0 \le D \le 16/(3\pi K)$, where $K$ is the radius of convergence
+    of the dispersion relation.
+  \item Fluids with luminal sound speed ($c_{s} = c$) necessarily have
+    \emph{vanishing} viscosities: $\eta = \zeta = 0$.
+\end{enumerate}
+
+\subsection{Dispersion Relations and Causality}
+\label{subsec:dispersions-causality}
+
+A related but distinct result by Gavassino, Disconzi \& Noronha
+\citep{GavassinoDispersions2024} shows that individual dispersion
+relations cannot, by themselves, guarantee causality.  Any single
+dispersion branch $\omega(k)$ (other than the trivial $\omega = a + bk$)
+necessarily produces superluminal tails when used alone to construct wave
+packets.  This is because compactly-supported initial data have
+entire-function Fourier transforms, but $\omega(k)$ satisfying
+\eqref{eq:fundamental-bound} is \emph{never} an entire function (unless
+linear in $k$).
+
+The resolution is that causality is a \emph{collective} property
+of all excitation branches: when the full initial-value problem is
+solved---with all branches superposed---the superluminal tails from
+different branches cancel exactly, provided the theory is local and
+covariantly stable.  This cancellation is analogous to the need for
+antiparticles in relativistic quantum mechanics to ensure causal
+propagation.
+
+For the stability analyses in this book, this result has an
+important implication: the non-hydrodynamic modes present in
+Israel--Stewart theory (or in any second-order formulation) are not
+mere artifacts but play an essential physical role in cancelling
+superluminal tails from the hydrodynamic modes, thereby ensuring
+causal signal propagation.  In the BDNK framework, the same
+cancellation occurs through the coupling of hydrodynamic modes
+mediated by the frame coefficients, without introducing extra
+dynamical degrees of freedom.
+
+%------------------------------------------------------------------
+\subsection{Causality Constraints on Radiative Transfer}
+\label{subsec:causal-rad-transfer}
+
+A striking application of the transport bounds discussed above arises
+in radiation hydrodynamics.  \citet{GavassinoCausalRadTransfer2025}
+showed that Spiegel's classical formula for the smoothing of
+temperature fluctuations by radiative transfer---widely used in
+stellar structure calculations---is \emph{unstable under Lorentz
+boosts}.  The instability arises because Spiegel's derivation neglects
+the finite transit time of photons, allowing the transport coefficients
+to fall outside the ``hydrohedron'' (the convex set of
+causality-compatible transport coefficients identified by Heller,
+Serantes, Spali\'nski \& Withers).
+
+Gavassino resolves this by solving the linearized radiative transfer
+equations \emph{exactly} (accounting for the finite speed of photons),
+and demonstrates that:
+\begin{enumerate}
+  \item The exact dispersion relation for heat waves takes the form
+    $\omega(k) = -i\,(3D_h/\tau^2)[1 - \arctan(k\tau)/(k\tau)]$,
+    which naturally interpolates between diffusive ($k\tau \ll 1$) and
+    free-streaming ($k\tau \gg 1$) behavior;
+  \item All infinite transport coefficients arising from the exact
+    solution fall \emph{inside} the hydrohedron, as required by
+    relativistic causality;
+  \item The linearized radiation transfer equations are causal and
+    covariantly stable \emph{by construction}, since the Boltzmann
+    equation with emission and absorption respects the speed-of-light
+    limit at the kinetic level.
+\end{enumerate}
+This result is directly relevant to the convective stability analyses
+of Chapters~II and~VI, where radiation-mediated thermal diffusion
+sets the effective thermal conductivity entering the Rayleigh number.
+
+%------------------------------------------------------------------
+%% =====================================================================
+%%  Gavassino integration: Thermoelectric conduction in GR
+%%  Paper 45: arXiv:2509.23845
+%%  Paper 44: arXiv:2508.08936 — Charge separation in accelerating plasmas
+%%  Paper 48: arXiv:1906.03140 — Thermodynamics of uncharged multifluids
+%% =====================================================================
+\subsection{Relativistic Thermoelectricity and Gravitoelectric Effects}
+\label{subsec:rel-thermoelectricity}
+
+In non-relativistic solid-state physics, the coupling between heat
+and charge transport is described by the Seebeck and Peltier effects
+within the standard Onsager framework.  The relativistic
+generalisation of thermoelectricity is non-trivial because (i) heat
+carries inertia ($E = mc^2$ implies that a heat flux is also a
+momentum density), and (ii) gravitational redshift modifies the
+equilibrium conditions for both temperature and chemical potential.
+
+\begin{relcorrection}
+\textbf{Causal, stable relativistic thermoelectricity.}
+Gavassino~\cite{GavassinoThermoelectric2025} has constructed the first
+fully causal, stable, and well-posed relativistic theory of
+thermoelectric transport in rigid solids embedded in curved
+spacetime, employing the BDNK strategy.  The key results are:
+\begin{enumerate}
+  \item \emph{Ohm--Fourier--Seebeck constitutive relations:}
+    The electric current $J^\mu$ and heat flux $q^\mu$ in a Born-rigid
+    conductor with Killing vector $\mathcal{K}^\mu = \mathcal{K}\,u^\mu$
+    satisfy coupled transport equations with electrical conductivity
+    $\sigma$, Seebeck coefficient $\mathcal{S}$, Peltier coefficient
+    $\Pi = T\mathcal{S}$ (Onsager reciprocity), and thermal conductivity
+    $\kappa$.  In the Lorenz gauge, the resulting initial-value problem
+    is causal and locally well-posed in the fully nonlinear regime.
+
+  \item \emph{Gravitothermoelectric effects:}
+    Three novel relativistic phenomena emerge:
+    (a)~acceleration-driven charge separation (Schiff--Barnhill and
+    Stewart--Tolman effects);
+    (b)~non-uniform Joule heating due to time dilation across an
+    accelerating circuit;
+    (c)~gravitationally redshifted magnetic diffusion.
+
+  \item \emph{Relativistic Thomas--Fermi equation:}
+    For compact objects, the equilibrium charge distribution satisfies a
+    relativistic Thomas--Fermi equation that accounts for both the
+    Tolman--Ehrenfest temperature gradient and Seebeck-driven charge
+    displacements from cooling.
+\end{enumerate}
+These results demonstrate that the BDNK formalism extends naturally
+beyond simple heat conduction to the full thermoelectric problem,
+maintaining the causal and stable properties that are the hallmark
+of the framework presented in this chapter.
+\end{relcorrection}
+
+\begin{relcorrection}
+\textbf{Charge separation in accelerating relativistic plasmas.}
+Gavassino~\cite{GavassinoChargeSeparation2025} has derived from first
+principles the equilibrium electrothermal stratification of a fully
+ionised plasma under irrotational relativistic acceleration in curved
+spacetime.  The analysis reveals that for strong accelerations
+(acceleration number
+$\mathscr{A} = L_{\mathrm{Debye}}/L_{\mathrm{accel}} \gtrsim 1$),
+significant charge separation develops, and the equilibrium electric
+field is \emph{independent of the conductivity} of the medium.  Near
+black hole horizons, $\mathscr{A}$ can approach unity, invalidating
+the standard MHD charge-neutrality assumption.  This has direct
+implications for the stability analyses in Chapters~X--XI, where MHD
+equilibria serve as background states.
+\end{relcorrection}
+
+\begin{relcorrection}
+\textbf{Thermodynamics of multifluid mixtures.}
+The thermodynamic framework underlying these transport phenomena was
+established by Gavassino \&
+Antonelli~\cite{GavassinoAntonelliMultifluidThermo2019}, who
+developed a gauge-invariant thermodynamic formalism for relativistic
+multifluids with arbitrary numbers of superfluid components.  The
+key insight is that the equation of state in thermodynamic
+equilibrium contains fewer degrees of freedom than needed for the
+Lagrangian (variational) approach, revealing a gauge freedom that
+simplifies the hydrodynamic formulation.  This formalism provides
+the thermodynamic underpinning for both the thermoelectric transport
+theory and the multifluid stability analyses in later chapters.
+\end{relcorrection}
+
 \subsection*{References for This Section}
 
 \begin{itemize}
@@ -883,4 +1183,14 @@ environment.
     A74 (2018) \citep{PotekhinChabrier2018}
   \item arXiv:2509.15303, NS evolution with BDNK (2025)
     \citep{NSevolutionBDNK2025}
+  \item Gavassino, \textit{Phys.\ Lett.\ B} \textbf{840}, 137854
+    (2023) \citep{GavassinoBounds2023}
+  \item Gavassino, Disconzi \& Noronha, \textit{Phys.\ Rev.\ Lett.}\
+    \textbf{132}, 162301 (2024) \citep{GavassinoDispersions2024}
+  \item Gavassino, arXiv:2509.23845, thermoelectric conduction in GR
+    (2025) \citep{GavassinoThermoelectric2025}
+  \item Gavassino, arXiv:2508.08936, charge separation in accelerating
+    plasmas (2025) \citep{GavassinoChargeSeparation2025}
+  \item Gavassino \& Antonelli, \textit{MNRAS} \textbf{494},
+    3882 (2020) \citep{GavassinoAntonelliMultifluidThermo2019}
 \end{itemize}

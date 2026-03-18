@@ -1,0 +1,3099 @@
+\documentclass[aps,prd,preprint,nofootinbib,amsmath,amssymb,showpacs,longbibliography,singlecolumn,superscriptaddress,10pt]{revtex4-1}
+
+
+
+\usepackage{epsfig}
+\usepackage{bm}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{dsfont}
+\usepackage{color}
+\usepackage{subfigure}
+\usepackage{dcolumn}
+\usepackage{mathtools}%
+
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amscd, amsfonts, mathrsfs}
+\usepackage{cases}
+\usepackage{verbatim} 
+\usepackage{epsf}
+\usepackage[bookmarksnumbered,pdfpagelabels=true,plainpages=false,colorlinks=true,
+            linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{xcolor}
+
+\colorlet{kigreen}{green!60!black}
+\newcommand{\ki}[1]{\textcolor{kigreen}{KI: #1}}
+
+\usepackage{dsfont}
+
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{assumption}[theorem]{Assumption}
+
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{convention}[theorem]{Convention}
+
+
+\newenvironment{dem}{{\noindent \bf Proof: }}{\hfill $\qed$\\ \medskip}
+\newenvironment{sketch}{{\noindent \bf Proof sketch: }}{\hfill $\qed$\\ \medskip}
+
+\allowdisplaybreaks
+
+\setlength{\textwidth}{6.5in}     
+\setlength{\oddsidemargin}{0in}   
+\setlength{\evensidemargin}{0in}  
+\setlength{\textheight}{8.7in}    
+\setlength{\topmargin}{0in}       
+\setlength{\headheight}{0in}      
+\setlength{\headsep}{0.3in}        
+\setlength{\footskip}{.2in}       
+
+
+\baselineskip=7.0mm
+\setlength{\baselineskip}{1.09\baselineskip}
+
+
+
+\newcommand*{\Scale}[2][4]{\scalebox{#1}{$#2$}}%
+\newcommand*{\Resize}[2]{\resizebox{#1}{!}{$#2$}}%
+\newcommand{\forceds}[1]{\Scale[1.1]{\ensuremath{\mathrlap{{{#1}}}\hspace{1.4pt}#1}}}
+\newcommand{\cvec}[1]{\ensuremath{\bm {#1}}}
+\newcommand{\cmat}[1]{\ensuremath{\mathds{{#1}}}}
+\newcommand{\cmatgreek}[1]{\ensuremath{\forceds{{#1}}}}
+
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cE}{\mathcal E}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cG}{\mathcal G}
+\newcommand{\cH}{\mathcal H}
+\newcommand{\cI}{\mathcal I}
+\newcommand{\cJ}{\mathcal J}
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+\newcommand{\cM}{\mathcal M}
+\newcommand{\cN}{\mathcal N}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cP}{\mathcal P}
+\newcommand{\cQ}{\mathcal Q}
+\newcommand{\cR}{\mathcal R}
+\newcommand{\cS}{\mathcal S}
+\newcommand{\cT}{\mathcal T}
+\newcommand{\cU}{\mathcal U}
+\newcommand{\cV}{\mathcal V}
+\newcommand{\cW}{\mathcal W}
+\newcommand{\cX}{\mathcal X}
+\newcommand{\cY}{\mathcal Y}
+\newcommand{\cZ}{\mathcal Z}
+
+\newcommand{\ccB}{\mathscr{B}}
+\newcommand{\ccE}{\mathscr{E}}
+\newcommand{\ccD}{\mathscr{D}}
+\newcommand{\ccL}{\mathscr{L}}
+\newcommand{\ccW}{\mathscr{W}}
+
+\newcommand{\al}{\alpha}
+\newcommand{\ga}{\gamma}
+\newcommand{\Ga}{\Gamma}
+\newcommand{\de}{\delta}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\la}{\lambda}
+\newcommand{\La}{\Lambda}
+\newcommand{\si}{\sigma}
+\newcommand{\Si}{\Sigma}
+\newcommand{\vfi}{\varphi}
+\newcommand{\om}{\omega}
+\newcommand{\Om}{\Omega}
+
+\newcommand{\TT}{\mathbb T}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\HH}{\mathbb H}
+\newcommand{\CP}{\mathbb C \mathbb P}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\NN}{\mathbb N}
+
+\newcommand{\vx}{\vec{x}}
+\newcommand{\vy}{\vec{y}}
+\newcommand{\vz}{\vec{z}}
+\newcommand{\vk}{\vec{k}}
+\newcommand{\vu}{\vec{u}}
+\newcommand{\vv}{\vec{v}}
+\newcommand{\vp}{\vec{p}}
+\newcommand{\vq}{\vec{q}}
+\newcommand{\vb}{\vec{b}}
+
+\newcommand{\Bracket}[1]{\left \langle #1 \right \rangle }
+
+\newcommand{\cqd}{\hfill $\qed$\\ \medskip}
+\newcommand{\rar}{\rightarrow}
+\newcommand{\imp}{\Rightarrow}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\vol}{\operatorname{vol}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\dive}{\operatorname{div}}
+\newcommand{\p}{\parallel}
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+
+
+\newcommand{\mss}{\hspace{0.2cm}}
+\newcommand{\ms}{\hspace{0.25cm}}
+\newcommand{\msm}{\hspace{0.3cm}}
+\newcommand{\msb}{\hspace{0.35cm}}
+
+
+
+\newcommand{\kl}{k^\prime{}}
+\newcommand{\wl}{\omega^\prime{}}
+
+
+
+
+\setcounter{MaxMatrixCols}{10}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+\newcommand{\bfk}{\mathbf{k}}
+\newcommand{\bfx}{\mathbf{x}}
+\newcommand{\bfn}{\mathbf{n}}
+\newcommand{\bfu}{\mathbf{u}}
+\newcommand{\bml}{\begin{subequations}}
+\newcommand{\eml}{\end{subequations}}
+
+\newcommand{\nn}{N}
+\newcommand{\mass}{\mathcal{M}}
+\newcommand{\vcal}{\mathcal{V}}
+\newcommand{\qcal}{\mathcal{Q}}
+\newcommand{\eqent}{S}
+
+\newcommand{\bbm}{\begin{bmatrix}}
+\newcommand{\ebm}{\end{bmatrix}}
+\newcommand{\bvm}{\begin{vmatrix}}
+\newcommand{\evm}{\end{vmatrix}}
+
+\newcommand{\nm}[1]{{\textcolor{red}{[nm:\,{#1}]}}}
+\newcommand{\jn}[1]{{\textcolor{blue}{[jn:\,{#1}]}}}
+\newcommand{\mh}[1]{{\textcolor{magenta}{[mh:\,{#1}]}}}
+\newcommand{\gsr}[1]{{\textcolor{cyan}{[gsr:\,{#1}]}}}
+
+
+\begin{document}
+
+
+
+
+\title{Information flow and fluctuations in the relativistic Boltzmann equation}
+\date{\today}
+
+\author{Nicki Mullins}
+\email{nickim2@illinois.edu}
+\affiliation{Illinois Center for Advanced Studies of the Universe\\ Department of Physics, 
+University of Illinois at Urbana-Champaign, Urbana, IL 61801, USA}
+
+\author{Gabriel Soares Rocha}
+\email{gabrielsr@id.uff.br}
+\affiliation{Department of Physics and Astronomy, Vanderbilt University, 1221 Stevenson Center Lane,
+Nashville, TN 37240, USA}
+
+
+
+\begin{abstract}
+     
+\end{abstract}   
+
+
+
+\maketitle
+
+\tableofcontents
+
+\section{Introduction}
+
+text
+
+\section{The information current for the Boltzmann equation}
+
+The information current \cite{Gavassino:2021kjm} is defined as
+\begin{equation} \label{Eq:Information_Current}
+    E^{\mu} = -\delta s^{\mu} - \alpha_I \delta J^{\mu I} ,
+\end{equation}
+where ``$\delta$" denotes a perturbation around equilibrium, $s^{\mu}$ is the entropy current, $J^{\mu I}$ are the conserved currents relevant to the theory, and $\alpha_I$ are the thermodynamic conjugates to the conserved currents. 
+
+To compute the information current for the linearized Boltzmann equation, we need the entropy current and relevant conserved quantities. These are given by
+\begin{equation}
+    s^{\mu} = - \int dP p^{\mu} \left( f_p \ln f_p - f_p \right) ,
+\end{equation}
+\begin{equation}
+    J^{\mu} = \int dP p^{\mu} f_p ,
+\end{equation}
+\begin{equation}
+    T^{\mu\nu} = \int dP p^{\mu} p^{\nu} f_p .
+\end{equation}
+Expanding each of these around global equilibrium up to second order, we find that \gsr{Works if $\phi$ are deviations from both global and local equilibrium}
+\begin{equation}
+    E^{\mu} = \int dP p^{\mu} \left[ \ln f_{\mathrm{eq}} - \frac{\mu}{T} f_{\mathrm{eq}} - \beta_{\nu} p^{\nu} f_{\mathrm{eq}} \right] f_{\mathrm{eq}} \phi + \frac{1}{2} \int dP p^{\mu} \phi^2 f_{\mathrm{eq}},
+\end{equation}
+where we have defined $f_p = f_{\mathrm{eq}} (1 + \phi)$, and $\mu$ is the chemical potential and $\beta_{\nu}$ is the thermal Killing vector \gsr{If $\beta_{\mu}$ is a Killing vector, then we have necessarily global equilibrium}. Using that $f_{\mathrm{eq}} = \exp (\beta_{\nu} p^{\mu} + \mu / T)$, we see that the linear term cancels and 
+\begin{equation}
+    E^{\mu} = \frac{1}{2} \int dP p^{\mu} \phi^2 f_{\mathrm{eq}} .
+\end{equation}
+
+When using the information current to study hydrodynamics, it is often useful to write the equations of motion in the form 
+\begin{equation}
+    \left( E_{AB}^{\mu} \partial_{\mu} + \sigma_{AB} \right) \delta \phi^A = 0 ,
+\end{equation}
+where the indices run over the space of dynamical variables, $E^{\mu} = \phi^A E^{\mu}_{AB} \phi^B / 2$, and $\sigma = \phi^A \sigma_{AB} \phi^B$ is the entropy production. In the case of the Boltzmann equation, these indices run over the momenta, indicating that the equation of motion can be written in the form 
+\begin{equation} \label{Eq:EoM_information_current}
+    \int d\tilde{P} \left( E_{p\tilde{p}}^{\mu} \partial_{\mu} + \sigma_{p\tilde{p}} \right) \phi_{\tilde{p}} = 0 .
+\end{equation}
+Using the form of the information current and entropy production, we find that 
+\begin{equation}
+    E_{p\tilde{p}}^{\mu} = \delta^{(4)}(p-\tilde{p}) E_{\tilde{p}} \, \tilde{p}^{\mu} ,
+\end{equation}
+\begin{equation}
+    \sigma_{p\tilde{p}} = E_{\tilde{p}} \int dP' dK dK' W_{pk\rightarrow p'k'} f_{\mathrm{eq}p} f_{\mathrm{eq}k} \left( \delta^{(3)}(p'-\tilde{p}) + \delta^{(3)}(k'-\tilde{p}) - \delta^{(3)}(k-\tilde{p}) - \delta^{(3)}(p-\tilde{p}) \right) .
+\end{equation}
+Compare this to the linearized collision operator,
+%
+%
+\begin{equation}
+\label{eq:lin-coll-term}
+\begin{aligned}
+f_{0\mathbf{p}} \hat{L}\phi_{\mathbf{p}}
+\equiv
+ \int dQ \ dQ^{\prime} \ dK^{\prime} W_{pk \leftrightarrow p'k'} 
+f_{0\bf{p}} f_{0{\bf k}} 
+(\phi_{\bf{p}'} + \phi_{\bf{k}'} -\phi_{\bf{p}} - \phi_{\bf{k}} ) .
+\end{aligned}
+\end{equation}
+%
+%
+We can see that
+\begin{equation}
+    \int d\tilde{P} \sigma_{p\tilde{p}} \phi_{\tilde{p}} = L \phi_p . 
+\end{equation}
+This implies that the standard linearized Boltzmann equation, 
+\begin{equation}
+    p^{\mu} \partial_{\mu} \phi_p - L \phi_p = 0 ,
+\end{equation}
+is already in the form of Eq.\ \eqref{Eq:EoM_information_current}.
+
+\subsection{Causality and stability from the information current}
+
+It has been shown \cite{Gavassino:2021kjm} that a linear relativistic dynamical system will be causal and stable against fluctuations if 
+\begin{enumerate}
+    \item $n_{\mu} E^{\mu} \geq 0$ for all past-directed, timelike $n^{\mu}$. 
+    \item $n_{\mu} E^{\mu} = 0$ if and only if $\phi = 0$. 
+    \item $\partial_{\mu} E^{\mu} \leq 0$. 
+\end{enumerate}
+We would now like to see what conditions can be placed on various expansion schemes for obtaining hydrodynamics form the linearized Boltzmann equation from these conditions. 
+
+The final condition, $\partial_{\mu} E^{\mu} \leq 0$ follows form the positivity of the entropy production. This can be seen by taking \gsr{Hereon, this works only if $\phi$ represents deviations from global equilibrium}
+\begin{equation}
+    \partial_{\mu} E^{\mu} = \frac{1}{2} \int dP f_{\mathrm{eq}} p^{\mu} \partial_{\mu} \phi^2 .
+\end{equation}
+Using the form of the linearized Boltzmann equation, we find that
+\begin{equation}
+    \partial_{\mu} E^{\mu} = \int dP f_{\mathrm{eq}} \phi \hat{L} \phi \leq 0 .
+\end{equation}
+\nm{expand this out.}
+
+The other two conditions can be studies by conjugating the information current with an arbitrary past-directed, timelike vector, which can be written in the form 
+\begin{equation}
+    n^{\mu} = \gamma (-1, \mathbf{v}) .
+\end{equation}
+The magnitude of $\mathbf{v}$ is at maximum one, as any magnitude that exceeds this would imply that $n^{\mu}$ is spacelike. We then want to evaluate 
+\begin{equation} \label{Eq:ndotE}
+    \frac{1}{\gamma} n_{\mu} E^{\mu} = \int \frac{d^3p}{(2\pi)^3} f_{\mathrm{eq}} \phi^2 + \int \frac{d^3p}{(2\pi)^3 E_{\mathbf{p}}} v_i p^i f_{\mathrm{eq}} \phi^2 .
+\end{equation}
+It is important to leave $v^{\mu}$ in the most general possible form as the stability conditions require $n_{\mu} E^{\mu} \geq 0$ for \emph{any} choice of $n^{\mu}$, however if is possible to choose a frame for $\beta_{\mu}$. Will will work in the local rest frame, defined by $\beta_{\mu} = (1/T , 0)$. Then, since $E_{\mathbf{p}}$, $f_{\mathrm{eq}}$, and $\phi^2$ are all positive definite, the integrand of the second integral in Eq.\ \eqref{Eq:ndotE} is minimized by taking $v^i$ to be anti-parallel to $p^i$. Then, since $|\mathbf{v}| \leq 1$, the causality and stability conditions will hold if 
+\begin{equation}
+    \int \frac{d^3p}{(2\pi)^3} e^{-\sqrt{\mathbf{p^2}+m^2}} \phi^2 - \int \frac{d^3p}{(2\pi)^3 \sqrt{\mathbf{p^2} + m^2}} |\mathbf{p}| e^{-\sqrt{\mathbf{p^2}+m^2}} \phi^2 > 0 ,
+\end{equation}
+for any non-equilibrium state. Here, the chemical potential has been set to zero for simplicity. The radial and angular parts of this integral can be separated to find that 
+\begin{equation}
+    \int \frac{dp}{2\pi} e^{-\sqrt{\mathbf{p^2}+m^2}} \int \frac{d\Omega_{\mathbf{p}}}{(2\pi)^2} \phi^2 > \int \frac{dp}{(2\pi)} \frac{|\mathbf{p}|}{\sqrt{\mathbf{p}^2 + m^2}} e^{-\sqrt{\mathbf{p^2}+m^2}} \int \frac{d\Omega_{\mathbf{p}}}{(2\pi)^2} \phi^2 .
+\end{equation}
+The angular integrals on each side of this expression are equivalent.
+
+\section{The fluctuating Boltzmann equation}
+
+
+
+We now consider the case where a stochastic source is included in the linearized Boltzmann equation, 
+\begin{equation} \label{Eq:stochastic_EoM}
+   f_{\mathrm{eq},p} p^{\mu} \partial_{\mu} \phi_p - f_{\mathrm{eq},p} L \phi_p = \xi_p ,
+\end{equation}
+where $\xi$ is normally distributed with zero expectation value. This noise should ensure that the Boltzmann equation relaxes to the correct equilibrium probability distribution, given by 
+\begin{equation}
+    w_{\mathrm{eq}}[\phi] \sim e^{-\int_{\Sigma} d\Sigma_{\mu} E^{\mu}} ,
+\end{equation}
+where this represents the probability distribution at fixed time, as defined through some foliation of spacetime into spacelike hypersurfaces $\Sigma$. It was shown in \cite{Mullins:2023tjg, Mullins:2023ott} that stochastic systems of the form Eq.\ \eqref{Eq:stochastic_EoM} will relax to this equilibrium probability distribution if 
+\begin{equation}
+    \langle \xi_p \xi_{\Tilde{p}} \rangle = \sigma_{p\Tilde{p}} = E_{\tilde{p}} \int dP' dK dK' W_{pk\rightarrow p'k'} f_{\mathrm{eq},p} f_{\mathrm{eq},k} \left( \delta^{(3)}(p'-\tilde{p}) + \delta^{(3)}(k'-\tilde{p}) - \delta^{(3)}(k-\tilde{p}) - \delta^{(3)}(p-\tilde{p}) \right) .
+\end{equation}
+
+
+\subsection{Equal time correlators (LG notes)}
+
+On an equal-time hypersurface, I have that
+\begin{equation}
+    E=\int E^\mu d\Sigma_\mu =\dfrac{1}{2} \int \dfrac{d^3 x \, d^3p}{(2\pi)^3} f_{\text{eq}}\phi^2 \, .
+\end{equation}
+This can be expressed as a generalized quadratic form, with kernel
+\begin{equation}
+    \mathcal{K}(\textbf{x},\textbf{p}; \textbf{x}',\textbf{p}')= \dfrac{f_{\text{eq}}}{(2\pi)^3} \delta^3(\textbf{x}-\textbf{x}')\delta^3(\textbf{p}-\textbf{p}').
+\end{equation}
+From a well-known result of functional integrals, we know that the equal-time correlator must, therefore, be
+\begin{equation}
+   \langle \phi(\textbf{x},\textbf{p})\phi(\textbf{x}',\textbf{p}')\rangle  = \dfrac{(2\pi)^3}{f_{\text{eq}}} \delta^3(\textbf{x}-\textbf{x}')\delta^3(\textbf{p}-\textbf{p}')
+\end{equation}
+
+\subsection{Correlators of $\phi$ in RTA}
+
+
+
+\begin{equation}
+f_{\mathrm{eq},p} [i \Omega E_{\bf p}  \phi(q,p) + i p^{\mu} q_{\langle \mu \rangle} \phi(q,p)]  
++
+\frac{E_{\bf p}}{\tau_{R}} f_{\mathrm{eq},p} \phi_{p} =  \xi(q,p) ,
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\langle \xi(x, p) \xi(y,\Tilde{p}) \rangle
+= \frac{E_{\bf p}}{\tau_{R}} f_{\mathrm{eq},p} \delta^{(3)}(p-\Tilde{p}) \delta^{(4)}(x-y)
+\end{aligned}    
+\end{equation}
+
+
+
+\begin{equation}
+\begin{aligned}
+&
+\langle \phi(x,p) \phi(y,k)  \rangle 
+=
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \frac{\langle \xi(q,p) \xi(q',k)  \rangle }{(i \Omega E_{\bf p} + i p^{\langle \mu \rangle} q_{\langle \mu \rangle} + E_{\bf p}/\tau_{R})(i \Omega' E_{\bf k} + i k^{\langle \mu \rangle} q'_{\langle \mu \rangle} + E_{\bf k}/\tau_{R}) } 
+\\
+&
+=
+\delta^{(3)}(p-k) f_{\mathrm{eq},p} \int d^{4}q  e^{iq (x-y)} \frac{(E_{\bf p}/\tau_{R})}{(i \Omega E_{\bf p} + i p^{\langle \mu \rangle} q_{\langle \mu \rangle} + E_{\bf p}/\tau_{R})(-i \Omega E_{\bf k} - i p^{\langle \mu \rangle} q_{\langle \mu \rangle} + E_{\bf p}/\tau_{R}) } 
+\\
+&
+= 
+\beta
+\delta^{(3)}(p-k) f_{\mathrm{eq},p} \int d^{4}q  e^{iq (x-y)} \frac{U_{\bf p}}{U_{\bf p}^{2} + (\hat{\Omega} U_{\bf p} + p^{\langle \mu \rangle} q_{\langle \mu \rangle})^{2} } 
+\\
+&
+=
+\beta
+\delta^{(3)}(p-k) f_{\mathrm{eq},p} \int_{0}^{\infty} d\lambda \int d^{4}q  e^{iq (x-y)} \exp\left[- \frac{\lambda }{U_{\bf p}} \left( U_{\bf p}^{2} + (\hat{\Omega} U_{\bf p} + p^{\langle \mu \rangle} q_{\langle \mu \rangle})^{2} \right) \right]
+\\
+&
+=
+\beta
+\delta^{(3)}(p-k) f_{\mathrm{eq},p} \int_{0}^{\infty} d\lambda \int d^{4}q  e^{iq (x-y)} \exp\left\{- \frac{\lambda }{U_{\bf p}} \left[ (1 + \hat{\Omega}^{2}) U_{\bf p}^{2} + 2 \hat{\Omega} U_{\bf p} p^{\langle \mu \rangle} q_{\langle \mu \rangle} + (p^{\langle \mu \rangle} q_{\langle \mu \rangle})^{2} \right] \right\}
+\\
+&
+= [LRF,*]
+\beta
+\delta^{(3)}(p-k) f_{\mathrm{eq},p} \int_{0}^{\infty} d\lambda \int_{\mathds{R}} d\omega \exp\left\{- \lambda  (1 + \hat{\omega}^{2}) U_{\bf p} \right\} e^{i \omega \Delta_{0}} 
+\\
+&
+\times \int_{\mathds{R}+} dq \ q^{2} \int_{[-1,1]} d(\cos \theta)
+\exp\left[ 2 \hat{\Omega}  p q \cos \theta - \frac{\lambda}{U_{\bf p}}  p^{2} q^{2} \cos^{2} \theta \right]
+e^{-i q \Delta \cos \psi \cos \theta} 2 \pi J_{0}(|q \Delta \sin \psi \sin \theta|)
+\end{aligned}    
+\end{equation}
+%
+[*] choice of coordinates so that $\Vec{p} \propto \hat{z}$, $\Vec{\Delta} = \Vec{x} - \Vec{y} \propto \sin \psi \hat{y} + \cos \psi \hat{z}$, $\Delta_{0} = x^{0} - y^{0}$
+
+\begin{equation}
+\begin{aligned}
+ & 
+ \langle \phi(x,p) \phi(y,k)  \rangle 
+=
+\beta \delta^{(3)}(p-k) f_{\mathrm{eq},p} \tau_{R}^{-4} \int_{\mathds{R}} d\omega  e^{i \omega \Delta_{0}} 
+\\
+&
+\times \int_{\mathds{R}+} dq \ q^{2} \int_{[-1,1]} d(\cos \theta)
+\frac{U_{\bf p} e^{-i q \Delta \cos \psi \cos \theta}}{U_{\bf p}^{2} + (\hat{\omega} U_{\bf p} - \hat{p} \Hat{q} \cos{\theta})^{2} } 2 \pi J_{0}(|q \Delta \sin \psi \sin \theta|)
+\\
+&
+=
+\beta \delta^{(3)}(p-k) f_{\mathrm{eq},p} \tau_{R}^{-4}  
+\frac{2 \pi^{2}}{U_{\bf p}}
+\int_{\mathds{R}+} dq \ q^{2} \int_{[-1,1]} d(\cos \theta)
+ \exp{\left[\Delta_{0} \left( i \frac{p q}{U_{\bf p}} \cos \theta - 1\right) \right]}
+ e^{-i q \Delta \cos \psi \cos \theta}  J_{0}(|q \Delta \sin \psi \sin \theta|)
+\end{aligned}    
+\end{equation}
+
+$\hat{\Omega} = \Omega \tau_{R}$ $U_{\bf p} = \beta E_{\bf p}$
+
+
+
+\begin{equation}
+    I = \int d^4q e^{iq(x-y)} \frac{E_p^2 / \tau_R}{(q^0 E_p + q^i p_i)^2 + (E_p / \tau_R)^2} .
+\end{equation}
+The poles in this integral are
+\begin{equation}
+    q^0_{\pm} = - \frac{p_i q^i}{E_p} \pm \frac{i}{\tau_R} .
+\end{equation}
+It follows that
+\begin{equation}
+\begin{split}
+    I & = \int d^3q \int dq^0 e^{iq(x-y)} \frac{E_p^2 / \tau_R}{E_p^2(q^0 - q^0_+) (q^0 - q^0_-)} \\
+    & = -2\pi i \frac{1}{\tau_R} \int d^3q e^{i q_j (x-y)^j} e^{-i q_-^0 (x^0 - y^0)} \frac{1}{q_-^0 - q_+^0} \\
+    & = \pi \int d^3q \exp \left[ i q_j \left( x - y + (x^0 - y^0) \frac{p}{E_p} \right)^j - \frac{(x^0 - y^0)}{\tau_R} \right]  \\
+    & = \pi e^{-(x^0-y^0)/\tau_R} (2\pi)^3 \delta^3\left( x - y + (x^0 - y^0) \frac{p}{E_p} \right)
+\end{split}
+\end{equation}
+It follows that
+\begin{equation}
+    \langle \phi(x,p) \phi(y,k) \rangle = \frac{1}{2 f_{\mathrm{eq},p}} e^{-|x^0-y^0|/\tau_R} \delta^{(3)}(p-k) \delta^{(3)} \left( x - y + (x^0 - y^0) \frac{p}{E_p} \right) .
+\end{equation}
+The second delta function tells us that the correlator propagates along the path of the particles with momentum $p^{\mu}$. The relaxation time only effects how long the correlations last with time, larger relaxation time indicates that correlations remain for longer times. To ignore fluctuations then, the relaxation time should be much less than the timescales at which we are probing the system. 
+
+
+\subsection{Correlators of $\phi$ in proper RTA}
+
+\begin{equation}
+\begin{aligned}
+&
+p^{\mu} \partial_{\mu}f_{p} = - \frac{u_{0} \cdot p}{\tau_{R}} (f_{p} - f_{0 p})   
+\\
+&
+f_{\mathrm{eq},p} [  (p \cdot u) (u \cdot \partial) \phi(q,p) + p^{\mu} \Delta_{\mu \nu} \partial^{\nu} \phi(q,p)]  
+=
+-
+\frac{u_{0} \cdot p}{\tau_{R}} (f_{p} - f_{0p}),
+\\
+&
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+f_{\mathrm{eq},p} [i (q \cdot u) (p \cdot u)  \phi(q,p) + i p^{\mu} q_{\langle \mu \rangle} \phi(q,p)]  
+=
+-
+\frac{u_{0} \cdot p}{\tau_{R}} (f_{p} - f_{0p}),
+\end{equation}
+%
+where \textcolor{red}{ {\bf $f_{0p} = e^{- \beta_{0} u^{\mu}_{0} p_{\mu}} \neq f_{\mathrm{eq},p} = e^{- \beta u^{\mu} p_{\mu}}$ [!!!!!]}} is the \textit{local} equilibrium, where $\beta_{0} = \beta_{0}(x)$ $u^{\mu}_{0} = u^{\mu}_{0}(x)$ are defined by the matching conditions 
+%
+\begin{equation}
+\begin{aligned}
+&
+(i) u_{0\mu} u_{0\nu} T^{\mu \nu} = u_{0\mu} u_{0\nu} T^{\mu \nu}_{0} \Rightarrow 
+\int dP (u^{\mu}_{0} p_{\mu})^{2} (f_{p} - f_{0p}) = 0
+\Rightarrow 
+\int dP (u^{\mu}_{0} p_{\mu})^{2} f^{\mathrm{eq}}_{p} \phi_{p}
+=
+\int dP (u^{\mu}_{0} p_{\mu})^{2} (f_{0p} - f^{\mathrm{eq}}_{p})
+\\
+&
+= \frac{m^{2}}{2 \pi^{2} \beta^{2}_{0}} [m \beta K_{1}(m \beta_{0}) + 3 K_{2}(m \beta_{0})]
+-
+\int dP (u_{0} \cdot p)^{2} e^{- \beta u \cdot p}
+\\
+&
+=
+\frac{m^{2}}{2 \pi^{2} \beta^{2}_{0}} [m \beta K_{1}(m \beta_{0}) + 3 K_{2}(m \beta_{0})]
+-
+\frac{1}{(2 \pi)^{2} \beta^{4}|\Vec{u}|}
+\int_{m \beta}^{\infty} dw \ w^{2} e^{- (u \cdot u_{0}) w}
+\left[ \exp{\left( \sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}| \right)}
+-
+\exp{\left( -\sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}| \right)} 
+\right]
+\end{aligned}    
+\end{equation}
+%
+$\phi_{p} = (f - f^{\mathrm{eq}}_{p})/f^{\mathrm{eq}}_{p}$, $\gamma_{p} = (f_{0p} - f^{\mathrm{eq}}_{p})/f^{\mathrm{eq}}_{p}$ 
+$u_{0} \cdot p = (u_{0} \cdot u) E_{p}^{0} - \Vec{p} \cdot \Vec{u}$
+
+[massless limit] $|\Vec{u}|^{2} = - \Delta^{\mu \nu}_{0} u_{\mu} u_{\nu} $
+
+\begin{equation}
+\begin{aligned}
+&
+\int dP (u_{0} \cdot p )^{2} f^{\mathrm{eq}}_{p} \phi_{p} = \frac{3}{\pi^{2} \beta^{4}_{0}}
+-
+\frac{1}{\pi^{2} \beta^{4}} \frac{3 (u \cdot u_{0})^{2} + |\Vec{u}|^{2} }{[(u \cdot u_{0})^{2} - |\Vec{u}|^{2}]^{3}}
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+T^{\mu}_{\nu}u_{0}^{\mu} = \varepsilon_{0} u^{\mu}_{0} 
+\Rightarrow 
+\int dP (u_{0} \cdot p) \Delta^{\mu \nu}_{0} p_{\nu} f^{\mathrm{eq}}_{p} \phi_{p}
+=
+\int dP (u^{\mu}_{0} p_{\mu})^{2} \Delta^{\mu \nu}_{0} p_{\nu} (f_{0p} - f^{\mathrm{eq}}_{p})
+\\
+&
+=
+\left\{ \frac{1}{(2 \pi)^{2} \beta^{4}}
+\int_{m \beta}^{\infty} dw \ (w^{2} - m^{2} \beta^{2})^{1/2} w e^{- (u \cdot u_{0}) w}
+\left[ \left( 1 - \frac{1}{\sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}|} \right) \exp{\left( \sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}| \right)}
+\right. \right.
+\\
+&
+\left. \left.
++
+\left( 1 + \frac{1}{\sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}|}  \right)
+\exp{\left( -\sqrt{w^{2} - m^{2} \beta^{2}} |\Vec{u}| \right)} 
+\right]
+ \right\} \Delta^{\mu \nu}_{0} u_{\nu}
+\end{aligned}    
+\end{equation}
+
+[massless limit]
+
+\begin{equation}
+\begin{aligned}
+&
+\int dP (u_{0} \cdot p) \Delta^{\mu \nu}_{0} p_{\nu} f^{\mathrm{eq}}_{p} \phi_{p}
+=
+\frac{16}{\pi^{2} \beta^{4}} \frac{ (u \cdot u_{0}) |\Vec{u}|^{2} }{[(u \cdot u_{0})^{2} - |\Vec{u}|^{2}]^{3}}
+ \Delta^{\mu \nu}_{0} u_{\nu}
+\end{aligned}    
+\end{equation}
+
+\subsection{Correlators of $\phi$ in $\varphi^{4}$}
+
+
+I want to know $\langle \phi(x,p) \phi(y,k) \rangle$ to see deviations from Sto\ss zahlansatz
+
+Fourier convention
+
+\begin{equation}
+\begin{aligned}
+ &
+ f(x,p) = \int \frac{d^{4}q}{(2 \pi)^{4}} e^{i q x}  f(q,p)
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+f_{\mathrm{eq},p} [i \Omega E_{\bf p}  \phi(q,p) + i p^{\mu} q_{\langle \mu \rangle} \phi(q,p)]  
+   -
+\int d \Tilde{P} \sigma_{p \Tilde{p}} \phi_{\Tilde{p}} =  \xi(q,p) ,
+\end{equation}
+
+
+
+\begin{equation}
+\begin{aligned}
+ &
+ \phi(x,p) = \sum_{n,\ell = 0}^{\infty} \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(x) P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+\\
+&
+A_{n}^{(\ell)}\Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(x)
+=
+\int dP f_{\mathrm{eq}}  P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle} \phi(x,p)
+\equiv
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}(x)
+\end{aligned}    
+\end{equation}
+
+
+
+
+
+\begin{equation}
+\begin{aligned}
+&\langle \phi(x,p) \phi(y,k)  \rangle 
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \left\langle \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(x) \Phi_{n}^{\nu_{1} \cdots \nu_{m}}(y) \right\rangle L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+L^{(2 m + 1)}_{n' {\bf k}} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle} \\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \left\langle \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(q) \Phi_{n}^{\nu_{1} \cdots \nu_{m}}(q') \right\rangle L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+L^{(2 m + 1)}_{n' {\bf k}} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle}
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\xi_{\bf p} = \sum_{\ell, n = 0}^{\infty} \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}} L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{\mu_{\ell} \rangle}
+\\
+&
+A_{n}^{(\ell)}\Xi_{n}^{\mu_{1} \cdots \mu_{\ell}}(x)
+=
+\int dP f_{\mathrm{eq}}  P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle} \xi(x,p)
+\equiv
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}}(x)
+\end{aligned}    
+\end{equation}
+
+\gsr{!!! the tildes are not Fourier notation, they imply the incorporation of normalization factors $A_{n}^{(\ell)}$ in $\Xi$'s and $\Phi$'s}
+
+\begin{equation}
+\begin{aligned}
+\frac{\ell!}{(2 \ell + 1)!!}\left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell} 
+L_{n}^{(2 \ell +1)} L_{n'}^{(2\ell+1)} 
+ \right\rangle_{0}
+=
+A_{n}^{(\ell)} \delta_{n n'}
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\langle \xi(x, p) \xi(y,\Tilde{p}) \rangle
+= 
+\sigma_{p \Tilde{p}} \delta^{(4)}(x-y)
+=
+\sum_{n,\ell}\frac{\chi_{n,\ell}}{A_{n}^{(\ell)}} 
+L^{(2 \ell + 1)}_{n {\bf p}} p^{\langle \mu_{1}} \cdots p^{\mu_{\ell} \rangle}
+L^{(2 \ell + 1)}_{n {\bf \Tilde{p}}} \Tilde{p}_{\langle \mu_{1}} \cdots \Tilde{p}_{\mu_{\ell} \rangle}
+\end{aligned}    
+\end{equation}
+
+
+
+\begin{equation}
+\begin{aligned}
+&
+\left\langle \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}}(x) \Xi_{n'}^{\mu_{1} \cdots \mu_{m}}(y)
+\right\rangle
+= 
+\frac{\chi_{n,\ell}}{A_{n}^{(\ell)}} \delta^{(4)}(x-y) \delta_{\ell m} \delta_{nn'} \Delta^{\mu_{1} \cdots \mu_{\ell}\nu_{1} \cdots \nu_{\ell}}
+\end{aligned}    
+\end{equation}
+%
+$\chi_{n \ell} $: eigenvalues of the linearized collision term operator
+
+\begin{equation}
+\begin{aligned}
+&
+\left\langle \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}}(q) \Xi_{n'}^{\mu_{1} \cdots \mu_{m}}(q')
+\right\rangle
+= 
+\frac{\chi_{n,\ell}}{A_{n}^{(\ell)}} (2 \pi)^{4} \delta^{(4)}(q+q') \delta_{\ell m} \delta_{nn'} \Delta^{\mu_{1} \cdots \mu_{\ell}\nu_{1} \cdots \nu_{\ell}}
+\end{aligned}    
+\end{equation}
+%
+
+For $\varphi^{4}$ theory we can use Laguerre polynomial identities and make use of the massless limit
+
+\begin{equation}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} \left[
+-(n+1) \widetilde{\Phi}_{n+1}^{\mu_{1} \cdots \mu_{\ell}}
++
+2(n+\ell+1)
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}
+-
+(n+2\ell+1)
+\widetilde{\Phi}_{n-1}^{\mu_{1} \cdots \mu_{\ell}}
+\right]
+\\
+&
++ 
+i q_{\langle \mu \rangle} \left[ \widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell} \mu}
+-
+2 \widetilde{\Phi}_{n-1}^{\mu_{1} \cdots \mu_{\ell} \mu}
++
+\widetilde{\Phi}_{n-2}^{\mu_{1} \cdots \mu_{\ell} \mu}
+\right]
+\\
+&
+-
+i \frac{q_{\langle \mu \rangle}}{\beta^{2}}  
+ \frac{\ell}{2 \ell + 1}
+\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}} 
+\left[
+(n+1)(n+2)
+\widetilde{\Phi}_{n+2}^{\nu_{2} \cdots \nu_{\ell}}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\Phi}_{n+1}^{\nu_{2} \cdots \nu_{\ell}}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\Phi}_{n}^{\nu_{2} \cdots \nu_{\ell}}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}
+   = 
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}},
+\end{aligned}
+\end{equation}
+
+[DIGRESSION 1] for the derivation above, the following identities have been employed
+%
+\begin{equation}
+\begin{aligned}
+&
+x L_{n}^{(2 \ell +1)}(x) 
+=
+-
+(n+1) L_{n+1}^{(2 \ell +1)}(x)
++
+2(n+ \ell +1) L_{n}^{(2 \ell +1)}(x)
+-
+(n+2 \ell +1) L_{n-1}^{(2 \ell +1)}(x)
+\\
+&
+x^{2} L_{n}^{(2 \ell +1)}(x) 
+=
+(n+1)(n+2) L_{n+2}^{(2 \ell -1)}(x)
+-
+2(n+1)(n+2\ell+1) L_{n}^{(2 \ell -1)}(x)
++
+(n+2\ell+1)(n+2\ell) L_{n}^{(2 \ell -1)}(x)
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} \rangle} 
+ p^{\langle \mu \rangle} 
+ =
+p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} } 
+ p^{\mu \rangle} 
+ +
+ \frac{\ell}{2 \ell + 1}
+ \Delta_{\mu' \nu'} p^{\mu'} p^{\nu'}
+\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}} 
+p^{\langle \nu_{2}} \cdots p^{ \nu_{\ell} \rangle} 
+\end{aligned}    
+\end{equation}
+[DIGRESSION 1--end]
+
+In the homogeneous limit ($q_{\langle \mu \rangle} = 0$), we have a tridiagonal matrix to invert. This is doable.
+
+
+In the inhomogenous limit we have the Ansaetze
+%
+\begin{equation}
+\begin{aligned}
+&
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}} (\Omega, q^{\langle \nu \rangle})
+=
+\widetilde{\mathcal{F}}_{n\ell}(\Omega, q^{2})
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle}
+\\
+&
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}}(\Omega, q^{\langle \nu \rangle}) = \widetilde{\mathcal{X}}_{n\ell}(\Omega, q^{2})
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle}
+\\
+&
+q^{2} = - q^{\langle \nu \rangle} q_{\langle \nu \rangle}
+\end{aligned}    
+\end{equation}
+
+
+[RESULT \#1]
+\begin{equation}
+\begin{aligned}
+&
+\left[\frac{\ell!}{(2 \ell - 1)!!}\right]^{2} \left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell} \left(\Delta^{\mu \nu} q'_{\mu} q'_{\nu}\right)^{m}
+\langle \mathcal{X}_{n\ell}(\Omega, q^{2}) \mathcal{X}_{n'm}(\Omega', q'^{2}) \rangle
+=
+\frac{\chi_{n,\ell}}{A_{n}^{(\ell)}} (2 \pi)^{4} \delta^{(4)}(q+q') \delta_{\ell m} \delta_{nn'} q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle} q'_{\langle \mu_{1}} \cdots q'_{\mu_{\ell} \rangle}
+\\
+&
+\langle \mathcal{X}_{n\ell}(\Omega, q^{2}) \mathcal{X}_{n'm}(\Omega', q'^{2}) \rangle
+=
+(-1)^{\ell}\frac{(2 \ell - 1)!!}{\ell!}
+\frac{\chi_{n,\ell}}{A_{n}^{(\ell)}} (2 \pi)^{4} \delta^{(4)}(q+q') \delta_{\ell m} \delta_{nn'}
+\end{aligned}   
+\end{equation}
+
+%
+\begin{equation}
+\begin{aligned}
+&
+q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle} q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle}
+=
+\frac{\ell!}{(2 \ell - 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell}\;,
+\\
+&
+q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle} q'_{\langle \mu_{1}} \cdots q'_{\mu_{\ell} \rangle}
+= [*]
+\sum_{q=0}^{\lceil \ell / 2 \rceil} C_{\ell q} \left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{q} \left(\Delta^{\mu \nu} q'_{\mu} q'_{\nu}\right)^{q} 
+\left(\Delta^{\mu \nu} q_{\mu} q'_{\nu}\right)^{\ell - 2q}
+\\
+&
+C_{\ell q} = (-1)^{q} \frac{(\ell!)^{2}}{(2 \ell)!} \frac{(2 \ell - 2q)!}{q!(\ell-q)!(\ell-2q)!}
+\end{aligned}    
+\end{equation}
+%
+
+[*]: eq. 7.28 of Denicol's book. where $\lceil \ell / 2 \rceil$ denotes the largest integer not exceeding $\ell / 2$,
+
+\begin{equation}
+\begin{aligned}
+&\langle \phi(x,p) \phi(y,k)  \rangle 
+=
+\sum_{n,\ell, n',m = 0}^{\infty}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \left\langle \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(q) \Phi_{n}^{\nu_{1} \cdots \nu_{m}}(q') \right\rangle P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+P_{n',{\bf k}}^{(\ell)} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, q^{2})
+\widetilde{\mathcal{F}}_{n'm}(\Omega', q'^{2})\right\rangle P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle} q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle}
+P_{n',{\bf k}}^{(\ell)} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle} q'^{\langle \nu_{1}} \cdots q'^{\nu_{m} \rangle}
+\end{aligned}    
+\end{equation}
+
+
+
+
+\begin{equation}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} \frac{\ell!}{(2 \ell - 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell} \left[
+-(n+1) 
+\widetilde{\mathcal{F}}_{n+1,\ell}+
+2(n+\ell+1)
+\widetilde{\mathcal{F}}_{n\ell}
+-
+(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n-1,\ell}
+\right]
+\\
+&
++ 
+i q_{\langle \mu \rangle} q^{\langle \mu_{1}} \cdots q^{\mu_{\ell}} q^{\mu \rangle} q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle} \left[ \widetilde{\mathcal{F}}_{n,\ell+1}
+-
+2 \widetilde{\mathcal{F}}_{n-1,\ell+1}
++
+\widetilde{\mathcal{F}}_{n-2,\ell+1}
+\right]
+\\
+&
+-
+i \frac{q_{\langle \mu \rangle}}{\beta^{2}}  
+q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle}\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}} 
+q^{\langle \nu_{2}} \cdots q^{\nu_{\ell} \rangle}
+ \frac{\ell}{2 \ell + 1}
+\left[
+(n+1)(n+2)
+\widetilde{\mathcal{F}}_{n+2,\ell-1}
+\right.
+\\
+&
+\left.
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n+1,\ell-1}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\mathcal{F}}_{n,\ell-1}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\frac{\ell!}{(2 \ell - 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell} \widetilde{\mathcal{F}}_{n\ell}
+   = 
+\frac{\ell!}{(2 \ell - 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell}   
+\widetilde{\mathcal{X}}_{n,\ell}
+,
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+q_{\langle \mu \rangle} q^{\langle \mu_{1}} \cdots q^{\mu_{\ell}} q^{\mu \rangle} q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle}
+=
+q^{\langle \mu_{1}} \cdots q^{\mu_{\ell}} q^{\mu \rangle} q_{\mu} q_{\mu_{1}} \cdots q_{\mu_{\ell}}
+=
+q^{\langle \mu_{1}} \cdots q^{\mu_{\ell}} q^{\mu \rangle} q_{\langle \mu_{1}} \cdots q_{ \mu_{\ell} } 
+ q_{\mu \rangle} 
+\\
+&
+=
+\frac{(\ell+1)!}{(2 \ell + 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell + 1}\;,
+\\
+&
+q_{\langle \mu \rangle} 
+q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle}\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}} 
+q^{\langle \nu_{2}} \cdots q^{\nu_{\ell} \rangle}
+=
+q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle} q_{\langle \mu_{1}} \cdots q_{\mu_{\ell} \rangle}
+=
+\frac{\ell!}{(2 \ell - 1)!!}\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{\ell}\;,
+\end{aligned}    
+\end{equation}
+
+
+[RESULT \#2]
+
+\begin{equation}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta}  \left[
+-(n+1) 
+\widetilde{\mathcal{F}}_{n+1,\ell}+
+2(n+\ell+1)
+\widetilde{\mathcal{F}}_{n\ell}
+-
+(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n-1,\ell}
+\right]
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-q^{2}) \left[ \widetilde{\mathcal{F}}_{n,\ell+1}
+-
+2 \widetilde{\mathcal{F}}_{n-1,\ell+1}
++
+\widetilde{\mathcal{F}}_{n-2,\ell+1}
+\right]
+\\
+&
+-
+\frac{i}{\beta^{2}} (-q^{2})
+ \frac{\ell}{2 \ell + 1}
+\left[
+(n+1)(n+2)
+\widetilde{\mathcal{F}}_{n+2,\ell-1}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n+1,\ell-1}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\mathcal{F}}_{n,\ell-1}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\mathcal{F}}_{n\ell}
+   = 
+\widetilde{\mathcal{X}}_{n,\ell}
+,
+\end{aligned}
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+\mathds{M}_{n \ell n' \ell'} \widetilde{\mathcal{F}}_{n'\ell'}
+=
+\widetilde{\mathcal{X}}_{n,\ell}
+\\
+&
+\widehat{\mathds{M}}_{n \ell n' \ell'} \mathds{M}_{n' \ell' n'' \ell''} = \delta_{n n''} \delta_{\ell  \ell''}
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\hspace{-1cm}
+\begin{aligned}
+&\langle \phi(x,p) \phi(y,k)  \rangle 
+=
+\sum_{n,\ell, n',m = 0}^{\infty}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \left\langle \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}}(q) \Phi_{n}^{\nu_{1} \cdots \nu_{m}}(q') \right\rangle P_{n,{\bf p}}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+P_{n',{\bf k}}^{(\ell)} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} 
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} \left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, q^{2})
+\widetilde{\mathcal{F}}_{n'm}(\Omega', q'^{2})\right\rangle L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle} q^{\langle \mu_{1}} \cdots q^{\mu_{\ell} \rangle}
+L^{(2 m + 1)}_{n' {\bf p}} k_{\langle \nu_{1}} \cdots k_{ \nu_{m} \rangle} q'^{\langle \nu_{1}} \cdots q'^{\nu_{m} \rangle}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} C_{\ell s}
+ C_{m r}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y}  \left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, q^{2})
+\widetilde{\mathcal{F}}_{n'm}(\Omega', q'^{2})\right\rangle L^{(2 \ell + 1)}_{n {\bf p}}  \left(\Delta^{\mu \nu} p_{\mu} p_{\nu}\right)^{s} \left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{s} 
+\left(\Delta^{\mu \nu} p_{\mu} q_{\nu}\right)^{\ell - 2s}
+\\
+&
+\times
+L^{(2 m + 1)}_{n' {\bf k}} \left(\Delta^{\mu \nu} k_{\mu} k_{\nu}\right)^{r} \left(\Delta^{\mu \nu} q'_{\mu} q'_{\nu}\right)^{r}
+\left(\Delta^{\mu \nu} k_{\mu} q'_{\nu}\right)^{m - 2r}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} C_{\ell s}
+ C_{m r}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y}  \left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, q^{2})
+\widetilde{\mathcal{F}}_{n'm}(\Omega', q'^{2})\right\rangle L^{(2 \ell + 1)}_{n {\bf p}}  \left(-E_{\bf p}\right)^{s} \left(-q^{2}\right)^{s} 
+\left(\Delta^{\mu \nu} p_{\mu} q_{\nu}\right)^{\ell - 2s}
+\\
+&
+\times
+L^{(2 m + 1)}_{n' {\bf k}} \left(-E_{\bf k}\right)^{r} \left(-q'^{2}\right)^{r}
+\left(\Delta^{\mu \nu} k_{\mu} q'_{\nu}\right)^{m - 2r}
+\end{aligned}    
+\end{equation}
+
+[RESULT \# 3]
+
+\begin{equation}
+\hspace{-1.5cm}
+\begin{aligned}
+&
+\langle \phi(x,p) \phi(y,k)  \rangle 
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} C_{\ell s}
+ C_{m r}
+\int \frac{d^{4}q}{(2 \pi)^{4}}  \frac{d^{4}q'}{(2 \pi)^{4}} e^{iqx} e^{iq'y} A_{n}^{(\ell)} A_{n'}^{(m)}\widehat{\mathds{M}}_{n \ell ab} \widehat{\mathds{M}}_{n' m c d} \left\langle \mathcal{X}_{ab}(\Omega, q^{2})
+\mathcal{X}_{cd}(\Omega', q'^{2})\right\rangle \\
+&
+L^{(2 \ell + 1)}_{n {\bf p}}  \left(-E_{\bf p}\right)^{s} \left(-q^{2}\right)^{s} 
+\left(\Delta^{\mu \nu} p_{\mu} q_{\nu}\right)^{\ell - 2s}
+L^{(2 m + 1)}_{n' {\bf k}} \left(-E_{\bf k}\right)^{r} \left(-q'^{2}\right)^{r}
+\left(\Delta^{\mu \nu} k_{\mu} q'_{\nu}\right)^{m - 2r}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} C_{\ell s}
+ C_{m r}
+\int \frac{d^{4}q}{(2 \pi)^{4}} e^{iq(x-y)} A_{n}^{(\ell)} A_{n'}^{(m)} \widehat{\mathds{M}}_{n \ell a b} \widehat{\mathds{M}}_{n' m c d} 
+(-1)^{b}\frac{(2 b - 1)!!}{b!}
+\frac{\chi_{a,b}}{A_{a}^{(b)}} (2 \pi)^{4}  \delta_{a c} \delta_{b d}
+\\
+&
+L^{(2 \ell + 1)}_{n {\bf p}}  \left(-E_{\bf p}\right)^{s} \left(-q^{2}\right)^{s+r} 
+\left(\Delta^{\mu \nu} p_{\mu} q_{\nu}\right)^{\ell - 2s}
+L^{(2 m + 1)}_{n' {\bf k}} \left(-E_{\bf k}\right)^{r} 
+\left(\Delta^{\mu \nu} k_{\mu} q_{\nu}\right)^{m - 2r}
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty} \sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} \sum_{a,b} C_{\ell s}
+ C_{m r} (-1)^{b}\frac{(2 b - 1)!!}{b!} A_{n}^{(\ell)} A_{n'}^{(m)}
+\int d^{4}q e^{iq(x-y)}  \widehat{\mathds{M}}(q)_{n \ell a b} \widehat{\mathds{M}}(-q)_{n' m a b} 
+\frac{\chi_{ab}}{A_{a}^{(b)}}   \\
+&
+L^{(2 \ell + 1)}_{n {\bf p}}  \left(-E_{\bf p}\right)^{s} \left(-q^{2}\right)^{s+r} 
+\left(\Delta^{\mu \nu} p_{\mu} q_{\nu}\right)^{\ell - 2s}
+L^{(2 m + 1)}_{n' {\bf k}} \left(-E_{\bf k}\right)^{r} 
+\left(\Delta^{\mu \nu} k_{\mu} q_{\nu}\right)^{m - 2r}
+\end{aligned}    
+\end{equation}
+
+
+\subsection{}
+
+\subsection{Information current and orthogonal moments}
+
+
+\begin{equation}
+    E^{\mu} = \frac{1}{2} \int dP p^{\mu} \phi^2 f_{\mathrm{eq}} .
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+ &
+ \phi = \sum_{n,\ell = 0}^{\infty} \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}} P_{n}^{(\ell)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle}
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+\frac{\ell!}{(2 \ell + 1)!!}\left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell} L_{n}^{(2\ell +1)} L_{n'}^{(2\ell +1)} 
+ \right\rangle_{0}
+=
+A_{n}^{(\ell)} \delta_{n n'}
+\end{aligned}    
+\end{equation}
+
+
+$\varphi^{4}$-theory $A_{n}^{(\ell)} = \frac{\ell!}{(2 \ell + 1)!!} (I_{0,0}/\beta^{2\ell}) [(n+2\ell+2)!/n!]$ 
+
+\begin{equation}
+\begin{aligned}
+&
+E^{\mu} = E_{//} u^{\mu} + E^{\langle \mu \rangle}  
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\hspace{-1cm}
+\begin{aligned}
+&
+E_{//} = \frac{1}{2} \int dP E_{\bf p} \phi^2 f_{\mathrm{eq}}
+\\
+&
+=
+\frac{1}{2}
+\sum_{n',n,\ell} \frac{\ell!}{(2\ell + 1)!!} \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}} \Phi_{n' \mu_{1} \cdots \mu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell}P_{n}^{(\ell)} P_{n'}^{(\ell)} E_{\bf p} \right\rangle
+\\
+&
+\{ \varphi^{4} \}=
+\frac{1}{2 \beta}
+\sum_{n',n,\ell} \frac{\ell!}{(2\ell + 1)!!} \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}} \Phi_{n' \mu_{1} \cdots \mu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell} \left[-(n+1)L_{n+1}^{(2\ell+1)} + (2n+2\ell+2) L_{n}^{(2\ell+1)} - (n+ 2\ell +1) L_{n-1}^{(2\ell+1)} \right] L_{n'}^{(2\ell+1)}  \right\rangle
+\\
+&
+=
+\frac{1}{2 \beta}
+\sum_{n',n,\ell} \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}} \Phi_{n' \mu_{1} \cdots \mu_{\ell}} \left[-(n+1)A_{n+1}^{(\ell)}\delta_{n',n+1} + (2n+2\ell+2) A_{n}^{(\ell)}\delta_{n',n} - (n+ 2\ell +1) A_{n-1}^{(\ell)}\delta_{n',n-1}\right] \end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+E^{\langle \mu \rangle} = \frac{1}{2} \int dP p^{\langle \mu \rangle} \phi^2 f_{\mathrm{eq}}
+\\
+&
+=
+\frac{1}{2}
+\sum_{n',n,\ell,m}  \Phi_{n}^{\mu_{1} \cdots \mu_{\ell}} \Phi_{n'}^{ \mu_{1} \cdots \mu_{m}} \left\langle P_{n}^{(\ell)} P_{n'}^{(m)} p_{\langle \mu_{1}} \cdots p_{ \mu_{\ell} \rangle} 
+p_{\langle \mu_{1}} \cdots p_{ \mu_{m} \rangle} 
+ p^{\langle \mu \rangle}\right\rangle
+ \\
+ &
+=
+\frac{1}{2}
+\sum_{n',n,\ell} \frac{(\ell+1)!}{(2\ell +3)!!} \Phi_{n \mu_{1} \cdots \mu_{\ell}} \Phi_{n'}^{\mu \mu_{1} \cdots \mu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell + 1} P_{n}^{(\ell)} P_{n'}^{(\ell + 1)}  
+ \right\rangle
+\\
+&
++
+\frac{1}{2}
+\sum_{n',n,\ell}\frac{\ell !}{(2\ell + 1)!!} \Phi_{n\mu_{1} \cdots \mu_{\ell}}
+\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}}
+\Phi_{n'}^{ \nu_{2} \cdots \nu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell} P_{n}^{(\ell)} P_{n'}^{(\ell-1)}  
+ \right\rangle
+\\
+&
+\{ \varphi^{4} \}
+=
+\frac{1}{2}
+\sum_{n',n,\ell} \frac{(\ell+1)!}{(2\ell +3)!!} \Phi_{n \mu_{1} \cdots \mu_{\ell}} \Phi_{n'} ^{\mu \mu_{1} \cdots \mu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell + 1} [L_{n}^{(2\ell +3)} 
+-
+2 L_{n-1}^{(2\ell +3)}
++
+L_{n-2}^{(2\ell +3)}] L_{n'}^{(2\ell + 3)}  
+ \right\rangle
+\\
+&
++
+\frac{1}{2}
+\sum_{n',n,\ell}\frac{\ell !}{(2\ell + 1)!!} \Phi_{n}^{\mu \nu_{2} \cdots \nu_{\ell}}
+\Phi_{n' \nu_{2} \cdots \nu_{\ell}} \left\langle \left(\Delta_{\mu \nu} p^{\mu} p^{\nu}\right)^{\ell} L_{n}^{(2\ell +1)} [L_{n'}^{(2\ell +1)} 
+-
+2 L_{n'-1}^{(2\ell +1)}
++
+L_{n'-2}^{(2\ell +1)}]  
+ \right\rangle
+ \\
+&
+=
+\frac{1}{2}
+\sum_{n',n,\ell}  \Phi_{n \mu_{1} \cdots \mu_{\ell}} \Phi_{n'} ^{\mu \mu_{1} \cdots \mu_{\ell}} \left[
+A_{n}^{(\ell+1)}\delta_{n,n'}
+-
+2 A_{n-1}^{(\ell+1)}\delta_{n-1,n'}
++
+A_{n-2}^{(\ell+1)}\delta_{n-2,n'}
+\right] 
+\\
+&
++
+\frac{1}{2}
+\sum_{n',n,\ell} \Phi_{n}^{\mu \nu_{2} \cdots \nu_{\ell}}
+\Phi_{n' \nu_{2} \cdots \nu_{\ell}} 
+\left[
+A_{n}^{(\ell)}\delta_{n,n'}
+-
+2 A_{n}^{(\ell)}\delta_{n,n'-1}
++
+A_{n}^{(\ell)}\delta_{n,n'-2}
+\right] 
+\end{aligned}    
+\end{equation}
+
+
+$\varphi^{4}$-theory  $P_{n}^{(\ell)} \mapsto L_{n}^{(2 \ell +1)}$
+\begin{equation}
+\begin{aligned}
+&
+L_{n}^{(\alpha)}(x) = L_{n}^{(\alpha+1)}(x) - L_{n-1}^{(\alpha+1)}(x) 
+=
+L_{n}^{(\alpha+2)}(x) 
+-
+2 L_{n-1}^{(\alpha+2)}(x)
++
+L_{n-2}^{(\alpha+2)}(x)
+=
+\sum_{j=0}^{k}(-1)^{j} \left(\begin{array}{c}
+k  \\
+j    
+\end{array}
+\right)
+L_{n-j}^{(\alpha + k)}
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+x L_{n}^{(2 \ell +1)}(x) 
+=
+-
+(n+1) L_{n+1}^{(2 \ell +1)}(x)
++
+2(n+ \ell +1) L_{n}^{(2 \ell +1)}(x)
+-
+(n+2 \ell +1) L_{n-1}^{(2 \ell +1)}(x)
+\\
+&
+x^{2} L_{n}^{(2 \ell +1)}(x) 
+=
+(n+1)(n+2) L_{n+2}^{(2 \ell -1)}(x)
+-
+2(n+1)(n+2\ell+1) L_{n}^{(2 \ell -1)}(x)
++
+(n+2\ell+1)(n+2\ell) L_{n}^{(2 \ell -1)}(x)
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} \rangle} 
+ p^{\langle \mu \rangle} 
+ =
+p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} } 
+ p^{\mu \rangle} 
+ +
+ \frac{\ell}{2 \ell + 1}
+ \Delta_{\mu' \nu'} p^{\mu'} p^{\nu'}
+\Delta^{\mu_{1} \cdots \mu_{\ell} \mu}_{ \ \ \ \ \ \ \ \ \nu_{2} \cdots \nu_{\ell}} 
+p^{\langle \nu_{2}} \cdots p^{ \nu_{\ell} \rangle} 
+\end{aligned}    
+\end{equation}
+
+\section{The fluctuating Chapman-Enskog}
+
+
+
+\begin{equation}
+   \epsilon \left( E_{\bf p} D \phi_p +  p^{\mu} \nabla_{\mu} \phi_p \right) 
+   -
+\int d \Tilde{P} \sigma_{p \Tilde{p}} \phi_{\Tilde{p}} = \epsilon \ \xi_{\bf p} ,
+\end{equation}
+
+$\phi_p$: deviations from global equilibrium
+
+\begin{equation}
+\begin{aligned}
+&
+\phi_{p} = \sum_{j=0}^{\infty} \phi_{p}^{(j)} \\
+&
+D\phi_{p} = \sum_{j=0}^{\infty} [D\phi_{p}]^{(j)} 
+\end{aligned}    
+\end{equation}
+
+
+
+Zero-th order:
+
+\begin{equation}
+\int d \Tilde{P} \sigma_{p \Tilde{p}} \phi_{\Tilde{p}} = 0 ,
+\end{equation}
+
+Local equilibrium corrections
+\begin{equation}
+\phi_{p}^{(0)} = a^{(0)} + b_{\mu}^{(0)} p^{\mu}   
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+a^{(0)} I_{1,0}^{\mathrm{eq}} + (b^{(0)} \cdot u) I_{2,0}^{\mathrm{eq}} = n_{0} - n_{\mathrm{eq}} = I_{1,0}^{(0)} - I_{1,0}^{\mathrm{eq}}
+\\
+&
+a^{(0)} I_{2,0}^{\mathrm{eq}} + (b^{(0)} \cdot u) I_{3,0}^{\mathrm{eq}} = \varepsilon_{0} - \varepsilon_{\mathrm{eq}} = I_{2,0}^{(0)} - I_{2,0}^{\mathrm{eq}}
+\\
+&
+\Rightarrow a^{(0)} = , \  b^{(0)} = 
+\\
+&
+b^{(0)}_{\langle \mu \rangle} = 0
+\end{aligned}    
+\end{equation}
+
+
+\textcolor{red}{Important definitions}
+
+
+\begin{equation}
+\begin{aligned}
+&
+I_{n,q}^{\mathrm{eq}} = \frac{1}{(2q+1)!!} \left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right)^{q} E_{p}^{n-2q}  \right\rangle_{\mathrm{eq}} 
+\\
+&
+I_{n,q}^{(0)} = \frac{1}{(2q+1)!!} \left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right)^{q} E_{p}^{n-2q}  \right\rangle_{0}
+\\
+&
+\Delta I_{n,q} = I_{n,q}^{(0)} - I_{n,q}^{\mathrm{eq}}
+\end{aligned}    
+\end{equation}
+
+
+$\langle \cdots \rangle_{\mathrm{eq}} = \int dP (\cdots)  f_{\mathrm{eq}}$, $\langle \cdots \rangle_{0} = \int dP (\cdots)  f_{0}$ $I_{n,q} > 0$ $f_{0} = f_{\mathrm{eq}} (1 +\phi^{(0)})$: local equilibrium
+
+
+\begin{equation}
+\begin{aligned}
+&
+f_{0} = e^{\alpha_{0} - \beta_{0}u_{\mu} p^{\mu}}
+\end{aligned}    
+\end{equation}
+
+$n_{0} \neq n_{\mathrm{eq}}$ $\alpha_{0} \neq \alpha$ $\beta_{0}u_{\mu} \neq \beta_{\mu}$
+
+
+First order
+
+\begin{equation}
+   \epsilon \left( E_{\bf p} D \phi_p +  p^{\mu} \nabla_{\mu} \phi_p \right) 
+   -
+\int d \Tilde{P} \sigma_{p \Tilde{p}} \phi_{\Tilde{p}} = \epsilon \ \xi_{\bf p} ,
+\end{equation}
+
+$\varphi^{4}$ theory
+
+
+\begin{equation}
+\begin{aligned}
+&
+\xi_{\bf p} = \sum_{\ell, n = 0}^{\infty} \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}} L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{\mu_{\ell} \rangle}
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+\left\langle \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}} \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}}
+\right\rangle
+= 
+\chi_{n \ell} 
+\end{aligned}    
+\end{equation}
+%
+No (linear) fluctuations for the zero modes. That would change in the non-linear regime. solution for the fluctuating first order chapman-enskog
+
+\begin{equation}
+\begin{aligned}
+&
+\phi_{\mathbf{p}}^{(1)} = a + b_\mu p^\mu + \frac{1}{4\chi_{11}}L^{(3)}_{1\mathbf{p}}p_{\langle\mu\rangle}\nabla ^{\mu }\alpha_{0} -\frac{\beta}{\chi_{02}} 
+p_{\langle \mu }p_{\nu \rangle}
+\sigma^{\mu \nu }_{0}
+\\
+&
++
+\sum_{n = 2}^{\infty} \frac{\Xi_{n}}{\chi_{n 0}} L^{(1)}_{n {\bf p}} 
++
+\sum_{n = 1}^{\infty} \frac{\Xi_{n}^{\mu}}{\chi_{n 1}} L^{(3)}_{n {\bf p}} p_{\langle \mu \rangle}
++
+\sum_{\ell \geq 2, n = 0}^{\infty} \frac{\Xi_{n}^{\mu_{1} \cdots \mu_{\ell}}}{\chi_{n \ell}} L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{\mu_{\ell} \rangle}
+.
+\end{aligned}
+\end{equation}
+
+
+$a=0$ and $b^\mu=z\nabla^\mu \alpha_{0} / (4\chi_{11})$ $z = 0,1$ for Eckart and Landau respectively
+
+
+
+\subsection{The information current in Chapman-Enskog [approach 1]}
+
+Ignoring fluctuations
+
+\begin{equation}
+\begin{aligned}
+&
+\phi_{\mathbf{p}} = \phi_{\mathbf{p}}^{(0)} + \phi_{\mathbf{p}}^{(1)} 
+=
+a + b_\mu p^\mu + \frac{1}{4\chi_{11}}L^{(3)}_{1\mathbf{p}}p_{\langle\mu\rangle}\nabla ^{\mu }\alpha_{0} -\frac{\beta}{\chi_{02}} 
+p_{\langle \mu }p_{\nu \rangle}
+\sigma^{\mu \nu }    
+\\
+&
+\equiv
+\Phi_{0} 
++
+\Phi_{1} L^{(1)}_{1 {\bf p}}
++
+\Phi_{0}^{\mu} p_{\langle \mu \rangle} 
++
+\Phi_{1}^{\mu} 
+L^{(3)}_{1 {\bf p}} p_{\langle \mu \rangle}
++
+\Phi_{0}^{\mu \nu} p_{\langle \mu} p_{ \nu \rangle} 
+\\
+&
+\Phi_{0} = \frac{12 \Delta I_{1,0}}{9 I_{1,0}^{\mathrm{eq}}} 
+- 
+\frac{\beta_{\mathrm{eq}} \Delta I_{2,0}}{I_{1,0}^{\mathrm{eq}}}, \quad
+\Phi_{1} = 
+\frac{\Delta I_{1,0}}{3 I_{1,0}^{\mathrm{eq}}} 
+- 
+\frac{\beta_{\mathrm{eq}} \Delta I_{2,0}^{\mathrm{eq}}}{9I_{1,0}^{\mathrm{eq}}},
+\\
+&
+\Phi_{0}^{\mu} = \frac{z}{4\chi_{11}} \nabla^\mu \alpha_{0} , \quad
+\Phi_{1}^{\mu} = \frac{1}{4\chi_{11}}\nabla ^{\mu }\alpha_{0},
+\\
+&
+\Phi_{0}^{\mu \nu} = -\frac{\beta}{\chi_{02}} 
+\sigma^{\mu \nu }_{0}    
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+\phi_{\mathbf{p}}^{2} 
+=
+\Phi_{0}^{2}
++
+\Phi_{1}^{2} [L_{1 {\bf p}}^{(1)}]^{2}
++
+2 \Phi_{0} \Phi_{1} L_{1 {\bf p}}^{(1)}
+\\
+&
++
+2 \Phi_{0} \Phi_{0}^{\mu} p_{\langle \mu \rangle}
++
+2 \Phi_{0} \Phi_{1}^{\mu} L_{1 {\bf p}}^{(3)} p_{\langle \mu \rangle}
++
+2 \Phi_{1} \Phi_{1}^{\mu} L_{1 {\bf p}}^{(1)} L_{1 {\bf p}}^{(3)} p_{\langle \mu \rangle}
+\\
+&
++
+2 \Phi_{0} \Phi_{0}^{\mu \nu} p_{\langle \mu } p_{ \nu \rangle}
++
+2 \Phi_{1} \Phi_{0}^{\mu \nu}  L_{1 {\bf p}}^{(1)} p_{\langle \mu } p_{ \nu \rangle}
++
+\Phi_{0}^{\mu} \Phi_{0}^{\nu} p_{\langle \mu \rangle}
+p_{\langle \nu \rangle}
++
+\Phi_{1}^{\mu} \Phi_{1}^{\nu} 
+[L_{1 {\bf p}}^{(3)}]^{2}
+p_{\langle \mu \rangle}
+p_{\langle \nu \rangle}
++
+2 \Phi_{0}^{\mu} \Phi_{1}^{\nu} L_{1 {\bf p}}^{(3)} p_{\langle \mu \rangle}
+p_{\langle \nu \rangle}
+\\
+&
++
+2 \Phi_{0}^{\mu} \Phi_{0}^{\alpha \beta} p_{\langle \mu \rangle} p_{\langle \alpha } p_{ \beta \rangle}
++
+2 \Phi_{1}^{\mu} \Phi_{0}^{\alpha \beta} L_{1 {\bf p}}^{(3)} p_{\langle \mu \rangle} p_{\langle \alpha } p_{ \beta \rangle}
+\\
+&
++
+\Phi_{0}^{\mu \nu} \Phi_{0}^{\alpha \beta}  
+p_{\langle \mu } p_{ \nu \rangle}p_{\langle \alpha } p_{ \beta \rangle}
+\end{aligned}
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+E^{\mu} = E_{//} u^{\mu} + E^{\langle \mu \rangle}  
+\end{aligned}    
+\end{equation}
+
+
+\gsr{ATTENTION: $n_{0} \neq n_{\mathrm{eq}}$ $\alpha_{0} \neq \alpha$ $\beta_{0}u_{\mu}^{0} \neq \beta_{\mu} = \beta_{\mathrm{eq}} u_{\mu}$
+}
+%
+\begin{equation}
+\begin{aligned}
+&
+E_{//} = I_{1,0}^{\mathrm{eq}} \Phi_{0}^{2} 
++
+\left\langle E_{p} [L^{(1)}_{1 {\bf p}}]^{2} \right\rangle_{\mathrm{eq}}
+\Phi_{1}^{2}
++
+2 \Phi_{0} \Phi_{1} \left\langle E_{p} L^{(1)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}} \\
+&
+-
+I_{3,1}^{\mathrm{eq}} \Phi_{0}^{\mu}\Phi_{0 \mu}
+-
+\frac{2}{3}
+\left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right) E_{p} L^{(3)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}} \Phi_{0}^{\mu}\Phi_{1 \mu}
+-
+\frac{1}{3}
+\left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right) E_{p} [L^{(3)}_{1 {\bf p}}]^{2} \right\rangle_{\mathrm{eq}} \Phi_{1}^{\mu}\Phi_{1 \mu}
++
+2 I_{5,2}^{\mathrm{eq}}
+\Phi_{0}^{\mu \nu}\Phi_{0 \mu \nu}
+\\
+&
+=
+I_{1,0}^{\mathrm{eq}} \Phi_{0}^{2} 
++
+I_{1,0}^{\mathrm{eq}} 8
+\Phi_{1}^{2}
+-
+4 \Phi_{0} \Phi_{1} I_{1,0}^{\mathrm{eq}} 
+\\
+&
+-
+I_{3,1}^{\mathrm{eq}} \frac{z^{2}}{16\chi_{11}^{2}}\nabla^{\mu }\alpha_{0} \nabla_{\mu }\alpha_{0}
+-
+\frac{2}{3}
+\frac{I_{1,0}^{\mathrm{eq}}}{2\beta^{2}} (-24) \frac{z}{16\chi_{11}^{2}}\nabla^{\mu }\alpha_{0} \nabla_{\mu }\alpha_{0}
+-
+\frac{1}{3}
+\frac{I_{1,0}^{\mathrm{eq}}}{2\beta^{2}} 144 \frac{1}{16\chi_{11}^{2}}\nabla^{\mu }\alpha_{0} \nabla_{\mu }\alpha_{0}
++
+2 I_{5,2}^{\mathrm{eq}}
+\frac{\beta^{2}}{\chi_{02}^{2}} 
+\sigma^{\mu \nu }\sigma_{\mu \nu }
+\\
+&
+=
+I_{1,0}^{\mathrm{eq}} \Phi_{0}^{2} 
++
+I_{1,0}^{\mathrm{eq}} 8
+\Phi_{1}^{2}
+-
+4 \Phi_{0} \Phi_{1} I_{1,0}^{\mathrm{eq}} \\
+&
+-
+\frac{I_{1,0}^{\mathrm{eq}}}{\beta^{2}} \frac{1}{16 \chi_{11}^{2}}\left[- 4z^{2} + 8z - 24\right]\nabla^{\mu }\alpha_{0} \nabla_{\mu }\alpha_{0}
++
+2 I_{5,2}^{\mathrm{eq}}
+\frac{\beta^{2}}{\chi_{02}^{2}} 
+\sigma^{\mu \nu }\sigma_{\mu \nu }
+\\
+&
+E^{\langle \mu \rangle}  = - 2 I_{2,1}^{\mathrm{eq}}  \Phi_{0} \Phi_{0}^{\mu}
+-
+\frac{2}{3}\left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right) L^{(3)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}}  \Phi_{0} \Phi_{1}^{\mu}
+-
+\frac{2}{3}\left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right) L^{(1)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}} \Phi_{1} \Phi_{0}^{\mu}
+-
+\frac{2}{3}\left\langle \left( -\Delta^{\mu \nu} p_{\mu} p_{\nu} \right) L^{(1)}_{1 {\bf p}} L^{(3)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}}  \Phi_{1} \Phi_{1}^{\mu}
+\\
+&
++
+2 I_{4,2}  \Phi_{0}^{\mu \nu} \Phi_{0 \nu} 
++
+\frac{2}{15}\left\langle \left( \Delta^{\mu \nu} p_{\mu} p_{\nu} \right)^{2}  L^{(3)}_{1 {\bf p}} \right\rangle_{\mathrm{eq}}  \Phi_{0}^{\mu \nu} \Phi_{1 \nu}
+\\
+&
+=
+- 2 I_{2,1}^{\mathrm{eq}}  \Phi_{0} \frac{z}{4\chi_{11}}\nabla ^{\mu }\alpha_{0}
+-
+\frac{2}{3} \frac{I_{1,0}^{\mathrm{eq}}}{2\beta} (-12) \Phi_{1} \frac{z}{4\chi_{11}}\nabla ^{\mu }\alpha_{0}
+-
+\frac{2}{3} \frac{I_{1,0}^{\mathrm{eq}}}{2\beta} 24  \Phi_{1} \frac{1}{4\chi_{11}}\nabla ^{\mu }\alpha_{0}
+\\
+&
+-
+2 I_{4,2}^{\mathrm{eq}}  \frac{\beta}{\chi_{02}} 
+ \frac{z}{4\chi_{11}} \sigma^{\mu \nu }\nabla _{\nu }\alpha_{0} 
+-
+\frac{2}{15} (-240) \frac{I_{1,0}^{\mathrm{eq}}}{2\beta^{3}}  \frac{\beta}{\chi_{02}} 
+\frac{1}{4\chi_{11}} \sigma^{\mu \nu }\nabla _{\nu} \alpha_{0}  
+\\
+&
+=
+\frac{I_{1,0}^{\mathrm{eq}}}{4 \beta\chi_{11}}\nabla ^{\mu }\alpha_{0}
+\left[ 
+- 
+2 z \Phi_{0}
++
+4 z \Phi_{1}
+-
+8 \Phi_{1}
+\right]
++
+\frac{I_{1,0}^{\mathrm{eq}}}{4\beta ^{2}\chi_{02} \chi_{11}} \sigma^{\mu \nu }\nabla _{\nu} \alpha_{0}
+\left[ - 8z + 16 \right]
+\end{aligned}    
+\end{equation}
+
+
+
+
+\begin{equation}
+\begin{aligned}
+&
+\partial_{\mu}E^{\mu} = D E_{//} + E_{//} \theta + \partial_{\mu}E^{\langle \mu \rangle}  
+\end{aligned}    
+\end{equation}
+
+
+\subsection{The information current in Chapman-Enskog [approach 2]}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\partial_{\mu} E^{\mu}
+=
+\int dP \phi^{(0)} p^{\mu} \partial_{\mu}\phi^{(0)} f_{\mathrm{eq}}
+\end{aligned}    
+\end{equation}
+
+
+%\section{The fluctuating modified Chapman-Enskog}
+
+
+\section{The fluctuating moments method}
+
+
+Massless limit, Landau matching 
+
+%
+\begin{equation}
+\label{eq:transient-l=0}
+\begin{aligned}
+&
+D\rho _{r} 
+- 
+r Du_{\mu} \rho_{r-1}^{\mu} 
++
+\nabla_{\mu} \rho^{\mu}_{r-1}
++  
+\frac{\theta}{3} (r+2) \rho_{r} 
+- (r-1) \rho_{r-2}^{\mu \nu} \sigma_{\mu \nu}\\
+& 
+-
+\frac{J_{r+1,0}}{J_{3,0}}[\Pi \theta - \pi^{\mu \nu} \sigma_{\mu \nu} ]
++
+\alpha_{r}^{(0)}  \theta
+=
+\int dP E_{\mathbf{p}}^{r-1} C_{i}[f_{\mathbf{p}}]
+\equiv
+\mathcal{C}_{i,r-1},
+\end{aligned}
+\end{equation}
+%
+$\alpha_{r}^{(0)} = 0$
+
+
+The rank-1 irreducible moments obey the following equation of motion,
+%
+\begin{equation}
+\label{eq:transient-l=1}
+\begin{aligned}
+& 
+D\rho _{r}^{\langle \alpha \rangle} 
+-
+r \rho^{ \alpha \mu}_{r-1} Du_{\mu}
++
+\frac{r+3}{3}   \rho_{r+1} Du^{\alpha}
++
+\omega_{\mu}^{\ \alpha} \rho^{\mu}_{r}
++
+\Delta^{\alpha}_{ \ \alpha'} \nabla_{\mu} \rho_{r-1}^{\alpha' \mu} 
+-
+(r-1)  \rho^{\alpha \mu \nu}_{r-2} \sigma_{\mu \nu}
+-
+\frac{1}{3} \nabla^{\alpha}\rho_{r+1} 
+\\
+&
++
+\frac{r+3}{3} \rho_{r}^{\alpha} \theta
++
+\frac{2r+3}{5} \sigma_{\mu}^{\ \alpha}  \rho_{r}^{\mu}  
+-
+\frac{\beta I_{r+2,1}}{(\varepsilon_{0} + P_{0})}   \Delta^{\alpha \beta} \partial_{\mu}\pi^{\mu}_{ \ \beta}
+-
+\alpha_{r}^{(1)} \nabla^{\alpha}\alpha
+=
+\int E_{\mathbf{p}}^{r-1} p^{\langle \alpha \rangle} \Hat{L}\phi_{\mathbf{p}}
++
+\int E_{\mathbf{p}}^{r-1} p^{\langle \alpha \rangle} \xi_{\mathbf{p}}
+\\
+&
+\equiv
+\mathcal{L}_{r-1}^{\alpha} + \mathcal{X}_{r-1}^{\alpha}.
+\end{aligned}    
+\end{equation}
+%
+The equations of motion for the rank-2 irreducible moments are
+%
+\begin{equation}
+\label{eq:transient-l=2}
+\begin{aligned}
+&  D\rho ^{\langle \alpha \beta \rangle}_{r}
+-
+r \rho^{ \alpha \beta \mu}_{r-1} Du_{\mu}
++
+\frac{2}{5} (r+5) Du^{ \langle \alpha}  \rho_{r+1}^{\beta\rangle} 
++\Delta^{\alpha \beta}_{ \ \ \alpha' \beta'}
+ \nabla_{\mu} \rho_{r-1}^{\alpha' \beta' \mu} 
+-
+(r-1) \sigma_{\mu \nu} \rho^{\mu \alpha \beta \nu}_{r-2}
+-
+\frac{2}{5} 
+ \nabla^{\langle \alpha} \rho_{r+1}^{\beta \rangle}
++
+\frac{r+4}{3} \rho_{r}^{\alpha \beta} \theta 
+\\
+& 
++
+2 
+ \omega_{\mu}^{ \ \langle \alpha} \rho^{\beta \rangle \mu}_{r} 
++ \frac{2}{7} (2r+5)
+\sigma_{\mu}^{\ \langle \alpha}  \rho_{r}^{\beta \rangle \mu}
+-
+\frac{2}{15} (r+4) \rho_{r+2} \sigma^{\alpha \beta}
+-
+\alpha_{r}^{(2)} 
+ \sigma^{\alpha \beta}
+=
+\int dP E_{\mathbf{p}}^{r-1} p^{\langle \alpha} p^{\beta \rangle} \Hat{L} \phi_{\mathbf{p}}
++
+\int dP E_{\mathbf{p}}^{r-1} p^{\langle \alpha} p^{\beta \rangle} \xi_{\mathbf{p}}
+\\
+&
+\equiv
+\mathcal{L}^{\alpha \beta}_{r-1}
++
+\mathcal{X}^{\alpha \beta}_{r-1}.
+\end{aligned}    
+\end{equation}
+%
+
+
+\begin{equation}
+\begin{aligned}
+&
+\xi_{\bf p} = \sum_{\ell, n = 0}^{\infty} \Xi_{n}^{\mu_{1} \cdots \mu_{\ell}} L^{(2 \ell + 1)}_{n {\bf p}} p_{\langle \mu_{1}} \cdots p_{\mu_{\ell} \rangle}
+\end{aligned}    
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\mathcal{L}_{r-1} 
+=
+\\
+&     
+\mathcal{X}_{r-1} 
+=
+\sum_{n = 0}^{\infty} \Xi_{n}
+\left\langle E_{\mathbf{p}}^{r-1} L^{(1)}_{n {\bf p}} \right\rangle_{0}
+\end{aligned}   
+\end{equation}
+
+
+\begin{equation}
+\begin{aligned}
+&
+\mathcal{L}_{1}^{\alpha} 
+=
+- \frac{g}{6} I_{0,0} %(\rho_0+) 
+\rho_1^\mu + \frac{g}{3}n_0 \nu^\mu.
+\\
+&     
+\mathcal{X}_{r-1}^{\alpha} 
+=
+\frac{1}{3}
+\sum_{n = 0}^{\infty} \Xi_{n}^{\alpha}
+\left\langle \left( \Delta^{\mu \nu} p_{\mu} p_{\nu} \right) E_{\mathbf{p}}^{r-1} L^{(3)}_{n {\bf p}} \right\rangle_{0}
+\end{aligned}   
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+\mathcal{L}_{0}^{\alpha \beta} 
+=
+- \frac{g}{6} %(\rho_0 +) 
+I_{0,0} \pi^{\alpha \beta} 
+% + 
+% \frac{g}{3} \nu^{\langle\mu} \nu^{\nu\rangle}
+\\
+&     
+\mathcal{X}_{r-1}^{\alpha \beta} 
+=
+\frac{2}{15}
+\sum_{n = 0}^{\infty} \Xi_{n}^{\alpha \beta}
+\left\langle \left( \Delta^{\mu \nu} p_{\mu} p_{\nu} \right)^{2} E_{\mathbf{p}}^{r-1} L^{(5)}_{n {\bf p}} \right\rangle_{0}
+\end{aligned}   
+\end{equation}
+
+
+\section{Collision kernel}
+
+%
+\begin{equation}
+\label{Lhat}
+\begin{aligned}
+&
+f_{\mathrm{eq},p}
+p^{\mu}\partial_{\mu}\phi_p
+=
+f_{\mathrm{eq},p}
+\hat{L}\phi_{p} 
+\equiv
+\frac{1}{2} \int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  W_{pp' \leftrightarrow kk'} f_{\mathrm{eq},p} f_{\mathrm{eq},p'} (  \phi_{k} + \phi_{k'} - \phi_{p} - \phi_{p'}  ),
+\\
+&
+=
+\frac{1}{2}(2 \pi)^{3} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} \Tilde{p}^{0} \delta^{(3)}(\widetilde{\textbf{p}} - \textbf{p}) \int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  W_{pp' \leftrightarrow kk'} f_{\mathrm{eq},p} f_{\mathrm{eq},p'} (  \phi_{k} + \phi_{k'} - \phi_{p} - \phi_{p'}  ),
+\\
+&
+\end{aligned}    
+\end{equation}
+%
+
+\section{Collision kernel}
+
+$\phi_p$: deviation from \textit{global} equilibrium $p^{0} = \sqrt{\textbf{p}^{2} + m^{2}}$: energy for an arbitrary observer 
+%
+\begin{equation}
+\label{Lhat}
+\begin{aligned}
+&
+p^{\mu}\partial_{\mu}f_\textbf{p}
+=
+f_{\mathrm{eq},\textbf{p}}
+L[\phi_{\textbf{p}}] \equiv
+\frac{1}{2}\int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  W_{pp' \leftrightarrow kk'} f_{\mathrm{eq},\textbf{p}} f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\textbf{p}} - \phi_{\textbf{p}'}  ),
+\end{aligned}    
+\end{equation}
+%
+Since the external momentum is on-shell, there is an implicit $\delta$ in order to consider $f$ as a function of 4-momentum $p$ instead of $\textbf{p}$
+
+
+
+
+\begin{equation}
+\begin{aligned}
+&
+\frac{d^{3}p}{(2 \pi)^{3}p^{0}} = \textcolor{red}{2} \Theta(p^{0})\delta(p^{2}-m^{2})\frac{d^{4}p}{(2 \pi)^{3}} \equiv \textcolor{red}{2} \widehat{dP}   
+\\
+&
+f_{\bf p}  = \widehat{f}_{p} \Theta(p^{0})\delta(p^{2}-m^{2}) \text{ 
+ [just for the external momentum]}
+\end{aligned}   
+\end{equation}
+%
+\begin{equation}
+\begin{aligned}
+&
+\Theta(p^{0})\delta(p^{2}-m^{2})
+p^{\mu}\partial_{\mu}\widehat{f}_{p}
+=
+\Theta(p^{0})\delta(p^{2}-m^{2})
+f_{\mathrm{eq},p}
+L[\phi_{\textbf{p}}]
+\end{aligned}    
+\end{equation}
+%
+\textcolor{red}{If we consider the above as the Boltzmann equation, it works. This is a glorified way of dividing both sides by $p^{0}$ + factors, otherwise, the fluctuations possess complicated correlators}
+
+
+Let us concentrate in $p$ (external momentum) below
+%
+\begin{equation}
+\label{Lhat}
+\begin{aligned}
+&
+\Theta(p^{0})\delta(p^{2}-m^{2})\widehat{f}_{\mathrm{eq},p}
+L[\phi_{p}]
+\\
+&
+=
+\Theta(p^{0})\delta(p^{2}-m^{2})
+\frac{1}{2}\int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  W_{pp' \leftrightarrow kk'} \widehat{f}_{\mathrm{eq},p} f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\textbf{p}} - \phi_{\textbf{p}'}  ),
+\\
+&
+=
+\left[\int d^{4}\widetilde{p} \ \delta^{(4)}(p - \widetilde{p}) \right] \Theta(p^{0})\delta(p^{2}-m^{2}) 
+\frac{1}{2}\int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  W_{pp' \leftrightarrow kk'} \widehat{f}_{\mathrm{eq},p} f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\textbf{p}} - \phi_{\textbf{p}'}  ),
+\\
+&
+=
+\int d^{4}\widetilde{p} \ \delta^{(4)}(p - \widetilde{p}) \ \Theta(\widetilde{p}^{0})\delta(\widetilde{p}^{2}-m^{2}) 
+\frac{1}{2}\int \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}    W_{\widetilde{p}p' \leftrightarrow kk'} \widehat{f}_{\mathrm{eq},\widetilde{p}} f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\widetilde{\textbf{p}}} - \phi_{\textbf{p}'}  ),
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}} \ \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  W_{\widetilde{p}p' \leftrightarrow kk'} f_{\mathrm{eq},\widetilde{\textbf{p}}} f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\widetilde{\textbf{p}}} - \phi_{\textbf{p}'}  ),
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\ \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  f_{\mathrm{eq},\widetilde{\textbf{p}}}
+L[\phi_{\widetilde{\textbf{p}}}],
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}} \
+\ \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} (  \phi_{\textbf{k}} + \phi_{\textbf{k}'} - \phi_{\widetilde{\textbf{p}}} - \phi_{\textbf{p}'}  ),
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2}  \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} f_{\mathrm{eq},\widetilde{\textbf{p}}}
+L[\delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}}) ] \phi_{\widetilde{\textbf{p}}}
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}
+W_{\widetilde{p}p' \leftrightarrow kk'} f_{\mathrm{eq},\widetilde{\textbf{p}}} f_{\mathrm{eq},\textbf{p}'} 
+\\
+&
+\times (  \delta^{(3)}(\textbf{p} - \textbf{k}) + \delta^{(3)}(\textbf{p} - \textbf{k}') - \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}}) - \delta^{(3)}(\textbf{p} - \textbf{p}')  )  \phi_{\widetilde{\textbf{p}}}
+\end{aligned}    
+\end{equation}
+%
+It must be $f_{\mathrm{eq},\widetilde{\textbf{p}}}
+L$, because only then the self adjoint property works 
+% %
+% \begin{equation}
+% \begin{aligned}
+% &
+% f_{\mathrm{eq},\textbf{p}}
+% L[\phi_{\textbf{p}}]
+% =
+% \frac{(2 \pi)^{3}}{2} 
+% \frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+% \frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}} \
+% \ \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  
+% W_{\widetilde{p}p' \leftrightarrow kk'} 
+% f_{\mathrm{eq},\widetilde{\textbf{p}}}
+% f_{\mathrm{eq},\textbf{p}'} (  \phi_{k} + \phi_{k'} - \phi_{\widetilde{p}} - \phi_{p'}  ),    
+% \end{aligned}    
+% \end{equation}
+% %
+
+\subsection{Self-adjointness}
+
+
+%
+\begin{equation}
+\label{eq:selfadjoint}
+\begin{aligned}
+\int dP f_{0\mathbf{p}} A_{\mathbf{p}}  \hat{L}B_{\mathbf{p}} = \int dP f_{0\mathbf{p}} B_{\mathbf{p}} \hat{L}A_{\mathbf{p}}, \text{  
+[the momentum argument is the same everywhere]}
+\end{aligned}
+\end{equation}
+%
+
+
+In the present case the \textbf{first term} is
+%
+\begin{equation}
+\begin{aligned}
+&
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  \phi_{\textbf{k}} 
+\\
+&
+=
+(\widetilde{\textbf{p}} \leftrightarrow \textbf{k},
+\textbf{p}' \leftrightarrow \textbf{k}')
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{kk' \leftrightarrow \widetilde{p}p'} 
+f_{\mathrm{eq},\textbf{k}}
+f_{\mathrm{eq},\textbf{k}'} \delta^{(3)}(\textbf{p} - \textbf{k})  \phi_{\widetilde{\textbf{p}}} 
+\\
+&
+[*]
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \textbf{k})  \phi_{\widetilde{\textbf{p}}} 
+\end{aligned}    
+\end{equation}
+
+$[*]
+W_{kk' \leftrightarrow \widetilde{p}p'} 
+f_{\mathrm{eq},\textbf{k}}
+f_{\mathrm{eq},\textbf{k}'}
+=
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'}
+,$ [equilibrium property + transition rate symmetries]
+
+\textbf{second term}
+%
+\begin{equation}
+\begin{aligned}
+&
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  \phi_{\textbf{k}'} 
+\\
+&
+=
+(\widetilde{\textbf{p}} \leftrightarrow \textbf{k}',
+\textbf{p}' \leftrightarrow \textbf{k})
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{k'k \leftrightarrow \widetilde{p}p'} 
+f_{\mathrm{eq},\textbf{k}'}
+f_{\mathrm{eq},\textbf{k}} \delta^{(3)}(\textbf{p} - \textbf{k}')  \phi_{\widetilde{\textbf{p}}} 
+\\
+&
+[*]
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'}
+\delta^{(3)}(\textbf{p} - \textbf{k}')  \phi_{\widetilde{\textbf{p}}} 
+\end{aligned}    
+\end{equation}
+% 
+The \textbf{third term} is unchanged. The \textbf{fourth term}
+%
+\begin{equation}
+\begin{aligned}
+&
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{\widetilde{p}p' \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}})  \phi_{\textbf{p}'} 
+\\
+&
+=
+(\widetilde{\textbf{p}} \leftrightarrow \textbf{p}')
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{p'\widetilde{p} \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \textbf{p}')  \phi_{\textbf{p}'} 
+\\
+&
+[*]
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{2} \int \frac{d^{3}\widetilde{p}}{(2 \pi)^{3}\Tilde{p}^{0}} 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}  
+W_{p'\widetilde{p} \leftrightarrow kk'} 
+f_{\mathrm{eq},\widetilde{\textbf{p}}}
+f_{\mathrm{eq},\textbf{p}'} \delta^{(3)}(\textbf{p} - \textbf{p}')  \phi_{\widetilde{\textbf{p}}} 
+\end{aligned}    
+\end{equation}
+%
+
+
+\section{Kernel Identification} 
+%
+
+\begin{equation}
+\begin{aligned}
+&
+\Theta(p^{0})\delta(p^{2}-m^{2})f_{\text{eq},p}p^\mu \partial_\mu \phi_p 
+-
+f_{\text{eq},p} \int \dfrac{d^3 \widetilde{p}}{(2\pi)^3 \widetilde{p}^0} K_{p\Bar{p}} \phi_{\Bar{p}} = \xi_p
+\end{aligned}    
+\end{equation}
+
+\begin{equation}
+\begin{aligned}
+&
+K_{{\bf p} \widetilde{\textbf{p}}} = \frac{(2 \pi)^{3}}{2}  
+\frac{f_{\mathrm{eq},\widetilde{\textbf{p}}}}{f_{\mathrm{eq}, {\bf p}}}
+L[\delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}}) ] [\text{symmetrized}]
+\\
+&
+=
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{4 f_{\mathrm{eq}, {\bf p}}} \int 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}
+W_{\widetilde{p}p' \leftrightarrow kk'} f_{\mathrm{eq},\widetilde{\textbf{p}}} f_{\mathrm{eq},\textbf{p}'} 
+\\
+&
+\times (  \delta^{(3)}(\textbf{p} - \textbf{k}) + \delta^{(3)}(\textbf{p} - \textbf{k}') - \delta^{(3)}(\textbf{p} - \widetilde{\textbf{p}}) - \delta^{(3)}(\textbf{p} - \textbf{p}')  )  
+\\
+&
++
+\frac{(2 \pi)^{3}}{2} 
+\frac{1}{4 f_{\mathrm{eq}, \widetilde{\bf p}}} \int 
+\frac{d^{3}k}{(2 \pi)^{3} k^{0}} \ \frac{d^{3}k'}{(2 \pi)^{3} k'^{0}} \ \frac{d^{3}p'}{(2 \pi)^{3} p'^{0}}
+W_{\widetilde{p}p' \leftrightarrow kk'} f_{\mathrm{eq},\textbf{p}} f_{\mathrm{eq},\textbf{p}'} 
+\\
+&
+\times (  \delta^{(3)}(\widetilde{\textbf{p}} - \textbf{k}) + \delta^{(3)}(\widetilde{\textbf{p}} - \textbf{k}') - \delta^{(3)}(\widetilde{\textbf{p}} - \textbf{p}) - \delta^{(3)}(\widetilde{\textbf{p}} - \textbf{p}')  )  
+\end{aligned}    
+\end{equation}
+
+
+[Is the anti-symmetric part zero?]
+
+\section{Paper lefovers}
+
+\subsubsection{Comparison with the relaxation time approximation [EXCLUDE]}
+
+Now we shall compare the result of the previous subsection with what was obtained in Sec.~\ref{sec:corr-fourier-RTA}. For the sake of convenience in the comparison with the results for the $\varphi^{4}$-theory, we shall first compute the Laguerre components of the RTA result, Eq.~\eqref{eq:phi-corr-RTA-final}. Then, we shall compare it with the result obtained in Eq.~\eqref{eq:lag-fou-phi4-corr-final} for the $\varphi^{4}$-theory. Hence, having that 
+%
+\begin{equation}
+\begin{aligned}
+&
+\widetilde{\Phi}_{n}
+\equiv
+\int dP f_{\mathrm{eq}}  L^{(1)}_{n {p}}  \Bar{\phi}_{p}^{\mathrm{RTA}},
+\end{aligned}    
+\end{equation}
+%
+we compute 
+%
+\begin{equation}
+\label{eq:phi-phi-corr-RTA-lag}
+\begin{aligned}
+&
+\left( \widetilde{\Phi}_n \widetilde{\Phi}_{n'} \right)_{\Omega, \mathrm{RTA}} 
+=
+\int \frac{d^{3}p}{(2 \pi)^{3} p^{0}} \frac{d^{3}p}{(2 \pi)^{3} k^{0}} f_{\mathrm{eq},p} f_{\mathrm{eq},k}  L^{(1)}_{n {p}} L^{(1)}_{n' {k}} 
+(\Bar{\phi}_{p} \Bar{\phi}_{k}
+)\vert_{q^{0} \to \Omega,{\bf q} = 0}
+\\
+&
+=
+\int \frac{d^{3}p}{(2 \pi)^{3} (p^{0})^{2}}  f_{\mathrm{eq},p}   L^{(1)}_{n {p}} L^{(1)}_{n' {p}} 
+\dfrac{2\tau_p}{1+\tau^2_p\Omega^2}
+=
+\frac{\tau_{p} n_{\mathrm{eq}} \beta^{2}}{1 + \tau_{p}^{2} \Omega^{2}}
+\sum_{j=0}^{n} \sum_{k=0}^{n'} \int du L^{(0)}_{j {p}} L^{(0)}_{k {p}} e^{-u}
+= 
+\frac{\tau_{p} n_{\mathrm{eq}} \beta^{2}}{1 + \tau_{p}^{2} \Omega^{2}}
+\min\{ n, n' \},
+\end{aligned}    
+\end{equation}
+%
+where in the before-last step we considered, for the sake of simplicity that $\tau_{p}$ does not depend on momentum.
+It is noted that both the above correlator and the one in Eq.~\eqref{eq:lag-fou-phi4-corr-final} are dimensionless, and this is the reason why we shall compare results \eqref{eq:phi-phi-corr-RTA-lag} and \eqref{eq:lag-fou-phi4-corr-final}. Besides, comparing the Laguerre-Fourier correlators $\left( \widetilde{\Phi}_n \widetilde{\Phi}_{n'}  \right)_{\Omega}$ separates just the part of the correlator that depends only on the Fourier variables, without involving the momentum variables and provides further insight into the fine-structure of the correlators. 
+
+One feature of the RTA is that the timescale $\tau_{p}$ is a free parameter that is to contain all the information from the underlying microscopic theory. Now, we want to perform a judicious comparison with the results of the last subsection. The natural timescales given by the linearized collision term are proportional to the inverse of the non-zero eigenvalues of the collision term. From the property \eqref{eq:bounded-spectrum}, we have 
+%
+\begin{equation}
+\begin{aligned}
+&
+\tau_{\mathrm{min}}
+\equiv
+ \frac{4}{g n_{\mathrm{eq}} \beta^{2}} < \tau_{n 0} \equiv \frac{1}{\beta \vert \chi_{n 0}^{\star} \vert} 
+\leq
+\frac{1}{\beta \vert \chi_{2 0} \vert}
+=
+ \frac{12}{g n_{\mathrm{eq}} \beta^{2}}
+\equiv
+\tau_{\mathrm{max}}
+ ,
+\end{aligned}    
+\end{equation}
+%
+where the star denotes that values of $n$ for which the eigenvalues vanish have been removed. Thus, a good choice of $\tau_{p}$ should lie within this interval. Indeed, in this subsection we shall compare the curves obtained from Eq.~\eqref{eq:lag-fou-phi4-corr-final} with the $\varphi^{4}$-theory and the RTA correlators Eq.~\eqref{eq:phi-phi-corr-RTA-lag} with $\tau_{p} = \tau_{\mathrm{min}}$, denoted as ``RTA -- min'' in Figures \ref{fig:diagonal-corrs-RTA-phi4} and \ref{fig:off-diagonal-corrs-RTA-phi4}. In such plots, we also plot RTA correlators with $\tau_{p} = \tau_{\mathrm{max}}$, denoted as ``RTA -- max''. 
+
+Another possible choice for the relaxation timescale $\tau_{p}$, are relaxation times related to hydrodynamic variables. One example of such relaxation time that is also in connection with the motivation from solvent model of Sec.~\ref{diluzzio} is the diffusion relaxation time, 
+%
+\begin{equation}
+\begin{aligned}
+&
+\tau_{\nu} = \frac{60}{g n_{\mathrm{eq}} \beta^{2}},
+\end{aligned}   
+\end{equation}
+%
+as derived in Ref.~\cite{Rocha:2023hts} for the $\varphi^{4}$-theory, employing the order of magnitude truncation scheme \cite{Fotakis:2022usk,Wagner:2022ayd,struchtrup2004stable}. Hence, we shall consider $\tau_p = \tau_{\nu}$, which will be denoted as ``RTA -- diff'' in Figures \ref{fig:diagonal-corrs-RTA-phi4} and \ref{fig:off-diagonal-corrs-RTA-phi4}.
+
+In Fig.~\ref{fig:diagonal-corrs-RTA-phi4}, we display some diagonal $\left( \widetilde{\Phi}_n \widetilde{\Phi}_{n}  \right)_{\Omega}$ correlators as a function of $\widehat{\Omega}$, for some values of $n$ and $n'$ for both the RTA and the $\varphi^{4}$ theory in the homogeneous case. [....]
+
+\newpage
+
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-0-0-NO-NORM-min-max-diff.pdf}
+% \\
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-1-1-NO-NORM-min-max-diff.pdf}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-1-1-min-max-diff.pdf}
+% \\
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-5-5-NO-NORM-min-max-diff.pdf}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-5-5-min-max-diff.pdf}
+% \\
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-50-50-NO-NORM-min-max-diff.pdf}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-50-50-min-max-diff.pdf}
+% \caption{Diagonal $N=125$}
+% 	\label{fig:diagonal-corrs-RTA-phi4}
+% 	\end{center}
+% \end{figure}
+
+
+
+
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-0-1-min-max-diff.pdf}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-1-3-NO-NORM-min-max-diff.pdf}
+% \\
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-2-5-NO-NORM-min-max-diff.pdf}
+% \includegraphics[width=0.46\textwidth]{fluct-phi4-compar-RTA-truns-nn1-EQ-4-7-NO-NORM-min-max-diff.pdf}
+% \caption{Off-Diagonal $N = 125$}
+% \label{fig:off-diagonal-corrs-RTA-phi4}	\end{center}
+% \end{figure}
+
+
+
+
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.40\textwidth]{fluct-phi4-compar-RTA-truns-nn1-DIAGONAL-100-min-max.pdf}
+%  \caption{Diagonal Fourier-Laguerre moment correlators $g \left( \widetilde{\Phi}_n \widetilde{\Phi}_{n}  \right)_{\Omega}$ evaluated at $\Omega = 0$ as a function of $n$. [exclude RTA -max]}
+% 	\label{fig:convg-phi4}
+% 	\end{center}
+% \end{figure}
+
+
+\section{paper leftover 2}
+
+Thus, substituting expansion \eqref{eq:phi-xi-expn-1} and definition \eqref{eq:irred-fou-Phi-Xi-1} in Eq.~\eqref{eq:phi-phi-correlators}, the  $\phi$-$\phi$ Fourier correlators can be expressed in terms of the $\mathcal{F}$-$\mathcal{F}$ correlators as 
+%
+\begin{equation}
+\begin{aligned}
+&
+\langle \Bar{\phi}(q,p) \Bar{\phi}^{*}(q',k)  \rangle 
+\\
+&
+=
+\sum_{n,\ell, n',m = 0}^{\infty}
+\sum_{s=0}^{\lceil \ell / 2 \rceil} \sum_{r=0}^{\lceil m / 2 \rceil} 
+\frac{C_{\ell s} 
+C_{m r}}{A_{n}^{(\ell)} A_{n'}^{(m)} }
+\left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)
+ \widetilde{\mathcal{F}}^{*}_{n'm}(\Omega', Q')
+ \right\rangle
+\\
+&
+\times
+L^{(2 \ell + 1)}_{n, p}
+L^{(2 \ell + 1)}_{n', k}
+\left(\Delta^{\mu \nu} q_{\mu} q_{\nu}\right)^{s} \left(\Delta^{\mu \nu} p_{\mu} p_{\nu}\right)^{s} 
+\left(\Delta^{\mu \nu} q_{\mu} p_{\nu}\right)^{\ell - 2s}
+\left(\Delta^{\mu \nu} q'_{\mu} q'_{\nu}\right)^{r} \left(\Delta^{\mu \nu} k_{\mu} k_{\nu}\right)^{r} 
+\left(\Delta^{\mu \nu} q'_{\mu} k_{\nu}\right)^{\ell - 2r},
+\end{aligned}    
+\end{equation}
+%
+where
+%
+\begin{subequations}
+\label{eq:def-deltao-2-main}
+\begin{align}
+ &
+ C_{\ell k} = (-1)^{k} \frac{(\ell!)^{2}}{(2 \ell)!} \frac{(2 \ell - 2k)!}{k!(\ell-k)!(\ell-2k)!}\;,
+\end{align}    
+\end{subequations}
+%
+is a combinatorial factor stemming from the definition of the rank-$2 \ell$ projector $\Delta^{\mu_{1} \cdots \mu_{\ell}\nu_{1} \cdots \nu_{\ell}}$ (see Eq.~\eqref{eq:def-deltao-1}).
+
+
+\section{New definition for the $\mathcal{F}$'s }
+
+
+%
+\begin{subequations}
+\label{eq:irred-fou-Phi-Xi}
+\begin{align}
+&
+\label{eq:irred-fou-Phi-Xi-1}
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}} (q^{\mu})
+=
+\frac{\widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)}{Q^{\ell}}
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle},
+\\
+&
+\label{eq:irred-fou-Phi-Xi-2}
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}} (q^{\mu}) = \frac{\widetilde{\mathcal{X}}_{n\ell}(\Omega, Q)}{Q^{\ell}}
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle},
+\end{align}    
+\end{subequations}
+%
+
+
+%
+\begin{equation}
+\label{eq:moments-lag}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} \left[
+-(n+1) \widetilde{\Phi}_{n+1}^{\mu_{1} \cdots \mu_{\ell}}
++
+2(n+\ell+1)
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}
+-
+(n+2\ell+1)
+\widetilde{\Phi}_{n-1}^{\mu_{1} \cdots \mu_{\ell}}
+\right]
++ 
+i q_{\langle \mu \rangle} \left[ \widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell} \mu}
+-
+2 \widetilde{\Phi}_{n-1}^{\mu_{1} \cdots \mu_{\ell} \mu}
++
+\widetilde{\Phi}_{n-2}^{\mu_{1} \cdots \mu_{\ell} \mu}
+\right]
+\\
+&
+-
+\frac{i}{\beta^{2}}  
+ \frac{\ell}{2 \ell + 1}
+q^{\langle \mu_{1}} 
+\left[
+(n+1)(n+2)
+\widetilde{\Phi}_{n+2}^{\mu_{2} \cdots \mu_{\ell} \rangle}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\Phi}_{n+1}^{\mu_{2} \cdots \mu_{\ell} \rangle}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\Phi}_{n}^{\mu_{2} \cdots \mu_{\ell} \rangle}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}
+   = 
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}},
+\end{aligned}
+\end{equation}
+%
+
+%
+\begin{equation}
+\label{eq:F-moments-lin-problem-apn}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} (-Q^{2})^{\ell} \frac{1}{Q^{\ell}} \left[
+-(n+1) 
+\widetilde{\mathcal{F}}_{n+1,\ell}+
+2(n+\ell+1)
+\widetilde{\mathcal{F}}_{n\ell}
+-
+(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n-1,\ell}
+\right]
+\\
+&
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-Q^{2})^{\ell + 1}\frac{1}{Q^{\ell+1}} \left[ \widetilde{\mathcal{F}}_{n,\ell+1}
+-
+2 \widetilde{\mathcal{F}}_{n-1,\ell+1}
++
+\widetilde{\mathcal{F}}_{n-2,\ell+1}
+\right]
+\\
+&
+-
+\frac{i}{\beta^{2}}
+ \frac{\ell}{2 \ell + 1}
+ (-Q^{2})^{\ell}\frac{1}{Q^{\ell-1}}
+\left[
+(n+1)(n+2)
+\widetilde{\mathcal{F}}_{n+2,\ell-1}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n+1,\ell-1}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\mathcal{F}}_{n,\ell-1}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\mathcal{F}}_{n\ell} (-Q^{2})^{\ell}\frac{1}{Q^{\ell}}
+   = 
+\widetilde{\mathcal{X}}_{n,\ell} (-Q^{2})^{\ell}
+\frac{1}{Q^{\ell}}
+,
+\end{aligned}
+\end{equation}
+
+
+%
+\begin{equation}
+\label{eq:F-moments-lin-problem-apn}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} \left[
+-(n+1) 
+\widetilde{\mathcal{F}}_{n+1,\ell}+
+2(n+\ell+1)
+\widetilde{\mathcal{F}}_{n\ell}
+-
+(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n-1,\ell}
+\right]
+\\
+&
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-Q) \left[ \widetilde{\mathcal{F}}_{n,\ell+1}
+-
+2 \widetilde{\mathcal{F}}_{n-1,\ell+1}
++
+\widetilde{\mathcal{F}}_{n-2,\ell+1}
+\right]
+\\
+&
+-
+\frac{i}{\beta^{2}}
+ \frac{\ell}{2 \ell + 1}
+Q
+\left[
+(n+1)(n+2)
+\widetilde{\mathcal{F}}_{n+2,\ell-1}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n+1,\ell-1}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\mathcal{F}}_{n,\ell-1}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\mathcal{F}}_{n\ell} 
+   = 
+\widetilde{\mathcal{X}}_{n,\ell} 
+,
+\end{aligned}
+\end{equation}
+
+
+%
+\begin{subequations}
+\label{eq:inhomog-case-lin-prob}
+\begin{align}
+&
+\label{eq:inhomog-case-lin-prob-a}
+\mathds{M}_{n \ell n' \ell'} [\beta^{\ell'-2}\widetilde{\mathcal{F}}_{n'\ell'}]
+=
+\widehat{\mathcal{X}}_{n, \ell},
+\quad
+n, \ell, n', \ell' = 0,1,2,3, \cdots,
+\\
+&
+\mathds{M}_{n \ell n' \ell'} = i \widehat{\Omega} \delta_{\ell'\ell} \left[
+-(n+1) 
+\delta_{n',n+1}
++
+2(n+\ell+1)
+\delta_{n',n}
+-
+(n+2\ell+1)
+\delta_{n',n-1}
+\right]
+-
+\widehat{\chi}_{n\ell}
+\delta_{n' n} \delta_{\ell' \ell}
+\notag
+\\
+&
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-\widehat{Q}) \delta_{\ell',\ell+1} \left[ \delta_{n'n}
+-
+2 \delta_{n',n-1}
++
+\delta_{n',n-2}
+\right]
+\notag
+\\
+&
+\label{eq:inhomog-case-lin-prob-b}
+-
+i \widehat{Q}
+ \frac{\ell}{2 \ell + 1}
+ \delta_{\ell',\ell-1}
+\left[
+(n+1)(n+2)
+\delta_{n',n+2} 
+-
+2(n+1)(n+2\ell+1)
+\delta_{n', n+1}
++
+(n+2\ell+1)(n+2\ell)
+\delta_{n' n} 
+\right],
+\end{align}    
+\end{subequations}
+
+\begin{equation}
+\begin{aligned}
+&
+\widehat{\Omega} = \frac{\Omega}{g n_{\mathrm{eq}} \beta^{2}},
+\widehat{Q} = \frac{Q}{g n_{\mathrm{eq}} \beta^{2}}
+\end{aligned}    
+\end{equation}
+
+%
+\begin{equation}
+\label{eq:XiXi-corr-apn}
+\begin{aligned}
+&
+\left\langle \widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}}(q) \widetilde{\Xi}_{n'}^{*\nu_{1} \cdots \nu_{m}}(q')
+\right\rangle
+=
+\int \dfrac{d^3 p}{(2\pi)^3 p^0} \dfrac{d^3 \Bar{p}}{(2\pi)^3 \Bar{p}^0}  L^{(2 \ell + 1)}_{n p} p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} \rangle}
+\left\langle \Bar{\xi}^{*}_{\Tilde{p}}(q)
+ \Bar{\xi}_p(q')
+ \right\rangle
+ L^{(2 \ell + 1)}_{n \tilde{p}} \tilde{p}^{\langle \nu_{1}} \cdots \tilde{p}^{ \nu_{m} \rangle}
+\\
+&
+=
+- 2 (2 \pi)^{4} \delta^{(4)}(q-q')
+\int \dfrac{d^3 p}{(2\pi)^3 p^0} \dfrac{d^3 \Bar{p}}{(2\pi)^3 \Bar{p}^0} L^{(2 \ell + 1)}_{n,p} p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} \rangle}
+f_{\mathrm{eq},p}K_{p \tilde{p}}
+ L^{(2 \ell + 1)}_{n, \tilde{p} } \tilde{p}^{\langle \nu_{1}} \cdots \tilde{p}^{ \nu_{m} \rangle}
+\\
+&
+=
+- 2 (2 \pi)^{4} \delta^{(4)}(q-q')
+\int \dfrac{d^3 p}{(2\pi)^3 p^0} L^{(2 \ell + 1)}_{n,p} p^{\langle \mu_{1}} \cdots p^{ \mu_{\ell} \rangle}
+f_{\mathrm{eq},p} \Hat{L}[L^{(2 \ell + 1)}_{n, p} p^{\langle \nu_{1}} \cdots p^{ \nu_{m} \rangle}]
+\\
+&
+= 
+-2 (2 \pi)^{4} A_{n}^{(\ell)} \chi_{n,\ell}  \delta^{(4)}(q-q') \delta_{\ell m} \delta_{nn'} \Delta^{\mu_{1} \cdots \mu_{\ell}\nu_{1} \cdots \nu_{\ell}},
+\end{aligned}    
+\end{equation}
+%
+where from the first to the second equality we employed Eq.~\eqref{eq:Fourier-correlators-Xi}, and from the second to the third equality, we employed the property \eqref{eq:fund-K-prop}, which defines the kernel $K_{p \Tilde{p}}$. We note that the above equation is independent of the interaction if one ``forgets'' for a moment that $L^{(2 \ell + 1)}_{n,p}$ denote Laguerre polynomials. In deriving Eq.~\eqref{eq:XiXi-corr-apn}, we have only used the fact that the linearized collision term possess eigenvalues $\chi_{n,\ell}$ whose corresponding eigenvectors possess finite norm $A_{n}^{(\ell)}$. When contracted with $q_{\langle \mu_{1}} \cdots q_{ \mu_{\ell} \rangle}$ and $q'_{\langle \mu_{1}} \cdots q'_{ \mu_{\ell} \rangle}$ Eq.~\eqref{eq:XiXi-corr-apn} leads to the following expression for the modes defined in Eq.~\eqref{eq:irred-fou-Phi-Xi-2},
+%
+\begin{equation}
+\label{eq:corr-X-components-apn}
+\begin{aligned}
+&
+\langle \widetilde{\mathcal{X}}_{n\ell}(\Omega, q) \widetilde{\mathcal{X}}^{*}_{n'm}(\Omega', q') \rangle
+=
+(-1)^{\ell+1}\frac{(2 \ell - 1)!!}{\ell!}
+A_{n}^{(\ell)} \chi_{n,\ell} 2 (2 \pi)^{4} \delta^{(4)}(q-q') \delta_{\ell m} \delta_{nn'},
+\end{aligned}    
+\end{equation}
+
+%
+\begin{equation}
+\label{eq:corr-X-components-apn}
+\begin{aligned}
+&
+\langle \widehat{\mathcal{X}}_{n\ell}(\Omega, q) \widehat{\mathcal{X}}^{*}_{n'm}(\Omega', q') \rangle
+=
+(-1)^{\ell+1}\frac{(2 \ell - 1)!!}{\ell!}
+\widehat{A}_{n}^{(\ell)} \widehat{\chi}_{n,\ell} 2 \frac{(2 \pi)^{4}}{g} \delta^{(4)}(q-q') \delta_{\ell m} \delta_{nn'},
+\end{aligned}    
+\end{equation}
+
+
+
+
+
+\section{PAPER LEFTOVER}
+
+\subsubsection{Inhomogeneous limit}
+
+
+In the inhomogeneous limit, where $Q^{2}$ is non-vanishing, the problem of solving for the various tensor components is more convoluted, since the equations of motion \eqref{eq:moments-lag-main} couples tensors of different ranks. One important thing to notice is that since we are analyzing fluctuations around \textit{global equilibrium} the $\widetilde\Phi$ and $\widetilde\Xi$ tensor-components have to be constructed from \emph{only} on $q^{\mu}$, $u^{\mu}$ and $g^{\mu \nu}$. Besides, by construction, these tensors are fully orthogonal with respect to $u^{\mu}$ and traceless, as implied by definitions \eqref{eq:phi-xi-expn-2} and \eqref{eq:phi-xi-expn-3} ($\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}u_{\mu_{j}} = 0$, $\forall \; j=1, \ldots \ell$,  $\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}g_{\mu_{j} \mu_{k}} = 0$, $\forall \; j,k =1, \ldots \ell$). This leads us to the fact that 
+%
+\begin{subequations}
+\label{eq:irred-fou-Phi-Xi}
+\begin{align}
+&
+\label{eq:irred-fou-Phi-Xi-1}
+\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}} (q^{\mu})
+=
+\frac{\widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)}{Q^{\ell}}
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle},
+\\
+&
+\label{eq:irred-fou-Phi-Xi-2}
+\widetilde{\Xi}_{n}^{\mu_{1} \cdots \mu_{\ell}} (q^{\mu}) = \frac{\widetilde{\mathcal{X}}_{n\ell}(\Omega, Q)}{Q^{\ell}}
+q^{\langle \mu_{1}} \cdots q^{ \mu_{\ell} \rangle},
+\end{align}    
+\end{subequations}
+%
+\gsr{definition changed!!!!}
+where $Q^{2}= - q^{\langle \nu \rangle} q_{\langle \nu \rangle}$. %We stress that the above equations do not necessarily mean that $\widetilde{\Phi}_{n}^{\mu_{1} \cdots \mu_{\ell}}$ is of order $\ell$ in a gradient expansion, since, in principle, $\widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)$ can have an arbitrary functional form and, indeed, $\widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)$ could be proportional to some power of $1/\Omega$ or $1/Q^{2}$ so that the effective order can be smaller. 
+We note that, for scalar components ($\ell = 0$), $\widetilde{\mathcal{F}}_{n0} = \widetilde{\Phi}_{n}$. Now, using Eq.~\eqref{eq:irred-fou-Phi-Xi}, we derive equations of motion for the tensor-Fourier-Laguerre components $\mathcal{F}_{n \ell}$  (for details, see Appendix \ref{sec:F-moms})
+%
+\begin{equation}
+\label{eq:F-moments-lin-problem}
+\begin{aligned}
+&
+i \frac{\Omega}{\beta} \left[
+-(n+1) 
+\widetilde{\mathcal{F}}_{n+1,\ell}+
+2(n+\ell+1)
+\widetilde{\mathcal{F}}_{n\ell}
+-
+(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n-1,\ell}
+\right]
+\\
+&
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-Q) \left[ \widetilde{\mathcal{F}}_{n,\ell+1}
+-
+2 \widetilde{\mathcal{F}}_{n-1,\ell+1}
++
+\widetilde{\mathcal{F}}_{n-2,\ell+1}
+\right]
+\\
+&
+-
+\frac{i}{\beta^{2}}
+ \frac{\ell}{2 \ell + 1}
+Q
+\left[
+(n+1)(n+2)
+\widetilde{\mathcal{F}}_{n+2,\ell-1}
+-
+2(n+1)(n+2\ell+1)
+\widetilde{\mathcal{F}}_{n+1,\ell-1}
++
+(n+2\ell+1)(n+2\ell)
+\widetilde{\mathcal{F}}_{n,\ell-1}
+\right]
+\\
+&
+-
+\chi_{n\ell}
+\widetilde{\mathcal{F}}_{n\ell} 
+   = 
+\widetilde{\mathcal{X}}_{n,\ell} 
+,
+\end{aligned}
+\end{equation}
+%
+which has $\widetilde{\mathcal{X}}_{n,\ell}$ as the stochastic noise source. The problem of solving Eq.~\eqref{eq:F-moments-lin-problem} can be cast as the following algebraic linear problem
+%
+\begin{subequations}
+\label{eq:inhomog-case-lin-prob}
+\begin{align}
+&
+\label{eq:inhomog-case-lin-prob-a}
+\mathds{M}_{n \ell n' \ell'} \widehat{\mathcal{F}}_{n'\ell'}
+=
+\widehat{\mathcal{X}}_{n, \ell},
+\quad
+n, \ell, n', \ell' = 0,1,2,3, \cdots,
+\\
+&
+\mathds{M}_{n \ell n' \ell'} = i \widehat{\Omega} \delta_{\ell'\ell} \left[
+-(n+1) 
+\delta_{n',n+1}
++
+2(n+\ell+1)
+\delta_{n',n}
+-
+(n+2\ell+1)
+\delta_{n',n-1}
+\right]
+-
+\widehat{\chi}_{n\ell}
+\delta_{n' n} \delta_{\ell' \ell}
+\notag
+\\
+&
++ 
+i \frac{(\ell + 1)}{(2 \ell + 1)} (-\widehat{Q}) \delta_{\ell',\ell+1} \left[ \delta_{n'n}
+-
+2 \delta_{n',n-1}
++
+\delta_{n',n-2}
+\right]
+\notag
+\\
+&
+\label{eq:inhomog-case-lin-prob-b}
+-
+i \widehat{Q}
+ \frac{\ell}{2 \ell + 1}
+ \delta_{\ell',\ell-1}
+\left[
+(n+1)(n+2)
+\delta_{n',n+2} 
+-
+2(n+1)(n+2\ell+1)
+\delta_{n', n+1}
++
+(n+2\ell+1)(n+2\ell)
+\delta_{n' n} 
+\right],
+\end{align}    
+\end{subequations}
+%
+where besides the quantities defined in Eqs.~\eqref{eq:Omega-Q2-defs-homog} and \eqref{eq:A-adimens-def-homog} we also have
+%
+\begin{equation}
+\label{eq:Omega-Q2-defs-inhomog}
+\begin{aligned}
+&
+\widehat{Q} = \frac{Q}{g n_{\mathrm{eq}} \beta^{2}},
+\quad
+\widehat{\chi}_{n \ell} =  \frac{\chi_{n\ell}}{g n_{\mathrm{eq}} \beta} = - \frac{1}{4}  \left(\frac{n+\ell-1}{n+\ell+1} + \delta_{n0}\delta_{\ell 0}\right), 
+\\
+&
+\widehat{\mathcal{F}}_{n'\ell'}
+=
+\beta^{\ell-2} \widetilde{\mathcal{F}}_{n'\ell'},
+\quad
+\widehat{\mathcal{X}}_{n, \ell} = \frac{\beta^{\ell - 2}\widetilde{\mathcal{X}}_{n, \ell}}{g n_{\mathrm{eq}} \beta}.
+\end{aligned}    
+\end{equation}
+%
+We note that, in the limit when $\widehat{Q} \to 0$, we recover the homogeneous matrix defining the homogeneous linear system, i.e.~$\mathds{M}_{n \ell n' \ell'} = \delta_{\ell \ell'} \mathcal{M}^{(\ell)}_{nn'}$.
+
+The correlators of $\widehat{\mathcal{X}}_{n, \ell}$ can be derived from definitions \eqref{eq:phi-xi-expn-2}, \eqref{eq:irred-fou-Phi-Xi-2}, and \eqref{eq:Omega-Q2-defs-inhomog} (details also in Appendix \ref{sec:F-moms}).
+%
+\begin{equation}
+\label{eq:corr-X-components}
+\begin{aligned}
+&
+\langle \widehat{\mathcal{X}}_{n\ell}(\Omega, Q) \widehat{\mathcal{X}}^{*}_{n'm}(\Omega', Q') \rangle
+=
+2\frac{(2 \pi)^{4}}{g \beta^{4}} \frac{(2 \ell - 1)!!}{\ell!}
+(-1)^{\ell+1}   
+\widehat{A}_{n}^{(\ell)} \widehat{\chi}_{n,\ell}  \delta^{(4)}(q-q') \delta_{\ell m} \delta_{nn'},
+\end{aligned}    
+\end{equation}
+\gsr{double-check} \nm{added factor of $q^{-2\ell}$} \gsr{the redefinition washes that factor away}
+%
+
+
+
+
+The linear problem \eqref{eq:inhomog-case-lin-prob-a} can be solved if we can find a tensor $\mathds{M}^{-1}$ such that $(\mathds{M}^{-1})_{p q n \ell} \mathds{M}_{n \ell n' \ell'} = \delta_{p n'} \delta_{q \ell'}$, which is a more convoluted problem than the faced in the homogeneous limit. Nevertheless, given a finite truncation of $\mathds{M}$, so that $0< n,\ell,n',\ell < N$ indices, the problem of invering the tensor $\mathds{M}$ can be can be mapped into the problem of inverting the $(N+1)^{2} \times (N+1)^{2}$ matrix, 
+%
+\begin{equation}
+\begin{aligned}
+\mathcal{M}_{U}
+=
+\left(
+\begin{array}{cccccccccc}
+   \mathds{M}_{0000}  & \mathds{M}_{0001} & \cdots & \mathds{M}_{000N} & \mathds{M}_{0010} & \cdots & \mathds{M}_{001N} & \mathds{M}_{0020} &\cdots & \mathds{M}_{00NN}  \\
+   \mathds{M}_{0100}  & \mathds{M}_{0101} & \cdots & \mathds{M}_{010N} & \mathds{M}_{0110} & \cdots & \mathds{M}_{011N} & \mathds{M}_{0121} & \cdots & \mathds{M}_{01NN}  \\
+   \vdots  & \vdots & \vdots  &\vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots \\
+      \mathds{M}_{NN00}  & \mathds{M}_{NN01} & \cdots & \mathds{M}_{NN0N} & \mathds{M}_{NN10} & \cdots & \mathds{M}_{NN1N} & \mathds{M}_{NN20} & \vdots & \mathds{M}_{NNNN} 
+   \end{array}
+\right)
+\end{aligned}    
+\end{equation}
+%
+which we shall refer to as the tensor unfolding of $\mathds{M}$ \cite{}. Essentially, we may regard $\mathds{M}_{ijkl}$ as a matrix of matrices, where the two first indexes locate a particular submatrix in the larger matrix, and the two last indexes locate a given element in the submatrix. Then, the submatrix `00' of $\mathds{M}$ takes the first line of the unfolded matrix $\mathcal{M}_{U}$, the submatrix `01' of $\mathds{M}$ takes the second line of the unfolded matrix $\mathcal{M}_{U}$, $\cdots$, the submatrix `10' of $\mathds{M}$ takes the $N+1$-th line of the unfolded matrix $\mathcal{M}_{U}$, and so on. This particular unfolding of the tensor is useful because given arbitrary tensors $\mathds{A}$ and $\mathds{B}$, and their unfolded counterparts, $\mathcal{A}_{U}$ and $\mathcal{B}_{U}$, it can be readily checked that $ \mathds{A}_{nlpq}\mathds{B}_{pqn'l'} =(\mathcal{A}_{U})_{IK}(\mathcal{B}_{U})_{KJ}$. In this case,  $\mathds{1}_{pqn\ell} = \delta_{p n} \delta_{q \ell} \mapsto I_{N^{2}}$, the $N^{2}$-dimensional identity matrix. Hence, we can find the tensor 
+$(\mathds{M}^{-1})_{abcd}$ by computing $(\mathcal{M}_{U})^{-1}_{ab}$ by standard methods and then ``refolding'' the latter to recover $(\mathds{M}^{-1})$.
+Then, the correlators of the Fourier-Laguerre components, as discussed in Appendix \ref{sec:F-moms} can be expressed as
+%
+\begin{equation}
+\begin{aligned}
+&
+\left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)
+ \widetilde{\mathcal{F}}^{*}_{n'm}(\Omega', Q')
+ \right\rangle
+= 
+\frac{1}{\beta^{(\ell + m) -4}} [\mathds{M}^{-1}(\widehat{\Omega}, \widehat{Q})]_{n \ell a b} [\mathds{M}^{-1}(\widehat{\Omega}', \widehat{Q}')]^{*}_{n' m a' b'}
+ \left\langle
+\widehat{\mathcal{X}}_{ab}
+(\Omega, Q)
+\widehat{\mathcal{X}}^{*}_{a'b'}
+(\Omega', Q')
+ \right\rangle
+ \\
+ &
+= 
+2 \frac{(2 \pi)^{4}}{g \beta^{(\ell + m)}}
+(-1)^{b+1}  [\mathds{M}^{-1}(\widehat{\Omega}, \widehat{Q})]_{n \ell a b} [\mathds{M}^{-1}(\widehat{\Omega}, \widehat{Q})]^{\dagger}_{a b n' m}
+\frac{(2 b - 1)!!}{b!}
+\widehat{A}_{a}^{(b)} \widehat{\chi}_{a,b} \delta^{(4)}(q-q')
+\\
+&
+\equiv
+\frac{(2 \pi)^{4}}{\beta^{(\ell + m)}}  \left( \widetilde{\mathcal{F}}_{n\ell}
+ \widetilde{\mathcal{F}}^{*}_{n'm}
+ \right)_{\Omega, Q}  \delta^{(4)}(q-q'),
+\end{aligned}    
+\end{equation}
+\nm{this will change, as will later equations that depend on this}
+where we have employed the quantities defined in Eqs.~\eqref{eq:Omega-Q2-defs-inhomog} and \eqref{eq:A-adimens-def-homog}. Given that the matrix $\mathds{M}$ reduces to the $\mathcal{M}^{(\ell)}$ matrices in the $\widetilde{Q} \to 0$ limit, we also have that $\left( \widetilde{\mathcal{F}}_{n\ell}
+ \widetilde{\mathcal{F}}^{*}_{n'm}
+ \right)_{\Omega, Q = 0} = (\ell!/(2\ell -1)!!) \left( \widetilde{\Phi}_{n\ell}
+\widetilde{\Phi}_{n' \ell}^{*}
+ \right)_{\Omega} \delta_{\ell m}$.  Analogously with the discussion in the homogeneous case, from the $\left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)
+ \widetilde{\mathcal{F}}^{*}_{n'm}(\Omega', Q')
+ \right\rangle$ correlators, fractional equilibrium deviation correlators can be derived and an explicit expression is derived in Appendix \ref{sec:F-moms}. 
+
+% In the limit where $Q^{2} \to 0$ the results of the present subsection should reduce to the results of Sec.~\ref{}, in the homogeneous limit. Indeed, since $\widetilde{\mathcal{F}}_{n0} = \widetilde{\Phi}_{n}$, it is expected that 
+% $\lim_{\widehat{Q}^{2} \to 0}\left( \widetilde{\mathcal{F}}_{n0}
+%  \widetilde{\mathcal{F}}^{*}_{n'0}
+%  \right)_{\Omega, Q} = \left( \widetilde{\Phi}_{n}
+% \widetilde{\Phi}_{n'}^{*}
+%  \right)_{\Omega}$. Thus, as a first test, we compare the results in both correlator amplitudes, by displaying the ``relative error'' comitted by the inhomogeneous results
+% %
+% \begin{equation}
+% \label{eq:err-def}
+% \begin{aligned}
+% &
+% \Delta \left( \widetilde{\mathcal{F}}_{n0}
+%  \widetilde{\mathcal{F}}^{*}_{n'0}
+%  \right)_{\Omega}
+% \equiv
+% \left\vert \frac{ \left .\left( \widetilde{\mathcal{F}}_{n0}
+%  \widetilde{\mathcal{F}}^{*}_{n'0}
+%  \right)_{\Omega, Q} \right\vert_{\widehat{Q}^{2} \simeq 0,\widehat{Q}^{2}_{0} \Lambda \text{ fixed}} - \left( \widetilde{\Phi}_{n}
+% \widetilde{\Phi}_{n'}^{*}
+%  \right)_{\Omega} }{\left( \widetilde{\Phi}_{n}
+% \widetilde{\Phi}_{n'}^{*}
+%  \right)_{\Omega}} \right\vert, 
+% \end{aligned}    
+% \end{equation}
+% %
+% as a function of $\widehat\Omega$. In Fig.~\ref{fig:convergence-inhomog-case},% we take the $N=10, 15$ and $20$ truncations for the inhomogeneous correlator amplitudes and $N=125$ truncation for the homogeneous correlator amplitudes. We see that, for large values of $\widehat{\Omega}$ the two results are within 5 \% from each other, for all values of $\Lambda$ displayed. For values of $\widehat{\Omega}$ near zero, however, we see that large numerical errors emerge. This is due to the fact that the matrices begin inverted in the inhomogeneous case become badly conditioned (their determinant is near zero) for  $\widehat{\Omega} \to 0$, $\widehat{Q}^{2} \to 0$. \gsr{editar}
+
+%In Fig.~\ref{fig:convergence-fixed-lamb-Q2}, in order to assess the numerical convergence of the method, we display the dimensionless $\left( \widetilde{\mathcal{F}}_{00} \widetilde{\mathcal{F}}_{00}^{*} \right)_{\Omega, Q}$ correlator amplitude at $\Lambda=1$ and $Q^{2}$ fixed at  $\widehat{Q}^{2} = 0.001$ (left-hand panel) and  $\widehat{Q}^{2} = 0.5$ (right-hand panel). We see that, for $Q^{2} = 0.001$, the method described in the present section converges well already for $N=10$. Nevertheless, it is seen that for $N=20$, some numerical errors accumulate near $\Omega = 0$, since for large $N$ the tensor $\mathds{M}$ (or, in practice the $(N+1)^{2} \times (N+1)^{2}$ matrix $\mathcal{M}_{U}$) is badly posed, since it is contains various entries that are zero. It is also clear from the right-hand side panel, that the convergence of the method is slower the larger values of $Q^{2}$ are. Indeed, we see that, for $Q^{2} = 0.5$, oscillations arise in a large region centered at $\Omega = 0$. Thus, it is expected that, in the limit as $N \to \infty$, the distribution converges to the envelope of the distribution and these small scale oscillations should vanish.  After that, in Fig.~\ref{fig:convergence-fixed-lamb}, we see the behavior of the  as both $\widehat{\Omega}$ and $\widehat{Q^{2}}$ change. The different panels show different truncation orders. We see that the structure of the envelope emerges rather slowly as the truncation order $N$ increases, and the larger the value of $\widehat{Q}^{2}$, the slower the convergence. In general, it is seen that, for this correlator amplitude, the larger $\widehat{Q}^{2}$,  the larger the width of the distribution in $\widehat{\Omega}$ is.
+
+
+
+% %
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.46\textwidth]{error0000-Q2-0,000001-inhomog-homog-LambQ2-(0.1,1,10)-inhomog-N-16-homog-N-15.pdf}
+% \includegraphics[width=0.46\textwidth]{error1000-Q2-0,000001-inhomog-homog-LambQ2-(0.1,1,10)-inhomog-N-16-homog-N-15.pdf}
+% \end{center}
+% \caption{Relative error between the inhomogeneous correlator amplitudes for small $\widehat{Q}^{2}$ and correlator amplitudes in the homogeneous regime (see Eq.~\eqref{eq:err-def}). In both panels and all curves $\widehat{Q}^{2} = 10^{-6}$ and $\widehat{Q}^{2} \Lambda = Q^{2} \beta^{2}$ is fixed to different values in different curves. (Left panel) Error in $\left( \widetilde{\mathcal{F}}_{00} \widetilde{\mathcal{F}}_{00}^{*} \right)_{\Omega, Q}$. (Right-panel) Error in $\left( \widetilde{\mathcal{F}}_{30} \widetilde{\mathcal{F}}_{50}^{*} \right)_{\Omega, Q}$.}
+% \label{fig:convergence-inhomog-case}	
+% \end{figure}
+
+% \newpage
+
+% %
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.45\textwidth]{FF-corr-data-(n,l,n1,l1)=(0000)-Lamb=0.5-Nmx=(1,10,15,20)-Q2=0,01.pdf}
+% \includegraphics[width=0.45\textwidth]{FF-corr-data-(n,l,n1,l1)=(0000)-Lamb=1-Nmx=1,10,15,20-Q2=0,5.pdf}
+% \end{center}
+% \caption{Convergence of the method described in the main text for the Fourier-Laguerre mode correlator amplitude $\left( \widetilde{\mathcal{F}}_{00} \widetilde{\mathcal{F}}_{00}^{*} \right)_{\Omega, Q}$  as a function of $\widehat{\Omega}$ in the inhomogenous case at fixed $\widehat{Q}^{2}$ and $\Lambda = 1$. (Left-hand panel) $\widehat{Q}^{2} = 0.01$ and (Right-hand panel) $\widehat{Q}^{2} = 0.5$.}
+% \label{fig:convergence-fixed-lamb-Q2}	
+% \end{figure}
+
+%\newpage
+%
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0000)-Lamb=1-Nmx=10.png}
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0000)-Lamb=1-Nmx=15.png}
+% \caption{Convergence of the method described in the main text for the Fourier-Laguerre mode correlator amplitude $\left( \widetilde{\mathcal{F}}_{00} \widetilde{\mathcal{F}}_{00}^{*} \right)_{\Omega, Q}$ as a function of $\widehat{\Omega}$ and $\widehat{Q}^{2}$ in the inhomogenous case. (Upper left panel) $N =1$, (Upper right panel) $N =5$, (lower left panel) $N = 10$, (lower right panel)  $N = 15$.}
+% \label{fig:convergence-fixed-lamb}	
+% \end{center}
+% \end{figure}
+
+\newpage
+
+By inverting relations \eqref{eq:shear-as-phi}, \eqref{eq:vectors-as-phi}, and \eqref{eq:relations-Phi-phys}, we can derive expressions relating correlations of hydrodynamic fields and the $\mathcal{F}$- mode correlators, $\left\langle \widetilde{\mathcal{F}}_{n\ell}(\Omega, Q)
+ \widetilde{\mathcal{F}}^{*}_{n'm}(\Omega', Q')\right\rangle$. Indeed, besides the correlators in Eq.~\eqref{eq:scalar-Tmunu-Nmu-corrs}, which can be readily expressed in terms of $\mathcal{F}$ moments since $\widetilde{\Phi}_{n} = \widetilde{\mathcal{F}}_{n0}$, we also have
+%
+\begin{equation}
+\begin{aligned}
+ &  
+\left\langle \nu^{\alpha}
+\nu^{*\beta} \right\rangle
+=
+\left\langle \widetilde{\mathcal{F}}_{01} \widetilde{\mathcal{F}}_{01}^{*} \right\rangle \frac{q^{\langle \alpha \rangle}
+q^{\langle \beta \rangle}}{Q^{2}}
+\equiv
+(2 \pi)^{4} 
+\left( \nu
+\nu^{*} \right)_{\Omega, Q}
+\frac{q^{\langle \alpha \rangle}
+q^{\langle \beta \rangle}}{Q^{2}}
+\delta^{(4)}(q-q')
+,
+\quad
+\\
+&
+\beta^{2}\left\langle h^{\alpha}
+h^{*\beta} \right\rangle
+=
+\left[
+16
+\left\langle \widetilde{\mathcal{F}}_{01} \widetilde{\mathcal{F}}_{01}^{*} \right\rangle 
+-
+8
+\left\langle \widetilde{\mathcal{F}}_{01} \widetilde{\mathcal{F}}_{11}^{*} \right\rangle
++
+\left\langle \widetilde{\mathcal{F}}_{11} \widetilde{\mathcal{F}}_{11}^{*} \right\rangle
+\right]
+\frac{q^{\langle \alpha \rangle}
+q^{\langle \beta \rangle}}{Q^{2}}
+\equiv
+(2 \pi)^{4}\left( h
+h^{*} \right)_{\Omega, Q}
+\frac{q^{\langle \alpha \rangle}
+q^{\langle \beta \rangle}}{Q^{2}}
+\delta^{(4)}(q-q')
+,
+\\
+&
+\left\langle \pi^{\mu \nu} \pi^{*\alpha\beta} \right\rangle
+=
+\left\langle \widetilde{\mathcal{F}}_{02} \widetilde{\mathcal{F}}_{02}^{*} \right\rangle 
+\frac{q^{\langle \mu}q^{\nu \rangle}
+q^{\langle \alpha}q^{\beta \rangle}}{Q^{4}}
+\equiv
+(2 \pi)^{4}
+\left( \pi \pi^{*} \right)_{\Omega, Q}\frac{q^{\langle \mu}q^{\nu \rangle}
+q^{\langle \alpha}q^{\beta \rangle}}{Q^{4}}
+\delta^{(4)}(q-q')
+,
+\end{aligned}    
+\end{equation}
+%
+where we have defined the amplitudes $\left( \nu \nu^{*} \right)_{\Omega, Q}$, $\left( h h^{*} \right)_{\Omega, Q}$ , $\left( \pi \pi^{*} \right)_{\Omega, Q}$, which are by construction dimensionless, since $\widetilde{\mathcal{F}}_{n \ell}$ has units of inverse-temperature squared. These quantities are displayed in Figs.~\ref{fig:shear-self}--\ref{fig:ener-diff-self}.
+
+\nm{In progress}
+\begin{equation}
+\begin{aligned}
+    \left\langle \pi^{\mu \nu} \pi^{*\alpha\beta} \right\rangle
+= &
+(2 \pi)^{4}
+\left( \pi \pi^{*} \right)_{\Omega, Q}^{\parallel\parallel}\frac{q^{\langle \mu \rangle}q^{\langle \nu \rangle}
+q^{\langle \alpha \rangle}q^{\langle \beta \rangle}}{Q^{4}}
+\delta^{(4)}(q-q') + (2 \pi)^{4}
+\left( \pi \pi^{*} \right)_{\Omega, Q}^{\parallel\perp} \left( \frac{\Delta^{\mu\nu}_{\langle q \rangle} q^{\langle \alpha \rangle} q^{\langle \beta \rangle}}{Q^2} + \frac{\Delta^{\alpha\beta}_{\langle q \rangle} q^{\langle \mu \rangle} q^{\langle \nu \rangle}}{Q^2} \right)
+\delta^{(4)}(q-q') \\
+& + (2 \pi)^{4}
+\left( \pi \pi^{*} \right)_{\Omega, Q}^{\perp\perp}\Delta^{\mu\nu\alpha\beta}_{\langle q \rangle}
+\delta^{(4)}(q-q')
+\end{aligned}
+\end{equation}
+\begin{equation}
+    q^{\langle \mu} q^{\nu \rangle} = \frac{4}{3} q^{\langle \mu \rangle} q^{\langle \nu \rangle} - \frac{Q^2}{3} \Delta^{\mu\nu}_{\langle q \rangle} ,
+\end{equation}
+where $\Delta^{\mu\nu}_{\langle q \rangle}$ is the projector orthogonal to $u^{\mu}$ and $q^{\langle \mu \rangle}$.
+
+\begin{equation}
+    q^{\langle \mu \rangle} q^{\langle \nu \rangle} = q^{\langle \mu} q^{\nu \rangle} - \frac{Q^2}{3} \Delta^{\mu\nu} .
+\end{equation}
+
+
+%In Fig.~\ref{fig:shear-self}, we show a density plot of the natural logarithm the shear-shear correlator amplitude in the $\widehat{\Omega}$--$\widehat{Q}^{2}$ plane at fixed $\Lambda$, which is proportional to the fugacity. In both panels, that for a fixed value of $\widehat{Q}^{2}$, the distribution in $\widehat{\Omega}$ is a triple peak structure. The two depletion regions between the peaks forms parabolic pattern. Thus the central peak broadens and the peaks on the left and on the right go apart from each other. The above-mentioned parabola shrinks in $\widehat\Omega$ as the value of $\Lambda$ increases, as seen for $\Lambda = 0.5$ and $\Lambda = 2$. [...] Later, in Figs.~\ref{fig:diff-self} and \ref{fig:ener-diff-self}, we plot, respectively the correlator amplitudes for the particle diffusion, $\left( \nu \nu^{*} \right)_{\Omega, Q}$, and energy diffusion  $\left( h h^{*} \right)_{\Omega, Q}$. We see that these quantities, in contrast to the one related to shear, present a double-peak structure for constant $\widehat{Q}^{2}$, with a valley at $\widehat{\Omega} \simeq 0$ (following the discussion for Fig.~\ref{fig:convergence-inhomog-case}, we remark that the oscillations in the plots should be considered numerical artifacts). The peaks form a parabolic pattern which also shrinks as the value of $\Lambda$ increases. [....]
+
+
+
+
+% %
+% \begin{figure}[!h]
+% \begin{center}
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0202)-Lamb=0.5-Nmx=15-log.png}
+% % \includegraphics[width=0.46\textwidth]{FF-corr-data-(n,l,n1,l1)=(0202)-Lamb=1-Nmx=15-log.png}
+% % \\
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0202)-Lamb=2-Nmx=15-log.png}
+% \caption{Plot for the natural logarithm of the shear-shear correlator amplitude $\left( \pi \pi^{*} \right)_{\Omega, Q}$, for $N = 15$. (Left panel), $\Lambda = 0.5$ (Right panel) $\Lambda = 2$.}
+% \label{fig:shear-self}	
+% \end{center}
+% \end{figure}
+
+
+% %
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0101)-Lamb=0.5-Nmx=15-log.png}
+% % \includegraphics[width=0.46\textwidth]{FF-corr-data-(n,l,n1,l1)=(0101)-Lamb=1-Nmx=15-log.png}
+% %\\
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-(n,l,n1,l1)=(0101)-Lamb=2-Nmx=15-log.png}
+% \caption{Plot for the natural logarithm of the particle diffusion-diffusion current correlator amplitude $\left( \nu
+% \nu^{*} \right)_{\Omega, Q}$, for $N = 15$. (Left panel), $\Lambda = 0.5$ (Right panel) $\Lambda = 2$.}
+% \label{fig:diff-self}	
+% \end{center}
+% \end{figure}
+
+
+% %
+% \begin{figure}
+% \begin{center}
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-HEAT-FLUX-Lamb=0.5-Nmx=15-log.png}
+% % \includegraphics[width=0.46\textwidth]{FF-corr-data-(n,l,n1,l1)=(0101)-Lamb=1-Nmx=15-log.png}
+% %\\
+% \includegraphics[width=0.43\textwidth]{FF-corr-data-HEAT-FLUX-Lamb=2-Nmx=15-log.png}
+% \caption{Plot for the natural logarithm of the heat flux- heat flux correlator amplitude $\left( h
+% h^{*} \right)_{\Omega, Q}$, for $N = 15$. (Left panel), $\Lambda = 0.5$ (Right panel) $\Lambda = 2$.}
+% \label{fig:ener-diff-self}	
+% \end{center}
+% \end{figure}
+
+
+\bibliography{references}
+
+
+
+
+
+
+\end{document}

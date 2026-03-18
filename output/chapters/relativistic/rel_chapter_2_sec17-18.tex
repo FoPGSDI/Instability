@@ -761,3 +761,38 @@ underlying dissipative formalism.  The detection of GW170817
 \cite{Abbott2017GW170817} has already demonstrated that neutron star
 mergers produce environments where such viscous effects are
 astrophysically relevant \cite{MostPapenfort2019}.
+
+\subsection{Acausality-driven instabilities in practical simulations}
+
+Recent work by Gavassino et~al.\
+\citep{GavassinoCausalityHIC2025,GavassinoAcausalityIS2025} has
+quantified how causality violations manifest in actual numerical
+simulations of Israel--Stewart viscous hydrodynamics.  Using the MUSIC
+hydrodynamic solver with IP-Glasma initial conditions representative
+of heavy-ion collisions, they demonstrated that significant portions
+of the computational domain enter acausal regimes during the early,
+high-gradient evolution phase.
+
+The fluid cells are classified into ``good'' ($w \le 1$, causal),
+``bad'' ($w > 1$ but $vw < 1$, acausal but stable in the simulation
+frame), and ``ugly'' ($vw \ge 1$ or $w^{2} < 0$, unstable) regimes.
+In simulations with both bulk and shear viscosity, ``ugly'' cells
+appear almost immediately and persist through the early dynamics.
+The instabilities in ``ugly'' cells arise from reversed dissipation:
+signals propagating backward in time amplify perturbations
+exponentially rather than damping them.
+
+As a benchmark, an exact analytical solution of the IS equations was
+constructed that bifurcates at $v \approx 0.838$ (where $vw = 1$):
+one branch evolves from ``bad'' to ``good'' and relaxes to
+equilibrium, while the other is entirely ``ugly'' and exhibits
+runaway acceleration toward the speed of light.  Numerical
+simulations with the MUSIC solver reproduce this bifurcation
+precisely, confirming that the instabilities are physical consequences
+of the IS equations rather than numerical artifacts.
+
+These findings reinforce the choice of BDNK dissipation for all
+stability analyses in this book.  In the BDNK framework, the
+characteristic speeds are bounded by $c$ by construction and are
+independent of the viscous stresses, so the ``ugly'' regime cannot
+arise regardless of how far from equilibrium the system evolves.

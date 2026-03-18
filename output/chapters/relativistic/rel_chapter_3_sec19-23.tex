@@ -749,6 +749,118 @@ $L \sim 1\text{--}3$~km.
 
 
 % ===================================================================
+\section{Heat Propagation in Rotating Relativistic Bodies}
+\label{sec:rel-3-rotating-heat}
+% ===================================================================
+
+The preceding sections established the relativistic vorticity theorems and
+the equations of motion in rotating frames.  A critical ingredient for
+the rotating B\'enard problem---and, more broadly, for neutron star
+thermal evolution---is the equation governing heat propagation in a
+rigidly rotating body.  \citet{GavassinoRotatingHeat2025} have recently
+derived the unique causal relativistic heat equation for such systems,
+resolving longstanding difficulties with earlier proposals.
+
+\subsubsection{The universal rotating heat equation}
+Consider a medium whose particle flow $u^\mu$ is rigid in Born's sense,
+i.e.\ there exists a scalar function $\mathcal{K}(x^\alpha) > 0$ such that
+$\mathcal{K}\,u^\mu$ is a timelike Killing vector.  For a rigidly rotating
+body, $\mathcal{K} = 1/\sqrt{1 - \Omega^2 r^2/c^2}$ where $\Omega$ is the
+angular velocity and $r$ the cylindrical radius.  Then, assuming particle
+and rest-frame energy conservation, Gavassino proves that the
+\emph{unique} first-order causal heat equation is:
+\begin{equation}
+  \boxed{
+  u^\mu \nabla_\mu (\mathcal{K}\,T)
+  = \frac{1}{n\,c_v}\,\nabla_\mu\!\bigl[
+      \kappa\,\nabla^\mu(\mathcal{K}\,T)
+    \bigr]
+  + \mathcal{O}(\nabla^3)\,,
+  }
+  \label{eq:rotating-heat}
+\end{equation}
+where $T$ is the temperature, $n$ the particle density, $c_v$ the
+specific heat per particle, and $\kappa$ the thermal conductivity.
+The product $\mathcal{K}\,T$ is the \emph{Tolman-redshifted temperature},
+which is uniform in equilibrium: $\mathcal{K}\,T = \text{const}$ (the
+Tolman--Ehrenfest effect).
+
+The uniqueness of equation~\eqref{eq:rotating-heat} is remarkable:
+it is the \emph{only} first-order PDE for $T$ that is simultaneously
+(a)~manifestly covariant, (b)~consistent with the Tolman--Ehrenfest
+equilibrium condition, and (c)~admits no heat flux in equilibrium.
+All other proposed equations in the literature either violate one of
+these requirements or are equivalent to~\eqref{eq:rotating-heat} up
+to field redefinitions.
+
+\subsubsection{Physical content and connection to Fourier's law}
+The heat flux derived from equation~\eqref{eq:rotating-heat} is
+\begin{equation}
+  q^\mu = -\kappa\,T\,\Delta^{\mu\nu}\!
+  \left(\frac{\nabla_\nu T}{T} + u^\lambda\nabla_\lambda u_\nu\right)
+  + \mathcal{O}(\nabla^2)\,,
+  \label{eq:rel-fourier-rotating}
+\end{equation}
+which is the relativistic Fourier law with the well-known acceleration
+correction (see, e.g., Misner, Thorne \& Wheeler, Exercise~22.7).
+The acceleration term $u^\lambda\nabla_\lambda u_\nu$ captures the
+gravitational/centrifugal redshift of heat-carrying mediators
+(e.g.\ photons or phonons) as they travel between material elements
+at different gravitational potentials.
+
+\subsubsection{Hyperbolicity and causality}
+Equation~\eqref{eq:rotating-heat} is \emph{hyperbolic}: its principal
+part is $\propto \nabla_\mu\nabla^\mu T$, so information propagates
+at the speed of light.  This is in sharp contrast with the naive
+covariantization $u^\mu\nabla_\mu T = (nc_v)^{-1}\,\Delta^{\mu\nu}\nabla_\mu(\kappa\nabla_\nu T)$,
+which is parabolic and whose initial-value problem is ill-posed for
+rotating systems (by Frobenius' theorem, no hypersurfaces orthogonal
+to $u^\mu$ exist in a rotating frame).  The crucial observation is
+that the non-equilibrium temperature $T$ in~\eqref{eq:rotating-heat}
+is defined in a BDNK-like general frame, not in the Eckart frame.
+
+\subsubsection{Applications to neutron star cooling with rotation}
+For a neutron star rotating at angular velocity $\Omega$, the
+Tolman--Ehrenfest factor is $\mathcal{K} \approx (1 - \Omega^2 r^2/c^2)^{-1/2}$.
+This produces a centrifugally-induced temperature gradient
+$\delta T/T \sim \Omega^2 R^2/(2c^2)$ even in thermal equilibrium.
+For millisecond pulsars ($\Omega \sim 4000\;\mathrm{rad/s}$,
+$R \sim 10\;\mathrm{km}$), this gives $\delta T/T \sim 10^{-3}$,
+which is small but non-negligible for precision cooling models.
+
+Gavassino also derives the \emph{rotational correction to the
+Stefan--Boltzmann cooling law}: a rigidly rotating body with
+surface temperature $T_s$ cools according to
+\begin{equation}
+  \dot{E} = -\sigma_{\mathrm{SB}}\oint T^4\,\sqrt{g_{(2)}}\,\mathrm{d}^2\Sigma\,,
+\end{equation}
+where the integral is over the surface, $g_{(2)}$ is the determinant
+of the induced 2-metric, and $T$ varies across the surface due to
+the Tolman--Ehrenfest effect.  For a cylinder with tangential velocity
+$v = \Omega R$ approaching $c$, the cooling rate is significantly
+reduced compared to the non-rotating case because the redshifted
+temperature on the equator is lower than the pole temperature.
+
+\subsubsection{Implications for rotating thermal instability}
+For the thermal instability problem of this chapter, the rotating
+heat equation~\eqref{eq:rotating-heat} replaces the BDNK heat
+equation used in Chapter~II.  The key modifications are:
+\begin{enumerate}
+  \item The equilibrium temperature profile is no longer uniform
+    but satisfies $\mathcal{K}\,T = \text{const}$, so the adverse
+    temperature gradient must be measured relative to this centrifugal
+    baseline.
+  \item The effective thermal diffusivity becomes
+    $\kappa_{\text{eff}} = \kappa/(n\,c_v\,\mathcal{K})$, which is
+    enhanced near the rotation axis and suppressed at large radii.
+  \item The Coriolis coupling to heat waves is automatically included
+    through the covariant structure of~\eqref{eq:rotating-heat}.
+\end{enumerate}
+A complete linear stability analysis of the rotating B\'enard problem
+using equation~\eqref{eq:rotating-heat} is developed in
+\S\S\,\ref{sec:rel-3-24}--\ref{sec:rel-3-28}.
+
+% ===================================================================
 \section*{References for \S\S\,19--23}
 \addcontentsline{toc}{section}{References (\S\S\,19--23)}
 % ===================================================================
@@ -802,4 +914,12 @@ $L \sim 1\text{--}3$~km.
 
 \item A.~H.~\textsc{Taub}, `Relativistic Rankine--Hugoniot equations',
   \emph{Phys.\ Rev.}, \textbf{74}, 328--34 (1948).
+
+\item L.~\textsc{Gavassino} and M.~\textsc{Antonelli}, `Heat
+  propagation in rotating relativistic bodies',
+  arXiv:2509.00198 (2025).
+
+\item R.~C.~\textsc{Tolman}, `On the weight of heat and thermal
+  equilibrium in general relativity',
+  \emph{Phys.\ Rev.}, \textbf{35}, 904--24 (1930).
 \end{enumerate}

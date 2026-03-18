@@ -1,0 +1,915 @@
+% I dedicate this paper to my lovely bears Orsettusia, Ball, and Smartino.
+
+
+%\documentclass[useAMS,usenatbib,prd,preprint]{revtex4-1}
+\documentclass[a4paper, amsfonts, amssymb, amsmath, reprint, showkeys, nofootinbib, twoside,notitlepage]{revtex4-1}
+%\documentclass[prd, amsfonts, amssymb, amsmath, preprint, showkeys, nofootinbib, twoside]{revtex4-1}
+
+\def\aj{{AJ}}                   % Astronomical Journal
+\def\actaa{{Acta Astron.}}      % Acta Astronomica
+\def\araa{{ARA\&A}}             % Annual Review of Astron and Astrophys
+\def\apj{{ApJ}}                 % Astrophysical Journal
+\def\apjl{{ApJ}}                % Astrophysical Journal, Letters
+\def\apjs{{ApJS}}               % Astrophysical Journal, Supplement
+\def\ao{{Appl.~Opt.}}           % Applied Optics
+\def\apss{{Ap\&SS}}             % Astrophysics and Space Science
+\def\aap{{A\&A}}                % Astronomy and Astrophysics
+\def\aapr{{A\&A~Rev.}}          % Astronomy and Astrophysics Reviews
+\def\aaps{{A\&AS}}              % Astronomy and Astrophysics, Supplement
+\def\azh{{AZh}}                 % Astronomicheskii Zhurnal
+\def\baas{{BAAS}}               % Bulletin of the AAS
+\def\bac{{Bull. astr. Inst. Czechosl.}}
+                % Bulletin of the Astronomical Institutes of Czechoslovakia 
+\def\caa{{Chinese Astron. Astrophys.}}
+                % Chinese Astronomy and Astrophysics
+\def\cjaa{{Chinese J. Astron. Astrophys.}}
+                % Chinese Journal of Astronomy and Astrophysics
+\def\icarus{{Icarus}}           % Icarus
+\def\jcap{{J. Cosmology Astropart. Phys.}}
+                % Journal of Cosmology and Astroparticle Physics
+\def\jrasc{{JRASC}}             % Journal of the RAS of Canada
+\def\memras{{MmRAS}}            % Memoirs of the RAS
+\def\mnras{{MNRAS}}             % Monthly Notices of the RAS
+\def\na{{New A}}                % New Astronomy
+\def\nar{{New A Rev.}}          % New Astronomy Review
+\def\pra{{Phys.~Rev.~A}}        % Physical Review A: General Physics
+\def\prb{{Phys.~Rev.~B}}        % Physical Review B: Solid State
+\def\prc{{Phys.~Rev.~C}}        % Physical Review C
+\def\prd{{Phys.~Rev.~D}}        % Physical Review D
+\def\pre{{Phys.~Rev.~E}}        % Physical Review E
+\def\prl{{Phys.~Rev.~Lett.}}    % Physical Review Letters
+\def\pasa{{PASA}}               % Publications of the Astron. Soc. of Australia
+\def\pasp{{PASP}}               % Publications of the ASP
+\def\pasj{{PASJ}}               % Publications of the ASJ
+\def\rmxaa{{Rev. Mexicana Astron. Astrofis.}}%
+                % Revista Mexicana de Astronomia y Astrofisica
+\def\qjras{{QJRAS}}             % Quarterly Journal of the RAS
+\def\skytel{{S\&T}}             % Sky and Telescope
+\def\solphys{{Sol.~Phys.}}      % Solar Physics
+\def\sovast{{Soviet~Ast.}}      % Soviet Astronomy
+\def\ssr{{Space~Sci.~Rev.}}     % Space Science Reviews
+\def\zap{{ZAp}}                 % Zeitschrift fuer Astrophysik
+\def\nat{{Nature}}              % Nature
+\def\iaucirc{{IAU~Circ.}}       % IAU Cirulars
+\def\aplett{{Astrophys.~Lett.}} % Astrophysics Letters
+\def\apspr{{Astrophys.~Space~Phys.~Res.}}
+                % Astrophysics Space Physics Research
+\def\bain{{Bull.~Astron.~Inst.~Netherlands}} 
+                % Bulletin Astronomical Institute of the Netherlands
+\def\fcp{{Fund.~Cosmic~Phys.}}  % Fundamental Cosmic Physics
+\def\gca{{Geochim.~Cosmochim.~Acta}}   % Geochimica Cosmochimica Acta
+\def\grl{{Geophys.~Res.~Lett.}} % Geophysics Research Letters
+\def\jcp{{J.~Chem.~Phys.}}      % Journal of Chemical Physics
+\def\jgr{{J.~Geophys.~Res.}}    % Journal of Geophysics Research
+\def\jqsrt{{J.~Quant.~Spec.~Radiat.~Transf.}}
+                % Journal of Quantitiative Spectroscopy and Radiative Transfer
+\def\memsai{{Mem.~Soc.~Astron.~Italiana}}
+                % Mem. Societa Astronomica Italiana
+\def\nphysa{{Nucl.~Phys.~A}}   % Nuclear Physics A
+\def\physrep{{Phys.~Rep.}}   % Physics Reports
+\def\physscr{{Phys.~Scr}}   % Physica Scripta
+\def\planss{{Planet.~Space~Sci.}}   % Planetary Space Science
+\def\procspie{{Proc.~SPIE}}   % Proceedings of the SPIE
+
+\bibliographystyle{apsrev4-1}
+
+\usepackage{amsmath,amstext}
+\usepackage[T1]{fontenc}
+%\usepackage{apjfonts} 
+%\usepackage[figure,figure*]{hypcap}
+%\usepackage{amsbsy}
+\usepackage{amssymb}
+%\usepackage{amsmath}
+%\input{epsf}
+\usepackage{graphicx}
+\usepackage{ae,aecompl}
+%\usepackage{mathrsfs}
+%\usepackage[scr=rsfs,cal=boondox]{mathalfa}
+
+\DeclareFontFamily{OT1}{pzc}{}
+\DeclareFontShape{OT1}{pzc}{m}{it}{<-> s * [1.10] pzcmi7t}{}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage{cleveref}
+\usepackage{tensor}
+\usepackage{braket}
+\usepackage{enumitem}
+\usepackage{mhchem}
+\usepackage{amsthm}
+\usepackage{nccmath}
+\usepackage{mathrsfs}
+\usepackage{color}
+\newcommand{\todo}[1]{{\textcolor{blue}{\texttt{TODO: #1}} }}
+\newcommand{\red}[1]{{\color{red} #1}}
+\newcommand{\green}[1]{{\color{green} #1}}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\vect}[1]{\mathbf{{#1}}}
+\newcommand{\parallelsum}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\spc}{\quad \quad \quad}
+\newcommand{\paral}{\mathbin{\!/\mkern-5mu/\!}}
+\newcommand{\facciatabianca}{\newpage\shipout\null\stepcounter{page}}
+\newcommand{\riga}{\textcolor{white}{-}}
+
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}} 
+
+%\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+%\newcommand{\rth}{\mathrm{th}}
+%\newcommand{\re}{\mathrm{e}}
+%\newcommand{\rn}{\mathrm{n}}
+%\newcommand{\req}{\mathrm{eq}}
+%\newcommand{\rpf}{\mathrm{pf}}
+%\newcommand{\hpb}{\mathcalligra{h}\,\,}
+%\newcommand{\spb}{\mathcalligra{s}\,\,}
+%\newcommand{\comment}[1]{{\color{magenta}#1}}
+%\newcommand{\bs}[1]{{\textcolor{blue}{SB: #1}}}
+\newcommand{\K}{{\mathcal{K}}}
+\newcommand{\p}{{\mathrm{p}}}
+\def\deq{\hat{\delta}}
+\def\be{\begin{equation}}
+\def\ee{\end{equation}}
+\def\beq{\begin{eqnarray}}
+\def\eeq{\end{eqnarray}}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}
+
+\begin{document}
+\title{Thermoelectric conduction in General Relativity: a causal, stable, and well-posed theory}
+\author{L.~Gavassino}
+\affiliation{Department of Applied Mathematics and Theoretical Physics, University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, United Kingdom}
+
+\begin{abstract}
+We present a covariantly stable first-order framework for describing charge and heat transport in isotropic rigid solids embedded in curved spacetime. Working in the Lorenz gauge, we show that the associated initial value problem is both causal and locally well-posed in the fully nonlinear regime. We then apply such framework to explore a range of gravitothermoelectric effects in metals undergoing relativistic acceleration. These include (1) the separation of charge through acceleration, (2) the non-uniformity of Joule heating across accelerating circuits due to time dilation, and (3) the effect of redshift on magnetic diffusion. As an astrophysical application, we derive a relativistic Thomas-Fermi equation governing the charge distribution inside a compact object, also accounting for Seebeck charge displacements driven by cooling.
+\end{abstract} 
+\vspace{-0.2cm}
+
+\maketitle
+\noindent\textit{\bf Introduction -} Suppose we place an electric circuit just above the event horizon of a black hole, or on the floor of a rocket undergoing extremely large uniform acceleration. How does gravity/acceleration modify the flow of electric current? 
+
+This simple question is the starting point of a long-standing line of research on \textit{gravitoelectric effects} \cite{TolmanStewart1916,DeWittDrag1966,Anandan1984,Ahmedov:1998mif,Ahmedov:1999bqr,Ahmedov:2002bx,Ummarino:2017bvz,WangStewartTolman2023,BeiPhD,Gavassino:2025wcy}, namely phenomena that cause an electric circuit to effectively function as a gravimeter/accelerometer. The most elementary example is the well-known result that, in stationary conditions, it is the redshifted current $I\sqrt{-g_{tt}}$ (rather than $I$ itself) that remains uniform along a wire \cite{Anandan1984}; see figure \ref{fig:redshifcurrent} for a quick proof. Another classic instance is the Schiff-Barhill effect \cite{ShiffBarhill1966}, according to which a conductor in a gravitational field develops an equilibrium charge separation (the Stewart–Tolman effect \cite{TolmanStewart1916,Bhatia1969,Gavassino:2025wcy} is the same phenomenon with accelerations). While such effects are expected to be relevant primarily in charged compact objects \cite{Bhatia1969,Bekenstein1971,Zhand1982,Alcock1986,Usov:2004iz,Usov:2004kj,Ray:2003gt,Ray:2004yr,Negreiros:2009fd,Yousaf2016,Carvalho:2018kbt,FRocha2020,Bhatti2020,Arbanil2022,Sharif:2023vpb,Masa2023}, some are sufficiently pronounced to be detectable even in Earth’s weak gravitational field, and have been exploited as precision tests of Einstein’s equivalence principle \cite{Jain1987}.
+
+Despite the broad interest, a fully relativistic generalization of the standard solid-state theory of thermoelectricity (see e.g. \cite[\S 26]{landau8} or \cite[\S 21.C]{SommerfeldStatmech}) is still missing. Certain relativistic fluid theories do contain the relevant transport mechanisms \cite{Hernandez:2017mch,Fotakis:2019nbq,Dommes:2020ktk,Dash:2022xkz,GavassinoShokryMHD:2023qnw}, and we may just take their rigid limit. However, the resulting frameworks are either acausal (and therefore unstable \cite{Hiscock_Insatibility_first_order,Kost2000,GavassinoLyapunov_2020,GavassinoSuperlum2021}) or introduce a large number of additional ``second order'' transport coefficients whose values are generally unknown for relativistic materials. More importantly, none of the available models is known to admit a well-posed initial value formulation. In other words, it remains unclear whether their equations are mathematically solvable at all, particularly for objects undergoing relativistic rotation \cite{GavassinoAntonelli:2025umq}.
+
+Here, we adopt the Benfica-Disconzi-Noronha-Kovtun (BDNK) strategy \cite{Bemfica2019_conformal1,Kovtun2019,BemficaDNDefinitivo2020} to construct, for the first time, a causal, stable, and well-posed theory for thermoelectricity in relativistic solids, which reduces to the standard ``textbook'' framework \cite[\S 26]{landau8}\cite[\S 21.C]{SommerfeldStatmech} in the Newtonian limit. We then illustrate its predictive power by discussing several applications in simplified geometries.
+
+\noindent\textit{\bf Conventions -} The metric is treated as a fixed background, and has signature $(-,+,+,+)$. We work in natural units, with $c\,{=}\,\hbar\,{=}\,k_B\,{=}\,1$, and $e^2{=}\,4\pi/137$ \cite[\S 58]{Srednicki_2007}. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.65\linewidth]{RedshifCurrent.png}
+\caption{Continuity of the redshifted current. Under stationary conditions, the Lie derivative $\mathfrak{L}_{\partial_t} J$ vanishes, where $J^\nu$ is the current density, and $\partial_t$ is a Killing vector. Combining this with the conservation law $\nabla_\mu J^\mu{=}0$ and the Killing property $\nabla_\mu (\partial_t)^\mu{=}0$, we find that $\nabla_\mu [(\partial_t)^\mu J^\nu{-}J^\mu (\partial_t)^\nu]=0$. Integrating over the portion of wire in the figure, and applying Stokes' theorem, we obtain $\int_{\text{Area}_1} J^\mu(\partial_t)^\nu dS_{\mu \nu}=\int_{\text{Area}_2} J^\mu(\partial_t)^\nu dS_{\mu \nu}$, or, equivalently, $I_1 ||\partial_t||_1=I_2 ||\partial_t||_2$.}
+    \label{fig:redshifcurrent}
+\end{figure}
+
+
+\noindent\textit{\bf Derivation of the theory -} Following \cite{Anandan1984}, consider a solid medium, whose lattice moves with a macroscopic velocity field $u^\mu$ that is Born-rigid, i.e. is proportional to a timelike Killing vector $\K^\mu=\K u^\mu$ \cite{Born1909,Herglotz1910,Noether1910}. Suppose this conductor is in thermodynamic equilibrium. Then, all fields, including the Faraday tensor $F_{\mu\nu}=\nabla_\mu A_\nu-\nabla_\nu A_\mu$, are stationary, i.e. $\mathfrak{L}_\K \text{``fields''}=0$, and we have that \cite{Hernandez:2017mch}
+\vspace{-0.1cm}
+\begin{equation}\label{gringoo}
+\nabla_\mu (\K T)=0 \, , \spc \nabla_\mu (\K\mu)-\K\mathcal{E}_\mu=0\, , 
+\end{equation}
+where $T$ is the temperature, $\mu$ is the electric charge chemical potential, and $\mathcal{E}_\mu{=}F_{\mu \nu}u^\nu$ the electric field in the conductor's local rest frame \cite[\S 17.2.3]{special_in_gen}. Moreover, despite the possible presence of charge separation, there is no current or heat flow in equilibrium \cite{GavassinoShokryMHD:2023qnw,Gavassino:2025wcy}, i.e.
+\vspace{-0.1cm}
+\begin{equation}
+\begin{split}
+J^\mu ={}& \rho_{\text{lte}}(T,\mu;\text{``ion-lattice fields''})\, u^\mu\, , \\
+W^\mu ={}&   \varepsilon_{\text{lte}}(T,\mu;\text{``ion-lattice fields''})\, \K^\mu \, ,\\
+\end{split}
+\end{equation}
+where $J^\mu$ is the electric current, and $W^\mu =-T_\text{mat}^{\mu \nu}\K_\nu$, with $T_\text{mat}^{\mu \nu}$ is the matter stress-energy tensor \cite{GavassinoAntonelli:2025umq}.
+
+% \newpage there would be a gauge such that $\mathfrak{L}_\K A=0$. In this gauge, the electrochemical equilibrium conditions read
+% \vspace{-0.1cm}
+% \begin{equation}\label{1}
+% J^\mu =\rho_{\text{lte}} u^\mu\, , \spc
+% \K \mu -\K^\nu A_\nu=\text{const} \, ,
+% \end{equation}
+% where $\mu$ is the electric charge chemical potential, and $\rho_{\text{lte}}=\rho_{\text{lte}}(\mu;\text{``other intensive variables''})$ is the electric charge density in local thermodynamic equilibrium. Differentiating the second equation, and invoking Cartan's magic formula, $0=\mathfrak{L}_\K A=d\iota_\K A+\iota_\K dA=d(\K {\cdot} A)+\iota_\K F$, we would then have
+% \begin{equation}\label{gringoo}
+% \vspace{-0.1cm}
+% \nabla_\mu (\K\mu)-\K\mathcal{E}_\mu=0\, ,
+% \end{equation}
+% with $\mathcal{E}_\mu{=}F_{\mu \nu}u^\nu$ the electric field in the conductor's frame.
+
+\newpage
+Now, suppose the medium is \textit{not} in thermodynamic equilibrium (but the lattice is still moving rigidly). Then, we can model corrections to $J^\mu$ and $W^\mu$ as linear responses to the left sides of \eqref{gringoo} not being zero, with susceptibilities $\sigma_i,\kappa_i\,{=}\,\mathcal{O}(\tau)$ ($\tau=\,$``electron mean free path''). Then, the most general first-order theory is
+\begin{equation}\label{original}
+\begin{split}
+\K J^\mu {=}\rho_{\text{lte}} \K^\mu & {-}(\sigma_1 g^{\mu \nu}{+}\sigma_2 u^\mu u^\nu) [\nabla_\nu (\K\mu){-}\K\mathcal{E}_\nu] \\
+& {-}(\sigma_3 g^{\mu \nu}{+}\sigma_4 u^\mu u^\nu) \nabla_\nu (\K T) +\mathcal{O}(\tau^2) , \\
+W^\mu {=}\varepsilon_{\text{lte}} \K^\mu & {-}(\kappa_1 g^{\mu \nu}{+}\kappa_2 u^\mu u^\nu) [\nabla_\nu (\K\mu){-}\K \mathcal{E}_\nu] \\
+& {-}(\kappa_3 g^{\mu \nu}{+}\kappa_4 u^\mu u^\nu) \nabla_\nu (\K T) +\mathcal{O}(\tau^2). \\
+\end{split}
+\end{equation}
+But let us recall that, out of equilibrium, $T$ and $\mu$ are not uniquely defined, as the electrons' statistical distribution receives $\mathcal{O}(\tau)$-corrections, and there are many ways to approximate its shape with a Maxwellian fit \cite{KovtunTemperature2022vas,Weinberg1971,GavassinoInfiniteOrded2024pgl}. This allows us to introduce field redefinitions of the form \cite{GavassinoAntonelli:2025umq}
+\begin{equation}\label{hydrframe}
+\begin{split}
+T={}& \Tilde{T}+\tau_1 u^\nu \nabla_\nu \Tilde{T} +\tau_2 u^\nu \nabla_\nu \Tilde{\mu}+\mathcal{O}(\tau^2) \, , \\
+\mu={}& \Tilde{\mu}+\tau_3 u^\nu \nabla_\nu \Tilde{T} +\tau_4 u^\nu \nabla_\nu \Tilde{\mu}+\mathcal{O}(\tau^2) \, , \\
+\end{split}
+\end{equation}
+for some $\tau_i {=}\mathcal{O}(\tau)$. With a field-redefinition of this kind, we can always set $\sigma_2{=}\sigma_4{=}\kappa_2{=}\kappa_4{=}0$, as there are 4 fixable $\tau_i$'s in \eqref{hydrframe}. Neglecting the $\mathcal{O}(\tau^2)$, we finally obtain
+\begin{equation}\label{themain}
+\begin{split}
+\K J^\mu ={}& \rho_{\text{lte}} \K^\mu  -\sigma_1 [\nabla^\mu (\K\mu){-}\K\mathcal{E}^\mu] -\sigma_3 \nabla^\mu (\K T) \, , \\
+W^\mu ={}& \varepsilon_{\text{lte}} \K^\mu  -\kappa_1 [\nabla^\mu (\K\mu){-}\K \mathcal{E}^\mu] -\kappa_3  \nabla^\mu (\K T) \, . \\
+\end{split}
+\end{equation}
+In the stationary limit, \eqref{themain} reduces to the theory of \cite{Anandan1984}, which allows one to assign physical interpretations to the transport coefficients (e.g. $\sigma_1 =$ ``electric conductivity'').
+
+% \newpage
+% \begin{equation}\label{original}
+% \begin{split}
+% J^\mu =\rho_{\text{lte}} u^\mu & -\dfrac{\sigma}{\K} g^{\mu \nu} [\nabla_\nu (\K\mu)-\K\mathcal{E}_\nu] \\
+% &-\dfrac{\sigma'}{\K} u^\mu u^\nu [\nabla_\nu (\K\mu)-\K\mathcal{E}_\nu] +\mathcal{O}(\nabla^2) \, ,\\
+% \end{split}
+% \end{equation}
+% where $\sigma$ and $\sigma'$ are two first-order transport coefficients, the former being the electric conductivity, which coincides with the charge diffusivity (by the Wiedemann-Franz law). Note that, in our power counting scheme, $\mathcal{E}_\nu$ scales like $\mathcal{O}(\nabla)$. Also, note that the second line of \eqref{original} can be notably simplified, since $\mathcal{E}_\nu u^\nu=F_{\mu \nu}u^\mu u^\nu=0$ and $u^\mu \nabla_\mu \K =0$ (by the Killing condition). Hence, we are left with
+% \begin{equation}
+% J^\mu\, {=}\,(\rho_{\text{lte}}{-}\sigma' u^\nu \nabla_\nu \mu) u^\mu \,{+}\,\sigma [\mathcal{E}^\mu{-}\K^{-1}\nabla^\mu (\K\mu)]  \,{+}\,\mathcal{O}(\nabla^2) \, .
+% \end{equation}
+% Lastly, let us recall that, out of equilibrium, the chemical potential $\mu$ is not uniquely defined, because the electrons do not occupy a perfect Maxwellian, and there are multiple ways to approximate a non-Maxwellian with a Maxwellian fit. This allows us to introduce field redefinitions of the form $\mu =\Tilde{\mu}+\tau u^\nu \nabla_\nu \Tilde{\mu}+\mathcal{O}(\nabla^2)$, where $\tau$ is of the order of the equilibration timescale of the electrons. With a field redefinition of this kind, we can set $\sigma'=0$. Neglecting the order $\nabla^2$, we finally arrive at
+% \begin{equation}\label{themain}
+% \boxed{J^\mu =\rho_{\text{lte}} u^\mu +\sigma [\mathcal{E}^\mu{-}\K^{-1}\nabla^\mu (\K\mu)]   \, .  }
+% \end{equation}
+ 
+
+\noindent\textit{\bf Causality and well-posedness -} We are now ready to state some self-consistency results.
+\begin{theorem}
+Suppose that \eqref{themain} holds, with $\sigma_1\kappa_3-\sigma_3 \kappa_1\neq 0$. Then, in the Lorenz gauge \textup{(}$\nabla_\mu A^\mu {=}0$\textup{)}, Maxwell's system
+\begin{equation}\label{maxwell}
+\begin{split}
+& \nabla_\mu F^{\nu \mu} =J^\nu \, , \\
+& \nabla_\mu J^{\mu} =0 \, , \\
+& \nabla_\mu W^{\mu} =\K \mathcal{E}_\mu J^\mu \, , \\
+\end{split}
+\end{equation} 
+defines a well-posed Cauchy problem for the variables $\Psi{=}\{A^\nu,\mu,T\}$, given initial data on spacelike surfaces. Furthermore, the resulting dynamics propagate signals precisely at the speed of light.
+\end{theorem}
+\begin{proof}
+It will be enough to show that the system \eqref{maxwell} takes the form $\nabla_\mu \nabla^\mu \Psi =\mathcal{F}(\Psi,\nabla_\alpha\Psi,x^\alpha)$, as then we can invoke Theorem 10.1.3 of \cite{Wald}. To this end, we recall that, in the Lorentz gauge, the first line of \eqref{maxwell} reads $\nabla_\mu \nabla^\mu A^\nu =R^\nu _\mu A^\mu {-}J^\nu$, where $R_{\mu \nu}$ is the Ricci curvature \cite[\S 22.4]{MTW_book}. This already has the form we want, since $J^\mu$ only contains first derivatives. The second and third lines can be rearranged, with a bit of algebra, in the form
+\begin{equation}\label{complichiamo}
+\begin{bmatrix}
+\sigma_1 & \sigma_3 \\
+\kappa_1 & \kappa_3 \\
+\end{bmatrix}
+\begin{pmatrix}
+\nabla_\mu \nabla^\mu \mu \\
+\nabla_\mu \nabla^\mu T \\
+\end{pmatrix}
+= \text{``terms with at most }\nabla\Psi\text{''} \, .
+\end{equation}
+To arrive here, one needs to use the product rule, and the identity $\nabla_\mu \mathcal{E}^\mu=-u_\nu J^\nu +F^{\mu \nu}\nabla_\mu u_\nu$. Now, the condition $\sigma_1\kappa_3-\sigma_3 \kappa_1\neq 0$ guarantees that the matrix in \eqref{complichiamo} is invertible, which allows us to isolate $\nabla_\mu \nabla^\mu \Psi$.
+\end{proof}
+
+\newpage
+\noindent\textit{\bf Entropy -} To first order in the mean free path, the entropy current of the conductor reads \cite{Israel1981}
+\begin{equation}\label{entroycurrent}
+\begin{split}
+\K s^\mu = s_\text{lte} \K^\mu &{-}\dfrac{\kappa_1{-}\mu\sigma_1}{T} [\nabla^\mu (\K\mu){-}\K\mathcal{E}^\mu] \\ &{-}\dfrac{\kappa_3{-}\mu\sigma_3}{T} \nabla^\mu (\K T)+\mathcal{O}(\tau^2) \, .\\
+\end{split}
+\end{equation}
+Its four-divergence can be computed with the aid of \eqref{maxwell}. Defined
+$V^\mu =[\K^{-1}\nabla^\mu(\K \mu){-}\mathcal{E}^\mu, \K^{-1}\nabla^\mu(\K T)]$, we have
+\begin{equation}\label{secondlaw}
+T\nabla_\mu s^\mu =V^\mu
+\begin{bmatrix}
+\sigma_1 & \sigma_3 \\
+\\
+\dfrac{\kappa_1{-}\mu\sigma_1}{T} & \dfrac{\kappa_3{-}\mu\sigma_3}{T} \\
+\end{bmatrix}V^T_\mu +\mathcal{O}(\tau^2) \, .
+\end{equation}
+Then, Onsager's principle \cite[\S 14.5]{Callen_book} immediately tells us that $T\sigma_3=\kappa_1{-}\mu\sigma_1$, in agreement with \cite{Bajec:2025dqm}. Moreover, the second law of thermodynamics requires that the $2{\times}2$ (symmetric) matrix above be positive definite. In fact, the conservation laws in \eqref{maxwell} imply that $\K_\mu V^\mu {=}\mathcal{O}(\tau)$ onshell, so $V^\mu$ is effectively spacelike in \eqref{secondlaw}, up to an error that scales like $\mathcal{O}(\tau^2)$. The resulting inequalities are
+\begin{equation}
+\sigma_1>0 \, , \spc \kappa_3-\mu\sigma_3-T\sigma_3^2/\sigma_1>0 \, ,
+\end{equation}
+the latter being interpretable as the positivity of the heat conductivity \cite[\S 26]{landau8}.
+
+\noindent\textit{\bf Covariant stability -} Since the theory is causal, stability in the rest frame implies covariant stability \cite{GavassinoSuperlum2021,GavassinoBounds2023myj}. Hence, we linearize \eqref{maxwell} around a uniform charge-neutral state in Minkowski space, with $\K{=}1$ and $u^\mu{=}(1,0,0,0)$. By analysing the ``curl'' Maxwell equations, we find that there are 4 transversal quasinormal modes, all of which obey a causal magnetic diffusion equation:
+\begin{equation}\label{magneticdiffusion}
+\partial_t \mathcal{B}_j =\dfrac{1}{\sigma_1}\partial_\mu \partial^\mu \mathcal{B}_j \, ,
+\end{equation}
+which is stable \cite{GavassinoBounds2023myj}. The remaining 4 quasinormal modes are longitudinal and have no magnetic field. 
+Their evolution can be studied by linearizing $\nabla_\mu J^\mu=0$ and \eqref{secondlaw}. This results in the system
+\begin{equation}\label{longtudo}
+\left\{ \!
+\begin{bmatrix}
+\chi_{\mu \mu} & \chi_{\mu T} \\
+\chi_{T\mu} & \chi_{TT} \\
+\end{bmatrix}\!\partial_t{-}\!
+\begin{bmatrix}
+\sigma_1 & \sigma_3 \\
+\sigma_3 & \sigma_5 \\
+\end{bmatrix}\! \partial_\mu \partial^\mu 
+\right\}\!
+\begin{bmatrix}
+\delta \mu \\
+\delta T \\
+\end{bmatrix}
+{+}
+\begin{bmatrix}
+\sigma_1\\
+\sigma_3\\
+\end{bmatrix} \!
+\partial_\mu \mathcal{E}^\mu
+{=}\,0,
+\end{equation}
+where $\chi_{ij}$ is the susceptibility matrix $\partial(\rho,s)/\partial(\mu,T)$, and we defined $T\sigma_5=\kappa_3{-}\mu\sigma_3$. Let us note that the two matrices in \eqref{longtudo} are both symmetric and positive definite, and thus can be rewritten as $N\Lambda N^T$ and $NN^T$ respectively, with $N$ invertible and $\Lambda=\text{diag}(\lambda_1,\lambda_2)$, $\lambda_i>0$. Hence, assuming a plane-wave form $\Psi \propto e^{\Gamma t+ikz}$ ($k\in \mathbb{R}$), and invoking the equation $\partial_\mu \mathcal{E}^\mu=\delta J^0$, \eqref{longtudo} becomes
+\begin{equation}\label{Ups}
+\begin{split}
+&[\Gamma^2+(\Pi{+}\Lambda) \Gamma +\Pi \Lambda+k^2]\Upsilon =0\, ,\\
+\text{with }\quad &\Upsilon= N^T \begin{bmatrix}\!
+\delta \mu \\
+\delta T \\
+\end{bmatrix}\, , \quad \Pi= N^T\begin{bmatrix}
+1 & 0 \\
+0 & 0 \\
+\end{bmatrix}
+N \, .\\
+\end{split}
+\end{equation}
+In the Supplementary Material, we prove that, as long as $\Pi$ and $\Lambda$ are non-negative definite (which they are), the solutions of \eqref{Ups} always have $\mathfrak{Re}\Gamma\leq 0$, i.e. are stable. 
+
+The regime of validity and physical content of each mode is discussed in the Supplementary Material.
+
+
+%Defined the perturbed variables $\{\varphi,\psi\}$, and the coefficients $\chi_i$, via
+% \begin{equation}
+% \begin{pmatrix}
+% \varphi \\
+% \psi \\
+% \end{pmatrix}
+% =
+% \begin{bmatrix}
+% \sigma_1 & \sigma_3 \\
+% \sigma_3 & \sigma_5 \\
+% \end{bmatrix}
+% \begin{pmatrix}
+% \delta\mu\\
+% \delta T\\
+% \end{pmatrix} 
+% =
+% \begin{bmatrix}
+% \chi_1 & \chi_2 \\
+% \chi_3 & \chi_4 \\
+% \end{bmatrix}^{-1}
+% \begin{pmatrix}
+% \delta \rho_\text{lte} \\
+% \delta \varepsilon_\text{lte} \\
+% \end{pmatrix} \, ,
+% \end{equation}
+% we have the following equation of motion
+% \begin{equation}
+% \left\{\!
+% \begin{bmatrix}
+% \chi_1\sigma_1 {+}(\chi_1{+}\sigma_1)\partial_0  & \chi_2(\sigma_1{+}\partial_0) \\
+% \chi_1 \kappa_1{+}(\chi_3{+}\kappa_1)\partial_0  & \chi_2 \kappa_1{+}\chi_4\partial_0 \\
+% \end{bmatrix}
+% \!\!{-}\partial_\mu \partial^\mu\!\right\}\!
+% \begin{pmatrix}
+% \varphi \\
+% \psi \\
+% \end{pmatrix}
+% \!{=}\,0 .
+% \end{equation}
+% Since this system is causal, it is enough to prove stability in one reference frame \cite{GavassinoSuperlum2021}. For simplicity, we will assume here that $\chi_2=0$, and leave the more complete analysis to the Supplementary Material. Assuming that $\Psi\propto e^{ikx^1+\Gamma x^0}$, we obtain the dispersion relations
+% \begin{equation}
+% \begin{split}
+% &\Gamma^2+(\chi_1{+}\sigma_1)\Gamma +\chi_1\sigma_1+k^2 =0\, , \\
+% &\Gamma^2+\chi_4\Gamma +k^2 =0\, , \\
+% \end{split}
+% \end{equation}
+% which are stable provided that $\chi_1$ and $\chi_4$ are positive.
+% \newpage
+
+\newpage
+\noindent\textit{\bf Setup for applications 1,2,3 -} In what follows, we apply our theory to investigate extreme gravitoelectric phenomena arising at high accelerations. To this end, we discuss the behavior of rigid pieces of equipment aboard a rocket undergoing hyperbolic (i.e. uniformly accelerated) motion in Minkowski space, see Figure \ref{fig:rocket}. As usual, we work in Rindler coordinates ($ds^2{=}-g^2z^2 dt^2{+}dx^2{+}dy^2{+}dz^2$), so that the local velocity of the equipment aligns with the Killing vector $\partial_t$, and thus $\K =gz$.
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Rocket.png}
+\caption{A rocket containing a circuit undergoes rigid motion in Minkowski space ($ds^2={-}d\mathcal{T}^2{+}dx^2{+}dy^2{+}d\mathcal{Z}^2$), with velocity $u^\mu$ proportional to the generator of boosts, $\mathcal{Z}\partial_\mathcal{T}{+}\mathcal{T}\partial_\mathcal{Z}$. In Rindler coordinates ($\mathcal{T}{=}z\sinh(gt)$, $\mathcal{Z}{=}z\cosh(gt)$), we have $u^\mu\partial_\mu =(gz)^{-1}\partial_t$, and the proper acceleration  (blue arrows) of a piece of equipment is $a\,{=}\,1/z$, which increases towards the rear of the rocket, and diverges at Rindler's horizon ($z=0$).}
+    \label{fig:rocket}
+\end{figure}
+
+\noindent\textit{\bf Application 1: Inertia of the electron -} We consider a piece of metal with uniform transport properties  ($\sigma_1{=}\text{const}$), which is externally kept in an isothermal state ($\K T=\text{const}$, $\nabla_\mu W^\mu=\K \mathcal{E}_\mu J^\mu +\text{``external heat''}$). Assuming invariance under $xy$-translations, we ask: How does the charge tend to arrange? To answer this question, we assume that $F=F_{tz}(t,z) dt\wedge dz$, which trivially solves the homogeneous Maxwell's equations ($dF=0$), and we write $\nabla_\mu F^{\nu \mu}=J^\nu$ explicitly, which gives
+\begin{equation}\label{hyperbolz}
+\begin{split}
+\partial_z \mathcal{E}^z={}& \rho_\text{lte}+\sigma_1 (gz)^{-1}\partial_t\mu \, , \\
+\partial_t \mathcal{E}^z={}& \sigma_1 [\partial_z(gz\mu)-gz\mathcal{E}^z] \, . \\
+\end{split}
+\end{equation}
+To close the system, we need an equation relating $\rho_\text{lte}$ and $\mu$. We posit $\mu \,{=}\,{-}\mu_0\,{+}\, b^2\rho_\text{lte}$ (with $\mu_0$ and $b$ positive constants, estimated in the Supplementary Material), which is valid when $\rho_\text{lte}$ is small and the positive charges are equally spaced.  
+Moreover, instead of solving \eqref{hyperbolz} exactly, we recall that $\sigma_1\K^\mu \nabla_\mu \mu =\mathcal{O}(\tau^2)$, so the term $\partial_t\mu$ can be neglected, and we obtain a single parabolic equation: 
+\begin{equation}\label{ezparab}
+\dfrac{\partial_t \mathcal{E}^z}{g\sigma_1}=-\mu_0 +b^2\, \partial_z (z\partial_z \mathcal{E}^z)-z\mathcal{E}^z \, .
+\end{equation}
+We solve this equation numerically, assuming local charge neutrality at $t=0$, and requiring that no charge leaves the chunk of metal. The resulting evolution is shown in figure \ref{fig:parabolic}. As can be seen, over time, the electrons are \textit{falling behind}, due to their inertia, and they accumulate on the rear. This stops when a sufficiently strong electric field is formed, which counteracts the inertia. This is an instance of the Stewart-Tolman effect \cite{TolmanStewart1916} in relativity. 
+\newpage
+
+\begin{figure}
+    \centering
+\includegraphics[width=0.99\linewidth]{belec.pdf}
+\includegraphics[width=0.99\linewidth]{brho.pdf}
+    \caption{Electric field (upper panel) and charge density (lower panel) of a solution of \eqref{ezparab} with $\mathcal{E}^z(t{=}0)=\mathcal{E}^z(\text{boundary})=0$, for a piece of metal extending from $z=b$ to $z=2b$. The curves represent snapshots at $g\sigma_1 b t=0$ (gray), $0.01$ (red), $0.05$ (magenta), $0.1$ (blue), $\infty$ (dashed).}
+    \label{fig:parabolic}
+\end{figure}
+
+% \noindent\textit{\bf Application 2: Accelerated capacitors -} Consider now the circuit in figure \ref{fig:rocket}. Based on what we just saw, we expect to see some residual charge in the capacitor even in equilibrium, since the electrons will tend to ``fall'' into the left plate. Let us estimate such residual charge.
+
+% In thermodynamic equilibrium, we can choose a gauge such that $A=-\varphi\, dt$, where $\varphi$ is the redshifted electric potential, and $\partial_t \varphi =0$ \cite{Gavassino:2025wcy}. Then, $\K \mathcal{E}=-d\varphi$, and equation \eqref{gringoo} becomes $\K\mu+\varphi=\text{const}$, which implies
+% \begin{equation}\label{c1}
+% \varphi_R-\varphi_L=gz_L \mu_L-gz_R\mu_R \, ,
+% \end{equation}
+% where ``$L$'' and ``$R$'' stand for respectively Left and Right plate. Moreover, we can solve the first equation of \eqref{hyperbolz} for two charge plates, and we obtain the usual capacitor equation $\mathcal{E}^z{=}\,Q_L/A\,{=}\,{-}Q_R/A$ (by charge neutrality), where $A$ is the surface area of the plates. Integrating the relation $gz\mathcal{E}_z=-\partial_z \varphi$ between the plates, we then obtain
+% \begin{equation}\label{c3}
+% \varphi_R-\varphi_L =\dfrac{gQ_R}{2A} (z_R^2-z_L^2) \, .
+% \end{equation}
+% Equaling the right sides of \eqref{c1} and \eqref{c3}, and assuming a relation of the form $\mu_{L/R}=-\mu_0+\sqrt{b} \, Q_{L/R}/A$ (see Supplementary Material for a derivation), we obtain, in the limit where $z_L\gg z_R-z_L\gg \sqrt{b}=\text{``Debye length''}$, 
+% \begin{equation}
+% Q_R \approx \dfrac{\mu_0 A}{z_L} \, ,
+% \end{equation}
+% which tells us that the equilibrium charge is proportional to the proper acceleration felt by the capacitor.
+
+\noindent\textit{\bf Application 2: Time dilation and Joule heating -} From Fig.~\ref{fig:redshifcurrent}, we know that a stationary current $I$ in an accelerated circuit scales like $1/z$, by time dilation. But since the Joule power output grows like $I^2\sim 1/z^2$, we expect wires to get warmer towards the rear of the rocket, by an amount that exceeds the redshift effect (which only predicts $T\sim 1/z$). Let us quantify this effect.
+\begin{figure}[t!]
+    \centering
+\includegraphics[width=0.9\linewidth]{zTnonredshift.pdf}
+\includegraphics[width=0.9\linewidth]{zTredshift.pdf}
+\caption{Solution of \eqref{dzdzT} with boundary conditions $z_1T(z_1){=}z_2 T(z_2)$. In the upper panel, we set $z_1/z_2=0.99$ and $\mathcal{J}^2/[\sigma_1\kappa_3T(z_2)]=10^5$. In the lower panel, we set $z_1/z_2=10^{-7}$, and $\mathcal{J}^2/[\sigma_1\kappa_3T(z_2)]=1$. }
+    \label{fig:temeprature}
+\end{figure}
+
+We consider a stationary (thermally isolated) system, where two pieces of equipment located respectively at $z_1$ and $z_2$, and having the same redshifted temperature ($z_1T_1=z_2T_2$), are connected by a straight cable crossed by a uniform redshifted current density $zJ^z {=}\text{const} {\equiv} \mathcal{J}$. Let us estimate the temperature along the cable. Assuming $\sigma_3{=}0$ and $\kappa_3{=}\text{const}$, equations \eqref{entroycurrent} and \eqref{secondlaw} become
+\vspace{-0.1cm}
+\begin{equation}\label{sz}
+zs^z{=}-\dfrac{\kappa_3}{T} \partial_z (zT) \, ,\quad
+\dfrac{T}{z}\partial_z(zs^z)=\dfrac{\mathcal{J}^2}{\sigma_1 z^2}\,{+}\,\dfrac{\kappa_3}{Tz^2} [\partial_z(zT)]^2 .
+\end{equation}
+Combining them together, we arrive at the equation
+\vspace{-0.1cm}
+\begin{equation}\label{dzdzT}
+\partial_z\left[z\partial_z(zT)\right]=-\dfrac{\mathcal{J}^2}{\sigma_1\kappa_3} \, ,
+\end{equation}
+to be solved with boundary conditions $T(z_1)\,{=}\,T_1$ and $T(z_2)\,{=}\,T_2$. In figure \ref{fig:temeprature}, we provide two solutions: One where the acceleration is negligible ($z_1\, {\rightarrow}\, \infty$), and one where it matters ($z_1\,{\rightarrow}\, 0$). In the former, the cable’s hottest spot lies at its midpoint, which is the farthest point from the thermostatic boundaries, where the cable gives off its heat. In the latter, the peak in redshifted temperature has moved notably to the left, as predicted.
+
+\newpage
+\noindent\textit{\bf Application 3: Redshifted magnetic diffusion -} Let us see how the magnetic diffusion equation \eqref{magneticdiffusion} changes on our rocket.
+We consider a transversal electromagnetic wave whose four-potential is $A=A_x(t,z)dx$. Then, the Faraday tensor is $F=\partial_t A_x dt\wedge dx+\partial_z A_x dz \wedge dx$, and the only relevant Maxwell equation is $J^x=\nabla_\mu F^{x \mu}$. Since nothing depends on $x$, we have $J^x{=}\sigma_1\mathcal{E}^x$, and thus 
+\begin{equation}\label{ptAeq1s1}
+\partial_t A_x=\dfrac{1}{\sigma_1} \partial_z \left[ gz\partial_z A_x\right] -\dfrac{1}{\sigma_1 g z} \partial^2_t A_x \, ,
+\end{equation}
+where we may neglect the term with the second time derivative.
+Applying $\partial_z$ on both sides, and recalling that $\mathcal{B}^y=-\varepsilon^{yzxt}F_{zx}u_t=\partial_z A_x$ \cite{special_in_gen}, we arrive at
+\begin{equation}\label{grasch}
+\partial_t \mathcal{B}^y=\dfrac{1}{\sigma_1} \partial_z^2 \left( gz\mathcal{B}^y\right) \, ,
+\end{equation}
+which is the magnetic diffusion equation we were looking for. Its stationary solutions take the form $\mathcal{B}^y= c_1+c_2/z $, so both $\mathcal{B}^y=\text{const}$ (a uniform magnetic field) and $gz\mathcal{B}^y=\text{const}$ (a uniform redshifted magnetic field) are admissible steady states. The question is then which of these represents the \textit{true} equilibrium, i.e. the one that does not rely on continuous dissipation to be sustained. The answer becomes evident once we observe that the solution of \eqref{ptAeq1s1} consistent with $\mathcal{B}^y= c_1+c_2/z $ is $A_x = c_1 \left(z+gt/{\sigma_1}\right) + c_2 \ln z $, implying that the entropy production is $\nabla_\mu s^\mu \propto (J_x)^2 \propto (\mathcal{E}_x)^2 \propto (\partial_t A_x)^2 \propto (c_1)^2$. This shows that keeping $\mathcal{B}^y$ uniform necessarily entails a continuous dissipation of heat, while the true diffusive equilibrium is instead the configuration in which the \textit{redshifted} magnetic field $gz\mathcal{B}^y$ is uniform.
+
+\noindent\textit{\bf Application 4: Charged relativistic stars -} Let us step out of our rocket, and land on a problem of astrophysical interest. In most descriptions of charged compact objects, one assumes either $\rho_\text{lte}=\text{const} \times \varepsilon_\text{lte}$ (for bulk charge), or $\rho_\text{lte}\,{\sim}\, e^{-(r-R_\star)^2/b^2}$ (for surface charge) \cite{Ray:2003gt,Ray:2004yr,Negreiros:2009fd,Carvalho:2018kbt,FRocha2020,Arbanil2022}. These choices are made for convenience, since modeling the actual charge stratification would require a fully relativistic Thomas-Fermi equation for the electron cloud. Our theory produces such an equation naturally.
+
+We work in a static, spherically symmetric background spacetime ($ds^2\,{=}\,-e^{2\Phi(r)}dt^2\,{+}\,e^{2\Lambda(r)}dr^2\,{+}\,r^2 d^2\Omega$), and we assume that the Faraday tensor is also spherically symmetric (but not necessarily static), so that $F\,{=}\,F_{tr}(t,r)\,dt\,{\wedge} \,dr$, which automatically fulfills $dF=0$. Then, the non-trivial Maxwell equations are $\nabla_\mu F^{t\mu}\,{=}\,J^t$ and $\nabla_\mu F^{r\mu}\,{=}\,J^r$, which explicitly read
+\vspace{-0.1cm}
+\begin{equation}\label{maxsphere}
+\begin{split}
+&\dfrac{e^{-\Lambda}}{r^2} \partial_r \left(r^2 e^{\Lambda}\mathcal{E}^r\right)= \rho_\text{lte} +\sigma_1 e^{-\Phi}\partial_t \mu+\sigma_3 e^{-\Phi}\partial_t T \, ,\\
+&e^{-\Phi}\partial_t \mathcal{E}_r =\sigma_1\left[e^{-\Phi}\partial_r (e^\Phi \mu){-}\mathcal{E}_r\right]\!{+}\sigma_3e^{-\Phi}\partial_r \left(e^\Phi T\right)\, .\\
+\end{split}
+\end{equation}
+In a time-independent scenario, one can combine the two lines of \eqref{maxsphere} into a single equation:
+\vspace{-0.1cm}
+\begin{equation}\label{debyeHuck}
+\dfrac{e^{-\Lambda}}{r^2}\partial_r \left\{r^2 e^{-\Lambda-\Phi}\left[\partial_r \left( e^\Phi \mu\right)+\dfrac{\sigma_3}{\sigma_1}\partial_r \left( e^\Phi T\right)\right]\right\}=\rho_\text{lte} \, ,
+\end{equation}
+which is of Thomas-Fermi type \cite{Thomas_1927,Fermi1927}.
+Gradients of $e^\Phi T$ are often present since stars cool down or accrete. The Seebeck coefficient $-\sigma_3/\sigma_1$ (or ``thermopower'') has been computed from microphysics in several references \cite{Geppert1991,Yakovlev1984,Schmitt:2017efp,Harutyunyan:2024hsd,Bajec:2025dqm}, but the most common expression in neutron star models is \cite{Gakis:2024obw} ($n_e =$ ``electron number density'')
+\begin{equation}
+\dfrac{\sigma_3}{\sigma_1} =-\left(\dfrac{\pi^4}{3n_e e^3} \right)^{1/3} T \, .
+\end{equation}
+In the cold limit, we can neglect the Seebeck correction, and \eqref{debyeHuck} becomes a differential equation for $\mu$ alone,
+to be solved with boundary conditions $[\partial_r\mu]_{r=0}\,{=}\,0$ and $4\pi R_\star^2 \left[e^{-\Lambda-\Phi}\partial_r \left( e^\Phi \mu\right)\right]_{r=R_\star} =Q=\text{``total charge''}$. 
+
+In figure \ref{fig:compactness}, we test the assumption $\rho_\text{lte}=\text{const} \times \varepsilon_\text{lte}$ against our theory. Specifically, we consider a low temperature, constant density star ($\varepsilon_\text{lte}{=}\text{const}$) with compactness $C{=}0.33$, corresponding to the metric \cite[\S 11.6]{Weinberg_book_1972}
+\vspace{-0.1cm}
+\begin{equation}
+\begin{split}
+ e^{-\Lambda(r)}={}& \sqrt{1{-}2C \tfrac{r^2}{R_\star^2}\,} \, , \\ 
+ e^{\Phi(r)}={}& \tfrac{3}{2}e^{-\Lambda(R_\star)}-\tfrac{1}{2}e^{-\Lambda(r)}\, , \\
+\end{split}
+\end{equation}
+and we ``prepare'' the electron cloud so that $\rho_\text{lte}=\text{const}$. Then, we let the system evolve according to \eqref{maxsphere}, with $\sigma_1=\text{const}$ and $\mu=-\mu_0+b^2\rho_\text{lte}$ ($\mu_0=\text{const}$, $b=0.1\, R_\star$).
+
+As expected, the electrons spontaneously migrate to a solution of the Thomas-Fermi equation \eqref{debyeHuck}. The final configuration is a balance between two competing effects: the familiar tendency of charge to accumulate near the surface, within a layer of thickness $b$, due to electrostatic repulsion, and the opposing tendency of electrons to concentrate at the center under the influence of gravity.
+
+% As an illustration, figure \ref{fig:compactness} displays the solution of \eqref{debyeHuck} at $T=0$, assuming $\mu = -\mu_0 + b^2\rho_\text{lte}$, and a constant energy-density star with compactness $C$ \cite[\S 11.6]{Weinberg_book_1972}, so
+% \vspace{-0.1cm}
+% \begin{equation}
+% \begin{split}
+%  e^{-\Lambda(r)}={}& \sqrt{1{-}2C \tfrac{r^2}{R_\star^2}\,} \, , \\ 
+%  e^{\Phi(r)}={}& \tfrac{3}{2}e^{-\Lambda(R_\star)}-\tfrac{1}{2}e^{-\Lambda(r)}\, . \\
+% \end{split}
+% \end{equation}
+% The solutions of \eqref{debyeHuck} are the result of a competition between two phenomena. The first is the familiar tendency of charge to accumulate on the surface, within a layer of thickness set by the Thomas-Fermi length $b$. The second is the desire of the electrons to accumulate in the center due to gravity.
+
+ 
+
+% \noindent\textit{\bf Application 5: Cooling-induced Seebeck densities -} In our example, we assumed that $e^\Phi T{=}\text{const}$. In reality, however, the redshifted temperature of most compact objects decreases outward as a result of cooling. Such thermal gradients then alter the charge distribution via the Seebeck effect (the term ${\propto} \,\sigma_3$). 
+
+% In the stationary limit, with $\partial_r (Te^\Phi){\neq} 0$, \eqref{maxsphere} becomes
+% \begin{equation}\label{debyeHuck2}
+% \dfrac{e^{-\Lambda}}{r^2}\partial_r \left\{r^2 e^{-\Lambda-\Phi}\left[\partial_r \left( e^\Phi \mu\right)+\dfrac{\sigma_3}{\sigma_1}\partial_r \left( e^\Phi \mu\right)\right]\right\}=\rho_\text{lte} \, .
+% \end{equation}
+
+
+
+\begin{figure}[h!]
+    \centering
+\includegraphics[width=0.93\linewidth]{compactone.pdf}
+\caption{Density profile of a solution of \eqref{maxsphere} with $\rho(t{=}0)=\text{const}$ and $\mathcal{E}_r(r{=}R_\star)=\text{const}$ (no charge escapes the star), both adjusted so that $Q/(R_\star\mu_0)=-10$. The curves represent snapshots at $\sigma_1 t=0$ (gray), $1$ (red), $3$ (blue), and $\infty$ (dashed). The dashed line also solves \eqref{debyeHuck}.}
+    \label{fig:compactness}
+\end{figure}
+
+
+
+\newpage
+\noindent\textit{\bf Conclusions -} We have presented a robust framework for modeling electrothermal effects in strong gravitational fields, providing a unified description of diverse phenomena, ranging from the magnetothermal evolution of neutron stars to the electric stratification of quark stars. Our framework can be straightforwardly extended to incorporate bound charges, neutrino luminosities, and anisotropies arising from strong magnetic fields or the solid lattice. The modified equations with a strong magnetic field are provided in the Supplementary Material for completeness.
+
+Beyond its astrophysical relevance, the theory is of fundamental interest even in the context of inertial systems in flat spacetime. In fact, classical electrodynamics is the archetype of a causal, special-relativistic field theory with hyperbolic equations of motion. Coupling it to an acausal parabolic matter sector (as is done in textbooks) breaks this link with relativity. Our framework restores full consistency, while still reproducing the known phenomenology of conductors in the appropriate limits.
+
+
+\section*{Acknowledgements}
+
+This work is supported by a MERAC Foundation prize grant,  an Isaac Newton Trust Grant, and funding from the Cambridge Centre for Theoretical Cosmology.
+
+
+
+
+\bibliography{Biblio}
+
+
+\newpage
+
+
+\onecolumngrid
+\newpage
+\begin{center}
+\textbf{\large Thermoelectric conduction in General Relativity: a causal, stable, and well-posed theory\\Supplementary Material}\\[.2cm]
+  L. Gavassino\\[.1cm]
+  {\itshape Department of Applied Mathematics and Theoretical Physics, University of Cambridge, Wilberforce Road, Cambridge CB3 0WA, United Kingdom\\}
+\end{center}
+
+\setcounter{equation}{0}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{page}{1}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+%\renewcommand{\bibnumfmt}[1]{[S#1]}
+%\renewcommand{\citenumfont}[1]{S#1}
+
+
+\section*{Stability Theorem}
+
+Here, we prove the following theorem.
+\begin{theorem}
+Let $\Pi$ and $\Lambda$ be two Hermitian non-negative definite matrices of the same size, and let $k$ be a real number. Then, the solutions of
+\begin{equation}\label{theor2one}
+[\Gamma^2+(\Pi{+}\Lambda) \Gamma +\Pi \Lambda+k^2]\Upsilon =0 \spc (\text{with } \Upsilon\neq 0, \, \, \Gamma\in \mathbb{C})
+\end{equation}
+are such that $\mathfrak{Re}\Gamma\leq 0$.
+\end{theorem}
+\begin{proof}
+Let us first note that equation \eqref{theor2one} can be rearranged as follows:
+\begin{equation}\label{bobrego}
+[(\Gamma {+}\Pi)(\Gamma {+}\Lambda)+k^2]\Upsilon =0\, .
+\end{equation}
+Define $\Tilde{\Upsilon}=(\Gamma{+}\Lambda)\Upsilon$, and multiply both sides of \eqref{bobrego} by $\Tilde{\Upsilon}^\dagger=\Upsilon^\dagger (\Gamma^*{+}\Lambda)$, which gives
+\begin{equation}\label{thepro}
+\Tilde{\Upsilon}^\dagger (\Gamma {+}\Pi)\Tilde{\Upsilon}+k^2\Upsilon^\dagger (\Gamma^* {+}\Lambda)\Upsilon =0\, .   
+\end{equation}
+Now, let us note that $\Tilde{\Upsilon}^\dagger\Tilde{\Upsilon}$, $\Tilde{\Upsilon}^\dagger\Pi \Tilde{\Upsilon}$, $\Upsilon^\dagger \Upsilon$, and $\Upsilon^\dagger \Lambda \Upsilon$ are all real and non-negative. Hence, if we take the real part of \eqref{thepro}, and isolate $\mathfrak{Re}\Gamma$, we obtain
+\begin{equation}
+\mathfrak{Re}\Gamma= -\dfrac{\Tilde{\Upsilon}^\dagger \Pi\Tilde{\Upsilon}+k^2 \Upsilon^\dagger \Lambda \Upsilon}{\Tilde{\Upsilon}^\dagger\Tilde{\Upsilon}+k^2 \Upsilon^\dagger \Upsilon} \leq 0\, ,
+\end{equation}
+which is what we wanted to prove.
+\end{proof} 
+
+\noindent\textbf{Remark:} Note that we did not specify the dimension of the matrices. Hence, the stability result would remain valid even if we added additional chemical potentials that undergo diffusion and couple to $\mu$ and $T$.\\
+
+% \noindent\textbf{Remark 2:} If, instead of taking the real part of \eqref{thepro}, we take the imaginary part, we get $(\Tilde{\Upsilon}^\dagger\Tilde{\Upsilon}-k^2 \Upsilon^\dagger \Upsilon)\mathfrak{Im}\Gamma=0$. Let us specialize this equation to the uniform limit ($k=0$). Then, we either have $\mathfrak{Im}\Gamma=0$ or $\Tilde{\Upsilon}=0$. But in the latter case, we can multiply by $\Upsilon^\dagger$, and we obtain $\Gamma=-\Upsilon^\dagger \Lambda \Upsilon/(\Upsilon^\dagger \Upsilon)$, which also implies $\mathfrak{Im}\Gamma=0$. Therefore, we conclude that, at $k=0$, the relaxation frequency $\Gamma$ is always real (no oscillations). 
+
+% We contrast this result with that of \cite{Dash:2022xkz}, where it was shown that, in the context of charged Israel-Stewart hydrodynamics, it is possible to observe electrically-driven oscillations even at $k=0$.
+
+
+
+
+
+\newpage
+\section*{Dispersion relations of the theory: Structure and Interpretation}
+
+We have shown that our theory, when linearized around constant (charge-neutral) states, is stable. However, we did not yet analyze the dispersion relations of the quasinormal modes in detail. Here, we do it.
+
+\vspace{-0.1cm}
+\subsection{Global mode structure}
+\vspace{-0.1cm}
+
+Let us first analyze the transversal modes propagating in the $z$ direction, which are governed by the equations
+\begin{equation}\label{cattenoB}
+\partial_t^2 \mathcal{B}_x +\sigma_1 \partial_t \mathcal{B}_x -\partial^2_z \mathcal{B}_x =0 \, , \spc  \partial_t^2 \mathcal{B}_y +\sigma_1 \partial_t \mathcal{B}_y -\partial^2_z \mathcal{B}_y =0 \, .
+\end{equation}
+Under a plane wave assumption ($\delta\Psi\propto e^{ikx-i\omega t}$), we obtain the relation $\omega^2+i\sigma_1\omega-k^2=0$, whose solutions are plotted in figure \ref{fig:transmodes}, left panel. The interpretation is standard: At high $k$, we have 4 distinct electromagnetic waves (two left-moving polarizations and two right-moving polarizations) that travel at speed $1$, and decay over a timescale $2/\sigma_1$. However, when the wavelength $k^{-1}$ becomes longer than $2/\sigma_1$, the waves stop propagating, and they just decay. In the limit $k\rightarrow 0$, we have two diffusive modes (one for each transversal component of $\mathcal{B}$) with $\omega=-ik^2/\sigma_1$, and two non-hydrodynamic modes that decay over a timescale $1/\sigma_1$.
+
+Let us now turn our attention to the 4 longitudinal modes. These modes describe the relaxation of the degrees of freedom $\{\delta T,\partial_t \delta T,\delta \mu,\partial_t \delta \mu\}$. Their dispersion relations $\omega(k)$ are solutions of the equation
+\begin{equation}\label{deTTo}
+\det[(-i\omega {+}\Pi)(-i\omega {+}\Lambda)+k^2]
+= 0 \, , \spc \text{with }
+\Lambda=
+\begin{bmatrix}
+\lambda_1 & 0 \\
+0 & \lambda_2 \\
+\end{bmatrix}\, ,
+\quad \Pi =
+\begin{bmatrix}
+A & B \\
+B & C \\
+\end{bmatrix}\, , 
+\end{equation}
+where $\lambda_1$, $\lambda_2$, $A$, and $C$ are non-negative, and $B=\pm \sqrt{AC}$ (since $\det \Pi=0$). 
+Since the polynomial is of $4^{\text{th}}$ degree in $\omega$, there is no simple, universal, mode structure. Instead, many mode configurations are possible, depending on the values of the coefficients. The plot in figure \ref{fig:transmodes} (right panel) is just one example. The asymptotics are, however, universal. In particular, at high $k$, we always have two right-moving waves and two left-moving waves, all of which propagate at speed $1$. At small $k$, there are always three gapped modes, and only one gapless mode. This follows from the fact that \eqref{deTTo} becomes $\det(-i\omega+\Pi)\det(-i\omega+\Lambda)=0$, whose roots are $\omega=-i\lambda_{1/2}$ (both of which are non-zero) and $\omega=-i\times \text{``eigenvalues of }\Pi\text{''}$, one of which is always zero (since $\det\Pi=0$) and the other of which is always $\sigma_1$ (since $\text{Tr}\, \Pi=\sigma_1$). The above analysis also reveals that, at $k=0$, $\omega$ is always imaginary (since $\Pi$ and $\Lambda$ are symmetric). This differentiates our theory from the Israel-Stewart-Maxwell model \cite{GavassinoShokryMHD:2023qnw}, which was found to undergo electrically-driven oscillations in certain regimes even at zero wavenumber \cite{Dash:2022xkz}.
+
+
+\begin{figure}[b!]
+    \centering
+\includegraphics[width=0.4\linewidth]{TransversalModes.pdf}
+\includegraphics[width=0.4\linewidth]{LongitudinalModes.pdf}
+\caption{Dispersion relations of the transversal modes (left panel) and of the longitudinal modes (right panel) of the theory. The blue lines are $\mathfrak{Re}\,\omega$, and the red lines are $\mathfrak{Im}\,\omega$. Note that the structure of the transversal modes is universal, while the structure of the longitudinal modes (e.g. the shape, relative size, and relative position of the red circles) may vary depending on the parameters.}
+    \label{fig:transmodes}
+\end{figure}
+
+\subsection{The gapless mode describes heat transport}
+
+We found that there exists a single longitudinal gapless mode. Let us now examine its physical interpretation. 
+
+Let $\{\Gamma(k),\Upsilon(k)\}$ be the eigen-rate and the eigen-solution that describe the diffusive mode, and differentiate the equation of motion \eqref{theor2one} along such eigen-couple. The zeroth, first, and second derivatives of the equation are
+\begin{equation}
+\begin{split}
+& [\Gamma^2+(\Pi{+}\Lambda) \Gamma +\Pi \Lambda+k^2]\Upsilon =0 \, ,\\
+& [\Gamma^2+(\Pi{+}\Lambda) \Gamma +\Pi \Lambda+k^2]\Upsilon' +[2\Gamma\Gamma'+(\Pi{+}\Lambda) \Gamma'+2k]\Upsilon =0\, ,\\
+& [\Gamma^2+(\Pi{+}\Lambda) \Gamma +\Pi \Lambda+k^2]\Upsilon'' +2[2\Gamma\Gamma'+(\Pi{+}\Lambda) \Gamma'+2k]\Upsilon'+[2\Gamma\Gamma''+2(\Gamma')^2+(\Pi{+}\Lambda) \Gamma''+2]\Upsilon =0\, .\\
+\end{split}
+\end{equation}
+Evaluating the above equations at $k=0$, and considering that $\Gamma(0)=\Gamma'(0)=0$ (the mode is diffusive), we obtain
+\begin{equation}\label{zerando}
+\begin{split}
+& \Pi \Lambda\Upsilon(0) =0 \, ,\\
+& \Pi \Lambda\Upsilon'(0) =0\, ,\\
+& \Pi \Lambda\Upsilon''(0) +[(\Pi{+}\Lambda) \Gamma''(0)+2]\Upsilon(0) =0\, .\\
+\end{split}
+\end{equation}
+Now, let us note that, if $\Pi\Lambda\Upsilon(0)$ vanishes, then also $\Upsilon^\dagger(0) \Lambda\Pi$ vanishes. Hence, we can multiply the third line of \eqref{zerando} by $\Upsilon^\dagger \Lambda$, and we obtain
+\begin{equation}\label{fgg}
+\dfrac{1}{2}\Gamma''(0)=-\dfrac{\Upsilon^\dagger(0) \Lambda \Upsilon(0)}{\Upsilon^\dagger(0) \Lambda^2 \Upsilon(0)}\, .
+\end{equation}
+These results are not particularly enlightening because they are expressed in terms of $\Upsilon$. If we express them in terms of $(\delta\mu,\delta T)$, we learn much more. In particular, the statement $\Pi \Lambda\Upsilon(0) =0$ becomes $\delta \rho_\text{lte}(0)=0$, which tells us that the diffusive mode describes pure heat transfer (as it carries no electric charge), while \eqref{fgg} becomes
+\begin{equation}
+\omega=-i\dfrac{\partial T}{\partial s}\bigg|_\rho \left( \sigma_5 -\dfrac{\sigma_3^2}{\sigma_1}\right)k^2+\mathcal{O}(k^4) \, ,
+\end{equation}
+which tells that the combination $T\sigma_5-T\sigma_3^2/\sigma_1(\equiv\kappa_3-\mu\sigma_3-T\sigma_3^2/\sigma_1)$ may be interpreted as the heat conductivity.
+
+\subsection{Origin of the gap of the charge-diffusion mode}
+
+Ordinarily, a conserved current gives rise to a gapless diffusive mode. The electric current, however, is an exception. To see this, start from the conservation law $\partial_t\delta J^0+\partial_z \delta J^z=0$, and take the long-wavelength limit ($k\to 0$). In this regime, the constitutive relation for the current reduces to $\delta J^z \approx \sigma_1 \mathcal{E}^z$, so the charge conservation equation becomes $0=\partial_t\delta J^0+\sigma_1\partial_z \mathcal{E}^z=\partial_t\delta J^0+\sigma_1 \delta J^0$.
+Its solution is a non-hydrodynamic mode with a finite gap, $\omega(k{=}0)=-i\sigma_1$. As can be seen, the origin of this gap is the Maxwell equation $\partial_j \mathcal{E}^j=\delta J^0$, which causes the electric field (and thus also the current) to blow up like $1/k$ in the infrared limit.
+
+\subsection{Which modes are physical?}
+
+
+Since our theory is obtained through a formal expansion in $\tau$, its solutions can be trusted only if their Fourier support remains sufficiently close to the origin, namely when $\tau |k|\ll 1$ and $\tau |\omega|\ll 1$. This provides a simple criterion to distinguish between the physical modes (i.e. those that fall within the validity regime of theory) and the unphysical ones. Let us now examine what this criterion implies.
+
+Consider the left panel of figure \ref{fig:transmodes}, which depicts the transverse modes. The red circle has a diameter of $\sigma_1$, along both the $k$ and $\omega$ axes. To compare this scale with $\tau$, we recall the Drude relation $\sigma_1 = n_e e^2 \tau/m$, where $n_e$ and $m$ denote the electron density and mass. From this, we obtain the estimate
+\begin{equation}\label{tausigma}
+\tau \sigma_1 \sim \frac{n_e e^2}{m} \tau^2 = \omega_p^2 \tau^2 \, ,
+\end{equation}
+with $\omega_p = \sqrt{n_e e^2/m}$ the plasma frequency.
+Thus, if the medium satisfies $\omega_p \tau \ll 1$, both the hydrodynamic mode (upper half of the circle) and the non-hydrodynamic mode (lower half of the circle) remain within the validity domain of the theory, and are therefore physical. Conversely, if $\omega_p \tau \gg 1$, only a small portion of the hydrodynamic branch, close to the origin, is physical. This “infrared” part of the mode is described by an ordinary diffusion equation, $\partial_t \mathcal{B}_{x}\approx-\partial^2_z\mathcal{B}_{x}$ (same for $\mathcal{B}_y$).
+
+\newpage
+Let us now focus on the longitudinal modes (right panel of figure \ref{fig:transmodes}). The uppermost point of the smaller circle is the charge-diffusion mode, which has a distance $\sigma_1$ from the origin. Hence, invoking again the estimate \eqref{tausigma}, we conclude that the charge-diffusion model is physical if $\omega_p\tau \ll 1$. As for the lowermost points of the two circles, these are located at distances $\lambda_1$ and $\lambda_2$ from the origin. A quick estimate then gives
+\begin{equation}
+\tau \lambda_i \sim \dfrac{\partial \rho}{\partial\mu} \dfrac{\tau}{\sigma_1}\sim \dfrac{1}{b^2 \omega_p^2}\sim \dfrac{1}{v_e^2}\geq 1 \, ,
+\end{equation}
+where $b$ is the Thomas-Fermi length and $v_e\leq 1$ the typical speed of the electrons. We conclude that the lower halves of the red circles always lie outside the regime of validity of the theory. This is expected, since these modes are artifacts of our choice of hydrodynamic frame (i.e. of how we define $T$ and $\mu$ out of equilibrium \cite{Kovtun2019}). In the Eckart frame \cite{Eckart40}, which is acausal (but is the conventional frame in non-relativistic theories \cite[\S 26]{landau8}\cite[\S 21.C]{SommerfeldStatmech}), such modes do not appear. Indeed, in the Newtonian limit ($v_e\ll 1$), these frame-dependent modes are pushed infinitely far from the origin, implying that they decay infinitely fast. In this way, we effectively recover the Eckart frame.
+\newpage
+\section*{Relationship between charge density and charge chemical potential in metals}
+
+We consider a solid lattice of ions with atomic number $Z$, filled with freely moving electrons. The differential of the energy density $\varepsilon$ (dropping the ``lte'' subscripts) reads $d\varepsilon =T ds+ \mu_I dn_I +\mu_e dn_e$,
+where $n_I$ and $n_e$ are the number densities of ions and electrons, while $\mu_I$ and $\mu_e$ are the respective chemical potentials. Since the lattice is assumed rigid and with uniform spacing, $n_I$ is effectively a constant (so $dn_I=0$). Moreover, the charge density is 
+\begin{equation}\label{rhoe}
+\rho=eZn_I-en_e  \, ,  
+\end{equation}
+and so we have $d\rho=-e dn_e$. Hence, we are left with $d\varepsilon =T ds -(\mu_e/e) d\rho$, which immediately yields 
+\begin{equation}\label{mue}
+\mu=-\mu_e/e\, .
+\end{equation}
+But at low temperatures, $\mu_e$ coincides with the Fermi energy of the electrons. Hence, working in the free electron model, which treats the electrons as a degenerate non-relativistic Fermi gas, we have
+\begin{equation}\label{mueee}
+\mu_e =m+\dfrac{1}{2m} (3\pi^2 n_e)^{2/3} \, ,
+\end{equation}
+with $m$ the mass of the electron. Combining \eqref{rhoe}, \eqref{mue} and \eqref{mueee}, we obtain 
+\begin{equation}
+\mu =-\dfrac{m}{e} -\dfrac{1}{2me} \left[3\pi^2 Zn_I\left( 1-\dfrac{\rho}{eZn_I}\right) \right]^{2/3}\, .
+\end{equation}
+Taylor expanding to first order in $\rho$, we recover the equation $\mu=-\mu_0+b^2\rho+\mathcal{O}(\rho^2)$, with 
+\begin{equation}
+\begin{split}
+\mu_0 ={}& \dfrac{m}{e}+\dfrac{1}{2me} (3\pi^2 Zn_I)^{2/3} \, , \\
+b^2={}& \dfrac{\pi^{4/3}}{me^2 (3Z n_I)^{1/3}}\, .
+\end{split}
+\end{equation}
+It is immediate to verify that $b$ is just the usual Thomas-Fermi length scale in conductors.
+
+
+\newpage
+\section*{Strong magnetic fields}
+
+In the presence of strong magnetic fields, nothing fundamental changes: the currents $\{\K J^\mu,W^\mu\}$ still contain gradient terms proportional to $\{\nabla_\nu(\K\mu){-}\K \mathcal{E}_\nu,\nabla_\nu(\K T)\}$. However, we can now use the field 
+\begin{equation}
+\mathcal{B}^\mu =-\dfrac{1}{2} \varepsilon^{\mu\alpha\beta\nu}F_{\alpha\beta}u_\nu 
+\end{equation}
+to build additional tensor structures. Specifically, we have the following constitutive relations ($\Hat{\mathcal{B}}^\mu=\mathcal{B}^\mu/\sqrt{\mathcal{B}^\alpha\mathcal{B}_\alpha}$):
+\begin{equation}
+\begin{split}
+\K J^\mu {=}\rho_{\text{lte}} \K^\mu & {-}(\sigma_1 g^{\mu \nu}{+}\sigma_2 u^\mu u^\nu{+}\sigma_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\sigma_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta) [\nabla_\nu (\K\mu){-}\K\mathcal{E}_\nu] \\
+& {-}(\sigma_3 g^{\mu \nu}{+}\sigma_4 u^\mu u^\nu{+}\sigma'_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\sigma'_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta) \nabla_\nu (\K T) {+}\mathcal{O}(\tau^2) , \\
+W^\mu {=}\varepsilon_{\text{lte}} \K^\mu & {-}(\kappa_1 g^{\mu \nu}{+}\kappa_2 u^\mu u^\nu{+}\kappa_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\kappa_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta) [\nabla_\nu (\K\mu){-}\K \mathcal{E}_\nu] \\
+& {-}(\kappa_3 g^{\mu \nu}{+}\kappa_4 u^\mu u^\nu{+}\kappa'_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\kappa'_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta) \nabla_\nu (\K T) {+}\mathcal{O}(\tau^2). \\
+\end{split}
+\end{equation}
+The coefficients with subscript $\mathcal{B}$ describe anisotropies arising from the fact that the electrons move more easily along the magnetic field lines than orthogonally to it \cite{Aguilera:2007xk}. The coefficients with subscript $H$ describe Hall-related effects. Note that additional tensor structures such as $u^\mu \Hat{\mathcal{B}}^\nu$ are assumed negligible (if not outright zero) because they violate parity.
+As before, one can use field redefinitions to fix the values of $\sigma_2$, $\sigma_4$, $\kappa_2$, and $\kappa_4$ in a way to make the theory causal. In particular, we need to adjust them so that the roots of the characteristic determinant
+\begin{equation}
+\det\left\{
+\begin{bmatrix}
+\sigma_1 g^{\mu \nu}{+}\sigma_2 u^\mu u^\nu{+}\sigma_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\sigma_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta & &  \sigma_3 g^{\mu \nu}{+}\sigma_4 u^\mu u^\nu{+}\sigma'_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\sigma'_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta \\  
+\kappa_1 g^{\mu \nu}{+}\kappa_2 u^\mu u^\nu{+}\kappa_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\kappa_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta & & \kappa_3 g^{\mu \nu}{+}\kappa_4 u^\mu u^\nu{+}\kappa'_\mathcal{B} \Hat{\mathcal{B}}^\mu \Hat{\mathcal{B}}^\nu{+}\kappa'_H \varepsilon^{\mu \nu \alpha\beta}u_\alpha\Hat{\mathcal{B}}_\beta\\
+\end{bmatrix}\xi_\mu \xi_\nu\right\}=0 
+\end{equation}
+are such that the ``frequency'' $u^\mu \xi_\mu$ always falls within the interval $[-1,1]$ for all real ``wavevectors'' $(g^{\mu \nu}{+}u^\mu u^\nu)\xi_\nu$ with length 1 (note that all Hall contributions to the determinant vanish since $\varepsilon^{\mu \nu\alpha\beta}\xi_\mu \xi_\nu=0$). For illustration, let us consider the extreme case where the magnetic field is so large that all transport occurs along the field lines, so that $\sigma_1{=}\sigma_3{=}\kappa_1{=}\kappa_3{=}0$ \cite{Chandra:2015iza}. Then, we can just set $\sigma_2{=}{-}\sigma_\mathcal{B}$, $\sigma_4{=}{-}\sigma'_\mathcal{B}$, $\kappa_2{=}{-}\kappa_\mathcal{B}$, and $\kappa_4{=}{-}\kappa'_\mathcal{B}$, and the determinant becomes
+\begin{equation}
+\left[(-u^\mu u^\mu +\Hat{\mathcal{B}}^\mu\Hat{\mathcal{B}}^\nu)\xi_\mu \xi_\nu\right]^2 \det
+\begin{bmatrix}
+\sigma_\mathcal{B} & &  \sigma'_\mathcal{B} \\  
+\kappa_\mathcal{B} & & \kappa'_\mathcal{B}\\
+\end{bmatrix}=0 \, .
+\end{equation}
+Assuming that $\sigma_\mathcal{B}\kappa'_\mathcal{B}-\sigma'_\mathcal{B}\kappa_\mathcal{B}\neq 0$, we find that $(u^\mu \xi_\mu)^2=(\Hat{\mathcal{B}}^\mu \xi_\mu)^2 \leq 1$, i.e. causality.
+
+\label{lastpage}
+
+\end{document}
+
+
+% The mathematical framework underlying most of these predictions was proposed by \citet{Anandan1984}, who covariantly generalized the Newtonian theory of \cite[\S 21.C]{SommerfeldStatmech} by incorporating gravitational redshift factors. The resulting framework reproduces the Seebeck and Peltier effects by construction, but does not constitute a complete theory, as it (a) lacks a formal derivation from first principles, (b) applies only to time-independent situations, and (c) has not been tested for consistency with relativistic thermodynamics. These concerns cannot be overlooked, given the long-standing history of simple covariant extensions of dissipative equations (e.g. \cite{Eckart40}) that result in unstable theories \cite{Hiscock_Insatibility_first_order,Kost2000,GavassinoLyapunov_2020,GavassinoSuperlum2021}. 
+
+%Notably, if  $\sigma_3/\sigma_1=\text{const}$, equation \eqref{debyeHuck} remains the same, up to a substitution
+% $\mu \rightarrow \Hat{\mu}=\mu +(\sigma_3/\sigma_1) T$
+% on the left-hand side. Also the boundary conditions are unaffected, provided that we replace $\mu$ with $\Hat{\mu}$.
+
+% To illustrate the impact of cooling on the charge distribution, we provide an explicit example in figure \ref{fig:seeb}, where the Debye-H\"{u}ckel equation was solved assuming
+% \vspace{-0.1cm}
+% \begin{equation}\label{LaTTT}
+% \dfrac{\sigma_3 Te^\Phi}{\sigma_1 \mu_0} = \alpha
+% \begin{cases}
+% e^{-r^2/R_\star^2} &(\text{upper panel})\, , \\
+% 1-r^8/R_\star^8 & (\text{lower panel})\, , \\
+% \end{cases}
+% \end{equation}
+% for different choices of $\alpha=\text{const}$. 
+
+%\begin{figure}[h!]
+%     \centering
+% \includegraphics[width=0.93\linewidth]{seebeck2.pdf}
+% \includegraphics[width=0.93\linewidth]{seebeck.pdf}
+% \caption{Charge distribution in a constant-density star with compactness $C=0.3$, $Q=0$, $b=0.01 \, R_\star^2$, and $T$ given by \eqref{LaTTT}. The different curves correspond to different values of $\alpha$, respectively $\alpha=0.05$ (red), $0$ (dashed), and $-0.05$ (blue).}
+%     \label{fig:seeb}
+% \end{figure}
+
+% In the absence of gravity/accelerations, all quantities diffuse according to the same partial differential equation ($\partial_t f=D\partial_z^2 f$). On a rocket, the situation is different. Take the equation $\nabla_\mu J^\mu =0$ with $\mathcal{E}^\mu=0$ and $\K T=\text{const}$, and compare it to the equation $\nabla_\mu W^\mu =0$ with $\mathcal{E}^\mu=0$ and $\K \mu=\text{const}$. The metric factors appear in different places:
+% \begin{equation}\label{diffmuT}
+% \begin{split}
+% \partial_t \mu={}& D_\text{ch} \partial^2_z (gz\mu) +\mathcal{O}(\partial_t^2)\, , \\
+% \partial_t T ={}& \dfrac{D_\text{ht}}{gz} \partial_z \left[ gz \partial_z (gzT)\right]+\mathcal{O}(\partial_t^2)\, .\\
+% \end{split}
+% \end{equation}
+% The distinction arises because, in the second case, energy is subject to an additional gravitational redshift, unlike electric charge. How does the metric enter the magnetic diffusion equation \eqref{magneticdiffusion}?
+
+
+%Their evolution can be determined by linearizing $\nabla_\mu J^\mu=0$ and the entropy equation \eqref{secondlaw}. This results in the system
+% \begin{equation}
+% \partial_t \! 
+% \begin{bmatrix}
+% \delta \rho_{\text{lte}}\\
+% \delta s_{\text{lte}}\\
+% \end{bmatrix}
+% \!{-}\!
+% \begin{bmatrix}
+% \sigma_1 & \sigma_3 \\
+% \sigma_3 & \sigma_5 \\
+% \end{bmatrix}\!
+% \partial_\mu \partial^\mu\! 
+% \begin{bmatrix}
+% \delta \mu \\
+% \delta T \\
+% \end{bmatrix}\!{+}\!
+% \begin{bmatrix}
+% \sigma_1 & 0 \\
+% \sigma_3 & 0 \\
+% \end{bmatrix}
+% \!\!
+% \begin{bmatrix}
+% \delta \rho_{\text{lte}}\\
+% \delta s_{\text{lte}}\\
+% \end{bmatrix}\!{=}\, 0 ,
+% \end{equation}
+% where we introduced the notation $T\sigma_5=\kappa_3{-}\mu\sigma_3$. Multiplying both sides by the inverse of the $\sigma$ matrix, and recalling that the susceptibility matrix $\partial(\mu,T)/\partial(\rho_\text{lte},s_\text{lte})$ is the Hessian of $\varepsilon_{\text{lte}}(\rho_\text{lte},s_\text{lte})$, we obtain
+% \begin{equation}\label{oioichebello}
+% \left\{\!\!
+% \begin{bmatrix}
+% \sigma_1 & \sigma_3 \\
+% \sigma_3 & \sigma_5 \\
+% \end{bmatrix}^{-1}
+% \! \! \! \! \! \! \partial_t {-}\!
+% \begin{bmatrix}
+% \varepsilon_{\rho \rho} & \varepsilon_{\rho s} \\
+% \varepsilon_{s \rho} & \varepsilon_{s s} \\
+% \end{bmatrix}\!
+% \partial_\mu \partial^\mu 
+% {+}\!
+% \begin{bmatrix}
+% 1 & 0 \\
+% 0 & 0 \\
+% \end{bmatrix}
+% \!\! \right\}\!\!
+% \begin{bmatrix}
+% \delta \rho_{\text{lte}}\\
+% \delta s_{\text{lte}}\\
+% \end{bmatrix}\!{=}\, 0 .
+% \end{equation}
+% Now, we observe that all three matrices in \eqref{oioichebello} are symmetric and non-negative definite (the first because of \eqref{secondlaw}, and the second by thermodynamic stability \cite{GavassinoGibbs2021,GavassinoCausality2021,GavassinoSymmetric2022nff}). Hence, multiplying both sides of \eqref{oioichebello} by $[\delta\rho_\text{lte},\delta s_\text{lte}]$, and working with plane waves, $\delta \Psi \propto e^{\Gamma t+ikz}$, we obtain a relation of the form $a_2 \Gamma^2+a_1\Gamma+a_0=0$, where all coefficients $a_i$ are non-negative. The Routh–Hurwitz criterion then guarantees that $\mathfrak{Re}\,\Gamma \leq 0$, i.e. stability.
+
+% The structure (and physical content) of the dispersion relations is discussed in the Supplementary Material.
+
+% \newpage
+% \begin{equation}\label{longtudo}
+% \left\{ \!
+% \begin{bmatrix}
+% \chi_{\mu \mu} & \chi_{\mu T} \\
+% \chi_{T\mu} & \chi_{TT} \\
+% \end{bmatrix}\!\partial_t{-}\!
+% \begin{bmatrix}
+% \sigma_1 & \sigma_3 \\
+% \sigma_3 & \sigma_5 \\
+% \end{bmatrix}\! \partial_\mu \partial^\mu {+}\!
+% \begin{bmatrix}
+% \sigma_1 \\
+% \sigma_3 \\
+% \end{bmatrix}
+% \!
+% \begin{bmatrix}
+% \chi_{\mu \mu} & \chi_{\mu T} 
+% \end{bmatrix}
+% \right\}\!
+% \begin{bmatrix}
+% \delta \mu \\
+% \delta T \\
+% \end{bmatrix}{=}0,
+% \end{equation}
+% where $\chi_{ij}$ is the susceptibility matrix $\partial(\rho,s)/\partial(\mu,T)$, and we defined $T\sigma_5=\kappa_3{-}\mu\sigma_3$. Let us note that the first two matrices in \eqref{longtudo} are both symmetric and positive definite, and thus can be rewritten as $N\Lambda^2 N^T$ and $NN^T$ respectively, with $N$ invertible and $\Lambda=\text{diag}(\lambda_1,\lambda_2)$, $\lambda_i>0$. Thus, \eqref{longtudo} can be rearranged as follows:
+% \begin{equation}\label{Ups}
+% (\Lambda^2 \partial_t -\partial_\mu \partial^\mu +\Pi)\Upsilon =0\, ,
+% \end{equation}
+% with
+% \begin{equation}
+% \Upsilon=\Lambda N^T \begin{bmatrix}\!
+% \delta \mu \\
+% \delta T \\
+% \end{bmatrix}\, , \quad\quad \Pi= \Lambda N^T\begin{bmatrix}
+% 1 & 0 \\
+% 0 & 0 \\
+% \end{bmatrix}
+% N\Lambda \, .
+% \end{equation}
+% Assuming a spacetime dependence $\Upsilon \propto e^{\Gamma t+ikx}$, and contracting \eqref{Ups} with $\Upsilon^\dagger$, we find that $a_2 \Gamma^2+a_1 \Gamma+a_0 =0$, with $a_2=\Upsilon^\dagger \Upsilon>0$, $a_1=\Upsilon^\dagger \Lambda^2\Upsilon>0$, and $a_0=\Upsilon^\dagger \Upsilon k^2 +\Upsilon^\dagger  \Pi \Upsilon\geq 0$. The Routh–Hurwitz criterion then guarantees that $\mathfrak{Re}\,\Gamma \leq 0$, which implies stability.
+
+% \newpage
+% \noindent\textit{\bf Covariant stability -} To test stability, we linearize \eqref{maxwell} around a uniform charge-neutral state in Minkowski space, with $\K=1$ and $u^\mu=(1,0,0,0)$. Combining the two ``curl'' Maxwell equations, we obtain the usual magnetic diffusion equation
+% \begin{equation}\label{magneticdiffusion}
+% \partial_0 \mathcal{B}_j =\dfrac{1}{\sigma_1}\partial_\mu \partial^\mu \mathcal{B}_j \, ,
+% \end{equation}
+% which is covariantly stable \cite{GavassinoBounds2023myj}, since $\sigma_1>0$. From a linear-response theory perspective, the solutions of \eqref{magneticdiffusion} define 4 transversal quasi-normal modes, 2 of which are gapless. 

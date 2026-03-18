@@ -600,3 +600,100 @@ baseline conditions for the magnetically modulated dynamics.
   $T_{c}$ by $3$--$15\%$ in the inner disk, destabilising the torus.}
 \label{fig:thick-disk-stability}
 \end{figure}
+
+%% ================================================================
+\section{Bulk viscosity and the Couette problem in neutron star matter}
+\label{sec:rel-7-bulk-NS}
+%% ================================================================
+
+The preceding analysis of relativistic Couette flow has treated viscosity
+as a phenomenological transport coefficient.  In neutron star interiors,
+however, shear viscosity coexists with a dynamically important
+\emph{bulk viscosity} $\zeta$ that arises from out-of-equilibrium nuclear
+reactions.  The interplay between bulk and shear viscosity modifies the
+stability thresholds derived in previous sections, and its inclusion is
+essential for a complete picture of rotating NS matter.
+
+\subsection{Origin of bulk viscosity: the Gavassino--Antonelli--Haskell
+  formalism}
+\label{sec:rel-7-bulk-origin}
+
+\citet{GavassinoBulkViscosity2020} showed that any thermodynamic process
+contributing to bulk viscosity can be mapped onto a set of effective
+chemical reactions, whose reaction coordinates $\mathbb{A}^{A}$ parametrise
+the displacement from local thermodynamic equilibrium.  In neutron star
+matter, the dominant contribution comes from $\beta$-reactions
+(direct and modified Urca processes) that interconvert neutrons and protons.
+The key result is a telegraph-type relaxation equation for the affinity:
+\begin{equation}
+\label{eq:rel-7-telegraph}
+\tau_{M}\,\dot{\mathbb{A}} + \mathbb{A}
+= k\,\nabla_{\mu}u^{\mu},
+\end{equation}
+where $\tau_{M}$ is the relaxation time set by the nuclear reaction rate,
+$k$ encodes the sensitivity of the equilibrium composition to volume changes,
+and the dot denotes a comoving derivative.  The frequency-dependent effective
+bulk viscosity then takes the Sawyer form
+\citep{GavassinoBulkViscosity2020}:
+\begin{equation}
+\label{eq:rel-7-zeta-eff}
+\zeta_{\mathrm{eff}}(\omega) = \frac{\zeta}{1+\omega^{2}\tau_{M}^{2}}\,,
+\end{equation}
+which reduces to the static $\zeta$ for slow flows ($\omega\tau_{M}\ll 1$)
+and vanishes for rapid oscillations ($\omega\tau_{M}\gg 1$; the ``frozen''
+regime).
+
+A central insight of \citet{GavassinoBulkViscosity2020} is that the
+Israel--Stewart model for bulk viscosity is the second-order expansion
+of this non-perturbative formalism near equilibrium, with the relation
+$\tau_{M}=\chi\,\zeta$ bridging the Israel--Stewart coefficient $\chi$
+(denoted $\beta_{0}$ in the original IS notation) to the microphysical
+relaxation time.  This connection gives concrete meaning to the IS
+transport coefficients in terms of nuclear physics.
+
+\subsection{Implications for the Couette stability problem}
+\label{sec:rel-7-bulk-couette}
+
+When bulk viscosity is included alongside shear viscosity, the
+effective Taylor number acquires a correction.  For axisymmetric
+perturbations of compressible NS matter in differential rotation, the
+bulk viscous stress $\Pi = -\zeta_{\mathrm{eff}}\,\nabla_{\mu}u^{\mu}$
+contributes to the pressure perturbation through the non-equilibrium
+equation of state.  The simulations of \citet{CamelioGavassinoBulkI2022}
+and \citet{CamelioGavassinoBulkII2022} demonstrated that three
+approaches to bulk viscosity---the exact multi-component reacting fluid,
+the Hiscock--Lindblom (full Israel--Stewart) model, and the
+Maxwell--Cattaneo linearisation---yield consistent results for small
+perturbations of spherically symmetric NS configurations.  Their key
+findings include:
+\begin{enumerate}
+\item The multi-component reacting fluid and the IS models agree to
+  within a few percent for perturbation amplitudes
+  $\delta\rho/\rho \lesssim 0.1$.
+\item Energy loss through neutrino luminosity associated with the
+  reactions has a \emph{larger} dynamical effect than the bulk stress
+  $\Pi$ itself---a point of direct relevance for post-merger remnants.
+\item When the equation of state depends on more than one independent
+  particle fraction (e.g.\ electron and muon fractions), the IS
+  approximation loses accuracy, and the Burgers-type model of
+  \citet{GavassinoBurgers2023} becomes necessary (see
+  \S\,\ref{sec:rel-13-burgers} in Chapter~XIII).
+\end{enumerate}
+
+For the Couette problem in NS interiors---relevant to differentially
+rotating post-merger remnants---these results imply that the critical
+Taylor number receives an additional modification beyond the
+relativistic enthalpy correction of equation~\eqref{eq:rel-7-299}:
+\begin{equation}
+\label{eq:rel-7-Tc-bulk}
+T_{c}^{\mathrm{bulk}} = T_{c}^{\mathrm{rel}}
+  \left(1 + \frac{\zeta_{\mathrm{eff}}}{\eta}\,\mathcal{F}(\eta,\mu)
+  \right)^{-1},
+\end{equation}
+where $\mathcal{F}$ is a dimensionless function of the geometry and
+$\zeta_{\mathrm{eff}}/\eta$ is the ratio of bulk to shear viscosity.
+In NS merger remnants, $\zeta/\eta$ can exceed unity at temperatures
+$T\sim 5$--$50\,\mathrm{MeV}$
+\citep{GavassinoBulkViscosity2020,CamelioGavassinoBulkII2022},
+potentially lowering the critical rotation rate for the onset of
+Taylor--Couette instability.
