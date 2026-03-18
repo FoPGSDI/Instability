@@ -1,0 +1,475 @@
+% =====================================================================
+%  Relativistic modification of Chapter XIII, §116–118
+%  Gravitational equilibrium, virial theorem, and small oscillations
+%  in general relativity
+% =====================================================================
+%
+%  Classical reference: Chandrasekhar, Ch. XIII §116–118, eqs. (1)–(77)
+%  Relativistic framework: post-Newtonian virial theorem, TOV equilibrium,
+%    Chandrasekhar critical adiabatic index with GR corrections
+%  Agent: 56 (virial theorem)
+% =====================================================================
+
+\section{Introduction --- gravitational equilibrium and instability
+  in general relativity}
+\label{sec:rel-116}
+
+In the Newtonian theory (\S\ref{sec:116}), the conditions for
+gravitational equilibrium and the onset of gravitational instability
+are governed by the classical virial theorem: a scalar or tensor
+identity relating the kinetic, gravitational, magnetic, and thermal
+energies of a self-gravitating fluid configuration.  The power of the
+virial method lies in its ability to extract global stability criteria
+--- most notably, the requirement $\gamma > \tfrac{4}{3}$ for
+gravitational stability --- from integral relations, without detailed
+knowledge of the internal structure.
+
+In general relativity the situation is fundamentally altered.  Three
+effects, absent in Newtonian gravity, modify the virial balance:
+\begin{enumerate}
+\item \emph{Pressure as a source of gravity.}  In the
+  Tolman--Oppenheimer--Volkoff (TOV) equation, the pressure $p$ enters
+  the gravitational mass through the combination $(\edensity + p)/c^{2}$
+  (cf.\ \S\ref{sec:rel-59-TOV}).  Large internal energies \emph{increase}
+  the effective gravitational attraction.
+\item \emph{Gravitational redshift.}  The metric function $e^{\Phi}$
+  appearing in the static line element
+  $ds^{2} = -e^{2\Phi}c^{2}\,dt^{2} + \cdots$ implies that energy is
+  ``weighed'' differently at different radii, modifying the effective
+  contribution of each mass shell to the virial integrals.
+\item \emph{Non-linearity of the field equations.}  The Einstein
+  equations are non-linear; consequently the superposition principle
+  underlying the Newtonian gravitational potential energy
+  $\mathfrak{W}$ must be replaced by quasi-local mass--energy
+  constructions.
+\end{enumerate}
+
+The combined effect is a \emph{destabilising} correction: the critical
+adiabatic index for radial stability is raised above $\tfrac{4}{3}$
+by a term of order $GM/(Rc^{2})$.  This is the origin of the
+\emph{Chandrasekhar instability} of relativistic stars and is directly
+responsible for the existence of a maximum mass for white dwarfs and
+neutron stars.
+
+Throughout this section we keep $c$ explicit, following the conventions
+of~\S\ref{sec:rel-conventions}.  Greek indices
+$\mu,\nu = 0,1,2,3$ label spacetime coordinates; Latin indices
+$i,j,k = 1,2,3$ label spatial coordinates.  The metric signature is
+$(-,+,+,+)$.
+
+
+% =====================================================================
+\section{The relativistic virial theorem}
+\label{sec:rel-117}
+% =====================================================================
+
+\subsection{Definitions: relativistic moment of inertia, kinetic energy,
+  and gravitational energy}
+\label{sec:rel-117-defs}
+
+We consider a self-gravitating perfect-fluid configuration with
+energy-momentum tensor
+\begin{equation}
+\label{eq:rel-13-EMT}
+T^{\mu\nu} = \frac{\edensity + p}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + p\,g^{\mu\nu},
+\end{equation}
+where $\edensity$ is the total energy density (rest mass plus internal
+energy), $p$ is the isotropic pressure, and $u^{\mu}$ is the
+4-velocity normalised as $u^{\mu}u_{\mu} = -c^{2}$.
+
+In generalising the Newtonian quantities of \S\ref{sec:117} we define:
+
+\paragraph{Relativistic inertia tensor.}
+\begin{equation}
+\label{eq:rel-13-Iik}
+I_{ik}^{(\mathrm{rel})}
+  = \frac{1}{c^{2}}\int_{V}\!
+    \bigl(\edensity + p\bigr)\,\Lf^{2}\,x_{i}\,x_{k}\,d^{3}x,
+\end{equation}
+where $\Lf = (1 - v^{2}/c^{2})^{-1/2}$ is the Lorentz factor
+associated with the fluid 3-velocity $v^{i} = u^{i}/(\Lf c)$.  In the
+non-relativistic limit ($p \ll \edensity \approx \rdensity c^{2}$,
+$\Lf \to 1$), this reduces to the Newtonian $I_{ik}$ of
+eq.~\eqref{eq:13-16}.
+
+\paragraph{Relativistic kinetic-energy tensor.}
+\begin{equation}
+\label{eq:rel-13-Tik}
+\mathfrak{T}_{ik}^{(\mathrm{rel})}
+  = \frac{1}{2c^{2}}\int_{V}\!
+    \bigl(\edensity + p\bigr)\,\Lf^{2}\,v_{i}\,v_{k}\,d^{3}x.
+\end{equation}
+
+\paragraph{Relativistic gravitational potential energy.}
+In full general relativity the gravitational binding energy lacks a
+unique local definition.  For a static, spherically symmetric
+configuration we adopt the difference between the baryonic mass and
+the gravitational (ADM) mass:
+\begin{equation}
+\label{eq:rel-13-Wbinding}
+E_{\mathrm{bind}} = \left(\int_{V}\!\rdensity\,
+  e^{\Lambda}\,d^{3}x - M\right) c^{2},
+\end{equation}
+where $e^{\Lambda} = (1 - 2Gm(r)/(rc^{2}))^{-1/2}$ and $M$ is the
+total gravitational mass.  In the weak-field expansion this reproduces
+the Newtonian $|\mathfrak{W}|$ to leading order.
+
+For general (non-spherical) configurations in the post-Newtonian
+regime, one defines the gravitational potential-energy tensor through
+the $1/c^{2}$ expansion of the spatial components of the
+Landau--Lifshitz pseudotensor; to leading post-Newtonian order,
+\begin{equation}
+\label{eq:rel-13-Wik-PN}
+\mathfrak{W}_{ik}^{(\mathrm{PN})}
+  = \mathfrak{W}_{ik}
+  - \frac{1}{c^{2}}\biggl[
+      \frac{1}{2}G\!\iint_{V}\!
+        \frac{\rdensity(\mathbf{x})\,\rdensity(\mathbf{x}')}
+             {|\mathbf{x}-\mathbf{x}'|}
+        \bigl(v^{2} + v'^{2} + \Phi + \Phi'\bigr)
+        \frac{(x_{i}-x_{i}')(x_{k}-x_{k}')}{|\mathbf{x}-\mathbf{x}'|^{2}}
+        \,d^{3}x\,d^{3}x'
+    \biggr],
+\end{equation}
+where $\Phi = -Gm(r)/r$ is the Newtonian potential and
+$\mathfrak{W}_{ik}$ is the classical tensor of eq.~\eqref{eq:13-7}.
+
+
+\subsection{Tensor virial theorem: the \texorpdfstring{$\int T^{0i}\,x^{j}\,d^{3}x$}{integral T0i xj}
+  formulation}
+\label{sec:rel-117-tensor}
+
+The relativistic virial theorem follows from the local conservation
+law $\nabla_{\mu}T^{\mu\nu} = 0$.  Consider the spatial moment
+\begin{equation}
+\label{eq:rel-13-moment}
+\mathscr{J}^{ij}
+  \;\equiv\; \frac{1}{c}\int_{V}\!T^{0i}\,x^{j}\,d^{3}x.
+\end{equation}
+Taking the time derivative, using $\partial_{0}T^{0i} =
+-\partial_{k}T^{ki}$ (conservation in Minkowski space), and
+integrating by parts under the assumption that the surface terms
+vanish, one obtains
+\begin{equation}
+\label{eq:rel-13-dJ}
+\frac{1}{c}\frac{d\mathscr{J}^{ij}}{dt}
+  = -\int_{V}\!T^{ki}\,\delta^{j}_{k}\,d^{3}x
+  + \frac{1}{c^{2}}\int_{V}\!x^{j}\,\partial_{0}
+    \bigl[(\edensity + p)\,\Lf^{2}\,v^{i}\bigr]\,d^{3}x.
+\end{equation}
+For the symmetric part $\mathscr{J}^{(ij)} =
+\tfrac{1}{2}(\mathscr{J}^{ij}+\mathscr{J}^{ji})$ one obtains the
+\emph{relativistic tensor virial equation}:
+\begin{equation}
+\label{eq:rel-13-tensorvirial}
+\boxed{
+\frac{1}{2c}\frac{d^{2}}{dt^{2}}\!\int_{V}\!
+  \frac{(\edensity + p)}{c^{2}}\,\Lf^{2}\,x^{i}\,x^{j}\,d^{3}x
+= \int_{V}\!T^{ij}\,d^{3}x
+  + \int_{V}\!\frac{(\edensity + p)}{c^{2}}\,\Lf^{2}\,
+    \frac{\partial\Phi_{\mathrm{eff}}}{\partial x^{k}}\,
+    x^{(i}\,\delta^{j)k}\,d^{3}x,
+}
+\end{equation}
+where $\Phi_{\mathrm{eff}}$ includes the Newtonian potential plus
+post-Newtonian corrections.  The left-hand side involves
+$\tfrac{1}{2}\ddot{I}_{ij}^{(\mathrm{rel})}$, directly
+generalising eq.~\eqref{eq:13-27}.
+
+\begin{relcorrection}
+\textbf{Newtonian limit.}
+Setting $p/\edensity \to 0$, $\Lf \to 1$, and
+$\edensity \to \rdensity c^{2}$, the integral on the left reduces to
+$\tfrac{1}{2}\ddot{I}_{ik}$ and the right-hand side reproduces
+$2\mathfrak{T}_{ik} + \mathfrak{W}_{ik} + \delta_{ik}(\gamma-1)U$,
+recovering eq.~\eqref{eq:13-27} (with magnetic terms omitted for
+clarity).
+\end{relcorrection}
+
+
+\subsection{General form in special relativity and at post-Newtonian order}
+\label{sec:rel-117-PN}
+
+\paragraph{Special-relativistic virial theorem.}
+In Minkowski spacetime with no gravitational interaction, the
+conservation $\partial_{\mu}T^{\mu\nu}=0$ yields the exact relation
+\begin{equation}
+\label{eq:rel-13-SR-virial}
+\frac{d^{2}}{dt^{2}}\!\int_{V}\!T^{00}\,x^{i}\,x^{j}\,d^{3}x
+  = 2c^{2}\!\int_{V}\!T^{ij}\,d^{3}x
+  + \oint_{S}\!x^{(i}\,T^{j)k}\,dS_{k},
+\end{equation}
+valid for any relativistic continuous medium.  For a perfect fluid
+the spatial stress is $T^{ij} = (\edensity+p)\Lf^{2}v^{i}v^{j}/c^{2}
++ p\,\delta^{ij}$, so the right-hand side contains both the
+kinetic-energy tensor and the pressure contribution.
+
+\paragraph{Post-Newtonian virial theorem.}
+Including self-gravity to first post-Newtonian order
+($1/c^{2}$ corrections), Chandrasekhar's post-Newtonian formalism
+(Chandrasekhar 1965, \emph{Ap.\ J.}\ \textbf{142}, 1488) gives the
+scalar virial identity
+\begin{equation}
+\label{eq:rel-13-PN-scalar}
+\frac{1}{2}\frac{d^{2}I^{(\mathrm{PN})}}{dt^{2}}
+  = 2\mathfrak{T} + \mathfrak{W} + 3(\gamma-1)U
+  + \frac{1}{c^{2}}\left[
+      \mathscr{A}\,\mathfrak{T}
+    + \mathscr{B}\,\mathfrak{W}
+    + \mathscr{C}\,(\gamma-1)U
+    \right]
+  + O(c^{-4}),
+\end{equation}
+where $I^{(\mathrm{PN})}$ is the post-Newtonian moment of inertia and
+$\mathscr{A}$, $\mathscr{B}$, $\mathscr{C}$ are dimensionless
+coefficients depending on the structure of the configuration.  The
+Newtonian virial theorem~\eqref{eq:13-29} is recovered by setting
+$c\to\infty$.
+
+
+\subsection{Equilibrium configurations: virial equilibrium with
+  pressure contribution to gravitational mass}
+\label{sec:rel-117-equil}
+
+For a static equilibrium ($d^{2}I_{ik}^{(\mathrm{rel})}/dt^{2}=0$,
+$v^{i}=0$), the tensor virial equation~\eqref{eq:rel-13-tensorvirial}
+reduces to an algebraic relation among the equilibrium energies.
+The \emph{scalar} virial equilibrium at post-Newtonian order reads
+\begin{equation}
+\label{eq:rel-13-PN-equil}
+\mathfrak{W} + 3(\gamma-1)U
+  + \frac{1}{c^{2}}\Bigl[
+      \mathscr{B}\,\mathfrak{W}
+    + \mathscr{C}\,(\gamma-1)U
+    \Bigr] = 0.
+\end{equation}
+Compared with the Newtonian equilibrium
+$\mathfrak{W} + 3(\gamma-1)U = 0$ (eq.~\eqref{eq:13-31} with
+$\mathfrak{T}=\mathfrak{M}=0$), the post-Newtonian terms encode the
+fact that \emph{pressure contributes to the gravitational mass}.  For a
+uniform-density sphere of mass $M$ and radius $R$,
+\begin{equation}
+\label{eq:rel-13-WPN-sphere}
+\mathfrak{W}^{(\mathrm{PN})}
+  = -\frac{3GM^{2}}{5R}\left(
+      1 + \frac{\alpha_{1}\,GM}{Rc^{2}}
+    \right),
+\end{equation}
+where $\alpha_{1}$ is a positive numerical coefficient (of order
+unity), so the effective gravitational binding is \emph{stronger}
+than the Newtonian value.
+
+\begin{relcorrection}
+\textbf{Physical interpretation.}
+In Newtonian theory, the virial equilibrium
+$|\mathfrak{W}| = 3(\gamma-1)U$ balances gravity against thermal
+pressure.  In GR, the pressure that supports the star also
+\emph{gravitates}: the replacement
+$\rdensity \to (\edensity + p)/c^{2}$ in the TOV equation means that
+increasing pressure to resist collapse simultaneously increases the
+gravitational pull.  This positive-feedback loop is the fundamental
+reason why GR is more prone to gravitational instability than
+Newtonian gravity.
+\end{relcorrection}
+
+
+% =====================================================================
+\section{The relativistic virial theorem for small oscillations
+  about equilibrium}
+\label{sec:rel-118}
+% =====================================================================
+
+We now consider radial pulsations of a static, spherically symmetric
+equilibrium, generalising \S\ref{sec:118}.  Let
+$\xi^{i}\,e^{i\sigma t}$ be the Lagrangian displacement from
+equilibrium and $\sigma$ the oscillation frequency.
+
+\subsection{Characteristic equation for oscillation periods}
+\label{sec:rel-118-char}
+
+In the Newtonian theory, the scalar virial equation for radial
+oscillations with trial function $\boldsymbol{\xi} = \text{const}
+\times \mathbf{x}$ gives (eq.~\eqref{eq:13-68})
+\begin{equation}
+\label{eq:rel-13-sigma-Newton}
+\sigma^{2}_{\mathrm{N}} = -(3\gamma - 4)\,\frac{\mathfrak{W}}{I}.
+\end{equation}
+
+In general relativity, the eigenvalue equation for radial pulsations
+was derived by Chandrasekhar (1964, \emph{Ap.\ J.}\ \textbf{140}, 417).
+For a static background satisfying the TOV equation, the proper radial
+oscillation equation is
+\begin{equation}
+\label{eq:rel-13-pulsation}
+\frac{d}{dr}\!\left[
+  \Gamma_{1}\,p\,e^{(\Lambda+3\Phi)/2}\,r^{-2}\,
+  \frac{d}{dr}\!\bigl(r^{2}\,e^{-\Phi/2}\,\xi\bigr)
+\right]
++ \left[
+  \frac{\omega^{2}}{c^{2}}\,
+  (\edensity + p)\,r^{2}\,e^{(3\Lambda-\Phi)/2}
+  + \frac{d}{dr}\!\Bigl(e^{(\Lambda+3\Phi)/2}\Bigr)\,
+    \frac{dp}{dr}\,\frac{1}{r^{2}}
+\right]\!\xi = 0,
+\end{equation}
+where $\omega$ is the eigenfrequency as measured by a distant observer,
+$\Gamma_{1} = (\rdensity/p)(dp/d\rdensity)_{s}$ is the adiabatic
+index, and the metric functions $\Phi(r)$, $\Lambda(r)$ are determined
+by the TOV solution.
+
+Using the variational principle associated
+with~\eqref{eq:rel-13-pulsation}, with the homologous trial function
+$\xi(r) \propto r$, one obtains the \emph{relativistic virial
+estimate} for $\omega^{2}$:
+\begin{equation}
+\label{eq:rel-13-sigma-GR}
+\boxed{
+\omega^{2} = -(3\gamma_{\mathrm{eff}} - 4)\,
+  \frac{\mathfrak{W}_{\mathrm{eff}}}{I_{\mathrm{eff}}}
+  \left[1 + \mathcal{O}\!\left(\frac{GM}{Rc^{2}}\right)\right],
+}
+\end{equation}
+where $\mathfrak{W}_{\mathrm{eff}}$, $I_{\mathrm{eff}}$, and
+$\gamma_{\mathrm{eff}}$ include the post-Newtonian corrections from
+the metric functions and the pressure--gravity coupling.
+
+
+\subsection{Connection to stellar stability: the Chandrasekhar limit}
+\label{sec:rel-118-Chandra}
+
+A configuration is \emph{dynamically unstable} to radial perturbations
+when $\omega^{2} < 0$, i.e., when the restoring force is overwhelmed
+by the enhanced gravitational attraction.  From
+eq.~\eqref{eq:rel-13-sigma-GR}, the neutral stability condition
+$\omega^{2}=0$ defines a \emph{critical adiabatic index}
+$\gamma_{c}$.
+
+In Newtonian theory, eq.~\eqref{eq:rel-13-sigma-Newton} gives
+$\gamma_{c} = \tfrac{4}{3}$, and a configuration with
+$\gamma > \tfrac{4}{3}$ everywhere is stable (cf.\
+eq.~\eqref{eq:13-39} and the discussion following it).  This is the
+basis of the classical Chandrasekhar mass limit for white dwarfs: as
+the central density rises and the electrons become ultra-relativistic,
+$\gamma \to \tfrac{4}{3}$ and the star becomes marginally stable.
+The maximum mass for a cold, degenerate configuration is
+\begin{equation}
+\label{eq:rel-13-Mch}
+M_{\mathrm{Ch}}
+  = \frac{\omega_{3}^{0}}{\sqrt{2}}\left(\frac{\hbar c}{G}\right)^{3/2}
+    \frac{1}{(\mu_{e}\,m_{H})^{2}}
+  \approx 1.44\,M_{\odot},
+\end{equation}
+where $\omega_{3}^{0} \approx 2.018$ is the Lane--Emden constant for
+a polytrope of index $n=3$, $\mu_{e}$ is the mean molecular weight
+per electron, and $m_{H}$ is the hydrogen mass.
+
+
+\subsection{Critical adiabatic index: GR correction and the onset
+  of instability}
+\label{sec:rel-118-gamma}
+
+The central result of the relativistic virial analysis is the
+modification of the critical adiabatic index.  From the variational
+principle applied to~\eqref{eq:rel-13-pulsation} with a homologous
+trial function, Chandrasekhar (1964) showed that
+\begin{equation}
+\label{eq:rel-13-gamma-c}
+\boxed{
+\gamma_{c} = \frac{4}{3}
+  + \kappa\,\frac{GM}{Rc^{2}}
+  + O\!\left(\frac{GM}{Rc^{2}}\right)^{\!2},
+}
+\end{equation}
+where $\kappa$ is a positive, dimensionless, structure-dependent
+coefficient.  For a uniform-density sphere,
+\begin{equation}
+\label{eq:rel-13-kappa}
+\kappa = \frac{19}{42} \times 4 = \frac{38}{21} \approx 1.81,
+\end{equation}
+so that
+\begin{equation}
+\label{eq:rel-13-gamma-c-explicit}
+\gamma_{c} \;=\; \frac{4}{3}
+  + \frac{38}{21}\,\frac{GM}{Rc^{2}}
+  + \cdots\,.
+\end{equation}
+
+\begin{relcorrection}
+\textbf{GR makes stars MORE unstable.}
+Since $\kappa > 0$, the GR correction \emph{raises}
+$\gamma_{c}$ above $\tfrac{4}{3}$.  A star that is marginally stable
+in Newtonian theory ($\gamma = \tfrac{4}{3}$, such as a white dwarf
+at the Chandrasekhar limit) becomes \emph{unstable} when GR effects
+are included.  Physically, the pressure that supports the star against
+collapse also contributes to the gravitational mass; hence a stronger
+pressure gradient is needed to maintain equilibrium, requiring a
+stiffer equation of state ($\gamma > \gamma_{c} > \tfrac{4}{3}$).
+
+This has profound astrophysical consequences:
+\begin{itemize}
+\item \textbf{White dwarfs:} The true maximum mass is slightly
+  \emph{below} $M_{\mathrm{Ch}}$ due to the GR correction
+  (the effect is numerically small, $\sim 10^{-3}$, because
+  $GM/(Rc^{2}) \sim 10^{-3}$ for white dwarfs).
+\item \textbf{Neutron stars:} With $GM/(Rc^{2}) \sim 0.1$--$0.3$, the
+  GR correction to $\gamma_{c}$ is substantial.  The requirement
+  $\gamma > \gamma_{c} \approx 1.5$--$1.9$ places a strong constraint
+  on the nuclear equation of state and is directly responsible for the
+  existence of a \emph{maximum neutron-star mass}
+  ($M_{\max} \approx 2$--$3\,M_{\odot}$).
+\item \textbf{Supermassive stars:} For radiation-dominated
+  configurations ($\gamma \approx \tfrac{4}{3}$) with
+  $M \gtrsim 10^{5}\,M_{\odot}$, the GR correction triggers a
+  \emph{radial instability} that leads to direct collapse to a black
+  hole --- the ``post-Newtonian instability'' of Chandrasekhar and
+  Tooper.
+\end{itemize}
+\end{relcorrection}
+
+The virial approach thus reveals that \emph{general relativity is
+fundamentally destabilising for gravitationally bound systems}.  The
+Newtonian critical index $\gamma_{c}=\tfrac{4}{3}$ is a lower bound;
+any realistic star in GR must have an adiabatic index exceeding
+$\tfrac{4}{3} + O(GM/(Rc^{2}))$ to remain dynamically stable.  This
+is the foundational result of relativistic stellar stability theory.
+
+\subsection{Comparison of Newtonian and relativistic stability criteria}
+\label{sec:rel-118-comparison}
+
+We summarise the key results in the following table.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{lcc}
+\hline\hline
+& \textbf{Newtonian} & \textbf{General Relativity} \\
+\hline
+Critical index $\gamma_{c}$
+  & $\dfrac{4}{3}$
+  & $\dfrac{4}{3} + \kappa\,\dfrac{GM}{Rc^{2}}$ \\[6pt]
+Virial equilibrium (scalar)
+  & $\mathfrak{W} + 3(\gamma\!-\!1)U = 0$
+  & $\mathfrak{W}_{\mathrm{eff}} + 3(\gamma\!-\!1)U_{\mathrm{eff}} = 0$ \\[4pt]
+Oscillation frequency
+  & $\sigma^{2} = -(3\gamma\!-\!4)\dfrac{\mathfrak{W}}{I}$
+  & $\omega^{2} = -(3\gamma_{\mathrm{eff}}\!-\!4)
+    \dfrac{\mathfrak{W}_{\mathrm{eff}}}{I_{\mathrm{eff}}}$ \\[6pt]
+Onset of instability
+  & $\gamma < \dfrac{4}{3}$
+  & $\gamma < \dfrac{4}{3} + \kappa\,\dfrac{GM}{Rc^{2}}$ \\[4pt]
+Pressure gravitates?
+  & No
+  & Yes: $\rdensity \to (\edensity+p)/c^{2}$ \\
+\hline\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+\noindent
+\textit{Remark.}  The tensor virial
+theorem~\eqref{eq:rel-13-tensorvirial} also admits non-radial
+deformations ($i\neq j$).  The corresponding non-radial stability
+analysis --- relevant for rotating relativistic stars and the onset of
+gravitational-wave-driven (CFS) instabilities --- will be taken up in
+a subsequent section.
