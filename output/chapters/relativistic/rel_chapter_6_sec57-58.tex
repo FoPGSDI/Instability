@@ -3,10 +3,11 @@
 %% Variational Principle in Spherical Geometry
 %% Agent 24: Relativistic treatment of thermal instability in spherical shells
 %%
-%% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+%% Conventions: (-,+,+,+) signature, c kept explicit, see BDNK_CONVENTIONS.md
+%% BDNK formalism: Bemfica-Disconzi-Noronha-Kovtun first-order causal theory
 %% Macros assumed from rel_preamble.tex:
 %%   \fvel, \proj, \emt, \covd, \Lf, \cs, \vA, \enthalpy,
-%%   \taupi, \tauq, \bulkvisc, \shearvisc
+%%   \bulkvisc, \shearvisc
 
 \chapter{Relativistic Exchange of Stabilities and Variational Principle
 in Spherical Geometry}
@@ -27,15 +28,18 @@ essential modifications arise:
   $\enthalpy = (\varepsilon + p)/c^{2}$, where $\varepsilon$ is the
   energy density and $p$ the isotropic pressure.
 \item \emph{Causality constrains dissipation}: Fourier conduction must
-  be replaced by the Israel--Stewart causal heat equation, introducing
-  a relaxation time $\tauq > 0$ and bounding the thermal signal speed.
+  be replaced by a causal framework.  We adopt the BDNK
+  (Bemfica--Disconzi--Noronha--Kovtun) first-order
+  theory~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, which achieves
+  causality and strong hyperbolicity through the choice of hydrodynamic
+  frame and first-order constitutive relations, without introducing
+  relaxation equations or auxiliary dynamical variables.
 \end{enumerate}
 We re-derive the exchange of stabilities and the variational principle
-under these relativistic conditions, paying particular attention to the
-role of spherical-mode causality.
+under these relativistic conditions.
 
 Throughout, $c$ is kept explicit, and we use the metric signature
-$(-,+,+,+)$.  The notation follows \texttt{RELATIVISTIC\_CONVENTIONS.md}
+$(-,+,+,+)$.  The notation follows \texttt{BDNK\_CONVENTIONS.md}
 and the framework established in the relativistic thermodynamics chapter
 (cf.\ \S\,\ref{ch:rel-framework}).
 
@@ -80,18 +84,31 @@ where
     \;\times\;\mathcal{I},
   \label{eq:rel-C}
 \end{equation}
-and $p_{\mathrm{rel}}$ is the relativistic Prandtl-like ratio
-incorporating the Israel--Stewart relaxation:
+and $p_{\mathrm{rel}}$ is the relativistic Prandtl-like ratio:
 \begin{equation}
-  p_{\mathrm{rel}} = \frac{\nu}{\kappa_{\mathrm{IS}}},
-  \qquad
-  \kappa_{\mathrm{IS}}
-    = \frac{\kappa}{1 + \tauq\,\sigma}.
+  p_{\mathrm{rel}} = \frac{\nu}{\kappa}.
   \label{eq:rel-Prandtl}
 \end{equation}
+In the BDNK framework the thermal diffusivity $\kappa$ enters directly
+without modification by a relaxation time; causality is ensured by the
+BDNK frame conditions on the transport
+coefficients~\cite{Bemfica2018,Kovtun2019}.
 In the non-relativistic limit $\mathcal{I} \to 1$,
-$\tauq \to 0$, and $\kappa_{\mathrm{IS}} \to \kappa$, recovering
-exactly Chandrasekhar's classical equation~\eqref{eq:6-60}.
+recovering exactly Chandrasekhar's classical equation~\eqref{eq:6-60}.
+
+\begin{quote}
+\textbf{Remark (comparison with Israel--Stewart).}
+In the IS formulation, $\kappa$ in \eqref{eq:rel-Prandtl} would be
+replaced by the ``effective'' diffusivity
+$\kappa_{\mathrm{IS}} = \kappa/(1 + \tau_{q}\,\sigma)$, where
+$\tau_{q}$ is the heat-flux relaxation time.  This introduces a
+frequency-dependent modification that raises the order of the
+characteristic polynomial and creates a spurious relaxation mode.
+In the BDNK theory no such modification occurs; the polynomial degree
+is the same as in the classical Fourier
+case~\cite{Kovtun2019,HoultKovtun2020}.  At the marginal state
+$\sigma = 0$, both formulations yield identical equations.
+\end{quote}
 
 \subsection{Does the principle still hold when $p$ contributes to
 inertia?}
@@ -112,12 +129,6 @@ coefficient of $\sigma_{i}$?  The answer is \emph{yes}, because
 $\mathcal{I} > 0$ always (both $\varepsilon$ and $p$ are positive in
 any physical fluid), so it acts as a positive rescaling that cannot
 change the sign of the integral.
-
-There is, however, a subtlety introduced by the Israel--Stewart
-modification.  The thermal relaxation time $\tauq$ makes
-$p_{\mathrm{rel}}$ frequency-dependent (eq.~\eqref{eq:rel-Prandtl}),
-and na\"{\i}vely this could inject an imaginary part.  We address this
-next.
 
 \subsection{Modified proof using relativistic energy arguments}
 \label{sec:rel-57-proof}
@@ -167,31 +178,24 @@ relativistic analogue of eq.~\eqref{eq:6-76}:
 \end{multline}
 
 \paragraph{Separating real and imaginary parts.}
-Write $\sigma = \sigma_{r} + i\sigma_{i}$.  The Israel--Stewart
-modification makes $p_{\mathrm{rel}}$ complex when $\sigma_{i}\neq 0$:
-\begin{equation}
-  p_{\mathrm{rel}}
-  = \frac{\nu}{\kappa}\,
-    \frac{1 + \tauq\,\sigma_{r} + i\,\tauq\,\sigma_{i}}
-         {(1 + \tauq\,\sigma_{r})^{2} + \tauq^{2}\,\sigma_{i}^{2}}.
-  \label{eq:rel-prel-complex}
-\end{equation}
-Define the real and positive denominator
-$D_{\tauq} = (1 + \tauq\sigma_{r})^{2} + \tauq^{2}\sigma_{i}^{2}$.
-The imaginary part of eq.~\eqref{eq:rel-76} then yields
+Write $\sigma = \sigma_{r} + i\sigma_{i}$.  In the BDNK framework
+$p_{\mathrm{rel}} = \nu/\kappa$ is real and frequency-independent
+(unlike the IS case, where $\tau_{q}$ would make it complex).
+The imaginary part of eq.~\eqref{eq:rel-76} then yields directly
 \begin{equation}
   \sigma_{i}\!\left\{
-    \frac{\mathcal{I}\nu}{\kappa\,D_{\tauq}}\!
+    \mathcal{I}\,p_{\mathrm{rel}}\!
     \int_{\eta}^{1}|F|^{2}\,r^{2}\,dr
-    - l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,\mathcal{I}\!
+    + l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,\mathcal{I}\!
       \int_{\eta}^{1}\!\Bigl[|W'|^{2}
         + \frac{l(l+1)}{r^{2}}|W|^{2}\Bigr]r^{2}\,dr
   \right\} = 0.
   \label{eq:rel-77}
 \end{equation}
 The factor in braces is a \emph{sum of two positive-definite terms}
-(since $\mathcal{I} > 0$, $\mathcal{C}_{\mathrm{rel}} > 0$ for an
-unstable configuration, $D_{\tauq} > 0$, and all the integrals are
+(since $\mathcal{I} > 0$, $p_{\mathrm{rel}} > 0$,
+$\mathcal{C}_{\mathrm{rel}} > 0$ for an
+unstable configuration, and all the integrals are
 positive-definite).  Therefore,
 \begin{equation}
   \boxed{\sigma_{i} = 0.}
@@ -201,21 +205,23 @@ positive-definite).  Therefore,
 \begin{quote}
 \textbf{Result.}  \emph{The principle of the exchange of stabilities
 remains valid in the relativistic regime, for constant $\beta$ and
-$\gamma$, even when pressure contributes to inertia and heat conduction
-is governed by the Israel--Stewart causal equation.}  The onset of
+$\gamma$, when pressure contributes to inertia and heat conduction
+is described by the BDNK first-order causal
+theory~\cite{Bemfica2018,Kovtun2019}.}  The onset of
 thermal instability in a relativistic spherical shell is via a
 stationary marginal state, exactly as in the classical case.
 \end{quote}
 
-\paragraph{Role of the relaxation time.}
-The Israel--Stewart relaxation time $\tauq$ enters
-eq.~\eqref{eq:rel-77} only through the positive factor $D_{\tauq}^{-1}$
-in the denominator.  It does not spoil the positive-definiteness of the
-coefficient of $\sigma_{i}$ but merely \emph{rescales} the effective
-thermal diffusivity.  Physically, this is because the relaxation
-equation replaces the acausal, instantaneous Fourier response with a
-finite-speed thermal wave, but does not introduce oscillatory
-instability.
+\paragraph{Simplification from BDNK.}
+The proof is notably cleaner in the BDNK framework than in the IS
+formulation.  In IS theory, the relaxation time $\tau_{q}$ makes
+$p_{\mathrm{rel}}$ complex when $\sigma_{i} \neq 0$ (cf.\ IS
+expression: $p_{\mathrm{rel}}^{\mathrm{IS}} = \nu/\kappa \cdot
+(1 + \tau_{q}\sigma)/|1 + \tau_{q}\sigma|^{2}$), and additional
+analysis of the denominator $D_{\tau_{q}}$ is needed to verify
+positive-definiteness.  In BDNK, $p_{\mathrm{rel}}$ is simply
+$\nu/\kappa$---real and positive---so the conclusion follows
+immediately.
 
 \paragraph{Physical interpretation.}
 In the classical case, the exchange of stabilities rests on the fact
@@ -257,6 +263,16 @@ Together these give the sixth-order equation
   \label{eq:rel-6th-order}
 \end{equation}
 The boundary conditions are unchanged from eq.~\eqref{eq:6-70}.
+
+\begin{quote}
+\textbf{Remark.}  At $\sigma = 0$ the marginal-state equations
+\eqref{eq:rel-79a}--\eqref{eq:rel-6th-order} are \emph{identical}
+in the BDNK, Israel--Stewart, and classical Fourier formulations:
+all time-derivative terms (and hence all differences between
+causal frameworks) vanish.  The critical Rayleigh numbers, cell
+patterns, and eigenfunctions at onset are thus
+framework-independent~\cite{Bemfica2018,Kovtun2019}.
+\end{quote}
 
 As in \S\,57, $\mathscr{D}_{l}^{2}\,Z = 0$ with $Z = 0$ on the
 boundaries implies $Z \equiv 0$: the radial vorticity vanishes
@@ -333,14 +349,16 @@ In \S\,58a, Chandrasekhar shows that the variational
 principle~\eqref{eq:6-83} expresses the balance between viscous
 dissipation $\epsilon_{\nu}$ and buoyancy work $\epsilon_{T}$ at the
 marginal state.  We now establish the relativistic version of this
-result, keeping track of both the enthalpy--inertia contribution and
-the entropy production requirements of Israel--Stewart theory.
+result, keeping track of the enthalpy--inertia contribution and
+the entropy production requirements of the BDNK theory.
 
 \subsubsection{Relativistic viscous dissipation}
 \label{sec:rel-58-viscous}
 
-In special relativity, the rate of viscous energy dissipation in the
-fluid frame is (see, e.g., the relativistic framework chapter)
+In the BDNK framework, the anisotropic stress is given by the
+first-order constitutive relation $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$
+(no relaxation equation).  The rate of viscous energy dissipation in the
+fluid frame is
 \begin{equation}
   \epsilon_{\nu}^{\mathrm{rel}}
   = \int \enthalpy\,\nu\,|\operatorname{curl}\vect{u}|^{2}\,dV
@@ -404,17 +422,20 @@ under the non-relativistic $\to$ relativistic transition.
 \subsubsection{Entropy production and the second law}
 \label{sec:rel-58-entropy}
 
-In Israel--Stewart theory, the entropy production rate due to heat
-conduction in the fluid rest frame is
+In the BDNK theory, the entropy current is
+$s^{\mu} = s\,u^{\mu} + Q^{\mu}/T + \text{(frame terms)}$, and the
+entropy production rate from heat conduction in steady state is
 \begin{equation}
   T\,\dot{s}_{\mathrm{heat}}
-  = \frac{q^{\mu}\,q_{\mu}}{\kappa\,T\,\enthalpy\,c^{2}}
-    + \frac{\tauq}{2\kappa\,T\,\enthalpy\,c^{2}}\,
-      \frac{d}{dt}(q^{\mu}\,q_{\mu}).
+  = \frac{Q^{\mu}\,Q_{\mu}}{\kappa\,T\,\enthalpy\,c^{2}} \geq 0,
   \label{eq:rel-entropy-prod}
 \end{equation}
-This is manifestly non-negative for $\kappa > 0$, $\tauq \geq 0$ in
-steady state (where the time derivative vanishes).  The total entropy
+which is manifestly non-negative for $\kappa > 0$.  Unlike the
+Israel--Stewart expression, there is no time-derivative term
+involving a relaxation time; the entropy production is algebraically
+determined by the instantaneous heat flux, consistent with the
+first-order nature of the BDNK
+theory~\cite{Bemfica2018,Kovtun2019}.  The total entropy
 production from both viscous and thermal dissipation is
 \begin{equation}
   \dot{S}_{\mathrm{total}}
@@ -431,98 +452,62 @@ minimum entropy production principle.
 
 
 %% ====================================================================
-\section{Causality: spherical modes must have causal propagation}
+\section{BDNK causality: spherical modes}
 \label{sec:rel-causality}
 %% ====================================================================
 
-The Israel--Stewart framework guarantees causal propagation of
-\emph{plane-wave} perturbations by construction.  In a spherical shell,
-the perturbations are expanded in spherical harmonics $Y_{l}^{m}$, and
-one must verify that each mode $l$ satisfies the causality bound
-independently.
+The BDNK framework guarantees causal propagation of all linearized
+perturbations through the strong hyperbolicity of the conservation-law
+system~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}.  In a spherical
+shell, perturbations are expanded in spherical harmonics $Y_{l}^{m}$,
+and the causality properties are inherited by each mode.
 
-\subsection{Thermal signal speed in the spherical shell}
+\subsection{Characteristic speeds in the BDNK theory}
 \label{sec:rel-causality-thermal}
 
-The Israel--Stewart heat equation in the relativistic framework yields
-a thermal wave speed (cf.\ the framework chapter)
-\begin{equation}
-  v_{\mathrm{th}}^{2}
-  = \frac{\kappa}{\tauq\,\enthalpy\,c^{2}}
-  = \frac{\kappa}{\tauq\,(\varepsilon + p)}.
-  \label{eq:rel-vth}
-\end{equation}
-The causality requirement
-\begin{equation}
-  v_{\mathrm{th}} \leq c
-  \label{eq:rel-causality-thermal}
-\end{equation}
-imposes the constraint
-\begin{equation}
-  \tauq \geq \frac{\kappa}{(\varepsilon + p)\,c^{2}}
-  = \frac{\kappa}{\enthalpy\,c^{4}}.
-  \label{eq:rel-tauq-bound}
-\end{equation}
-This is the same constraint as for plane waves; it does not acquire
-$l$-dependent corrections because the spherical harmonic decomposition
-separates the angular and radial parts cleanly.
-
-\subsection{Viscous signal speed}
-\label{sec:rel-causality-viscous}
-
-Similarly, the shear viscous perturbations propagate at a speed
-bounded by
-\begin{equation}
-  v_{\mathrm{visc}}^{2}
-  = \frac{\shearvisc}{\taupi\,\enthalpy\,c^{2}}
-  \leq c^{2},
-  \label{eq:rel-vvisc}
-\end{equation}
-which requires $\taupi \geq \shearvisc / (\enthalpy\,c^{4})$.
-
-\subsection{Combined causality constraint for the eigenvalue problem}
-\label{sec:rel-causality-combined}
-
-For the exchange-of-stabilities proof (\S\,\ref{sec:rel-57-proof}) and
-the variational principle (\S\,\ref{sec:rel-58-Rayleigh}) to be
-physically consistent, \emph{both} the thermal and viscous relaxation
-times must satisfy their respective causality bounds.  We require:
-\begin{equation}
-  \boxed{
-  \tauq \geq \frac{\kappa}{\enthalpy\,c^{4}},
-  \qquad
-  \taupi \geq \frac{\shearvisc}{\enthalpy\,c^{4}}.
-  }
-  \label{eq:rel-causality-constraints}
-\end{equation}
-Under these constraints:
+In the BDNK framework, the linearized perturbation equations are a
+system of conservation laws with characteristic speeds determined by
+the transport coefficients and the frame
+coefficients~\cite{Kovtun2019,HoultKovtun2020}.  The physical
+hydrodynamic modes are:
 \begin{enumerate}
-\item All spherical-harmonic modes $l = 1, 2, 3, \ldots$ propagate at
-  speeds $\leq c$.
-\item The exchange of stabilities (eq.~\eqref{eq:rel-78}) is valid for
-  every $l$.
-\item The Rayleigh quotient~\eqref{eq:rel-83} provides a well-defined,
-  causal variational principle for the critical
-  $\mathcal{C}_{\mathrm{rel}}$.
+\item \textbf{Sound modes:} Modified by viscosity, with phase velocity
+  bounded by~$c$ when the BDNK causality conditions are satisfied.
+\item \textbf{Shear (viscous) modes:}
+  $\omega = -i\,\eta\,k^{2}/[(\varepsilon + p)/c^{2}] + O(k^{3})$,
+  which is diffusive at long wavelengths and has causal high-$k$
+  behaviour.
+\item \textbf{Heat mode:}
+  $\omega = -i\,\kappa\,k^{2} + O(k^{3})$,
+  similarly diffusive at low $k$ with the high-$k$ behaviour
+  rendered causal by the BDNK frame coefficients.
 \end{enumerate}
+Crucially, unlike the Israel--Stewart theory, the BDNK dispersion
+relation contains \emph{no extra relaxation modes}: the number of modes
+equals the number of conservation laws.  This eliminates the spurious
+``gapped'' modes of IS theory that have no physical origin.
 
-\paragraph{No $l$-dependent causality violation.}
-In Fourier (acausal) theory, the heat flux responds instantaneously to
-a temperature gradient at any angular scale.  With Israel--Stewart
-theory, the thermal response at angular wavenumber $\sim l/R_{1}$ is
-characterized by a propagation time $\sim R_{1}/(l\,v_{\mathrm{th}})$.
-For large $l$, the response time grows (the signal must traverse a
-smaller angular patch), but the propagation speed remains
-$v_{\mathrm{th}} \leq c$ regardless of $l$.  There is thus no danger
-of superluminal propagation at high multipoles.
+\subsection{No $l$-dependent causality violation}
+\label{sec:rel-causality-angular}
 
-\paragraph{Connection to the stability criterion.}
-The causal thermal diffusivity $\kappa_{\mathrm{IS}} = \kappa/(1 +
-\tauq\,\sigma)$ (eq.~\eqref{eq:rel-Prandtl}) reduces at the marginal
-state ($\sigma = 0$) to the ordinary thermal diffusivity $\kappa$.
+The spherical harmonic decomposition separates the angular and radial
+parts cleanly: each mode~$l$ obeys the same radial system with the
+effective angular wavenumber $l(l+1)/r^{2}$.  The BDNK causality
+conditions---which are constraints on the transport coefficients
+$(\eta, \zeta, \kappa)$ and the frame coefficients
+$(\varepsilon_{1}, \beta_{1}, \alpha_{1})$---are
+$l$-independent.  Once these conditions are satisfied, \emph{all}
+spherical-harmonic modes propagate causally, for any~$l$.
+
+\subsection{Connection to the stability criterion}
+\label{sec:rel-causality-connection}
+
+At the marginal state ($\sigma = 0$, i.e.\ $p = 0$), the thermal
+diffusivity reduces to~$\kappa$ in both the BDNK and IS frameworks.
 Hence the \emph{critical} Rayleigh quotient~\eqref{eq:rel-83} is
-independent of $\tauq$.  The relaxation time affects only the growth
-rate of slightly supercritical modes, not the onset criterion itself.
+independent of the choice of causal formalism.  The distinction between
+BDNK and IS affects only the growth rate of slightly supercritical
+modes and the transient dynamics, not the onset criterion itself.
 
 
 %% ====================================================================
@@ -535,7 +520,7 @@ rate of slightly supercritical modes, not the onset criterion itself.
 \begin{tabular}{p{5.2cm}p{4.5cm}p{4.5cm}}
 \hline
 \textbf{Quantity} & \textbf{Classical (\S\,57--58)}
-  & \textbf{Relativistic} \\
+  & \textbf{Relativistic (BDNK)} \\
 \hline
 Inertial density
   & $\rho$
@@ -555,11 +540,17 @@ Thermodynamic content
   & $\epsilon_{\nu}^{\mathrm{rel}} = \epsilon_{T}^{\mathrm{rel}}$ \\
 Heat transport
   & Fourier (acausal)
-  & Israel--Stewart (causal) \\
-Causality
+  & BDNK first-order (causal) \\
+Causality mechanism
   & Not constrained
-  & $v_{\mathrm{th}}\leq c$,\;
-    $v_{\mathrm{visc}}\leq c$ \\
+  & Frame coefficients ensure
+    $v_{\mathrm{char}} \leq c$ \\
+Relaxation times
+  & ---
+  & Not needed (first-order theory) \\
+Dispersion relation
+  & Standard polynomial
+  & Same polynomial (no extra modes) \\
 Stabilizing effect
   & ---
   & $\mathcal{C}_{\mathrm{rel}}^{(\mathrm{crit})}
@@ -574,8 +565,12 @@ transition to special relativity with minimal structural change.  The
 only modifications are: (i) the replacement of $\rho$ by $\enthalpy$
 as the inertial density, which uniformly scales both the dissipation
 and the buoyancy work and therefore cancels in the Rayleigh quotient;
-and (ii) the replacement of Fourier conduction by Israel--Stewart
-causal conduction, which affects growth rates of supercritical modes
-but not the marginal-stability criterion itself.  The relativistic
+and (ii) the replacement of Fourier conduction by BDNK first-order
+causal conduction~\cite{Bemfica2018,Kovtun2019}, which ensures all
+characteristic speeds are bounded by~$c$ without introducing
+relaxation equations or auxiliary variables.  At the marginal state
+($\sigma = 0$), the BDNK equations reduce to the same form as the
+classical equations, so the critical Rayleigh numbers are identical
+to those obtained in any causal framework.  The relativistic
 spherical shell is \emph{harder to destabilize} than its classical
 counterpart because pressure contributes to inertia.

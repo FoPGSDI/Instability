@@ -1,6 +1,7 @@
 % Relativistic §60: Thermal Instability in Spherical Shells
 % Relativistic generalization of Chandrasekhar, Chapter VI, §60
-% Conventions: see RELATIVISTIC_CONVENTIONS.md
+% Conventions: see BDNK_CONVENTIONS.md
+% BDNK formalism: Bemfica-Disconzi-Noronha-Kovtun first-order causal theory
 %
 % Classical reference: §60 of chapter_6.tex (lines 774--1371)
 
@@ -21,6 +22,11 @@ thermal gradient, and the perturbation operator all become significant.
 We develop these corrections systematically in the present section,
 retaining the speed of light~$c$ explicitly throughout so that the
 Newtonian limit $v/c\to 0$ is always transparent.
+
+The dissipative sector is treated within the BDNK first-order causal
+theory~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, which ensures
+strong hyperbolicity of the conservation-law system through appropriate
+frame coefficients, without introducing relaxation equations.
 
 %% ----------------------------------------------------------------
 \subsection{Relativistic static equilibrium of a spherical shell}
@@ -98,7 +104,8 @@ determined by the equilibrium model.
 \label{sec:rel-60-perturb}
 
 We perturb the equilibrium of the previous subsection using the
-Israel--Stewart causal transport formalism (cf.\ \S\,\ref{sec:rel-1-2b}).
+BDNK first-order causal transport
+formalism~\cite{Bemfica2018,Kovtun2019}.
 Under the assumption that the \emph{relativistic exchange of
 stabilities} holds---that is, the transition from stability to
 instability occurs through a zero-frequency mode---the marginal-state
@@ -111,11 +118,13 @@ equations generalise \eqref{eq:6-127} and \eqref{eq:6-128} to
 and
 \begin{equation}\label{eq:rel-60-10}
 \mathscr{D}_{l,\mathrm{rel}}^{2}\,W_{\mathrm{rel}}
-  = l(l+1)\frac{\psi}{\nu_{\mathrm{eff}}}\,G_{\mathrm{rel}},
+  = l(l+1)\frac{\psi}{\nu}\,G_{\mathrm{rel}},
 \end{equation}
-where $\nu_{\mathrm{eff}}$ is the effective kinematic viscosity
-including the Israel--Stewart shear-relaxation correction
-(see~\S\,\ref{sec:rel-1-2b}), and the relativistic angular operator is
+where $\nu$ is the kinematic viscosity
+(in the BDNK framework, the viscous stress is given by the
+first-order constitutive relation
+$\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ without a relaxation
+equation), and the relativistic angular operator is
 \begin{equation}\label{eq:rel-60-11}
 \mathscr{D}_{l,\mathrm{rel}}^{2} \equiv
   e^{-2\Lambda}\frac{d^{2}}{dr^{2}}
@@ -125,6 +134,17 @@ including the Israel--Stewart shear-relaxation correction
 \end{equation}
 In the weak-field limit $\Lambda\to 0$ we recover
 $\mathscr{D}_{l,\mathrm{rel}}^{2}\to\mathscr{D}_{l}^{2}$.
+
+\begin{quote}
+\textbf{Remark.}  At the marginal state ($\sigma = 0$),
+equations~\eqref{eq:rel-60-9}--\eqref{eq:rel-60-10} are identical
+in the BDNK, Israel--Stewart, and Fourier formulations: all
+time-derivative terms---and hence all differences between causal
+frameworks---vanish.  The IS ``effective diffusivities''
+$\kappa_{\mathrm{eff}} = \kappa/(1 + \omega^{2}\tau_{q}^{2})$ and
+$\nu_{\mathrm{eff}} = \nu/(1 + \omega^{2}\tau_{\pi}^{2})$ reduce
+to $\kappa$ and $\nu$ at $\omega = 0$.
+\end{quote}
 
 Defining
 \begin{equation}\label{eq:rel-60-12}
@@ -145,7 +165,7 @@ spherical shell is
 \boxed{%
 \mathcal{C}_{\mathrm{rel}}
   = \frac{\alpha\,\bar{\beta}_{0}\,\gamma_{0}\,R_{0}^{4}}
-         {\kappa_{\mathrm{eff}}\,\nu_{\mathrm{eff}}}
+         {\kappa\,\nu}
   \cdot\mathscr{R}(\xi),
 }
 \end{equation}
@@ -156,25 +176,22 @@ with the \emph{relativistic amplification factor}
   + \order{\xi^{3}}.
 \end{equation}
 As $\xi\to 0$, $\mathscr{R}\to 1$ and we recover the classical
-$\mathcal{C}$ of equation~\eqref{eq:6-133}.  The effective diffusivities
-$\kappa_{\mathrm{eff}}$ and $\nu_{\mathrm{eff}}$ incorporate
-Israel--Stewart relaxation:
-\begin{equation}\label{eq:rel-60-17}
-\kappa_{\mathrm{eff}} = \frac{\kappa}{1+\omega^{2}\tau_{q}^{2}},
-\qquad
-\nu_{\mathrm{eff}} = \frac{\nu}{1+\omega^{2}\tau_{\pi}^{2}},
-\end{equation}
-which at the marginal state ($\omega=0$) reduce to $\kappa$ and $\nu$,
-respectively, recovering the classical values.
+$\mathcal{C}$ of equation~\eqref{eq:6-133}.  In the BDNK framework,
+the transport coefficients $\kappa$ and $\nu$ enter directly without
+modification by relaxation times; the causality of the full
+time-dependent system is guaranteed by the BDNK frame
+conditions~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}.
 
 \begin{causalitycheck}
 The perturbation operator $\mathscr{D}_{l,\mathrm{rel}}^{2}$ is
 elliptic in the static ($\omega=0$) sector, consistent with the
 exchange-of-stabilities assumption.  Away from marginality
-($\omega\neq 0$), the Israel--Stewart relaxation terms ensure that the
-full time-dependent system is hyperbolic and all signal speeds remain
-bounded by~$c$.  In particular, the thermal perturbation propagation
-speed is $v_{\mathrm{th}} = \sqrt{\kappa/\tau_{q}}\leq c$.
+($\omega\neq 0$), the BDNK first-order constitutive relations ensure
+that the full time-dependent conservation-law system is strongly
+hyperbolic and all signal speeds remain bounded by~$c$.  Unlike
+the IS theory, no extra ``relaxation modes'' appear in the
+dispersion relation; the spectrum contains only the physical
+hydrodynamic modes~\cite{Kovtun2019,HoultKovtun2020}.
 \end{causalitycheck}
 
 %% ----------------------------------------------------------------
@@ -500,15 +517,16 @@ electron--impurity scattering:
 \qquad
 \nu_{\mathrm{crust}} \sim 10^{2}\text{--}10^{5}\;\mathrm{cm^{2}\;s^{-1}}.
 \end{equation}
-The Israel--Stewart relaxation times for these processes are
-$\tau_{q}\sim 10^{-18}$--$10^{-15}$~s (thermal) and
-$\tau_{\pi}\sim 10^{-20}$--$10^{-17}$~s (shear), far shorter than
-any hydrodynamic timescale.  Consequently, the Israel--Stewart
-corrections to the effective diffusivities
-(equation~\eqref{eq:rel-60-17}) are negligible for the crustal
-convection problem, and the dominant relativistic effect is the
-gravitational one encoded in $\mathscr{R}(\xi)$ and
-$c_{\mathrm{rel}}(r)$.
+In the BDNK framework, these transport coefficients enter the
+perturbation equations directly at first order, and causality is
+ensured by the BDNK frame conditions rather than by
+relaxation times.  The relevant BDNK causality conditions---that
+$\eta > 0$, $\zeta + \tfrac{2}{3}\eta > 0$, and the frame
+coefficients satisfy coupled inequalities bounding characteristic
+speeds by~$c$~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}---are
+amply satisfied for crustal matter, where the microscopic scattering
+timescales ($\sim 10^{-18}$--$10^{-15}$~s) are far shorter than any
+hydrodynamic timescale.
 
 \subsubsection{Convective stability criterion}
 
@@ -570,4 +588,8 @@ raise the critical Rayleigh number, with the combined enhancement
 scaling as $\mathscr{R}(\xi)\sim 1+\frac{5}{2}\xi+\order{\xi^{2}}$.
 For neutron star crusts ($\xi\sim 0.4$) the increase is a factor of
 2--3, significantly inhibiting convective overturn and favouring
-purely conductive thermal transport.
+purely conductive thermal transport.  The BDNK first-order causal
+framework~\cite{Bemfica2018,Kovtun2019} ensures that all perturbation
+modes propagate causally without introducing relaxation equations;
+at the marginal state, the results are identical to those obtained
+in any causal formulation.

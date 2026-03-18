@@ -1,6 +1,7 @@
 % rel_chapter_6_sec55-56.tex
 % Agent 23: Relativistic spherical perturbation equations (Ch VI §55-56)
-% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+% Conventions: (-,+,+,+) signature, c kept explicit, see BDNK_CONVENTIONS.md
+% BDNK formalism: Bemfica-Disconzi-Noronha-Kovtun first-order causal theory
 
 \section{Introduction: Spherical Geometry in the Relativistic Context}
 \label{sec:rel-55}
@@ -29,10 +30,14 @@ such systems:
 \item[(iii)] Thermal energy can become a non-negligible fraction of the
   rest-mass energy, and the equation of state must satisfy the causality
   bound $c_{\mathrm{s}}^{2} \le c^{2}$.
-\item[(iv)] Heat propagation must be treated within the Israel--Stewart
-  causal framework (cf.\ Section~\ref{sec:rel-thermo-framework}); the
-  Fourier heat-conduction law, being parabolic, would produce
-  superluminal signal propagation and must be replaced.
+\item[(iv)] Heat propagation must be treated within a causal dissipative
+  framework.  We adopt the BDNK (Bemfica--Disconzi--Noronha--Kovtun)
+  first-order theory~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, in which
+  causality and strong hyperbolicity are achieved through appropriate
+  choice of the hydrodynamic frame and first-order constitutive relations,
+  without introducing auxiliary relaxation equations.  The classical
+  Fourier heat-conduction law, being parabolic, produces superluminal
+  signal propagation and must be replaced.
 \item[(v)] The gravitational redshift modifies the effective buoyancy
   criterion: the classical Schwarzschild--Ledoux criterion acquires a
   relativistic Tolman factor $e^{\Phi/c^{2}}$, where $\Phi$ is the
@@ -116,8 +121,21 @@ correction factor $\bigl(1 - 2Gm/(rc^{2})\bigr)^{-1}$.
 In the classical treatment (eq.~6-3 of the original text), the
 temperature distribution was determined by the Fourier equation
 $\kappa\,\nabla^{2}T = -\epsilon$.  In the relativistic setting
-we must replace this by the Israel--Stewart causal heat equation.
-For a static background the relaxation terms vanish and the
+we employ the BDNK first-order causal heat
+equation~\cite{Bemfica2018,Kovtun2019}.  In the BDNK framework, the
+heat flux is given by the first-order constitutive relation
+\begin{equation}
+  Q^{\mu} = -\kappa_{\mathrm{rel}}\,T\,\Delta^{\mu\alpha}
+    \partial_{\alpha}\!\left(\frac{\mu}{T}\right)
+    + \text{(frame correction terms)},
+  \label{eq:rel6-BDNK-heat}
+\end{equation}
+where the frame correction terms---specific to the BDNK general
+frame---ensure that the resulting system of conservation laws is
+strongly hyperbolic and hence causal, without the need for any
+relaxation equation.
+
+For a static background the time-derivative terms vanish and the
 steady-state temperature profile satisfies
 \begin{equation}
   \frac{1}{r^{2}}\frac{\dd}{\dd r}\!\left(
@@ -143,6 +161,20 @@ Newtonian theory.  In the non-relativistic limit
 ($\Phi/c^{2} \to 0$, $\Lambda \to 0$), $\beta_{\mathrm{rel}}$
 reduces to the classical gradient
 $\beta = -\dd T/\dd r = 2\bar{\beta}_{0}\,r$.
+
+\begin{quote}
+\textbf{Remark (BDNK vs.\ Israel--Stewart).}
+In the Israel--Stewart (IS) second-order theory, causal heat transport is
+achieved by promoting the heat flux to a dynamical variable obeying a
+relaxation equation with relaxation time $\tau_{q}$.  The BDNK theory
+achieves causality at first order through the choice of hydrodynamic frame;
+no relaxation times appear.  For the static background considered here,
+both formulations yield the \emph{same} steady-state equation
+\eqref{eq:rel6-heat-bg}, since all time-derivative terms (including the IS
+relaxation terms) vanish identically.  The distinction becomes relevant only
+for the time-dependent perturbation equations (see
+\S\,\ref{subsec:rel-56-modes}).
+\end{quote}
 
 %------------------------------------------------------------------
 \subsection{The operator $\mathscr{L}^{2}$ in curved spacetime}
@@ -229,10 +261,10 @@ TOV system \eqref{eq:rel6-mass}--\eqref{eq:rel6-Phi} rather than by
 Newtonian hydrostatics.
 
 Inserting these modal forms into the linearized relativistic
-conservation equations $\nabla_{\mu}(\delta T^{\mu\nu}) = 0$ and the
-Israel--Stewart heat equation, and using the angular decomposition via
-$\mathscr{L}^{2}\,Y_{l}^{m} = l(l+1)\,Y_{l}^{m}$, we obtain the
-coupled radial system.
+conservation equations $\nabla_{\mu}(\delta T^{\mu\nu}) = 0$ with
+the BDNK first-order constitutive relations, and using the angular
+decomposition via $\mathscr{L}^{2}\,Y_{l}^{m} = l(l+1)\,Y_{l}^{m}$,
+we obtain the coupled radial system.
 
 \paragraph{Radial momentum (relativistic Euler):}
 \begin{equation}
@@ -250,27 +282,43 @@ relativistic kinematic viscosity, and $\mathcal{R}_{W}$ collects
 curvature-coupling terms proportional to $\dd\Phi/\dd r$ and
 $\dd\Lambda/\dd r$ that vanish in the Newtonian limit.
 
-\paragraph{Thermal perturbation (Israel--Stewart):}
+\paragraph{Thermal perturbation (BDNK first-order):}
+In the BDNK framework, the heat flux obeys a first-order constitutive
+relation rather than a relaxation equation.  The linearized thermal
+perturbation equation takes the form
 \begin{equation}
-  \left(1 + \tauq\,p\right)\!
   \left(\mathscr{D}_{l,\mathrm{rel}}^{2}
         - \frac{p}{\kappa_{\mathrm{rel}}}\right)\Theta
   = -\frac{\beta_{\mathrm{rel}}}{r}\,W
     + \mathcal{R}_{\Theta} \,,
   \label{eq:rel6-Theta-eq}
 \end{equation}
-where $\tauq$ is the heat-flux relaxation time.  In the limit
-$\tauq \to 0$ (Fourier law) this reduces to an equation of the
-classical form~\eqref{eq:6-35}.  For finite $\tauq > 0$, the thermal
-perturbation equation is \emph{hyperbolic}, ensuring causal
-propagation of thermal signals.
+where $\kappa_{\mathrm{rel}}$ is the thermal diffusivity.  Causality
+is guaranteed by the BDNK frame conditions on the transport
+coefficients (see \S\,\ref{subsec:rel-56-summary} below), rather than
+by a relaxation prefactor.  In the non-relativistic limit this reduces
+to an equation of the classical form~\eqref{eq:6-35}.
 
-\paragraph{Combined sixth-order equation:}
+\begin{quote}
+\textbf{Comparison with Israel--Stewart.}
+In IS theory, equation~\eqref{eq:rel6-Theta-eq} would carry an
+additional prefactor $(1 + \tau_{q}\,p)$ on the left-hand side, where
+$\tau_{q}$ is the heat-flux relaxation time.  This prefactor raises the
+order of the characteristic polynomial and introduces an extra,
+purely decaying ``relaxation mode'' that has no direct physical
+counterpart.  In the BDNK theory such spurious modes are absent: the
+dispersion relation contains only the physical hydrodynamic
+modes~\cite{Bemfica2018,Kovtun2019}.  Crucially, at the marginal state
+$p = 0$ both formulations yield \emph{identical} equations, so all
+onset-of-instability results (critical Rayleigh numbers, cell
+patterns, etc.) are the same.
+\end{quote}
+
+\paragraph{Combined equation:}
 In direct analogy with equation~\eqref{eq:6-23}, we can eliminate
 $\Theta$ to obtain a single equation for~$W$:
 \begin{equation}
-  \left(1 + \tauq\,p\right)
-  \!\left(\mathscr{D}_{l,\mathrm{rel}}^{2}
+  \left(\mathscr{D}_{l,\mathrm{rel}}^{2}
           - \frac{p}{\kappa_{\mathrm{rel}}}\right)\!
   \left(\mathscr{D}_{l,\mathrm{rel}}^{2}
           - \frac{p}{\nu_{\mathrm{rel}}}\right)\!
@@ -282,14 +330,16 @@ $\Theta$ to obtain a single equation for~$W$:
 \end{equation}
 where $\psi_{\mathrm{rel}}(r) = \alpha_{\mathrm{rel}}\,
 g_{\mathrm{eff}}(r)/r$ is the relativistic analogue of the function
-$\psi(r) = \alpha\gamma(r)$ defined in eq.~\eqref{eq:6-12}.  The
-additional factor $(1 + \tauq\,p)$ on the left-hand side is the
-signature of causal heat transport; it raises the order of the
-characteristic polynomial in $p$ by one, introducing a new (purely
-decaying) thermal-relaxation mode.
+$\psi(r) = \alpha\gamma(r)$ defined in eq.~\eqref{eq:6-12}.  Unlike
+the Israel--Stewart formulation, there is no additional prefactor
+$(1 + \tau_{q}\,p)$; the characteristic polynomial in $p$ has the
+\emph{same degree} as the classical Fourier case, with no spurious
+relaxation modes.  Causality of all modes is ensured by the BDNK
+conditions on the transport coefficients~\cite{Bemfica2018,Kovtun2019,
+HoultKovtun2020}.
 
 In the non-relativistic limit
-($c \to \infty$, $\Lambda \to 0$, $\Phi \to 0$, $\tauq \to 0$)
+($c \to \infty$, $\Lambda \to 0$, $\Phi \to 0$)
 equation~\eqref{eq:rel6-combined} reduces precisely to
 equation~\eqref{eq:6-23}.
 
@@ -342,9 +392,13 @@ conditions are:
   $\Theta(R) = 0$ (isothermal surface) or a radiative boundary
   condition matching to an optically thin envelope.
 
-\item[(iv)] When Israel--Stewart transport is used, the heat flux
-  perturbation $\delta q^{r}$ must be continuous across the surface,
-  providing an additional condition absent in the classical theory.
+\item[(iv)] In the BDNK framework, the heat flux $Q^{\mu}$ is
+  determined algebraically by the first-order constitutive relations;
+  no additional dynamical boundary condition on $Q^{\mu}$ is required
+  beyond the continuity of the fundamental variables
+  $(\varepsilon, p, u^{\mu}, T)$.  This is in contrast to the
+  Israel--Stewart formulation, where the dynamical heat-flux
+  variable $q^{\mu}$ would require an independent boundary condition.
 \end{enumerate}
 
 \noindent
@@ -435,6 +489,38 @@ persists in the relativistic theory because the buoyancy force remains
 radial in a spherically symmetric background.
 
 %------------------------------------------------------------------
+\subsection{BDNK causality conditions for spherical perturbations}
+\label{subsec:rel-56-causality}
+
+In the BDNK framework, causality of the perturbation equations is
+guaranteed by requiring that the transport coefficients satisfy
+coupled nonlinear inequalities that ensure strong
+hyperbolicity~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}.
+Specifically:
+\begin{enumerate}
+\item[(i)] Positive shear viscosity: $\eta > 0$.
+\item[(ii)] Positive bulk-plus-shear combination:
+  $\zeta + \tfrac{2}{3}\eta > 0$.
+\item[(iii)] The BDNK frame coefficients (the energy correction
+  $\varepsilon_{1}$, etc.) satisfy a set of coupled inequalities that
+  bound all characteristic speeds by~$c$.
+\end{enumerate}
+These conditions replace the Israel--Stewart requirement that the
+relaxation times $\tau_{\pi}$, $\tau_{q}$, $\tau_{\Pi}$ be positive.
+In the BDNK theory, the characteristic speeds of the linearized system
+are:
+\begin{itemize}
+\item \textbf{Sound modes:} Modified by viscosity, with speed $\leq c$.
+\item \textbf{Shear modes:}
+  $\omega = -i\,\eta\,k^{2}/[(\varepsilon + p)/c^{2}] + O(k^{3})$
+  (diffusive at low $k$, causal at high $k$).
+\item \textbf{Heat mode:} Similarly bounded by~$c$.
+\end{itemize}
+Unlike the IS theory, there are no additional ``relaxation modes''---the
+dispersion relation contains only the standard hydrodynamic
+modes~\cite{Kovtun2019,HoultKovtun2020}.
+
+%------------------------------------------------------------------
 \subsection{Summary of relativistic corrections}
 \label{subsec:rel-56-summary}
 
@@ -456,16 +542,23 @@ of the spherical perturbation equations may be summarized as follows:
   decomposition are unchanged, since the angular sector of the metric
   is the standard round two-sphere.
 
-\item The Fourier heat equation is replaced by the Israel--Stewart
-  causal equation, introducing the relaxation time $\tauq$ and raising
-  the order of the eigenvalue problem in the growth rate~$p$.
+\item The Fourier heat equation is replaced by the BDNK first-order
+  causal constitutive relation~\cite{Bemfica2018,Kovtun2019}.
+  Unlike the Israel--Stewart second-order approach, the BDNK formulation
+  does not introduce relaxation times or auxiliary dynamical variables;
+  causality is ensured by the choice of hydrodynamic frame.  The
+  perturbation equations have the same differential order as the
+  classical (Fourier) case, with no spurious relaxation modes.
 
 \item The temperature gradient driving buoyancy acquires a
   Tolman-redshift correction (eq.~\eqref{eq:rel6-beta}).
 
 \item Boundary conditions at the stellar surface include junction
-  conditions to the exterior Schwarzschild metric and continuity of
-  the heat flux---requirements absent in the Newtonian theory.
+  conditions to the exterior Schwarzschild metric.  In the BDNK
+  formulation, no additional boundary condition on the heat flux is
+  needed (the heat flux is determined algebraically from the
+  first-order constitutive relation), in contrast to the IS theory
+  where continuity of the dynamical $q^{\mu}$ would be required.
 
 \item The effective gravitational acceleration
   $g_{\mathrm{eff}}$ (eq.~\eqref{eq:rel6-geff}) includes pressure
@@ -475,5 +568,8 @@ of the spherical perturbation equations may be summarized as follows:
 
 \noindent
 All relativistic corrections vanish in the limit
-$c \to \infty$ (equivalently $GM/(Rc^{2}) \to 0$ and $\tauq \to 0$),
+$c \to \infty$ (equivalently $GM/(Rc^{2}) \to 0$),
 and the classical equations of Chapter~VI are recovered exactly.
+At the marginal state ($p = 0$), the BDNK and IS formulations yield
+identical equations, so all critical Rayleigh numbers and onset
+criteria are independent of the choice of causal framework.

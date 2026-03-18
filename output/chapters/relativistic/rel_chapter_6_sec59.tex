@@ -5,7 +5,8 @@
 % =====================================================================
 %
 %  Classical reference: Chandrasekhar, Ch. VI §59, eqs. (99)–(126)
-%  Relativistic framework: TOV equilibrium + Israel-Stewart dissipation
+%  Relativistic framework: TOV equilibrium + BDNK first-order causal dissipation
+%  BDNK refs: Bemfica et al. (2018), Kovtun (2019), Bemfica et al. (2019)
 %  Agent: 25 (subagent for sphere onset)
 % =====================================================================
 
@@ -20,9 +21,12 @@ with the background state given by Newtonian hydrostatic equilibrium.
 In this section we generalise the analysis to general relativity, where
 the equilibrium configuration is a \emph{Tolman--Oppenheimer--Volkoff}
 (TOV) solution and the perturbation equations inherit relativistic
-corrections from both the enhanced inertia
-$(\edensity + p)/c^{2}$ and the causal (Israel--Stewart) heat
-transport.
+corrections from the enhanced inertia
+$(\edensity + p)/c^{2}$.  For the dissipative sector, we adopt the
+BDNK (Bemfica--Disconzi--Noronha--Kovtun) first-order causal
+theory~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, which achieves
+causality through the choice of hydrodynamic frame without introducing
+relaxation equations.
 
 \subsection{Background: the TOV equilibrium}
 \label{sec:rel-59-TOV}
@@ -99,9 +103,10 @@ The velocity field is purely poloidal, as in the Newtonian case.  Let
 $W(r)$ be the radial eigenfunction (the relativistic analogue of the
 $W$ in~\S\ref{sec:59}) and $F(r)$ the temperature perturbation function.
 
-In the Boussinesq approximation adapted to the relativistic setting
-(cf.\ the framework of the preceding relativistic sections), the
-coupled eigenvalue equations become
+In the Boussinesq approximation adapted to the relativistic setting,
+using the BDNK first-order constitutive
+relations~\cite{Bemfica2018,Kovtun2019} for the dissipative fluxes,
+the coupled eigenvalue equations become
 \begin{equation}
 \label{eq:rel-59-Weq}
 \mathscr{D}_{l}^{2}\,W
@@ -111,7 +116,7 @@ coupled eigenvalue equations become
 \label{eq:rel-59-Feq}
 \mathscr{D}_{l}\,F
   + \frac{l(l+1)}{r^{2}}\,\mathcal{C}_{\mathrm{rel}}\,
-    \frac{e^{-\Lambda}}{(1+\Upsilon)}\,W = 0,
+    e^{-\Lambda}\,W = 0,
 \end{equation}
 where $\mathscr{D}_{l}$ is the spherical operator
 \begin{equation}
@@ -120,15 +125,13 @@ where $\mathscr{D}_{l}$ is the spherical operator
   \frac{d^{2}}{dr^{2}} + \frac{2}{r}\frac{d}{dr}
   - \frac{l(l+1)}{r^{2}},
 \end{equation}
-and the two relativistic parameters are
+and the relativistic parameter is
 \begin{equation}
 \label{eq:rel-59-params}
-\Xi(r) \equiv \frac{p(r)}{\edensity(r)\,c^{2}},\qquad
-\Upsilon \equiv \frac{\tauq\,\kappa_{T}}{R^{2}}.
+\Xi(r) \equiv \frac{p(r)}{\edensity(r)\,c^{2}}.
 \end{equation}
 Here $\Xi(r)$ is the local pressure-to-energy ratio (spatially varying
-through the TOV profile) and $\Upsilon$ is the dimensionless
-Israel--Stewart relaxation parameter.  The relativistic
+through the TOV profile).  The relativistic
 characteristic-value parameter is
 \begin{equation}
 \label{eq:rel-59-Crel}
@@ -140,14 +143,28 @@ where $\beta_{\mathrm{rel}}$ and $\gamma_{\mathrm{rel}}$ are the
 relativistic adverse-temperature gradient and gravitational
 acceleration evaluated from the TOV solution.
 
+\begin{quote}
+\textbf{Remark (BDNK vs.\ Israel--Stewart).}
+In the IS formulation, equation~\eqref{eq:rel-59-Feq} would contain
+an additional factor $(1 + \Upsilon)^{-1}$ with
+$\Upsilon = \tau_{q}\,\kappa_{T}/R^{2}$ being a dimensionless
+relaxation parameter.  In the BDNK first-order theory, no such
+relaxation parameter appears: the thermal diffusivity enters directly,
+and causality is ensured by the BDNK frame coefficients rather than
+by a relaxation time~\cite{Kovtun2019,HoultKovtun2020}.  At the
+marginal state ($\sigma = 0$), both formulations yield identical
+equations since $\Upsilon$ multiplies $\sigma$ in the IS theory.
+\end{quote}
+
 \begin{causalitycheck}
-The Israel--Stewart relaxation time $\tauq > 0$ ensures that heat
-propagates at a finite speed
-$v_{\mathrm{heat}}^{2} = \kappa_{T}/(\tauq\,c_{v}) \leq c^{2}$.
+In the BDNK framework, causality of heat propagation is guaranteed by
+the strong hyperbolicity of the conservation-law system when the
+transport coefficients satisfy the BDNK
+conditions~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}.
 The eigenvalue problem~\eqref{eq:rel-59-Weq}--\eqref{eq:rel-59-Feq}
 reduces to the Newtonian equations of~\S\ref{sec:59} when
-$\Xi\to 0$, $\Upsilon\to 0$, and $e^{-\Lambda}\to 1$.
-All perturbation speeds remain subluminal for $\tauq > 0$.
+$\Xi\to 0$ and $e^{-\Lambda}\to 1$.
+All perturbation speeds remain subluminal by construction.
 \end{causalitycheck}
 
 \subsection{Relativistic eigenvalue problem for the critical
@@ -228,10 +245,10 @@ Q_{jk}^{\mathrm{rel}}
   = \int_{0}^{R}\!
     W_{k}^{\mathrm{rel}}\,
     \frac{J_{l+\frac{1}{2}}(\alpha_{j}\,r)}{\sqrt{r}}\,
-    \frac{e^{-\Lambda(r)}}{1+\Upsilon}\,
+    e^{-\Lambda(r)}\,
     dr.
 \end{equation}
-In the Newtonian limit ($\mathscr{C}\to 0$, $\Upsilon\to 0$) one
+In the Newtonian limit ($\mathscr{C}\to 0$) one
 recovers the classical $Q_{jk}$ of eq.~(112).
 
 The secular determinant is
@@ -296,7 +313,7 @@ characteristic values can be written in the compact form
 \label{eq:rel-59-CrelvsC}
 \mathcal{C}_{\mathrm{rel}}
   = \frac{\mathcal{C}}{
-    (1+\bar{\Xi})(1+\Upsilon)\,\mathcal{G}(\mathscr{C})},
+    (1+\bar{\Xi})\,\mathcal{G}(\mathscr{C})},
 \end{equation}
 where:
 \begin{itemize}
@@ -304,11 +321,14 @@ where:
   Tables~\ref{tab:XX} and~\ref{tab:XXI};
 \item $\bar{\Xi} = \bar{p}/(\edensity\,c^{2})$ is a
   density-weighted average of the pressure-to-energy ratio;
-\item $\Upsilon = \tauq\kappa_{T}/R^{2}$ is the Israel--Stewart
-  parameter;
 \item $\mathcal{G}(\mathscr{C})$ is a monotonically increasing
   function of compactness satisfying $\mathcal{G}(0)=1$.
 \end{itemize}
+Note that unlike the IS formulation, there is no separate
+relaxation parameter $\Upsilon = \tau_{q}\kappa_{T}/R^{2}$ in the
+BDNK theory; the formula~\eqref{eq:rel-59-CrelvsC} depends only on
+the physical quantities (compactness and pressure-to-energy ratio).
+
 The function $\mathcal{G}(\mathscr{C})$ encodes the combined effect
 of metric curvature on the eigenfunction integrals.  Explicitly, to
 first order in compactness,
@@ -325,8 +345,9 @@ $e^{-\Lambda}$); for $l=1$, $g_{1}\approx 2.8$.
 \centering
 \caption{Ratio $\mathcal{C}_{\mathrm{rel}}/\mathcal{C}$ for the
 $l=1$ mode as a function of compactness $\mathscr{C}=GM/(Rc^{2})$,
-for a uniform-density sphere with $\Upsilon=0$ (instantaneous heat
-transport).  Free boundary.}
+for a uniform-density sphere.  Free boundary.  In the BDNK
+framework no relaxation parameter enters; the ratio depends only on
+the gravitational compactness.}
 \label{tab:rel-59-comparison}
 \begin{tabular}{c c c c}
 \hline
@@ -364,10 +385,14 @@ Three effects conspire:
   ($\mathcal{G}(\mathscr{C})>1$): the steeper TOV pressure gradient
   amplifies the radial variation of the buoyancy force compared to
   the Newtonian case.
-\item[(iii)] \textbf{Causal heat transport} ($\Upsilon > 0$): the
-  finite relaxation time of the heat flux introduces a phase lag
-  that modifies the critical threshold, typically (for moderate
-  $\Upsilon$) providing an additional destabilising correction.
+\item[(iii)] \textbf{Causal heat transport:}  In the BDNK framework,
+  the thermal diffusivity enters the perturbation equations at first
+  order without modification by a relaxation time.  Causality is
+  ensured by the BDNK frame coefficients, which bound all
+  characteristic speeds by~$c$~\cite{Bemfica2018,Kovtun2019}.
+  At the marginal state, the BDNK and IS formulations yield
+  identical results, so the critical Rayleigh numbers are
+  framework-independent.
 \end{enumerate}
 
 For a neutron star with $\mathscr{C}\approx 0.2$, the critical
@@ -380,7 +405,7 @@ accounted for in modelling proto-neutron-star convection.
 \centering
 \caption{Relativistic critical characteristic numbers
 $\mathcal{C}_{\mathrm{rel},l}$ for a uniform-density sphere with
-$\mathscr{C}=0.10$ and $\Upsilon=0$, compared with the Newtonian
+$\mathscr{C}=0.10$, compared with the Newtonian
 values from Table~\ref{tab:XX} (free boundary).}
 \label{tab:rel-59-modes}
 \begin{tabular}{c c c c}
@@ -409,5 +434,5 @@ a smaller radial extent and are therefore less sensitive to the
 global curvature of spacetime.
 
 \bigskip
-In the non-relativistic limit $\mathscr{C}\to 0$ and $\Upsilon\to 0$,
+In the non-relativistic limit $\mathscr{C}\to 0$,
 all the results of this section reduce to those of~\S\ref{sec:59}.

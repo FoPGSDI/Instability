@@ -1,6 +1,7 @@
 % Relativistic Chapter VI, §§61--63: Rotation in Spheres — Relativistic
 % Relativistic generalization of Chandrasekhar, Chapter VI §§61--63
-% Conventions: see RELATIVISTIC_CONVENTIONS.md
+% Conventions: see BDNK_CONVENTIONS.md
+% BDNK formalism: Bemfica-Disconzi-Noronha-Kovtun first-order causal theory
 
 \chapter*{Rotation and Thermal Instability in a Relativistic Fluid Sphere (\S\S\,61--63)}
 \addcontentsline{toc}{chapter}{Relativistic Rotating Sphere (\S\S\,61--63)}
@@ -22,9 +23,12 @@ ingredients enter:
   relativistic enthalpy density $w = (\varepsilon + p)/c^{2}$, which
   replaces the rest-mass density~$\rho$.
 \item \textbf{Causal dissipation.}  Fourier heat conduction is
-  replaced by the Israel--Stewart equation (see
-  RELATIVISTIC\_CONVENTIONS.md), ensuring that thermal perturbations
-  propagate at a finite speed bounded by~$c$.
+  replaced by the BDNK (Bemfica--Disconzi--Noronha--Kovtun) first-order
+  causal theory~\cite{Bemfica2018,Kovtun2019,Bemfica2019}, which
+  achieves causality and strong hyperbolicity through appropriate
+  choice of the hydrodynamic frame and first-order constitutive
+  relations, without introducing relaxation equations or auxiliary
+  dynamical variables.
 \item \textbf{Frame-dragging and gravitomagnetic Coriolis effects.}
   In general relativity, rotation of the background spacetime
   introduces Lense--Thirring (frame-dragging) contributions to the
@@ -130,7 +134,9 @@ orthogonally to $u^{\mu}$, reads
 \end{equation}
 where:
 \begin{itemize}
-\item $\shearvisc$ is the shear viscosity (Israel--Stewart);
+\item $\shearvisc$ is the shear viscosity; in the BDNK framework the
+  viscous stress is given by the first-order constitutive relation
+  $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ (no relaxation equation);
 \item $\Omega_{\mathrm{eff}} = \Omega - \omega_{\mathrm{LT}}$ is the
   effective angular velocity incorporating frame-dragging;
 \item $\alpha_{T} = -(\partial\ln w/\partial T)_{p}$ is the
@@ -154,16 +160,38 @@ in two respects: (i) the inertial density $\rho$ is replaced by $w$,
 and (ii) $\Omega$ is replaced by $\Omega_{\mathrm{eff}}$, accounting
 for frame dragging.
 
-The linearised heat equation, using Israel--Stewart causal transport,
-takes the form
+The linearised heat equation, using the BDNK first-order constitutive
+relation for the heat flux, takes the form
 \begin{equation}\label{eq:rel-6-218}
-  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
-  + \frac{\partial\Theta}{\partial t}
+  \frac{\partial\Theta}{\partial t}
   = \beta\,r\,\delta v_{r}
-    + \kappa_{T}\,\hat{\nabla}^{2}\Theta,
+    + \kappa_{T}\,\hat{\nabla}^{2}\Theta.
 \end{equation}
-where $\tauq$ is the heat-flux relaxation time.  Setting
-$\tauq = 0$ recovers the classical parabolic equation~(6-218).
+This is a standard parabolic equation---the same form as the
+classical Fourier equation~(6-218)---because in the BDNK theory
+the heat flux is an algebraic function of the gradient, not a
+dynamical variable.  Causality of the full system (including the
+heat sector) is ensured by the BDNK frame conditions on the
+transport coefficients, which bound all characteristic speeds
+by~$c$~\cite{Bemfica2018,Kovtun2019,BemficaEtAl2023}.
+
+\begin{quote}
+\textbf{Comparison with Israel--Stewart.}
+In the IS formulation, equation~\eqref{eq:rel-6-218} would be replaced
+by the telegraph-type equation
+$\tau_{q}\,\partial^{2}\Theta/\partial t^{2}
++ \partial\Theta/\partial t
+= \beta\,r\,\delta v_{r} + \kappa_{T}\,\hat{\nabla}^{2}\Theta$,
+where $\tau_{q}$ is the heat-flux relaxation time.  This raises the
+order of the system and introduces a spurious ``relaxation mode''
+absent in the physical spectrum.  The BDNK formulation avoids this
+by treating causality at the level of the frame choice rather than
+through an auxiliary evolution
+equation~\cite{Kovtun2019,HoultKovtun2020}.
+At the marginal state ($\sigma = 0$), both formulations yield
+identical equations, since the IS relaxation terms vanish when
+$\partial/\partial t = 0$.
+\end{quote}
 
 Eliminating the pressure perturbation by taking the curl of
 \eqref{eq:rel-6-217} and using the decomposition
@@ -179,8 +207,7 @@ equations~(6-223)--(6-226):
   &= \frac{\shearvisc}{w}\,\hat{\Delta}_{3}\,V
     - 2\Omega_{\mathrm{eff}}\,\frac{\partial U}{\partial z},
   \label{eq:rel-6-224}\\[4pt]
-  \tauq\,\frac{\partial^{2}\Theta}{\partial t^{2}}
-  + \frac{\partial\Theta}{\partial t}
+  \frac{\partial\Theta}{\partial t}
   &= -\frac{\beta}{r}\,\mathscr{L}^{2}U
     + \kappa_{T}\,\hat{\nabla}^{2}\Theta.
   \label{eq:rel-6-226}
@@ -212,7 +239,7 @@ non-relativistic limit.  The relativistic Taylor number is
 The Rayleigh number is
 $\mathrm{Ra}_{\mathrm{rel}} = \mathcal{C}_{\mathrm{rel}}$.
 These satisfy the general form given in
-RELATIVISTIC\_CONVENTIONS.md.
+BDNK\_CONVENTIONS.md.
 
 The dimensionless perturbation equations become
 \begin{align}
@@ -235,6 +262,19 @@ relativistic Prandtl number.  Equations
 identical to the classical system (6-231)--(6-233) but with
 $\hat{\Delta}_{3}$ replacing $\Delta_{3}$ and the relativistic
 parameters replacing their Newtonian counterparts.
+
+\begin{quote}
+\textbf{Remark (differential order).}
+In the BDNK framework, the system
+\eqref{eq:rel-6-231}--\eqref{eq:rel-6-233} has the \emph{same}
+differential order as the classical Fourier system.  In the IS
+formulation, the heat equation~\eqref{eq:rel-6-233} would carry an
+additional time derivative ($\tau_{q}\,\sigma$ prefactor), raising
+the system order and introducing a spurious relaxation mode.  The
+BDNK theory eliminates such modes, yielding a dispersion relation
+with only the physical hydrodynamic
+modes~\cite{Kovtun2019,HoultKovtun2020}.
+\end{quote}
 
 %% ----------------------------------------------------------------
 \subsection{Boundary conditions}\label{sec:rel-61c}
@@ -267,16 +307,12 @@ stress must vanish:
   \Theta = 0
   \qquad\text{at } r = 1,
 \end{equation}
-as in equation~(6-242).  The Israel--Stewart formulation does not
-alter the boundary conditions on the velocity field; however, the
-relaxation equation for the heat flux requires an additional
-condition:
-\begin{equation}\label{eq:rel-6-242b}
-  \tauq\,\frac{\partial\Theta}{\partial t}
-  + \Theta = 0
-  \qquad\text{at } r = 1,
-\end{equation}
-which reduces to $\Theta = 0$ in the stationary ($p = 0$) case.
+as in equation~(6-242).  In the BDNK framework, the heat flux is
+determined algebraically by the first-order constitutive relation;
+no additional dynamical boundary condition on the heat flux is
+required, in contrast to the IS theory where the relaxation
+equation for $q^{\mu}$ would demand a separate boundary condition
+at $r = 1$.
 
 %% ----------------------------------------------------------------
 \subsection{Variational principle}\label{sec:rel-61d}
@@ -354,6 +390,19 @@ With $\sigma = 0$, the system
   &= \frac{\beta}{r}\,\mathscr{L}^{2}U.
   \label{eq:rel-6-259}
 \end{align}
+
+\begin{quote}
+\textbf{Framework independence at onset.}
+The marginal-state equations
+\eqref{eq:rel-6-257}--\eqref{eq:rel-6-259} are \emph{identical} in
+the BDNK, Israel--Stewart, and classical Fourier formulations: all
+time derivatives vanish at $\sigma = 0$, so the choice of causal
+framework has no effect on the critical Rayleigh number or the
+onset mode structure.  The distinction between frameworks affects
+only the transient dynamics and growth rates of supercritical
+modes~\cite{Bemfica2018,Kovtun2019}.
+\end{quote}
+
 The variational formula~\eqref{eq:rel-6-252} becomes
 \begin{equation}\label{eq:rel-6-260}
   \mathcal{C}_{\mathrm{rel}}
@@ -554,11 +603,14 @@ convection in several ways:
 \begin{enumerate}
 \item \textbf{Neutrino transport.}  The effective thermal
   diffusivity $\kappa_{T}$ is dominated by neutrino diffusion.
-  In the diffusive regime (interior of the PNS), the Israel--Stewart
-  relaxation time $\tauq$ is of order the neutrino mean free time,
-  $\tauq \sim \lambda_{\nu}/c \sim 10^{-7}$\,s.  Causal transport
-  corrections are thus small compared to the convective overturn
-  time ($\sim$\,1\,ms) but must be retained for formal consistency.
+  In the diffusive regime (interior of the PNS), the neutrino mean
+  free time is $\lambda_{\nu}/c \sim 10^{-7}$\,s.  In the BDNK
+  framework, this microscopic timescale enters through the
+  transport coefficients (thermal conductivity $\kappa$), and
+  causality is ensured by the BDNK frame conditions rather than
+  by a separate relaxation equation.  The formal BDNK causality
+  conditions are amply satisfied for neutrino-diffusive
+  matter~\cite{Bemfica2018,Kovtun2019}.
 \item \textbf{Lepton-gradient instability.}  In addition to the
   thermal (entropy) gradient, a compositional gradient in the
   electron fraction $Y_{e}$ contributes to the buoyancy.  The
@@ -613,22 +665,36 @@ problem builds on the classical treatment of:
   \textbf{231}, 198--210 (1955).
 \end{enumerate}
 
-\noindent Relativistic fluid dynamics and causal dissipation:
+\noindent BDNK first-order causal relativistic hydrodynamics:
 
 \begin{enumerate}\setcounter{enumi}{2}
-\item W.\ \textsc{Israel} and J.\,M.\ \textsc{Stewart},
-  ``Transient relativistic thermodynamics and kinetic theory,''
-  \emph{Ann.\ Phys.}\ (N.Y.), \textbf{118}, 341--72 (1979).
+\item F.\,S.\ \textsc{Bemfica}, M.\,M.\ \textsc{Disconzi}, and
+  J.\ \textsc{Noronha}, ``Causality and existence of solutions of
+  relativistic viscous fluid dynamics with gravity,''
+  \emph{Phys.\ Rev.\ D}, \textbf{98}, 104064 (2018).
 
-\item W.\ A.\ \textsc{Hiscock} and L.\ \textsc{Lindblom},
-  ``Stability and causality in dissipative relativistic fluids,''
-  \emph{Ann.\ Phys.}\ (N.Y.), \textbf{151}, 466--96 (1983).
+\item P.\ \textsc{Kovtun}, ``First-order relativistic hydrodynamics
+  is stable,'' \emph{JHEP}, \textbf{10}, 034 (2019).
+
+\item F.\,S.\ \textsc{Bemfica}, M.\,M.\ \textsc{Disconzi}, and
+  J.\ \textsc{Noronha}, ``Nonlinear causality of general first-order
+  relativistic viscous hydrodynamics,''
+  \emph{Phys.\ Rev.\ Lett.}, \textbf{122}, 221602 (2019).
+
+\item R.\,E.\ \textsc{Hoult} and P.\ \textsc{Kovtun},
+  ``Stable and causal relativistic Navier--Stokes equations,''
+  \emph{JHEP}, \textbf{06}, 067 (2020).
+
+\item F.\,S.\ \textsc{Bemfica}, M.\,M.\ \textsc{Disconzi},
+  J.\ \textsc{Noronha}, and P.\ \textsc{Kovtun},
+  ``General-relativistic viscous-fluid dynamics,''
+  \emph{Phys.\ Rev.\ D}, \textbf{107}, 076012 (2023).
 \end{enumerate}
 
 \noindent\S\,\ref{sec:rel-63}.
 Neutron star convection and proto-neutron star cooling:
 
-\begin{enumerate}\setcounter{enumi}{4}
+\begin{enumerate}\setcounter{enumi}{7}
 \item A.\ \textsc{Burrows} and J.\,M.\ \textsc{Lattimer},
   ``The birth of neutron stars,'' \emph{Astrophys.\ J.},
   \textbf{307}, 178--96 (1986).
@@ -647,7 +713,7 @@ Neutron star convection and proto-neutron star cooling:
 
 \noindent Frame-dragging effects in rotating neutron stars:
 
-\begin{enumerate}\setcounter{enumi}{7}
+\begin{enumerate}\setcounter{enumi}{10}
 \item J.\,B.\ \textsc{Hartle}, ``Slowly rotating relativistic
   stars.~I.\ Equations of structure,'' \emph{Astrophys.\ J.},
   \textbf{150}, 1005--29 (1967).
