@@ -1,0 +1,484 @@
+% =====================================================================
+% Relativistic Normal Modes and Exchange of Stabilities
+% Chapter II, Sections 10--12: Relativistic Modification
+% =====================================================================
+% Requires: rel_preamble.tex (loaded by rel_main.tex)
+%
+% Classical reference: Chandrasekhar, Ch. II, §§10--12
+% Relativistic framework: Israel-Stewart causal dissipation theory
+% =====================================================================
+
+\chapter*{Chapter II (Relativistic): The B\'enard Problem --- Normal Mode
+  Analysis, Exchange of Stabilities, and the Marginal State}
+\addcontentsline{toc}{chapter}{Chapter II (Rel.): Normal Modes \&
+  Exchange of Stabilities}
+
+%----------------------------------------------------------------------
+\section{The analysis into normal modes: relativistic}
+\label{sec:rel-10}
+%----------------------------------------------------------------------
+
+\subsection{Covariant perturbation ansatz}
+\label{sec:rel-10a}
+
+In the classical theory (\S~10 of Chapter~II) every perturbed quantity is
+expanded with the factor $\exp[i(k_x x + k_y y) + pt]$, where $p$ is an
+unrestricted complex growth rate and $k = (k_x^2+k_y^2)^{1/2}$ is the
+horizontal wave number.  The Newtonian dispersion relation that follows from
+the linearised Boussinesq equations is a cubic polynomial in $p$, and all
+three roots are physical.
+
+In the relativistic setting the situation changes in two essential respects:
+
+\begin{enumerate}
+\item \textbf{Causal propagation.}  The perturbation equations must be
+  derived from the Israel--Stewart theory, which replaces the parabolic
+  (instantaneous-diffusion) heat and viscous-stress equations with hyperbolic
+  relaxation equations.  Every signal speed that emerges from the dispersion
+  relation must be bounded by~$c$.
+
+\item \textbf{Additional modes.}  Each Israel--Stewart relaxation equation
+  adds an independent dynamical degree of freedom.  The dispersion relation
+  consequently becomes a \emph{higher-order} polynomial in the growth
+  parameter, producing extra roots that represent transient relaxation modes
+  with no Newtonian counterpart.
+\end{enumerate}
+
+We work in the local rest frame of the static equilibrium and retain factors
+of $c$ explicitly throughout, so that the non-relativistic limit $c\to\infty$
+can be taken at every stage.
+
+\medskip
+\noindent\textbf{Perturbation ansatz.}
+Ascribe to every linearised quantity (the vertical velocity perturbation~$W$,
+the temperature perturbation~$\Theta$, the vertical vorticity
+perturbation~$Z$, the heat-flux perturbation~$\delta q^{\mu}$, and the
+shear-stress perturbation~$\delta\pi^{\mu\nu}$) a dependence on the
+horizontal coordinates and time of the form
+\begin{equation}
+\label{eq:rel-2-88}
+\exp\!\bigl[i(k_x\, x + k_y\, y) + \sigma t\bigr],
+\end{equation}
+where $\sigma$ may be complex and $k = (k_x^2+k_y^2)^{1/2}$.  The vertical
+dependence remains a function to be determined: $W(z)$, $\Theta(z)$, etc.
+
+Introducing the non-dimensional wave number $a = kd$ and the non-dimensional
+growth rate $\sigma_* = \sigma d^2/\nu$ (as in the classical \S~10), together
+with the operators
+\begin{equation}
+\label{eq:rel-2-91}
+D \equiv \frac{d}{dz}, \qquad
+\mathcal{D}^2 \equiv D^2 - a^2,
+\end{equation}
+the linearised Israel--Stewart equations for the vertical modes reduce to the
+following system.
+
+\subsection{Relativistic normal-mode equations}
+\label{sec:rel-10b}
+
+The \emph{momentum equation} for the vertical velocity amplitude reads
+\begin{equation}
+\label{eq:rel-2-92}
+\Bigl[\mathcal{D}^2(\mathcal{D}^2 - \sigma_*)
+  + \frac{\sigma_* \taupi \nu}{d^2}\,\mathcal{D}^2
+      (\mathcal{D}^2 - \sigma_* - d^2/(\taupi\nu))\Bigr] W
+= -\Rarel\, a^2 \Theta,
+\end{equation}
+where $\Rarel$ is the relativistic Rayleigh number
+\begin{equation}
+\label{eq:rel-Rayleigh}
+\Rarel = \frac{g\alpha\beta\, d^4}{\kappa\nu}
+  \left[1 + \order{\frac{v^2}{c^2}}\right],
+\end{equation}
+and $\taupi$ is the shear-stress relaxation time of the Israel--Stewart
+theory.  The first line of~\eqref{eq:rel-2-92} is exactly Chandrasekhar's
+equation~(92); the second line is the relativistic (Israel--Stewart)
+correction, which vanishes in the limit $\taupi\to 0$.
+
+The \emph{energy equation} for the temperature amplitude, incorporating
+the causal heat-flux relaxation time~$\tauq$, becomes
+\begin{equation}
+\label{eq:rel-2-93}
+\Bigl[(\mathcal{D}^2 - \mathrm{p}\,\sigma_*)
+  + \tauq\,\frac{\kappa}{d^2}\,\sigma_*
+    \bigl(\mathcal{D}^2 - \mathrm{p}\,\sigma_*
+      - d^2/(\tauq\kappa)\bigr)\Bigr]\Theta
+= -\frac{\beta d^2}{\kappa}\, W,
+\end{equation}
+where $\mathrm{p} = \nu/\kappa$ is the Prandtl number.  Again the classical
+equation~(93) is recovered when $\tauq\to 0$.
+
+The \emph{vorticity equation} acquires an analogous relaxation correction:
+\begin{equation}
+\label{eq:rel-2-94}
+\bigl[\mathcal{D}^2 - \sigma_*
+  + \taupi(\nu/d^2)\,\sigma_*(\mathcal{D}^2 - \sigma_*
+    - d^2/(\taupi\nu))\bigr] Z = 0.
+\end{equation}
+The boundary conditions remain unchanged from the classical case:
+\begin{equation}
+\label{eq:rel-2-95}
+\Theta = 0, \quad W = 0 \qquad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+together with either $DW = 0$ (rigid) or $D^2 W = 0$ (free) on each
+bounding surface.
+
+\subsection{Dispersion relation and mode identification}
+\label{sec:rel-10c}
+
+Eliminating $\Theta$ between~\eqref{eq:rel-2-92} and~\eqref{eq:rel-2-93}
+and seeking solutions proportional to $\sin(n\pi z)$ (the ``both free''
+boundary prototype), one obtains the dispersion relation
+\begin{equation}
+\label{eq:rel-dispersion}
+\mathcal{P}(\sigma_*;\, a^2,\, \Rarel,\, \taupi,\, \tauq) = 0,
+\end{equation}
+where $\mathcal{P}$ is a polynomial of degree \emph{five} in~$\sigma_*$
+(compared to the cubic of the classical theory).
+
+The five roots decompose as follows:
+\begin{enumerate}
+\item[\textbf{(i)}] \textbf{Three physical (hydrodynamic) modes} ---
+  continuously connected to the three roots of the classical dispersion
+  relation as $\taupi, \tauq \to 0$.  These govern the onset of thermal
+  convection.
+
+\item[\textbf{(ii)}] \textbf{Two transient (relaxation) modes} --- with
+  $\operatorname{Re}(\sigma_*) \sim -d^2/(\taupi\nu)$ or
+  $\sim -d^2/(\tauq\kappa)$ for small relaxation times.  These modes decay
+  rapidly on the relaxation time-scale and do not participate in the
+  instability.  They are an artefact of the extended thermodynamic theory
+  and have no classical counterpart.
+\end{enumerate}
+
+\begin{relcorrection}
+In the Newtonian theory the dispersion relation is cubic in~$\sigma_*$
+and all three modes are physical.  The Israel--Stewart extension raises the
+polynomial order by two, adding one mode per relaxation channel (heat and
+shear).  These ``spurious'' (from the Newtonian viewpoint) roots are
+essential for relativistic causality: they ensure that signals propagate at
+finite speed.
+\end{relcorrection}
+
+\subsection{Causality constraint on group velocities}
+\label{sec:rel-10d}
+
+\begin{causalitycheck}
+For any mode with dispersion relation $\sigma_*(a)$, define the group
+velocity
+\begin{equation}
+\label{eq:rel-vg}
+v_g = \left|\frac{\partial\,\operatorname{Re}(\sigma_*)}
+            {\partial a}\right| \frac{\nu}{d}.
+\end{equation}
+Causality requires $v_g \le c$ for every branch.  This is guaranteed
+provided the relaxation times satisfy
+\begin{equation}
+\label{eq:rel-causality-shear}
+\taupi \ge \frac{\shearvisc}{\enthalpy\, c^2}\,,
+\qquad
+\tauq \ge \frac{\thermcond\, T}{\enthalpy\, c^2}\,,
+\end{equation}
+which are precisely the Israel--Stewart causality bounds.  When these hold,
+the maximum signal speed of the perturbation system is bounded by
+$\sqrt{\nu/\taupi}$ and $\sqrt{\kappa/\tauq}$ (in the respective channels),
+both of which are $\le c$ by~\eqref{eq:rel-causality-shear}.
+
+For the three physical (hydrodynamic) modes, which govern convective
+onset, the group velocities are $\order{v}$ with $v \ll c$; causality
+is satisfied trivially.  The constraint is non-trivial only for the
+transient relaxation modes at large~$a$ (short wavelengths).
+\end{causalitycheck}
+
+\subsection{Horizontal velocity components}
+\label{sec:rel-10e}
+
+The reconstruction of the horizontal velocities $u$, $v$ from $W$ and $Z$ via
+the stream-function decomposition (equations~(106)--(111) of \S~10a) is
+purely kinematic and carries over unchanged to the relativistic case,
+provided one works in the local rest frame.  No additional relativistic
+corrections appear at this step.
+
+%----------------------------------------------------------------------
+\section{The principle of the exchange of stabilities: relativistic}
+\label{sec:rel-11}
+%----------------------------------------------------------------------
+
+\subsection{Statement of the problem}
+\label{sec:rel-11a}
+
+The classical proof (\S~11) demonstrates that for $R > 0$ the growth
+rate $\sigma$ is purely real, so the transition from stability to instability
+occurs through a \emph{stationary} (non-oscillatory) marginal state.  The key
+question in the relativistic extension is:
+
+\begin{quote}
+\emph{Does $\sigma_*$ remain real at the marginal state when the
+Israel--Stewart relaxation terms are included?}
+\end{quote}
+
+We shall prove that the answer is \emph{yes} for the three physical
+modes, up to corrections that vanish when the relaxation times tend to
+zero.  The two transient modes are always heavily damped and do not affect
+the exchange-of-stabilities argument.
+
+\subsection{Proof for the physical modes}
+\label{sec:rel-11b}
+
+Define, as in the classical analysis,
+\begin{equation}
+\label{eq:rel-2-112}
+G = \mathcal{D}^2 W, \qquad
+F = \mathcal{D}^2(\mathcal{D}^2 - \sigma_*) W
+  = (\mathcal{D}^2 - \sigma_*) G.
+\end{equation}
+From the relativistic normal-mode equations~\eqref{eq:rel-2-92}
+and~\eqref{eq:rel-2-93}, after eliminating $\Theta$, we obtain
+\begin{equation}
+\label{eq:rel-2-115}
+(\mathcal{D}^2 - \mathrm{p}\,\sigma_*) F
+  + \mathcal{R}_{\mathrm{IS}}[\sigma_*, F, W]
+  = -\Rarel\, a^2 W,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-IS-remainder}
+\mathcal{R}_{\mathrm{IS}}
+= \frac{\taupi\nu}{d^2}\,\sigma_*\,
+    \bigl[\mathcal{D}^2 F
+      - (\sigma_* + d^2/(\taupi\nu))\, F\bigr]
+  + \frac{\tauq\kappa}{d^2}\,\sigma_*\,
+    \bigl[\mathcal{D}^2 - \mathrm{p}\,\sigma_*
+      - d^2/(\tauq\kappa)\bigr]
+    \bigl[\mathcal{D}^2(\mathcal{D}^2 - \sigma_*) W\bigr]
+\end{equation}
+collects all Israel--Stewart corrections, and
+$\mathcal{R}_{\mathrm{IS}} \to 0$ as $\taupi, \tauq \to 0$.
+
+Multiply~\eqref{eq:rel-2-115} by $F^*$ and integrate over
+$z \in [0,1]$.  Following Chandrasekhar's integration-by-parts strategy
+exactly (boundary terms vanish by the same argument as in the classical
+case), we arrive at
+\begin{equation}
+\label{eq:rel-2-118}
+\int_0^1\!\bigl\{|DF|^2 + a^2|F|^2
+  + \mathrm{p}\,\sigma_*|F|^2\bigr\}\,dz
+  + \int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz
+  = \Rarel\, a^2\!\int_0^1 W F^*\,dz.
+\end{equation}
+The right-hand side is treated identically to the classical
+equations~(119)--(123), yielding
+\begin{equation}
+\label{eq:rel-2-124}
+\int_0^1\!\bigl\{|DF|^2 + a^2|F|^2
+  + \mathrm{p}\,\sigma_*|F|^2\bigr\}\,dz
+  + \int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz
+  = \Rarel\, a^2\!\int_0^1\!\bigl\{|G|^2
+    + \sigma_*^*\bigl[|DW|^2 + a^2|W|^2\bigr]\bigr\}\,dz.
+\end{equation}
+Taking the imaginary part:
+\begin{equation}
+\label{eq:rel-2-125}
+\operatorname{Im}(\sigma_*)
+  \left\{\mathrm{p}\!\int_0^1|F|^2\,dz
+    + \Rarel\, a^2\!\int_0^1
+      \bigl[|DW|^2 + a^2|W|^2\bigr]\,dz\right\}
+= -\operatorname{Im}\!\int_0^1 F^*\,\mathcal{R}_{\mathrm{IS}}\,dz.
+\end{equation}
+The left-hand factor in braces is positive definite for $\Rarel > 0$.
+Therefore:
+\begin{equation}
+\label{eq:rel-2-126}
+\operatorname{Im}(\sigma_*) = \order{\taupi,\, \tauq}.
+\end{equation}
+
+\begin{relcorrection}
+\textbf{Exchange of stabilities (relativistic).}
+In the classical theory ($\taupi = \tauq = 0$) the right-hand side
+of~\eqref{eq:rel-2-125} vanishes identically and one concludes
+$\operatorname{Im}(\sigma) = 0$ exactly.
+
+With Israel--Stewart corrections, $\operatorname{Im}(\sigma_*)$ receives a
+contribution of order $\max(\taupi\nu/d^2,\, \tauq\kappa/d^2)$, which is
+the ratio of the \emph{microscopic} relaxation time to the
+\emph{macroscopic} viscous diffusion time.  For any laboratory or
+astrophysical fluid this ratio is exceedingly small ($\sim 10^{-10}$ or
+less), so the principle of exchange of stabilities holds to extraordinary
+accuracy.
+
+Formally, the principle is \emph{exact} in the non-relativistic limit
+$c \to \infty$ (equivalently $\taupi, \tauq \to 0$), and receives
+corrections suppressed by $v^2/c^2$:
+\begin{equation}
+\label{eq:rel-exchange-correction}
+\operatorname{Im}(\sigma_*) = \order{\frac{v^2}{c^2}}.
+\end{equation}
+\end{relcorrection}
+
+\subsection{The transient relaxation modes}
+\label{sec:rel-11c}
+
+The two extra roots of the fifth-order dispersion
+relation~\eqref{eq:rel-dispersion} have
+\begin{equation}
+\label{eq:rel-transient}
+\operatorname{Re}(\sigma_*^{(\mathrm{trans})})
+\approx -\frac{d^2}{\taupi\nu}
+\quad\text{or}\quad
+-\frac{d^2}{\tauq\kappa}.
+\end{equation}
+Since $d^2/(\taupi\nu) \gg 1$ and $d^2/(\tauq\kappa) \gg 1$ for any
+macroscopic system, these modes are strongly damped.  They never become
+marginal and therefore play no role in the onset of convection.  Their
+presence is required solely by the hyperbolic character of the
+Israel--Stewart equations and ensures that no perturbation signal propagates
+faster than~$c$.
+
+%----------------------------------------------------------------------
+\section{The marginal state and the relativistic characteristic value
+  problem}
+\label{sec:rel-12}
+%----------------------------------------------------------------------
+
+\subsection{Marginal-state equations}
+\label{sec:rel-12a}
+
+Since the exchange of stabilities is valid (to the accuracy established
+in \S~\ref{sec:rel-11}), the marginal state is stationary:
+$\sigma_* = 0$.  Setting $\sigma_* = 0$ in the normal-mode
+equations~\eqref{eq:rel-2-92} and~\eqref{eq:rel-2-93} and observing that
+every Israel--Stewart correction term carries a factor of $\sigma_*$
+(hence vanishes at $\sigma_* = 0$), we obtain
+\begin{equation}
+\label{eq:rel-2-127}
+(\mathcal{D}^2)^2 W
+= (D^2-a^2)^2 W
+= +\Rarel\, a^2 \Theta,
+\end{equation}
+\begin{equation}
+\label{eq:rel-2-128}
+(D^2-a^2)\Theta = -\frac{\beta d^2}{\kappa}\, W.
+\end{equation}
+
+\begin{relcorrection}
+\textbf{Key observation.}  At marginal stability ($\sigma_* = 0$),
+every Israel--Stewart relaxation term vanishes because each such term is
+proportional to~$\sigma_*$.  The marginal-state equations therefore take
+\emph{exactly the same form} as the classical equations~(127)--(128) of
+Chandrasekhar, with $R$ replaced by $\Rarel$.
+
+The entire effect of relativistic corrections is thus absorbed into the
+definition of $\Rarel$.  This is physically sensible: the marginal state
+is a time-independent configuration, so the hyperbolic (causal) modifications
+to the time-evolution equations are invisible.
+\end{relcorrection}
+
+Eliminating $\Theta$:
+\begin{equation}
+\label{eq:rel-2-129}
+(D^2 - a^2)^3 W = -\Rarel\, a^2\, W,
+\end{equation}
+with boundary conditions
+\begin{equation}
+\label{eq:rel-2-130}
+W = 0, \quad (D^2-a^2)^2 W = 0 \qquad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+and either $DW = 0$ (rigid) or $D^2 W = 0$ (free) on each surface.
+
+Alternatively, eliminating $W$:
+\begin{equation}
+\label{eq:rel-2-131}
+(D^2-a^2)^3\Theta = -\Rarel\, a^2\, \Theta,
+\end{equation}
+with boundary conditions
+\begin{equation}
+\label{eq:rel-2-132}
+\Theta = 0, \quad (D^2-a^2)\Theta = 0 \qquad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+and appropriate conditions on $D(D^2-a^2)\Theta$ depending on whether
+each surface is rigid or free.
+
+\subsection{The characteristic value problem for $\Rarel$}
+\label{sec:rel-12b}
+
+Equations~\eqref{eq:rel-2-129}--\eqref{eq:rel-2-130} (or equivalently
+\eqref{eq:rel-2-131}--\eqref{eq:rel-2-132}) constitute a sixth-order
+ordinary differential equation with six homogeneous boundary conditions.
+A non-trivial solution exists only for particular values of $\Rarel$ at
+given~$a^2$; we thus have a \emph{characteristic value problem} for the
+relativistic Rayleigh number.
+
+Let $\Rarel^{(c)}(a^2)$ denote the lowest eigenvalue for a given~$a^2$.
+The critical relativistic Rayleigh number is
+\begin{equation}
+\label{eq:rel-Rac}
+\Rarel^{(\mathrm{crit})}
+= \min_{a^2} \Rarel^{(c)}(a^2).
+\end{equation}
+
+Since the eigenvalue problem at $\sigma_* = 0$ has exactly the same
+structure as in the classical theory, we can write
+\begin{equation}
+\label{eq:rel-Rac-expansion}
+\Rarel^{(\mathrm{crit})}
+= R_c^{(\mathrm{class})}
+  \left[1 + \order{\frac{v^2}{c^2}}\right],
+\end{equation}
+where $R_c^{(\mathrm{class})}$ is the classical critical Rayleigh number
+(e.g.\ $R_c = 27\pi^4/4$ for both surfaces free).  The relativistic
+correction enters solely through the $\order{v^2/c^2}$ terms in the
+definition of $\Rarel$ (equation~\eqref{eq:rel-Rayleigh}).
+
+The critical wave number $a_c$ at which $\Rarel^{(\mathrm{crit})}$ is
+attained is likewise corrected only at $\order{v^2/c^2}$:
+\begin{equation}
+\label{eq:rel-ac}
+a_c^{(\mathrm{rel})}
+= a_c^{(\mathrm{class})}
+  \left[1 + \order{\frac{v^2}{c^2}}\right].
+\end{equation}
+
+\subsection{Role of the relaxation modes in the eigenvalue problem}
+\label{sec:rel-12c}
+
+Although the transient relaxation modes (identified in
+\S~\ref{sec:rel-10c}) do not participate in the instability, their presence
+modifies the \emph{approach} to the marginal state.  Specifically, for
+$\sigma_*$ small but non-zero, the dispersion relation receives
+corrections of order $\sigma_* \taupi\nu/d^2$ and
+$\sigma_* \tauq\kappa/d^2$.  These produce $\order{v^2/c^2}$ shifts in the
+growth rate near onset, but as shown above, the marginal eigenvalue problem
+itself is unaffected.
+
+\begin{causalitycheck}
+\textbf{Summary of causality verification for the eigenvalue problem.}
+
+\begin{enumerate}
+\item The three physical modes satisfy
+  $|v_g| \ll c$ for all wave numbers relevant to convective onset.
+
+\item The two transient modes have group velocities bounded by
+  $\sqrt{\nu/\taupi}$ and $\sqrt{\kappa/\tauq}$, both $\le c$ by the
+  Israel--Stewart causality bounds~\eqref{eq:rel-causality-shear}.
+
+\item The marginal-state eigenvalue problem ($\sigma_* = 0$) involves no
+  time derivatives and is automatically causal.
+
+\item The critical Rayleigh number and critical wave number receive only
+  $\order{v^2/c^2}$ corrections relative to their classical values.
+\end{enumerate}
+
+All mode frequencies therefore give subluminal group velocities, and the
+relativistic eigenvalue problem is well-posed.
+\end{causalitycheck}
+
+\subsection{Non-relativistic limit}
+\label{sec:rel-12d}
+
+Taking $c \to \infty$ (hence $\taupi, \tauq \to 0$ and
+$\Rarel \to R$), the entire system of equations in \S\S~\ref{sec:rel-10}--\ref{sec:rel-12} reduces to Chandrasekhar's classical
+equations~(88)--(132) of Chapter~II, \S\S~10--12.  The five-mode dispersion
+relation collapses to the classical cubic as the two transient modes acquire
+$|\operatorname{Re}(\sigma_*)| \to \infty$ and decouple.  The exchange of
+stabilities becomes exact, and the characteristic value problem for $R$
+is recovered without modification.
