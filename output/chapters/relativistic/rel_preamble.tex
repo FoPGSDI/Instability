@@ -2,12 +2,19 @@
 % Shared macros for all relativistic chapter modifications
 % BDNK (Bemfica-Disconzi-Noronha-Kovtun) first-order causal formalism
 %
-% NOTE: This file requires \usepackage{tcolorbox} to be loaded
-% in the main preamble (../../preamble.tex) for the custom
-% environments defined at the end of this file.
-%
 % Usage: \input{rel_preamble} from any relativistic chapter
 % or from rel_main.tex
+
+% =====================================================================
+% Required packages (loaded here so rel_main.tex is self-contained)
+% =====================================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{natbib}
 
 % =====================================================================
 % 4-Vector notation
@@ -121,6 +128,20 @@
 \newcommand{\dAlembert}{\Box}       % d'Alembertian
 \newcommand{\Dalembertian}{\Box}    % alias
 \newcommand{\order}[1]{\mathcal{O}(#1)} % order-of-magnitude symbol
+
+% =====================================================================
+% Compatibility macros
+% ---------------------------------------------------------------------
+% Additional macros used across chapter files for consistency.
+% =====================================================================
+\providecommand{\dd}{\mathrm{d}}           % upright differential
+\providecommand{\vect}[1]{\mathbf{#1}}     % 3-vector notation
+\providecommand{\Ra}{\mathrm{Ra}}           % classical Rayleigh number
+\providecommand{\bulkP}{\Pi_{\mathrm{bulk}}}% bulk viscous pressure (alias)
+% IS relaxation times (used only in historical comparison paragraphs)
+\providecommand{\taupi}{\tau_{\pi}}
+\providecommand{\tauq}{\tau_{q}}
+\providecommand{\tauPi}{\tau_{\Pi}}
 
 % =====================================================================
 % Relativistic correction helpers
