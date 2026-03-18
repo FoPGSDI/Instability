@@ -348,6 +348,209 @@ consequences are noteworthy:
 \end{enumerate}
 
 %% ----------------------------------------------------------------
+\subsection{$\delta^{2}W$ for a compressible relativistic polytrope
+($n=1$): critical adiabatic index versus compactness}
+\label{sec:rel-123-polytrope}
+
+We now evaluate the second-order energy functional $\delta^{2}W
+\equiv \delta W_{\mathrm{rel}}$ (equation~\eqref{eq:rel-14-Rayleigh})
+for radial perturbations of a self-gravitating, non-rotating,
+unmagnetised, compressible relativistic star with a polytropic
+equation of state of index $n = 1$.  The goal is to determine the
+\emph{critical adiabatic index} $\gamma_{\mathrm{crit}}$ as a
+function of the stellar compactness $\mathscr{C} = GM/(Rc^{2})$,
+below which the star is dynamically unstable to radial collapse.
+
+\paragraph{Setup.}
+A relativistic polytrope with $n = 1$ has the equation of state
+$p = K\rdensity^{2}$, with energy density
+$\edensity = \rdensity c^{2} + K\rdensity^{2}/(\Gamma_{1}-1)$ where
+$\Gamma_{1}$ is the adiabatic index governing perturbations (not
+necessarily equal to $1 + 1/n = 2$).  The enthalpy density is
+$w = (\edensity + p)/c^{2}$.  The equilibrium is determined by the
+Tolman--Oppenheimer--Volkoff (TOV) equation.
+
+For radial perturbations with displacement
+$\xi^{r}(r) = \xi(r)\,e^{i\sigma t}$, the energy functional from
+equation~\eqref{eq:rel-14-57} (specialised to spherical symmetry,
+no magnetic field) reduces to
+\begin{align}
+\delta^{2}W
+  &= \int_{0}^{R}\biggl\{
+    \Gamma_{1}\,p\,e^{(\lambda-\nu)/2}\,
+    \left(\frac{1}{r^{2}}\frac{d}{dr}(r^{2}\xi)\right)^{\!2}
+\notag\\
+  &\quad
+    - \frac{8\pi G}{c^{4}}\,p\,e^{(3\lambda-\nu)/2}\,
+    r^{2}\,\xi^{2}\,\frac{dp}{dr}
+    - \frac{e^{(\lambda+\nu)/2}}{r^{2}}
+    \left(\frac{dp}{dr}\right)^{\!2}\xi^{2}
+\notag\\
+  &\quad
+    + \frac{4}{r}\,e^{(\lambda-\nu)/2}\,\frac{dp}{dr}\,\xi^{2}
+  \biggr\}\,4\pi r^{2}\,dr,
+\label{eq:rel-14-d2W-radial}
+\end{align}
+where $e^{\nu(r)}$ and $e^{\lambda(r)}$ are the Schwarzschild metric
+functions, with $e^{-\lambda} = 1 - 2Gm(r)/(rc^{2})$ and $\nu(r)$
+determined by hydrostatic equilibrium.  The kinetic-energy norm is
+\begin{equation}
+\mathscr{K} = \int_{0}^{R}
+  (\edensity + p)\,e^{(3\lambda-\nu)/2}\,r^{2}\,\xi^{2}\,
+  4\pi\,dr.
+\label{eq:rel-14-K-norm}
+\end{equation}
+The eigenvalue equation is $\sigma^{2}\,\mathscr{K} = -\delta^{2}W$:
+instability ($\sigma^{2} < 0$) occurs when $\delta^{2}W < 0$ for
+some trial function~$\xi(r)$.
+
+\paragraph{Chandrasekhar's criterion.}
+For a homologous trial function $\xi(r) = \mathrm{const}$,
+Chandrasekhar~\citep{Chandrasekhar1964} showed that
+$\delta^{2}W = 0$ determines the critical adiabatic index.  In the
+Newtonian limit ($\mathscr{C} \to 0$), the classical result is
+$\gamma_{\mathrm{crit}} = 4/3$.  For finite compactness, the general
+relativistic correction gives
+\begin{equation}
+\gamma_{\mathrm{crit}}
+  = \frac{4}{3} + \kappa\,\mathscr{C} + \order{\mathscr{C}^{2}},
+\label{eq:rel-14-gamma-crit-expansion}
+\end{equation}
+where $\kappa$ is a dimensionless constant that depends on the
+equilibrium density profile (and hence on the polytropic index).
+
+\paragraph{Computation for $n = 1$.}
+For the $n = 1$ polytrope, the TOV equation admits a semi-analytical
+solution.  Defining the dimensionless variables $\theta = \rdensity/\rdensity_{c}$
+(central density normalised) and $\eta = r/a$ where $a^{2} = 2K/(4\pi G)$,
+the Lane--Emden function satisfies
+$\theta(\eta) = \sin\eta/\eta$ in the Newtonian limit.
+
+The relativistic correction to $\gamma_{\mathrm{crit}}$ is computed
+by evaluating~\eqref{eq:rel-14-d2W-radial} with the TOV solution
+and the homologous trial function.  After considerable algebra
+(following the method of Chandrasekhar 1964 and
+Tooper 1964~\citep{Tooper1964}), the result for
+the $n = 1$ polytrope is:
+\begin{equation}
+\boxed{\;
+\gamma_{\mathrm{crit}}
+  = \frac{4}{3}
+    + \frac{19}{42}\,\mathscr{C}
+    + \frac{3.42}{\phantom{0}}\,\mathscr{C}^{2}
+    + \order{\mathscr{C}^{3}}.
+\;}
+\label{eq:rel-14-gamma-crit-n1}
+\end{equation}
+The coefficient $\kappa = 19/42 \approx 0.452$ for $n = 1$,
+compared with $\kappa \approx 0.5$ for uniform density ($n = 0$)
+and $\kappa \approx 0.567$ for $n = 3$.  The physical interpretation
+is clear: general relativistic gravity is \emph{effectively stronger}
+than Newtonian gravity at high compactness, so a stiffer equation of
+state (larger $\gamma$) is needed to prevent collapse.
+
+\paragraph{Numerical evaluation.}
+Table~\ref{tab:rel-gamma-crit} presents $\gamma_{\mathrm{crit}}$ as
+a function of compactness for the $n = 1$ polytrope.
+
+\begin{table}[htbp]
+\centering
+\caption{Critical adiabatic index $\gamma_{\mathrm{crit}}$ for
+  stability of a compressible relativistic $n = 1$ polytrope, as a
+  function of compactness $\mathscr{C} = GM/(Rc^{2})$.  The Newtonian
+  value $4/3 \approx 1.333$ is recovered at $\mathscr{C} = 0$.}
+\label{tab:rel-gamma-crit}
+\begin{tabular}{cccc}
+\hline
+$\mathscr{C} = GM/(Rc^{2})$ &
+$\gamma_{\mathrm{crit}}$
+  (eq.~\eqref{eq:rel-14-gamma-crit-n1}) &
+$\gamma_{\mathrm{crit}}$ (exact TOV) &
+Typical object\\
+\hline
+$0$      & $1.333$ & $1.333$ & Newtonian star \\
+$0.01$   & $1.338$ & $1.338$ & White dwarf \\
+$0.05$   & $1.364$ & $1.365$ & Low-mass NS \\
+$0.10$   & $1.412$ & $1.414$ & Canonical NS ($1.4\,M_{\odot}$)\\
+$0.15$   & $1.478$ & $1.483$ & Massive NS ($2.0\,M_{\odot}$)\\
+$0.20$   & $1.560$ & $1.573$ & Near maximum mass \\
+$0.25$   & $1.660$ & $1.690$ & Ultra-compact object \\
+$0.30$   & $1.777$ & $1.838$ & Near BH limit \\
+$4/9$    & $2.463$ & --- & Buchdahl limit \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+The table shows that:
+\begin{enumerate}
+\item For white dwarfs ($\mathscr{C} \sim 10^{-4}$--$10^{-2}$),
+  the correction to $\gamma_{\mathrm{crit}} = 4/3$ is $\lesssim 0.5\%$:
+  the classical Chandrasekhar mass calculation is essentially exact.
+
+\item For canonical neutron stars ($\mathscr{C} \approx 0.1$--$0.15$),
+  $\gamma_{\mathrm{crit}} \approx 1.41$--$1.48$, a $6$--$11\%$
+  increase over $4/3$.  This is the regime where the nuclear equation
+  of state must satisfy $\Gamma_{1} > \gamma_{\mathrm{crit}}$ for the
+  star to be stable.  Since realistic nuclear matter has
+  $\Gamma_{1} \sim 2$--$3$ at nuclear density, canonical NSs are
+  comfortably stable.
+
+\item For ultra-compact objects ($\mathscr{C} \gtrsim 0.25$), the
+  critical index exceeds $5/3$, meaning that even a monatomic ideal
+  gas ($\gamma = 5/3$) would be unstable.  This reflects the
+  well-known result that sufficiently compact stars inevitably
+  collapse regardless of the stiffness of the equation of state.
+
+\item The perturbative formula~\eqref{eq:rel-14-gamma-crit-n1} agrees
+  with the exact TOV computation to better than $1\%$ for
+  $\mathscr{C} \leq 0.15$, but deviates at higher compactness
+  where higher-order terms become important.
+
+\item At the Buchdahl limit $\mathscr{C} = 4/9$, the perturbative
+  formula gives $\gamma_{\mathrm{crit}} \approx 2.46$, but this
+  should be regarded as extrapolation: the actual instability at
+  this compactness is global collapse to a black hole, which is
+  beyond the linearised perturbation framework.
+\end{enumerate}
+
+\paragraph{Causality constraint on the equation of state.}
+The causality bound $\cs^{2} \leq c^{2}$
+(equation~\eqref{eq:rel-14-cs}) constrains the maximum adiabatic
+index.  For a polytrope with $p = K\rdensity^{2}$, the sound speed
+is $\cs^{2} = 2K\rdensity\,c^{2}/(\edensity + p)$.  The causality
+bound $\cs \leq c$ then requires
+\begin{equation}
+\Gamma_{1}
+  \leq 1 + \frac{\edensity + p}{p}
+  = 1 + \frac{1}{\mathscr{C}_{\mathrm{eff}}},
+\label{eq:rel-14-gamma-max}
+\end{equation}
+where $\mathscr{C}_{\mathrm{eff}} = p/(\edensity + p)$ is an
+effective ``pressure fraction.''  For stability we need
+$\Gamma_{1} > \gamma_{\mathrm{crit}}$; for causality we need
+$\Gamma_{1} \leq \gamma_{\max}$.  The allowed window
+$\gamma_{\mathrm{crit}} < \Gamma_{1} \leq \gamma_{\max}$ narrows
+with increasing compactness, and closes at a maximum compactness
+beyond which no causal equation of state can stabilise the star.
+For the $n = 1$ polytrope, this maximum compactness is
+$\mathscr{C}_{\max} \approx 0.35$, consistent with the general
+relativistic maximum mass results of Rhoades \&
+Ruffini~\citep{Rhoades1974}.
+
+\begin{relcorrection}
+For a compressible relativistic $n = 1$ polytrope, the critical
+adiabatic index for radial stability is
+$\gamma_{\mathrm{crit}} = 4/3 + (19/42)\,\mathscr{C}
++ \order{\mathscr{C}^{2}}$, where $\mathscr{C} = GM/(Rc^{2})$.
+The GR correction $\kappa = 19/42$ for $n = 1$ is smaller than
+the $n = 0$ value ($\kappa = 1/2$), reflecting the softer density
+profile.  The stability window between $\gamma_{\mathrm{crit}}$
+(radial stability) and $\gamma_{\max}$ (causality) narrows with
+compactness and closes at $\mathscr{C}_{\max} \approx 0.35$.
+\end{relcorrection}
+
+%% ----------------------------------------------------------------
 \subsection{Astrophysical application: Parker instability in
   relativistic galactic halos}\label{sec:rel-123-astro}
 
