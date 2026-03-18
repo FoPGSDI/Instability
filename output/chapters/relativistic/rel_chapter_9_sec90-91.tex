@@ -344,13 +344,82 @@ $\alpha$-parameter with representative GRMHD simulation data.
 \label{fig:grmhd-mri-isco}
 \end{figure}
 
+%----------------------------------------------------------------------
+\subsection{MRI growth rate profile in Kerr spacetime}
+\label{sec:rel-9-91-kerr-profile}
+%----------------------------------------------------------------------
+
+We now compute the MRI growth rate $\sigma(r)$ as a function of
+radius for a Kerr black hole with spin parameter $a_{*} = a/M = 0.9$,
+including the full general-relativistic corrections to the orbital
+dynamics.
+
+In the Kerr metric the Keplerian angular velocity is
+\begin{equation}
+  \Omega_{K} = \frac{M^{1/2}}{r^{3/2} + a_{*}\,M^{1/2}},
+  \label{eq:rel-9-Omega-Kerr}
+\end{equation}
+and the radial epicyclic frequency is
+\begin{equation}
+  \kappa^{2} = \Omega_{K}^{2}
+  \left(1 - \frac{6M}{r} + \frac{8\,a_{*}\,M^{1/2}}{r^{3/2}}
+    - \frac{3\,a_{*}^{2}}{r^{2}}\right).
+  \label{eq:rel-9-kappa-Kerr}
+\end{equation}
+The ISCO radius for prograde orbits is determined by
+$\kappa^{2}(r_{\mathrm{ISCO}}) = 0$ and is given by the Bardeen,
+Press \& Teukolsky~\cite{Bardeen1972} formula.  For $a_{*} = 0.9$,
+$r_{\mathrm{ISCO}} \approx 2.32\,r_{g}$.
+
+The local shear rate $q = -d\ln\Omega_{K}/d\ln r$ incorporates
+frame-dragging through the spin-dependent angular velocity
+profile~\eqref{eq:rel-9-Omega-Kerr}.  For Schwarzschild ($a_{*}=0$),
+$q = 3/2$ everywhere; for rapidly spinning Kerr, $q$ deviates from
+$3/2$ near the ISCO due to the orbital dynamics.
+
+The maximum MRI growth rate (optimised over wavenumber) is
+\begin{equation}
+  \sigma_{\max} = \frac{q}{2}\,|\Omega_{K}|,
+  \label{eq:rel-9-sigma-max-Kerr}
+\end{equation}
+recovering $\sigma_{\max} = \tfrac{3}{4}\Omega_{K}$ for Keplerian
+shear far from the ISCO.  The relativistic Alfv\'en speed
+bound~\eqref{eq:rel-9-vA-rel} introduces a correction of order
+$v_{A}^{2}/c^{2}$, reducing $\sigma_{\max}$ by
+$\sim\tfrac{1}{2}\,v_{A}^{2}/c^{2}$.
+
+Figure~\ref{fig:grmhd-mri-profile} shows $\sigma_{\max}/\Omega_{K}$
+vs.\ $r/r_{g}$ for four spin values and for several values of
+$v_{A}/c$ at $a_{*} = 0.9$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_grmhd_mri_profile.pdf}
+\caption{Left: normalised maximum MRI growth rate
+  $\sigma_{\max}/\Omega_{K}$ vs.\ $r/r_{g}$ for Kerr black holes
+  with $a_{*} = 0$, $0.5$, $0.9$, and $0.998$.  Dotted vertical
+  lines mark the ISCO for each spin.  The dashed horizontal line is
+  the ideal Keplerian value $3/4$.  Near the ISCO, $\sigma_{\max}$
+  can exceed $3\Omega_{K}/4$ because $\kappa^{2}\to 0$.
+  Right: effect of bounded Alfv\'en speed at $a_{*} = 0.9$; for
+  $v_{A}/c = 0.3$ the growth rate is reduced by $\sim 5\%$, consistent
+  with the relativistic correction $\sim v_{A}^{2}/(2c^{2})$.
+  The profile connects smoothly to the results of
+  Liska et al.~\cite{Liska2021} on large-scale poloidal field
+  dynamo action in GRMHD simulations of magnetised accretion flows.}
+\label{fig:grmhd-mri-profile}
+\end{figure}
+
 \medskip
 \noindent\textbf{References for \S\S\,90--91.}
 Relativistic MRI: Balbus~\cite{Balbus2003},
-Pessah \& Psaltis~\cite{PessahPsaltis2005}.
+Pessah \& Psaltis~\cite{PessahPsaltis2005},
+Pessah, Chan \& Psaltis~\cite{PessahChanPsaltis2008}.
+Kerr orbital dynamics: Bardeen et al.~\cite{Bardeen1972}.
 GRMHD simulations: De~Villiers \& Hawley~\cite{DeVilliersHawley2003},
 Gammie et al.~\cite{GammieMcKinneyToth2003},
-McKinney \& Blandford~\cite{McKinneyBlandford2009}.
+McKinney \& Blandford~\cite{McKinneyBlandford2009},
+Liska et al.~\cite{Liska2021}.
 Laboratory MRI: Ji et al.~\cite{Ji2001}, Schartman et al.~\cite{Schartman2012}.
 Velikhov--Chandrasekhar: Velikhov~\cite{Velikhov1959},
 Chandrasekhar~\cite{Chandrasekhar1961}.

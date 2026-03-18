@@ -891,6 +891,147 @@ maximum characteristic speed, but causality is never violated.
 \end{figure}
 
 %% ====================================================================
+\section{BDNK Frame Coefficient Constraints}
+\label{sec:bdnk-parameter-space}
+%% ====================================================================
+
+The practical implementation of BDNK hydrodynamics requires an explicit
+choice of frame coefficients $(\varepsilon_1, \beta_1, \alpha_1)$ that
+simultaneously guarantees strong hyperbolicity (causality), stability of
+the equilibrium state, and well-posedness of the initial-value problem.
+This section maps out the allowed parameter space, drawing on recent
+analytical and numerical results
+\citep{PandyaPretorius2021,PandyaMostPretorius2022ideal,HoultKovtun2022kinetic,BantilanIshiRomatschke2018}.
+
+\subsection{Dimensionless frame parameters}
+\label{sec:dimless-frame}
+
+For a single-component fluid, the relevant dimensionless combinations
+are
+\begin{equation}
+  a_E \equiv \frac{\varepsilon_1\, T}{\shearvisc},
+  \qquad
+  a_\beta \equiv \frac{\beta_1}{\shearvisc},
+  \label{eq:dimless-frame-params}
+\end{equation}
+where $\shearvisc$ is the shear viscosity and $T$ the temperature.
+The strong hyperbolicity conditions, derived from the requirement that
+all eigenvalues of the principal symbol of the BDNK system be real and
+distinct, take the form of coupled nonlinear inequalities in
+$(a_E, a_\beta)$ that depend on the equation of state through the
+sound speed $\cs$.
+
+\subsection{Hyperbolicity region for ideal gas}
+\label{sec:hyper-ideal-gas}
+
+For an ideal gas with adiabatic index $\hat{\gamma}$ and sound speed
+$\cs^2 = \hat{\gamma}\, p/(\varepsilon + p)$, the principal constraints
+are \citep{BemficaDNK2023,HoultKovtun2022kinetic}:
+\begin{enumerate}
+\item \textbf{Minimum energy coefficient:}
+  \begin{equation}
+    a_E > \frac{\cs^2/c^2}{1 - \cs^2/c^2}.
+    \label{eq:aE-min}
+  \end{equation}
+  For a conformal fluid ($\cs^2 = c^2/3$), this gives $a_E > 1/2$.
+  For stiff nuclear matter ($\cs^2 \approx 0.7\, c^2$), the bound
+  tightens considerably to $a_E > 7/3$.
+
+\item \textbf{Coupled bound on $a_\beta$:}
+  \begin{equation}
+    a_\beta > \frac{(\cs^2/c^2)\, a_E}%
+      {a_E\,(1 - \cs^2/c^2) - \cs^2/c^2}\,,
+    \label{eq:abeta-bound}
+  \end{equation}
+  valid when $a_E$ exceeds the threshold in \eqref{eq:aE-min}.
+  This hyperbolic curve defines the lower boundary of the allowed
+  region in the $(a_E, a_\beta)$ plane.
+
+\item \textbf{Subluminality upper bound:} An upper bound on $a_\beta$
+  from the requirement that all characteristic speeds remain below $c$:
+  \begin{equation}
+    a_\beta < \frac{(1 - \cs^2/c^2)\, a_E + 2\,(1 - \cs^2/c^2)}%
+      {\cs^2/c^2}.
+    \label{eq:abeta-upper}
+  \end{equation}
+\end{enumerate}
+
+The allowed region is thus a strip bounded below by the hyperbolicity
+curve \eqref{eq:abeta-bound} and above by the subluminality
+bound \eqref{eq:abeta-upper}, with $a_E$ bounded below by
+\eqref{eq:aE-min}.  As the sound speed increases (stiffer EOS),
+the allowed region narrows---reflecting the greater difficulty of
+maintaining causality in stiff matter.
+
+\subsection{Connection to $\shearvisc/s$ and the KSS bound}
+\label{sec:kss-connection}
+
+The Kovtun--Son--Starinets (KSS) bound \citep{KSS2005} from the
+AdS/CFT correspondence provides a lower limit on the shear viscosity
+to entropy density ratio:
+\begin{equation}
+  \frac{\shearvisc}{s} \ge \frac{1}{4\pi}\,.
+  \label{eq:kss-bound}
+\end{equation}
+This bound has been conjectured to hold universally for all
+relativistic quantum field theories at finite temperature.  Together
+with the positivity of bulk viscosity ($\bulkvisc \ge 0$), the KSS
+bound constrains the transport coefficient space for BDNK applications.
+
+For neutron star matter, the transport coefficients depend strongly on
+the baryon density through nuclear interactions, with $\shearvisc/s$
+typically well above the KSS bound at the low temperatures relevant to
+cold neutron stars, but potentially approaching it in the hot, dense
+conditions of binary mergers and proto-neutron stars
+\citep{AlfordMahmoodi2012,GavassinoAntonelli2024}.
+
+Figure~\ref{fig:bdnk-parameter-space} maps the allowed region in BDNK
+frame-coefficient space and the transport coefficient space for
+representative physical systems.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{fig_bdnk_parameter_space.pdf}
+  \caption{(a)~Allowed region in the dimensionless BDNK frame-coefficient
+    plane $(a_E, a_\beta)$ for three values of $\cs^2/c^2$: conformal
+    fluid ($1/3$, green), intermediate nuclear matter ($1/2$, orange),
+    and stiff nuclear EOS ($0.7$, red).  The shaded regions are the
+    causal, stable, strongly hyperbolic parameter space.  Specific
+    theoretical predictions are marked: holographic (AdS/CFT),
+    kinetic theory (BGK), and the numerical choice of
+    Pandya et~al.\ (2022).
+    (b)~Transport coefficient space $(\shearvisc/s,\, \bulkvisc/s)$
+    showing the KSS bound $\shearvisc/s = 1/(4\pi)$ and estimated
+    ranges for the quark-gluon plasma, neutron star cores, and
+    binary merger remnants.}
+  \label{fig:bdnk-parameter-space}
+\end{figure}
+
+\subsection{Numerical BDNK implementations}
+\label{sec:bdnk-numerics}
+
+The first numerical implementations of BDNK hydrodynamics were
+performed by Pandya \& Pretorius (2021) \citep{PandyaPretorius2021},
+who demonstrated stable evolution of shock tubes and blast waves in
+1+1 dimensions.  Subsequent work by Pandya, Most \& Pretorius (2022)
+\citep{PandyaMostPretorius2022ideal} extended these results to ideal gas
+microphysics, validating the hyperbolicity conditions \eqref{eq:aE-min}--\eqref{eq:abeta-upper} and confirming that the
+frame coefficients can be chosen to give stable, convergent
+evolutions across a wide range of flow regimes.
+
+Bantilan, Ishi \& Romatschke (2018) \citep{BantilanIshiRomatschke2018}
+applied BDNK-type first-order hydrodynamics to predict Centauro-like
+events in heavy-ion collisions at the LHC, demonstrating the
+phenomenological utility of the framework.
+
+The recent application of BDNK viscous hydrodynamics to neutron star
+evolution \citep{NSevolutionBDNK2025} extends the framework to
+long-timescale astrophysical problems, showing that the BDNK frame
+coefficients can be chosen to maintain stability over secular
+evolution timescales while correctly reproducing the known cooling
+and spin-down behaviour.
+
+%% ====================================================================
 \section*{References for This Chapter}
 %% ====================================================================
 
@@ -924,4 +1065,16 @@ maximum characteristic speed, but causality is never violated.
     (2014) \citep{BorsanyiEtAl2014}
   \item Chandrasekhar, \textit{Hydrodynamic and Hydromagnetic Stability},
     Oxford (1961) \citep{Chandrasekhar1961}
+  \item Pandya \& Pretorius, \textit{Phys.\ Rev.\ D} \textbf{104},
+    023015 (2021) \citep{PandyaPretorius2021}
+  \item Pandya, Most \& Pretorius, arXiv:2209.09265 (2022)
+    \citep{PandyaMostPretorius2022ideal}
+  \item Bantilan, Ishi \& Romatschke, \textit{Phys.\ Lett.\ B}
+    \textbf{785}, 396 (2018) \citep{BantilanIshiRomatschke2018}
+  \item Gavassino \& Antonelli, \textit{Phys.\ Lett.\ B} \textbf{849},
+    138434 (2024) \citep{GavassinoAntonelli2024}
+  \item Hoult \& Kovtun, \textit{Phys.\ Rev.\ D} \textbf{106},
+    066023 (2022) \citep{HoultKovtun2022kinetic}
+  \item arXiv:2509.15303, Neutron star evolution with BDNK framework
+    (2025) \citep{NSevolutionBDNK2025}
 \end{itemize}

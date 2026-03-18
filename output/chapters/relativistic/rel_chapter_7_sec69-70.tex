@@ -578,3 +578,73 @@ number with the reduction in the effective $\alpha$-viscosity.
   $\alpha$-parameter (dashed) as functions of~$\xi$.}
 \label{fig:viscous-disk-alpha}
 \end{figure}
+
+\subsubsection{Radial profile of BDNK corrections in an $\alpha$-disk}
+
+The effective BDNK Reynolds number and the modification to the
+Shakura--Sunyaev $\alpha$-parameter depend on the local thermodynamic
+state of the disk, which varies with radius.  In the standard
+$\alpha$-disk model \citep{ShakuraSunyaev1973}, the disk is divided
+into three zones:
+\begin{enumerate}
+\item[(a)] \textbf{Radiation-dominated, electron-scattering opacity}
+  ($r\lesssim 150\,r_{g}$): here $p_{\mathrm{rad}}\gg p_{\mathrm{gas}}$
+  and the relativistic correction parameter
+  $\xi=(\varepsilon+p)/(\rho_{0}c^{2})-1$ can reach $\xi\sim 0.1$--$0.5$
+  for accretion rates $\dot{M}\sim 0.1\,\dot{M}_{\mathrm{Edd}}$.
+\item[(b)] \textbf{Gas-dominated, electron-scattering opacity}
+  ($150\,r_{g}\lesssim r\lesssim 5000\,r_{g}$): $\xi\sim 10^{-2}$,
+  with the Novikov--Thorne page factor controlling the radial
+  scaling \citep{NovikovThorne1973}.
+\item[(c)] \textbf{Gas-dominated, free-free opacity}
+  ($r\gtrsim 5000\,r_{g}$): $\xi\sim 10^{-3}$ or smaller; BDNK
+  corrections become negligible.
+\end{enumerate}
+
+Figure~\ref{fig:bdnk-alpha-disk} shows the radial profiles of $\xi(r)$,
+$\alpha_{\mathrm{rel}}/\alpha_{\mathrm{cl}}$, and
+$\mathrm{Re}_{\mathrm{rel}}/\mathrm{Re}_{\mathrm{cl}}$ for a
+$10\,M_{\odot}$ black hole with $\alpha_{\mathrm{cl}}=0.1$ at three
+accretion rates.  The key results are:
+\begin{itemize}
+\item In the radiation-dominated inner zone, the BDNK kinematic
+  viscosity $\nu_{\mathrm{rel}}=\eta_{\mathrm{s}}c^{2}/(\varepsilon+p)$
+  is reduced by up to $\sim 30\%$ relative to the classical
+  $\nu=\eta_{\mathrm{s}}/\rho_{0}$, suppressing the effective
+  $\alpha$-parameter.
+\item The Reynolds number is correspondingly enhanced by the
+  factor $(1+\xi)$, so the effective inertia of the relativistic
+  fluid is larger per unit viscous stress.
+\item The transition between zones~(a) and~(b) produces a
+  characteristic break in $\xi(r)$ at $r\sim 150\,r_{g}$, visible
+  as a change of slope in all three panels.
+\item For sub-Eddington accretion ($\dot{M}/\dot{M}_{\mathrm{Edd}}
+  \lesssim 0.01$), the corrections are $\lesssim 1\%$ everywhere
+  and the classical Shakura--Sunyaev prescription is adequate.
+\end{itemize}
+
+These results have implications for the dissipative dynamics revealed
+by GRMHD simulations of accretion flows.  The BDNK formalism
+\citep{MostNoronha2021} provides a first-principles foundation for
+incorporating causal viscosity into disk models, replacing the ad hoc
+$\alpha$-prescription with transport coefficients constrained by
+causality and stability.  The EHT observations of M87
+\citep{EHT2019M87V} and the accompanying GRMHD code comparison
+\citep{Porth2019} provide an observational context in which these
+BDNK corrections could, in principle, be tested.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{plots/deep/fig_bdnk_alpha_disk.pdf}
+\caption{BDNK modifications to the Shakura--Sunyaev $\alpha$-disk
+  for $M=10\,M_{\odot}$, $\alpha_{\mathrm{cl}}=0.1$.
+  Left: relativistic correction parameter $\xi(r)$ for three accretion
+  rates $\dot{M}/\dot{M}_{\mathrm{Edd}}=0.01$, $0.1$, and $0.5$.
+  Vertical dotted lines mark the zone~(a)/(b) and (b)/(c) boundaries.
+  Centre: ratio $\alpha_{\mathrm{rel}}/\alpha_{\mathrm{cl}}=1/(1+\xi)$,
+  showing suppression of the effective viscosity parameter in the inner
+  disk.
+  Right: Reynolds number enhancement
+  $\mathrm{Re}_{\mathrm{rel}}/\mathrm{Re}_{\mathrm{cl}}=(1+\xi)$.}
+\label{fig:bdnk-alpha-disk}
+\end{figure}

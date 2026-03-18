@@ -765,29 +765,40 @@ equation~\eqref{eq:rel-111-disp-m0},
 \sigma_{\max} \;\approx\; 0.34\,
   \sqrt{\frac{T}{\enthalpy c^{2}\,R^{3}}}\,.
 \end{equation}
-For a GRB jet with $R_{\mathrm{jet}}\sim 10^{7}\;\mathrm{cm}$,
+For a GRB jet with $\Lf=300$, $R_{\mathrm{jet}}\sim 10^{7}\;\mathrm{cm}$,
 $\rho\sim 10^{-10}\;\mathrm{g\,cm^{-3}}$, cocoon pressure
-$p_{\mathrm{cocoon}}\sim 10^{18}\;\mathrm{erg\,cm^{-3}}$, and
+$p_{\mathrm{cocoon}}\sim 10^{18}\;\mathrm{erg\,cm^{-3}}$, engine
+activity time $t_{\mathrm{eng}}\sim 10\;\mathrm{s}$, and
 enthalpy ratio $w/\rho\sim 10$ (radiation-dominated fireball), the
 comoving breakup timescale is
 $\tau_{\mathrm{co}}\sim 1/\sigma_{\max}\sim 10^{-2}\;\mathrm{s}$.
-The observer-frame timescale, including the Lorentz-factor time
-dilation, is
+The observer-frame timescale, including the relativistic time
+compression from beaming, is
 \begin{equation}
 \label{eq:rel-111-astro-tau}
 \tau_{\mathrm{obs}} \;\approx\;
-  \frac{\tau_{\mathrm{co}}}{\Lf}
-  \;\sim\; 0.1\;\mathrm{ms}
-  \quad (\Lf = 100).
+  \frac{\tau_{\mathrm{co}}}{2\Lf^{2}}
+  \;\sim\; 0.05\;\mathrm{ms}
+  \quad (\Lf = 300).
 \end{equation}
 This is comparable to the shortest variability timescales observed in
-prompt GRB light curves, suggesting that capillary breakup may
-contribute to the rapid time structure of GRB emission.
+prompt GRB light curves ($\Delta t\sim 10$--$100\;\mathrm{ms}$),
+suggesting that capillary breakup may
+contribute to the rapid time structure of GRB
+emission~\cite{BrombergTchekhovskoy2016}.  The comparison between
+the theoretical breakup timescale and observed GRB variability is
+shown in Figure~\ref{fig:grb-variability} for a range of bulk
+Lorentz factors and enthalpy ratios.  Recent GRMHD simulations by
+Gottlieb et al.~\cite{GottliebEtAl2024} have confirmed that
+large-scale magnetic field generation via the kinetic
+Kelvin--Helmholtz instability at the jet--cocoon interface
+significantly modifies the effective surface tension, potentially
+altering the breakup timescale by a factor of order unity.
 
 The relativistic enthalpy suppression (the factor $\enthalpy$ replacing
 $\rho$ in the denominator) extends $\tau_{\mathrm{co}}$ by
 $\sqrt{w/\rho}\sim 3$ relative to a Newtonian estimate, as shown in
-Figure~\ref{fig:jet-capillary-breakup}.
+Figures~\ref{fig:jet-capillary-breakup} and~\ref{fig:grb-variability}.
 
 \begin{figure}[ht]
 \centering
@@ -802,6 +813,25 @@ astrophysical regimes indicated.
 Lorentz factor $\Lf$, for several internal enthalpy ratios.  The
 grey band marks the observed GRB variability range.}
 \label{fig:jet-capillary-breakup}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_grb_variability.pdf}
+\caption{%
+\textbf{Left:} Observer-frame capillary breakup timescale versus bulk
+Lorentz factor $\Lf_{\mathrm{jet}}$ for a GRB jet with
+$R_{\mathrm{jet}}=10^{7}\;\mathrm{cm}$ and cocoon pressure
+$p_{\mathrm{cocoon}}=10^{18}\;\mathrm{erg\,cm^{-3}}$.  Curves
+correspond to different enthalpy ratios; the grey band marks the
+observed GRB variability range ($10$--$100\;\mathrm{ms}$).  Data
+points indicate observed variability timescales and inferred Lorentz
+factors for individual GRBs.
+\textbf{Right:} Relativistic suppression of the capillary growth
+rate $\sigma_{\max}^{\mathrm{rel}}/\sigma_{\max}^{\mathrm{N}}$ and
+corresponding enhancement of the breakup timescale versus enthalpy
+ratio $w/\rho c^{2}$.}
+\label{fig:grb-variability}
 \end{figure}
 
 %% ===================================================================

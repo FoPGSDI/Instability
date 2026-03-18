@@ -750,9 +750,85 @@ stability boundary.
 \label{fig:dissipative-mri-TaQ}
 \end{figure}
 
+%======================================================================
+\subsection{Critical magnetic Reynolds number and the dead zone
+  boundary: BDNK vs.\ classical}
+\label{sec:rel-87-89-deadzone}
+%======================================================================
+
+In protoplanetary and relativistic accretion disks, regions of low
+ionisation fraction have large resistivity $\eta$ and correspondingly
+small magnetic Reynolds number
+\begin{equation}
+  Rm = \frac{v_{A}^{2}}{\eta\,\Omega}.
+  \label{eq:rel-9-Rm-def}
+\end{equation}
+When $Rm \lesssim Rm_{\mathrm{crit}} \sim 1$, the MRI is suppressed
+by Ohmic dissipation and the region becomes a magnetically ``dead
+zone'' where turbulent transport ceases \cite{BalbusHawley1998,Lesur2021}.
+
+The dissipative MRI dispersion relation for axisymmetric, incompressible
+perturbations in Keplerian flow yields (cf.\
+equations~\eqref{eq:rel-9-168R}--\eqref{eq:rel-9-162R} in the local
+limit)
+\begin{equation}
+  X^{2} + (1 + 2K^{2})\,X - 2K^{2} = 0,
+  \label{eq:rel-9-deadzone-X}
+\end{equation}
+where $X = \sigma(\sigma + \eta k^{2})/\Omega^{2}$ and
+$K = k_{z}v_{A}/\Omega$.  The onset of instability ($\sigma = 0$)
+occurs when $X = 0$, i.e., when $K^{2} = 0$---but for finite
+$\eta$, the growth rate is reduced from its ideal value
+$\sigma_{\max} = \tfrac{3}{4}\Omega$ as $Rm$ decreases.
+
+In the BDNK relativistic framework, the effective Chandrasekhar number
+is $Q_{\mathrm{rel}} = Q/(1 + v_{A}^{2}/c^{2})$
+(equation~\eqref{eq:rel-9-Qrel}), which shifts the dead zone boundary:
+\begin{equation}
+  Rm_{\mathrm{crit,rel}}
+  = Rm_{\mathrm{crit,cl}}\,\bigl(1 + v_{A}^{2}/c^{2}\bigr).
+  \label{eq:rel-9-Rm-crit-rel}
+\end{equation}
+The relativistic dead zone is \emph{wider} than the classical one
+because the enhanced inertia (enthalpy replacing rest mass) demands
+a stronger field to overcome dissipation.
+
+Figure~\ref{fig:mri-dead-zone} displays the MRI growth rate as a
+function of $Rm$ for several wavenumbers and compares the BDNK
+prediction with the classical (Navier--Stokes) result.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_mri_dead_zone.pdf}
+\caption{Left: MRI growth rate $\sigma/\Omega$ vs.\ magnetic Reynolds
+  number $Rm$ for several normalised wavenumbers $k_{z}v_{A}/\Omega$.
+  The ideal limit $\sigma_{\max} = 3\Omega/4$ is approached for
+  $Rm \gg 1$.  The red shaded region marks the dead zone
+  ($Rm \lesssim 1$).
+  Right: comparison of BDNK (dashed) and classical (solid) growth
+  rates at the optimal wavenumber, for $v_{A}/c = 0.01$, $0.1$, and
+  $0.3$.  The BDNK corrections widen the dead zone boundary (orange
+  band) relative to the classical prediction.  These shifts are
+  quantified by equation~\eqref{eq:rel-9-Rm-crit-rel} and are of
+  order $v_{A}^{2}/c^{2}$.}
+\label{fig:mri-dead-zone}
+\end{figure}
+
+The key insight is that the turbulent angular momentum transport
+efficiency, characterised by the stress tensor
+$\langle -B_{r}B_{\phi}/(4\pi)\rangle$, depends fundamentally on
+whether the MRI can overcome resistive damping---a point
+emphasised by Pessah, Chan \& Psaltis~\cite{PessahChanPsaltis2008},
+who showed that the commonly used Shakura--Sunyaev $\alpha$-viscosity
+parametrisation does not faithfully capture the MRI-driven stress
+even in the non-relativistic regime.  The relativistic extension
+presented here compounds this discrepancy through the enthalpy
+correction to $Q_{\mathrm{rel}}$.
+
 \medskip
 \noindent\textbf{References for \S\S\,87--89.}
 Classical: Chandrasekhar~\cite{Chandrasekhar1961}, \S\S\,85--89.
 Lab MRI: Ji et al.~\cite{Ji2001}, Nornberg et al.~\cite{Nornberg2010}.
 Dead zones: Balbus \& Hawley~\cite{BalbusHawley1998}, Lesur~\cite{Lesur2021}.
+MRI stresses: Pessah, Chan \& Psaltis~\cite{PessahChanPsaltis2008}.
 BDNK: Bemfica et al.~\cite{BemficaDN2018}, Kovtun~\cite{Kovtun2019}.

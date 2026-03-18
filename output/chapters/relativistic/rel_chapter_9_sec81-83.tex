@@ -535,13 +535,99 @@ shear \cite{Balbus2003,PessahPsaltis2005}.
 \label{fig:mri-keplerian}
 \end{figure}
 
+%======================================================================
+\subsection{Application to Sgr~A$^{*}$: MRI wavelength vs.\ disk
+  scale height}
+\label{sec:rel-9-MRI-SgrA}
+%======================================================================
+
+As a concrete application of the relativistic MRI analysis, we
+consider the accretion flow onto the Galactic Centre black hole,
+Sgr~A$^{*}$, with $M = 4\times 10^{6}\,M_{\odot}$ and an
+estimated accretion rate $\dot{M}\sim 10^{-8}\,M_{\odot}\,
+\mathrm{yr}^{-1}$ \cite{Wielgus2020}.  At such low accretion
+rates the flow is a radiatively inefficient accretion flow
+(RIAF/ADAF; Narayan \& Yi~\cite{NarayanYi1994}), characterised
+by ion temperatures approaching the virial value,
+$T_{i}\sim 10^{12}\,(r_{g}/r)\;\mathrm{K}$, and geometrically
+thick disks with $H/r\sim 0.3$--$1$.
+
+The MRI characteristic wavelength is
+\begin{equation}
+  \lambda_{\mathrm{MRI}}
+  = \frac{2\pi\,v_{A}}{\Omega_{K}}
+  = \frac{2\pi}{k_{\max}},
+  \label{eq:rel-9-lambdaMRI}
+\end{equation}
+where $v_{A}$ is the relativistic Alfv\'en speed~\eqref{eq:rel-9-vA}
+and $k_{\max} = \Omega_{K}/v_{A}$ is the maximum unstable wavenumber.
+A necessary condition for the MRI to operate within the disk is
+\begin{equation}
+  \lambda_{\mathrm{MRI}} \;\lesssim\; H(r),
+  \label{eq:rel-9-resolved}
+\end{equation}
+i.e., the MRI must be \emph{resolved} by the disk vertical extent.
+Equivalently, $v_{A}/(\Omega_{K}\,H) \lesssim 1/(2\pi)$.
+
+For the ADAF model of Sgr~A$^{*}$, the disk density follows from
+mass conservation,
+$\rho \sim \dot{M}/(4\pi\,r\,H\,v_{r})$, with the radial inflow
+velocity $v_{r}\sim\alpha\,c_{s}\,(H/r)^{2}$ and $\alpha\sim 0.1$.
+The magnetic field strength is parametrised by the plasma beta,
+$\beta_{\mathrm{pl}} = 8\pi p/B^{2}$.  Figure~\ref{fig:mri-sgra}
+shows $\lambda_{\mathrm{MRI}}/H$ as a function of radius for three
+values of $\beta_{\mathrm{pl}}$.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.95\textwidth]{fig_mri_sgra.pdf}
+\caption{Left: ratio $\lambda_{\mathrm{MRI}}/H$ vs.\ $r/r_{g}$ for the
+  Sgr~A$^{*}$ ADAF model with $M = 4\times 10^{6}\,M_{\odot}$,
+  $\dot{M} = 10^{-8}\,M_{\odot}\,\mathrm{yr}^{-1}$.  The MRI is
+  resolved ($\lambda_{\mathrm{MRI}} < H$) in the green shaded region.
+  Right: disk aspect ratio $H/r$ and Alfv\'en speed $v_{A}/c$ vs.\
+  radius.  Dashed lines show $v_{A}/c$ for three values of
+  $\beta_{\mathrm{pl}}$.  In the strongly magnetised case
+  ($\beta_{\mathrm{pl}} = 1$), $v_{A}/c$ can reach $\sim 10^{-2}$
+  near the ISCO, making the relativistic Alfv\'en
+  bound~\eqref{eq:rel-9-vA} relevant.}
+\label{fig:mri-sgra}
+\end{figure}
+
+Key findings:
+\begin{enumerate}
+\item For $\beta_{\mathrm{pl}} \gtrsim 10$, the MRI is well resolved
+  ($\lambda_{\mathrm{MRI}}/H \ll 1$) at all radii beyond the ISCO,
+  confirming that turbulent angular momentum transport operates
+  throughout the ADAF.
+\item For $\beta_{\mathrm{pl}} \sim 1$ (magnetically dominated), the
+  MRI wavelength can exceed $H$ in the inner regions ($r \lesssim
+  10\,r_{g}$), where the field is dynamically important and the MRI
+  enters the ``magnetically arrested'' regime
+  (Liska et al.~\cite{Liska2021}).
+\item The relativistic correction to $v_{A}$
+  (equation~\eqref{eq:rel-9-vA}) is at most a few percent for
+  Sgr~A$^{*}$, but becomes significant for higher-accretion-rate
+  systems where $v_{A}/c \gtrsim 0.1$.
+\end{enumerate}
+These results connect the linear stability analysis of
+\S\S\,\ref{sec:rel-81}--\ref{sec:rel-83} to the EHT observations of
+M87$^{*}$ and Sgr~A$^{*}$ morphology (Wielgus et
+al.~\cite{Wielgus2020}), where the turbulent accretion flow structure
+is shaped by MRI-driven angular momentum transport operating under
+the relativistic constraints derived here.
+
 \medskip
 \noindent\textbf{References for \S\S\,81--83.}
 Classical: Chandrasekhar~\cite{Chandrasekhar1961}.
 MRI: Balbus \& Hawley~\cite{BalbusSHawley1991},
 Balbus~\cite{Balbus2003}.
-Relativistic MRI: Pessah \& Psaltis~\cite{PessahPsaltis2005}.
+Relativistic MRI: Pessah \& Psaltis~\cite{PessahPsaltis2005},
+Pessah, Chan \& Psaltis~\cite{PessahChanPsaltis2008}.
 Relativistic MHD: Rezzolla \& Zanotti~\cite{RezzollaZanotti2013}.
+ADAF model: Narayan \& Yi~\cite{NarayanYi1994}.
+EHT morphology: Wielgus et al.~\cite{Wielgus2020}.
+GRMHD dynamo: Liska et al.~\cite{Liska2021}.
 
 %======================================================================
 \section*{Non-relativistic limit}
