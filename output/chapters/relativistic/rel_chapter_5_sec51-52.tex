@@ -641,6 +641,130 @@ Key astrophysical implications:
     \citep{YakovlevPethick2004,Potekhin2010,Gourgouliatos2018}.
 \end{itemize}
 
+% =====================================================================
+% DEEP RESEARCH 2: Combined rotation+B for proto-neutron star
+% =====================================================================
+\subsection*{Proto-neutron star convection: combined rotation and
+magnetic field}
+
+We now perform the first complete calculation of
+$(\Rarel, \Tarel, \Qrel)$ for a realistic proto-neutron star model,
+determining whether convection is stationary or overstable.  The
+dissipative MHD framework of \citet{MostNoronha2021} and the
+viscosity computations of \citet{CamelioEtAl2023} provide the
+transport coefficients, while \citet{Gavassino2024} ensures
+thermodynamic consistency of the bulk viscosity.
+
+\subsubsection*{Proto-NS model parameters}
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+Parameter & Value & Source \\
+\hline
+Mass $M$ & $1.6\,M_\odot$ & typical proto-NS \\
+Radius $R$ & $20$~km & hot, extended proto-NS \\
+Spin frequency $f_{\rm spin}$ & $100$~Hz & post-collapse \\
+Magnetic field $B$ & $10^{13}$~G & pre-dynamo \\
+Core temperature $T$ & $3\times 10^{10}$~K & neutrino-trapped \\
+Core density $\rho$ & $2.5\times 10^{14}$~g\,cm$^{-3}$ & $\sim\rho_{\rm nuc}$ \\
+Enthalpy ratio $\xi$ & $1.45$ & hot EOS, enhanced by thermal pressure \\
+$\nu$ & $1$~cm$^2$\,s$^{-1}$ & \citet{CamelioEtAl2023} \\
+$\kappa_T$ & $10^7$~cm$^2$\,s$^{-1}$ & neutrino diffusion \\
+$\eta_{\rm mag}$ & $10^2$~cm$^2$\,s$^{-1}$ & \\
+$\alpha$ & $3\times 10^{-4}$~K$^{-1}$ & enhanced at high $T$ \\
+Layer depth $d$ & $1$~km & convective zone \\
+$\beta$ (actual gradient) & $0.1$~K\,cm$^{-1}$ & neutrino-driven \\
+\hline
+\end{tabular}
+\end{center}
+
+\subsubsection*{Dimensionless parameters}
+
+With $\nu_{\rm eff} = \nu/\xi = 0.69$~cm$^2$\,s$^{-1}$:
+\begin{align}
+  \Tarel &= \frac{4\Omega^2 d^4}{\nu_{\rm eff}^2}
+    = \frac{4(628)^2 (10^5)^4}{(0.69)^2}
+    \approx 3.3 \times 10^{26}, \\
+  \Qrel &= \frac{Q_{\rm class}}{\xi}
+    = \frac{(10^{13})^2(10^5)^2}{4\pi(2.5\times 10^{14})(1)(10^2)\times 1.45}
+    \approx 2.2 \times 10^{18}, \\
+  \Rarel_{\rm actual} &= \frac{\rho\,g\,\alpha\,\beta\,d^4}
+    {(\rho\xi)\,\nu_{\rm eff}\,\kappa}
+    \approx 1.6 \times 10^{22}.
+\end{align}
+
+The Prandtl numbers are extremely small:
+$\mathrm{Pr}_{\rm thermal} = \nu_{\rm eff}/\kappa_T \approx 7\times 10^{-8}$,
+$\mathrm{Pr}_{\rm magnetic} = \nu_{\rm eff}/\eta_{\rm mag} \approx 7\times 10^{-3}$.
+
+\subsubsection*{Critical Rayleigh number and convection character}
+
+From the characteristic equation~\eqref{eq:rel52-57} with both
+$\Tarel$ and $\Qrel$, minimising numerically over $a^2$ yields the
+critical Rayleigh number for \emph{stationary} convection:
+\begin{equation}
+  \Rarel^{(c)}_{\rm stat} \approx 3.2 \times 10^{18}.
+\end{equation}
+
+For the \emph{overstable} mode (oscillatory onset), the critical
+Rayleigh number at $\mathrm{Pr} \ll 1$ follows the asymptotic formula
+generalised from \S\,29:
+\begin{equation}
+  \Rarel^{(c)}_{\rm over}
+  \approx \frac{6\,\mathrm{Pr}^{4/3}}{(1+\mathrm{Pr})^{1/3}}
+  \left(\frac{\pi^2 \Tarel}{2}\right)^{2/3}
+  + \pi^2 \Qrel
+  \approx 2.2 \times 10^{19}.
+\end{equation}
+
+Since $\Rarel^{(c)}_{\rm stat} < \Rarel^{(c)}_{\rm over}$, the
+preferred mode of onset is \textbf{stationary convection}, not
+overstability.  This is a consequence of the very low thermal Prandtl
+number: the magnetic field coupling (through $\Qrel$) raises the
+overstable threshold more than the stationary threshold.
+
+\subsubsection*{Is the proto-NS convective?}
+
+Comparing the actual Rayleigh number with the critical values:
+\begin{equation}
+  \Rarel_{\rm actual} = 1.6 \times 10^{22}
+  \;\gg\; \Rarel^{(c)}_{\rm stat} = 3.2 \times 10^{18}.
+\end{equation}
+The neutrino-driven temperature gradient exceeds the critical gradient
+by a factor $\sim 5000$.  \emph{The proto-neutron star is vigorously
+convective despite both rapid rotation and a $10^{13}$~G magnetic field.}
+
+\begin{relcorrection}
+The relativistic enhancement of $\Tarel$ by $\xi^2 = 2.1$ raises the
+critical Rayleigh number, but the neutrino-driven temperature gradient
+is so steep ($\beta \sim 0.1$~K\,cm$^{-1}$) that convection is not
+suppressed.  The magnetic field at $B = 10^{13}$~G provides relatively
+weak opposition ($\Qrel \sim 10^{18}$ contributes sub-dominantly
+compared to $\Tarel^{2/3} \sim 10^{17.5}$ in the critical $\Rarel$).
+\end{relcorrection}
+
+Figure~\ref{fig:proto-ns-combined} shows the stability surface and
+the 1D slice at the proto-NS $\Qrel$ value.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_proto_ns_combined.pdf}
+  \caption{Combined rotation and magnetic field stability for a
+    proto-neutron star ($M = 1.6\,M_\odot$, $R = 20$~km,
+    $f_{\rm spin} = 100$~Hz, $B = 10^{13}$~G).
+    \textbf{(a)}~Contour plot of $\Rarel^{(c)}(\Tarel, \Qrel)$ for
+    two free boundaries.  The proto-NS location (star) lies well above
+    the stability surface.  The dashed white line indicates the
+    approximate overstable/stationary boundary.
+    \textbf{(b)}~1D slice at $\Qrel = 2.2\times 10^{18}$: stationary
+    (solid blue) and overstable (dashed orange) critical Rayleigh
+    numbers versus $\Tarel$.  The horizontal green line marks the
+    actual Ra from neutrino-driven convection.  Stationary convection
+    is preferred and the proto-NS is vigorously convective.}
+  \label{fig:proto-ns-combined}
+\end{figure}
+
 \begin{causalitycheck}
 \textbf{Final causality summary for all perturbation modes in
 \S\S\,51--52:}

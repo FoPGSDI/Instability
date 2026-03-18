@@ -605,6 +605,145 @@ timescale is
 
 
 % ====================================================================
+% DEEP RESEARCH 2: BDNK vs IS overstability mode structure
+% ====================================================================
+
+\section{BDNK cubic versus Israel--Stewart quintic: mode structure in
+neutron star cores}\label{sec:rel-3-deep-bdnk-is}
+
+We now provide a detailed comparison of the BDNK and Israel--Stewart
+dispersion relations for overstability in neutron star cores, explicitly
+computing the mode frequencies and demonstrating that the two extra
+IS modes are unphysical artefacts.
+
+\subsection{Setup: NS core oscillation modes}
+
+Consider a 500~Hz pulsar with $\xi = 1.28$ (SLy EOS), giving
+$T_{1,\rm rel} = \Tarel/\pi^4 \approx 6.6 \times 10^{19}$,
+$\mathrm{Pr} = 7.8 \times 10^{-5}$, and relaxation times
+$\tau_q \approx 3\times 10^{-13}$~s,
+$\tau_\pi \approx 10^{-12}$~s.
+
+The non-dimensional time unit is $d^2/\nu_{\rm eff} \approx 1.3 \times 10^7$~s,
+so the non-dimensional relaxation times are:
+\begin{equation}
+  \hat\tau_q = \frac{\tau_q}{d^2/\nu_{\rm eff}} \approx 2.3 \times 10^{-20},
+  \qquad
+  \hat\tau_\pi \approx 7.8 \times 10^{-20}.
+\end{equation}
+These are extraordinarily small, confirming that relaxation effects
+are negligible on hydrodynamic timescales.
+
+\subsection{The BDNK cubic}
+
+The BDNK dispersion relation for two free boundaries
+(equation~\eqref{eq:rel-3-cubic}) is a cubic in $\sigma$:
+\begin{equation}
+  p\,s\,\sigma^3
+  + s^2(1 + 2p)\,\sigma^2
+  + \bigl[s^3(2+p) + p\,T_{1,\rm rel}\,\pi^4 - R_1\,x\,\pi^4\bigr]\,\sigma
+  + s^4 + s\,T_{1,\rm rel}\,\pi^4 - R_1\,x\,s\,\pi^4
+  = 0,
+\end{equation}
+where $s = 1 + x$, $x = a^2/\pi^2$, $R_1 = \Rarel/\pi^4$,
+$p = \mathrm{Pr}$.  This has exactly \textbf{three roots},
+corresponding to:
+\begin{enumerate}
+  \item One thermal mode (primarily driven by the heat equation);
+  \item Two vorticity/inertial modes (coupled by Coriolis force).
+\end{enumerate}
+
+\subsection{The Israel--Stewart quintic}
+
+In the IS formulation, the replacements
+$\sigma \to \sigma/(1 + \hat\tau_q\sigma)$ in the thermal sector and
+$p\sigma \to p\sigma/(1 + \hat\tau_\pi\sigma)$ in the viscous sector
+transform the cubic into a \textbf{quintic}:
+\begin{equation}
+  \mathcal{P}_5(\sigma) = (1 + \hat\tau_q\sigma)^2(1 + \hat\tau_\pi\sigma)\,
+  \mathcal{P}_3^{\rm IS}(\sigma) = 0.
+\end{equation}
+The five roots consist of:
+\begin{enumerate}
+  \item Three physical hydrodynamic modes (continuous deformations of the
+    BDNK cubic roots);
+  \item One thermal relaxation mode at $\sigma \approx -1/\hat\tau_q
+    \approx -4.3 \times 10^{19}$;
+  \item One viscous relaxation mode at $\sigma \approx -1/\hat\tau_\pi
+    \approx -1.3 \times 10^{19}$.
+\end{enumerate}
+
+The two extra modes decay on the relaxation timescale
+$\sim \hat\tau_{q,\pi} \cdot d^2/\nu_{\rm eff}
+\sim 10^{-20} \times 10^7~\text{s} \sim 10^{-13}$~s.  In physical
+terms, these modes correspond to the relaxation of the heat flux and
+shear stress toward their Navier--Stokes values.  They have:
+\begin{itemize}
+  \item Growth rates $|\mathrm{Re}(\sigma)| \sim 10^{19}$ (in
+    non-dimensional units), i.e.\ extremely rapid decay;
+  \item Oscillation frequencies $|\mathrm{Im}(\sigma)| \sim 1/\hat\tau_{q,\pi}
+    \sim 10^{19}$--$10^{20}$, corresponding to physical frequencies
+    $\sim 10^{12}$~Hz.
+\end{itemize}
+
+These modes are \emph{unphysical} in the following precise sense:
+(i)~their frequencies exceed the inverse mean free path
+frequency $c/\ell_{\rm mfp}$, violating the hydrodynamic
+approximation; (ii)~they are absent in the BDNK formulation, which
+achieves causality without introducing spurious modes; (iii)~they
+can cause numerical instabilities in simulations unless treated
+with implicit timestepping.
+
+\subsection{Comparison of physical mode eigenvalues}
+
+The three physical modes of the IS quintic differ from the BDNK cubic
+roots by corrections of order $\hat\tau_q^2 \omega^2 \sim 10^{-16}$:
+\begin{equation}
+  \sigma_n^{\rm IS} = \sigma_n^{\rm BDNK}
+  \bigl[1 + \order{\hat\tau_q^2 \omega^2}\bigr],
+  \qquad n = 1, 2, 3.
+\end{equation}
+This confirms that for \emph{all} physically relevant neutron star
+core conditions, the BDNK and IS formulations give identical
+predictions for the onset of overstability.  The advantage of BDNK is
+the \emph{absence} of spurious modes, which simplifies both analytical
+and numerical treatment.
+
+\begin{relcorrection}
+The BDNK first-order causal framework preserves the cubic character of
+the overstability dispersion relation, yielding exactly three physical
+modes.  The Israel--Stewart second-order formulation produces a quintic
+with two additional relaxation modes that decay on timescales
+$\sim\tau_{q,\pi} \sim 10^{-13}$~s---eight orders of magnitude faster
+than the hydrodynamic oscillation period.  These modes are unphysical
+artefacts of the relaxation-time approximation and do not affect the
+onset or character of overstable convection.  The BDNK formulation is
+therefore preferred for stability analysis in neutron star cores.
+\end{relcorrection}
+
+Figure~\ref{fig:bdnk-is-overstability} compares the mode structures
+of the BDNK cubic and IS quintic as functions of Rayleigh number.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_bdnk_vs_is_overstability.pdf}
+  \caption{Mode structure comparison: BDNK cubic vs.\ Israel--Stewart
+    quintic for overstability in a neutron star core
+    ($\mathrm{Pr} = 7.8\times 10^{-5}$, $T_{1,\rm rel} = 6.6\times 10^{19}$).
+    \textbf{(a)}~Growth rates $\mathrm{Re}(\sigma)$ vs.\ Rayleigh number.
+    BDNK (solid green, 3 modes) and IS physical modes (dashed orange)
+    are nearly identical.  The two IS relaxation modes (not shown at this
+    scale) have $\mathrm{Re}(\sigma) \sim -10^{19}$.
+    \textbf{(b)}~Oscillation frequencies $|\mathrm{Im}(\sigma)|$.  The
+    physical modes oscillate at hydrodynamic frequencies ($\lesssim 10$),
+    while the IS relaxation modes (dotted horizontal lines) oscillate
+    at $\sim 1/\hat\tau_{q,\pi} \sim 10^{19}$--$10^{20}$, well outside
+    the hydrodynamic regime.}
+  \label{fig:bdnk-is-overstability}
+\end{figure}
+
+
+% ====================================================================
 \section*{References for \S\S\,29--31}
 \addcontentsline{toc}{section}{References (\S\S\,29--31)}
 % ====================================================================

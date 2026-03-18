@@ -641,6 +641,80 @@ $\varepsilon(r)$ profiles, but the qualitative structure of the
 relativistic corrections is captured by the uniform-density model
 shown here.
 
+\subsection{TOV profiles for three nuclear equations of state}
+\label{subsec:rel-56-tov-3eos}
+
+While the Schwarzschild interior solution (uniform density)
+provides analytic insight, quantitative modelling of neutron star
+convection requires TOV solutions for realistic nuclear equations
+of state.  We solve the TOV system
+\eqref{eq:rel6-mass}--\eqref{eq:rel6-Phi} numerically for three
+representative EOSs using single-polytrope approximations
+($p = K\,\rho^{\Gamma}$, $\varepsilon = \rho\,c^{2} +
+p/(\Gamma - 1)$) calibrated to the nuclear-density
+behaviour~\cite{AkmalPR1998,DouchinHaensel2001,PotekhinEtAl2013}:
+
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+EOS & $\Gamma$ & $R$ (km) & $M/M_{\odot}$ & $\mathscr{C}$ \\
+\hline
+APR  & 2.58 & $\sim 10$   & $\sim 1.4$ & $\sim 0.21$ \\
+SLy  & 2.35 & $\sim 8$    & $\sim 1.2$ & $\sim 0.23$ \\
+BSk21 & 2.60 & $\sim 9$   & $\sim 1.6$ & $\sim 0.29$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Figure~\ref{fig:tov-3eos-profiles} displays the resulting radial
+profiles of energy density $\varepsilon(r)/\varepsilon_{c}$,
+pressure $p(r)/p_{c}$, and the pressure-to-energy ratio
+$\xi(r) = p(r)/\varepsilon(r)$ inside the star.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_tov_3eos_profiles.pdf}
+\caption{TOV profiles for three nuclear EOSs (APR, SLy, BSk21),
+  solved numerically with polytropic approximations.
+  \emph{Left:} Normalised energy density
+  $\varepsilon(r)/\varepsilon_{c}$.  Unlike the uniform-density
+  (Schwarzschild interior) model, realistic EOSs produce
+  monotonically decreasing $\varepsilon(r)$.
+  \emph{Centre:} Normalised pressure $p(r)/p_{c}$.  Stiffer EOSs
+  (APR) have more slowly declining pressure profiles.
+  \emph{Right:} Pressure-to-energy ratio
+  $\xi(r) = p(r)/\varepsilon(r)$, which controls the
+  enthalpy--inertia factor $\mathcal{I} = 1 + \xi$ in the
+  perturbation equations.  Dotted gray lines show the
+  Schwarzschild interior comparison.  The central value
+  $\xi_{c} \sim 0.1$--$0.3$ quantifies the relativistic
+  enhancement of buoyancy driving.}
+\label{fig:tov-3eos-profiles}
+\end{figure}
+
+Key observations for the convective stability analysis:
+\begin{enumerate}
+\item[(i)] The energy density $\varepsilon(r)$ drops to zero at
+  the surface (unlike the uniform-density model), so the
+  perturbation integrals weight the inner region more heavily.
+
+\item[(ii)] The central $\xi_{c}$ ranges from $\sim 0.06$ (low
+  compactness) to $\sim 0.32$ (high compactness), directly
+  controlling the magnitude of the enthalpy--inertia correction
+  $\bar{\Xi}$ in the critical Rayleigh number formula
+  (equation~\eqref{eq:rel-59-CrelvsC} of \S\,\ref{sec:rel-59}).
+
+\item[(iii)] The $\xi(r)$ profile is approximately linear near
+  the centre and drops more steeply near the surface, consistent
+  with the ansatz $\Xi(r) \approx \Xi_{c}(1 - r^{2}/R^{2})$
+  used in the post-Newtonian expansion.
+
+\item[(iv)] The stiffer EOS (APR, larger $\Gamma$) produces a
+  broader pressure distribution, while softer EOSs concentrate
+  the pressure more toward the centre, affecting the radial
+  structure of the convection cells at onset.
+\end{enumerate}
+
 \begin{thebibliography}{99}
 \bibitem{Lattimer2001}
 J.\,M.~Lattimer and M.~Prakash,

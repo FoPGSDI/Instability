@@ -673,3 +673,98 @@ The physical consequences include:
     heat transport in the core accelerates neutrino cooling during
     the first $\sim 10^{3}$~yr \citep{YakovlevPethick2004}.
 \end{itemize}
+
+% =====================================================================
+% DEEP RESEARCH 2: Systematic magnetar magneto-convection
+% =====================================================================
+
+\subsection*{Systematic magneto-convection for magnetar field strengths}
+
+We now carry out a quantitative computation of $\Qrel$ and
+$\Rarel^{(c)}(\Qrel)$ for three representative magnetar interior
+field strengths, using the dissipative relativistic MHD framework
+of \citet{MostNoronha2021} and the viscosity calculations of
+\citet{CamelioEtAl2023}.
+
+\subsubsection*{Input parameters}
+
+For a canonical magnetar with $M = 1.4\,M_\odot$, $R = 12$~km, and
+SLy EOS ($\xi = 1.28$), we adopt core transport coefficients:
+$\nu = 10$~cm$^2$\,s$^{-1}$,
+$\kappa_T = 10^5$~cm$^2$\,s$^{-1}$,
+$\eta_{\rm mag} = 10^3$~cm$^2$\,s$^{-1}$,
+$\alpha = 10^{-4}$~K$^{-1}$, $d = 100$~m.
+
+\subsubsection*{Results for $B = 10^{14}$, $10^{15}$, $10^{16}$~G}
+
+\begin{center}
+\begin{tabular}{cccccc}
+\hline
+$B$ [G] & $Q_{\rm class}$ & $\Qrel$ & $\Rarel^{(c)}$
+  & $\beta_c^{\rm rel}$ [K/cm] & $\beta_c^{\rm class}$ [K/cm] \\
+\hline
+$10^{14}$ & $9.5\times 10^{15}$ & $7.4\times 10^{15}$
+  & $7.3\times 10^{16}$ & $4.9\times 10^{1}$ & $6.3\times 10^{1}$ \\
+$10^{15}$ & $9.5\times 10^{17}$ & $7.4\times 10^{17}$
+  & $7.3\times 10^{18}$ & $4.9\times 10^{3}$ & $6.3\times 10^{3}$ \\
+$10^{16}$ & $9.5\times 10^{19}$ & $7.4\times 10^{19}$
+  & $7.3\times 10^{20}$ & $4.9\times 10^{5}$ & $6.3\times 10^{5}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+The ratio $\Qrel/Q_{\rm class} = 1/\xi \approx 0.78$ is universal for
+a given EOS.
+
+\subsubsection*{When does magnetic stabilisation overcome relativistic
+destabilisation?}
+
+The relativistic correction has \emph{opposing} effects on the
+stability boundary: it \emph{lowers} $\Qrel$ (weakening magnetic
+inhibition) while \emph{raising} the effective inertia (strengthening
+all forces uniformly).  The net effect on the \emph{physical} critical
+temperature gradient depends on which effect dominates.
+
+The crossover occurs when the magnetic contribution to $\Rarel^{(c)}$
+matches the zero-field relativistic correction:
+\begin{equation}
+  Q_{\rm cross} \approx \frac{\Rarel^{(c)}(Q=0)\,(\xi^2 - 1)}{\pi^2}
+  \approx \frac{657.5 \times (1.28^2 - 1)}{\pi^2}
+  \approx 44.
+\end{equation}
+For $\Qrel > Q_{\rm cross}$, the magnetic inhibition of convection
+is the dominant physical effect, and the relativistic correction to
+$\Qrel$ produces a \emph{lower} critical temperature gradient than the
+Newtonian prediction at the same field strength.  Since all magnetar
+interior conditions give $\Qrel \gg Q_{\rm cross}$, the relativistic
+effect consistently makes convection onset \emph{easier} (lower
+$\beta_c$) than the classical prediction.
+
+\begin{relcorrection}
+For all astrophysically relevant magnetar field strengths
+($B \geq 10^{13}$~G), the relativistic correction to the
+Chandrasekhar number $\Qrel = Q/\xi$ \emph{lowers} the critical
+temperature gradient by a factor $1/\xi \approx 22\%$ for the SLy
+EOS.  This is in the same direction as the ``earlier onset'' effect
+noted above, and is quantitatively significant for determining whether
+proto-magnetar cores convect.
+\end{relcorrection}
+
+Figure~\ref{fig:magnetar-phase} displays the stability phase diagram
+in $(B, \beta)$ space with the three magnetar field strengths marked.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_magnetar_stability_phase.pdf}
+  \caption{\textbf{(a)}~Stability phase diagram for magnetar
+    magneto-convection: critical temperature gradient $\beta_c$ versus
+    magnetic field strength~$B$.  The relativistic curve (SLy, $\xi = 1.28$)
+    lies below the Newtonian curve, indicating that convection onset
+    occurs at lower temperature gradients when relativistic inertia is
+    included.  Horizontal lines mark typical proto-NS
+    ($\beta \sim 0.1$~K/cm) and mature NS ($\beta \sim 10^{-5}$~K/cm)
+    gradients.  \textbf{(b)}~Critical Rayleigh number versus
+    $\Qrel$ with magnetar parameter values (circles).  The $\pi^2 Q$
+    asymptote (dotted) is approached at large~$Q$.}
+  \label{fig:magnetar-phase}
+\end{figure}

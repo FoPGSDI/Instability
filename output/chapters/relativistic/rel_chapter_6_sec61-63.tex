@@ -797,3 +797,95 @@ The implications for millisecond pulsar interiors are:
   since convective motions can couple to and damp oscillation
   modes~(Andersson \& Kokkotas 2001).
 \end{enumerate}
+
+%% ----------------------------------------------------------------
+\subsection{Exact Lense--Thirring calculations for specific pulsars}
+\label{sec:rel-63-specific-pulsars}
+
+To go beyond the generic compactness-dependent curves, we compute
+the exact Lense--Thirring correction for five well-characterised
+pulsars spanning a wide range of spin frequencies and compactnesses.
+The Hartle slow-rotation
+formalism~\cite{Hartle1967,PaschalidisStergioulas2017} gives the
+frame-dragging angular velocity at the stellar surface as
+\begin{equation}\label{eq:rel-6-LT-exact}
+  \frac{\omega_{\mathrm{LT}}(R)}{\Omega}
+  = \frac{4}{5}\,\mathscr{C} + \mathcal{O}(\mathscr{C}^{2}),
+\end{equation}
+where the $4/5$ prefactor assumes uniform density; realistic EOSs
+modify this by at most $\sim$\,10\%.  The volume-averaged
+correction, relevant for the effective Taylor number, is
+$\langle\omega_{\mathrm{LT}}/\Omega\rangle \approx
+(2/5)\,\mathscr{C}$.
+
+Table~\ref{tab:LT-specific-pulsars} lists the computed corrections
+for five pulsars.
+
+\begin{table}[ht]
+\centering
+\caption{Lense--Thirring corrections for specific pulsars.
+$\omega_{\mathrm{LT}}/\Omega$ is the surface value;
+$\mathrm{Ta}_{\mathrm{rel}}/\mathrm{Ta}_{\mathrm{N}}
+= (1 - \langle\omega_{\mathrm{LT}}/\Omega\rangle)^{2}$ is the
+volume-averaged Taylor number reduction.}
+\label{tab:LT-specific-pulsars}
+\begin{tabular}{lccccc}
+\hline
+PSR & $\nu$ (Hz) & $\mathscr{C}$ &
+  $\omega_{\mathrm{LT}}/\Omega$ &
+  $\mathrm{Ta}_{\mathrm{rel}}/\mathrm{Ta}_{\mathrm{N}}$ \\
+\hline
+J0737$-$3039A & 44.1 & 0.167 & 0.134 & 0.871 \\
+J0437$-$4715 & 173.7 & 0.185 & 0.148 & 0.858 \\
+J1614$-$2230 & 317.4 & 0.264 & 0.211 & 0.793 \\
+B1937$+$21 & 641.9 & 0.197 & 0.158 & 0.848 \\
+J1748$-$2446ad & 716.0 & 0.268 & 0.214 & 0.790 \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent\textbf{PSR~J0737$-$3039A} (the double pulsar): despite its
+modest spin frequency (44~Hz), its well-determined mass
+$M = 1.338\,M_{\odot}$ makes it an important calibration point.
+The frame-dragging correction is $\omega_{\mathrm{LT}}/\Omega =
+0.134$, reducing the Taylor number by 13\%.
+
+\noindent\textbf{PSR~J1748$-$2446ad} (the fastest known pulsar at
+716~Hz): with an estimated compactness $\mathscr{C} \approx 0.27$,
+it has the largest Lense--Thirring correction in the table
+($\omega_{\mathrm{LT}}/\Omega = 0.214$).  The Taylor number is
+reduced by 21\%, meaning that rotation is $\sim$\,20\% less
+effective at stabilising convection than a Newtonian estimate predicts.
+Combined with the enhanced effective gravity (which reduces
+$\mathrm{Ra}_{c}$ by $\sim 50$\%), this pulsar sits in a regime
+where relativistic corrections to convective stability are dominant.
+
+The viscosity of bulk nuclear matter in these
+systems~\cite{CamelioEtAl2023} sets the microscopic transport
+coefficient entering the Taylor number.  Accurate modelling of
+convective stability in rotating NSs therefore requires simultaneous
+knowledge of the EOS (for compactness), transport coefficients
+(for viscosity), and rotation rate (for Taylor number).
+
+Figure~\ref{fig:LT-specific-pulsars} places these five pulsars on the
+$\omega_{\mathrm{LT}}/\Omega$ vs.\ spin frequency diagram, with
+background contours of constant compactness.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=\textwidth]{fig_lense_thirring_pulsars.pdf}
+\caption{\emph{Left:} Lense--Thirring frame-dragging ratio
+  $\omega_{\mathrm{LT}}(R)/\Omega$ at the surface vs.\ spin
+  frequency for five specific pulsars (coloured symbols).
+  Horizontal dashed lines show constant-compactness contours.
+  The frame-dragging fraction depends only on compactness
+  (not spin frequency), but placing pulsars on this diagram
+  illustrates which systems are most affected.
+  \emph{Right:} Ratio
+  $\mathrm{Ta}_{\mathrm{rel}}/\mathrm{Ta}_{\mathrm{Newton}}$
+  (volume-averaged) for the same pulsars.  The fastest and
+  most compact pulsars (J1748$-$2446ad, J1614$-$2230) show
+  the largest reductions ($\sim 20$\%), directly impacting
+  the rotational stabilisation of convection.}
+\label{fig:LT-specific-pulsars}
+\end{figure}
