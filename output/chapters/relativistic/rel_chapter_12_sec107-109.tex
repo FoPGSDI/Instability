@@ -1,0 +1,608 @@
+% Relativistic Chapter XII, §107–109: Gravitational Instability of Infinite Cylinder
+% Relativistic generalization of Chandrasekhar, Chapter XII §107–109
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{The Stability of Relativistic Jets and Cylinders}
+\label{ch:rel-12}
+
+%% ================================================================
+\section{Introduction: relativistic jets and cylinders}\label{sec:rel-12-107}
+
+The non-relativistic treatment of Chapter~XII opens with the classical
+problem of the instability of a cylindrical jet, tracing its origins to
+the work of Plateau and Lord Rayleigh. In the non-relativistic theory
+the gravitational instability of an infinite self-gravitating cylinder is
+governed by the Poisson equation and instantaneous Newtonian gravity;
+the mode of maximum instability determines the characteristic
+fragmentation scale.
+
+In the relativistic regime these considerations must be revisited for
+at least three reasons:
+\begin{enumerate}
+\item \textbf{Active galactic nuclei (AGN) jets.}  Relativistic jets
+  launched from supermassive black holes propagate as highly collimated
+  cylinders with bulk Lorentz factors $\Lf\sim 10$--$50$.  Their
+  stability against varicose (pinch) and kink modes determines jet
+  morphology and energy transport over kiloparsec to megaparsec scales.
+  The internal energy density is comparable to the rest-mass energy
+  density, so that the relativistic enthalpy $\enthalpy = (\varepsilon +
+  p)/c^{2}$ replaces the Newtonian density $\rho_{0}$ in the inertia of
+  the fluid.
+
+\item \textbf{Cosmic strings.}  Topological defects formed during
+  symmetry-breaking phase transitions in the early universe are
+  effectively infinite relativistic cylinders of energy.  Their
+  gravitational self-interaction is intrinsically general-relativistic:
+  the deficit angle of the surrounding spacetime replaces the Newtonian
+  gravitational potential, and perturbations propagate at the speed of
+  light rather than instantaneously.
+
+\item \textbf{Gamma-ray burst (GRB) jets and neutron-star jets.}
+  The ultra-relativistic outflows from compact-object mergers and
+  collapsars are pressure-supported cylinders in which $p/\varepsilon$
+  can be of order unity.  Gravitational fragmentation of such jets
+  competes with magnetic and hydrodynamic instabilities in shaping the
+  observed variability.
+\end{enumerate}
+
+\paragraph{Key physical differences from the Newtonian theory.}
+\begin{itemize}
+\item \emph{Finite signal speed.}  In Newtonian gravity, gravitational
+  perturbations propagate instantaneously; the Poisson equation
+  $\nabla^{2}\mathfrak{B} = -4\pi G\rho$ is elliptic.  In general
+  relativity, gravitational perturbations propagate at the speed of
+  light; the linearized Einstein equations are hyperbolic.  This
+  introduces a \emph{retardation} that fundamentally modifies the
+  dispersion relation at wavelengths comparable to $c/\sqrt{G\rho}$.
+
+\item \emph{Inertia of energy and pressure.}  The source of gravity is
+  the energy-momentum tensor $\emt$, not the mass density alone.  For a
+  perfect fluid, both $\varepsilon$ and $p$ contribute to self-gravity,
+  so that pressure---which is stabilizing in the Newtonian case---has a
+  partially \emph{destabilizing} role in general relativity (cf.\ the
+  Tolman--Oppenheimer--Volkoff effect).
+
+\item \emph{Causal dissipation.}  When viscosity is present, the
+  Navier--Stokes equation must be replaced by the Israel--Stewart theory
+  to preserve causality; the resulting relaxation terms modify the
+  viscous damping at short wavelengths.
+\end{itemize}
+
+Throughout this chapter we work in cylindrical coordinates
+$(t,\varpi,\varphi,z)$ with the metric signature $(-,+,+,+)$.  The
+speed of light $c$ and the gravitational constant $G$ are kept explicit.
+The four-velocity satisfies $u^{\mu}u_{\mu}=-c^{2}$.  In the
+post-Newtonian treatment of \S\ref{sec:rel-12-108}, we expand in the
+dimensionless compactness parameter
+\begin{equation}
+\label{eq:rel-12-1}
+\mathcal{C} \;\equiv\; \frac{G M_{\mathrm{lin}}}{c^{2} R}
+  \;=\; \frac{\pi G \rho_{0} R^{2}}{c^{2}},
+\end{equation}
+where $M_{\mathrm{lin}} = \pi R^{2}\rho_{0}$ is the mass per unit
+length and $R$ the cylinder radius.  The Newtonian limit is recovered as
+$\mathcal{C}\to 0$.
+
+%% ================================================================
+\section{Gravitational instability of a relativistic infinite cylinder}
+\label{sec:rel-12-108}
+
+\subsection{Equilibrium configuration}
+\label{sec:rel-12-108a}
+
+Consider an infinite cylinder of radius $R$ composed of a perfect fluid
+with constant rest-mass density $\rho_{0}$, energy density
+$\varepsilon$, and pressure $p$.  In the non-relativistic limit,
+$\varepsilon \to \rho_{0}c^{2}$ and the equilibrium pressure is
+$p_{0}(\varpi) = \pi G \rho_{0}^{2}(R^{2}-\varpi^{2})$ [cf.\
+equation~(22) of Chapter~XII].  In the relativistic case the
+equilibrium is determined by the relativistic Euler equation
+\begin{equation}
+\label{eq:rel-12-2}
+\frac{\dd p_{0}}{\dd \varpi} = -\frac{(\varepsilon_{0}+p_{0})}{c^{2}}
+  \,\frac{\dd \Phi_{0}}{\dd \varpi},
+\end{equation}
+where $\Phi_{0}$ is the gravitational potential in the weak-field
+(post-Newtonian) approximation.  For a uniform-density cylinder,
+$\Phi_{0}(\varpi) = -\pi G \rho_{0}\varpi^{2}$ inside, and
+equation~\eqref{eq:rel-12-2} yields
+\begin{equation}
+\label{eq:rel-12-3}
+p_{0}(\varpi) = \pi G \rho_{0}^{2}(R^{2}-\varpi^{2})
+  \left[1 + \frac{(\varepsilon_{0}+p_{0})}{2\rho_{0}c^{2}}\right]^{-1}
+  \!\!.
+\end{equation}
+To first post-Newtonian (1PN) order, writing
+$\varepsilon_{0}=\rho_{0}c^{2}(1+\Pi_{\mathrm{int}}/c^{2})$ where
+$\Pi_{\mathrm{int}}$ is the specific internal energy, we obtain
+\begin{equation}
+\label{eq:rel-12-4}
+p_{0}(\varpi) \;=\; \pi G\rho_{0}^{2}(R^{2}-\varpi^{2})
+  \left[1 - \frac{\Pi_{\mathrm{int}}}{c^{2}}
+  - \frac{p_{0}}{2\rho_{0}c^{2}} + O(\mathcal{C}^{2})\right].
+\end{equation}
+In the Newtonian limit ($c\to\infty$), the correction terms vanish and
+the classical result is recovered.
+
+\subsection{Linearized perturbation equations: post-Newtonian gravity}
+\label{sec:rel-12-108b}
+
+We consider axisymmetric perturbations of the form
+\begin{equation}
+\label{eq:rel-12-5}
+\varpi = R + \epsilon_{0}\, e^{i(kz + m\varphi) + \sigma t},
+\end{equation}
+with $m=0$ for the gravitationally unstable varicose modes.
+
+\paragraph{Replacement of the Poisson equation.}
+In the Newtonian theory the gravitational potential perturbation
+$\delta\mathfrak{B}$ satisfies the Poisson equation
+$\nabla^{2}\delta\mathfrak{B} = -4\pi G\delta\rho$.  In the
+post-Newtonian framework the relevant equation is obtained from the
+linearized $(0,0)$-component of the Einstein field equations in the
+weak-field limit:
+\begin{equation}
+\label{eq:rel-12-6}
+\nabla^{2}\delta\Phi = -4\pi G\left(\delta\rho
+  + \frac{\delta\varepsilon + 3\,\delta p}{2c^{2}}
+  + \frac{2(\varepsilon_{0}+p_{0})\,\delta v_{i} v^{i}}{c^{4}}\right)
+  + \frac{1}{c^{2}}\frac{\partial^{2}\delta\Phi}{\partial t^{2}}.
+\end{equation}
+The last term on the right, the wave operator, encodes the
+\emph{finite propagation speed} of gravitational perturbations.  In the
+Newtonian limit ($c\to\infty$) it vanishes and the standard Poisson
+equation is recovered.
+
+For modes with time-dependence $e^{\sigma t}$, the wave term contributes
+$\sigma^{2}\delta\Phi/c^{2}$.  For the gravitationally unstable modes
+($\sigma^{2}>0$, $\sigma$ real), we write
+\begin{equation}
+\label{eq:rel-12-7}
+\left(\nabla^{2} - \frac{\sigma^{2}}{c^{2}}\right)\delta\Phi
+  = -4\pi G\left(\delta\rho + \frac{\delta\varepsilon + 3\,\delta p}{2c^{2}}\right).
+\end{equation}
+This is a Helmholtz equation rather than the Laplace equation; the
+solutions involve modified Bessel functions with argument
+$\tilde{k}\varpi$ where
+\begin{equation}
+\label{eq:rel-12-8}
+\tilde{k}^{2} = k^{2} + \frac{\sigma^{2}}{c^{2}}.
+\end{equation}
+
+\paragraph{Modified Bessel-function solutions.}
+For an incompressible fluid ($\delta\rho = 0$ inside the cylinder), the
+interior and exterior potentials become
+\begin{equation}
+\label{eq:rel-12-9}
+\delta\Phi_{\mathrm{int}} = B\, I_{0}(\tilde{k}\varpi)\,e^{ikz+\sigma t},
+\qquad
+\delta\Phi_{\mathrm{ext}} = A\, K_{0}(\tilde{k}\varpi)\,e^{ikz+\sigma t},
+\end{equation}
+where $I_{0}$ and $K_{0}$ are modified Bessel functions.  The matching
+conditions at $\varpi=R$ (continuity of $\delta\Phi$ and of its normal
+derivative minus the surface term) yield, in direct analogy with the
+Newtonian case [cf.\ equations~(9)--(12) of Chapter~XII],
+\begin{equation}
+\label{eq:rel-12-10}
+A = 4\pi G\rho_{0}^{*}\,R\epsilon_{0}\,I_{0}(\tilde{x}),
+\qquad
+B = 4\pi G\rho_{0}^{*}\,R\epsilon_{0}\,K_{0}(\tilde{x}),
+\end{equation}
+where $\tilde{x}=\tilde{k}R$ and
+\begin{equation}
+\label{eq:rel-12-11}
+\rho_{0}^{*} \;=\; \rho_{0}\!\left(1 + \frac{\varepsilon_{0}+3p_{0}}{2\rho_{0}c^{2}}\right)
+\end{equation}
+is the \emph{effective gravitating density} that accounts for the
+contribution of energy and pressure to the source of gravity.
+
+\subsection{Relativistic dispersion relation}
+\label{sec:rel-12-108c}
+
+Proceeding as in the Newtonian analysis---matching the radial velocity
+to the deformed boundary and imposing the vanishing of the total stress
+on the free surface---we arrive at the \textbf{relativistic dispersion
+relation for varicose modes} ($m=0$):
+\begin{equation}
+\label{eq:rel-12-12}
+\boxed{
+\frac{\sigma^{2}}{4\pi G\rho_{0}^{*}}
+  = \frac{\tilde{x}\,I_{1}(\tilde{x})}{I_{0}(\tilde{x})}
+  \left[K_{0}(\tilde{x})\,I_{0}(\tilde{x}) - \frac{1}{2}\right],}
+\end{equation}
+where $\tilde{x} = R\sqrt{k^{2}+\sigma^{2}/c^{2}}$ and $\rho_{0}^{*}$
+is defined in \eqref{eq:rel-12-11}.  This is an \emph{implicit}
+equation for $\sigma$ (since $\tilde{x}$ depends on $\sigma$); it must
+be solved self-consistently.
+
+\paragraph{Newtonian limit.}
+When $c\to\infty$, we have $\tilde{x}\to x = kR$, $\rho_{0}^{*}\to\rho_{0}$,
+and equation~\eqref{eq:rel-12-12} reduces to the classical
+Chandrasekhar dispersion relation [equation~(29) of Chapter~XII]:
+\begin{equation}
+\label{eq:rel-12-13}
+\frac{\sigma_{0}^{2}}{4\pi G\rho_{0}}
+  = \frac{x\,I_{1}(x)}{I_{0}(x)}
+  \left[K_{0}(x)\,I_{0}(x) - \tfrac{1}{2}\right].
+\end{equation}
+
+\paragraph{Relativistic corrections to the characteristic frequencies.}
+Expanding equation~\eqref{eq:rel-12-12} to first post-Newtonian order,
+we write $\sigma^{2} = \sigma_{0}^{2}(1+\delta_{\mathrm{rel}})$ with
+$\sigma_{0}^{2}$ the Newtonian growth rate.  A straightforward expansion
+yields
+\begin{equation}
+\label{eq:rel-12-14}
+\delta_{\mathrm{rel}} = \frac{\varepsilon_{0}+3p_{0}}{2\rho_{0}c^{2}}
+  - \frac{\sigma_{0}^{2}R^{2}}{c^{2}}\,
+  \frac{\partial}{\partial x^{2}}
+  \ln\!\left[\frac{x\,I_{1}(x)}{I_{0}(x)}
+  \Bigl(K_{0}(x)I_{0}(x)-\tfrac{1}{2}\Bigr)\right]
+  + O(\mathcal{C}^{2}).
+\end{equation}
+The first term reflects the enhanced gravitating mass (destabilizing);
+the second is the retardation correction from the finite speed of
+gravity (stabilizing for the growing modes).  Both corrections are of
+order $\mathcal{C}=\pi G\rho_{0}R^{2}/c^{2}$.
+
+\paragraph{Critical wavenumber.}
+The marginal wavenumber $\tilde{x}_{a}$ at which $\sigma^{2}=0$ is
+determined by
+\begin{equation}
+\label{eq:rel-12-15}
+I_{0}(\tilde{x}_{a})\,K_{0}(\tilde{x}_{a}) = \tfrac{1}{2}.
+\end{equation}
+Since $\sigma=0$ implies $\tilde{x}_{a}=x_{a}=kR$, the critical
+wavenumber is \emph{unchanged} by the relativistic corrections:
+\begin{equation}
+\label{eq:rel-12-16}
+x_{a} = 1.0668 \quad (\text{same as Newtonian}).
+\end{equation}
+This is physically transparent: at marginal stability, perturbations are
+static and the wave-operator term in \eqref{eq:rel-12-7} vanishes
+identically.  The critical \emph{wavelength}
+$\lambda_{a}=2\pi R/x_{a}$ is therefore universal, independent of
+compactness.
+
+\paragraph{Mode of maximum instability.}
+In contrast to the critical wavenumber, the wavenumber of maximum
+instability \emph{is} shifted.  Let $x_{\max}^{\mathrm{(N)}}=0.580$ be
+the Newtonian value.  To 1PN order,
+\begin{equation}
+\label{eq:rel-12-17}
+x_{\max} = x_{\max}^{\mathrm{(N)}}
+  - \alpha\,\frac{\pi G\rho_{0}R^{2}}{c^{2}} + O(\mathcal{C}^{2}),
+\end{equation}
+where $\alpha > 0$ is a numerical constant obtained by differentiating
+the implicit dispersion relation.  The shift is towards \emph{longer
+wavelengths}: relativistic retardation preferentially suppresses
+short-wavelength modes.
+
+\paragraph{Characteristic time for break-up.}
+The maximum growth rate including 1PN corrections is
+\begin{equation}
+\label{eq:rel-12-18}
+\sigma_{\max} \approx 0.2455\sqrt{4\pi G\rho_{0}}
+  \left[1 + \frac{\varepsilon_{0}+3p_{0}}{4\rho_{0}c^{2}}
+  - \beta\,\frac{\pi G\rho_{0}R^{2}}{c^{2}}\right],
+\end{equation}
+where $\beta>0$ encodes the retardation effect.  The enhanced
+gravitating mass slightly \emph{increases} the growth rate while the
+finite signal speed slightly \emph{decreases} it; which effect dominates
+depends on the equation of state.
+
+The characteristic time for fragmentation is
+\begin{equation}
+\label{eq:rel-12-19}
+\tau_{\mathrm{rel}} = \frac{1}{\sigma_{\max}}
+  \approx \frac{1}{0.2455\sqrt{4\pi G\rho_{0}}}
+  \left[1 - \frac{\varepsilon_{0}+3p_{0}}{4\rho_{0}c^{2}}
+  + \beta\,\frac{\pi G\rho_{0}R^{2}}{c^{2}}\right].
+\end{equation}
+
+\paragraph{Causality constraint.}
+A fundamental requirement of the relativistic theory is that the growth
+rate $\sigma$ cannot exceed $c/R$, i.e.\ no information can propagate
+faster than light across the cylinder.  From
+equation~\eqref{eq:rel-12-12}, one verifies that
+\begin{equation}
+\label{eq:rel-12-20}
+\sigma^{2} \;\leq\; 4\pi G\rho_{0}^{*} \;<\; \frac{c^{2}}{R^{2}}
+\quad \text{when } \mathcal{C}\ll 1,
+\end{equation}
+so the causality bound is automatically satisfied in the post-Newtonian
+regime.  For ultracompact cylinders ($\mathcal{C}\sim 1$), the full
+nonlinear Einstein equations must be used and the instability
+saturates at a growth rate of order $c/R$.
+
+\subsection{Stability to non-axisymmetric perturbations}
+\label{sec:rel-12-108d}
+
+For $m\neq 0$, the Newtonian result $\sigma_{m}^{2}<0$ (stability)
+carries over to the relativistic case.  The proof is identical: the
+inequality $K_{m}(\tilde{x})I_{m}(\tilde{x})<1/2$ holds for all
+$m\neq 0$ and all $\tilde{x}>0$, so
+\begin{equation}
+\label{eq:rel-12-21}
+\sigma_{m}^{2} < 0 \quad \text{for all } m\neq 0.
+\end{equation}
+Thus, as in the Newtonian theory, the relativistic cylinder is
+\emph{stable to all purely non-axisymmetric perturbations}.
+
+\subsection{Energy principle in general relativity}
+\label{sec:rel-12-108e}
+
+The alternative derivation of the dispersion relation via the energy
+principle (Chapter~XII, \S108(a)) can be extended to the relativistic
+setting.  In general relativity, the relevant energy functional is the
+\emph{canonical energy} of Friedman and Schutz, defined for a
+Lagrangian displacement $\boldsymbol{\xi}^{\mu}$ of the fluid:
+\begin{equation}
+\label{eq:rel-12-22}
+\mathcal{E}_{c}[\boldsymbol{\xi}]
+  = \delta^{2}\!\left(\int T^{0\mu}\,\dd\Sigma_{\mu}\right),
+\end{equation}
+where $\delta^{2}$ denotes the second-order perturbation and the
+integral is over a spacelike hypersurface.
+
+For a static equilibrium (no background flow), the canonical energy
+reduces to the sum of kinetic and potential contributions:
+\begin{equation}
+\label{eq:rel-12-23}
+\mathcal{E}_{c} = \underbrace{\delta^{2}\mathfrak{T}_{\mathrm{rel}}}_{\text{kinetic, }>0}
+  \;+\; \underbrace{\delta^{2}\mathfrak{W}_{\mathrm{rel}}}_{\text{gravitational}}.
+\end{equation}
+The system is unstable if and only if
+$\delta^{2}\mathfrak{W}_{\mathrm{rel}} < 0$ for some trial
+displacement.
+
+For an irrotational, incompressible displacement
+$\boldsymbol{\xi} = \operatorname{grad}\phi$ with
+$\phi = [\epsilon/(kI_{0}'(\tilde{x}))]\,I_{0}(\tilde{k}\varpi)\cos kz$,
+one finds
+\begin{equation}
+\label{eq:rel-12-24}
+\delta^{2}\mathfrak{W}_{\mathrm{rel}}
+  = -2\pi^{2}G\rho_{0}^{*2}\,R^{2}\,
+  \left[K_{0}(\tilde{x})\,I_{0}(\tilde{x}) - \tfrac{1}{2}\right]\epsilon^{2},
+\end{equation}
+which is negative for $\tilde{x}<x_{a}=1.0668$, confirming the
+instability found from the dispersion relation.
+
+The Lagrangian for the reduced degree of freedom $\epsilon(t)$ is
+\begin{equation}
+\label{eq:rel-12-25}
+\mathcal{L}_{\mathrm{rel}} = \tfrac{1}{2}\pi R^{2}\enthalpy
+  \left\{\frac{I_{0}(\tilde{x})}{\tilde{x}\,I_{1}(\tilde{x})}
+  \,\dot{\epsilon}^{2}
+  + 4\pi G\rho_{0}^{*}
+  \left[K_{0}(\tilde{x})\,I_{0}(\tilde{x})-\tfrac{1}{2}\right]
+  \epsilon^{2}\right\},
+\end{equation}
+where $\enthalpy = (\varepsilon_{0}+p_{0})/c^{2}$ is the relativistic
+enthalpy density replacing the Newtonian $\rho_{0}$.  The equation of
+motion $\ddot{\epsilon}=\sigma^{2}\epsilon$ reproduces
+\eqref{eq:rel-12-12}.
+
+%% ================================================================
+\section{The effect of viscosity: Israel--Stewart theory on cylindrical
+  instability}\label{sec:rel-12-109}
+
+\subsection{Motivation: causal viscous transport}
+\label{sec:rel-12-109a}
+
+In Chapter~XII, \S109, the effect of Newtonian (Navier--Stokes) viscosity
+on the gravitational instability was analysed.  The Newtonian viscous
+stress is instantaneous: any shear is felt throughout the cylinder
+without delay.  This is physically acceptable when the speed of viscous
+signal propagation greatly exceeds all other relevant speeds, but
+violates causality in the relativistic regime.
+
+The Israel--Stewart theory of relativistic dissipative fluids remedies
+this by introducing relaxation equations for the viscous stress tensor.
+In the notation of the conventions document, the shear stress satisfies
+\begin{equation}
+\label{eq:rel-12-26}
+\taupi\, u^{\alpha}\covd_{\!\alpha}\,\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu},
+\end{equation}
+where $\taupi$ is the shear relaxation time, $\shearvisc$ is the shear
+viscosity coefficient, and $\sigma^{\mu\nu}$ is the shear tensor of the
+flow.  The relaxation time $\taupi > 0$ ensures that viscous signals
+propagate at the finite speed
+\begin{equation}
+\label{eq:rel-12-27}
+v_{\mathrm{visc}} = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}} \;<\; c.
+\end{equation}
+The Navier--Stokes limit is obtained as $\taupi\to 0$ with
+$\shearvisc$ fixed.
+
+\subsection{Linearized viscous perturbation equations}
+\label{sec:rel-12-109b}
+
+For axisymmetric perturbations ($m=0$) of the form $e^{ikz+\sigma t}$,
+the relativistic momentum equation replacing~(59) of Chapter~XII becomes
+\begin{equation}
+\label{eq:rel-12-28}
+\enthalpy\,\sigma\,u_{i}
+  = -\partial_{i}\,\delta\!\left(\Phi + \frac{p}{\enthalpy c^{2}}\right)
+  + \partial_{j}\,\delta\pi^{ij},
+\end{equation}
+where $\delta\pi^{ij}$ is the perturbed shear stress.  In Fourier space,
+the Israel--Stewart equation~\eqref{eq:rel-12-26} becomes
+\begin{equation}
+\label{eq:rel-12-29}
+(1 + \taupi\sigma)\,\delta\pi^{ij}
+  = 2\shearvisc\,\delta\sigma^{ij},
+\end{equation}
+so that the \emph{effective viscosity} for perturbations of growth rate
+$\sigma$ is
+\begin{equation}
+\label{eq:rel-12-30}
+\boxed{\nu_{\mathrm{eff}}(\sigma)
+  = \frac{\nu}{1+\taupi\sigma},}
+\end{equation}
+where $\nu = \shearvisc/\enthalpy$ is the kinematic viscosity.  This is
+the central simplification: the Israel--Stewart relaxation reduces to a
+frequency-dependent effective viscosity that interpolates between the
+Navier--Stokes value ($\taupi\sigma\ll 1$) and vanishing viscosity
+($\taupi\sigma\gg 1$).
+
+\subsection{The case when viscous effects are dominant}
+\label{sec:rel-12-109c}
+
+In the limit of large viscosity ($\nu\to\infty$ with $\taupi$ fixed),
+the Newtonian analysis of \S109(a) gave
+\begin{equation}
+\label{eq:rel-12-31}
+\sigma^{(\mathrm{N})} = \frac{4\pi G\rho_{0}R^{2}}{\nu}\,
+  \frac{K_{0}(x)I_{0}(x)-\frac{1}{2}}{x^{2}
+  [I_{1}^{2}(x)/I_{0}^{2}(x)-(1+x^{2})^{-1}]}.
+\end{equation}
+In the relativistic generalization, two modifications enter:
+\begin{enumerate}
+\item The Newtonian density $\rho_{0}$ is replaced by the effective
+  gravitating density $\rho_{0}^{*}$ defined in \eqref{eq:rel-12-11}.
+\item The kinematic viscosity $\nu$ is replaced by the effective
+  viscosity $\nu_{\mathrm{eff}}(\sigma)$ of \eqref{eq:rel-12-30}.
+\end{enumerate}
+The resulting implicit equation for $\sigma$ in the high-viscosity limit is
+\begin{equation}
+\label{eq:rel-12-32}
+\sigma\,(1+\taupi\sigma) = \frac{4\pi G\rho_{0}^{*}\,R^{2}}{\nu}\,
+  \frac{K_{0}(x)I_{0}(x)-\frac{1}{2}}{x^{2}
+  [I_{1}^{2}(x)/I_{0}^{2}(x)-(1+x^{2})^{-1}]}.
+\end{equation}
+Denoting the right-hand side by $S(x)$, this is a quadratic in $\sigma$:
+\begin{equation}
+\label{eq:rel-12-33}
+\taupi\,\sigma^{2} + \sigma - S(x) = 0,
+\end{equation}
+with the physical root
+\begin{equation}
+\label{eq:rel-12-34}
+\sigma = \frac{-1+\sqrt{1+4\taupi S(x)}}{2\taupi}.
+\end{equation}
+
+\paragraph{Newtonian limit.}
+As $\taupi\to 0$, $\sigma\to S(x)$, recovering equation~(96) of
+Chapter~XII (with $\rho_{0}^{*}\to\rho_{0}$).
+
+\paragraph{Large relaxation time.}
+As $\taupi\to\infty$ (or for rapidly growing modes with
+$\taupi\sigma\gg 1$), $\sigma\to\sqrt{S(x)/\taupi}$.  The growth rate
+is reduced compared to the Newtonian case: the Israel--Stewart
+relaxation acts as an effective reduction of viscous coupling.  In this
+regime the growth rate transitions from the viscosity-dominated
+$\sigma\propto 1/\nu$ scaling to the intermediate
+$\sigma\propto 1/\sqrt{\nu\taupi}$ scaling.
+
+\paragraph{Causality bound.}
+The growth rate \eqref{eq:rel-12-34} is bounded:
+\begin{equation}
+\label{eq:rel-12-35}
+\sigma < \frac{1}{2\taupi}\left(-1 + \sqrt{1+\frac{16\pi G\rho_{0}^{*}\taupi R^{2}}{\nu}}\right)
+  \;<\; \frac{1}{\taupi}\sqrt{\frac{4\pi G\rho_{0}^{*}R^{2}}{\nu}}
+  \;<\; \frac{c}{R},
+\end{equation}
+the last inequality following from $\nu/\taupi < c^{2}$
+[cf.\ \eqref{eq:rel-12-27}] and $\mathcal{C}\ll 1$.  Thus causality is
+preserved.
+
+\paragraph{Monotone behaviour and fragmentation.}
+As in the Newtonian high-viscosity limit, the growth rate
+\eqref{eq:rel-12-34} is a monotone decreasing function of $x$ for
+$0<x<x_{a}$; there is no finite mode of maximum instability.  The
+Israel--Stewart relaxation does not change this qualitative feature:
+the cylinder still tends to fragment at the longest available wavelength
+rather than at the circumference.
+
+\subsection{General case with relativistic corrections}
+\label{sec:rel-12-109d}
+
+For intermediate values of the viscosity, the full characteristic
+equation is obtained by replacing $\nu\to\nu_{\mathrm{eff}}(\sigma)$
+and $\rho_{0}\to\rho_{0}^{*}$ in the Newtonian equation~(86) of
+Chapter~XII.  With $\ell^{2}=k^{2}+\sigma/\nu_{\mathrm{eff}}$, the
+Israel--Stewart modification gives
+\begin{equation}
+\label{eq:rel-12-36}
+\ell^{2} = k^{2} + \frac{\sigma(1+\taupi\sigma)}{\nu},
+\end{equation}
+so that $y = \ell R$ satisfies
+\begin{equation}
+\label{eq:rel-12-37}
+\frac{\sigma R^{2}}{\nu}\,(1+\taupi\sigma) = y^{2}-x^{2}.
+\end{equation}
+Equation~(90) of Chapter~XII then becomes
+\begin{equation}
+\label{eq:rel-12-38}
+(x^{2}+y^{2})\frac{I_{1}(x)}{I_{0}(x)}
+  \left\{\frac{I_{0}(x)}{I_{0}(y)}\frac{I_{1}(y)}{I_{1}(x)}
+  - \frac{2xy}{x^{2}+\tfrac{1}{2}y^{2}}\right\}
+  [x^{2}-y^{2}]
+  = -\frac{J^{*}}{x^{2}+y^{2}}\,
+  \left[K_{0}(x)I_{0}(x)-\tfrac{1}{2}\right],
+\end{equation}
+where the \textbf{relativistic viscous parameter} is
+\begin{equation}
+\label{eq:rel-12-39}
+J^{*} = \frac{4\pi G\rho_{0}^{*}R^{4}}{\nu^{2}}
+  = J\,\frac{\rho_{0}^{*}}{\rho_{0}}
+  = J\!\left(1+\frac{\varepsilon_{0}+3p_{0}}{2\rho_{0}c^{2}}\right),
+\end{equation}
+with $J = 4\pi G\rho_{0}R^{4}/\nu^{2}$ the Newtonian parameter
+[cf.\ equation~(89) of Chapter~XII].
+
+The system of equations~\eqref{eq:rel-12-37} and \eqref{eq:rel-12-38}
+implicitly determines the growth rate $\sigma$ as a function of $x$,
+$J^{*}$, and the Israel--Stewart parameter
+\begin{equation}
+\label{eq:rel-12-40}
+\mathcal{T} \;\equiv\; \frac{\taupi\nu}{R^{2}}.
+\end{equation}
+
+\paragraph{Key results.}
+\begin{enumerate}
+\item \emph{Instability criterion unaffected.}  As in the Newtonian
+  case, the modes $0<x<x_{a}$ are unstable and the modes $x>x_{a}$ are
+  stable; viscosity (whether Navier--Stokes or Israel--Stewart) does not
+  change the range of unstable wavenumbers.
+
+\item \emph{Mode of maximum instability.}  For finite $J^{*}$ and
+  $\mathcal{T}=0$ (Navier--Stokes limit), the mode of maximum
+  instability shifts to smaller $x$ (longer wavelengths) as $J^{*}$
+  decreases (increasing viscosity), exactly as in the Newtonian theory.
+  For $\mathcal{T}>0$ (Israel--Stewart), the effective viscosity is
+  reduced at high $\sigma$, causing the mode of maximum instability to
+  shift \emph{back towards} the inviscid value $x=0.580$---the
+  relaxation partially undoes the viscous suppression of
+  short-wavelength modes.
+
+\item \emph{Dispersion curves.}  For a given $(J^{*},\mathcal{T})$,
+  the dispersion relation can be obtained numerically by solving
+  equations~\eqref{eq:rel-12-37}--\eqref{eq:rel-12-38} for a sequence
+  of $y$ values at each $x$.  The progressive shifting of
+  $x_{\max}$ with decreasing $J^{*}$ (Fig.~126 of Chapter~XII) is
+  modulated by $\mathcal{T}$: larger relaxation times compress the
+  family of curves towards the inviscid limit.
+\end{enumerate}
+
+\paragraph{Summary of gravitational signal speed.}
+In all cases treated in this section, the crucial physical difference
+from the Newtonian theory is that \emph{gravitational signals propagate
+at the speed of light, not instantaneously}.  This manifests in three
+ways:
+\begin{enumerate}
+\item The Poisson equation is replaced by a wave equation
+  [equation~\eqref{eq:rel-12-7}], introducing the modified wavenumber
+  $\tilde{k}$ [equation~\eqref{eq:rel-12-8}].
+\item The viscous stress propagates at the finite speed
+  $v_{\mathrm{visc}} < c$
+  [equation~\eqref{eq:rel-12-27}], preventing the viscous
+  characteristic equation from admitting superluminal modes.
+\item The growth rate is bounded: $\sigma < c/R$
+  [equations~\eqref{eq:rel-12-20} and \eqref{eq:rel-12-35}], in
+  contrast to the Newtonian theory where $\sigma$ can in principle be
+  arbitrarily large for sufficiently dense cylinders.
+\end{enumerate}
