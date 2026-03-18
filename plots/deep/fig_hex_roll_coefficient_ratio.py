@@ -3,7 +3,7 @@ Landau coefficient ratio g_hex/g_roll for relativistic hexagonal cells.
 Shows how xi shifts preferred pattern from rolls to hexagons.
 Quantified for QGP parameters.
 """
-import sys; sys.path.insert(0, '../../..'); from SHARED_PLOT_STYLE import setup_style, COLORS
+import sys; sys.path.insert(0, '/data/haiyangw/claude/Instability'); from SHARED_PLOT_STYLE import setup_style, COLORS
 import matplotlib.pyplot as plt
 import numpy as np
 

@@ -2,7 +2,7 @@
 BDNK entropy production rate: comparison of Eckart, Israel-Stewart, and BDNK.
 Shows BDNK gives finite, non-negative entropy production for all wavenumbers.
 """
-import sys; sys.path.insert(0, '../../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, c_cgs
+import sys; sys.path.insert(0, '/data/haiyangw/claude/Instability'); from SHARED_PLOT_STYLE import setup_style, COLORS, c_cgs
 import matplotlib.pyplot as plt
 import numpy as np
 
