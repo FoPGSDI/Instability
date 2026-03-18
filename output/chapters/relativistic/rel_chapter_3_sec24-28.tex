@@ -31,7 +31,7 @@ co-rotating frame gives, at leading order,
     + \shearvisc\,\nabla^2 \delta u_i
     + \order{v^2/c^2}\;\text{corrections},
 \end{equation}
-where $\enthalpy = \edensity + p$ is the relativistic enthalpy density,
+where $\enthalpy = (\edensity + p)/c^{2}$ is the relativistic enthalpy density,
 $\delta u_i$ is the spatial velocity perturbation, $\Theta$ the
 temperature perturbation, $\alpha$ the thermal expansion coefficient,
 and $\lambda_i = (0,0,1)$.
@@ -83,23 +83,25 @@ equation~\eqref{eq:3-78})
   = -\frac{\partial(\delta p)}{\partial x_i}
     + \rdensity\,g\,\alpha\,\Theta\,\lambda_i
     + \shearvisc\,\nabla^2 u_i
-    + 2\,\frac{\enthalpy}{c^2}\,\epsilon_{ijk}\,u_j\,\Omega_k
-    + \frac{1}{\tauq}\,\partial_i q_{\mathrm{IS}},
+    + 2\,\frac{\enthalpy}{c^2}\,\epsilon_{ijk}\,u_j\,\Omega_k,
 \end{equation}
-where the last term encodes the BDNK heat-flux correction
-(see below).  The factor $\enthalpy/c^2$ multiplying the inertial and
-Coriolis terms replaces the Newtonian $\rho_0$.
+where the factor $\enthalpy/c^2$ multiplying the inertial and
+Coriolis terms replaces the Newtonian $\rho_0$.  In the BDNK
+first-order framework, the dissipative contributions (shear viscosity
+and heat flux) enter algebraically through the constitutive relations;
+no auxiliary relaxation terms appear in the momentum equation.
 
-The heat equation, in the BDNK causal first-order framework, becomes
-the BDNK causal heat equation rather than the parabolic Fourier law:
+The heat equation, in the BDNK causal first-order framework, retains
+the standard diffusion form at the hydrodynamic level:
 \begin{equation}\label{eq:rel-3-79}
-  \tauq\,\frac{\partial^2\Theta}{\partial t^2}
-  + \frac{\partial\Theta}{\partial t}
-  = \beta\,w + \kappa\,\nabla^2\Theta
-  + \tauq\,\kappa\,\frac{\partial}{\partial t}\nabla^2\Theta,
+  \frac{\partial\Theta}{\partial t}
+  = \beta\,w + \kappa\,\nabla^2\Theta,
 \end{equation}
-where $\tauq$ is the heat-flux relaxation time.  In the limit
-$\tauq \to 0$ this reduces to the classical equation~\eqref{eq:3-79}.
+where causality is ensured by the BDNK frame coefficients (which
+modify the characteristic speeds of the coupled system) rather than by
+a relaxation time.  This is the classical equation~\eqref{eq:3-79}
+with the relativistic corrections to $\kappa$ and $\beta$ absorbed
+into their definitions.
 
 The continuity equation retains its classical form at leading order:
 \begin{equation}\label{eq:rel-3-80}
@@ -519,9 +521,10 @@ We verify that all perturbation modes in the rotating system respect
 causality ($v_{\mathrm{signal}} \leq c$).
 
 \textbf{1. Heat propagation.}
-The BDNK causal heat equation~\eqref{eq:rel-3-79} has characteristic
-speed $v_{\mathrm{heat}} = \sqrt{\kappa/\tauq}$.  The causal constraint
-$\tauq \geq \kappa/c^2$ ensures $v_{\mathrm{heat}} \leq c$.
+In the BDNK first-order theory, the heat equation~\eqref{eq:rel-3-79}
+is rendered causal by the frame-dependent transport coefficients, which
+ensure that all characteristic speeds of the coupled system satisfy
+$|v_{\mathrm{char}}| \leq c$.
 At marginal stability ($p = 0$) the time-derivative terms vanish, so
 causality is automatically satisfied for the stationary mode.
 
