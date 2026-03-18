@@ -587,3 +587,74 @@ is unaffected by relativistic corrections.
 \item \textbf{Equipartition, force-free, Taylor--Proudman:} Classical
       results carry over with $\rho\to(\edensity+p)/c^{2}$.
 \end{enumerate}
+
+%% =============================================================
+%% Astrophysical application: Magnetar B-field Alfven speed
+%% =============================================================
+\subsection*{Astrophysical application: Alfv\'en speed saturation
+  in magnetar interiors}
+
+The relativistic bound $\vA < c$ (equation~\eqref{eq:rel4-26}) has
+profound consequences for the dynamics of magnetar interiors.  Magnetars
+harbour the strongest magnetic fields known in the universe, with
+surface dipole fields $B_{\mathrm{surf}} \sim 10^{14}$--$10^{15}$~G
+and inferred interior toroidal fields reaching
+$B_{\mathrm{int}} \sim 10^{16}$~G
+\citep{DuncanThompson1992,ThompsonDuncan1995,Kaspi2017}.
+
+In the neutron star core, where the baryon density is
+$\rho \sim 10^{14}$--$10^{15}$~g\,cm$^{-3}$, the classical Alfv\'en
+speed $V_A = B/\sqrt{4\pi\rho}$ would predict values exceeding $c$
+for sufficiently strong fields.  The relativistic formula
+\eqref{eq:rel4-24} corrects this unphysical divergence: the magnetic
+energy density contributes to the effective inertia, ensuring $\vA$
+saturates below $c$.  For a magnetar core with
+$B \sim 10^{16}$~G and $\rho \sim 10^{15}$~g\,cm$^{-3}$,
+\begin{equation}\label{eq:rel4-vA-magnetar}
+  \frac{\vA}{c} \approx
+  \frac{B/\sqrt{4\pi}}{\sqrt{\rho c^{2} + B^{2}/(4\pi)}}
+  \sim 0.03\text{--}0.3,
+\end{equation}
+placing the Alfv\'en speed firmly in the relativistic regime where the
+$\vA^{2}/c^{2}$ corrections to the MHD wave structure, flux freezing,
+and equipartition balance become quantitatively significant.
+
+Figure~\ref{fig:magnetar-alfven} compares the classical and
+relativistic Alfv\'en speeds across the range of magnetic field
+strengths relevant to neutron star interiors, from the outer crust
+($\rho \sim 10^{10}$~g\,cm$^{-3}$) to the inner core
+($\rho \sim 10^{15}$~g\,cm$^{-3}$).  The relativistic saturation
+is clearly visible at the highest field strengths.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_magnetar_alfven_speed.pdf}
+  \caption{Relativistic Alfv\'en speed $\vA/c$ as a function of
+    magnetic field strength $B$ for four representative neutron star
+    densities.  Solid lines: relativistic formula~\eqref{eq:rel4-24};
+    dashed lines: classical formula $V_A = B/\sqrt{4\pi\rho}$.
+    The horizontal dotted line marks the causal limit $\vA = c$.
+    The relativistic saturation becomes significant for
+    $B \gtrsim 10^{15}$~G in the outer core and for
+    $B \gtrsim 10^{16}$~G in the inner core.}
+  \label{fig:magnetar-alfven}
+\end{figure}
+
+The implications extend to several observable phenomena:
+\begin{itemize}
+  \item \textbf{Alfv\'en wave travel times.}  The time for torsional
+    Alfv\'en waves to traverse the stellar core determines the
+    fundamental quasi-periodic oscillation (QPO) frequencies observed
+    in giant magnetar flares \citep{Israel2005,Watts2006}.  Using
+    the relativistic $\vA$ rather than the classical value shifts the
+    predicted QPO frequencies by $\sim 1$--$10\%$.
+  \item \textbf{Magnetic field evolution.}  The Hall drift and Ohmic
+    decay timescales in the crust depend on the Alfv\'en crossing
+    time \citep{GoldreichReisenegger1992,Gourgouliatos2018}.
+    Relativistic corrections reduce $\vA$ and thus lengthen these
+    timescales.
+  \item \textbf{Magneto-thermal evolution.}  The coupling between
+    thermal transport and magnetic field evolution in magnetar crusts
+    \citep{YakovlevPethick2004,Potekhin2010} is modulated by the
+    Alfv\'en speed through the effective magnetic diffusivity.
+\end{itemize}
