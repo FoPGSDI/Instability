@@ -1,6 +1,6 @@
 % =============================================================
 % Relativistic Viscous Globe and Drop Oscillations (Ch X, §98--99)
-% Agent 47: Israel-Stewart causal extension
+% Agent 47: BDNK first-order causal extension
 % =============================================================
 %
 % Classical source: output/chapters/chapter_10.tex, lines 1471--2103
@@ -8,13 +8,13 @@
 %
 % This file extends Chandrasekhar's analysis of the oscillations
 % of a viscous liquid globe (§98) and viscous liquid drop (§99)
-% to the relativistic regime, using Israel-Stewart causal dissipation.
+% to the relativistic regime, using BDNK first-order causal dissipation.
 %
 % Key physical points:
 %   (i)   The rest-mass density rho is replaced by the relativistic
 %         enthalpy density w = (epsilon + p)/c^2 in the inertial terms.
-%   (ii)  Israel-Stewart relaxation for the shear stress ensures
-%         causal signal propagation; no instantaneous viscous action.
+%   (ii)  BDNK first-order constitutive relations ensure causal
+%         signal propagation; no instantaneous viscous action.
 %   (iii) Gravitational self-energy acquires a pressure correction
 %         from the Tolman-Oppenheimer-Volkoff equation.
 %   (iv)  Surface tension receives a relativistic surface-energy
@@ -33,8 +33,9 @@ by the relativistic enthalpy density $\enthalpy/c^{2} = (\edensity + p)/c^{2}$;
 (ii)~the equilibrium structure is governed by the
 Tolman--Oppenheimer--Volkoff (TOV) equation rather than Newtonian
 hydrostatic balance; and (iii)~the viscous constitutive relation
-must be promoted to the Israel--Stewart causal framework to avoid
-superluminal signal propagation.
+must be formulated in the BDNK first-order causal framework
+\citep{Bemfica2018,Kovtun2019} to avoid superluminal signal
+propagation.
 
 Throughout, we keep $c$ explicit so that the non-relativistic limit
 $c \to \infty$ can be taken transparently.
@@ -115,42 +116,34 @@ perturbation.  The incompressibility condition becomes
   \quad\text{(to linear order in a static background).}
 \end{equation}
 
-\subsubsection*{The Israel--Stewart shear stress}
+\subsubsection*{The BDNK first-order shear stress}
 
-In the Israel--Stewart framework, the shear-stress perturbation
-$\delta\pi^{\mu\nu}$ satisfies the causal relaxation equation
-\begin{equation}\label{eq:rel-10-IS-shear}
-  \taupi\,\frac{\partial}{\partial t}\,\delta\pi^{\mu\nu}
-  + \delta\pi^{\mu\nu}
-  = 2\,\shearvisc\,\delta\sigma^{\mu\nu},
+In the BDNK framework \citep{Bemfica2018,Kovtun2019}, the
+shear-stress perturbation is given by the first-order constitutive
+relation
+\begin{equation}\label{eq:rel-10-BDNK-shear-globe}
+  \delta\Pi^{\mu\nu}
+  = -2\,\shearvisc\,\delta\sigma^{\mu\nu},
 \end{equation}
-where $\taupi > 0$ is the shear relaxation time and
+where $\shearvisc > 0$ is the shear viscosity and
 $\delta\sigma^{\mu\nu}$ is the linearised shear tensor.
-For modes proportional to $e^{-\sigma t}$, this gives
-\begin{equation}\label{eq:rel-10-IS-freq}
-  \delta\pi^{\mu\nu}
-  = \frac{2\,\shearvisc}{1 - \taupi\,\sigma}\,\delta\sigma^{\mu\nu}
-  \equiv 2\,\shearvisc_{\mathrm{eff}}(\sigma)\,\delta\sigma^{\mu\nu},
+The kinematic viscosity is
+\begin{equation}\label{eq:rel-10-nu-globe}
+  \nu = \frac{\shearvisc}{\enthalpy/c^{2}},
 \end{equation}
-defining an \emph{effective viscosity}
-\begin{equation}\label{eq:rel-10-nueff}
-  \nu_{\mathrm{eff}}(\sigma)
-  = \frac{\shearvisc/(\enthalpy/c^{2})}{1 - \taupi\,\sigma}
-  = \frac{\nu}{1 - \taupi\,\sigma},
-\end{equation}
-where $\nu = \shearvisc/(\enthalpy/c^{2})$ is the relativistic
-kinematic viscosity.  In the Navier--Stokes limit $\taupi \to 0$,
-we recover $\nu_{\mathrm{eff}} = \nu$.
+where $\enthalpy/c^{2}$ is the relativistic enthalpy density.
+Unlike the Israel--Stewart second-order theory, there is no
+relaxation time and no frequency-dependent effective viscosity.
 
 \begin{causalitycheck}
-The effective viscosity~\eqref{eq:rel-10-nueff} has a pole at
-$\sigma = 1/\taupi$.  For physical modes with $\mathrm{Re}(\sigma) > 0$
-(decaying perturbations), this pole lies on the real axis and corresponds
-to a transient which decays on the microscopic relaxation time scale
-$\taupi$.  The propagation speed of shear disturbances is
-$v_{\mathrm{shear}} = \sqrt{\shearvisc/(\taupi\,\enthalpy/c^{2})}\,c
-\leqslant c$, which is satisfied provided
-$\taupi \geqslant \shearvisc/\enthalpy$.
+Causality of viscous signal propagation is guaranteed by the BDNK
+frame-coefficient constraints, which ensure strong hyperbolicity
+of the full system of conservation equations.  The characteristic
+speeds of the viscous sector are bounded by~$c$ provided the
+transport coefficients satisfy coupled nonlinear inequalities
+involving $\shearvisc$, $\bulkvisc$, and the frame coefficients
+\citep{Bemfica2018,Kovtun2019}.  No additional relaxation-time
+parameter is needed.
 \end{causalitycheck}
 
 \subsubsection*{Normal-mode decomposition}
@@ -177,14 +170,13 @@ equation~(240) of \S\,98.
 \subsubsection*{The radial equation}
 
 Substituting the normal-mode ansatz into the relativistic perturbation
-equation~\eqref{eq:rel-10-236R} and replacing the Navier--Stokes
-viscosity by the Israel--Stewart effective viscosity, the equation
+equation~\eqref{eq:rel-10-236R} with the BDNK viscosity, the equation
 governing $U(r)$ becomes
 \begin{equation}\label{eq:rel-10-260R}
   \frac{d^{2}U}{dr^{2}}
   - \frac{l(l+1)}{r^{2}}\,U
-  + \frac{\sigma}{\nu_{\mathrm{eff}}}\,U
-  = \frac{\epsilon_{0}}{\nu_{\mathrm{eff}}}\,
+  + \frac{\sigma}{\nu}\,U
+  = \frac{\epsilon_{0}}{\nu}\,
     \Pi_{0}^{\mathrm{rel}}\,r^{l+1},
 \end{equation}
 where
@@ -198,31 +190,29 @@ where
 Here $\Pi_{0}$ is the classical value.  The general solution regular
 at the origin is
 \begin{equation}\label{eq:rel-10-261R}
-  U = A\,r\,J_{l+\frac{1}{2}}(q_{\mathrm{rel}}\,r)
-    + \frac{\epsilon_{0}}{\nu_{\mathrm{eff}}}\,
+  U = A\,r\,J_{l+\frac{1}{2}}(q\,r)
+    + \frac{\epsilon_{0}}{\nu}\,
       \Pi_{0}^{\mathrm{rel}}\,r^{l+1},
 \end{equation}
 with
 \begin{equation}\label{eq:rel-10-262R}
-  q_{\mathrm{rel}}
-  = \sqrt{\frac{\sigma}{\nu_{\mathrm{eff}}}}
-  = \sqrt{\frac{\sigma\,(1 - \taupi\,\sigma)}{\nu}}.
+  q
+  = \sqrt{\frac{\sigma}{\nu}}.
 \end{equation}
 
 \begin{relcorrection}
-Compared with the classical $q = \sqrt{\sigma/\nu}$
-(equation~(262) of \S\,98), the relativistic wave number
-$q_{\mathrm{rel}}$ acquires a factor
-$(1 - \taupi\,\sigma)^{1/2}$ from the Israel--Stewart
-relaxation.  For $\taupi\,\sigma \ll 1$ (long-wavelength,
-slowly-damped modes), $q_{\mathrm{rel}} \approx q$
-and the classical solution is recovered.
+The relativistic wave number $q = \sqrt{\sigma/\nu}$ has the same
+form as the classical expression (equation~(262) of \S\,98), with
+the kinematic viscosity $\nu = \shearvisc/(\enthalpy/c^2)$ using
+enthalpy rather than rest-mass density.  In the BDNK framework
+there is no relaxation-time correction factor; the classical
+structure is preserved directly.
 \end{relcorrection}
 
 \subsection{The inviscid case: Kelvin modes with relativistic
 corrections}\label{sec:rel-10-98-kelvin}
 
-Setting $\nu = 0$ (and hence $\taupi = 0$) in
+Setting $\nu = 0$ (inviscid limit) in
 equation~\eqref{eq:rel-10-236R} and proceeding as in \S\,98(a)(i),
 the boundary conditions on the deformed surface yield the relativistic
 Kelvin frequency
@@ -253,7 +243,7 @@ $\rho \to \enthalpy/c^{2}$ in the inertia.  All three vanish
 as $\mathcal{C}\to 0$.
 \end{relcorrection}
 
-\subsection{General case: Israel--Stewart viscosity}
+\subsection{General case: BDNK viscosity}
 \label{sec:rel-10-98-general}
 
 Returning to the general viscous case, the solution~\eqref{eq:rel-10-261R}
@@ -264,32 +254,32 @@ must satisfy three boundary conditions at $r = R$:
   surface displacement,
   \begin{equation}\label{eq:rel-10-264R}
     l(l+1)\!\left[
-      A\,\frac{J_{l+\frac{1}{2}}(z_{\mathrm{rel}})}{R^{1/2}}
-      + \frac{\epsilon_{0}}{\nu_{\mathrm{eff}}}\,
+      A\,\frac{J_{l+\frac{1}{2}}(z)}{R^{1/2}}
+      + \frac{\epsilon_{0}}{\nu}\,
         \Pi_{0}^{\mathrm{rel}}\,R^{l-1}
     \right]
     = -\epsilon_{0}\,\sigma,
   \end{equation}
-  where $z_{\mathrm{rel}} = q_{\mathrm{rel}}\,R$.
+  where $z = q\,R = R\sqrt{\sigma/\nu}$.
 
-\item \textbf{Tangential stress:} the Israel--Stewart shear stress
-  $\delta\pi^{r\theta}$ vanishes at the free surface,
+\item \textbf{Tangential stress:} the BDNK shear stress
+  $\delta\Pi^{r\theta}$ vanishes at the free surface,
   \begin{equation}\label{eq:rel-10-266R}
     \frac{l(l+1)}{r}\,U - \frac{2}{r}\,\frac{dU}{dr}
     + \frac{d^{2}U}{dr^{2}} = 0
     \quad\text{at}\;r = R.
   \end{equation}
-  This has the same form as classically because the Israel--Stewart
-  prefactor $(1 - \taupi\,\sigma)^{-1}$ cancels at a free boundary
-  where $\delta\pi^{r\theta} = 0$.
+  This has the same form as classically because the BDNK constitutive
+  relation is first-order, and the condition $\delta\Pi^{r\theta} = 0$
+  on the free boundary is identical to the classical one.
 
 \item \textbf{Normal stress:} the total $(r,r)$-component of the
-  stress-energy tensor (including the Israel--Stewart correction)
+  stress-energy tensor (including the BDNK viscous contribution)
   vanishes on the deformed boundary,
   \begin{equation}\label{eq:rel-10-272R}
     -\frac{dp_{0}}{dr}\bigg|_{R}\,\epsilon\,Y_{l}^{m}
     + \left(\frac{\delta p}{\enthalpy/c^{2}}\right)_{\!R}
-    - \frac{2\,\nu_{\mathrm{eff}}\,(\enthalpy/c^{2})}{(\enthalpy/c^{2})}
+    - 2\,\nu
       \left(\frac{\partial u_{r}}{\partial r}\right)_{\!R}
     = 0.
   \end{equation}
@@ -300,95 +290,83 @@ must satisfy three boundary conditions at $r = R$:
 Eliminating $A$ and $\Pi_{0}^{\mathrm{rel}}$ between the three
 boundary conditions and defining
 \begin{equation}\label{eq:rel-10-270R}
-  Q_{l}(z_{\mathrm{rel}})
-  = \frac{J_{l+\frac{1}{2}}(z_{\mathrm{rel}})}
-         {J'_{l+\frac{1}{2}}(z_{\mathrm{rel}})},
+  Q_{l}(z)
+  = \frac{J_{l+\frac{1}{2}}(z)}
+         {J'_{l+\frac{1}{2}}(z)},
 \end{equation}
 we arrive at the relativistic characteristic equation
 \begin{equation}\label{eq:rel-10-280R}
   \boxed{
   \frac{\sigma}{\sigma_{Kl,\mathrm{rel}}^{2}}
-  = \frac{2(l^{2}-1)}{z_{\mathrm{rel}}^{2}} - 1
-    + \frac{2\,l(l-1)}{z_{\mathrm{rel}}^{4}}
-      \left[1 - \frac{(l+1)\,Q_{l+\frac{1}{2}}(z_{\mathrm{rel}})}
-                      {z_{\mathrm{rel}}^{2}
-                       - Q_{l+\frac{1}{2}}(z_{\mathrm{rel}})}
+  = \frac{2(l^{2}-1)}{z^{2}} - 1
+    + \frac{2\,l(l-1)}{z^{4}}
+      \left[1 - \frac{(l+1)\,Q_{l+\frac{1}{2}}(z)}
+                      {z^{2}
+                       - Q_{l+\frac{1}{2}}(z)}
       \right],
   }
 \end{equation}
 where
-\begin{equation}\label{eq:rel-10-zrel}
-  z_{\mathrm{rel}}
-  = R\,\sqrt{\frac{\sigma\,(1 - \taupi\,\sigma)}{\nu}}.
+where
+\begin{equation}\label{eq:rel-10-z}
+  z = R\,\sqrt{\frac{\sigma}{\nu}}.
 \end{equation}
 
 Equation~\eqref{eq:rel-10-280R} has the \emph{same functional form}
-as the classical equation~(280) of \S\,98, but with two crucial
-differences:
-\begin{enumerate}
-\item The Kelvin frequency is $\sigma_{Kl,\mathrm{rel}}$ rather
-  than $\sigma_{Kl}$, incorporating the gravitational relativistic
-  correction $\beta_{l}\,\mathcal{C}$.
-\item The argument $z_{\mathrm{rel}}$ of the Bessel functions depends
-  on $\sigma$ through the Israel--Stewart factor
-  $(1 - \taupi\,\sigma)$, which raises the effective order of the
-  characteristic equation and introduces additional (transient) modes.
-\end{enumerate}
+as the classical equation~(280) of \S\,98, with the sole difference
+that the Kelvin frequency is $\sigma_{Kl,\mathrm{rel}}$ rather
+than $\sigma_{Kl}$, incorporating the gravitational relativistic
+correction $\beta_{l}\,\mathcal{C}$.  In the BDNK framework the
+argument $z = R\sqrt{\sigma/\nu}$ of the Bessel functions has the
+same dependence on $\sigma$ as in the classical theory (no
+relaxation-time modification), so no additional transient modes
+appear.
 
-In the limit $\mathcal{C}\to 0$ and $\taupi\to 0$, we recover
+In the limit $\mathcal{C}\to 0$, we recover
 $\sigma_{Kl,\mathrm{rel}}\to\sigma_{Kl}$ and
-$z_{\mathrm{rel}}\to z = R\sqrt{\sigma/\nu}$, thus reproducing
+$\nu \to \mu/\rho$, thus reproducing
 equation~(280) of \S\,98 identically.
 
 \subsection{Decay of Kelvin modes --- relativistic damping rates}
 \label{sec:rel-10-98-decay}
 
-\subsubsection*{Small viscosity: $\nu\to 0$ (Israel--Stewart)}
+\subsubsection*{Small viscosity: $\nu\to 0$ (BDNK)}
 
-In the limit of small viscosity $\nu\to 0$ with $\taupi$ fixed,
-$|z_{\mathrm{rel}}|\to\infty$.  Using the asymptotic expansion of
+In the limit of small viscosity $\nu\to 0$,
+$|z|\to\infty$.  Using the asymptotic expansion of
 $Q_{l+1/2}$ for large argument, the characteristic
 equation~\eqref{eq:rel-10-280R} yields
 \begin{equation}\label{eq:rel-10-290R}
   \sigma
   = \pm\,i\,\sigma_{Kl,\mathrm{rel}}
     + (l-1)(2l+1)\,\frac{\nu}{R^{2}}
-      \left[1 + \taupi\,\sigma_{Kl,\mathrm{rel}}^{2}\,
-                \frac{\nu}{R^{2}}
-            + \order{\taupi^{2}\sigma_{Kl}^{4}\nu^{2}/R^{4}}
-      \right]
   \quad (\nu\to 0).
 \end{equation}
 The mean life of the Kelvin $l$-mode is therefore
 \begin{equation}\label{eq:rel-10-291R}
   \boxed{
   \tau_{l}^{\mathrm{rel}}
-  = \frac{R^{2}}{(l-1)(2l+1)\,\nu}
-    \left[1 - \taupi\,\sigma_{Kl,\mathrm{rel}}^{2}\,
-              \frac{\nu}{R^{2}}
-          + \order{\taupi^{2}}
-    \right].
+  = \frac{R^{2}}{(l-1)(2l+1)\,\nu}.
   }
 \end{equation}
-The Israel--Stewart correction \emph{shortens} the decay time
-compared with the Navier--Stokes prediction: the causal delay
-in establishing viscous stresses makes the damping marginally more
-efficient at second order.
+This has exactly the same form as the classical result
+(equation~(291) of \S\,98) with the relativistic kinematic
+viscosity $\nu = \shearvisc/(\enthalpy/c^2)$.
 
 \begin{relcorrection}
 Classically (equation~(291) of \S\,98),
 $\tau_{l} = R^{2}/[(l-1)(2l+1)\nu]$.
-The leading relativistic correction to the damping rate has two
-parts: (a) the shift in $\sigma_{Kl}$ by a factor
-$(1 + \beta_{l}\,\mathcal{C}/2)$, and (b) the Israel--Stewart
-correction proportional to $\taupi$.  Both vanish in the Newtonian,
-instantaneous-viscosity limit.
+The only relativistic correction to the damping rate comes from
+the shift in $\sigma_{Kl}$ by a factor
+$(1 + \beta_{l}\,\mathcal{C}/2)$ and the replacement
+$\rho \to \enthalpy/c^2$ in $\nu$.  In the BDNK framework no
+additional relaxation-time corrections appear.
 \end{relcorrection}
 
 \subsubsection*{Large viscosity: $\nu\to\infty$}
 
 For $\nu\to\infty$ (the ``creeping'' regime),
-$z_{\mathrm{rel}}\to 0$ and
+$z\to 0$ and
 \begin{equation}\label{eq:rel-10-287R}
   \sigma \to
   \sigma_{Kl,\mathrm{rel}}^{2}\,
@@ -397,35 +375,35 @@ $z_{\mathrm{rel}}\to 0$ and
 \end{equation}
 which has the same structure as the classical
 equation~(287) of \S\,98 but with
-$\sigma_{Kl}\to\sigma_{Kl,\mathrm{rel}}$.  The Israel--Stewart
-relaxation time drops out of the leading term in this limit because
-$\taupi\,\sigma \to 0$ when $\sigma\to 0$.
+$\sigma_{Kl}\to\sigma_{Kl,\mathrm{rel}}$.  The BDNK framework gives the same leading-order result since
+there are no relaxation-time corrections at low frequencies.
 
 \subsubsection*{Higher-order aperiodic modes}
 
 As in the classical analysis, additional aperiodic modes arise
-from the poles of $Q_{l+1/2}(z_{\mathrm{rel}})$ at the zeros
+from the poles of $Q_{l+1/2}(z)$ at the zeros
 $x_{l+1/2,j}$ of $J'_{l+1/2}$.  To leading order these are
 characterised by
 \begin{equation}\label{eq:rel-10-288R}
   \sigma \sim
-  \frac{x_{l+\frac{1}{2},j}^{2}\,\nu}{R^{2}\,(1 + \taupi\,x_{l+\frac{1}{2},j}^{2}\,\nu/R^{2})}
+  \frac{x_{l+\frac{1}{2},j}^{2}\,\nu}{R^{2}}
   \quad (j \geqslant 2),
 \end{equation}
-which reduces to equation~(288) of \S\,98 when $\taupi\to 0$.
-The Israel--Stewart relaxation acts as a saturation mechanism:
-for large $j$, the damping constant approaches $1/\taupi$
-rather than growing without bound, consistent with causality.
+which is identical in form to equation~(288) of \S\,98 with the
+relativistic $\nu = \shearvisc/(\enthalpy/c^2)$.
 
 \begin{causalitycheck}
-In the Navier--Stokes theory ($\taupi = 0$), the higher-order
+In the naive Navier--Stokes theory, the higher-order
 damping constants $\sigma_{j} \sim x_{j}^{2}\,\nu/R^{2}$ grow
 without bound, implying arbitrarily fast signal propagation ---
-a well-known pathology.  The Israel--Stewart
-result~\eqref{eq:rel-10-288R} caps all damping rates at
-$\sigma_{\max} = 1/\taupi$, ensuring that the corresponding
-propagation speed $v_{\mathrm{shear}} = R\,\sqrt{\sigma/\nu_{\mathrm{eff}}}$
-never exceeds $c$.
+a well-known pathology.  In the BDNK framework, causality of these
+modes is guaranteed not by a saturation of damping rates (as in
+Israel--Stewart) but by the strong hyperbolicity of the full BDNK
+system: the characteristic speeds of all viscous modes are bounded
+by $c$ through the frame-coefficient constraints
+\citep{Bemfica2018,Kovtun2019}, regardless of the mode number~$j$.
+The BDNK theory thus resolves the causality problem without
+introducing spurious relaxation modes.
 \end{causalitycheck}
 
 %% ================================================================
@@ -508,14 +486,14 @@ Both corrections vanish in the non-relativistic limit
 $\edensity\to\rho\,c^{2}$, $p \ll \rho\,c^{2}$,
 $\edensity_{S}\ll T$.
 
-\subsection{General case with Israel--Stewart viscosity}
+\subsection{General case with BDNK viscosity}
 \label{sec:rel-10-99-general}
 
 For the viscous drop, the perturbation
 equations~\eqref{eq:rel-10-236R}--\eqref{eq:rel-10-237R} remain
 valid, but with $\delta V = 0$ (no self-gravity) and
 $\varpi_{\mathrm{rel}} = \delta p/(\enthalpy/c^{2})$.
-The velocity field and the Israel--Stewart shear stress are
+The velocity field and the BDNK shear stress are
 identical to those of the globe problem.  The only change is in
 the normal-stress boundary condition, where the gravitational
 restoring force is replaced by the relativistic surface tension
@@ -527,7 +505,7 @@ Following the same algebra as in
   \left\{-\sigma_{Kl,\mathrm{drop}}^{2}
          + l(l+1)\,\Pi_{0}^{\mathrm{drop}}\,R^{l-1}
   \right\}\epsilon\,Y_{l}^{m}
-  - \frac{2\,\nu_{\mathrm{eff}}}{R}
+  - \frac{2\,\nu}{R}
     \left(\frac{\partial u_{r}}{\partial r}\right)_{\!R}
   = 0,
 \end{equation}
@@ -548,12 +526,11 @@ $\sigma_{Kl,\mathrm{drop}}$.
 The Chandrasekhar--Reid identity --- that the globe and drop problems
 share the same characteristic equation when $\sigma$ is measured in
 units of the appropriate Kelvin frequency --- survives intact in
-the relativistic, Israel--Stewart theory.  The forces maintaining
+the relativistic, BDNK theory.  The forces maintaining
 equilibrium (gravity or surface tension) enter only through
 $\sigma_{Kl}$; the manner of viscous decay is universal.  The
-Israel--Stewart relaxation modifies the functional form of the
-characteristic equation (through $z_{\mathrm{rel}}$) but does so
-identically for both problems.
+BDNK viscosity enters identically for both problems through the
+kinematic viscosity $\nu = \shearvisc/(\enthalpy/c^2)$.
 \end{relcorrection}
 
 All results for damping rates, creeping modes, and higher-order
@@ -593,19 +570,25 @@ was initiated by Thorne and Campolattaro:
 \end{enumerate}
 
 \noindent
-The Israel--Stewart framework for causal relativistic dissipation is
-due to:
+The BDNK first-order causal framework for relativistic dissipation
+is due to:
 
 \begin{enumerate}
 \setcounter{enumi}{1}
-\item \textsc{W.\ Israel} and \textsc{J.\,M.\ Stewart},
-  `Transient relativistic thermodynamics and kinetic theory',
-  \textit{Ann.\ Phys.\ (N.Y.)}\ \textbf{118}, 341--72 (1979).
+\item \textsc{F.\,S.\ Bemfica}, \textsc{M.\,M.\ Disconzi},
+  and \textsc{J.\ Noronha},
+  `Nonlinear causality of general first-order relativistic viscous
+  hydrodynamics',
+  \textit{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
+
+\item \textsc{P.\ Kovtun},
+  `First-order relativistic hydrodynamics is stable',
+  \textit{JHEP}\ \textbf{10}, 034 (2019).
 \end{enumerate}
 
 \noindent
-Viscous damping of stellar oscillations in general relativity, using
-the Israel--Stewart formalism, has been studied by:
+Viscous damping of stellar oscillations in general relativity
+has been studied by:
 
 \begin{enumerate}
 \setcounter{enumi}{2}

@@ -17,7 +17,7 @@
 %         acquires relativistic stratification corrections from the
 %         Tolman-Oppenheimer-Volkoff equilibrium.
 %   (iii) The viscous dissipation functional generalises to
-%         Israel-Stewart causal dissipation.
+%         BDNK first-order causal dissipation.
 %   (iv)  All results reduce to Chandrasekhar's §93 in the limit
 %         c -> infty (where w -> rho).
 % =============================================================
@@ -31,7 +31,8 @@ Rayleigh--Taylor problem, including the effects of viscosity and
 surface tension.  We now extend this formulation to the relativistic
 regime, wherein the fluid inertia is governed by the \emph{enthalpy
 density} rather than the rest-mass density alone, and the dissipative
-fluxes obey the Israel--Stewart causal transport equations.
+fluxes obey the BDNK first-order causal constitutive relations
+\citep{Bemfica2018,Kovtun2019}.
 
 \subsection{Relativistic preliminaries}
 
@@ -61,7 +62,7 @@ equilibrium quantities.
 
 \subsection{Linearised perturbation equations}
 
-Linearising the relativistic Euler equation (with Israel--Stewart
+Linearising the relativistic Euler equation (with BDNK
 viscosity) about this equilibrium, one obtains the perturbation
 equations analogous to the classical \eqref{eq:10-70a}
 and~\eqref{eq:10-71}:
@@ -95,9 +96,11 @@ where:
 \item $w = (\varepsilon + p)/c^{2}$ replaces $\rho$ as the inertia
   density;
 \item $Dw$ replaces $D\rho$ in the buoyancy coupling;
-\item $\hat{\mu}$ is the relativistic dynamic viscosity (in the
-  Israel--Stewart framework, $\hat{\mu} = \mu/(1 + \taupi\,n)$ when
-  the relaxation-time approximation applies);
+\item $\hat{\mu}$ is the relativistic dynamic viscosity; in the
+  BDNK framework $\hat{\mu} = \eta$, the shear viscosity, which
+  enters the first-order constitutive relation
+  $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ directly (no
+  relaxation-time factor);
 \item $\hat{T}_{s}$ is the surface tension at interface~$s$.
 \end{itemize}
 The boundary conditions remain
@@ -179,7 +182,7 @@ if $n$ is complex then
     + \frac{1}{k^{2}}|D^{2}\hat{w}|^{2}\right)\mathrm{d}z.
 \end{align}
 Hence, if $D^{2}\hat{\mu} \geqslant 0$ and $\hat{\mu} > 0$
-(guaranteed in the Israel--Stewart framework with $\taupi > 0$), then
+(guaranteed in the BDNK framework with $\eta > 0$), then
 $\operatorname{Re}(n) < 0$ whenever $n$ is complex, so
 \emph{overstability cannot occur} --- precisely as in the classical
 theory.
@@ -225,9 +228,11 @@ obtain the \emph{relativistic energy balance}:
   \to D\rho$, recovering the classical potential-energy functional.
 
 \item $I_{3}$ is the \textbf{viscous dissipation} functional.  In the
-  Israel--Stewart framework, the effective viscosity $\hat{\mu} =
-  \mu/(1 + \taupi\,n)$ depends on the growth rate $n$ through the
-  relaxation time $\taupi$, introducing an implicit nonlinearity.
+  BDNK framework, the viscosity $\hat{\mu} = \eta$ is the shear
+  viscosity entering the first-order constitutive relation
+  $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$; it is independent of
+  the growth rate $n$, so that the eigenvalue problem remains a
+  simple quadratic in~$n$.
 \end{itemize}
 
 \medskip\noindent\textbf{Variational formulation.}
@@ -305,9 +310,8 @@ such that~\eqref{eq:rel-10-88} is satisfied.  Rearranging:
   = 0,
   }
 \end{equation}
-which is a quadratic in $n$ (for given $\hat{w}$) when $\hat{\mu}$ is
-independent of $n$ (i.e.\ in the Navier--Stokes limit $\taupi \to
-0$).  Solving:
+which is a quadratic in $n$ (for given $\hat{w}$) since in the BDNK
+framework $\hat{\mu} = \eta$ is independent of $n$.  Solving:
 \begin{equation}\label{eq:rel-10-nquad}
   n = \frac{-I_{3} \pm \sqrt{I_{3}^{2}
     + 4\,I_{1}\bigl(g\,I_{2}
@@ -371,23 +375,25 @@ and acts to reduce $n$.  From~\eqref{eq:rel-10-nquad}:
     {I_{3}},
 \end{equation}
 which places a lower bound on the stabilising effect of viscosity.
-In the Israel--Stewart framework, the effective viscosity
-$\hat{\mu} = \mu/(1 + \taupi\,n)$ is \emph{reduced} compared with
-the Navier--Stokes value $\mu$ for rapidly growing modes
-($\taupi\,n \gg 1$), so the viscous damping is less effective at
-short wavelengths --- a distinctly relativistic effect.
+In the BDNK framework, the viscosity $\hat{\mu} = \eta$ is the
+physical shear viscosity constrained by frame-dependent causal
+bounds \citep{Bemfica2018,Kovtun2019}; it does not depend on the
+growth rate~$n$.  The viscous bound~\eqref{eq:rel-10-viscous-bound}
+therefore applies directly, without the frequency-dependent
+reduction present in second-order (Israel--Stewart) theories.
 
 \subsection{Non-relativistic limit}\label{ssec:rel-10-NR}
 
 The non-relativistic limit is obtained by taking $c \to \infty$
-(equivalently, $p/\varepsilon \to 0$ and $\taupi \to 0$):
+(equivalently, $p/\varepsilon \to 0$; BDNK frame corrections
+vanish at $\mathcal{O}(v^2/c^2)$):
 \begin{enumerate}
 \item $w = (\varepsilon + p)/c^{2} \to \rho c^{2}/c^{2} = \rho$.
 \item $Dw \to D\rho$.
 \item The TOV condition~\eqref{eq:rel-10-TOV} reduces to $Dp_{0} =
   -\rho g$.
-\item The effective viscosity $\hat{\mu} = \mu/(1 + \taupi\,n)
-  \to \mu$ (instantaneous dissipation).
+\item The viscosity $\hat{\mu} = \eta
+  \to \mu$ (standard Navier--Stokes viscosity).
 \item $I_{1} \to \int_{0}^{d}\rho\bigl\{w^{2} +
   k^{-2}(Dw)^{2}\bigr\}\,\mathrm{d}z$, $I_{2} \to
   \int_{0}^{d}(D\rho)\,w^{2}\,\mathrm{d}z$.
@@ -410,8 +416,11 @@ key new features are:
   mass density, generally reducing growth rates.
 \item \textbf{Modified Atwood number:} the density contrast is
   replaced by the enthalpy-density contrast.
-\item \textbf{Causal dissipation:} Israel--Stewart relaxation weakens
-  viscous damping for rapidly growing modes.
+\item \textbf{Causal dissipation:} the BDNK first-order framework
+  provides causal viscous damping with viscosity $\eta$ subject to
+  frame-dependent bounds; no relaxation-time weakening occurs.
 \item \textbf{Causality bound:} growth rates are bounded by $c/d$,
-  since perturbations cannot propagate superluminally.
+  since perturbations cannot propagate superluminally; this is
+  guaranteed by the BDNK strong hyperbolicity
+  \citep{Bemfica2018,Kovtun2019}.
 \end{enumerate}

@@ -1,6 +1,6 @@
 % =============================================================
 % Relativistic Viscous Rayleigh--Taylor Instability (Ch X, §94)
-% Agent 44: Israel-Stewart causal viscosity extension
+% Agent 44: BDNK first-order causal viscosity extension
 % =============================================================
 %
 % Classical source: output/chapters/chapter_10.tex, lines 577--947
@@ -8,20 +8,20 @@
 %
 % This file extends Chandrasekhar's §94 analysis of two uniform
 % viscous fluids separated by a horizontal boundary (Rayleigh--Taylor
-% problem) to the relativistic regime, using Israel-Stewart causal
+% problem) to the relativistic regime, using BDNK first-order causal
 % dissipation for the viscous sector.
 %
 % Key physical points:
-%   (i)    The Israel-Stewart relaxation time tau_pi renders viscous
+%   (i)    The BDNK first-order constitutive relations render viscous
 %          signal propagation causal (finite speed), unlike the
-%          acausal Navier-Stokes limit.
+%          acausal Navier-Stokes limit, without introducing relaxation times.
 %   (ii)   The enthalpy density w = (epsilon + p)/c^2 replaces the
 %          mass density rho in the inertial terms.
 %   (iii)  Surface tension is generalised to a relativistic surface
 %          energy density.
 %   (iv)   Gravity waves acquire relativistic corrections through w.
 %   (v)    All results reduce to Chandrasekhar's in the limit
-%          c -> infinity, tau_pi -> 0.
+%          c -> infinity.
 % =============================================================
 
 \section{Relativistic viscous Rayleigh--Taylor instability (\S94 -- relativistic)}
@@ -32,9 +32,10 @@ uniform viscous fluids separated by a horizontal boundary --- to the
 special-relativistic regime.  The essential new ingredients are:
 (a)~the replacement of the mass density $\rho$ by the relativistic
 enthalpy density $\enthalpy = (\varepsilon + p)/c^{2}$ wherever
-inertia enters; (b)~the use of the Israel--Stewart causal transport
-equations for the viscous stress, which introduces a finite relaxation
-time $\taupi > 0$; and (c)~the generalisation of surface tension $T$
+inertia enters; (b)~the use of the BDNK first-order causal constitutive
+relations for the viscous stress \citep{Bemfica2018,Kovtun2019},
+in which causality is ensured by frame-dependent transport-coefficient
+bounds rather than relaxation times; and (c)~the generalisation of surface tension $T$
 to a relativistic surface energy density.
 
 Throughout this section we work in the local rest frame of the
@@ -45,41 +46,39 @@ We keep $c$ explicit so that every non-relativistic limit is
 transparent.
 
 % -----------------------------------------------------------------
-\subsection{Israel--Stewart viscous perturbation equations}
-\label{sec:rel-10-94-IS}
+\subsection{BDNK first-order viscous constitutive relations}
+\label{sec:rel-10-94-BDNK}
 
-In each uniform fluid region the linearised Israel--Stewart equation
-for the shear-stress perturbation $\delta\pi^{\mu\nu}$ reads
-(cf.\ the conventions in \S\,33 of \texttt{RELATIVISTIC\_CONVENTIONS.md})
-\begin{equation}\label{eq:rel-10-IS-shear}
-  \taupi\,\frac{\partial}{\partial t}\,\delta\pi^{\mu\nu}
-  + \delta\pi^{\mu\nu}
-  = 2\,\shearvisc\,\delta\sigma^{\mu\nu},
+In the BDNK (Bemfica--Disconzi--Noronha--Kovtun) framework
+\citep{Bemfica2018,Kovtun2019}, the viscous stress is given by a
+first-order constitutive relation rather than a relaxation equation.
+In each uniform fluid region the shear-stress perturbation is
+\begin{equation}\label{eq:rel-10-BDNK-shear}
+  \delta\Pi^{\mu\nu}
+  = -2\,\shearvisc\,\delta\sigma^{\mu\nu},
 \end{equation}
-where $\taupi > 0$ is the viscous relaxation time and $\shearvisc$ is
-the shear viscosity.  For a perturbation $\propto e^{nt}$ (with $n$
-the growth rate) this becomes
-\begin{equation}\label{eq:rel-10-IS-shear-mode}
-  \delta\pi^{\mu\nu}
-  = \frac{2\,\shearvisc}{1 + \taupi\,n}\;\delta\sigma^{\mu\nu}
-  \;\equiv\; 2\,\shearvisc^{\mathrm{eff}}(n)\;\delta\sigma^{\mu\nu}.
-\end{equation}
-The \emph{effective viscosity}
-\begin{equation}\label{eq:rel-10-eta-eff}
-  \shearvisc^{\mathrm{eff}}(n)
-  = \frac{\shearvisc}{1 + \taupi\,n}
-\end{equation}
-is frequency-dependent; in the limit $\taupi \to 0$ we recover the
-instantaneous (Navier--Stokes) value $\shearvisc$.
+where $\shearvisc > 0$ is the shear viscosity.  There is no
+relaxation time: causality is instead guaranteed by constraints on
+the BDNK frame coefficients and transport coefficients.
 
-For the bulk viscous pressure we similarly write
-\begin{equation}\label{eq:rel-10-IS-bulk}
-  \tau_{\Pi}\,\frac{\partial}{\partial t}\,\delta\Pi
-  + \delta\Pi
+For the bulk viscous pressure the first-order constitutive relation is
+\begin{equation}\label{eq:rel-10-BDNK-bulk}
+  \delta\Pi_{\mathrm{bulk}}
   = -\bulkvisc\;\nabla_{\mu}\,\delta u^{\mu},
 \end{equation}
-where $\tau_{\Pi} > 0$ is the bulk relaxation time and $\bulkvisc$
-is the bulk viscosity coefficient.
+where $\bulkvisc \geq 0$ is the bulk viscosity coefficient.
+
+\paragraph{Comparison with Israel--Stewart.}
+The Israel--Stewart (IS) second-order theory introduces relaxation
+times $\taupi$, $\tau_\Pi > 0$ and an effective viscosity
+$\shearvisc^{\mathrm{eff}} = \shearvisc/(1+\taupi n)$.
+In the BDNK first-order theory, no such frequency-dependent
+modification arises: one works directly with the physical viscosity
+$\shearvisc$.  At the marginal stability state ($n=0$, where IS
+and BDNK are identical) the two formulations yield the same
+critical conditions.  The BDNK theory has the advantage of being
+rigorously proven to be strongly hyperbolic (and hence causal and
+well-posed) in the full nonlinear regime.
 
 % -----------------------------------------------------------------
 \subsection{Relativistic dispersion equation in each uniform region}
@@ -92,37 +91,36 @@ constant $\rho$ and $\mu$ reduces to equation~\eqref{eq:10-96},
 \end{equation}
 In the relativistic theory the mass density $\rho$ is replaced by
 the enthalpy density $\enthalpy = (\varepsilon+p)/c^{2}$, and the
-kinematic viscosity is replaced by the \emph{effective} kinematic
-viscosity
-\begin{equation}\label{eq:rel-10-nu-eff}
-  \nu^{\mathrm{eff}}(n)
-  = \frac{\shearvisc^{\mathrm{eff}}(n)}{\enthalpy}
-  = \frac{\nu}{1 + \taupi\,n},
-  \qquad
+kinematic viscosity is
+\begin{equation}\label{eq:rel-10-nu}
   \nu \equiv \frac{\shearvisc}{\enthalpy}.
 \end{equation}
-The relativistic analogue of~\eqref{eq:10-96} is therefore
+In the BDNK framework the viscosity $\shearvisc$ enters directly
+(no frequency-dependent effective viscosity), so the relativistic
+analogue of~\eqref{eq:10-96} is
 \begin{equation}\label{eq:rel-10-96}
   \boxed{
-  \Bigl[1 - \frac{\nu}{n(1+\taupi\,n)}\,(D^{2}-k^{2})\Bigr]
+  \Bigl[1 - \frac{\nu}{n}\,(D^{2}-k^{2})\Bigr]
   (D^{2}-k^{2})\,w = 0.
   }
 \end{equation}
-Writing $q_{\mathrm{rel}}^{2}$ for the non-trivial root of the
-operator, we obtain the relativistic generalisation
-of~\eqref{eq:10-98}:
+Writing $q^{2}$ for the non-trivial root of the operator, we
+obtain
 \begin{equation}\label{eq:rel-10-98}
-  q_{\mathrm{rel}}^{2}
-  = k^{2} + \frac{n(1+\taupi\,n)}{\nu}
-  = k^{2} + \frac{n}{\nu} + \frac{\taupi\,n^{2}}{\nu}.
+  q^{2}
+  = k^{2} + \frac{n}{\nu}.
 \end{equation}
 The solutions in the two half-spaces retain the same exponential
 structure~\eqref{eq:10-99}--\eqref{eq:10-100} with $q_{1,2}$
-replaced by $q_{\mathrm{rel},1,2}$.
+evaluated using the relativistic $\nu = \shearvisc/\enthalpy$.
 
 \paragraph{Remark.}
-In the Navier--Stokes limit $\taupi \to 0$, equation~\eqref{eq:rel-10-98}
-reduces to $q^{2} = k^{2}+n/\nu$, recovering~\eqref{eq:10-98}.
+Equation~\eqref{eq:rel-10-98} has the same form as the classical
+expression with $\rho \to \enthalpy$; in the BDNK theory no
+additional $\taupi n^2/\nu$ term appears because there are no
+relaxation equations.  Causality of the viscous modes is instead
+guaranteed by BDNK frame-coefficient bounds
+\citep{Bemfica2018,Kovtun2019}.
 
 % -----------------------------------------------------------------
 \subsection{Boundary conditions at the relativistic interface}
@@ -139,8 +137,8 @@ carry over with two modifications:
     $\enthalpy_{1,2} = (\varepsilon_{1,2}+p_{1,2})/c^{2}$.
   \item \emph{Viscous terms.} The dynamic viscosity
     $\mu_{i} = \rho_{i}\nu_{i}$ is replaced by
-    $\enthalpy_{i}\,\nu_{i}^{\mathrm{eff}}(n)
-    = \shearvisc_{i}/(1+\taupi_{i}\,n)$.
+    $\shearvisc_{i} = \enthalpy_{i}\,\nu_{i}$, the BDNK shear
+    viscosity (no frequency-dependent factor).
   \item \emph{Surface tension.} The classical surface tension $T$
     (force per unit length) is replaced by the relativistic surface
     energy density
@@ -160,7 +158,7 @@ equation~\eqref{eq:10-103}) becomes
     - \frac{k^{2}\mathcal{T}}{g}\Bigr]\,w_{0}
     \nonumber\\
   &\quad + \frac{k^{2}}{n}\,
-    \bigl(\shearvisc_{1}^{\mathrm{eff}}-\shearvisc_{2}^{\mathrm{eff}}\bigr)
+    \bigl(\shearvisc_{1}-\shearvisc_{2}\bigr)
     \,(Dw)_{0}.
 \end{align}
 
@@ -169,13 +167,12 @@ equation~\eqref{eq:10-103}) becomes
 \label{sec:rel-10-94a}
 
 Following Chandrasekhar's simplification to equal kinematic
-viscosities, $\nu_{1} = \nu_{2} = \nu$, and equal relaxation times
-$\taupi_{1} = \taupi_{2} = \taupi$, we set
+viscosities, $\nu_{1} = \nu_{2} = \nu$, we set
 \begin{equation}\label{eq:rel-10-114}
-  q_{\mathrm{rel}}^{2}
-  = k^{2} + \frac{n(1+\taupi\,n)}{\nu},
+  q^{2}
+  = k^{2} + \frac{n}{\nu},
 \end{equation}
-with the same $q_{\mathrm{rel}}$ in both half-spaces.  Define the
+with the same $q$ in both half-spaces.  Define the
 relativistic density fractions
 \begin{equation}\label{eq:rel-10-108}
   \alpha_{1} = \frac{\enthalpy_{1}}{\enthalpy_{1}+\enthalpy_{2}},
@@ -187,15 +184,15 @@ relativistic density fractions
 where $\enthalpy_{i} = (\varepsilon_{i}+p_{i})/c^{2}$.
 
 The derivation of the characteristic equation parallels that of
-\S\,94\,(a) exactly, with the substitutions
-$\rho_{i} \to \enthalpy_{i}$ and $q \to q_{\mathrm{rel}}$.  The
+\S\,94\,(a) exactly, with the substitution
+$\rho_{i} \to \enthalpy_{i}$.  The
 result is the relativistic analogue of the quartic~\eqref{eq:10-121}.
 Introducing
 \begin{equation}\label{eq:rel-10-117}
-  z_{\mathrm{rel}}
-  = \frac{n(1+\taupi\,n)}{k^{2}\nu},
+  z
+  = \frac{n}{k^{2}\nu},
   \qquad
-  y = \sqrt{1+z_{\mathrm{rel}}} = q_{\mathrm{rel}}/k,
+  y = \sqrt{1+z} = q/k,
 \end{equation}
 and the relativistic parameters
 \begin{equation}\label{eq:rel-10-120}
@@ -221,30 +218,27 @@ the characteristic equation becomes
 This is \emph{structurally identical} to Chandrasekhar's
 equation~\eqref{eq:10-121}, but the variables carry different
 physical content: $\alpha_{i}$ are enthalpy fractions (not mass
-fractions), $S_{\mathrm{rel}}$ involves the relativistic surface
-energy density, and -- crucially -- the relation between $y$ and the
-growth rate $n$ is modified by the Israel--Stewart term:
+fractions) and $S_{\mathrm{rel}}$ involves the relativistic surface
+energy density.  The relation between $y$ and the growth rate $n$
+is
 \begin{equation}\label{eq:rel-10-n-from-y}
   y^{2} - 1
-  = \frac{n(1+\taupi\,n)}{k^{2}\nu}
+  = \frac{n}{k^{2}\nu}
   \quad\Longrightarrow\quad
-  \taupi\,n^{2} + n - k^{2}\nu\,(y^{2}-1) = 0.
+  n = k^{2}\nu\,(y^{2}-1),
 \end{equation}
-Solving for $n$:
-\begin{equation}\label{eq:rel-10-n-quadratic}
-  n = \frac{-1 + \sqrt{1 + 4\,\taupi\,k^{2}\nu\,(y^{2}-1)}}
-           {2\,\taupi}.
-\end{equation}
-In the limit $\taupi \to 0$ this reduces to
-$n = k^{2}\nu\,(y^{2}-1)$, recovering~\eqref{eq:10-124}.
+which is identical in form to the classical
+relation~\eqref{eq:10-124} with $\nu = \shearvisc/\enthalpy$.
 
 \paragraph{Physical interpretation.}
 For a given root $y$ of~\eqref{eq:rel-10-121}, the growth rate $n$
-is \emph{reduced} relative to the Navier--Stokes prediction
-(at fixed $y$) by the factor $(1+\taupi\,n)^{-1}$ implicit
-in~\eqref{eq:rel-10-n-quadratic}.  The Israel--Stewart relaxation
-effectively ``stiffens'' the viscous response at high frequencies,
-slowing the exponential growth of short-wavelength modes.
+differs from the classical prediction only through the relativistic
+kinematic viscosity $\nu = \shearvisc/\enthalpy$ (which uses
+enthalpy rather than mass density).  In the BDNK framework there
+is no frequency-dependent reduction of the viscosity; causality
+is instead ensured by the frame-coefficient constraints on
+$\shearvisc$.  At the marginal state ($n = 0$), the BDNK and
+Israel--Stewart predictions coincide exactly.
 
 % -----------------------------------------------------------------
 \subsection{Modes of maximum instability: relativistic corrections}
@@ -259,32 +253,30 @@ The asymptotic behaviour parallels the classical case:
 \begin{itemize}
   \item \emph{Long wavelengths} ($k \to 0$, $y \to \infty$):
     $n \sim [(\alpha_{2}-\alpha_{1})\,g\,k]^{1/2}$ as in the
-    inviscid (and non-relativistic) limit, since viscosity and
-    Israel--Stewart corrections become negligible.  The only
+    inviscid (and non-relativistic) limit, since viscosity
+    becomes negligible.  The only
     relativistic effect is through $\alpha_{i}$, which are enthalpy
     fractions rather than mass fractions.
   \item \emph{Short wavelengths} ($k \to \infty$, $y \to 1$): from
-    \eqref{eq:rel-10-n-quadratic} with $y^{2}-1 \to 0$,
+    \eqref{eq:rel-10-n-from-y} with $y^{2}-1 \to 0$,
     \begin{equation}\label{eq:rel-10-131}
-      n \;\to\; \frac{(\alpha_{2}-\alpha_{1})\,g}{2\,k\,\nu}
-      \cdot\frac{1}{1 + \taupi\,(\alpha_{2}-\alpha_{1})\,g/(2\,k\,\nu)}.
+      n \;\to\; \frac{(\alpha_{2}-\alpha_{1})\,g}{2\,k\,\nu},
     \end{equation}
-    For $\taupi = 0$ this reduces to~\eqref{eq:10-131}.  For
-    $\taupi > 0$ the growth rate is further suppressed at large $k$,
-    confirming that the Israel--Stewart relaxation damps the
-    shortest-wavelength modes.
+    which is identical in form to~\eqref{eq:10-131} with
+    $\nu = \shearvisc/\enthalpy$.  In the BDNK framework the
+    viscous damping at short wavelengths is governed directly by
+    the shear viscosity $\shearvisc$, with causality ensured by
+    frame-dependent bounds rather than a relaxation-time cutoff.
 \end{itemize}
 
 Since $n \to 0$ both as $k \to 0$ and $k \to \infty$, a mode of
 \emph{maximum instability} persists.  Its wavenumber $k_{\max}$ and
 growth rate $n_{\max}$ are shifted relative to the classical values
-listed in Table~\ref{tab:XLVI}: specifically, $k_{\max}$ moves to
-\emph{smaller} $k$ (longer wavelength) and $n_{\max}$ is
-\emph{reduced}, with corrections of relative order
-$\taupi\,(g^{2}/\nu)^{1/3}$.  In the non-relativistic limit
-$c \to \infty$ (whence $\enthalpy_{i} \to \rho_{i}$ and
-$\taupi \to 0$), the classical Table~\ref{tab:XLVI} is exactly
-recovered.
+listed in Table~\ref{tab:XLVI}: specifically, $k_{\max}$ and $n_{\max}$ differ from the classical values only
+through the relativistic enthalpy fractions $\alpha_i$.  In the
+non-relativistic limit $c \to \infty$ (whence
+$\enthalpy_{i} \to \rho_{i}$), the classical
+Table~\ref{tab:XLVI} is exactly recovered.
 
 % -----------------------------------------------------------------
 \subsection{Surface tension: relativistic surface energy density}
@@ -307,15 +299,13 @@ $\rho_{i} \to \enthalpy_{i}$) in the limit $c \to \infty$.
 The relativistic correction lowers $k_{c}$ slightly: the surface
 energy contribution to the interface rest mass increases the effective
 inertia, allowing marginally longer wavelengths to be stabilised.  As
-in the classical case, $k_{c}$ is \emph{independent of viscosity} and
-of the Israel--Stewart relaxation time $\taupi$.
+in the classical case, $k_{c}$ is \emph{independent of viscosity}.
 
 For the $(n,k)$-relationships when $\mathcal{T} \neq 0$, the
 analysis proceeds exactly as in \S\,94\,(c) with
 $Q_{\mathrm{rel}}^{4/3}\,S_{\mathrm{rel}}$ replacing
 $Q^{4/3}S$ in equation~\eqref{eq:10-133} and the growth rate
-recovered from~\eqref{eq:rel-10-n-quadratic} rather than
-from~\eqref{eq:10-124}.
+recovered from~\eqref{eq:rel-10-n-from-y}.
 
 % -----------------------------------------------------------------
 \subsection{Gravity waves: relativistic dispersion relation}
@@ -349,19 +339,15 @@ fluid), $\omega^{2} = (3/4)\,g\,k$: the increased inertia of the
 relativistic enthalpy reduces the wave frequency.
 
 When viscosity is retained, the branch-point structure (where damping
-changes from aperiodic to oscillatory, cf.\ Table~\ref{tab:XLIX}) is
-modified:
-\begin{equation}\label{eq:rel-10-branch-shift}
-  k_{a}^{\mathrm{rel}}
-  = k_{a}^{\mathrm{class}}
-    \Bigl[1 + \mathcal{O}\!\bigl(\taupi\,(g^{2}/\nu)^{1/3}\bigr)
-    \Bigr],
-\end{equation}
-with the correction pushing the branch point to larger $k$ (shorter
-wavelengths must be reached before the overdamped regime sets in).
+changes from aperiodic to oscillatory, cf.\ Table~\ref{tab:XLIX})
+differs from the classical case only through the replacement
+$\rho \to \enthalpy$ in the kinematic viscosity
+$\nu = \shearvisc/\enthalpy$.  In the BDNK framework no additional
+corrections from relaxation times appear in the branch-point
+location.
 
 % -----------------------------------------------------------------
-\subsection{Causality of the Israel--Stewart viscous modes}
+\subsection{Causality of the BDNK viscous modes}
 \label{sec:rel-10-94-causality}
 
 In the classical (Navier--Stokes) treatment the viscous mode
@@ -369,53 +355,58 @@ $e^{qz}$ with $q^{2} = k^{2}+n/\nu$ has no upper bound on the
 speed of viscous signal propagation: the parabolic diffusion equation
 admits instantaneous propagation, violating relativistic causality.
 
-The Israel--Stewart theory cures this defect.  The effective
-dispersion relation~\eqref{eq:rel-10-98},
-\[
-  q_{\mathrm{rel}}^{2}
-  = k^{2} + \frac{n}{\nu} + \frac{\taupi\,n^{2}}{\nu},
-\]
-is \emph{hyperbolic} in the high-frequency limit $|n| \to \infty$:
-\begin{equation}\label{eq:rel-10-vvisc}
-  q_{\mathrm{rel}}^{2}
-  \;\xrightarrow{|n|\to\infty}\;
-  \frac{\taupi}{\nu}\,n^{2} + k^{2},
-\end{equation}
-which describes propagation at the \emph{finite} viscous signal speed
-\begin{equation}\label{eq:rel-10-vvisc-speed}
+The BDNK first-order theory cures this defect through a different
+mechanism than the Israel--Stewart relaxation approach.  In BDNK,
+the constitutive relations remain first-order
+($\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$), but causality is
+ensured by working in a \emph{general hydrodynamic frame} (neither
+Landau nor Eckart) with frame coefficients chosen so that the full
+system of conservation equations is \emph{strongly hyperbolic}
+\citep{Bemfica2018,Kovtun2019}.
+
+The BDNK causality conditions require that the transport
+coefficients satisfy coupled nonlinear inequalities.  For the
+shear viscosity the essential constraints are:
+\begin{equation}\label{eq:rel-10-BDNK-causality}
   \boxed{
-  v_{\mathrm{visc}}
-  = \sqrt{\frac{\nu}{\taupi}}
-  = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}}.
+  \shearvisc > 0, \qquad
+  \bulkvisc + \tfrac{2}{3}\shearvisc > 0, \qquad
+  \text{frame coefficients satisfy hyperbolicity conditions.}
   }
 \end{equation}
-Causality requires $v_{\mathrm{visc}} \leq c$, which imposes the
-constraint
-\begin{equation}\label{eq:rel-10-causality-bound}
-  \taupi \;\geq\; \frac{\shearvisc}{\enthalpy\,c^{2}}
-  = \frac{\nu}{c^{2}}.
-\end{equation}
-This is precisely the causality bound derived by Israel and Stewart
-(1979).  So long as~\eqref{eq:rel-10-causality-bound} is satisfied,
-the viscous perturbation modes propagate at subluminal speeds and the
+These conditions guarantee that all characteristic speeds of the
+viscous system satisfy $|v_{\mathrm{char}}| \leq c$, so that the
 initial-value problem for the Rayleigh--Taylor instability is
 well-posed in the relativistic sense.
 
-In the non-relativistic limit $c \to \infty$ the
-bound~\eqref{eq:rel-10-causality-bound} is trivially satisfied for
-any $\taupi > 0$, and $v_{\mathrm{visc}} \to \infty$ as
-$\taupi \to 0$, recovering the instantaneous diffusion of the
-classical theory.
+\paragraph{Comparison with Israel--Stewart.}
+The Israel--Stewart theory achieves causality by introducing
+relaxation times $\taupi > 0$ and an effective viscosity
+$\shearvisc/(1+\taupi n)$, leading to a finite viscous signal
+speed $v_{\mathrm{visc}} = \sqrt{\nu/\taupi} \leq c$.
+The BDNK theory achieves the same goal without extra dynamical
+degrees of freedom: the conservation equations alone suffice,
+provided the frame is chosen correctly.  The two approaches agree
+at the level of physical (hydrodynamic) modes; the difference lies
+in the ultraviolet: IS introduces spurious ``relaxation'' modes
+absent in BDNK.  For the Rayleigh--Taylor problem, which involves
+only the physical modes, the marginal stability conditions are
+identical in both formulations.
+
+In the non-relativistic limit $c \to \infty$, the BDNK frame
+corrections vanish at $\mathcal{O}(v^2/c^2)$ and the standard
+Navier--Stokes viscosity is recovered, exactly as in the classical
+theory.
 
 \paragraph{Summary.}
-The Israel--Stewart formulation achieves three things simultaneously:
+The BDNK formulation achieves three things simultaneously:
 (i)~it removes the acausal instantaneous propagation of the
-Navier--Stokes viscous modes; (ii)~it provides a natural
-ultraviolet regularisation of the Rayleigh--Taylor instability at
-short wavelengths via the frequency-dependent effective
-viscosity~\eqref{eq:rel-10-eta-eff}; and (iii)~it preserves the
-full structure of Chandrasekhar's classical results in the limit
-$c \to \infty$, $\taupi \to 0$.
+Navier--Stokes viscous modes through frame-dependent causality
+bounds; (ii)~it preserves the simple first-order constitutive
+relation $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ without
+introducing frequency-dependent effective viscosities; and
+(iii)~it preserves the full structure of Chandrasekhar's classical
+results in the limit $c \to \infty$.
 
 % -----------------------------------------------------------------
 \subsection{Non-relativistic limit}
@@ -429,16 +420,17 @@ $c \to \infty$:
     \to \rho_{i}$ (rest-mass density dominates).
   \item $\alpha_{i} \to \rho_{i}/(\rho_{1}+\rho_{2})$
     (mass fractions).
-  \item $\taupi \to 0$ (relaxation time vanishes; Navier--Stokes
-    recovered).
-  \item $\nu^{\mathrm{eff}}(n) \to \nu$
-    (frequency-independent viscosity).
-  \item $q_{\mathrm{rel}} \to q = \sqrt{k^{2}+n/\nu}$
+  \item BDNK frame corrections vanish at $\mathcal{O}(v^2/c^2)$;
+    Navier--Stokes recovered.
+  \item $\nu = \shearvisc/\enthalpy \to \mu/\rho$
+    (classical kinematic viscosity).
+  \item $q = \sqrt{k^{2}+n/\nu}$
     (classical~\eqref{eq:10-98}).
   \item $\mathcal{T} \to T$ (classical surface tension).
   \item Equation~\eqref{eq:rel-10-121} $\to$
     equation~\eqref{eq:10-121} (classical quartic).
-  \item $n = k^{2}\nu(y^{2}-1)$ (classical~\eqref{eq:10-124}).
+  \item $n = k^{2}\nu(y^{2}-1)$
+    (classical~\eqref{eq:10-124}; identical in BDNK).
 \end{enumerate}
 Every table, figure, and asymptotic formula of \S\,94 is thus
 faithfully recovered.

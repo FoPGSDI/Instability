@@ -33,7 +33,9 @@ important modifications:
   equations must still respect $v \le c$.  In particular the sound speed
   $c_{\mathrm{s}}^{2} = (\partial p/\partial\varepsilon)_{s}$ must
   satisfy $c_{\mathrm{s}} \le c$, and any dissipative extension must
-  employ the Israel--Stewart formalism rather than parabolic diffusion.
+  employ a causal first-order formalism---such as BDNK
+  (Bemfica--Disconzi--Noronha--Kovtun) theory
+  \citep{Bemfica2018,Kovtun2019}---rather than parabolic diffusion.
 
 \item \textbf{Astrophysical contexts.}  Relativistic Rayleigh--Taylor
   instability is encountered in:
@@ -419,11 +421,14 @@ checked for causal consistency.
   for causal thermodynamics.
 
 \item \textbf{Dissipative corrections.}  Viscosity and heat conduction,
-  when included via the Israel--Stewart formalism (see
-  RELATIVISTIC\_CONVENTIONS.md), introduce finite relaxation times
-  $\tau_{\pi}$, $\tau_{q} > 0$, guaranteeing that even the
-  short-wavelength cutoff from dissipation respects causality---unlike a
-  naive relativistic Navier--Stokes extension.
+  when included via the BDNK first-order causal formalism
+  \citep{Bemfica2018,Kovtun2019}, produce constitutive relations
+  $\Pi^{\mu\nu}=-2\eta\,\sigma^{\mu\nu}$ with transport coefficients
+  constrained by frame-dependent causality bounds, guaranteeing that
+  even the short-wavelength cutoff from dissipation respects
+  causality---unlike a naive relativistic Navier--Stokes extension.
+  No relaxation times $\tau_\pi$ or $\tau_q$ are needed; causality is
+  ensured by the BDNK frame coefficients.
 \end{enumerate}
 
 We conclude that the relativistic RT growth rate~\eqref{eq:rel-10-22} is
@@ -449,5 +454,5 @@ of validity of the incompressible, inviscid approximation.
   RT-unstable.
 \item The growth rate $\sigma$ is real; causality is satisfied
   automatically for the incompressible limit and is enforced by the
-  Israel--Stewart formalism for dissipative corrections.
+  BDNK first-order causal formalism for dissipative corrections.
 \end{enumerate}
