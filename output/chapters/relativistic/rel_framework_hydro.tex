@@ -1,0 +1,747 @@
+%% rel_framework_hydro.tex
+%% Relativistic Hydrodynamics Framework
+%% Agent 1: Foundation chapter for all relativistic modifications
+%%
+%% Conventions: (-,+,+,+) signature, c kept explicit, see RELATIVISTIC_CONVENTIONS.md
+%% Macros assumed from rel_preamble.tex:
+%%   \fvel, \proj, \emt, \covd, \Lf, \cs, \vA, \enthalpy,
+%%   \taupi, \tauq, \bulkvisc, \shearvisc
+
+\chapter{Relativistic Hydrodynamics Framework}
+\label{ch:rel-framework}
+
+In Chandrasekhar's original treatment, all fluid motions are assumed
+non-relativistic: the fluid speed $v$ satisfies $v \ll c$, and the
+pressure contribution to inertia is negligible ($p \ll \varepsilon$,
+where $\varepsilon$ is the energy density including rest mass).  When
+either of these conditions is relaxed---as in neutron star interiors,
+accretion flows near compact objects, or the early universe---special
+relativistic hydrodynamics must replace the classical Euler and
+Navier--Stokes equations.  This chapter develops the relativistic
+framework that underlies every subsequent modification of the
+stability analyses.
+
+%% ====================================================================
+\section{Special Relativistic Perfect-Fluid Hydrodynamics}
+\label{sec:sr-hydro}
+%% ====================================================================
+
+\subsection{Four-velocity and thermodynamic quantities}
+\label{sec:four-vel}
+
+Let $x^{\mu} = (ct, x^i)$ denote Minkowski coordinates with the
+metric
+\begin{equation}
+  \eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1).
+  \label{eq:rel-metric}
+\end{equation}
+The fluid four-velocity is
+\begin{equation}
+  u^{\mu} = \Lf\,(c, v^i),
+  \qquad
+  \Lf = \frac{1}{\sqrt{1 - v^2/c^2}},
+  \label{eq:rel-four-vel}
+\end{equation}
+satisfying the normalization
+\begin{equation}
+  u^{\mu}\, u_{\mu} = -c^2.
+  \label{eq:rel-norm}
+\end{equation}
+The projection tensor orthogonal to $u^{\mu}$ is
+\begin{equation}
+  \Delta^{\mu\nu} = \eta^{\mu\nu} + \frac{u^{\mu}\, u^{\nu}}{c^2},
+  \label{eq:rel-proj}
+\end{equation}
+which satisfies $\Delta^{\mu\nu} u_{\nu} = 0$ and
+$\Delta^{\mu}{}_{\alpha}\,\Delta^{\alpha\nu} = \Delta^{\mu\nu}$.
+
+In the local rest frame of the fluid, the thermodynamic state is
+specified by the energy density $\varepsilon$ (including rest-mass
+energy $\rho_0 c^2$), the isotropic pressure $p$, the temperature
+$T$, and the baryon number density $n$.  The relativistic enthalpy
+density is
+\begin{equation}
+  \enthalpy = \frac{\varepsilon + p}{c^2},
+  \label{eq:rel-enthalpy}
+\end{equation}
+which plays the role of an effective inertial mass density.  In the
+non-relativistic limit, $\enthalpy \to \rho_0$ since $p \ll \rho_0 c^2$.
+
+\subsection{Energy-momentum tensor for a perfect fluid}
+\label{sec:emt-perfect}
+
+The energy-momentum tensor for a perfect relativistic fluid is
+\begin{equation}
+  T^{\mu\nu} = \frac{(\varepsilon + p)}{c^2}\, u^{\mu}\, u^{\nu}
+    + p\, \eta^{\mu\nu}
+    = \enthalpy\, u^{\mu}\, u^{\nu} + p\, \eta^{\mu\nu}.
+  \label{eq:rel-emt-perfect}
+\end{equation}
+This is the unique symmetric tensor that (i) reduces to
+$\mathrm{diag}(\varepsilon, p, p, p)$ in the rest frame and
+(ii) transforms covariantly under Lorentz boosts.
+
+\subsection{Conservation laws}
+\label{sec:conservation}
+
+Two independent conservation laws govern perfect-fluid dynamics:
+
+\medskip\noindent
+\textbf{(a) Baryon number conservation.}  With $\rho_0$ the
+rest-mass density (or equivalently $n$ the baryon number density),
+\begin{equation}
+  \nabla_{\mu}(\rho_0\, u^{\mu}) = 0
+  \qquad\Longleftrightarrow\qquad
+  \partial_{\mu}(\rho_0\, u^{\mu}) = 0.
+  \label{eq:rel-continuity}
+\end{equation}
+In Minkowski space, $\nabla_{\mu} = \partial_{\mu}$.
+
+\medskip\noindent
+\textbf{(b) Energy-momentum conservation.}
+\begin{equation}
+  \partial_{\mu} T^{\mu\nu} = 0.
+  \label{eq:rel-emt-cons}
+\end{equation}
+This single tensorial equation contains both the energy equation
+and the three momentum equations.
+
+\subsection{3+1 decomposition: relativistic Euler equations}
+\label{sec:3plus1}
+
+We decompose \eqref{eq:rel-emt-cons} by projecting along and
+orthogonal to $u^{\mu}$.
+
+\medskip\noindent
+\textbf{Energy equation} ($u_{\nu}\,\partial_{\mu} T^{\mu\nu} = 0$):
+\begin{equation}
+  u^{\mu}\,\partial_{\mu}\varepsilon
+  + (\varepsilon + p)\,\partial_{\mu} u^{\mu} = 0.
+  \label{eq:rel-energy}
+\end{equation}
+This states that the rate of change of energy density in the comoving
+frame is balanced by $p\,dV$ work.
+
+\medskip\noindent
+\textbf{Momentum equation}
+($\Delta^{\nu}{}_{\alpha}\,\partial_{\mu} T^{\mu\alpha} = 0$):
+\begin{equation}
+  \frac{\varepsilon + p}{c^2}\, u^{\mu}\,\partial_{\mu} u^{\nu}
+  + \Delta^{\nu\alpha}\,\partial_{\alpha} p = 0.
+  \label{eq:rel-momentum}
+\end{equation}
+The pre-factor $(\varepsilon + p)/c^2 = \enthalpy$ shows that
+\emph{pressure contributes to inertia} in relativity---the single
+most important qualitative difference from Newtonian fluid dynamics.
+
+Writing $u^{\mu}\,\partial_{\mu} = \Lf\,(\partial_t/c + v^i\,\partial_i)$
+and expanding, the spatial components of
+\eqref{eq:rel-momentum} become
+\begin{equation}
+  \enthalpy\,\Lf^2\!\left(\frac{\partial v^i}{\partial t}
+    + v^j\,\partial_j v^i\right)
+  = -\partial_i p
+    - \frac{v^i}{c^2}\,\frac{\partial p}{\partial t}
+    + O\!\left(\frac{v^2}{c^2}\right)\text{corrections}.
+  \label{eq:rel-euler-spatial}
+\end{equation}
+In the non-relativistic limit ($\Lf \to 1$, $\enthalpy \to \rho_0$,
+$p/c^2 \to 0$), this reduces to Euler's equation
+$\rho_0(\partial_t v^i + v^j\partial_j v^i) = -\partial_i p$.
+
+
+%% ====================================================================
+\section{Dissipative Relativistic Hydrodynamics: Israel--Stewart Theory}
+\label{sec:israel-stewart}
+%% ====================================================================
+
+\subsection{Failure of relativistic Navier--Stokes (Eckart theory)}
+\label{sec:eckart-failure}
+
+The na\"{\i}ve relativistic generalization of the Navier--Stokes
+equations---due to Eckart (1940) and later Landau \&
+Lifshitz---writes the dissipative fluxes as instantaneous,
+algebraic functions of the thermodynamic gradients:
+\begin{equation}
+  \pi^{\mu\nu}_{\mathrm{Eckart}}
+    = -2\,\shearvisc\,\sigma^{\mu\nu},
+  \quad
+  \Pi_{\mathrm{Eckart}} = -\bulkvisc\,\nabla_{\alpha} u^{\alpha},
+  \quad
+  q^{\mu}_{\mathrm{Eckart}}
+    = -\kappa\,\Delta^{\mu\nu}\!\left(\partial_{\nu} T
+      + T\,\frac{u^{\alpha}\partial_{\alpha} u_{\nu}}{c^2}\right),
+  \label{eq:eckart-constitutive}
+\end{equation}
+where $\sigma^{\mu\nu}$ is the shear tensor
+\begin{equation}
+  \sigma^{\mu\nu} = \Delta^{\mu\alpha}\Delta^{\nu\beta}
+    \!\left(\frac{\partial_{\alpha} u_{\beta}
+      + \partial_{\beta} u_{\alpha}}{2}\right)
+    - \frac{1}{3}\,\Delta^{\mu\nu}\,\nabla_{\alpha} u^{\alpha}.
+  \label{eq:shear-tensor}
+\end{equation}
+
+The fundamental problem is that equations
+\eqref{eq:eckart-constitutive}, when substituted into
+$\partial_{\mu}T^{\mu\nu} = 0$, yield \emph{parabolic} partial
+differential equations.  Parabolic equations have infinite signal
+propagation speed: a localized temperature perturbation is felt
+\emph{instantaneously} everywhere, violating relativistic causality
+($v_{\mathrm{signal}} \le c$).
+
+Moreover, the equilibrium state is \emph{unstable} in the
+Eckart theory: small perturbations about a uniform state grow
+exponentially in time, as shown by Hiscock \& Lindblom (1985).
+Both pathologies---acausality and instability---are fatal.
+
+\subsection{Israel--Stewart extended irreversible thermodynamics}
+\label{sec:is-formalism}
+
+Israel \& Stewart (1979) resolved these problems by promoting the
+dissipative quantities $\pi^{\mu\nu}$, $\Pi$, and $q^{\mu}$ to
+\emph{independent dynamical variables} that satisfy relaxation
+equations.  The dissipative part of the energy-momentum tensor is
+\begin{equation}
+  T^{\mu\nu}_{\mathrm{diss}}
+    = \Pi\,\Delta^{\mu\nu}
+    + \pi^{\mu\nu}
+    + \frac{q^{\mu}\,u^{\nu} + q^{\nu}\,u^{\mu}}{c^2},
+  \label{eq:rel-emt-diss}
+\end{equation}
+so the full tensor is
+\begin{equation}
+  T^{\mu\nu} = \varepsilon\,\frac{u^{\mu}\,u^{\nu}}{c^2}
+    + (p + \Pi)\,\Delta^{\mu\nu}
+    + \pi^{\mu\nu}
+    + \frac{q^{\mu}\,u^{\nu} + q^{\nu}\,u^{\mu}}{c^2},
+  \label{eq:rel-emt-full}
+\end{equation}
+with the constraints
+\begin{equation}
+  \pi^{\mu\nu} u_{\nu} = 0,
+  \qquad
+  q^{\mu} u_{\mu} = 0,
+  \qquad
+  \pi^{\mu}{}_{\mu} = 0,
+  \qquad
+  \pi^{\mu\nu} = \pi^{\nu\mu}.
+  \label{eq:diss-constraints}
+\end{equation}
+
+\subsection{Relaxation equations}
+\label{sec:relaxation}
+
+The Israel--Stewart relaxation equations are:
+
+\medskip\noindent
+\textbf{Bulk viscous pressure:}
+\begin{equation}
+  \tau_{\Pi}\, u^{\alpha}\,\nabla_{\alpha}\Pi + \Pi
+    = -\bulkvisc\,\nabla_{\mu} u^{\mu},
+  \label{eq:rel-bulk-relax}
+\end{equation}
+
+\noindent
+\textbf{Shear stress tensor:}
+\begin{equation}
+  \taupi\, u^{\alpha}\,\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
+    + \pi^{\mu\nu}
+    = 2\,\shearvisc\,\sigma^{\mu\nu},
+  \label{eq:rel-shear-relax}
+\end{equation}
+
+\noindent
+\textbf{Heat flux:}
+\begin{equation}
+  \tauq\, u^{\alpha}\,\nabla_{\alpha} q^{\langle\mu\rangle}
+    + q^{\mu}
+    = -\kappa\!\left(\Delta^{\mu\nu}\,\nabla_{\nu} T
+      + T\,\frac{u^{\mu}\, u^{\alpha}\,\nabla_{\alpha} T}{c^2}\right),
+  \label{eq:rel-heat-relax}
+\end{equation}
+where $\tau_{\Pi} > 0$, $\taupi > 0$, $\tauq > 0$ are the
+relaxation times, and the angle-bracket notation denotes
+projection orthogonal to $u^{\mu}$ and, for rank-2 tensors,
+the symmetric tracefree part:
+\begin{equation}
+  A^{\langle\mu\rangle}
+    = \Delta^{\mu}{}_{\nu}\, A^{\nu},
+  \qquad
+  A^{\langle\mu\nu\rangle}
+    = \left[\frac{1}{2}
+      \!\left(\Delta^{\mu}{}_{\alpha}\,\Delta^{\nu}{}_{\beta}
+        + \Delta^{\mu}{}_{\beta}\,\Delta^{\nu}{}_{\alpha}\right)
+      - \frac{1}{3}\,\Delta^{\mu\nu}\,\Delta_{\alpha\beta}\right]
+      A^{\alpha\beta}.
+  \label{eq:proj-notation}
+\end{equation}
+
+\subsection{Causality and hyperbolicity}
+\label{sec:causality}
+
+The key property of the Israel--Stewart system is that the relaxation
+terms convert the equations from \emph{parabolic} (infinite signal
+speed) to \emph{hyperbolic} (finite signal speed).
+
+Consider, for illustration, the heat equation in one spatial
+dimension.  In the Eckart theory, eliminating $q$ between
+Fourier's law $q = -\kappa\,\partial_x T$ and the energy equation
+$\varepsilon_t + q_x = 0$ yields
+\begin{equation}
+  \frac{\partial T}{\partial t}
+    = \frac{\kappa}{c_v}\,\frac{\partial^2 T}{\partial x^2}
+  \qquad\text{(parabolic, acausal)},
+  \label{eq:heat-parabolic}
+\end{equation}
+where $c_v = \partial\varepsilon/\partial T$.
+With the Israel--Stewart relaxation $\tauq\,\dot{q} + q = -\kappa\,\partial_x T$,
+one instead obtains the \emph{telegraph equation}:
+\begin{equation}
+  \tauq\,\frac{\partial^2 T}{\partial t^2}
+  + \frac{\partial T}{\partial t}
+  = \frac{\kappa}{c_v}\,\frac{\partial^2 T}{\partial x^2}
+  \qquad\text{(hyperbolic, causal)}.
+  \label{eq:heat-telegraph}
+\end{equation}
+This is a damped wave equation with signal speed
+\begin{equation}
+  v_{\mathrm{heat}} = \sqrt{\frac{\kappa}{\tauq\, c_v}}
+    \le c,
+  \label{eq:heat-signal-speed}
+\end{equation}
+which is finite and bounded by $c$ provided the relaxation time
+satisfies
+\begin{equation}
+  \tauq \ge \frac{\kappa}{c_v\, c^2}.
+  \label{eq:tauq-bound}
+\end{equation}
+Similar causality bounds hold for $\taupi$ and $\tau_{\Pi}$.  The
+full Israel--Stewart system is a symmetric hyperbolic system of
+conservation laws, guaranteeing well-posedness, finite propagation
+speeds, and stability of equilibrium states.
+
+
+%% ====================================================================
+\section{Linearized Perturbation Theory}
+\label{sec:linearized}
+%% ====================================================================
+
+\subsection{Background state}
+\label{sec:background}
+
+We consider small perturbations about a static, uniform equilibrium
+state characterized by
+\begin{equation}
+  \varepsilon = \varepsilon_0,
+  \quad
+  p = p_0,
+  \quad
+  \rho_0 = \text{const},
+  \quad
+  u^{\mu} = (c, 0, 0, 0),
+  \quad
+  T = T_0.
+  \label{eq:background}
+\end{equation}
+All dissipative fluxes vanish in equilibrium:
+$\pi^{\mu\nu}_0 = 0$, $\Pi_0 = 0$, $q^{\mu}_0 = 0$.
+
+\subsection{Perturbation ansatz}
+\label{sec:perturbation-ansatz}
+
+Write
+\begin{equation}
+  \varepsilon = \varepsilon_0 + \delta\varepsilon,
+  \quad
+  p = p_0 + \delta p,
+  \quad
+  u^{\mu} = (c, \delta v^i),
+  \label{eq:perturbations}
+\end{equation}
+where $\delta\varepsilon$, $\delta p$, $\delta v^i$ are first-order
+quantities.  The four-velocity normalization
+\eqref{eq:rel-norm} is automatically satisfied to first order since
+$u_{\mu}\,u^{\mu} = -c^2 + |\delta v|^2 = -c^2 + O(2)$.
+
+\subsection{Linearized equations for a perfect fluid}
+\label{sec:linearized-eqs}
+
+Linearizing the continuity equation \eqref{eq:rel-continuity}:
+\begin{equation}
+  \frac{\partial\,\delta\rho_0}{\partial t}
+    + \rho_0\,\partial_i\,\delta v^i = 0.
+  \label{eq:lin-continuity}
+\end{equation}
+
+Linearizing the energy equation \eqref{eq:rel-energy}:
+\begin{equation}
+  \frac{\partial\,\delta\varepsilon}{\partial t}
+    + (\varepsilon_0 + p_0)\,\partial_i\,\delta v^i = 0.
+  \label{eq:lin-energy}
+\end{equation}
+
+Linearizing the momentum equation \eqref{eq:rel-momentum}:
+\begin{equation}
+  \frac{\varepsilon_0 + p_0}{c^2}\,
+    \frac{\partial\,\delta v^i}{\partial t}
+  = -\partial_i\,\delta p.
+  \label{eq:lin-momentum}
+\end{equation}
+
+Note the factor $(\varepsilon_0 + p_0)/c^2$ in the momentum
+equation: pressure contributes to the effective inertia.
+
+\subsection{Sound waves and dispersion relation}
+\label{sec:sound-waves}
+
+For an isentropic process, $\delta p = \cs^2\,\delta\varepsilon$
+where
+\begin{equation}
+  \cs^2 = \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s}
+  \label{eq:sound-speed-def}
+\end{equation}
+is the relativistic sound speed squared.  Seeking plane-wave
+solutions $\propto \exp[i(\mathbf{k}\cdot\mathbf{x} - \omega t)]$
+and combining \eqref{eq:lin-energy}--\eqref{eq:lin-momentum},
+we obtain the dispersion relation
+\begin{equation}
+  \boxed{\omega^2 = \cs^2\, k^2.}
+  \label{eq:rel-dispersion}
+\end{equation}
+This is identical in form to the non-relativistic result, but the
+sound speed is defined differently: through
+$(\partial p/\partial\varepsilon)_s$ rather than
+$(\partial p/\partial\rho)_s$.
+
+\subsection{Causality bound on the sound speed}
+\label{sec:causality-bound}
+
+Since no signal may propagate faster than light,
+\begin{equation}
+  \cs^2 \le c^2
+  \qquad\Longleftrightarrow\qquad
+  \left(\frac{\partial p}{\partial\varepsilon}\right)_{\!s} \le 1
+  \quad\text{(in units where $c = 1$)}.
+  \label{eq:causality-cs}
+\end{equation}
+This places a non-trivial constraint on the equation of state.  For
+an ideal gas with adiabatic index $\hat{\gamma}$, one can show
+$\cs^2 = \hat{\gamma}\,p/(\varepsilon + p)$, which automatically
+satisfies $\cs^2 < c^2$ for $\hat{\gamma} \le 2$.  For a radiation
+fluid ($\varepsilon = 3p$), $\cs^2 = c^2/3$.
+
+\subsection{Dissipative corrections to the dispersion relation}
+\label{sec:diss-dispersion}
+
+Including Israel--Stewart dissipation
+(Sec.~\ref{sec:israel-stewart}), the dispersion relation for
+longitudinal modes becomes
+\begin{equation}
+  \omega^2
+  + i\omega\,\frac{(\varepsilon_0 + p_0)^{-1}}%
+    {\left(\frac{4}{3}\shearvisc + \bulkvisc\right)}\,k^2
+  - \cs^2\, k^2
+  = O(\taupi\,\omega^2 k^2),
+  \label{eq:diss-dispersion}
+\end{equation}
+where the $O(\taupi\,\omega^2 k^2)$ term arises from the
+relaxation time and is responsible for restoring causality at high
+frequencies.  At low frequencies ($\omega\,\taupi \ll 1$), one
+recovers the standard viscous damping; at high frequencies, the
+modes become propagating (with speed bounded by $c$) rather than
+purely diffusive.
+
+
+%% ====================================================================
+\section{Non-Relativistic Limit}
+\label{sec:nr-limit}
+%% ====================================================================
+
+\subsection{Systematic expansion in $v/c$}
+\label{sec:vc-expansion}
+
+To recover Chandrasekhar's original equations, we take
+$v/c \to 0$ systematically.  The relevant limits are:
+
+\begin{enumerate}
+\item \textbf{Lorentz factor:} $\Lf = 1 + \tfrac{1}{2}v^2/c^2
+  + O(v^4/c^4) \to 1$.
+
+\item \textbf{Energy density:}
+  $\varepsilon = \rho_0 c^2 + \rho_0 e + O(v^2/c^2)$,
+  where $e$ is the specific internal energy, so
+  $\varepsilon + p \approx \rho_0 c^2\bigl(1 + e/c^2 + p/(\rho_0 c^2)\bigr)$.
+
+\item \textbf{Enthalpy density:}
+  $\enthalpy = (\varepsilon + p)/c^2 \to \rho_0
+  + O(p/c^2, e/c^2)$.
+
+\item \textbf{Four-velocity:}
+  $u^{\mu} = (c, v^i) + O(v^2/c)$.
+
+\item \textbf{Sound speed:}
+  $\cs^2 = (\partial p/\partial\varepsilon)_s
+  = (\partial p/\partial\rho)_s / (1 + e/c^2 + p/(\rho c^2))
+  \to (\partial p/\partial\rho)_s + O(c^{-2})$.
+\end{enumerate}
+
+\subsection{Recovery of Euler and Navier--Stokes equations}
+\label{sec:euler-recovery}
+
+In the limit $v/c \to 0$:
+
+\medskip\noindent
+\textbf{Continuity:}  Equation \eqref{eq:rel-continuity} becomes
+\begin{equation}
+  \frac{\partial\rho_0}{\partial t}
+    + \nabla\cdot(\rho_0\,\mathbf{v}) = 0.
+  \label{eq:nr-continuity}
+\end{equation}
+
+\noindent
+\textbf{Momentum:}  Equation \eqref{eq:rel-momentum} becomes
+\begin{equation}
+  \rho_0\!\left(\frac{\partial\mathbf{v}}{\partial t}
+    + (\mathbf{v}\cdot\nabla)\mathbf{v}\right)
+  = -\nabla p,
+  \label{eq:nr-euler}
+\end{equation}
+which is Euler's equation as used throughout Chandrasekhar's book.
+
+\noindent
+\textbf{Dissipative terms:}  The Israel--Stewart relaxation
+equations reduce to the standard constitutive laws of Newtonian
+fluid mechanics:
+\begin{align}
+  \pi^{ij} &\to -\shearvisc\!\left(\partial_i v_j + \partial_j v_i
+    - \tfrac{2}{3}\delta_{ij}\,\nabla\cdot\mathbf{v}\right),
+  \label{eq:nr-shear}\\[4pt]
+  \Pi &\to -\bulkvisc\,\nabla\cdot\mathbf{v},
+  \label{eq:nr-bulk}\\[4pt]
+  q^i &\to -\kappa\,\partial_i T,
+  \label{eq:nr-fourier}
+\end{align}
+in the limit $\taupi, \tauq, \tau_{\Pi} \to 0$ (instantaneous
+relaxation), recovering the Navier--Stokes equations.
+
+\subsection{Relativistic correction terms at $O(v^2/c^2)$}
+\label{sec:rel-corrections}
+
+Retaining the first relativistic corrections, the momentum equation
+becomes
+\begin{equation}
+  \rho_0\!\left(1 + \frac{e + p/\rho_0}{c^2}\right)
+    \!\left(\frac{\partial\mathbf{v}}{\partial t}
+    + (\mathbf{v}\cdot\nabla)\mathbf{v}\right)
+  = -\nabla p
+    - \frac{\mathbf{v}}{c^2}\,\frac{\partial p}{\partial t}
+    + O(v^4/c^4).
+  \label{eq:post-newtonian-momentum}
+\end{equation}
+The two correction terms are:
+\begin{enumerate}
+\item The factor $(1 + (e + p/\rho_0)/c^2)$ enhancing the
+  effective inertia (pressure and internal energy contribute to
+  mass--energy).
+\item The $-(\mathbf{v}/c^2)\,\partial_t p$ term, which couples the
+  time derivative of pressure to the momentum equation---absent in
+  the Newtonian theory.
+\end{enumerate}
+These corrections become significant when $p/(\rho_0 c^2) \gtrsim 0.01$,
+as occurs in neutron star interiors.
+
+\subsection{Emergence of Chandrasekhar's equations}
+\label{sec:chandrasekhar-limit}
+
+Adding the gravitational acceleration $\mathbf{g}$ and the viscous
+stress tensor $\tau_{ij}$ in the Newtonian limit, we recover
+precisely Chandrasekhar's starting point (Chapter~I of the original
+text):
+\begin{align}
+  \frac{\partial\rho}{\partial t}
+    + \nabla\cdot(\rho\,\mathbf{v}) &= 0,
+  \label{eq:chandra-cont}\\[4pt]
+  \rho\!\left(\frac{\partial\mathbf{v}}{\partial t}
+    + (\mathbf{v}\cdot\nabla)\mathbf{v}\right)
+  &= -\nabla p + \rho\,\mathbf{g}
+    + \nabla\cdot\boldsymbol{\tau},
+  \label{eq:chandra-mom}\\[4pt]
+  \rho T\!\left(\frac{\partial s}{\partial t}
+    + \mathbf{v}\cdot\nabla s\right)
+  &= \nabla\cdot(\kappa\,\nabla T)
+    + \boldsymbol{\tau}:\nabla\mathbf{v}.
+  \label{eq:chandra-entropy}
+\end{align}
+Every stability analysis in the original book departs from these
+equations.  The relativistic generalizations derived above replace
+them when $v/c$ or $p/(\rho c^2)$ is not negligible.
+
+
+%% ====================================================================
+\section{Relativistic Boussinesq Approximation}
+\label{sec:rel-boussinesq}
+%% ====================================================================
+
+\subsection{Classical Boussinesq approximation}
+\label{sec:classical-boussinesq}
+
+In the classical (Newtonian) Boussinesq approximation, density
+variations are neglected everywhere except in the buoyancy term.
+One writes $\rho = \rho_0(1 - \alpha\,\delta T)$, where
+$\alpha = -\rho_0^{-1}(\partial\rho/\partial T)_p$ is the thermal
+expansion coefficient, and the fluid is treated as incompressible
+($\nabla\cdot\mathbf{v} = 0$) in all other terms.
+
+\subsection{Relativistic generalization}
+\label{sec:rel-boussinesq-gen}
+
+In a relativistic fluid, the key modification is that \emph{pressure
+contributes to the inertial mass density}: the Newtonian $\rho$ is
+replaced by $\enthalpy = (\varepsilon + p)/c^2$ in the momentum
+equation.  The relativistic Boussinesq approximation therefore
+proceeds as follows.
+
+\medskip\noindent
+\textbf{Step 1: Decompose the enthalpy density.}
+\begin{equation}
+  \enthalpy = \enthalpy_0 + \delta\enthalpy,
+  \qquad
+  \enthalpy_0 = \frac{\varepsilon_0 + p_0}{c^2},
+  \label{eq:rel-bouss-decomp}
+\end{equation}
+where $\delta\enthalpy$ contains contributions from both thermal and
+pressure perturbations:
+\begin{equation}
+  \delta\enthalpy
+    = \frac{\delta\varepsilon + \delta p}{c^2}
+    = \frac{1}{c^2}\!\left[
+      \left(\frac{\partial\varepsilon}{\partial T}\right)_{\!p} \delta T
+      + \left(1 + \frac{1}{c^2}\frac{\partial\varepsilon}{\partial p}\bigg|_T\right) \delta p
+    \right].
+  \label{eq:rel-dw}
+\end{equation}
+
+\medskip\noindent
+\textbf{Step 2: Define the relativistic thermal expansion coefficient.}
+\begin{equation}
+  \alpha_{\mathrm{rel}}
+    = -\frac{1}{\enthalpy_0}
+      \left(\frac{\partial\enthalpy}{\partial T}\right)_{\!p}
+    = -\frac{1}{\varepsilon_0 + p_0}
+      \left(\frac{\partial\varepsilon}{\partial T}\right)_{\!p}.
+  \label{eq:rel-alpha}
+\end{equation}
+In the non-relativistic limit, $\varepsilon \approx \rho c^2$,
+so $\alpha_{\mathrm{rel}} \to -(\partial\rho/\partial T)_p / \rho_0
+= \alpha$, recovering the classical coefficient.
+
+\medskip\noindent
+\textbf{Step 3: Relativistic Boussinesq equations.}
+
+Applying the Boussinesq approximation---neglecting $\delta\enthalpy$
+everywhere except in the buoyancy term, and imposing the
+incompressibility condition $\partial_i\,\delta v^i = 0$---the
+linearized relativistic equations become:
+\begin{align}
+  \partial_i\,\delta v^i &= 0,
+  \label{eq:rel-bouss-div}\\[4pt]
+  \enthalpy_0\,\frac{\partial\,\delta v^i}{\partial t}
+  &= -\partial_i\,\delta p
+    + \delta\enthalpy\, g^i
+    + \enthalpy_0\,\nu\,\nabla^2\delta v^i,
+  \label{eq:rel-bouss-mom}\\[4pt]
+  \frac{\partial\,\delta T}{\partial t}
+  &= \kappa_T\,\nabla^2\delta T
+    - \delta v^i\,\partial_i T_0,
+  \label{eq:rel-bouss-temp}
+\end{align}
+where $\nu = \shearvisc/\enthalpy_0$ is the relativistic kinematic
+viscosity and $\kappa_T$ is the thermal diffusivity.
+
+The buoyancy term in \eqref{eq:rel-bouss-mom} is
+\begin{equation}
+  \delta\enthalpy\, g^i
+    = -\enthalpy_0\,\alpha_{\mathrm{rel}}\,\delta T\, g^i
+      + \frac{\delta p}{c^2}\, g^i.
+  \label{eq:rel-buoyancy}
+\end{equation}
+The second term, $\delta p\, g^i / c^2$, is purely relativistic
+and represents the gravitational coupling of pressure
+perturbations.  It is absent in Chandrasekhar's classical treatment
+and becomes important when $p_0/(\rho_0 c^2)$ is not negligible.
+
+\subsection{Relativistic Rayleigh number}
+\label{sec:rel-rayleigh}
+
+Defining the Rayleigh number in terms of the relativistic quantities:
+\begin{equation}
+  \Ra_{\mathrm{rel}}
+    = \frac{\alpha_{\mathrm{rel}}\, g\, d^3\,\Delta T}%
+      {\nu\,\kappa_T}
+    = \frac{\alpha\, g\, d^3\,\Delta T}{\nu\,\kappa_T}
+      \left[1 + O\!\left(\frac{p_0}{\rho_0 c^2}\right)\right],
+  \label{eq:rel-rayleigh}
+\end{equation}
+where $d$ is the layer depth and $\Delta T$ the imposed temperature
+difference.  The relativistic correction enters through
+$\alpha_{\mathrm{rel}} \neq \alpha$ and through the redefinition
+of kinematic viscosity $\nu = \shearvisc/\enthalpy_0$ rather than
+$\shearvisc/\rho_0$.
+
+\subsection{Implications for stability thresholds}
+\label{sec:bouss-implications}
+
+The critical Rayleigh number $\Ra_c$ for the onset of convection is
+unchanged in form (it is determined by the eigenvalue problem for
+the linearized equations), but its \emph{value in terms of physical
+parameters} differs:
+\begin{enumerate}
+\item The replacement $\rho_0 \to \enthalpy_0 = (\varepsilon_0 + p_0)/c^2$
+  increases the effective inertia, making the fluid harder to
+  destabilize for a given temperature gradient.
+\item The pressure-buoyancy coupling [$\delta p\, g/c^2$ in
+  \eqref{eq:rel-buoyancy}] provides an additional destabilizing
+  mechanism absent in the classical theory.
+\item The modified thermal expansion $\alpha_{\mathrm{rel}}$ can be
+  significantly different from $\alpha$ in relativistic regimes.
+\end{enumerate}
+These effects are quantified for specific physical systems in the
+subsequent chapters.
+
+%% ====================================================================
+\section{Summary of Key Equations}
+\label{sec:summary-eqs}
+%% ====================================================================
+
+For reference, the principal equations of this chapter are collected
+here.
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+\textbf{Equation} & \textbf{Relativistic} & \textbf{Newtonian limit} \\
+\hline
+Inertia & $(\varepsilon+p)/c^2$ & $\rho_0$ \\
+$T^{\mu\nu}$ (perfect) &
+  $(\varepsilon+p)\,u^{\mu}u^{\nu}/c^2 + p\,\eta^{\mu\nu}$ &
+  $\rho v^i v^j + p\,\delta^{ij}$ \\
+Momentum & $\enthalpy\, u^{\mu}\partial_{\mu} u^{\nu}
+  = -\Delta^{\nu\alpha}\partial_{\alpha}p$ &
+  $\rho(\partial_t + \mathbf{v}\cdot\nabla)\mathbf{v} = -\nabla p$ \\
+Sound speed & $\cs^2 = (\partial p/\partial\varepsilon)_s \le c^2$ &
+  $c_s^2 = (\partial p/\partial\rho)_s$ \\
+Dissipation & Israel--Stewart (hyperbolic) & Navier--Stokes (parabolic) \\
+Buoyancy & $-\enthalpy_0\,\alpha_{\mathrm{rel}}\,\delta T\, g
+  + \delta p\, g/c^2$ &
+  $-\rho_0\,\alpha\,\delta T\, g$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip\noindent
+All subsequent chapters build upon these equations.  Chapter-specific
+modifications (magnetic fields, rotation, stratification) are
+developed as extensions of this framework, preserving the structure
+of the energy-momentum conservation law $\partial_{\mu}T^{\mu\nu} = 0$
+and the Israel--Stewart causality constraints.
