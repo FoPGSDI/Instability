@@ -1,0 +1,558 @@
+% =======================================================================
+% Relativistic Extension of Chapter X, Section 95
+% Effect of Rotation on the Rayleigh--Taylor Instability
+%
+% Conventions: (-,+,+,+) signature, c explicit, u^mu u_mu = -c^2
+% Requires: rel_preamble.tex macros
+% =======================================================================
+
+\chapter{Effect of Rotation on the Relativistic Rayleigh--Taylor
+  Instability}\label{ch:rel-10-95}
+
+This chapter extends the analysis of \S95 --- the effect of rotation
+on the Rayleigh--Taylor (RT) instability --- to the special- and
+general-relativistic regime.  When the rotational velocity $\Omega R$
+or the gravitational potential become relativistic, the Newtonian
+treatment of Chandrasekhar must be replaced by a covariant formulation
+in which (i)~the inertial mass density $\rho$ is replaced by the
+relativistic enthalpy density $\enthalpy/c^{2} = (\edensity + p)/c^{2}$,
+(ii)~the Coriolis force acquires a covariant form tied to the vorticity
+of the background 4-velocity, and (iii)~the effective gravity includes
+both centrifugal and gravitational contributions, with frame-dragging
+corrections in general relativity.  The speed of light~$c$ is kept
+explicit so that the classical limit ($c\to\infty$) is recovered
+transparently.
+
+% ======================================================================
+\section{Relativistic perturbation equations with rotation}
+\label{sec:rel-95-eqs}
+% ======================================================================
+
+\subsection{Background configuration}
+
+We consider a stratified relativistic perfect fluid in a static
+gravitational field, rotating uniformly with angular velocity
+$\Omega$ about the vertical ($z$-)~axis.  In the co-rotating frame
+the equilibrium 4-velocity is
+\begin{equation}
+  u^{\mu}_{(0)} = \Lf_{\Omega}\,(c,\,0,\,0,\,0),
+  \qquad
+  \Lf_{\Omega} = \frac{1}{\sqrt{1 - \Omega^{2}R^{2}/c^{2}}},
+  \label{eq:rel95-bg4vel}
+\end{equation}
+where $R$ is the cylindrical radius.  The fluid is characterised by its
+energy density $\edensity(z)$, pressure $p(z)$, and rest-mass density
+$\rho_{0}(z)$, with the relativistic enthalpy density
+\begin{equation}
+  \enthalpy = \edensity + p.
+  \label{eq:rel95-enthalpy}
+\end{equation}
+In the Newtonian limit ($c\to\infty$) we have
+$\enthalpy/c^{2}\to\rho_{0}$, and all results below reduce to those
+of \S95.
+
+\subsection{Linearised equations in the co-rotating frame}
+
+We denote perturbation velocities by $(u,v,w)$ and the Eulerian
+perturbations of pressure and density by $\delta p$ and $\delta\rho$.
+In the relativistic co-rotating frame the linearised momentum equations
+generalising Chandrasekhar's~\eqref{eq:10-137}--\eqref{eq:10-141}
+become
+\begin{gather}
+  \frac{\enthalpy}{c^{2}}\frac{\partial u}{\partial t}
+    - 2\frac{\enthalpy}{c^{2}}\,\Omega\,\Lf_{\Omega}^{2}\,v
+    = -\frac{\partial}{\partial x}\,\delta p,
+  \label{eq:rel95-mom-x}\\[6pt]
+  \frac{\enthalpy}{c^{2}}\frac{\partial v}{\partial t}
+    + 2\frac{\enthalpy}{c^{2}}\,\Omega\,\Lf_{\Omega}^{2}\,u
+    = -\frac{\partial}{\partial y}\,\delta p,
+  \label{eq:rel95-mom-y}\\[6pt]
+  \frac{\enthalpy}{c^{2}}\frac{\partial w}{\partial t}
+    = -\frac{\partial}{\partial z}\,\delta p
+      - g_{\mathrm{eff}}\,\delta\!\left(\frac{\enthalpy}{c^{2}}\right)
+      + \sum_{s}T_{s}\!\left(\frac{\partial^{2}}{\partial x^{2}}
+        + \frac{\partial^{2}}{\partial y^{2}}\right)\!\delta z_{s}
+        \,\delta(z-z_{s}),
+  \label{eq:rel95-mom-z}\\[6pt]
+  \delta\!\left(\frac{\enthalpy}{c^{2}}\right)
+    = -\frac{w}{n}\,D\!\left(\frac{\enthalpy}{c^{2}}\right),
+  \label{eq:rel95-cont}\\[6pt]
+  \frac{\partial u}{\partial x}
+    + \frac{\partial v}{\partial y}
+    + \frac{\partial w}{\partial z} = 0.
+  \label{eq:rel95-div}
+\end{gather}
+Three relativistic modifications are visible:
+
+\begin{enumerate}
+\item The inertial density $\rho$ is replaced everywhere by
+  $\enthalpy/c^{2}$.
+
+\item The Coriolis coupling carries a Lorentz factor
+  $\Lf_{\Omega}^{2} = (1-\Omega^{2}R^{2}/c^{2})^{-1}$, which
+  enhances the Coriolis force when the co-rotation speed is
+  relativistic.  This is the covariant manifestation of the
+  relativistic Coriolis effect:
+  \begin{equation}
+    a^{\mu}_{\text{Cor}}
+      = -\frac{2}{c^{2}}\,\epsilon^{\mu\nu\alpha\beta}\,
+        u_{\nu}\,\Omega_{\alpha}\,\delta u_{\beta},
+    \label{eq:rel95-coriolis}
+  \end{equation}
+  where $\Omega_{\alpha}$ is the rotation vorticity 4-vector.
+
+\item The density perturbation $\delta\rho$ is replaced by the
+  perturbation in $\enthalpy/c^{2}$, and the gravitational
+  acceleration is the \emph{effective gravity}~$g_{\mathrm{eff}}$
+  (see \S\ref{sec:rel-95-geff} below).
+\end{enumerate}
+
+\subsection{Normal-mode reduction}
+
+For perturbations $\propto \exp[i(k_{x}x+k_{y}y)+nt]$ with
+$k^{2}=k_{x}^{2}+k_{y}^{2}$, the procedure of \S95 carries through
+with the replacements $\rho\to\enthalpy/c^{2}$ and
+$\Omega\to\Omega_{\mathrm{rel}}=\Omega\,\Lf_{\Omega}^{2}$.
+Define the relativistic $z$-vorticity
+\begin{equation}
+  \zeta = ik_{y}v - ik_{x}u.
+  \label{eq:rel95-vort}
+\end{equation}
+Combining the $x$- and $y$-equations as in the classical analysis, we
+obtain the relativistic counterpart of~\eqref{eq:10-150}:
+\begin{equation}
+  \zeta = \frac{2\Omega_{\mathrm{rel}}\,Dw}{n},
+  \label{eq:rel95-zeta}
+\end{equation}
+and the counterpart of~\eqref{eq:10-151}:
+\begin{equation}
+  \frac{\enthalpy}{c^{2}}\,n\!
+  \left(1+\frac{4\Omega_{\mathrm{rel}}^{2}}{n^{2}}\right)\!Dw
+    = -k^{2}\,\delta p.
+  \label{eq:rel95-press}
+\end{equation}
+Defining the \emph{relativistic effective wavenumber}
+\begin{equation}
+  \boxed{\;
+  \kappa_{\mathrm{rel}}^{2}
+    = \frac{k^{2}}{1 + 4\Omega_{\mathrm{rel}}^{2}/n^{2}},
+  \qquad
+  \Omega_{\mathrm{rel}} = \Omega\,\Lf_{\Omega}^{2}
+    = \frac{\Omega}{1-\Omega^{2}R^{2}/c^{2}},\;}
+  \label{eq:rel95-kappa}
+\end{equation}
+the master equation becomes
+\begin{equation}
+  D\!\left(\frac{\enthalpy}{c^{2}}\,Dw\right)
+    - \kappa_{\mathrm{rel}}^{2}\,\frac{\enthalpy}{c^{2}}\,w
+    = -\frac{g_{\mathrm{eff}}\,\kappa_{\mathrm{rel}}^{2}}{n^{2}}
+      \left\{D\!\left(\frac{\enthalpy}{c^{2}}\right)
+        - \frac{k^{2}}{g_{\mathrm{eff}}}\sum_{s}T_{s}\,
+          \delta(z-z_{s})\right\}w.
+  \label{eq:rel95-master}
+\end{equation}
+This is formally identical to the non-rotating relativistic RT equation
+with $k^{2}$ replaced by $\kappa_{\mathrm{rel}}^{2}$ --- precisely
+as in the Newtonian case (\S95, equation~\eqref{eq:10-156}).
+
+% ======================================================================
+\section{Relativistic effective gravity: centrifugal, gravitational,
+  and frame-dragging contributions}
+\label{sec:rel-95-geff}
+% ======================================================================
+
+The effective gravitational acceleration felt by the fluid in the
+co-rotating frame is, in general relativity,
+\begin{equation}
+  g_{\mathrm{eff}}
+    = g_{\mathrm{grav}}
+      + \Omega^{2}R\,\Lf_{\Omega}^{2}
+      + g_{\mathrm{fd}},
+  \label{eq:rel95-geff}
+\end{equation}
+where:
+\begin{itemize}
+\item $g_{\mathrm{grav}}$ is the gravitational acceleration (Schwarzschild:
+  $g_{\mathrm{grav}}=GM/(r^{2}\sqrt{1-2GM/rc^{2}})$; in flat spacetime
+  we take it as a given external field).
+
+\item $\Omega^{2}R\,\Lf_{\Omega}^{2}$ is the relativistic centrifugal
+  acceleration.  In the Newtonian limit this reduces to $\Omega^{2}R$.
+
+\item $g_{\mathrm{fd}}$ is the \emph{frame-dragging} (Lense--Thirring)
+  contribution, present when the gravitating body itself rotates.  For
+  a Kerr spacetime with angular momentum parameter~$a$,
+  \begin{equation}
+    g_{\mathrm{fd}} \sim \frac{2GJ}{c^{2}r^{3}}\,\Omega,
+    \label{eq:rel95-framedrag}
+  \end{equation}
+  where $J$ is the angular momentum of the central body.  This term
+  has no Newtonian analogue and vanishes as $c\to\infty$.
+\end{itemize}
+
+\begin{relcorrection}
+The effective gravity~\eqref{eq:rel95-geff} differs from the
+Newtonian expression $g + \Omega^{2}R$ in two ways: the centrifugal
+term acquires a Lorentz factor $\Lf_{\Omega}^{2}$, diverging as
+$\Omega R\to c$; and a frame-dragging term $g_{\mathrm{fd}}$ appears
+in general relativity around rotating central masses.  Both
+corrections vanish in the limit $c\to\infty$.
+\end{relcorrection}
+
+% ======================================================================
+\section{Two uniform fluids with rotation: relativistic Coriolis
+  modification}
+\label{sec:rel-95-twofluids}
+% ======================================================================
+
+\subsection{Dispersion relation}
+
+Consider two uniform relativistic fluids of enthalpy densities
+$\enthalpy_{1}$ and $\enthalpy_{2}$ ($\enthalpy_{2} > \enthalpy_{1}$
+in the lower half-space) separated by a horizontal boundary at
+$z=0$, with surface tension~$T$.  Since
+equation~\eqref{eq:rel95-master} is formally identical to the
+non-rotating case with $k\to\kappa_{\mathrm{rel}}$, we write
+down directly the relativistic dispersion relation (cf.\
+\S92(a) and equation~\eqref{eq:10-159}):
+\begin{equation}
+  \boxed{\;
+  n^{2} = g_{\mathrm{eff}}\,\kappa_{\mathrm{rel}}\!
+  \left[
+    \frac{\enthalpy_{2}/c^{2}-\enthalpy_{1}/c^{2}}
+         {\enthalpy_{2}/c^{2}+\enthalpy_{1}/c^{2}}
+    - \frac{k^{2}T}
+           {g_{\mathrm{eff}}\,(\enthalpy_{1}/c^{2}+\enthalpy_{2}/c^{2})}
+  \right].
+  \;}
+  \label{eq:rel95-disp-two}
+\end{equation}
+Substituting for $\kappa_{\mathrm{rel}}$ from~\eqref{eq:rel95-kappa},
+this becomes
+\begin{equation}
+  n^{2}\!\left(1+\frac{4\Omega_{\mathrm{rel}}^{2}}{n^{2}}\right)^{1/2}
+    = g_{\mathrm{eff}}\,k\!
+    \left[
+      \frac{\enthalpy_{2}-\enthalpy_{1}}
+           {\enthalpy_{2}+\enthalpy_{1}}
+      - \frac{k^{2}T}
+             {g_{\mathrm{eff}}\,(\enthalpy_{1}+\enthalpy_{2})/c^{2}}
+    \right].
+  \label{eq:rel95-disp-two-exp}
+\end{equation}
+Define the Atwood number in terms of enthalpy,
+\begin{equation}
+  \mathcal{A}_{\mathrm{rel}}
+    = \frac{\enthalpy_{2} - \enthalpy_{1}}
+           {\enthalpy_{2} + \enthalpy_{1}},
+  \label{eq:rel95-atwood}
+\end{equation}
+and let $n_{0,\mathrm{rel}}^{2}$ denote the value of $n^{2}$ in the
+absence of rotation (i.e.\ the relativistic RT growth rate without
+rotation).  Then equation~\eqref{eq:rel95-disp-two-exp} can be
+written as
+\begin{equation}
+  n^{2}\sqrt{1+4\Omega_{\mathrm{rel}}^{2}/n^{2}}
+    = n_{0,\mathrm{rel}}^{2}.
+  \label{eq:rel95-n-vs-n0}
+\end{equation}
+This has exactly the same algebraic structure as the Newtonian
+relation~\eqref{eq:10-161}, and its solutions are therefore
+\begin{align}
+  n^{2} &= -2\Omega_{\mathrm{rel}}^{2}
+    + \sqrt{4\Omega_{\mathrm{rel}}^{4}
+      + n_{0,\mathrm{rel}}^{4}}
+  \quad\text{if } n_{0,\mathrm{rel}}^{2} > 0,
+  \label{eq:rel95-sol-unstab}\\[4pt]
+  n^{2} &= -2\Omega_{\mathrm{rel}}^{2}
+    - \sqrt{4\Omega_{\mathrm{rel}}^{4}
+      + n_{0,\mathrm{rel}}^{4}}
+  \quad\text{if } n_{0,\mathrm{rel}}^{2} < 0.
+  \label{eq:rel95-sol-stab}
+\end{align}
+
+\subsection{Stability properties}
+
+From equations~\eqref{eq:rel95-sol-unstab}
+and~\eqref{eq:rel95-sol-stab} we draw the same qualitative
+conclusions as in \S95:
+\begin{enumerate}
+\item Rotation does not convert an unstable configuration into a
+  stable one, or vice versa: $\operatorname{sgn}(n^{2})
+  = \operatorname{sgn}(n_{0,\mathrm{rel}}^{2})$.
+
+\item For stable configurations ($n^{2}<0$), the oscillation
+  frequency satisfies
+  \begin{equation}
+    |n^{2}| \geq 4\Omega_{\mathrm{rel}}^{2}
+    \quad\text{as}\quad n_{0,\mathrm{rel}}^{2}\to 0^{-},
+    \label{eq:rel95-freq-bound}
+  \end{equation}
+  i.e.\ the frequency of stable oscillations cannot be less than
+  $2\Omega_{\mathrm{rel}}$, the relativistic inertial-wave frequency.
+
+\item The relativistic correction enters through
+  $\Omega_{\mathrm{rel}} = \Omega\,\Lf_{\Omega}^{2}>\Omega$.
+  Thus relativistic rotation is \emph{more effective} at modifying
+  growth rates than Newtonian rotation at the same $\Omega$.
+  In the non-relativistic limit ($\Omega R\ll c$),
+  $\Omega_{\mathrm{rel}}\to\Omega$ and all results of \S95(a) are
+  recovered.
+\end{enumerate}
+
+\begin{relcorrection}
+Compared with the Newtonian dispersion
+relation~\eqref{eq:10-160}, the relativistic version has three
+modifications: (1)~$\rho_{1,2}\to\enthalpy_{1,2}/c^{2}$;
+(2)~$\Omega\to\Omega_{\mathrm{rel}}=\Omega\,\Lf_{\Omega}^{2}$;
+(3)~$g\to g_{\mathrm{eff}}$ including centrifugal Lorentz enhancement
+and frame-dragging.  All three vanish in the limit $c\to\infty$.
+\end{relcorrection}
+
+% ======================================================================
+\section{Exponentially varying density with rotation}
+\label{sec:rel-95-exp}
+% ======================================================================
+
+\subsection{Relativistic exponential stratification}
+
+We now consider a fluid whose enthalpy density varies exponentially,
+\begin{equation}
+  \frac{\enthalpy(z)}{c^{2}}
+    = \frac{\enthalpy_{0}}{c^{2}}\,e^{\beta z},
+  \label{eq:rel95-exp-strat}
+\end{equation}
+confined between rigid boundaries at $z=0$ and $z=d$.  By the same
+reasoning as in \S95(b) (using the formal equivalence
+$k\to\kappa_{\mathrm{rel}}$), the relativistic dispersion relation
+generalising~\eqref{eq:10-165} is
+\begin{equation}
+  \frac{g_{\mathrm{eff}}\,\beta}{n^{2}}
+    = 1 + \frac{\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2}}
+               {\kappa_{\mathrm{rel}}^{2}\,d^{2}},
+  \label{eq:rel95-exp-disp}
+\end{equation}
+where $m=1,2,3,\ldots$ is the vertical mode number.  Substituting
+$\kappa_{\mathrm{rel}}$ from~\eqref{eq:rel95-kappa},
+\begin{equation}
+  \frac{g_{\mathrm{eff}}\,\beta}{n^{2}}
+    = 1 + \frac{\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2}}{k^{2}d^{2}}
+      \!\left(1+\frac{4\Omega_{\mathrm{rel}}^{2}}{n^{2}}\right).
+  \label{eq:rel95-exp-disp2}
+\end{equation}
+Solving for $n^{2}$,
+\begin{equation}
+  \boxed{\;
+  n^{2} = n_{0,\mathrm{rel}}^{2}\!
+  \left(1 - \frac{4\Omega_{\mathrm{rel}}^{2}}{g_{\mathrm{eff}}\,\beta}
+    \cdot\frac{\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2}}{k^{2}d^{2}}
+  \right),\;}
+  \label{eq:rel95-exp-n2}
+\end{equation}
+where
+\begin{equation}
+  n_{0,\mathrm{rel}}^{2}
+    = \frac{g_{\mathrm{eff}}\,\beta}
+           {1+(\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2})/(k^{2}d^{2})}
+  \label{eq:rel95-n0rel}
+\end{equation}
+is the non-rotating relativistic growth rate.
+
+\subsection{Modified stability boundaries}
+
+From~\eqref{eq:rel95-exp-n2} we deduce:
+
+\begin{enumerate}
+\item If $\beta<0$ (heavy fluid on top in the enthalpy sense), then
+  $n_{0,\mathrm{rel}}^{2}<0$ and the stratification is \emph{stable}
+  for all wave numbers.  The stable oscillation frequency satisfies
+  \begin{equation}
+    n^{2}\to n_{0,\mathrm{rel}}^{2}\;\text{for}\;k\to\infty,
+    \qquad
+    n^{2}\to -4\Omega_{\mathrm{rel}}^{2}\;\text{for}\;k\to 0.
+    \label{eq:rel95-stab-limits}
+  \end{equation}
+
+\item If $\beta>0$ (unstable stratification), rotation stabilises all
+  wave numbers below a critical value~$k_{d,\mathrm{rel}}$ given by
+  \begin{equation}
+    \boxed{\;
+    k_{d,\mathrm{rel}}^{2}\,d^{2}
+      = \frac{4\Omega_{\mathrm{rel}}^{2}}
+             {g_{\mathrm{eff}}\,\beta}
+        \,(\tfrac{1}{4}\beta^{2}d^{2}+m^{2}\pi^{2}).\;}
+    \label{eq:rel95-kd}
+  \end{equation}
+  The minimum critical wave number (over $m$, at $m=1$) is
+  \begin{equation}
+    k_{d,\mathrm{rel},\min}^{2}
+      = \frac{4\Omega_{\mathrm{rel}}^{2}}
+             {g_{\mathrm{eff}}\,\beta\,d^{2}}
+        \,(\tfrac{1}{4}\beta^{2}d^{2}+\pi^{2}).
+    \label{eq:rel95-kd-min}
+  \end{equation}
+\end{enumerate}
+
+\begin{relcorrection}
+Compared with the Newtonian result~\eqref{eq:10-169}, the
+relativistic critical wave number~\eqref{eq:rel95-kd} is modified in
+two ways:
+\begin{itemize}
+\item $\Omega^{2}\to\Omega_{\mathrm{rel}}^{2}
+  = \Omega^{2}\Lf_{\Omega}^{4}$: relativistic rotation is more
+  effective at stabilising large-scale modes.
+\item $g\to g_{\mathrm{eff}}$: the effective gravity includes
+  centrifugal and frame-dragging terms.
+\end{itemize}
+As a function of $\beta$, the minimum of $k_{d,\mathrm{rel},\min}$
+still occurs at $\beta = 2\pi/d$, exactly as in the Newtonian case.
+The relativistic correction factor is
+\begin{equation}
+  \frac{k_{d,\mathrm{rel}}^{2}}{k_{d}^{2}}
+    = \frac{\Omega_{\mathrm{rel}}^{2}}{\Omega^{2}}
+      \cdot\frac{g}{g_{\mathrm{eff}}}
+    = \frac{\Lf_{\Omega}^{4}\,g}
+           {g+\Omega^{2}R\,\Lf_{\Omega}^{2}+g_{\mathrm{fd}}}
+    \;\xrightarrow{c\to\infty}\; 1.
+  \label{eq:rel95-correction-ratio}
+\end{equation}
+\end{relcorrection}
+
+% ======================================================================
+\section{Modified growth rates}\label{sec:rel-95-growth}
+% ======================================================================
+
+For the two-fluid problem, the unstable growth rate
+from~\eqref{eq:rel95-sol-unstab} can be written
+\begin{equation}
+  n_{\mathrm{rel}}^{2}
+    = -2\Omega_{\mathrm{rel}}^{2}
+      + \sqrt{4\Omega_{\mathrm{rel}}^{4}
+        + \bigl(g_{\mathrm{eff}}\,k\,\mathcal{A}_{\mathrm{rel}}
+          \bigr)^{2}},
+  \label{eq:rel95-growth-explicit}
+\end{equation}
+where we have set $T=0$ for simplicity.  In the limits:
+
+\begin{itemize}
+\item \textbf{No rotation} ($\Omega=0$):
+  $n_{\mathrm{rel}}^{2} = g_{\mathrm{eff}}\,k\,
+  \mathcal{A}_{\mathrm{rel}}$, the standard relativistic RT growth
+  rate.
+
+\item \textbf{Strong rotation}
+  ($\Omega_{\mathrm{rel}}^{2}\gg g_{\mathrm{eff}}k\,
+  \mathcal{A}_{\mathrm{rel}}$):
+  \begin{equation}
+    n_{\mathrm{rel}}^{2}
+      \approx \frac{(g_{\mathrm{eff}}\,k\,
+        \mathcal{A}_{\mathrm{rel}})^{2}}
+        {4\Omega_{\mathrm{rel}}^{2}},
+    \label{eq:rel95-strong-rot}
+  \end{equation}
+  so the growth rate is suppressed as $\Omega_{\mathrm{rel}}^{-1}$
+  --- stronger suppression than in the Newtonian case where the
+  suppression goes as $\Omega^{-1}$.
+
+\item \textbf{Newtonian limit} ($c\to\infty$):
+  $\Omega_{\mathrm{rel}}\to\Omega$,
+  $g_{\mathrm{eff}}\to g$,
+  $\mathcal{A}_{\mathrm{rel}}\to(\rho_{2}-\rho_{1})/(\rho_{2}+\rho_{1})$,
+  and~\eqref{eq:rel95-growth-explicit} reduces
+  to~\eqref{eq:10-162}.
+\end{itemize}
+
+% ======================================================================
+\section{Causality check}\label{sec:rel-95-causality}
+% ======================================================================
+
+\begin{causalitycheck}
+We verify that the perturbation equations and their solutions respect
+relativistic causality.
+
+\begin{enumerate}
+\item \textbf{Phase velocity bound.}  The phase velocity of
+  perturbations is $v_{\mathrm{ph}} = |n|/k$.  From
+  equation~\eqref{eq:rel95-growth-explicit}, in the absence of
+  surface tension,
+  \begin{equation}
+    \frac{n^{2}}{k^{2}}
+      \leq g_{\mathrm{eff}}\,\frac{\mathcal{A}_{\mathrm{rel}}}{k}
+      \leq g_{\mathrm{eff}}\,\frac{1}{k}.
+  \end{equation}
+  For the RT instability, $n^{2}>0$ corresponds to exponential growth
+  (not propagation), so there is no propagating mode whose phase speed
+  could exceed~$c$.
+
+\item \textbf{Group velocity bound.}  The stable oscillatory modes
+  ($n^{2}<0$, i.e.\ $n=i\omega$) have group velocity
+  \begin{equation}
+    v_{g} = \frac{\partial\omega}{\partial k}.
+  \end{equation}
+  From~\eqref{eq:rel95-sol-stab}, in the limit $k\to\infty$,
+  $\omega^{2}\to g_{\mathrm{eff}}k$, so
+  $v_{g}\sim\sqrt{g_{\mathrm{eff}}/(4k)}\to 0$.  The group velocity
+  remains bounded and vanishes for large $k$, well below~$c$.
+
+\item \textbf{Co-rotation speed.}  The formulation requires
+  $\Omega R < c$, i.e.\ $\Lf_{\Omega}$ remains finite.  This is
+  automatically satisfied for any physical configuration:\ a fluid
+  element at cylindrical radius~$R$ cannot co-rotate at or above
+  the speed of light.
+
+\item \textbf{Effective wavenumber.}  From~\eqref{eq:rel95-kappa},
+  $\kappa_{\mathrm{rel}}^{2}>0$ requires
+  $n^{2}>0$ or $n^{2}<-4\Omega_{\mathrm{rel}}^{2}$, which is
+  guaranteed by equations~\eqref{eq:rel95-sol-unstab}
+  and~\eqref{eq:rel95-sol-stab}.  No modes lie in the forbidden gap
+  $-4\Omega_{\mathrm{rel}}^{2}<n^{2}<0$.
+
+\item \textbf{No superluminal signal.}  The system describes an
+  incompressible fluid (divergence-free velocity), which is an
+  idealisation valid when $v\ll\cs$.  In a fully compressible
+  treatment, the fastest signal is the sound speed~$\cs<c$, and the
+  RT/rotation corrections do not introduce any new characteristics
+  beyond those already present in the relativistic Euler equations.
+\end{enumerate}
+
+\textbf{Verdict:} All perturbation modes satisfy $v_{\mathrm{signal}}
+\leq c$.  The formulation is causal.
+\end{causalitycheck}
+
+% ======================================================================
+\section{Summary and non-relativistic limit}
+\label{sec:rel-95-summary}
+% ======================================================================
+
+The relativistic generalisation of \S95 is achieved by three
+systematic replacements:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Newtonian} & \textbf{Relativistic} & \textbf{Origin}\\
+\hline
+$\rho$ & $\enthalpy/c^{2}$ & relativistic inertia\\
+$\Omega$ & $\Omega_{\mathrm{rel}}
+  = \Omega/(1-\Omega^{2}R^{2}/c^{2})$ & covariant Coriolis\\
+$g$ & $g_{\mathrm{eff}}
+  = g_{\mathrm{grav}}+\Omega^{2}R\Lf_{\Omega}^{2}+g_{\mathrm{fd}}$
+  & centrifugal $+$ frame-dragging\\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent
+All dispersion relations, stability criteria, and growth rates of
+\S95 carry over with these replacements.  The principal physical
+consequence is that relativistic rotation is \emph{more effective}
+at modifying the RT instability than its Newtonian counterpart at
+the same angular velocity~$\Omega$, owing to the factor
+$\Lf_{\Omega}^{2}\geq 1$.
+
+In the non-relativistic limit $c\to\infty$:
+$\enthalpy/c^{2}\to\rho$,\;
+$\Omega_{\mathrm{rel}}\to\Omega$,\;
+$g_{\mathrm{eff}}\to g$,\;
+$g_{\mathrm{fd}}\to 0$,
+and every equation in this chapter reduces to its counterpart in \S95.
