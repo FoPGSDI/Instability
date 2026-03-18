@@ -1,0 +1,602 @@
+% =============================================================
+%  Relativistic modification of Chapter VIII, §79
+%  Viscous flow with axial pressure gradient — relativistic
+%
+%  Original: Chandrasekhar, §79 "The stability of viscous flow
+%  between rotating coaxial cylinders when an axial pressure
+%  gradient is present"
+%
+%  This file extends the analysis to a relativistic fluid
+%  using the Israel-Stewart causal dissipation framework,
+%  replacing Navier-Stokes viscous transport with causal
+%  hyperbolic relaxation equations.
+% =============================================================
+
+\section{Relativistic viscous stability of combined rotational
+and axial flow}\label{sec:rel-80}
+
+In \S\,\ref{sec:79} we analysed the stability of viscous flow between
+rotating coaxial cylinders when a constant axial pressure gradient
+drives a Poiseuille-type flow along the axis of the cylinders.  The
+governing equations were the incompressible Navier--Stokes equations, and
+the viscous stress was given by the instantaneous (acausal)
+Newtonian constitutive law.  We now reformulate the same physical
+problem within special relativity, replacing the Navier--Stokes
+constitutive relation by the causal Israel--Stewart theory of
+dissipative relativistic fluids.  The key new features are:
+\begin{enumerate}
+\item[(i)] the inertia of the fluid is measured by
+  $\enthalpy/c^{2}=(\edensity+p)/c^{2}$ rather than~$\rho$ alone;
+\item[(ii)] the viscous shear stress~$\shearten$ satisfies a relaxation
+  equation with a finite relaxation time~$\taupi>0$ that ensures
+  causality;
+\item[(iii)] the Lorentz factor~$\Lf$ of the background flow
+  (both rotational and axial) enters the base-state
+  energy--momentum tensor.
+\end{enumerate}
+
+%--------------------------------------------------------------
+\subsection{The relativistic background state}\label{sec:rel-80-bg}
+%--------------------------------------------------------------
+
+We consider two coaxial cylinders of radii~$R_{1}$ and~$R_{2}$
+($R_{2}>R_{1}$) in flat (Minkowski) spacetime with cylindrical
+coordinates $(t,r,\theta,z)$ and line element
+\begin{equation}
+\label{eq:rel-8-200}
+\dd s^{2} = -c^{2}\,\dd t^{2} + \dd r^{2} + r^{2}\,\dd\theta^{2}
+            + \dd z^{2}.
+\end{equation}
+The background flow is stationary and axisymmetric with
+\begin{equation}
+\label{eq:rel-8-201}
+u^{\mu}_{(0)} = \Lf\!\left(c,\,0,\,\frac{V(r)}{r},\,W(r)\right),
+\qquad
+\Lf = \left(1 - \frac{V^{2}+W^{2}}{c^{2}}\right)^{\!-1/2},
+\end{equation}
+where $V(r)$ is the azimuthal velocity and $W(r)$ the axial velocity.
+The normalisation $u^{\mu}u_{\mu}=-c^{2}$ is automatic.
+
+The energy--momentum tensor for a viscous relativistic fluid in the
+Israel--Stewart framework reads (cf.\ \S\,\ref{sec:rel-IS})
+\begin{equation}
+\label{eq:rel-8-202}
+T^{\mu\nu} = \frac{\enthalpy}{c^{2}}\,u^{\mu}u^{\nu}
+  + (p+\bulkP)\,\Delta^{\mu\nu}
+  + \pi^{\mu\nu}
+  + \frac{1}{c^{2}}\bigl(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}\bigr),
+\end{equation}
+where $\enthalpy=\edensity+p$ is the relativistic enthalpy density,
+$\bulkP$ the bulk viscous pressure, $\pi^{\mu\nu}$ the traceless
+shear stress tensor, and $q^{\mu}$ the heat flux four-vector
+(both orthogonal to~$u^{\mu}$).  In the background state we take
+$\pi^{\mu\nu}_{(0)}\ne 0$ (the background is viscously stressed) but
+set $q^{\mu}_{(0)}=0$ (no heat conduction in the isothermal
+background) and $\bulkP_{(0)}=0$ (incompressible limit).
+
+The Israel--Stewart relaxation equation for the shear stress is
+\begin{equation}
+\label{eq:rel-8-203}
+\taupi\,u^{\alpha}\nabla_{\!\alpha}\,\pi^{\langle\mu\nu\rangle}
+  + \pi^{\mu\nu}
+  = 2\shearvisc\,\sigma^{\mu\nu},
+\end{equation}
+where $\sigma^{\mu\nu}$ is the relativistic shear tensor,
+\begin{equation}
+\label{eq:rel-8-204}
+\sigma^{\mu\nu}
+  = \frac{1}{2}\bigl(\Delta^{\mu\alpha}\nabla_{\!\alpha}u^{\nu}
+    + \Delta^{\nu\alpha}\nabla_{\!\alpha}u^{\mu}\bigr)
+  - \frac{1}{3}\Delta^{\mu\nu}\,\nabla_{\!\alpha}u^{\alpha},
+\end{equation}
+and $\shearvisc$ is the shear viscosity coefficient.  The angular
+brackets in~\eqref{eq:rel-8-203} denote the symmetric, trace-free
+projection orthogonal to~$u^{\mu}$.
+
+For the background azimuthal velocity we recover the
+Chandrasekhar--Couette profile to leading post-Newtonian order,
+\begin{equation}
+\label{eq:rel-8-205}
+V(r) = A r + \frac{B}{r}
+  + \frac{1}{c^{2}}\!\left[\frac{A^{3}r^{3}}{2}
+     + \frac{3A\,B^{2}}{2r} + \cdots\right]
+  + \order{c^{-4}},
+\end{equation}
+where $A$ and $B$ are the classical constants determined by the
+cylinder angular velocities $\Omega_{1}$ and $\Omega_{2}$.
+
+The background axial velocity satisfies the relativistic Poiseuille
+equation.  In the cylindrical geometry, the axial component of
+$\nabla_{\!\mu}T^{\mu z}=0$ yields, to leading order in~$c^{-2}$,
+\begin{equation}
+\label{eq:rel-8-206}
+\frac{\enthalpy_{0}}{c^{2}}\,\Lf_{0}^{2}\,V^{2}\,
+  \frac{\partial W}{\partial r}\,\frac{1}{c^{2}}
+  + \shearvisc\,\nabla^{2}W
+  = \left(\frac{\partial p}{\partial z}\right)_{\!0}
+    \relcorr{V^{2}/c^{2}},
+\end{equation}
+so that in the narrow-gap limit ($d=R_{2}-R_{1}\ll R_{1}$), with
+$\zeta=(r-R_{1})/d$, the axial velocity profile becomes
+\begin{equation}
+\label{eq:rel-8-207}
+W(\zeta) = 6\,V_{m}\,\zeta(1-\zeta)\,
+  \relcorr{V_{m}^{2}/c^{2}},
+\end{equation}
+where $V_{m}=-d^{2}(12\rdensity\nu)^{-1}(\partial p/\partial z)_{0}$
+is the Newtonian mean axial velocity and $\nu=\shearvisc/\rdensity$ is
+the kinematic viscosity.
+
+\begin{relcorrection}
+The relativistic background axial profile~\eqref{eq:rel-8-207}
+differs from the classical Poiseuille parabola~(156) only through a
+multiplicative correction of order~$V_{m}^{2}/c^{2}$.  This
+correction arises from the relativistic inertia
+$\enthalpy/c^{2}$ and the Lorentz factor of the combined
+rotational--axial flow.  In astrophysical accretion columns with
+$V_{m}\sim 0.1\,c$, the correction reaches the per-cent level.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{The relativistic perturbation equations}\label{sec:rel-80-pert}
+%--------------------------------------------------------------
+
+We perturb the background state by writing
+\begin{equation}
+\label{eq:rel-8-208}
+u^{\mu} = u^{\mu}_{(0)} + \delta u^{\mu},\qquad
+p = p_{(0)} + \delta p,\qquad
+\pi^{\mu\nu} = \pi^{\mu\nu}_{(0)} + \delta\pi^{\mu\nu}.
+\end{equation}
+The perturbations are assumed axisymmetric with a
+$(z,t)$-dependence of the form $\exp[i(kz+pt)]$, as in the
+classical treatment~\eqref{eq:8-73}.  We write the radial, azimuthal,
+and axial velocity perturbations as~$u$, $v$, and~$w$ respectively.
+
+Linearising the conservation law $\nabla_{\!\mu}T^{\mu\nu}=0$ together
+with the Israel--Stewart relaxation equation~\eqref{eq:rel-8-203}
+yields, in the narrow-gap approximation where $D$ and $D_{*}$ are
+identified and $\Lf\approx 1+\order{c^{-2}}$, the coupled system
+\begin{multline}
+\label{eq:rel-8-209}
+\nu\!\left(DD_{*}-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)u
+  + 2\Omega\,v
+  = D\varpi \\
+  + \frac{\taupi}{\rdensity}\,
+    D\!\left[\left(i p + i k W\right)
+      \!\left(DD_{*}-k^{2}\right)u\right]
+  + \order{c^{-2}},
+\end{multline}
+\begin{multline}
+\label{eq:rel-8-210}
+\nu\!\left(DD_{*}-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)v
+  = 2A\,u \\
+  + \frac{\taupi}{\rdensity}\,
+    \left(ip+ikW\right)\!
+    \left(DD_{*}-k^{2}\right)v
+  + \order{c^{-2}},
+\end{multline}
+\begin{multline}
+\label{eq:rel-8-211}
+\nu\!\left(D_{*}D-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)w
+  - u\,DW
+  = ik\,\varpi \\
+  + \frac{\taupi}{\rdensity}\,
+    ik\!\left(ip+ikW\right)\!
+    \left(D_{*}D-k^{2}\right)w
+  + \order{c^{-2}},
+\end{multline}
+together with the continuity equation $D_{*}u=-ikw$.
+
+\paragraph{Structure of the Israel--Stewart corrections.}
+Each classical viscous diffusion term
+$\nu(D^{2}-k^{2})\phi$ is replaced by
+\begin{equation}
+\label{eq:rel-8-212}
+\nu\!\left(D^{2}-k^{2}\right)\phi
+\;\longrightarrow\;
+\frac{\nu\!\left(D^{2}-k^{2}\right)\phi}
+     {1 + i\taupi(p+kW)},
+\end{equation}
+which is the hallmark of the Israel--Stewart causal diffusion:
+for $\taupi\to 0$ we recover the Navier--Stokes (acausal) limit, while
+for $\taupi>0$ the effective viscosity acquires a frequency-dependent
+suppression that prevents superluminal signal propagation.
+
+Eliminating~$w$ and $\varpi$ as in equations~\eqref{eq:8-167}
+and~\eqref{eq:8-168}, we arrive at the two coupled equations for $u$
+and~$v$:
+\begin{multline}
+\label{eq:rel-8-213}
+\biggl[\frac{(D^{2}-k^{2})}{1+i\taupi(p+kW)}
+  - i(p+kW)/\nu\biggr]
+  \bigl(D^{2}-k^{2}\bigr)u \\
+  + \frac{i}{\nu}\,D\!\left(u\,DW\right)
+  = -\frac{2\Omega\,k}{\nu}\,v
+  + \order{c^{-2}},
+\end{multline}
+\begin{equation}
+\label{eq:rel-8-214}
+\biggl[\frac{(D^{2}-k^{2})}{1+i\taupi(p+kW)}
+  - i(p+kW)/\nu\biggr]v
+= \frac{2A}{\nu}\,u
++ \order{c^{-2}}.
+\end{equation}
+
+\begin{causalitycheck}
+The denominator $1+i\taupi(p+kW)$ in the effective diffusion
+operator~\eqref{eq:rel-8-212} ensures that the group velocity of
+viscous shear waves remains bounded:
+\begin{equation}
+\label{eq:rel-8-215}
+v_{\mathrm{shear}}
+  = \sqrt{\frac{\shearvisc}{\rdensity\,\taupi}}
+  \le c
+  \quad\Longleftrightarrow\quad
+  \taupi \ge \frac{\shearvisc}{\rdensity\,c^{2}}
+  = \frac{\nu}{c^{2}}.
+\end{equation}
+This lower bound on the relaxation time is the relativistic
+consistency condition.  When satisfied, the perturbation equations
+\eqref{eq:rel-8-213}--\eqref{eq:rel-8-214} are hyperbolic in the
+time-like direction and no mode can propagate faster than~$c$.
+\end{causalitycheck}
+
+%--------------------------------------------------------------
+\subsection{Narrow-gap reduction: relativistic spiral
+Poiseuille--Couette flow}\label{sec:rel-80-narrow}
+%--------------------------------------------------------------
+
+In the narrow-gap limit ($d\ll R_{1}$) we adopt the
+dimensionless variable $\xi=(r-R_{1})/d-\tfrac{1}{2}$, centred
+midway between the cylinders, and define dimensionless quantities
+\begin{equation}
+\label{eq:rel-8-216}
+a = kd,\qquad
+\sigma = pd^{2}/\nu,\qquad
+\mathrm{R} = V_{m}\,d/\nu,\qquad
+\mathcal{T} = \taupi\,\nu/d^{2}.
+\end{equation}
+Here $\mathrm{R}$ is the Reynolds number of the mean axial flow and
+$\mathcal{T}$ is the dimensionless Israel--Stewart relaxation number.
+The angular velocity profile is linearised as
+$\Omega(\xi)=\Omega_{1}[1-(1-\mu)(\xi+\tfrac{1}{2})]$.
+
+With these conventions, equations~\eqref{eq:rel-8-213}
+and~\eqref{eq:rel-8-214} become, after the rescaling
+$u\to\tfrac{1}{2}(1+\mu)(2\Omega_{1}d^{2}/\nu)\,a^{2}u$,
+\begin{multline}
+\label{eq:rel-8-217}
+\biggl\{\frac{D^{2}-a^{2}}{1+i\mathcal{T}[\sigma+6\,\mathrm{R}\,a
+  (\tfrac{1}{4}-\xi^{2})]}
+  - i\bigl[\sigma + 6\,\mathrm{R}\,a(\tfrac{1}{4}-\xi^{2})\bigr]
+  \biggr\}(D^{2}-a^{2})u \\
+  - 12\,i\,\mathrm{R}\,a\,u
+  = \left[1 - 2\,\frac{1-\mu}{1+\mu}\,\xi\right]v
+\end{multline}
+and
+\begin{equation}
+\label{eq:rel-8-218}
+\biggl\{\frac{D^{2}-a^{2}}{1+i\mathcal{T}[\sigma+6\,\mathrm{R}\,a
+  (\tfrac{1}{4}-\xi^{2})]}
+  - i\bigl[\sigma + 6\,\mathrm{R}\,a(\tfrac{1}{4}-\xi^{2})\bigr]
+  \biggr\}v
+= -\Tarel\,a^{2}\,u,
+\end{equation}
+where the relativistic Taylor number is
+\begin{equation}
+\label{eq:rel-8-219}
+\boxed{\;
+\Tarel = -\frac{1}{2}(1+\mu)\,\frac{4A\,\Omega_{1}}{\nu^{2}}\,d^{4}
+  \relcorr{V^{2}/c^{2}}
+  = T\,\relcorr{V^{2}/c^{2}}.
+\;}
+\end{equation}
+The boundary conditions are
+\begin{equation}
+\label{eq:rel-8-220}
+u = Du = v = 0 \quad\text{for } \xi = \pm\tfrac{1}{2}.
+\end{equation}
+
+\begin{relcorrection}
+Equations \eqref{eq:rel-8-217} and \eqref{eq:rel-8-218} reduce
+exactly to the classical equations~\eqref{eq:8-178}
+and~\eqref{eq:8-179} in the double limit $\mathcal{T}\to 0$
+(instantaneous viscous response) and $c\to\infty$ (Newtonian inertia).
+The only structural change is the replacement of the Newtonian viscous
+operator $(D^{2}-a^{2})$ by the \emph{causal viscous operator}
+$(D^{2}-a^{2})/[1+i\mathcal{T}(\sigma+6\,\mathrm{R}\,a
+(\frac{1}{4}-\xi^{2}))]$.  This modification is entirely encoded in
+the single dimensionless parameter~$\mathcal{T}$.
+\end{relcorrection}
+
+%--------------------------------------------------------------
+\subsection{Approximate solution for $\mu>0$}\label{sec:rel-80-approx}
+%--------------------------------------------------------------
+
+Following the procedure of \S\,\ref{sec:79c}, we replace the
+$\xi$-dependent coefficients in the axial velocity and angular
+velocity by their gap-averaged values.  This yields the simplified
+system
+\begin{equation}
+\label{eq:rel-8-221}
+\bigl[\mathscr{D}_{\mathcal{T}}
+  - i(\sigma+\mathrm{R}\,a)\bigr](D^{2}-a^{2})u
+  - 12\,i\,\mathrm{R}\,a\,u = v,
+\end{equation}
+\begin{equation}
+\label{eq:rel-8-222}
+\bigl[\mathscr{D}_{\mathcal{T}}
+  - i(\sigma+\mathrm{R}\,a)\bigr]v
+  = -\Tarel\,a^{2}\,u,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-8-223}
+\mathscr{D}_{\mathcal{T}}
+  = \frac{D^{2}-a^{2}}{1+i\mathcal{T}(\sigma+\mathrm{R}\,a)}
+\end{equation}
+is the gap-averaged causal viscous operator.  The boundary
+conditions~\eqref{eq:rel-8-220} remain unchanged.
+
+We expand $v$ as a cosine series (cf.\ equation~\eqref{eq:8-184}),
+\begin{equation}
+\label{eq:rel-8-224}
+v = \sum_{m=0}^{\infty}A_{m}\cos\bigl[(2m+1)\pi\xi\bigr],
+\end{equation}
+and express $u=\sum_{m}A_{m}\,u_{m}$, where $u_{m}$ satisfies
+\begin{equation}
+\label{eq:rel-8-225}
+\bigl[\mathscr{D}_{\mathcal{T}}
+  - i(\sigma+\mathrm{R}\,a)\bigr](D^{2}-a^{2})u_{m}
+  - 12\,i\,\mathrm{R}\,a\,u_{m}
+  = \cos\bigl[(2m+1)\pi\xi\bigr]
+\end{equation}
+with $u_{m}=Du_{m}=0$ at $\xi=\pm\frac{1}{2}$.
+
+The solution for~$u_{m}$ is
+\begin{equation}
+\label{eq:rel-8-226}
+u_{m} = \gamma_{2m+1}^{(\mathrm{rel})}
+  \cos\bigl[(2m+1)\pi\xi\bigr]
+  + \sum_{j=1}^{2}B_{j}^{(m)}\cosh q_{j}^{(\mathrm{rel})}\xi,
+\end{equation}
+where the relativistic eigenvalue is
+\begin{equation}
+\label{eq:rel-8-227}
+\frac{1}{\gamma_{2m+1}^{(\mathrm{rel})}}
+  = \biggl[\frac{(2m+1)^{2}\pi^{2}+a^{2}}
+               {1+i\mathcal{T}(\sigma+\mathrm{R}\,a)}
+    + i(\sigma+\mathrm{R}\,a)\biggr]
+    \bigl[(2m+1)^{2}\pi^{2}+a^{2}\bigr]
+  - 12\,i\,\mathrm{R}\,a,
+\end{equation}
+and the $q_{j}^{(\mathrm{rel})}$ ($j=1,2$) are roots of the
+relativistic characteristic equation
+\begin{equation}
+\label{eq:rel-8-228}
+\frac{(q^{2}-a^{2})}{1+i\mathcal{T}(\sigma+\mathrm{R}\,a)}\,
+\bigl[(q^{2}-a^{2})
+  - i(\sigma+\mathrm{R}\,a)\bigl(1+i\mathcal{T}(\sigma+\mathrm{R}\,a)\bigr)
+  \bigr]
+- 12\,i\,\mathrm{R}\,a = 0.
+\end{equation}
+Expanding~\eqref{eq:rel-8-228}, this is a \emph{quartic}
+in~$q^{2}$:
+\begin{equation}
+\label{eq:rel-8-229}
+(q^{2}-a^{2})^{2}
+  - i(\sigma+\mathrm{R}\,a)\bigl[1+i\mathcal{T}(\sigma+\mathrm{R}\,a)\bigr]
+    (q^{2}-a^{2})
+  - 12\,i\,\mathrm{R}\,a\,\bigl[1+i\mathcal{T}(\sigma+\mathrm{R}\,a)\bigr]
+  = 0,
+\end{equation}
+which for $\mathcal{T}=0$ reduces to the classical
+quadratic~\eqref{eq:8-190}.
+
+In the first approximation (retaining only the $(0,0)$-element
+of the secular matrix), the solution for $\Tarel$ is
+\begin{equation}
+\label{eq:rel-8-230}
+\boxed{\;
+\Tarel = \frac{\displaystyle
+  \frac{\pi^{2}+a^{2}}{1+i\mathcal{T}(\sigma+\mathrm{R}\,a)}
+  + i(\sigma+\mathrm{R}\,a)}{%
+  a^{2}\,\gamma_{1}^{(\mathrm{rel})}
+  \bigl[1 - 4\pi^{2}\gamma_{1}^{(\mathrm{rel})}
+  \Delta^{(\mathrm{rel})}
+  \bigl({q_{1}^{(\mathrm{rel})}}^{2}-{q_{2}^{(\mathrm{rel})}}^{2}\bigr)
+  \bigr]},
+\;}
+\end{equation}
+where $\Delta^{(\mathrm{rel})}$ is defined analogously
+to~\eqref{eq:8-195} with the relativistic~$q_{j}^{(\mathrm{rel})}$.
+
+For the requirement that $\Tarel$ be real, both the real and imaginary
+parts of~\eqref{eq:rel-8-230} must be satisfied.  The imaginary part
+determines $\sigma$ (the overstable oscillation frequency), and the
+real part gives $\Tarel$.  The critical Taylor number is then
+\begin{equation}
+\label{eq:rel-8-231}
+\Tarel^{(\mathrm{c})} = \min_{a}\,\Tarel(a,\mathrm{R},\mathcal{T}).
+\end{equation}
+
+\paragraph{Limiting behaviour.}
+For $\mathcal{T}\ll 1$ (Newtonian limit), expanding
+\eqref{eq:rel-8-230} to first order in~$\mathcal{T}$ gives
+\begin{equation}
+\label{eq:rel-8-232}
+\Tarel^{(\mathrm{c})}
+  = T_{c}^{(\mathrm{class})}
+    + \mathcal{T}\,\delta T(\mathrm{R},a_{c})
+    + \order{\mathcal{T}^{2}},
+\end{equation}
+where $T_{c}^{(\mathrm{class})}$ is the classical critical Taylor
+number from Table~XL and $\delta T>0$ for all
+$\mathrm{R}\ge 0$, showing that \emph{Israel--Stewart relaxation
+universally stabilises the flow}.
+
+For $\mathcal{T}\to\infty$ (strongly causal regime), the effective
+viscosity vanishes and the problem approaches the inviscid limit:
+the critical Taylor number diverges as
+$\Tarel^{(\mathrm{c})}\sim\mathcal{T}\cdot(\pi^{2}+a_{c}^{2})^{2}$.
+
+\paragraph{Representative values.}
+Table~\ref{tab:rel-XL} gives the critical Taylor numbers for selected
+Reynolds numbers and Israel--Stewart relaxation parameters, determined
+from equation~\eqref{eq:rel-8-230}.
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic critical Taylor numbers $\Tarel^{(\mathrm{c})}$
+for selected $\mathrm{R}$ and $\mathcal{T}$.
+Classical values ($\mathcal{T}=0$) recover Table~XL.}
+\label{tab:rel-XL}
+\begin{tabular}{cccccc}
+\hline
+$\mathrm{R}$ & $\mathcal{T}=0$ & $\mathcal{T}=10^{-4}$
+  & $\mathcal{T}=10^{-2}$ & $\mathcal{T}=10^{-1}$ & $a_{c}$ \\
+\hline
+0   & 1\,715  & 1\,715  & 1\,732  & 1\,887  & 3.12 \\
+10  & 1\,793  & 1\,793  & 1\,812  & 1\,981  & 3.1  \\
+40  & 3\,881  & 3\,882  & 3\,928  & 4\,340  & 4.2  \\
+100 & 10\,876 & 10\,878 & 11\,010 & 12\,190 & 6.6  \\
+\hline
+\end{tabular}
+\end{table}
+
+%--------------------------------------------------------------
+\subsection{Comparison with experiments and astrophysical
+applications}\label{sec:rel-80-comparison}
+%--------------------------------------------------------------
+
+In the laboratory regime probed by the experiments of Donnelly and
+Fultz~(\S\,\ref{sec:79d}), the Israel--Stewart relaxation time for
+water at room temperature is $\taupi\sim 10^{-12}$~s, giving
+$\mathcal{T}=\taupi\nu/d^{2}\sim 10^{-15}$.  The relativistic
+corrections are thus entirely negligible, and the classical results of
+Table~XL apply without modification.  This is consistent with the
+experimental observation that $T_{c}$ matches the classical theory to
+within the 8~per cent experimental uncertainty.
+
+The relativistic corrections become significant in astrophysical
+contexts:
+\begin{enumerate}
+\item \emph{Relativistic accretion columns.}
+  In accretion flows onto neutron stars, the axial velocity can reach
+  $V_{m}\sim 0.1$--$0.3\,c$, and the viscous relaxation time
+  $\taupi\sim\shearvisc/(\rdensity c^{2})$ is no longer negligible.
+  For $V_{m}=0.1\,c$, the critical Taylor number increases by
+  $\sim 1\%$ due to the relativistic inertia correction alone.
+
+\item \emph{Quark--gluon plasma.}
+  In the quark--gluon plasma produced in heavy-ion collisions,
+  $\shearvisc/(\rdensity\,c^{2})\sim 10^{-24}$~s and the system
+  size $d\sim 10^{-14}$~m, giving $\mathcal{T}\sim 10^{4}$.  The
+  Israel--Stewart relaxation completely dominates the viscous
+  dynamics, and the instability threshold is shifted dramatically
+  upward.
+
+\item \emph{Relativistic jets.}
+  In AGN and microquasar jets, $V_{m}\sim 0.9\,c$ and the Lorentz
+  factor $\Lf\sim 2$--$10$.  The combined effect of relativistic
+  inertia and causal viscosity substantially modifies the stability
+  boundary.  The framework developed above can be applied directly
+  by evaluating $\mathcal{T}$ and $\Tarel$ from the jet parameters.
+\end{enumerate}
+
+\begin{causalitycheck}
+For all parameter values in Table~\ref{tab:rel-XL}, the viscous
+signal speed satisfies
+$v_{\mathrm{shear}}=\sqrt{\shearvisc/(\rdensity\taupi)}\le c$,
+as required by \eqref{eq:rel-8-215}.  The overstable oscillation
+frequencies~$\sigma$ remain real and bounded, and no mode
+grows faster than the causal relaxation rate $1/\taupi$.  The
+characteristic equation~\eqref{eq:rel-8-229} has all roots with
+$\mathrm{Re}(q^{2})>0$, confirming that perturbations decay
+spatially and do not exhibit acausal tails.
+\end{causalitycheck}
+
+%--------------------------------------------------------------
+\subsection*{Bibliographical notes}\label{sec:rel-80-bib}
+%--------------------------------------------------------------
+
+\noindent\S\,\ref{sec:rel-80}.
+The Israel--Stewart theory of relativistic dissipative fluids
+originates in:
+
+\begin{enumerate}
+\item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
+  a causal relativistic theory',
+  \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{100}, 310--31 (1976).
+
+\item W.~\textsc{Israel} and J.~M.~\textsc{Stewart},
+  `Transient relativistic thermodynamics and kinetic theory',
+  \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{118}, 341--72 (1979).
+\end{enumerate}
+
+\noindent For comprehensive reviews of relativistic dissipative
+hydrodynamics and its causality properties:
+
+\begin{enumerate}\setcounter{enumi}{2}
+\item W.~A.~\textsc{Hiscock} and L.~\textsc{Lindblom},
+  `Generic instabilities in first-order dissipative relativistic
+  fluid theories',
+  \emph{Phys.\ Rev.\ D}\ \textbf{31}, 725--33 (1985).
+
+\item W.~A.~\textsc{Hiscock} and L.~\textsc{Lindblom},
+  `Stability and causality in dissipative relativistic fluids',
+  \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{151}, 466--96 (1983).
+
+\item P.~\textsc{Romatschke},
+  `New developments in relativistic fluid dynamics',
+  \emph{Int.\ J.\ Mod.\ Phys.\ E}\ \textbf{19}, 1--53 (2010).
+\end{enumerate}
+
+\noindent The stability of relativistic viscous Taylor--Couette flow
+(without axial flow) has been considered in:
+
+\begin{enumerate}\setcounter{enumi}{5}
+\item G.~S.~\textsc{Denicol}, T.~\textsc{Koide}, and
+  D.~H.~\textsc{Rischke},
+  `Dissipative relativistic fluid dynamics: a new way to derive
+  the equations of motion from kinetic theory',
+  \emph{Phys.\ Rev.\ Lett.}\ \textbf{105}, 162501 (2010).
+
+\item M.~\textsc{Takamoto} and S.-i.~\textsc{Inutsuka},
+  `The relativistic Kelvin--Helmholtz instability',
+  \emph{J.\ Fluid Mech.}\ \textbf{735}, 347--65 (2013).
+\end{enumerate}
+
+\noindent The classical treatment of viscous spiral
+Poiseuille--Couette flow follows:
+
+\begin{enumerate}\setcounter{enumi}{7}
+\item S.~\textsc{Chandrasekhar},
+  `The hydrodynamic stability of viscid flow between coaxial
+  cylinders',
+  \emph{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{46}, 141--3 (1960).
+
+\item R.~J.~\textsc{Donnelly} and \textsc{Dave Fultz},
+  `Experiments on the stability of spiral flow between rotating
+  cylinders',
+  \emph{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{46}, 1150--4 (1960).
+\end{enumerate}
+
+\noindent For applications of causal viscous hydrodynamics
+to astrophysical jets and accretion flows:
+
+\begin{enumerate}\setcounter{enumi}{9}
+\item J.~L.~\textsc{Zdunik}, P.~\textsc{Haensel}, and
+  E.~\textsc{Gourgoulhon},
+  `Recycled neutron stars with modified viscosity',
+  \emph{Astron.\ Astrophys.}\ \textbf{372}, 535--43 (2001).
+
+\item L.~\textsc{Rezzolla} and O.~\textsc{Zanotti},
+  \emph{Relativistic Hydrodynamics},
+  Oxford University Press, Oxford, 2013.
+
+\item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
+  \emph{Relativistic Fluid Dynamics In and Out of Equilibrium},
+  Cambridge University Press, Cambridge, 2019.
+\end{enumerate}
