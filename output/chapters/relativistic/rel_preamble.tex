@@ -1,5 +1,6 @@
 % Relativistic Modification Preamble
 % Shared macros for all relativistic chapter modifications
+% BDNK (Bemfica-Disconzi-Noronha-Kovtun) first-order causal formalism
 %
 % NOTE: This file requires \usepackage{tcolorbox} to be loaded
 % in the main preamble (../../preamble.tex) for the custom
@@ -67,22 +68,36 @@
 \newcommand{\bsq}{b^2}             % b^mu b_mu (magnetic pressure term)
 
 % =====================================================================
-% Dissipation (Israel-Stewart causal theory)
+% Dissipation (BDNK first-order causal theory)
 % ---------------------------------------------------------------------
-% The Israel-Stewart formalism replaces the acausal Navier-Stokes
-% constitutive relations with hyperbolic relaxation equations.
-% Each dissipative flux (bulk pressure Pi, shear tensor pi^{mu nu},
-% heat flux q^mu) has its own relaxation time (tau_Pi, tau_pi, tau_q).
+% The BDNK formalism achieves causality through careful choice of
+% hydrodynamic frame and first-order constitutive relations with
+% constrained transport coefficients.  Unlike Israel-Stewart, no
+% relaxation times are needed; instead, frame coefficients
+% (epsilon_1, beta_1, alpha_1) ensure strong hyperbolicity.
 % =====================================================================
-\newcommand{\bulkP}{\Pi}            % bulk viscous pressure
+\newcommand{\Pibulk}{\Pi}            % bulk viscous pressure (BDNK)
 \newcommand{\shearten}{\pi^{\mu\nu}} % shear stress tensor
-\newcommand{\heatflux}{q^{\mu}}     % heat flux 4-vector
-\newcommand{\taupi}{\tau_{\pi}}     % shear relaxation time
-\newcommand{\tauq}{\tau_{q}}        % heat relaxation time
-\newcommand{\tauPi}{\tau_{\Pi}}     % bulk relaxation time
-\newcommand{\bulkvisc}{\zeta}       % bulk viscosity coefficient
+\newcommand{\heatflux}{Q^{\mu}}      % heat flux 4-vector
+\newcommand{\bulkvisc}{\zeta}        % bulk viscosity coefficient
 \newcommand{\shearvisc}{\eta_{\mathrm{s}}} % shear viscosity coefficient
-\newcommand{\thermcond}{\kappa}     % thermal conductivity
+\newcommand{\thermcond}{\kappa}      % thermal conductivity
+
+% =====================================================================
+% BDNK frame coefficients
+% ---------------------------------------------------------------------
+% These frame correction parameters are unique to the BDNK formalism.
+% They replace the IS relaxation times (tau_pi, tau_q, tau_Pi) and
+% encode how the out-of-equilibrium energy, pressure, and heat flux
+% depend on gradients of T and mu/T.
+% =====================================================================
+\newcommand{\epsone}{\varepsilon_1}   % frame energy correction
+\newcommand{\betaone}{\beta_1}        % temperature gradient coefficient
+\newcommand{\alphaone}{\alpha_1}      % chemical potential coefficient
+\newcommand{\Efr}{E}                  % frame energy density (general frame)
+\newcommand{\Pfr}{P}                  % frame pressure (general frame)
+\newcommand{\sheartensor}{\sigma^{\mu\nu}} % shear tensor
+\newcommand{\expansion}{\theta}       % expansion scalar nabla_mu u^mu
 
 % =====================================================================
 % Dimensionless numbers (relativistic generalisations)
@@ -120,19 +135,28 @@
 % =====================================================================
 % Custom environments (require tcolorbox package)
 % ---------------------------------------------------------------------
-% causalitycheck  -- yellow box for verifying that perturbation
-%                    equations preserve causality (signal speeds <= c).
+% causalitycheck  -- yellow box for verifying that the BDNK
+%                    causality conditions (strong hyperbolicity and
+%                    bounded characteristic speeds) are satisfied.
 % relcorrection   -- blue box highlighting where and how the
 %                    relativistic result departs from the Newtonian one.
+% bdnkframe       -- green box for specifying the BDNK hydrodynamic
+%                    frame choice and associated coefficient constraints.
 % =====================================================================
 \newenvironment{causalitycheck}{%
-  \begin{tcolorbox}[colback=yellow!5, colframe=yellow!50!black, title=Causality Verification]
+  \begin{tcolorbox}[colback=yellow!5, colframe=yellow!50!black, title=BDNK Causality Verification]
 }{%
   \end{tcolorbox}
 }
 
 \newenvironment{relcorrection}{%
   \begin{tcolorbox}[colback=blue!5, colframe=blue!50!black, title=Relativistic Correction]
+}{%
+  \end{tcolorbox}
+}
+
+\newenvironment{bdnkframe}{%
+  \begin{tcolorbox}[colback=green!5, colframe=green!50!black, title=BDNK Frame Specification]
 }{%
   \end{tcolorbox}
 }
