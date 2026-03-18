@@ -1,0 +1,383 @@
+\chapter{VARIATIONAL METHODS BASED ON ADJOINT DIFFERENTIAL SYSTEMS}
+\label{app:IV}
+
+\section{Adjointness of differential systems. An example}
+\label{sec:130}
+
+In this appendix we shall provide a variational basis for a method for a
+solution of characteristic value problems to which we have had frequent
+recourse, namely, when the equations and the boundary conditions are
+such as not to allow a variational formulation in terms of an expression for the characteristic value as a ratio of two integrals which
+are (generally) positive definite. We shall illustrate the principal ideas
+in the particular context of the problem treated in \S~71~(a) though the
+ideas themselves are of wider generality.
+
+The problem treated in \S~71~(a) is the following: to solve the equations
+\begin{equation}
+\label{eq:A4-1}
+(D^2 - a^2)u = (1 + \alpha\zeta)v
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-2}
+(D^2 - a^2)v = -\lambda u,
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:A4-3}
+u = Du = v = 0 \quad \text{for} \quad \zeta = 0 \quad \text{and} \quad 1.
+\end{equation}
+The characteristic value parameter is $\lambda$ (denoted by $Ta^2$ in the text),
+$a$ and $\alpha$ are real constants, and $D = d/d\zeta$.
+
+The method by which the characteristic value problem presented by
+equations~(\ref{eq:A4-1})--(\ref{eq:A4-3}) was solved is the following.
+We expand $v$ as a sine series,
+\begin{equation}
+\label{eq:A4-4}
+v = \sum A_n \sin n\pi\zeta,
+\end{equation}
+and express $u$ as the sum
+\begin{equation}
+\label{eq:A4-5}
+u = \sum A_n u_n,
+\end{equation}
+where $u_n$ is the unique solution of the equation
+\begin{equation}
+\label{eq:A4-6}
+(D^2 - a^2)u_n = (1 + \alpha\zeta)\sin n\pi\zeta
+\end{equation}
+which satisfies the boundary conditions
+\begin{equation}
+\label{eq:A4-7}
+u_n = Du_n = 0 \quad \text{for} \quad \zeta = 0 \quad \text{and} \quad 1.
+\end{equation}
+
+Having determined $u_n$, in this fashion, we insert the expansions~(\ref{eq:A4-4})
+and~(\ref{eq:A4-5}) in equation~(\ref{eq:A4-2}) to obtain
+\begin{equation}
+\label{eq:A4-8}
+\sum A_n (n^2\pi^2 + a^2)\sin n\pi\zeta = \lambda \sum A_n u_n.
+\end{equation}
+Multiplying equation~(\ref{eq:A4-8}) by $\sin m\pi\zeta$ and integrating over the range of $\zeta$,
+we obtain an infinite set of linear homogeneous equations for the $A_n$'s
+which in turn leads to the secular equation
+\begin{equation}
+\label{eq:A4-9}
+\left\| \frac{1}{2\lambda}(n^2\pi^2 + a^2)\delta_{n,m} - (m|n) \right\| = 0,
+\end{equation}
+where
+\begin{equation}
+\label{eq:A4-10}
+(m|n) = \int_0^1 u_n \sin m\pi\zeta \, d\zeta.
+\end{equation}
+
+Now consider the slightly different system:
+\begin{equation}
+\label{eq:A4-11}
+(D^2 - a^2)u^\dagger = v^\dagger,
+\end{equation}
+\begin{equation}
+\label{eq:A4-12}
+(D^2 - a^2)v^\dagger = -\lambda^\dagger (1 + \alpha\zeta)u^\dagger,
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-13}
+u^\dagger = Du^\dagger = v^\dagger = 0 \quad \text{for} \quad \zeta = 0 \quad \text{and} \quad 1.
+\end{equation}
+
+Let us seek the solution of this system by the same method which we
+used for the solution of the system~(\ref{eq:A4-1})--(\ref{eq:A4-3}). Accordingly, we express $v^\dagger$
+and $u^\dagger$ as series in the forms
+\begin{equation}
+\label{eq:A4-14}
+v^\dagger = \sum B_n \sin n\pi\zeta \quad \text{and} \quad u^\dagger = \sum B_n u_n^\dagger,
+\end{equation}
+where $u_n^\dagger$ is the unique solution of the equation
+\begin{equation}
+\label{eq:A4-15}
+(D^2 - a^2)u_n^\dagger = \sin n\pi\zeta
+\end{equation}
+which satisfies the boundary conditions
+\begin{equation}
+\label{eq:A4-16}
+u_n^\dagger = Du_n^\dagger = 0 \quad \text{for} \quad \zeta = 0 \quad \text{and} \quad 1.
+\end{equation}
+
+Equation~(\ref{eq:A4-12}) will then lead to the secular equation
+\begin{equation}
+\label{eq:A4-17}
+\left\| \frac{1}{2\lambda^\dagger}(n^2\pi^2 + a^2)\delta_{n,m} - (m|n)^\dagger \right\| = 0,
+\end{equation}
+where
+\begin{equation}
+\label{eq:A4-18}
+(m|n)^\dagger = \int_0^1 u_n^\dagger (1 + \alpha\zeta)\sin m\pi\zeta \, d\zeta.
+\end{equation}
+
+We shall now show that the matrices $(m|n)$ and $(m|n)^\dagger$ are the \emph{transposed forms of one another}. To show this, insert for $(1+\alpha\zeta)\sin n\pi\zeta$ in
+the integrand for $(m|n)^\dagger$ according to equation~(\ref{eq:A4-6}); we then obtain
+\begin{equation}
+\label{eq:A4-19}
+(m|n)^\dagger = \int_0^1 u_n^\dagger (D^2 - a^2)u_n \, d\zeta.
+\end{equation}
+
+After two integrations by parts, equation~(\ref{eq:A4-19}) can be brought to the form
+\begin{equation}
+\label{eq:A4-20}
+(m|n)^\dagger = \int_0^1 [(D^2 - a^2)u_n^\dagger] u_n \, d\zeta.
+\end{equation}
+Similarly, by inserting for $\sin n\pi\zeta$ in the integrand for $(m|n)$, in
+accordance with equation~(\ref{eq:A4-15}), we obtain
+\begin{equation}
+\label{eq:A4-21}
+(m|n) = \int_0^1 u_m (D^2 - a^2)u_n^\dagger \, d\zeta,
+\end{equation}
+which after two integrations by parts becomes
+\begin{equation}
+\label{eq:A4-22}
+(m|n) = \int_0^1 [(D^2 - a^2)u_m] u_n^\dagger \, d\zeta.
+\end{equation}
+
+A comparison of equations~(\ref{eq:A4-20}) and~(\ref{eq:A4-22}) shows that
+\begin{equation}
+\label{eq:A4-23}
+(m|n) = (n|m)^\dagger.
+\end{equation}
+
+A consequence of this last relation is that the secular equations~(\ref{eq:A4-9}) and
+(\ref{eq:A4-17}) are derived from matrices which are the transposed forms of one
+another. Therefore, \emph{the characteristic equations for $\lambda$ and $\lambda^\dagger$ are identical.}
+We have thus shown that the systems~(\ref{eq:A4-1})--(\ref{eq:A4-3}) and~(\ref{eq:A4-11})--(\ref{eq:A4-13}) determine the
+same \emph{set of characteristic values}. For this reason we shall call the two
+systems the \emph{adjoints} of one another.
+
+Quite generally, two systems can be said to be the \emph{adjoints of one another
+if they determine the same set of characteristic values}. (It should be
+pointed out in this connexion that more than two systems can be the
+adjoints of one another.)
+
+\section{The dual relationship and the variational principle}
+\label{sec:131}
+
+From the identity of the characteristic values of the systems~(\ref{eq:A4-1})--(\ref{eq:A4-3})
+and~(\ref{eq:A4-11})--(\ref{eq:A4-13}) we can derive a \emph{relationship of duality} between the proper
+solutions of the two systems. To elucidate the nature of this duality,
+consider the solutions $u_j$ and $v_j$ belonging to $\lambda_j$ and the solutions $u_k^\dagger$
+and $v_k^\dagger$ belonging to a different characteristic value $\lambda_k$. The equations
+satisfied by these solutions are
+\begin{equation}
+\label{eq:A4-24}
+(D^2 - a^2)u_j = (1 + \alpha\zeta)v_j,
+\end{equation}
+\begin{equation}
+\label{eq:A4-25}
+(D^2 - a^2)v_j = -\lambda_j u_j,
+\end{equation}
+\begin{equation}
+\label{eq:A4-26}
+(D^2 - a^2)u_k^\dagger = v_k^\dagger,
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-27}
+(D^2 - a^2)v_k^\dagger = -\lambda_k (1 + \alpha\zeta)u_k^\dagger.
+\end{equation}
+
+Now consider
+\begin{equation}
+\label{eq:A4-28}
+\lambda_j \int_0^1 u_j \, v_k^\dagger \, d\zeta = -\int_0^1 v_k^\dagger (D^2 - a^2)v_j \, d\zeta.
+\end{equation}
+
+By two integrations by parts carried out in succession, we find
+\begin{equation}
+\label{eq:A4-29}
+\lambda_j \int_0^1 u_j \, v_k^\dagger \, d\zeta = \int_0^1 [(Dv_j)(Dv_k^\dagger) + a^2 v_j \, v_k^\dagger] \, d\zeta
+= -\int_0^1 v_j (D^2 - a^2)v_k^\dagger \, d\zeta.
+\end{equation}
+
+On the other hand, by substituting for $v_k^\dagger$ from equation~(\ref{eq:A4-26}), we obtain
+\begin{equation}
+\label{eq:A4-30}
+\lambda_j \int_0^1 u_j \, v_k^\dagger \, d\zeta = \lambda_j \int_0^1 u_j (D^2 - a^2)u_k^\dagger \, d\zeta
+= \lambda_j \int_0^1 [(D^2 - a^2)u_j][(D^2 - a^2)u_k^\dagger] \, d\zeta.
+\end{equation}
+Therefore, defining
+\begin{equation}
+\label{eq:A4-31}
+G_j = (D^2 - a^2)u_j \quad \text{and} \quad G_k^\dagger = (D^2 - a^2)u_k^\dagger,
+\end{equation}
+we have the relation
+\begin{equation}
+\label{eq:A4-32}
+\lambda_j \int_0^1 G_j \, G_k^\dagger \, d\zeta = \int_0^1 [(Dv_j)(Dv_k^\dagger) + a^2 v_j \, v_k^\dagger] \, d\zeta.
+\end{equation}
+
+Considering the second alternative form for the integral on the right-hand side of equation~(\ref{eq:A4-32}) (given in~(\ref{eq:A4-29})) and substituting for $(D^2 - a^2)v_k^\dagger$
+from equation~(\ref{eq:A4-27}), we obtain
+\begin{equation}
+\label{eq:A4-33}
+\int_0^1 [(Dv_j)(Dv_k^\dagger) + a^2 v_j \, v_k^\dagger] \, d\zeta = \lambda_k \int_0^1 v_j (1 + \alpha\zeta) u_k^\dagger \, d\zeta.
+\end{equation}
+
+On the right-hand side of this equation, we can replace $(1+\alpha\zeta)v_j$ by
+$(D^2 - a^2)^2 u_j$ (in accordance with equation~(\ref{eq:A4-24})).  We thus find
+\begin{equation}
+\label{eq:A4-34}
+\int_0^1 [(Dv_j)(Dv_k^\dagger) + a^2 v_j \, v_k^\dagger] \, d\zeta = \lambda_k \int_0^1 u_k^\dagger (D^2 - a^2) u_j \, d\zeta
+= \lambda_k \int_0^1 [(D^2 - a^2)u_j][(D^2 - a^2)u_k^\dagger] \, d\zeta
+= \lambda_k \int_0^1 G_j \, G_k^\dagger \, d\zeta.
+\end{equation}
+
+Now combining the results expressed by equations~(\ref{eq:A4-32}) and~(\ref{eq:A4-34}), we
+have the relation
+\begin{equation}
+\label{eq:A4-35}
+(\lambda_j - \lambda_k) \int_0^1 G_j \, G_k^\dagger \, d\zeta = 0.
+\end{equation}
+
+Hence
+\begin{equation}
+\label{eq:A4-36}
+\int_0^1 G_j \, G_k^\dagger \, d\zeta = 0 \quad \text{if} \quad j \neq k.
+\end{equation}
+
+\emph{The proper solutions $G_j$ and $G_k^\dagger$ are therefore in a dual relationship of
+orthogonality.}
+
+When $j = k$, equations~(\ref{eq:A4-32}) and~(\ref{eq:A4-34}) yield the same relation
+\begin{equation}
+\label{eq:A4-37}
+\lambda = \frac{\displaystyle\int_0^1 [(Dv)(Dv^\dagger) + a^2 v v^\dagger] \, d\zeta}{\displaystyle\int_0^1 [(D^2 - a^2)u][(D^2 - a^2)u^\dagger] \, d\zeta} \quad (\text{say}),
+\end{equation}
+where the distinguishing subscripts have been suppressed. We
+shall now show that equation~(\ref{eq:A4-37}) provides the basis for a variational formulation of the underlying characteristic value problem.
+
+Consider, then, the effect on $\lambda$ evaluated in accordance with equation~(\ref{eq:A4-37}) due to infinitesimal variations $\delta v$ and $\delta v^\dagger$ (in $v$ and $v^\dagger$) which are
+arbitrary except for the requirement that they vanish at $\zeta = 0$ and~1.
+The variations $\delta v$ and $\delta v^\dagger$ (in $v$ and $v^\dagger$) correspond to the variations
+in $v$ and $v^\dagger$ are to be determined as the unique solutions of the equations
+\begin{equation}
+\label{eq:A4-38}
+(D^2 - a^2)\delta u = (1 + \alpha\zeta)\delta v
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-39}
+(D^2 - a^2)\delta u^\dagger = \delta v^\dagger
+\end{equation}
+which satisfy the boundary conditions
+\begin{equation}
+\label{eq:A4-40}
+\delta u = D\delta u = 0 \quad \text{and} \quad \delta u^\dagger = D\delta u^\dagger = 0 \quad \text{for} \quad \zeta = 0 \quad \text{and} \quad 1.
+\end{equation}
+
+In other words, the variations are to be carried out subject to equations~(\ref{eq:A4-1}) and~(\ref{eq:A4-11}) as \emph{constraints}.
+Denoting by $\delta\lambda$ the resulting first order change in $\lambda$, we have
+\begin{equation}
+\label{eq:A4-41}
+\delta\lambda = \frac{1}{2}(\delta I_v - \lambda \, \delta I_u),
+\end{equation}
+where
+\begin{equation}
+\label{eq:A4-42}
+\delta I_v = \int_0^1 \{(D\delta v)(Dv^\dagger) + (Dv)(D\delta v^\dagger) + a^2 v^\dagger \delta v + a^2 v \, \delta v^\dagger\} \, d\zeta
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-43}
+\delta I_u = \int_0^1 \{[(D^2 - a^2)\delta u][(D^2 - a^2)u^\dagger] + [(D^2 - a^2)u][(D^2 - a^2)\delta u^\dagger]\} \, d\zeta
+\end{equation}
+are the corresponding variations in $I_v$ and $I_u$. Making use of boundary
+conditions imposed on the various increments, we can reduce the expressions for $\delta I_v$ and $\delta I_u$ by one or more integrations by parts to obtain
+\begin{equation}
+\label{eq:A4-44}
+\delta I_v = -\int_0^1 \{\delta v^\dagger (D^2 - a^2)v + \delta v (D^2 - a^2)v^\dagger\} \, d\zeta
+\end{equation}
+and
+\begin{equation}
+\label{eq:A4-45}
+\delta I_u = \int_0^1 \{v^\dagger (D^2 - a^2)\delta u + v (D^2 - a^2)\delta u^\dagger\} \, d\zeta.
+\end{equation}
+Since $\delta v$ and $\delta u^\dagger$ are subject to equations~(\ref{eq:A4-38}) and~(\ref{eq:A4-39}), an equivalent
+expression for $\delta I_u$ is
+\begin{equation}
+\label{eq:A4-46}
+\delta I_u = \int_0^1 \{\delta v (1 + \alpha\zeta)u^\dagger + v \, \delta v^\dagger\} \, d\zeta.
+\end{equation}
+
+With $\delta I_v$ and $\delta I_u$ given by equations~(\ref{eq:A4-44}) and~(\ref{eq:A4-46}), the required first
+order change in $\lambda$ is
+\begin{equation}
+\label{eq:A4-47}
+\delta\lambda = -\frac{1}{2}\int_0^1 \{\delta v^\dagger [(D^2 - a^2)v + \lambda u] + \delta v [(D^2 - a^2)v^\dagger + \lambda (1 + \alpha\zeta)u^\dagger]\} \, d\zeta.
+\end{equation}
+
+From this last equation it follows that $\delta\lambda = 0$ \emph{to the first order for all
+small variations $\delta v$ and $\delta v^\dagger$} (which consist at $\zeta = 0$ and 1) provided
+\begin{equation}
+\label{eq:A4-48}
+(D^2 - a^2)v + \lambda u = 0 \quad \text{and} \quad (D^2 - a^2)v^\dagger + \lambda (1 + \alpha\zeta)u^\dagger = 0;
+\end{equation}
+i.e.\@ provided equations~(\ref{eq:A4-2}) and~(\ref{eq:A4-12}) governing $u$ and $v$ and $u^\dagger$ and
+$v^\dagger$ are simultaneously satisfied. It is evident that the converse of this
+statement is also true. Therefore, equation~(\ref{eq:A4-37}) does provide the basis
+for a variational treatment of the problem.
+
+Finally, we shall show that the method described at the outset for
+the solution of the characteristic value problems presented by equations~(\ref{eq:A4-1})--(\ref{eq:A4-3}) and~(\ref{eq:A4-11})--(\ref{eq:A4-13}) is equivalent to a variational procedure (based on
+equation~(\ref{eq:A4-37})) in which the coefficients $A_n$ and $B_n$ in the expansions
+for $v$ and $v^\dagger$, the expressions for $\lambda$ becomes
+\begin{equation}
+\label{eq:A4-49}
+\lambda = \frac{\displaystyle\frac{1}{2}\sum A_m \, B_n (m^2\pi^2 + a^2)}{\displaystyle\sum \sum A_m (m|n) B_n}.
+\end{equation}
+
+The matrix element which occurs in the denominator of this expression
+is, by equation~(\ref{eq:A4-22}), none other than $(m|n)$. Accordingly,
+\begin{equation}
+\label{eq:A4-50}
+\lambda = \frac{\displaystyle\frac{1}{2}\sum A_m \, B_n (m^2\pi^2 + a^2)}{\displaystyle\sum_m \sum_n A_m (m|n) B_n}.
+\end{equation}
+
+We must now seek an extremum of this expression for $\lambda$ considered as
+a function of the parameters $A_m$ and $B_n$; and the simplest way to
+accomplish this is to treat $\lambda$ as a Lagrangian undetermined multiplier
+and seek directly the extremum of the expression
+\begin{equation}
+\label{eq:A4-51}
+J = \frac{1}{2\lambda}\sum_m A_m \, B_m (m^2\pi^2 + a^2) - \sum_m \sum_n A_m (m|n) B_n.
+\end{equation}
+
+By requiring that
+\begin{equation}
+\label{eq:A4-52}
+\frac{\partial J}{\partial A_m} = \frac{\partial J}{\partial B_n} = 0 \quad (m, n = 1, 2, \ldots),
+\end{equation}
+we clearly obtain the same secular equations as~(\ref{eq:A4-9}) and~(\ref{eq:A4-17}). This
+establishes the equivalence of the procedure outlined in~\S~\ref{sec:130} with a
+variational treatment based on equation~(\ref{eq:A4-37}).
+
+The ideas described in the context of the system~(\ref{eq:A4-1})--(\ref{eq:A4-3}) are clearly
+of wider generality: for example, the methods described for the solution
+of the various characteristic value problems in~\S\S~60, 73, 76, 87, and~88
+can be similarly provided with variational bases.
+
+\section*{BIBLIOGRAPHICAL NOTES}
+
+The ideas described in this appendix derive from the following paper by Roberts,
+though the treatment and the approach are different.
+
+\begin{enumerate}
+\item P.~H. \textsc{Roberts}, `Characteristic value problems posed by differential equations arising in hydrodynamics and hydromagnetics', \textit{J. Math. Analysis
+and Applications}, \textbf{1}, 195--214 (1960).
+\end{enumerate}
+
+\noindent See also:
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item S. \textsc{Chandrasekhar}, `Adjoint differential systems in the theory of hydrodynamic stability', \textit{J. Math. and Mech.} \textbf{10} (in press).
+\end{enumerate}

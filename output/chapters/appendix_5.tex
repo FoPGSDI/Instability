@@ -1,0 +1,554 @@
+\chapter{ORTHOGONAL FUNCTIONS WHICH SATISFY FOUR BOUNDARY CONDITIONS}
+\label{app:V}
+
+\section{Introduction}
+\label{sec:132}
+
+In the solution of hydrodynamic problems it is often convenient to be
+able to expand the prevailing velocity fields in a complete set of orthogonal functions. However, the usual expansions in terms of trigonometric or Bessel functions are not useful (if not impossible) in problems
+involving viscous flow since, in these problems, the boundary conditions
+require that on a rigid wall, for example, not only the normal component
+of the velocity, but also its normal derivative, vanishes (the latter
+condition ensuring the vanishing of the parallel component of the
+velocity). In these problems, expansions must therefore be sought in
+terms of orthogonal functions which together with their first derivatives
+vanish at the ends of the chosen interval. In this appendix, we shall
+give an account of the functions which have been constructed for these
+applications, though their completeness for the purposes of expansion
+requires a more careful analysis than has been given.
+
+\section{Functions suitable for problems with plane boundaries}
+\label{sec:133}
+
+Consider the characteristic value problem defined by the equation
+\begin{equation}
+\label{eq:A5-1}
+\frac{d^4 y}{dx^4} = \alpha y
+\end{equation}
+and the boundary conditions
+\begin{equation}
+\label{eq:A5-2}
+y = 0 \quad \text{and} \quad dy/dx = 0 \quad \text{for} \quad x = \pm\tfrac{1}{2}.
+\end{equation}
+
+Let $\alpha_n$ denote a characteristic value and let the proper solution belonging to it be distinguished by the subscript~$n$. Then multiplying the
+equation governing $y_n$ by $y_m$ (belonging to $\alpha_m$) and integrating over the
+range of $x$, we obtain
+\begin{equation}
+\label{eq:A5-3}
+\alpha_k \int_{-\frac{1}{2}}^{+\frac{1}{2}} y_n \, y_m \, dx = \int_{-\frac{1}{2}}^{+\frac{1}{2}} y_m \frac{d^4 y_n}{dx^4} \, dx.
+\end{equation}
+
+Transforming the integral on the right-hand side by two successive
+integrations by parts, we are left with
+\begin{equation}
+\label{eq:A5-4}
+\alpha_k \int_{-\frac{1}{2}}^{+\frac{1}{2}} y_n \, y_m \, dx = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \frac{d^2 y_n}{dx^2} \frac{d^2 y_m}{dx^2} \, dx,
+\end{equation}
+the integrated parts vanishing (both times) on account of the boundary
+conditions of $y_n$. From the symmetry of the integral on the right-hand
+side of equation~(\ref{eq:A5-4}) in $n$ and $m$, it follows that
+\begin{equation}
+\label{eq:A5-5}
+(\alpha_n - \alpha_m) \int_{-\frac{1}{2}}^{+\frac{1}{2}} y_n \, y_m \, dx = 0.
+\end{equation}
+
+Hence
+\begin{equation}
+\label{eq:A5-6}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} y_n \, y_m \, dx = 0 \quad \text{if} \quad m \neq n.
+\end{equation}
+
+The solutions $y_n$, therefore, form an orthogonal set; and we shall suppose
+that they are complete for the purposes of expanding an arbitrary
+continuous function in the interval $(-\frac{1}{2}, +\frac{1}{2})$ which together with its
+first derivative vanishes at the ends.
+
+The proper solutions of equations~(\ref{eq:A5-1}) and~(\ref{eq:A5-2}) are readily found. They
+fall into two non-combining groups of even and odd solutions with
+cosine-like and sine-like behaviours. As standard forms of these solutions we shall take
+\begin{equation}
+\label{eq:A5-7}
+C_n(x) = \frac{\cosh \lambda_n x}{\cosh \frac{1}{2}\lambda_n} - \frac{\cos \lambda_n x}{\cos \frac{1}{2}\lambda_n}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A5-8}
+S_n(x) = \frac{\sinh \mu_n x}{\sinh \frac{1}{2}\mu_n} - \frac{\sin \mu_n x}{\sin \frac{1}{2}\mu_n}.
+\end{equation}
+Defined in this manner, the functions clearly vanish at $x = \pm \frac{1}{2}$; that
+their derivatives also vanish at these points requires that $\lambda_n$ and $\mu_n$
+are the roots of the characteristic equations
+\begin{equation}
+\label{eq:A5-9}
+\tanh \tfrac{1}{2}\lambda + \tan \tfrac{1}{2}\lambda = 0
+\end{equation}
+and
+\begin{equation}
+\label{eq:A5-10}
+\coth \tfrac{1}{2}\mu - \cot \tfrac{1}{2}\mu = 0,
+\end{equation}
+respectively.
+
+It can be readily verified that the functions $C_n(x)$ and $S_n(x)$ are
+already normalized so that
+\begin{equation}
+\label{eq:A5-11}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} C_n(x) C_m(x) \, dx = \int_{-\frac{1}{2}}^{+\frac{1}{2}} S_n(x) S_m(x) \, dx = \delta_{nm}.
+\end{equation}
+Also, it is evident that every function $C_n$ is orthogonal to every function $S_m$; thus
+\begin{equation}
+\label{eq:A5-12}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} C_n(x) S_m(x) \, dx = 0.
+\end{equation}
+
+In Table~LXVIII the first few roots of equations~(\ref{eq:A5-9}) and~(\ref{eq:A5-10}) and
+some related constants are listed.
+
+\begin{table}[htbp]
+\centering
+\caption{The characteristic roots $\lambda_n$ and $\mu_n$ and related constants}
+\label{tab:LXVIII}
+\begin{tabular}{lccc}
+\hline
+ & $n=1$ & $n=2$ & $n=3$ \\
+\hline
+$\lambda_n$ & $4{\cdot}73004074$ & $10{\cdot}9956079$ & $17{\cdot}2787596$ \\
+$\mu_n$ & $7{\cdot}8532046$ & $14{\cdot}1371655$ & $20{\cdot}4203522$ \\
+$\cosh\frac{1}{2}\lambda_n$ & & & \\
+$\cos\frac{1}{2}\lambda_n$ & & & \\
+$\sinh\frac{1}{2}\mu_n$ & & & \\
+$\sin\frac{1}{2}\mu_n$ & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{equation}
+\label{eq:A5-13}
+\lambda_m \sim (2m - \tfrac{3}{2})\pi \quad \text{and} \quad \mu_m \sim (2m+\tfrac{1}{2})\pi \quad (m\to\infty)
+\end{equation}
+give the roots correct to ten decimals.
+
+The functions $C_n$ and $S_n$ for $m = 1, 2, 3$, and 4 (together with their
+first three derivatives) have been tabulated to nine decimals by Harris
+and Reid for $x = 0\;(0{\cdot}005)\;0{\cdot}5$.
+
+\paragraph{(a) Integrals involving $C_n(x)$ and $S_n(x)$}
+In the application of the $C$- and $S$-functions, we have often to
+evaluate matrix elements involving them. Simple integrals of the type
+one generally encounters (as in \S\S~86--88) can be most readily evaluated
+by raising by four the order of the derivative with which $C_n(x)$ (or
+$S_n(x)$) occurs in the integrand (by making use of the differential equation~(\ref{eq:A5-1}) which they satisfy) and then following by a sequence of four integrations by parts. As illustrative of this method we shall consider two
+typical examples.
+
+(1) Consider
+\begin{equation}
+\label{eq:A5-14}
+(S_n|C_m') = \int_{-\frac{1}{2}}^{+\frac{1}{2}} S_n(x) C_m'(x) \, dx.
+\end{equation}
+
+We first rewrite this integral as
+\begin{equation}
+\label{eq:A5-15}
+\mu_n^4 (S_n|C_m') = \int_{-\frac{1}{2}}^{+\frac{1}{2}} S_n^{(4)}(x) C_m'(x) \, dx = (S_n''|C_m''').
+\end{equation}
+
+A first integration by parts now gives
+\begin{equation}
+\label{eq:A5-16}
+\mu_n^4 (S_n|C_m') = S_n''({\tfrac{1}{2}}) C_m'''({\tfrac{1}{2}}) - \lambda_m^4 (S_n'|C_m').
+\end{equation}
+
+By a further sequence of integrations by parts, we find
+\begin{equation}
+\label{eq:A5-17}
+(S_n'|C_m') = -(S_n''|C_m) = +(S_n|C_m'') = -(S_n|C_m'').
+\end{equation}
+
+Using this last result in equation~(\ref{eq:A5-16}), we obtain
+\begin{equation}
+\label{eq:A5-18}
+(S_n|C_m') = \frac{2 S_n''(\frac{1}{2}) C_m'''(\frac{1}{2})}{\mu_n^4 + \lambda_m^4}.
+\end{equation}
+
+(2) Consider the matrix element
+\begin{equation}
+\label{eq:A5-19}
+(S_n|x|C_m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} S_n \, x \, C_m' \, dx.
+\end{equation}
+
+In the same way as in the preceding example, we find
+\begin{equation}
+\label{eq:A5-20}
+\lambda_m^4 (S_n|x|C_m') = (S_n|x|C_m^{(4)}) = -(S_n|C_m''') -(S_n'|C_m'') + (S_n''|C_m') + (S_n'''|C_m).
+\end{equation}
+
+We thus find (making further use of the relations included in~(\ref{eq:A5-17}))
+\begin{equation}
+\label{eq:A5-21}
+(S_n|x|C_m') = \frac{-4 S_n''(\frac{1}{2}) C_m'''(\frac{1}{2})}{\left(\mu_n^4 + \lambda_m^4\right)^2} \cdot \lambda_m^4 S_n''(\frac{1}{2}) C_m'''(\frac{1}{2}).
+\end{equation}
+
+\section{Functions suitable for problems with cylindrical and spherical boundaries}
+\label{sec:134}
+
+For problems with cylindrical and spherical boundaries, the required
+functions can be derived as the proper solutions of the characteristic
+value problem defined by the equation
+\begin{equation}
+\label{eq:A5-22}
+\mathscr{D}^4 y = \left(\frac{d^2}{dr^2} + \frac{1}{r}\frac{d}{dr} - \frac{\nu^2}{r^2}\right)^2 y = \alpha y,
+\end{equation}
+and the boundary conditions
+\begin{equation}
+\label{eq:A5-23}
+y = 0 \quad \text{and} \quad dy/dr = 0 \quad \text{for} \quad r = 1 \quad \text{and} \quad r = \eta \;(< 1).
+\end{equation}
+
+First we may observe that if $f$ is any continuous and bounded function in the interval $(\eta, 1)$ and $y$ satisfies the boundary conditions~(\ref{eq:A5-23}),
+then
+\begin{equation}
+\label{eq:A5-24}
+\int_\eta^1 r \, y \, \mathscr{D}^4 f \, dr = \int_\eta^1 f \left(\frac{d^2}{dr^2} + \frac{1}{r}\frac{d}{dr} - \frac{\nu^2}{r^2}\right)^2 y \, dr
+= -\int_\eta^1 f \, r \, \mathscr{D}^2 y \, dr.
+\end{equation}
+
+If $y_n$ and $y_m$ are proper solutions belonging to two different characteristic values $\alpha_n$ and $\alpha_m$, then it follows from the equation governing
+$y_n$ that
+\begin{equation}
+\label{eq:A5-25}
+\alpha_k \int_\eta^1 r \, y_n \, y_m \, dr = \int_\eta^1 r \, y_m \, \mathscr{D}^4 y_n \, dr.
+\end{equation}
+
+Now making use of the result expressed in~(\ref{eq:A5-24}), we obtain
+\begin{equation}
+\label{eq:A5-26}
+\alpha_n \int_\eta^1 r \, y_n \, y_m \, dr = \int_\eta^1 r (\mathscr{D}^2 y_n)(\mathscr{D}^2 y_m) \, dr.
+\end{equation}
+
+From the symmetry of the integral on the right-hand side of equation~(\ref{eq:A5-26}) in $n$ and $m$ we conclude that
+\begin{equation}
+\label{eq:A5-27}
+(\alpha_n - \alpha_m) \int_\eta^1 r \, y_n \, y_m \, dr = 0.
+\end{equation}
+
+Hence
+\begin{equation}
+\label{eq:A5-28}
+\int_\eta^1 r \, y_n \, y_m \, dr = 0 \quad \text{if} \quad n \neq m.
+\end{equation}
+
+The proper solutions $y_n$, therefore, form an orthogonal set in the interval
+$(1, \eta)$ with the weight function $r$.
+
+Returning to equation~(\ref{eq:A5-22}), we may write its general solution as a
+linear combination of Bessel functions of the different kinds and
+arguments of order $\nu$; thus
+\begin{equation}
+\label{eq:A5-29}
+y = A J_\nu(\alpha r) + B Y_\nu(\alpha r) + C I_\nu(\alpha r) + D K_\nu(\alpha r),
+\end{equation}
+where $A$, $B$, $C$, and $D$ are arbitrary constants. (In writing the solution
+in the form~(\ref{eq:A5-29}) we have assumed that $\nu$ is an integer; if $\nu$ should not
+be an integer we have only to write $J_{-\nu}$ in place of $Y_\nu$.)
+
+From the recurrence relations satisfied by the Bessel functions, it
+follows that
+\begin{equation}
+\label{eq:A5-30}
+\frac{d}{dr}(ry) = A\alpha J_{\nu-1}(\alpha r) + B\alpha Y_{\nu-1}(\alpha r) + C\alpha I_{\nu-1}(\alpha r) - D\alpha K_{\nu-1}(\alpha r).
+\end{equation}
+
+The application of the boundary conditions~(\ref{eq:A5-23}) to the solution~(\ref{eq:A5-29}), leads to the characteristic equation
+\begin{equation}
+\label{eq:A5-31}
+\begin{vmatrix}
+J_\nu(\alpha) & Y_\nu(\alpha) & I_\nu(\alpha) & K_\nu(\alpha) \\
+J_\nu(\alpha\eta) & Y_\nu(\alpha\eta) & I_\nu(\alpha\eta) & K_\nu(\alpha\eta) \\
+J_{\nu-1}(\alpha) & Y_{\nu-1}(\alpha) & I_{\nu-1}(\alpha) & -K_{\nu-1}(\alpha) \\
+J_{\nu-1}(\alpha\eta) & Y_{\nu-1}(\alpha\eta) & I_{\nu-1}(\alpha\eta) & -K_{\nu-1}(\alpha\eta)
+\end{vmatrix} = 0.
+\end{equation}
+
+If $\alpha_m$ is a characteristic root and $(1, B_m, C_m, D_m)$ is the vector which is
+annihilated by the matrix in~(\ref{eq:A5-31}) (when $\alpha = \alpha_m$), then
+\begin{equation}
+\label{eq:A5-32}
+\mathscr{V}_{m}(r) = J_\nu(\alpha_m r) + B_m Y_\nu(\alpha_m r) + C_m I_\nu(\alpha_m r) + D_m K_\nu(\alpha_m r)
+\end{equation}
+is a proper solution belonging to $\alpha_m$.
+
+\paragraph{(a) The normalization integral}
+
+Let
+\begin{equation}
+\label{eq:A5-33}
+u_{\nu m}(r) = J_\nu(\alpha_m r) + B_m Y_\nu(\alpha_m r)
+\end{equation}
+and
+\begin{equation}
+\label{eq:A5-34}
+v_{\nu m}(r) = C_m I_\nu(\alpha_m r) + D_m K_\nu(\alpha_m r),
+\end{equation}
+so that
+\begin{equation}
+\label{eq:A5-35}
+\mathscr{V}_{\nu m}(r) = u_{\nu m}(r) + v_{\nu m}(r).
+\end{equation}
+
+In virtue of the boundary conditions satisfied by $\mathscr{V}_{\nu m}$,
+\begin{equation}
+\label{eq:A5-36}
+u_{\nu m}(1) = -v_{\nu m}(1); \quad u_{\nu m}'(1) = -v_{\nu m}'(1);
+\end{equation}
+\begin{equation}
+\label{eq:A5-36a}
+u_{\nu m}(\eta) = -v_{\nu m}(\eta); \quad u_{\nu m}'(\eta) = -v_{\nu m}'(\eta);
+\end{equation}
+and in particular,
+\begin{equation}
+\label{eq:A5-36b}
+u_{\nu m} v_{\nu m}' - u_{\nu m}' v_{\nu m} = 0 \quad \text{at} \quad r = 1 \quad \text{and} \quad \eta.
+\end{equation}
+
+The functions $u_{\nu m}$ and $v_{\nu m}$, each being a linear combination of Bessel
+functions with like (i.e.\@ real or imaginary) arguments, they satisfy the
+differential equations
+\begin{equation}
+\label{eq:A5-37}
+\frac{1}{r}\frac{d}{dr}\left(r\frac{du_{\nu m}}{dr}\right) - \frac{\nu^2}{r^2}u_{\nu m} = -\alpha_m^2 u_{\nu m}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A5-38}
+\frac{1}{r}\frac{d}{dr}\left(r\frac{dv_{\nu m}}{dr}\right) - \frac{\nu^2}{r^2}v_{\nu m} = +\alpha_m^2 v_{\nu m}.
+\end{equation}
+
+Multiplying equations~(\ref{eq:A5-37}) and~(\ref{eq:A5-38}) by $r v_{\nu m}$ and $r u_{\nu m}$, respectively,
+and then subtracting one from another, we find
+\begin{equation}
+\label{eq:A5-39}
+2\alpha_m^2 r \, u_{\nu m} \, v_{\nu m} = \frac{d}{dr}\left(r \, u_{\nu m} \frac{dv_{\nu m}}{dr} - r \, v_{\nu m} \frac{du_{\nu m}}{dr}\right),
+\end{equation}
+and integrating this equation over the range of $r$, we obtain
+\begin{equation}
+\label{eq:A5-40}
+2\alpha_m^2 \int_\eta^1 r \, u_{\nu m} \, v_{\nu m} \, dr = \bigl[r(u_{\nu m} v_{\nu m}' - v_{\nu m} u_{\nu m}')\bigr]_\eta^1.
+\end{equation}
+
+The quantity on the right-hand side of equation~(\ref{eq:A5-40}) vanishes by virtue
+of equation~(\ref{eq:A5-36b}). Hence,
+\begin{equation}
+\label{eq:A5-41}
+\int_\eta^1 r \, u_{\nu m}^2 \, dr = 0.
+\end{equation}
+
+Making use of this property, we can write
+\begin{equation}
+\label{eq:A5-42}
+\int_\eta^1 r \, \mathscr{V}_{\nu m}^2 \, dr = \int_\eta^1 r(u_{\nu m}^2 + v_{\nu m}^2) \, dr.
+\end{equation}
+
+To evaluate the integrals on the right-hand side, consider, first, the
+differential equation satisfied by $u_{\nu m}$; after multiplication by $2r u_{\nu m}'$, the
+equation can be written in the form
+\begin{equation}
+\label{eq:A5-43}
+\frac{d}{dr}(r u_{\nu m}')^2 = -\alpha_m^2 r \frac{d r^2}{dr} u_{\nu m}^2 + \frac{\nu^2}{r}\frac{du_{\nu m}^2}{dr}.
+\end{equation}
+
+On integrating this equation over the range of $r$, we obtain
+\begin{equation}
+\label{eq:A5-44}
+\bigl[r^2(u_{\nu m}')^2\bigr]_\eta^1 = -\alpha_m^2 \bigl[r^2 u_{\nu m}^2\bigr]_\eta^1 + 2\alpha_m^2 \int_\eta^1 r \, u_{\nu m}^2 \, dr + \bigl[\nu^2 u_{\nu m}^2\bigr]_\eta^1.
+\end{equation}
+
+We thus have
+\begin{equation}
+\label{eq:A5-45}
+2\alpha_m^2 \int_\eta^1 r \, u_{\nu m}^2 \, dr = -r^2(u_{\nu m}')^2 + (\alpha_m^2 r^2 - \nu^2) u_{\nu m}^2 \Big|_\eta^1.
+\end{equation}
+
+From the equation satisfied by $v_{\nu m}$, we similarly find
+\begin{equation}
+\label{eq:A5-46}
+2\alpha_m^2 \int_\eta^1 r \, v_{\nu m}^2 \, dr = \bigl[r^2(v_{\nu m}')^2 + (\alpha_m^2 r^2 - \nu^2) v_{\nu m}^2\bigr]_\eta^1.
+\end{equation}
+
+Now adding equations~(\ref{eq:A5-45}) and~(\ref{eq:A5-46}), we have
+\begin{equation}
+\label{eq:A5-47}
+2\alpha_m^2 \int_\eta^1 r (u_{\nu m}^2 + v_{\nu m}^2) \, dr = \bigl[r^2\{(v_{\nu m}')^2 - (u_{\nu m}')^2\} +
+(\alpha_m^2 r^2 - \nu^2)(v_{\nu m}^2 + u_{\nu m}^2)\bigr]_\eta^1.
+\end{equation}
+
+In view of the relations given in~(\ref{eq:A5-36}), equation~(\ref{eq:A5-47}) reduces to
+\begin{equation}
+\label{eq:A5-48}
+\int_\eta^1 r (u_{\nu m}^2 + v_{\nu m}^2) \, dr = \bigl[r^2 u_{\nu m}^2\bigr]_\eta^1 = [r^2 v_{\nu m}^2]_\eta^1.
+\end{equation}
+
+Returning to equation~(\ref{eq:A5-42}) and remembering that the functions $\mathscr{V}_{\nu m}$
+and $\mathscr{V}_{\nu n}$ for $m \neq n$ are orthogonal (in the interval $(1,\eta)$ and with the
+weight function $r$), we can write
+\begin{equation}
+\label{eq:A5-49}
+\int_\eta^1 r \, \mathscr{V}_{\nu m}^2 \, dr = N_{\nu m},
+\end{equation}
+where
+\begin{equation}
+\label{eq:A5-50}
+N_{\nu m} = v_{\nu m}^2(1) - \eta^2 v_{\nu m}^2(\eta) = u_{\nu m}^2(1) - \eta^2 u_{\nu m}^2(\eta).
+\end{equation}
+
+\paragraph{(b) The cylinder functions of order 1}
+
+Axisymmetric viscous flows between rotating cylinders can be expanded in terms of the functions of order~1; such an expansion was
+used for example in Chapter~VII, \S~73. In view of the special importance
+of the functions of order~1, we list in Table~LXIX a few of the characteristic roots and certain related constants for three different values
+of~$\eta$.
+
+For the particular case $\nu = \frac{1}{2}$, the solutions belonging to the first
+three roots have been tabulated by Chandrasekhar and Elbert.
+
+\begin{table}[htbp]
+\centering
+\caption{The characteristic roots and related constants for $\nu = 1$}
+\label{tab:LXIX}
+\begin{tabular}{l|ccc|ccc|c}
+\hline
+ & \multicolumn{3}{c|}{$\eta = \frac{1}{4}$} & \multicolumn{3}{c|}{$\eta = \frac{1}{2}$} & $\eta = \frac{3}{4}$ \\
+ & $m=1$ & $m=2$ & $m=3$ & $m=1$ & $m=2$ & $m=3$ & $m=1$ \\
+\hline
+$\alpha_m$         & $+6{\cdot}390336$ & $+10{\cdot}55\hat{1}651$ & $+14{\cdot}729000$ & $+9{\cdot}49896$ & $+15{\cdot}739746$ & $+22{\cdot}01782\hat{1}$ & $+18{\cdot}93440$ \\
+$B_m$              & $-5{\cdot}870144$ & $-0{\cdot}4281099$ & $+0{\cdot}7125113$ & $-9{\cdot}076420$ & $-17{\cdot}3573$ & $-22{\cdot}4667$ & $-10{\cdot}2780$ \\
+$C_m$              & $-1{\cdot}497055\times10^{-2}$ & $+4{\cdot}167599\times10^{-5}$ & $-7{\cdot}144507\times10^{-7}$ & $+1{\cdot}006354\times10^{-3}$ & $+3{\cdot}67581\times10^{-6}$ & $+8{\cdot}86448\times10^{-9}$ & $-8{\cdot}91136\times10^{-3}$ \\
+$D_m$              & $-10{\cdot}77988$ & $-5{\cdot}986757$ & $-19{\cdot}90159$ & $+4{\cdot}396374\times10^{2}$ & $-1{\cdot}95381\times10^{4}$ & $+5{\cdot}91172\times10^{5}$ & $-6{\cdot}65593\times10^{8}$ \\
+$u_m(1) = -v_m(1)$ & $+1{\cdot}330279$ & $-0{\cdot}1884864$ & $+0{\cdot}1803302$ & $-1{\cdot}681248$ & $-2{\cdot}46940$ & $-2{\cdot}70290$ & $+1{\cdot}34981$ \\
+$u_m(\eta) = -v_m(\eta)$ & $+2{\cdot}619034$ & $+0{\cdot}3728952$ & $+0{\cdot}3581128$ & $-2{\cdot}371094$ & $+3{\cdot}48706$ & $-3{\cdot}81917$ & $+1{\cdot}55828$ \\
+$u'_m(1) = -v'_m(1)$ & $+7{\cdot}807580$ & $-1{\cdot}903352$ & $+2{\cdot}570976$ & $-14{\cdot}93868$ & $-37{\cdot}7250$ & $-58{\cdot}2068$ & $+24{\cdot}4679$ \\
+$u'_m(\eta) = -v'_m(\eta)$ & $-23{\cdot}29673$ & $-4{\cdot}83996$ & $-6{\cdot}10685$ & $+24{\cdot}82964$ & $-58{\cdot}7097$ & $+88{\cdot}1452$ & $-30{\cdot}0835$ \\
+$N_{1;m}$          & $+1{\cdot}340934$ & $+0{\cdot}02683645$ & $+0{\cdot}02450369$ & $+1{\cdot}42107$ & $+3{\cdot}05805$ & $+3{\cdot}65915$ & $+0{\cdot}456104$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\paragraph{(c) The spherical functions of half-odd integral orders}
+
+The functions of half-odd integral orders are useful in problems of
+viscous flow in spheres and in spherical shells. For flows in a sphere,
+the requirement that the solutions have no singularity at the origin
+implies that in the solution~(\ref{eq:A5-29}) we cannot include the terms in $Y_\nu$
+(or $J_{-\nu}$) and $K_\nu$. Therefore, in this case we write
+\begin{equation}
+\label{eq:A5-51}
+\mathscr{V}_{\nu,l}(r) = \frac{J_\nu(\alpha_l r)}{J_\nu(\alpha_l)} - \frac{I_\nu(\alpha_l r)}{I_\nu(\alpha_l)}.
+\end{equation}
+
+Defined in this manner, the function $\mathscr{V}_{\nu,l}(r)$ clearly vanishes at $r = 1$;
+and the condition that its derivative also vanishes at $r = 1$ leads to
+the characteristic equation
+\begin{equation}
+\label{eq:A5-52}
+J_\nu'(\alpha_l) I_\nu(\alpha_l) - I_\nu'(\alpha_l) J_\nu(\alpha_l) = 0.
+\end{equation}
+
+The first three roots of this equation for $l = 1, 3$, and 5 are listed in
+Table~LXX.
+
+The roots of the equation
+\begin{equation}
+\label{eq:A5-53}
+J_\nu(\alpha_l) I_\nu'(\alpha_l) - I_\nu(\alpha_l) J_\nu'(\alpha_l) = \alpha_l I_\nu(\alpha_l) J_\nu(\alpha_l)
+\end{equation}
+needed in a related connexion (\S~62) are also included in Table~LXX.
+
+\begin{table}[htbp]
+\centering
+\caption{The roots of equations~(\ref{eq:A5-52}) and~(\ref{eq:A5-53})}
+\label{tab:LXX}
+\begin{tabular}{l|ccc|ccc}
+\hline
+ & \multicolumn{3}{c|}{Roots of equation~(\ref{eq:A5-52})} & \multicolumn{3}{c}{Roots of equation~(\ref{eq:A5-53})} \\
+ & $l = 1$ & $l = 3$ & $l = 5$ & $l = 1$ & $l = 3$ & $l = 5$ \\
+\hline
+$\frac{3}{2}$ & $5{\cdot}763$ & $12{\cdot}065$ & $18{\cdot}346$ & $6{\cdot}913$ & $13{\cdot}363$ & $19{\cdot}653$ \\
+$\frac{5}{2}$ & $7{\cdot}458$ & $13{\cdot}680$ & $19{\cdot}943$ & $8{\cdot}574$ & $14{\cdot}870$ & $21{\cdot}112$ \\
+$\frac{7}{2}$ & $9{\cdot}108$ & $15{\cdot}385$ & $21{\cdot}620$ & $10{\cdot}209$ & $16{\cdot}410$ & \\
+\hline
+\end{tabular}
+\end{table}
+
+\section*{BIBLIOGRAPHICAL NOTES}
+
+The usefulness of the functions described in this appendix for the solution of
+hydrodynamical problems was pointed out by:
+
+\begin{enumerate}
+\item S. \textsc{Chandrasekhar} and W.~H. \textsc{Reid}, `On the expansion of functions which
+satisfy four boundary conditions', \textit{Proc. Nat. Acad. Sci.} \textbf{43}, 521--7 (1957).
+\end{enumerate}
+
+\noindent\S~\textbf{133}. The functions which we have denoted by $C_n$ and $S_n$ occur in the theory of
+vibrating beams and in that connexion they have been considered by Rayleigh:
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item Lord \textsc{Rayleigh}, \textit{Theory of Sound}, p.~278, Dover Publications, New York,
+1945.
+\end{enumerate}
+
+\noindent In the hydrodynamical context these functions have been studied most extensively by:
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item W.~H. \textsc{Reid}, `On the stability of viscous flow in a curved channel', \textit{Proc.
+Roy. Soc. (London)} A, \textbf{244}, 186--98 (1958).
+
+\item D.~L. \textsc{Harris} and W.~H. \textsc{Reid}, `On orthogonal functions which satisfy
+four boundary conditions. I. Tables for use in Fourier-type expansions',
+\textit{Astrophys. J. Suppl. Ser.} \textbf{3}, 429--47 (1958).
+
+\item W.~H. \textsc{Reid} and D.~L. \textsc{Harris}, `On orthogonal functions which satisfy
+four boundary conditions.  II. Integrals for use with Fourier-type expansions', \textit{Astrophys. J. Suppl. Ser.} \textbf{3}, 448--52 (1958).
+\end{enumerate}
+
+\noindent In reference~4 Harris and Reid have tabulated the functions $C_m$ and $S_m$ and their
+first three derivatives for $m = 1, \ldots, 4$ to 9 decimals for $x = 0\;(0{\cdot}005)\;0{\cdot}5$. Less
+extensive tables have been published earlier by:
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item R.~E.~D. \textsc{Bishop} and D.~C. \textsc{Johnson}, \textit{Vibration Analysis Tables}, Cambridge
+University Press, New York, 1956.
+\end{enumerate}
+
+\noindent In reference~5 Reid and Harris have provided a very useful compilation of
+integrals involving the $C$- and the $S$-functions.
+
+\noindent\S~\textbf{134}. The functions denoted by $\mathscr{V}_{\nu;m}$ seem to have been considered for the first
+time in these connexions in reference~1. See also:
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item S. \textsc{Chandrasekhar}, `The stability of viscous flow between rotating
+cylinders', \textit{Proc. Roy. Soc. (London)} A, \textbf{246}, 301--11 (1958).
+\end{enumerate}
+
+\noindent The numerical results included in Table~LXIX are taken from:
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item \textemdash\textemdash{} and Donna D. \textsc{Elbert}, `On orthogonal functions which satisfy four
+boundary conditions. III. Tables for use in Fourier--Bessel-type expansions', \textit{Astrophys. J. Suppl. Ser.} \textbf{3}, 453--8 (1958).
+\end{enumerate}
+
+\noindent The functions $\mathscr{V}_{1;m}$ for $m = 1, 2$, and 3 and $\eta = \frac{1}{2}$ are tabulated in reference~8.
+
+\noindent The characteristic roots listed in Table~LXX are taken from:
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item F.~E. \textsc{Bisshopp}, `On the thermal instability of a rotating fluid sphere',
+\textit{Phil. Mag.} Ser. 8, \textbf{3}, 1342--60 (1958).
+\end{enumerate}

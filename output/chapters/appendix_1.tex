@@ -1,0 +1,298 @@
+\chapter{INTEGRAL RELATIONS GOVERNING STEADY CONVECTION}
+\label{app:I}
+
+\section{Introduction}\label{sec:124}
+
+A \textsc{general} result which emerges from the study of thermal instability in Chapters~II--VI is that the onset of stationary convection is merely the signal that a steady balance can be maintained between the energy dissipated by irreversible processes and the energy released by the buoyancy force. This balance is clearly necessary whenever a state of steady convection prevails, not only at marginal stability when such a balance first becomes possible and the amplitude of the convection is infinitesimal. There is, however, one important difference: under the more general conditions we now envisage, the variation of the average temperature with height will no longer be that deduced from the equation of heat conduction in the absence of motions; and we must allow for the effects arising from the finite amplitudes of the prevailing motions.
+
+In this appendix we shall derive certain integral relations which must govern a general state of steady convection under the circumstances of the simple B\'enard problem beyond the onset of instability; and we shall indicate how these relations can be made the basis for estimating the amplitudes of the perturbations just past the state of marginal stability.
+
+\section{The integral relations}\label{sec:125}
+
+We shall start from the equations of motions in the Boussinesq approximation. These equations are (equations~II~(43) and~(46)):
+\begin{equation}
+\label{eq:A1-1}
+\frac{\partial u_i}{\partial t} + \frac{\partial}{\partial x_j}(u_i u_j) = -\frac{\partial \varpi}{\partial x_i} + g\alpha\left(1 + \frac{\kappa}{\nu}\right) T \lambda_i + \nu \nabla^2 u_i,
+\end{equation}
+\begin{equation}
+\label{eq:A1-2}
+\frac{\partial T}{\partial t} + \frac{\partial}{\partial x_j}(T u_j) = \kappa \nabla^2 T,
+\end{equation}
+and
+\begin{equation}
+\label{eq:A1-3}
+\frac{\partial u_j}{\partial x_j} = 0,
+\end{equation}
+where $\Pi = p/\rho$ and the rest of the symbols have their standard meanings.
+
+We shall now suppose that in a state of steady convection (beyond marginal stability) the circumstances are such that
+\begin{equation}
+\label{eq:A1-4}
+\langle u_i \rangle = 0, \quad \langle T \rangle = \overline{T}_0(z), \quad \text{and} \quad \langle \Pi \rangle = \overline{\Pi}_0(z),
+\end{equation}
+where the angular brackets signify that the quantity enclosed has been averaged over the horizontal plane; and further, that before the averaging,
+\begin{equation}
+\label{eq:A1-5}
+\Pi = \Pi_0(z) + \varpi(x, y, z) \quad \text{and} \quad T = T_0(z) + \theta(x, y, z).
+\end{equation}
+
+With the usual assumption concerning the `equation of state',
+\begin{equation}
+\label{eq:A1-6}
+\delta \rho = -\rho \alpha \, \delta T,
+\end{equation}
+where $\alpha$ is the coefficient of volume expansion. In virtue of these definitions,
+\begin{equation}
+\label{eq:A1-7}
+\langle w \rangle = 0, \quad \langle \theta \rangle = 0, \quad \text{and} \quad \langle \delta \rho \rangle = -\rho \alpha [T_0(z) - \overline{T}_0(z)].
+\end{equation}
+
+On the premises stated, the result of averaging equation~(\ref{eq:A1-1}) over the horizontal plane is
+\begin{equation}
+\label{eq:A1-8}
+\left\langle \frac{\partial}{\partial x_j}(u_i u_j) \right\rangle = -\frac{\partial \varpi}{\partial x_i} - \rho \alpha \{1 - \alpha [T_0(z) - \overline{T}_0(z)]\}.
+\end{equation}
+
+The only non-vanishing component of equation~(\ref{eq:A1-8}) is in the direction of the vertical (namely, $\lambda_i$); and in this direction the equation gives
+\begin{equation}
+\label{eq:A1-9}
+\frac{d}{dz}[\Pi_0 + \langle w^2 \rangle] = -g\{1 - \alpha[T_0(z) - \overline{T}_0(z)]\}.
+\end{equation}
+
+This equation signifies that on the average the equilibrium is hydrostatic. In the same way, the result of averaging equation~(\ref{eq:A1-2}) over the horizontal plane is
+\begin{equation}
+\label{eq:A1-10}
+\frac{d}{dz}\langle \theta w \rangle = \kappa \frac{d^2 \overline{T}_0}{dz^2}.
+\end{equation}
+
+This equation can be integrated to give
+\begin{equation}
+\label{eq:A1-11}
+\kappa T_0(z) = \int^z \langle \theta w \rangle \, dz + c_1 z + c_2,
+\end{equation}
+where $c_1$ and $c_2$ are constants. The constants are related to the temperatures, $T_0(0)$ and $T_0(d)$, which are steadily maintained at the bottom $(z = 0)$ and at the top $(z = d)$ surfaces, respectively. Expressing $c_1$ and $c_2$ in terms of these temperatures, we can rewrite equation~(\ref{eq:A1-11}) in the form
+\begin{equation}
+\label{eq:A1-12}
+\kappa T_0(z) = \kappa T_0(0) + \int^z \langle \theta w \rangle \, dz - \left\{ \kappa [T_0(0) - T_0(d)] + \int^d \langle \theta w \rangle \, dz \right\} \frac{z}{d}.
+\end{equation}
+
+From this relation we derive
+\begin{equation}
+\label{eq:A1-13}
+\kappa \frac{d\overline{T}_0}{dz} = -\beta + \langle \theta w \rangle - \frac{1}{d} \int_0^d \langle \theta w \rangle \, dz,
+\end{equation}
+where
+\begin{equation}
+\label{eq:A1-14}
+\beta = [T_0(0) - T_0(d)] / d
+\end{equation}
+is the mean adverse temperature gradient which is prevailing.
+
+Equation~(\ref{eq:A1-13}) exhibits how a linear temperature gradient, in the absence of motions, is modified by the presence of motions.
+
+\subsection*{(a) The integral relations}
+
+Rewriting equation~(\ref{eq:A1-2}) in the form
+\begin{equation}
+\label{eq:A1-15}
+\frac{\partial \theta}{\partial t} + \frac{\partial}{\partial x_j}(\theta u_j) = \kappa \frac{d^2\overline{T}_0}{dz^2} + \kappa \nabla^2 \theta,
+\end{equation}
+we multiply it by $\theta$ and, after averaging over the horizontal plane, integrate over the range of $z$. We then find
+\begin{equation}
+\label{eq:A1-16}
+\frac{1}{d} \int_0^d \left\langle \theta \frac{\partial \theta}{\partial t} \right\rangle dz + \beta \int_0^d \langle \theta w \rangle \, dz + \left\langle \frac{d\overline{T}_0}{dz} \right\rangle dz = \kappa \int_0^d \langle \theta \nabla^2 \theta \rangle \, dz.
+\end{equation}
+
+Now substituting for $d\overline{T}_0/dz$ in accordance with equation~(\ref{eq:A1-13}), we obtain
+\begin{equation}
+\label{eq:A1-17}
+\frac{1}{d} \int_0^d \left\langle \theta \frac{\partial \theta}{\partial t} \right\rangle dz = \beta \int_0^d \langle \theta w \rangle \, dz + \left\langle \theta \nabla^2 \theta \right\rangle dz -
+\frac{1}{d} \left\{ \int_0^d \langle \theta w \rangle^2 \, dz - \frac{1}{d} \left( \int_0^d \langle \theta w \rangle \, dz \right)^{\!2} \right\}.
+\end{equation}
+
+Similarly, by multiplying equation~(\ref{eq:A1-1}) suitably by $u_i$ and integrating over the range of $z$ after averaging over the horizontal plane, we obtain
+\begin{equation}
+\label{eq:A1-18}
+\frac{1}{2} \frac{d}{dt} \int_0^d \langle |\mathbf{u}|^2 \rangle \, dz = g\alpha \int_0^d \langle \theta w \rangle \, dz + \nu \int_0^d \langle u_i \nabla^2 u_i \rangle \, dz.
+\end{equation}
+
+If the conditions should be such that on the average the state is a steady one, then equations~(\ref{eq:A1-17}) and~(\ref{eq:A1-18}) lead to the integral relations
+\begin{equation}
+\label{eq:A1-19}
+\beta \int_0^d \langle \theta w \rangle \, dz + \kappa \int_0^d \langle \theta \nabla^2 \theta \rangle \, dz = \frac{1}{d} \left\{ \int_0^d \langle \theta w \rangle^2 \, dz - \frac{1}{d} \left( \int_0^d \langle \theta w \rangle \, dz \right)^{\!2} \right\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A1-20}
+g\alpha \int_0^d \langle \theta w \rangle \, dz + \nu \int_0^d \langle u_i \nabla^2 u_i \rangle \, dz = 0.
+\end{equation}
+
+Equation~(\ref{eq:A1-20}) expresses merely the equality between $\epsilon_v$ and $\epsilon_s$ (cf.\ equations~II~(175) and~(178), p.~33); and as we have seen on several occasions, it is this equality which underlies the variational principles characteristic of the subject.
+
+\section{The amplitude of the steady convection past marginal stability}\label{sec:126}
+
+It is known empirically that, in problems in which instability sets in as a stationary secondary flow, the pattern of motions which first appears at marginal stability continues to manifest itself long past the critical conditions. This is the case, for example, in the simple B\'enard problem; and it is also the case when the flow between two cylinders rotating in the same direction becomes unstable. These empirical facts suggest that one might use the integral relations~(\ref{eq:A1-19}) and~(\ref{eq:A1-20}) to estimate the amplitudes of the convective motions on the assumption that, just past the marginal state, the motions continue to be of the same pattern as at the onset of instability.
+
+We shall suppose, then, that in the state of finite amplitude convection which immediately follows instability the solutions for $w$ and $\theta$ are of the forms
+\begin{equation}
+\label{eq:A1-21}
+w = \mathscr{A}\, W(z) f(x,y) \quad \text{and} \quad \theta = \mathscr{A}\,\Theta(z) f(x,y),
+\end{equation}
+where $W(z)$ and $\Theta(z)$ are suitably normalized solutions appropriate for marginal stability; $f(x,y)$ represents a two-dimensional periodic wave with the wave number $k$ $(= a/d)$ which is manifested at marginal stability; and $\mathscr{A}$ is the amplitude which is left undetermined by the linear stability theory.
+
+In terms of the solution for $w$, the horizontal components of the velocity are given by (cf.\ equation~II~(171))
+\begin{equation}
+\label{eq:A1-22}
+u = \frac{1}{a^2} \frac{\partial^2 w}{\partial x \partial z} = \mathscr{A} \frac{DW}{a^2} f_x \quad \text{and} \quad v = \frac{1}{a^2} \frac{\partial^2 w}{\partial y \partial z} = \mathscr{A} \frac{DW}{a^2} f_y,
+\end{equation}
+if linear distances are measured in units of the depth ($d$) of the layer of fluid. (The unit of distance just mentioned will be used in the rest of this discussion.)
+
+Since in the linear theory $\mathscr{A}$ is an undetermined constant of proportionality, there is no loss of generality in supposing that
+\begin{equation}
+\label{eq:A1-23}
+\langle f^2 \rangle = 1.
+\end{equation}
+
+And from the fact that $f$ satisfies the equation
+\begin{equation}
+\label{eq:A1-24}
+\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} = -a^2 f,
+\end{equation}
+we can conclude, moreover, that
+\begin{equation}
+\label{eq:A1-25}
+\langle f_x^2 \rangle + \langle f_y^2 \rangle = a^2 \langle f^2 \rangle = a^2.
+\end{equation}
+
+Inserting the assumed forms for the solutions in equations~(\ref{eq:A1-19}) and~(\ref{eq:A1-20}) (rewritten with $z$ expressed in the unit $d$) and making use of equations~(\ref{eq:A1-23}) and~(\ref{eq:A1-25}), we obtain
+\begin{equation}
+\label{eq:A1-26}
+\beta \int_0^1 \Theta W \, dz + \frac{\kappa}{d^2} \int_0^1 \Theta(D^2 - a^2)\Theta \, dz = \frac{\mathscr{A}^2}{\kappa} \left\{ \int_0^1 \Theta^2 W^2 \, dz - \left( \int_0^1 \Theta W \, dz \right)^{\!2} \right\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A1-27}
+g\alpha \int_0^1 \Theta W \, dz = -\frac{\nu}{d^2} \int_0^1 \left\{ \langle w(D^2 - a^2)w \rangle + \langle u(D^2 - a^2)u \rangle + \langle v(D^2 - a^2)v \rangle \right\} dz
+\end{equation}
+\begin{equation*}
+= -\frac{\nu}{d^2} \int_0^1 \left\{ W(D^2 - a^2)W + \frac{1}{a^2} DW(D^2 - a^2)\,DW \right\} dz. \tag{\ref{eq:A1-27}}
+\end{equation*}
+
+On further reductions, equations~(\ref{eq:A1-26}) and~(\ref{eq:A1-27}) take the forms
+\begin{equation}
+\label{eq:A1-28}
+\beta \int_0^1 \Theta W \, dz - \frac{\kappa}{d^2} \int_0^1 [(D\Theta)^2 + a^2 \Theta^2] \, dz = \frac{\mathscr{A}^2}{\kappa} \left\{ \int_0^1 \Theta^2 W^2 \, dz - \left( \int_0^1 \Theta W \, dz \right)^{\!2} \right\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A1-29}
+g\alpha \int_0^1 \Theta W \, dz = \frac{\nu}{a^2 d^2} \int_0^1 [(D^2 - a^2)W]^2 \, dz.
+\end{equation}
+
+Since by equation~II~(181) (p.~34)
+\begin{equation}
+\label{eq:A1-30}
+\Theta = -\frac{\nu}{g\alpha a^2 d^2}\, F = -\frac{\nu}{g\alpha a^2 d^2}\,(D^2 - a^2)^2 W,
+\end{equation}
+equation~(\ref{eq:A1-29}) is in reality an identity, for, in virtue of the boundary conditions of the problem,
+\begin{equation}
+\label{eq:A1-31}
+\int_0^1 W(D^2 - a^2)^2 W \, dz \equiv \int_0^1 [(D^2 - a^2)W]^2 \, dz.
+\end{equation}
+
+Turning to equation~(\ref{eq:A1-28}) and expressing $\Theta$ in terms of $F$, we have
+\begin{equation}
+\label{eq:A1-32}
+\frac{\mathscr{A}^2}{\kappa} \left\{ \int_0^1 W^2 F^2 \, dz - \left( \int_0^1 WF \, dz \right)^{\!2} \right\} = \frac{g\alpha \beta}{v}\, a^2 d^2 \int_0^1 WF \, dz -
+\frac{\kappa}{d^2} \int_0^1 [(DF)^2 + a^2 F^2] \, dz,
+\end{equation}
+or, alternatively,
+\begin{equation}
+\label{eq:A1-33}
+\mathscr{A}^2 \left\{ \int_0^1 W^2 F^2 \, dz - \left( \int_0^1 WF \, dz \right)^{\!2} \right\} = \frac{\displaystyle\int_0^1 [(DF)^2 + a^2 F^2] \, dz}{a^2 \displaystyle\int_0^1 [(D^2 - a^2)W]^2 \, dz} \int_0^1 WF \, dz.
+\end{equation}
+
+Recalling that the critical Rayleigh number for the onset of instability is given by (see equation~II~(183))
+\begin{equation}
+\label{eq:A1-34}
+R_c = \frac{\int_0^1 [(DF)^2 + a^2 F^2] \, dz}{a^2 \int_0^1 [(D^2 - a^2)W]^2 \, dz},
+\end{equation}
+we can rewrite equation~(\ref{eq:A1-33}) in the form
+\begin{equation}
+\label{eq:A1-35}
+\mathscr{A}^2 = \frac{\displaystyle\int_0^1 WF \, dz}{\displaystyle\int_0^1 W^2 F^2 \, dz - \left( \int_0^1 WF \, dz \right)^{\!2}} \cdot \frac{R}{R_c}\left( \frac{R}{R_c} - 1 \right).
+\end{equation}
+
+According to this equation, the amplitude of the disturbance past the marginal state increases like $(R - R_c)^{\frac{1}{2}}$.
+
+In terms of the exact solutions for $W$ and $F$ given in \S~16, we can explicitly evaluate the coefficient of $(R/R_c - 1)$ in equation~(\ref{eq:A1-35}) for the different cases considered. Thus, for the case when both bounding surfaces are free,
+\begin{equation}
+\label{eq:A1-36}
+W = \sin \pi z, \quad F = (\pi^2 + a^2)^2 \sin \pi z, \quad \text{and} \quad R_c = \frac{27}{4}\pi^4,
+\end{equation}
+and equation~(\ref{eq:A1-35}) gives
+\begin{equation}
+\label{eq:A1-37}
+\mathscr{A}^2 = 6\pi^2 a^2 \left( \frac{R}{R_c} - 1 \right) = 59{\cdot}22 \left( \frac{R}{R_c} - 1 \right).
+\end{equation}
+
+For the other two sets of boundary conditions considered in \S~16, the amplitudes associated with the solutions given in Table~II (p.~40) can be most readily determined by evaluating the necessary integrals numerically. Thus, we find\footnote{With the normalization appropriate to the tabulated solutions.}
+\begin{equation}
+\label{eq:A1-38}
+\int_0^1 F_1 W_c \, dz = 0{\cdot}229732(R_c a^2)^{\frac{1}{2}}, \quad \int_0^1 F_1^2 W_c^2 \, dz = 0{\cdot}178858(R_c a^2)^{\frac{1}{2}}
+\end{equation}
+\[
+(R_c = 1707{\cdot}76 \quad \text{and} \quad a = 3{\cdot}117),
+\]
+and
+\begin{equation}
+\label{eq:A1-39}
+\int_0^1 F_v W_c \, dz = 0{\cdot}239680(R_c a^2)^{\frac{1}{2}}, \quad \int_0^1 F^2 W_c^2 \, dz = 0{\cdot}184027(R_c a^2)^{\frac{1}{2}}
+\end{equation}
+\[
+(R_c = 1100{\cdot}65 \quad \text{and} \quad a = 2{\cdot}682);
+\]
+and inserting these values in equation~(\ref{eq:A1-35}), we find that the squares of the respective amplitudes are given by
+\begin{equation}
+\label{eq:A1-40}
+\mathscr{A}^2 = 80{\cdot}23 \frac{a^2}{R_c} \left( \frac{R}{R_c} - 1 \right) \quad \text{(when both bounding surfaces are rigid),}
+\end{equation}
+and
+\begin{equation}
+\label{eq:A1-41}
+\mathscr{A}^2 = 69{\cdot}11 \frac{a^2}{R_c} \left( \frac{R}{R_c} - 1 \right) \quad \parbox[t]{0.4\textwidth}{(when one of the bounding surfaces is rigid and the other is free).}
+\end{equation}
+
+It is clear that the basic ideas underlying the preceding considerations are of wider generality than the simple context in which they have been described. Their extension to the case when a magnetic field is present, for example, is immediate: we have only to include with $\epsilon_v$ in equation~(\ref{eq:A1-20}) the term $\epsilon_m$ giving the rate of dissipation of energy by Joule heating. However, the extension to cases when overstability is possible requires some care; but these are matters which go considerably beyond the scope of this book.
+
+\section*{BIBLIOGRAPHICAL NOTES}
+
+It was Landau who first suggested from very general considerations that the amplitudes of the disturbance must increase like $(\mathscr{B} - \mathscr{B}_c)^{\frac{1}{2}}$ (where $\mathscr{B}$ is some suitably defined `Reynolds number') beyond the onset of instability at $\mathscr{B}_c$:
+\begin{enumerate}
+\item L.~D. \textsc{Landau}, `On the problem of turbulence', \textit{C.R.\ Doklady Acad.\ Sci.\ URSS} \textbf{44}, 311--14 (1944).
+\end{enumerate}
+
+See also:
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item L.~D. \textsc{Landau} and E.~M. \textsc{Lifshitz}, \textit{Fluid Mechanics}, \S~27, Pergamon Press, 1959.
+\end{enumerate}
+
+Specifically in connexion with the stability of Couette flow, Stuart developed Landau's arguments to yield a quantitative estimate for the amplitude.
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item J.~T. \textsc{Stuart}, `On the non-linear mechanics of hydrodynamic stability', \textit{J.\ Fluid Mech.}\ \textbf{4}, 1--21 (1958).
+\end{enumerate}
+
+The discussion in \S~126 is modelled on Stuart's paper. The non-linear aspects of the B\'enard problem have been further discussed by:
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item W.~V.~R. \textsc{Malkus}, `The heat transport and spectrum of thermal turbulence', \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{225}, 196--212 (1954).
+\item L.~P. \textsc{Gor'kov}, `Stationary convection in a plane liquid layer near the critical heat transfer point', \textit{Soviet Physics, JETP}, \textbf{6}, 311--15 (1958).
+\item W.~V.~R. \textsc{Malkus} and G. \textsc{Veronis}, `Finite amplitude cellular convection', \textit{J.\ Fluid Mech.}\ \textbf{4}, 225--60 (1958).
+\item G. \textsc{Veronis}, `Cellular convection with finite amplitude in a rotating fluid', ibid.\ \textbf{5}, 401--35 (1959).
+\item Y. \textsc{Nakagawa}, `Heat transport by convection', \textit{Physics of Fluids}, \textbf{3}, 82--86 (1960).
+\item ------\quad `Heat transport by convection in presence of an impressed magnetic field', ibid.\ \textbf{3}, 87--93 (1960).
+\end{enumerate}
+
+These papers go into details of non-linear stability theories.

@@ -1,0 +1,206 @@
+\chapter{THE VARIATIONAL FORMULATION OF THE PROBLEM CONSIDERED IN CHAPTER~V}
+\label{app:II}
+
+\section{The general equation governing the energy-balance}\label{sec:127}
+
+\textsc{From} the theorem stated in Chapter~III (on p.~134) and its extension in Chapter~IV (on p.~169) to include modes of dissipation of energy besides viscosity, it is clear that the general problem considered in Chapter~V must equally allow a variational formulation. In particular, in case the onset of instability is as stationary convection, the variational principle cannot signify anything more than the equality
+\begin{equation}
+\label{eq:A2-1}
+\epsilon_q = \epsilon_v + \epsilon_\kappa,
+\end{equation}
+where
+\begin{equation}
+\label{eq:A2-2}
+\epsilon_q = g\alpha \int \langle \theta w \rangle \, dz
+\end{equation}
+is the average rate of liberation of energy by the buoyancy force, and
+\begin{equation}
+\label{eq:A2-3}
+\epsilon_v = -\frac{\nu}{2} \int \langle u_i \nabla^2 u_i \rangle \, dz
+\end{equation}
+and
+\begin{equation}
+\label{eq:A2-4}
+\epsilon_\kappa = \frac{\kappa}{2g\alpha \beta} \int |\operatorname{curl} \mathbf{h}|^2 \, dz
+\end{equation}
+are the average rates of dissipation of energy in a unit column of the fluid by viscosity and by Joule heating, respectively (cf.\ IV, \S~43~(b)).
+
+When rotation is present, the $z$-components of the vorticity and the current density do not vanish and the necessity to allow for them is the only feature which distinguishes the present problem from that considered in Chapter~IV. In Chapter~III (\S~33) we have already allowed for a non-vanishing $z$-component of the vorticity in the expression for $\epsilon_v$; and the expression derived there (equation~(286), p.~131) is of equal applicability here. Thus,
+\begin{equation}
+\label{eq:A2-5}
+\epsilon_v = \frac{\nu}{2g\alpha \beta} \int \left\{ \left[(D^2 - a^2)W\right]^2 + a^2 \left[(DZ)^2 + a^2 Z^2\right] \right\} dz.
+\end{equation}
+
+In deriving the analogous expression for $\epsilon_\kappa$, we must not forget that the expressions for the horizontal components of the magnetic field used for a similar purpose in Chapter~IV do not allow for a non-vanishing $z$-component of the current density; and that we must now use the general relations (equations~IV~(126) and~(127))
+\begin{equation}
+\label{eq:A2-6}
+h_x = \frac{1}{a^2}\left( \frac{\partial^2 h_z}{\partial x \partial z} + \frac{\partial j_z}{\partial y} \right) \quad \text{and} \quad h_y = \frac{1}{a^2}\left( \frac{\partial^2 h_z}{\partial y \partial z} - \frac{\partial j_z}{\partial x} \right),
+\end{equation}
+where $j_z(= i_z)$ is the $z$-component of the current density.
+
+Without any loss of generality, we may now suppose that (cf.\ equation~IV~(112))
+\begin{equation}
+\label{eq:A2-7}
+\xi = X(z) \cos a_x x \cos a_y y
+\end{equation}
+and
+\begin{equation}
+\label{eq:A2-8}
+h_z = K(z) \cos a_x x \cos a_y y.
+\end{equation}
+The corresponding expressions for $h_x$ and $h_y$ are:
+\begin{equation}
+\label{eq:A2-9}
+h_x = -\frac{1}{a^2}\, DK \sin a_x x \cos a_y y + \frac{a_x}{a^2}\, dX \cos a_x x \sin a_y y,
+\end{equation}
+\begin{equation}
+\label{eq:A2-10}
+h_y = -\frac{1}{a^2}\, DK \cos a_x x \sin a_y y - a_x dX \sin a_x x \cos a_y y.
+\end{equation}
+
+With the components $\mathbf{h}$ given by the foregoing equations, we find that
+\begin{equation}
+\label{eq:A2-11}
+(\operatorname{curl} \mathbf{h})_x = \frac{1}{a^2}(a^2 D^2 - a^2) K \cos a_x x \sin a_y y - a_y dDX \sin a_x x \cos a_y y,
+\end{equation}
+\begin{equation}
+\label{eq:A2-12}
+(\operatorname{curl} \mathbf{h})_y = \frac{1}{a^2}(a^2 D^2 - a^2) K \sin a_x x \cos a_y y + a_x dDX \cos a_x x \sin a_y y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:A2-13}
+(\operatorname{curl} \mathbf{h})_z = dX \cos a_x x \cos a_y y.
+\end{equation}
+
+Now evaluating $\epsilon_\kappa$ in accordance with equation~(\ref{eq:A2-4}), we find
+\begin{equation}
+\label{eq:A2-14}
+\epsilon_\kappa = \frac{\eta}{2g\alpha\beta} \int \left\{ [(D^2 - a^2)K]^2 + a^2[(DX)^2 + a^2 X^2] \right\} dz.
+\end{equation}
+
+Equations~(\ref{eq:A2-5}) and~(\ref{eq:A2-14}) exhibit the completely parallel roles of $W$ and $Z$ and of $K$ and $X$ in determining the respective dissipations.
+
+Eliminating $K$ from equation~(\ref{eq:A2-14}) by means of the relation (equation V~(46))
+\begin{equation}
+\label{eq:A2-15}
+(D^2 - a^2)K = -\frac{Hd}{4\pi\rho\eta}\, DW,
+\end{equation}
+we obtain
+\begin{equation}
+\label{eq:A2-16}
+\epsilon_\kappa = \frac{\eta}{2g\alpha\beta} \int \left[ (DW)^2 + a^2[(DX)^2 + a^2 X^2] \right] dz.
+\end{equation}
+
+This expression for $\epsilon_\kappa$ should be contrasted with the one derived in Chapter~IV (equation~(188), p.~169).
+
+Now combining equations~(\ref{eq:A2-5}) and~(\ref{eq:A2-16}), we have
+\begin{equation}
+\label{eq:A2-17}
+\epsilon_v + \epsilon_\kappa = \frac{\nu}{2g\alpha\beta} \left\{ \int \left[(D^2 - a^2)W\right]^2 + Q(DW)^2 + a^2 \left[(DZ)^2 + a^2 Z^2\right] \right\} dz +
+\end{equation}
+\[
++ \frac{\mu H^2 d^2}{4\pi\rho} \int \left\{ (DX)^2 + a^2 X^2 \right\} dz.
+\]
+
+The expression for $\epsilon_q$ is the same as in the other similar connexions in which we have considered it; it is given by (cf.\ equations~II~(183), III~(291), and~IV~(151))
+\begin{equation}
+\label{eq:A2-18}
+\epsilon_q = \frac{\nu}{d^4} \frac{g\alpha\beta d^4}{\kappa\nu} \int (DW)^2 + a^2 W^2 \, dz,
+\end{equation}
+where
+\begin{equation}
+\label{eq:A2-19}
+F = \frac{g\alpha\beta d^4}{\kappa\nu}.
+\end{equation}
+
+By equating~(\ref{eq:A2-17}) and~(\ref{eq:A2-18}), we obtain
+\begin{equation}
+\label{eq:A2-20}
+Ra^2 \int \left\{ [(D^2 - a^2)W]^2 + Q(DW)^2 + a^2[(DZ)^2 + a^2 Z^2] \right\} dz = \int_0^1 (DW)^2 + a^2 W^2 \, dz.
+\end{equation}
+
+Equation~(\ref{eq:A2-20}) expresses $R$ as the ratio of two positive integrals; and to verify that it can be made the basis of a variational treatment, we shall derive it directly from the relevant equations of the problem.
+
+With $F$ defined as in equation~(\ref{eq:A2-19}), equations~V~(38) and~(39) (with $\sigma$ set equal to zero) become
+\begin{equation}
+\label{eq:A2-21}
+(D^2 - a^2)F = -Ra^2 W
+\end{equation}
+and
+\begin{equation}
+\label{eq:A2-22}
+(D^2 - a^2)W + \frac{\mu Hd}{4\pi\rho\nu}\, D(D^2 - a^2)K = -\frac{2\Omega d}{\nu}\, DZ = F.
+\end{equation}
+
+We can eliminate $K$ from equation~(\ref{eq:A2-22}) by making use of equation~(\ref{eq:A2-15}); and we obtain
+\begin{equation}
+\label{eq:A2-23}
+[(D^2 - a^2)^2 - QD^2]W - \frac{2\Omega d}{\nu}\, DZ = F.
+\end{equation}
+
+Equations~(\ref{eq:A2-21}) and~(\ref{eq:A2-23}) must be considered together with the equations (cf.\ equations~V~(37) and~(38))
+\begin{equation}
+\label{eq:A2-24}
+(D^2 - a^2)Z + \frac{\mu Hd}{4\pi\rho\nu}\, DX = \frac{2\Omega d}{\nu}\, DW
+\end{equation}
+and
+\begin{equation}
+\label{eq:A2-25}
+(D^2 - a^2)X = -\frac{Hd}{4\pi\rho\eta}\, DZ,
+\end{equation}
+and the boundary conditions~V~(49)--(51).
+
+Now multiply equation~(\ref{eq:A2-21}) by $F$ and integrate over the range of $z$; we obtain
+\begin{equation}
+\label{eq:A2-26}
+\int_0^1 [(DF)^2 + a^2 F^2] \, dz = Ra^2 \int_0^1 WF \, dz.
+\end{equation}
+
+After one or more integrations by parts, the integral on the right-hand side of equation~(\ref{eq:A2-26}) can be brought to the form
+\begin{equation}
+\label{eq:A2-27}
+\int \left\{ [(D^2 - a^2)W]^2 + Q(DW)^2 \right\} dz + \frac{2\Omega d}{\nu} \int Z\, DW \, dz.
+\end{equation}
+
+By making use of equation~(\ref{eq:A2-24}), we can transform the second integral in~(\ref{eq:A2-27}) in the manner
+\begin{equation}
+\label{eq:A2-28}
+\frac{2\Omega d}{\nu} \int Z\, DW \, dz = -a^2 \int Z[(D^2 - a^2)Z + \frac{\mu Hd}{4\pi\rho\nu} DX] \, dz
+\end{equation}
+\[
+= a^2 \int (DZ)^2 + a^2 Z^2 \, dz + \frac{\mu Hd}{4\pi\rho\nu} \int X\, DZ \, dz.
+\]
+
+By making similar use of the remaining equation~(\ref{eq:A2-25}), we can transform the second integral on the right-hand side of equation~(\ref{eq:A2-28}) to give
+\begin{equation}
+\label{eq:A2-29}
+\frac{\mu Hd}{4\pi\rho\nu} \int X\, DZ \, dz = -\frac{\mu\nu}{\eta} \int \left\{ (DX)^2 + a^2 X^2 \right\} dz
+\end{equation}
+\[
+= \frac{\nu^2 H^2 d^2}{4\pi\rho\eta} \cdot \frac{a^2}{4\pi\rho\nu} \int \left\{ (DX)^2 + a^2 X^2 \right\} dz.
+\]
+
+By combining the results of the foregoing reductions we recover equation~(\ref{eq:A2-20}); and it can be readily shown that equation~(\ref{eq:A2-20}) does indeed provide a basis for a variational determination of $R$. However, the present derivation of equation~(\ref{eq:A2-20}) shows that in the variational treatment, equations~(\ref{eq:A2-23})--(\ref{eq:A2-25}) must be considered as subsidiary conditions on the characteristic value problem specified by equation~(\ref{eq:A2-21}).
+
+In other words, for a chosen form of $F$ (compatible with the boundary conditions that it vanish for $z = 0$ and 1) we must \emph{solve} equations (\ref{eq:A2-23})--(\ref{eq:A2-25}) for $W$, $Z$, and $X$ and arrange that the required boundary conditions on them are satisfied. For these last purposes it will be convenient to combine equations~(\ref{eq:A2-24}) and~(\ref{eq:A2-25}) in the form
+\begin{equation}
+\label{eq:A2-30}
+[(D^2 - a^2)^2 - QD^2]Z = -\frac{2\Omega d}{\nu}(D^2 - a^2)\,DW,
+\end{equation}
+and use this equation to eliminate $Z$ from equation~(\ref{eq:A2-23}) to obtain
+\begin{equation}
+\label{eq:A2-31}
+\{[(D^2 - a^2)^2 - QD^2]^2 + T(D^2 - a^2)D^2\}W = [(D^2 - a^2)^2 - QD^2]F.
+\end{equation}
+
+This is an equation of order eight for $W$ and the two pairs of boundary conditions on $W$ and the pair each on $Z$ and $X$ will suffice to determine the solution uniquely. However, it is evident that a variational treatment of the problem based on the foregoing equations and for the various permissible sets of boundary conditions will be very laborious; it was for this reason that the treatment in the text was confined to the one case (\emph{albeit}, an artificial case) for which an explicit solution is possible.
+
+The generalization of the preceding analysis to include the case of overstability is straightforward and will be omitted.
+
+\section*{BIBLIOGRAPHICAL NOTE}
+
+See:
+\begin{enumerate}
+\item S. \textsc{Chandrasekhar}, `The thermodynamics of thermal instability in liquids', \textit{Max Planck Festschrift 1958}, 103--14, Veb Deutscher Verlag der Wissenschaften, Berlin, 1958.
+\end{enumerate}
