@@ -1,0 +1,526 @@
+% =====================================================================
+% Relativistic Non-Dissipative Couette Flow with Magnetic Field
+% Chapter IX, Sections 81--83: Relativistic Modification
+% =====================================================================
+% Requires: rel_preamble.tex (loaded by rel_main.tex)
+%
+% Classical reference: Chandrasekhar, Ch. IX, §§81--83
+% Relativistic framework: Covariant ideal MHD, Israel-Stewart causality
+% =====================================================================
+
+\chapter*{Chapter IX (Relativistic): Non-Dissipative Couette Flow in
+  Hydromagnetics}
+\addcontentsline{toc}{chapter}{Chapter IX (Rel.): Non-Dissipative
+  Couette Flow with Magnetic Field}
+
+%======================================================================
+\section{Relativistic MHD equations in cylindrical coordinates}
+\label{sec:rel-80}
+%======================================================================
+
+In the classical theory (\S\,80), the equations governing an
+incompressible, electrically conducting fluid in the presence of a
+magnetic field are written in cylindrical coordinates $(r,\theta,z)$.
+In the relativistic extension one must replace the Newtonian momentum
+equation with the covariant conservation of the energy--momentum
+tensor of a magnetised perfect fluid,
+\begin{equation}
+  \nabla_{\mu}\, T^{\mu\nu}_{\mathrm{MHD}} = 0,
+  \label{eq:rel-9-Tcons}
+\end{equation}
+where (cf.\ the relativistic MHD framework, equation~\eqref{eq:Fmunu-decomp}
+and RELATIVISTIC\_CONVENTIONS.md)
+\begin{equation}
+  T^{\mu\nu}_{\mathrm{MHD}}
+  = \left(\varepsilon + p + \frac{b^{2}}{4\pi}\right)
+    \frac{u^{\mu}\,u^{\nu}}{c^{2}}
+  + \left(p + \frac{b^{2}}{8\pi}\right)g^{\mu\nu}
+  - \frac{b^{\mu}\,b^{\nu}}{4\pi}.
+  \label{eq:rel-9-TMHD}
+\end{equation}
+Here $\varepsilon$ is the total energy density (including rest mass),
+$p$ the pressure, $u^{\mu}$ the 4-velocity normalised by
+$u^{\mu}u_{\mu}=-c^{2}$, and $b^{\mu}$ the magnetic field 4-vector in
+the fluid rest frame satisfying $b^{\mu}u_{\mu}=0$.  The relativistic
+enthalpy density is
+\begin{equation}
+  w \;\equiv\; \frac{\varepsilon + p}{c^{2}}.
+  \label{eq:rel-9-enthalpy}
+\end{equation}
+
+The ideal MHD condition (vanishing electric field in the fluid frame),
+\begin{equation}
+  F^{\mu\nu}\,u_{\nu} = 0,
+  \label{eq:rel-9-idealMHD}
+\end{equation}
+together with the homogeneous Maxwell equations
+$\nabla_{\mu}\,{}^{\ast}\!F^{\mu\nu}=0$, yields the relativistic
+induction equation.  In Minkowski spacetime with cylindrical
+coordinates $(t,r,\theta,z)$ and metric
+$ds^{2} = -c^{2}\,dt^{2} + dr^{2} + r^{2}\,d\theta^{2} + dz^{2}$,
+the spatial components of equation~\eqref{eq:rel-9-Tcons} and the
+induction equation take the forms:
+
+\medskip\noindent\textbf{Radial momentum:}
+\begin{align}
+  w\!\left(\frac{\partial u_{r}}{\partial t}
+    + (\mathbf{u}\!\cdot\!\mathrm{grad})\,u_{r}
+    - \frac{u_{\theta}^{2}}{r}\right)
+  &- \frac{1}{4\pi}\!\left((\mathbf{b}\!\cdot\!\mathrm{grad})\,b_{r}
+    - \frac{b_{\theta}^{2}}{r}\right) \notag\\
+  &= -\frac{\partial}{\partial r}
+      \!\left(p + \frac{b^{2}}{8\pi}\right)
+    + \frac{w}{c^{2}}\,\mathcal{R}_{r},
+  \label{eq:rel-9-1}
+\end{align}
+where $\mathcal{R}_{r}$ collects terms of order $u^{2}/c^{2}$
+relative to the leading Newtonian terms.  Analogous equations hold for
+the $\theta$ and $z$ components.
+
+\medskip\noindent\textbf{Induction (frozen-in flux):}
+\begin{equation}
+  \frac{\partial b_{r}}{\partial t}
+  + (\mathbf{u}\!\cdot\!\mathrm{grad})\,b_{r}
+  - (\mathbf{b}\!\cdot\!\mathrm{grad})\,u_{r}
+  = -\frac{b_{r}}{c^{2}}\,\frac{Du_{r}}{Dt}
+  + O\!\left(\frac{u^{2}}{c^{2}}\right)\!b_{r},
+  \label{eq:rel-9-induction-r}
+\end{equation}
+with $D/Dt$ the comoving (proper-time) derivative.  The key
+relativistic modification is that the \emph{inertial mass density}
+$\rho$ of the classical equations is everywhere replaced by the
+\emph{relativistic enthalpy density}
+\begin{equation}
+  \rho \;\longrightarrow\; w
+  = \frac{\varepsilon + p}{c^{2}}
+  = \rho\!\left(1 + \frac{e + p/\rho}{c^{2}}\right),
+  \label{eq:rel-9-rho-to-w}
+\end{equation}
+where $e$ is the specific internal energy.  The divergence-free
+conditions
+$\nabla_{\mu}(\rho\, u^{\mu})=0$ (baryon conservation) and
+$\nabla_{\mu}\,b^{\mu}=0$ retain the classical cylindrical forms
+\eqref{eq:9-12} and \eqref{eq:9-13} at leading order in $v/c$.
+
+\medskip
+The system admits the same stationary Couette solution as classically:
+\begin{equation}
+  u_{r} = u_{z} = 0,\quad u_{\theta} = V(r) = r\,\Omega(r),\quad
+  b_{r} = b_{\theta} = 0,\quad b_{z} = B_{0} = \text{const},
+  \label{eq:rel-9-baseflow}
+\end{equation}
+with the equilibrium condition
+\begin{equation}
+  \frac{d}{dr}\!\left(p + \frac{B_{0}^{2}}{8\pi}\right)
+  = w\,\frac{V^{2}}{r}
+  = \frac{(\varepsilon + p)}{c^{2}}\,\frac{V^{2}}{r}.
+  \label{eq:rel-9-equil}
+\end{equation}
+Note that the centrifugal term involves $w = (\varepsilon+p)/c^{2}$
+rather than $\rho$: this is the essential relativistic modification of
+the radial force balance.
+
+%======================================================================
+\section{Stability of non-dissipative Couette flow with axial
+  magnetic field: relativistic}
+\label{sec:rel-81}
+%======================================================================
+
+We linearise about the base state~\eqref{eq:rel-9-baseflow} exactly as
+in the classical \S\,81, with all perturbations proportional to
+$\exp[i(\sigma t + m\theta + kz)]$ and $\sigma = p + m\Omega$.
+The relativistic perturbation equations differ from the classical ones
+(equations~\eqref{eq:9-24}--\eqref{eq:9-29}) by the replacement
+$\rho \to w$ wherever $\rho$ appears as an inertial mass.  Defining
+the \emph{relativistic Alfv\'en frequency}
+\begin{equation}
+  \Omega_{A,\mathrm{rel}}^{2}
+  \;\equiv\; \frac{B_{0}^{2}\,k^{2}}{4\pi\,w}
+  = \frac{B_{0}^{2}\,k^{2}\,c^{2}}{4\pi\,(\varepsilon + p)},
+  \label{eq:rel-9-OmegaA}
+\end{equation}
+(compare the classical $\Omega_{A}^{2} = \mu H^{2}k^{2}/(4\pi\rho)$,
+equation~\eqref{eq:9-43}), and introducing the Lagrangian displacement
+$\boldsymbol{\xi}$ as in~\eqref{eq:9-38}, the perturbation equations
+in terms of $\boldsymbol{\xi}$ take the identical form to
+equations~\eqref{eq:9-40}--\eqref{eq:9-44}, but with:
+\begin{enumerate}
+\item $\Omega_{A}^{2}$ replaced by $\Omega_{A,\mathrm{rel}}^{2}$;
+\item Rayleigh's discriminant generalised to
+\begin{equation}
+  \Phi_{\mathrm{rel}}(r)
+  = \frac{1}{r^{3}}\,\frac{d}{dr}\!\left(r^{2}\,\Omega\right)^{2}
+  = \frac{1}{r^{3}}\,\frac{d}{dr}\!\left(r^{2}\,V/r\right)^{2},
+  \label{eq:rel-9-Phi}
+\end{equation}
+which is structurally unchanged, since the angular velocity profile
+$\Omega(r)$ is unmodified;
+\item the angular momentum per unit \emph{enthalpy}
+\begin{equation}
+  \ell_{\mathrm{rel}} = w\,r^{2}\,\Omega
+  = \frac{(\varepsilon + p)}{c^{2}}\;r^{2}\,\Omega
+  \label{eq:rel-9-angmom}
+\end{equation}
+replacing the classical $\rho\, r^{2}\Omega$ in the stability
+criterion.
+\end{enumerate}
+
+The combined system~\eqref{eq:9-46} and \eqref{eq:9-49} becomes
+\begin{equation}
+  (\sigma^{2} - \Omega_{A,\mathrm{rel}}^{2})\,D_{*}\xi_{r}
+  - \frac{2m\sigma\Omega}{r}\,\xi_{r}
+  = \left(\frac{m^{2}}{r^{2}} + k^{2}\right)\varpi,
+  \label{eq:rel-9-46}
+\end{equation}
+\begin{equation}
+  \left(\sigma^{2} - \Omega_{A,\mathrm{rel}}^{2}
+    - \Phi_{\mathrm{rel}}(r)
+    - \frac{4\Omega^{2}\,\Omega_{A,\mathrm{rel}}^{2}}
+           {\sigma^{2} - \Omega_{A,\mathrm{rel}}^{2}}\right)\xi_{r}
+  = D\varpi
+    + \frac{2m\sigma\Omega}{\sigma^{2} - \Omega_{A,\mathrm{rel}}^{2}}
+      \,\frac{\varpi}{r},
+  \label{eq:rel-9-49}
+\end{equation}
+with boundary conditions $\xi_{r}=0$ at $r=R_{1}$ and $R_{2}$.
+
+%----------------------------------------------------------------------
+\subsection*{(a) The case $m=0$: relativistic criterion}
+\label{sec:rel-81a}
+%----------------------------------------------------------------------
+
+For axisymmetric perturbations ($m=0$), $\sigma = p$ and the system
+reduces to the eigenvalue problem
+\begin{equation}
+  \kappa_{\mathrm{rel}}\,(DD_{*} - k^{2})\,\xi_{r}
+  = -k^{2}\!\left[\Phi_{\mathrm{rel}}(r)
+    + \frac{4\Omega^{2}\,\Omega_{A,\mathrm{rel}}^{2}}
+           {\kappa_{\mathrm{rel}}}\right]\xi_{r},
+  \label{eq:rel-9-53}
+\end{equation}
+where
+\begin{equation}
+  \kappa_{\mathrm{rel}} = p^{2} - \Omega_{A,\mathrm{rel}}^{2}.
+  \label{eq:rel-9-54}
+\end{equation}
+
+The proof that the eigenvalues $\kappa_{\mathrm{rel}}$ are real
+carries over \emph{verbatim} from the classical analysis
+(\S\,81\,(a), equations~\eqref{eq:9-55}--\eqref{eq:9-57}), since the
+self-adjointness of the operator depends only on the structure of the
+equation, not on the numerical value of $\Omega_{A}$.
+
+The integral identity~\eqref{eq:9-58} becomes
+\begin{equation}
+  \kappa_{\mathrm{rel}}^{2}\,I_{1}
+  - \kappa_{\mathrm{rel}}\,k^{2}\,I_{2,\mathrm{rel}}
+  - 4k^{2}\,\Omega_{A,\mathrm{rel}}^{2}\,I_{3} = 0,
+  \label{eq:rel-9-58}
+\end{equation}
+with
+\begin{equation}
+  I_{2,\mathrm{rel}}
+  = \int_{R_{1}}^{R_{2}} r\,\Phi_{\mathrm{rel}}(r)\,\xi_{r}^{2}\,dr.
+  \label{eq:rel-9-I2}
+\end{equation}
+Since $\Phi_{\mathrm{rel}}(r)$ has the same functional form as
+classically (only the Alfv\'en frequency differs), the variational
+principle and the Sturmian structure of the spectrum are preserved.
+
+\medskip\noindent\textbf{Stability criterion (relativistic).}
+\emph{A necessary and sufficient condition for the stability of an
+ideal MHD Couette flow with a uniform axial field, under axisymmetric
+perturbations, is that}
+\begin{equation}
+  \boxed{%
+  \frac{d}{dr}\!\left(\frac{(\varepsilon+p)}{c^{2}}\;
+    r^{2}\,\Omega\right)^{2} > 0
+  \quad\text{throughout } (R_{1},R_{2}).}
+  \label{eq:rel-9-stability}
+\end{equation}
+This is the relativistic Rayleigh criterion: \emph{stability requires
+that the specific angular momentum per unit enthalpy,}
+$\ell_{\mathrm{rel}} = w\,r^{2}\Omega$, \emph{increase outward}.
+In the non-relativistic limit $(\varepsilon+p)/c^{2}\to\rho$, the
+classical Rayleigh criterion $d(\rho\,r^{2}\Omega)^{2}/dr > 0$ is
+recovered.
+
+\medskip
+For a fluid with a relativistic equation of state (e.g.\ hot plasma
+with $p\sim\varepsilon/3$), the enthalpy factor $w = (\varepsilon+p)/c^{2}$
+can significantly exceed $\rho$, making the effective inertia larger
+and the angular-momentum gradient steeper.  This relativistic
+enhancement of inertia can either stabilise or destabilise the flow
+depending on the radial profiles of $\varepsilon(r)$ and $p(r)$.
+
+%----------------------------------------------------------------------
+\subsection*{(b) Variational principle for $\lambda^{2}$: relativistic}
+\label{sec:rel-81b}
+%----------------------------------------------------------------------
+
+The quadratic~\eqref{eq:rel-9-58} provides the basis for a variational
+formulation exactly as in \S\,81\,(a)\,(ii).  Defining
+\begin{equation}
+  \lambda_{\mathrm{rel}}^{2}
+  = \frac{\displaystyle\int_{R_{1}}^{R_{2}}
+      (c_{\mathrm{rel}} - W)^{2}\,
+      \bigl\{(D_{*}\chi)^{2} + k^{2}\chi^{2}\bigr\}\,r\,dr}
+    {\displaystyle\int_{R_{1}}^{R_{2}}
+      \phi_{\mathrm{rel}}(r)\,\chi^{2}\,r\,dr},
+  \label{eq:rel-9-66}
+\end{equation}
+where $W = r\Omega$ and $\phi_{\mathrm{rel}}$ involves
+$\Phi_{\mathrm{rel}}$ defined in~\eqref{eq:rel-9-Phi}, the stationary
+values of $\lambda_{\mathrm{rel}}^{2}$ with respect to variations of
+$\chi$ (subject to $\chi(R_{1})=\chi(R_{2})=0$) yield the eigenvalues.
+
+The Sturmian monotonicity properties established classically
+(equations~\eqref{eq:9-67}--\eqref{eq:9-74}) carry over to the
+relativistic case without modification, since they rely on the
+positivity structure of the integrals, which is unchanged.
+Consequently, for each assigned $k^{2}$ and $\lambda_{\mathrm{rel}}^{2}>0$
+there exist exactly two real characteristic values of the phase speed,
+and no complex roots arise when $\Phi_{\mathrm{rel}}>0$ everywhere.
+
+%======================================================================
+\section{Oscillation periods with axial magnetic field: relativistic}
+\label{sec:rel-82}
+%======================================================================
+
+%----------------------------------------------------------------------
+\subsection*{(a) $\Omega = \mathrm{constant}$: relativistic
+  magneto-inertial oscillations}
+\label{sec:rel-82a}
+%----------------------------------------------------------------------
+
+When $\Omega = \text{const}$, the analysis of \S\,82\,(a) carries
+through with $\Omega_{A}\to\Omega_{A,\mathrm{rel}}$.  The dispersion
+relation~\eqref{eq:9-82} becomes
+\begin{equation}
+  \sigma^{2} - \sigma_{0}\,\sigma - \Omega_{A,\mathrm{rel}}^{2} = 0,
+  \label{eq:rel-9-82}
+\end{equation}
+with roots
+\begin{equation}
+  \sigma = \tfrac{1}{2}\!\left[\sigma_{0}
+    \pm \sqrt{\sigma_{0}^{2}
+    + 4\,\Omega_{A,\mathrm{rel}}^{2}}\;\right].
+  \label{eq:rel-9-84}
+\end{equation}
+Here $\sigma_{0}$ is the hydrodynamic eigenvalue from \S\,68\,(a).  The
+splitting~\eqref{eq:9-83} generalises to
+\begin{equation}
+  \sigma_{1} + \sigma_{2} = \sigma_{0},
+  \qquad
+  \sigma_{1}\,\sigma_{2} = -\Omega_{A,\mathrm{rel}}^{2},
+  \label{eq:rel-9-83}
+\end{equation}
+so that the magnetic field still splits each hydrodynamic mode into two
+magneto-inertial oscillations, but the splitting magnitude now depends
+on the relativistic Alfv\'en frequency
+$\Omega_{A,\mathrm{rel}}^{2} = B_{0}^{2}k^{2}c^{2}/[4\pi(\varepsilon+p)]$
+rather than $\mu H^{2}k^{2}/(4\pi\rho)$.
+
+The oscillation period of the magneto-inertial modes is
+\begin{equation}
+  \mathcal{T}_{\mathrm{rel}}
+  = \frac{2\pi}{|\sigma|}
+  = \frac{2\pi}{\tfrac{1}{2}\bigl|\sigma_{0}
+    \pm\sqrt{\sigma_{0}^{2}
+    + 4\Omega_{A,\mathrm{rel}}^{2}}\;\bigr|}.
+  \label{eq:rel-9-period}
+\end{equation}
+In the strong-field limit
+$\Omega_{A,\mathrm{rel}}^{2} \gg \sigma_{0}^{2}$, the two roots
+approach $\pm\Omega_{A,\mathrm{rel}}$ and the oscillation period
+becomes that of a relativistic Alfv\'en wave:
+\begin{equation}
+  \mathcal{T}_{\mathrm{Alfven}}
+  = \frac{2\pi}{\Omega_{A,\mathrm{rel}}}
+  = \frac{2\pi}{k}\,
+    \sqrt{\frac{4\pi\,(\varepsilon + p)}{B_{0}^{2}\,c^{2}}}.
+  \label{eq:rel-9-TAlfven}
+\end{equation}
+
+%----------------------------------------------------------------------
+\subsection*{(b) Stabilising effect of the magnetic field in narrow
+  gaps: relativistic}
+\label{sec:rel-82b}
+%----------------------------------------------------------------------
+
+For $m=0$ and $\Omega(r) = A + B/r^{2}$ (viscous Couette profile),
+the narrow-gap analysis of \S\,82\,(b) carries through with the
+replacement $\rho\to w = (\varepsilon+p)/c^{2}$.  The stability
+criterion~\eqref{eq:9-96} generalises to
+\begin{equation}
+  \frac{B_{0}^{2}}{4\pi\,w}
+  = \frac{B_{0}^{2}\,c^{2}}{4\pi\,(\varepsilon + p)}
+  > 2\,\Omega_{1}^{2}\,R_{0}\,d\;
+    \bigl[(1-\mu)\,\Lambda_{0}(\mu)\bigr],
+  \label{eq:rel-9-96}
+\end{equation}
+where $\Lambda_{0}(\mu)$ is the same function tabulated in Table~XLI
+of the classical treatment.  The criterion for complete stabilisation
+of all adverse flows becomes
+\begin{equation}
+  \frac{B_{0}^{2}\,c^{2}}{4\pi\,(\varepsilon + p)}
+  > q_{c}\;\bigl(2\,\Omega_{1}^{2}\,R_{0}\,d\bigr),
+  \qquad q_{c} \simeq 0.0532.
+  \label{eq:rel-9-100}
+\end{equation}
+Since $(\varepsilon+p)/c^{2} > \rho$, a \emph{stronger} magnetic field
+is required in the relativistic regime to achieve the same
+stabilising effect: the enhanced inertia demands a proportionally
+larger magnetic tension.
+
+%======================================================================
+\section{Non-dissipative Couette flow with transverse (azimuthal)
+  magnetic field: relativistic}
+\label{sec:rel-83}
+%======================================================================
+
+When a current distribution parallel to the axis produces an
+azimuthal magnetic field $B_{\theta}(r)$ (classical \S\,83), the
+stationary solution~\eqref{eq:9-103} remains valid in the
+relativistic theory with the equilibrium condition modified to
+\begin{equation}
+  \frac{d}{dr}\!\left(p + \frac{B_{\theta}^{2}}{8\pi}\right)
+  = \frac{(\varepsilon + p)}{c^{2}}\,\frac{V^{2}}{r}
+    - \frac{B_{\theta}^{2}}{4\pi\,r}.
+  \label{eq:rel-9-104}
+\end{equation}
+
+The linearised equations for axisymmetric perturbations ($m=0$) lead,
+as in the classical case, to the eigenvalue problem
+\begin{equation}
+  (DD_{*} - k^{2})\,\xi_{r}
+  = -\frac{k^{2}}{p^{2}}\;
+    \Psi_{\mathrm{rel}}(r)\,\xi_{r},
+  \label{eq:rel-9-126}
+\end{equation}
+where the relativistic analogue of $\Psi(r)$
+(equation~\eqref{eq:9-124}) is
+\begin{equation}
+  \Psi_{\mathrm{rel}}(r)
+  = \frac{1}{w\,r^{3}}\,\frac{d}{dr}\bigl(w\,r^{2}\,\Omega\bigr)^{2}
+    - \frac{r}{4\pi\,w}\,\frac{d}{dr}\!\left(\frac{B_{\theta}}{r}\right)^{\!2}.
+  \label{eq:rel-9-Psi}
+\end{equation}
+The first term is the relativistic Rayleigh discriminant
+$\Phi_{\mathrm{rel}}$ with enthalpy-weighted angular momentum; the
+second accounts for the destabilising effect of the azimuthal magnetic
+field gradient (the magnetic analogue of the centrifugal term).
+
+\medskip\noindent\textbf{Michael's criterion (relativistic).}
+\emph{A necessary and sufficient condition for stability of the flow
+under axisymmetric perturbations is that
+$\Psi_{\mathrm{rel}}(r) > 0$ throughout $(R_{1},R_{2})$.}  Explicitly,
+\begin{equation}
+  \boxed{%
+  \frac{d}{dr}\!\left(\frac{\varepsilon+p}{c^{2}}\;
+    r^{2}\,\Omega\right)^{\!2}
+  > \frac{r^{4}}{4\pi}\,
+    \frac{d}{dr}\!\left(\frac{B_{\theta}}{r}\right)^{\!2}
+  \quad\text{throughout } (R_{1},R_{2}).}
+  \label{eq:rel-9-Michael}
+\end{equation}
+In the non-relativistic limit $(\varepsilon+p)/c^{2}\to\rho$, this
+recovers Michael's classical result.
+
+For the non-axisymmetric modes ($m\ne 0$), the variational
+formulation of \S\,83\,(b) extends straightforwardly with
+$\Omega_{H}^{2}\to\Omega_{H,\mathrm{rel}}^{2}
+= B_{\theta}^{2}/(4\pi\,w\,r^{2})$.  As in the classical theory, the
+stability conditions for these modes have not been fully determined.
+
+%======================================================================
+\section{Causality constraints}
+\label{sec:rel-9-causality}
+%======================================================================
+
+A crucial requirement of the relativistic theory, with no classical
+counterpart, is that all characteristic speeds of the MHD system remain
+subluminal.  We collect the relevant bounds.
+
+\medskip\noindent\textbf{Alfv\'en speed.}
+The relativistic Alfv\'en speed is
+\begin{equation}
+  v_{A}^{2}
+  = \frac{b^{2}/4\pi}{w + b^{2}/(4\pi c^{2})}\;c^{2}
+  = \frac{B_{0}^{2}\,c^{2}}{4\pi\,(\varepsilon + p) + B_{0}^{2}},
+  \label{eq:rel-9-vA}
+\end{equation}
+which manifestly satisfies $v_{A} < c$ for any finite $B_{0}$.  (In
+the classical limit $(\varepsilon+p)\to\rho c^{2} \gg B_{0}^{2}/4\pi$,
+one recovers $v_{A}^{2}\to B_{0}^{2}/(4\pi\rho)$.)
+
+\medskip\noindent\textbf{Magnetosonic speeds.}
+The fast and slow magnetosonic speeds are (cf.\
+RELATIVISTIC\_CONVENTIONS.md):
+\begin{equation}
+  v_{f,s}^{2}
+  = \frac{1}{2}\!\left[c_{s}^{2} + v_{A}^{2}
+    \pm\sqrt{(c_{s}^{2} + v_{A}^{2})^{2}
+    - 4\,c_{s}^{2}\,v_{A}^{2}\cos^{2}\!\alpha}\;\right],
+  \label{eq:rel-9-vfs}
+\end{equation}
+where $c_{s}^{2} = (\partial p/\partial\varepsilon)_{s}\le c^{2}$ is
+the sound speed and $\alpha$ is the angle between the wave vector and
+the magnetic field.  Both $v_{f}$ and $v_{s}$ satisfy $v_{f,s}\le c$,
+as can be verified algebraically from $c_{s}\le c$ and $v_{A}\le c$.
+
+\medskip\noindent\textbf{Implications for stability analysis.}
+The eigenfrequencies $\sigma$ obtained from the
+dispersion relation~\eqref{eq:rel-9-82} correspond to phase speeds
+$v_{\mathrm{ph}} = \sigma/k$ that must satisfy
+\begin{equation}
+  |v_{\mathrm{ph}}| \le c.
+  \label{eq:rel-9-subluminal}
+\end{equation}
+This is automatically guaranteed provided the Alfv\'en frequency is
+defined through~\eqref{eq:rel-9-OmegaA} with the enthalpy density $w$
+in the denominator, since
+\begin{equation}
+  \frac{\Omega_{A,\mathrm{rel}}^{2}}{k^{2}}
+  = \frac{B_{0}^{2}\,c^{2}}{4\pi\,(\varepsilon + p)}
+  < c^{2}
+  \qquad\text{whenever } B_{0}^{2}/(4\pi) < \varepsilon + p,
+  \label{eq:rel-9-causal-check}
+\end{equation}
+which holds for any physically reasonable equation of state (the
+magnetic energy density is part of the total energy, hence always
+bounded by $\varepsilon$).
+
+For the magneto-inertial oscillations of \S\,\ref{sec:rel-82a}, the
+group velocity can be computed from~\eqref{eq:rel-9-84}:
+\begin{equation}
+  v_{g} = \frac{\partial\sigma}{\partial k}
+  = \frac{\Omega_{A,\mathrm{rel}}^{2}/k}
+         {\sqrt{\sigma_{0}^{2}
+           + 4\,\Omega_{A,\mathrm{rel}}^{2}}}.
+  \label{eq:rel-9-vgroup}
+\end{equation}
+In the strong-field limit this approaches $v_{A} < c$, confirming
+subluminal energy transport.
+
+\medskip\noindent\textbf{Summary.}
+The replacement $\rho\to w = (\varepsilon+p)/c^{2}$ in all inertial
+terms is not merely a notational convenience but the mechanism by which
+the relativistic theory enforces causality.  The denominator
+$(\varepsilon+p)$ grows with the magnetic energy itself, preventing
+the Alfv\'en speed and all MHD mode speeds from exceeding $c$.
+This self-regulation is absent in Newtonian MHD, where arbitrarily
+large $B$ fields produce arbitrarily large Alfv\'en speeds.
+
+%======================================================================
+\section*{Non-relativistic limit}
+\label{sec:rel-9-NRlimit}
+%======================================================================
+
+Throughout this chapter the speed of light $c$ has been kept explicit.
+The non-relativistic limit is obtained by taking
+$\varepsilon\to\rho c^{2}$, $p\ll\rho c^{2}$, so that
+$w\to\rho$, $\Omega_{A,\mathrm{rel}}\to\Omega_{A}$, and all
+equations reduce to the classical forms of \S\S\,81--83.  The
+causality bounds become vacuous ($v_{A}/c\to 0$), and the Rayleigh and
+Michael criteria return to their standard Newtonian forms.
