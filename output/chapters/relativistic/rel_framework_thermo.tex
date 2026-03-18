@@ -38,9 +38,9 @@ $s$ the entropy density, and by $T$ the temperature.
 The relativistic first law of thermodynamics, expressed per unit
 volume, reads
 \begin{equation}
-  \dd\varepsilon
-  = T\,\dd s
-    + \frac{\varepsilon + p}{n}\,\dd n \,.
+  \mathrm{d}\varepsilon
+  = T\,\mathrm{d} s
+    + \frac{\varepsilon + p}{n}\,\mathrm{d} n \,.
   \label{eq:rel-first-law}
 \end{equation}
 Here $(\varepsilon+p)/n$ is the relativistic chemical potential
@@ -76,7 +76,7 @@ departure from unity measures the relativistic correction.
 \subsubsection{Gibbs--Duhem Relation}
 Thermodynamic consistency requires the Gibbs--Duhem relation
 \begin{equation}
-  \dd p = s\,\dd T + n\,\dd\mu \,,
+  \mathrm{d} p = s\,\mathrm{d} T + n\,\mathrm{d}\mu \,,
   \label{eq:gibbs-duhem}
 \end{equation}
 where $\mu = (\varepsilon + p)/n - T s/n$ is the chemical potential per
@@ -332,7 +332,7 @@ $\sigma^{\mu\nu}$ is the shear tensor:
       \frac{1}{2}(\nabla_{\alpha}u_{\beta} + \nabla_{\beta}u_{\alpha})
       - \frac{1}{3}\,\Delta_{\alpha\beta}\,\nabla_{\gamma}u^{\gamma}
     \right).
-  \label{eq:shear-tensor}
+  \label{eq:thermo-shear-tensor}
 \end{equation}
 This is formally identical to the Navier--Stokes constitutive
 relation.  The crucial difference from the acausal Eckart/Landau
@@ -519,13 +519,13 @@ convectively unstable when the ambient entropy gradient is
 superadiabatic.  In the relativistic formulation, the criterion
 becomes
 \begin{equation}
-  \frac{\dd s}{\dd r}
+  \frac{\mathrm{d} s}{\mathrm{d} r}
   < \frac{s + p/T}{w}\,
-    \frac{\dd p}{\dd r}\,
+    \frac{\mathrm{d} p}{\mathrm{d} r}\,
     \left(\frac{\partial s}{\partial p}\right)_{\!\varepsilon}
   \label{eq:rel-schwarzschild}
 \end{equation}
-(for a radially stratified equilibrium with $\dd p/\dd r < 0$).
+(for a radially stratified equilibrium with $\mathrm{d} p/\mathrm{d} r < 0$).
 The key relativistic modification is the appearance of $w = \varepsilon + p$
 in the denominator, which enhances the effective inertia and thus
 \emph{stabilizes} relativistically hot matter against convection
@@ -536,10 +536,10 @@ When the fluid has multiple species (e.g., baryon number and lepton
 number in neutron-star matter), a composition gradient provides an
 additional stabilizing influence.  The relativistic Ledoux criterion is
 \begin{equation}
-  \frac{\dd s}{\dd r}
-  < \left(\frac{\dd s}{\dd r}\right)_{\!\text{ad}}
+  \frac{\mathrm{d} s}{\mathrm{d} r}
+  < \left(\frac{\mathrm{d} s}{\mathrm{d} r}\right)_{\!\text{ad}}
   + \frac{1}{w}\left(\frac{\partial p}{\partial Y_{e}}\right)_{\!\varepsilon,s}
-    \frac{\dd Y_{e}}{\dd r}\,,
+    \frac{\mathrm{d} Y_{e}}{\mathrm{d} r}\,,
   \label{eq:rel-ledoux}
 \end{equation}
 where $Y_{e}$ is the electron fraction (or any composition variable)
@@ -550,10 +550,10 @@ The squared Brunt--V\"ais\"al\"a frequency governing the oscillation
 (or growth) of displaced fluid elements generalizes to
 \begin{equation}
   N^{2}
-  = -\frac{c^{2}}{w}\,\frac{\dd p}{\dd r}
+  = -\frac{c^{2}}{w}\,\frac{\mathrm{d} p}{\mathrm{d} r}
     \left[
-      \frac{1}{\cs^{2}}\,\frac{\dd p}{\dd r}
-      - \frac{\dd\varepsilon}{\dd r}
+      \frac{1}{\cs^{2}}\,\frac{\mathrm{d} p}{\mathrm{d} r}
+      - \frac{\mathrm{d}\varepsilon}{\mathrm{d} r}
     \right],
   \label{eq:rel-BV}
 \end{equation}
@@ -561,7 +561,7 @@ where all quantities are evaluated in the equilibrium background.
 Convective instability corresponds to $N^{2} < 0$.  In the
 non-relativistic limit ($w \to \rho c^{2}$, $\varepsilon \to \rho c^{2}$),
 Eq.~\eqref{eq:rel-BV} reduces to the standard expression
-$N^{2} = -g\,(\dd\ln\rho/\dd r - (1/\gamma)(\dd\ln p/\dd r))$.
+$N^{2} = -g\,(\mathrm{d}\ln\rho/\mathrm{d} r - (1/\gamma)(\mathrm{d}\ln p/\mathrm{d} r))$.
 
 \subsubsection{Connection to Chandrasekhar's Thermal Instability}
 Chandrasekhar's analysis of thermal instability (B\'enard convection)
@@ -682,22 +682,22 @@ each classical transport equation are:
 For any relativistic stability calculation in the BDNK framework,
 the following checks must be performed:
 \begin{enumerate}
-  \item[\ding{51}] $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$ satisfies
+  \item[$\checkmark$] $\cs^{2} = (\partial p/\partial\varepsilon)_{s}$ satisfies
     $0 \le \cs^{2} \le c^{2}$.
-  \item[\ding{51}] Shear viscosity is strictly positive: $\eta > 0$.
-  \item[\ding{51}] Bulk--shear combination is positive:
+  \item[$\checkmark$] Shear viscosity is strictly positive: $\eta > 0$.
+  \item[$\checkmark$] Bulk--shear combination is positive:
     $\zeta + \tfrac{2}{3}\eta > 0$.
-  \item[\ding{51}] BDNK frame coefficients
+  \item[$\checkmark$] BDNK frame coefficients
     $(\varepsilon_{1}, \beta_{1}, \alpha_{1})$ satisfy the coupled
     strong-hyperbolicity inequalities~\eqref{eq:BDNK-coupled-ineq}.
-  \item[\ding{51}] All characteristic speeds from the principal symbol
+  \item[$\checkmark$] All characteristic speeds from the principal symbol
     satisfy $|v_{\text{char}}| \le c$.
-  \item[\ding{51}] Entropy production rate
+  \item[$\checkmark$] Entropy production rate
     $\nabla_{\mu}S^{\mu} \ge 0$
     (guaranteed by $\eta, \zeta, \kappa \ge 0$).
-  \item[\ding{51}] If MHD: Alfv\'en speed $\vA < c$; fast magnetosonic
+  \item[$\checkmark$] If MHD: Alfv\'en speed $\vA < c$; fast magnetosonic
     speed $v_{f} < c$.
-  \item[\ding{51}] Non-relativistic limits recover the classical
+  \item[$\checkmark$] Non-relativistic limits recover the classical
     Chandrasekhar equations (BDNK frame corrections vanish at
     $O(v^{2}/c^{2})$).
 \end{enumerate}

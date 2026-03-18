@@ -384,8 +384,7 @@ $\enthalpy_{0} = \edensity_{0}+p_{0}$), writing
   \edensity = \edensity_{0} + \delta\edensity.
 \end{equation}
 The linearized relativistic Euler equation~\eqref{eq:rel-3-14}, for an
-incompressible fluid with BDNK shear viscosity
-($\shearvisc$, relaxation time $\taupi$), becomes
+incompressible fluid with BDNK shear viscosity $\shearvisc$, becomes
 \begin{equation}\label{eq:rel-3-21}
   \frac{\enthalpy_{0}}{c^{2}}
   \frac{\partial}{\partial t}\,\delta v_{i}
@@ -398,12 +397,11 @@ incompressible fluid with BDNK shear viscosity
 together with the incompressibility condition
 $\partial\,\delta v_{i}/\partial x_{i} = 0$.
 
-The BDNK causal term
-$\taupi\,\partial^{2}\delta v_{i}/\partial t^{2}$ is the essential
-relativistic causal modification of the viscous stress; it converts
-the parabolic diffusion equation into a \emph{hyperbolic} one, ensuring
-that viscous signals propagate at finite speed
-$v_{\mathrm{visc}} \sim \sqrt{\shearvisc/(\taupi\,\enthalpy_{0}/c^{2})} \leq c$.
+In the BDNK formalism, the viscous stress is given algebraically by
+$\Pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu}$ (no relaxation
+equation); causality is ensured by the BDNK frame coefficients, which
+modify the principal symbol of the coupled conservation equations so
+that all characteristic speeds satisfy $|v_{\mathrm{char}}| \leq c$.
 
 \subsection{Dispersion relation}
 
@@ -463,23 +461,14 @@ constant of Chandrasekhar's equation~\eqref{eq:3-72}.
 \subsection{Causality check}
 
 \begin{causalitycheck}
-The dispersion relation~\eqref{eq:rel-3-22} is quadratic in $\sigma$
-(due to the BDNK causal term).  For large $k$, the two roots
-behave as
-\begin{equation}\label{eq:rel-3-25}
-  \sigma \;\sim\;
-  \begin{cases}
-    \displaystyle
-    \pm\,2\Omega\cos\vartheta
-    + i\,\nu_{\mathrm{rel}}\,k^{2}
-    & (k \ll k_{\mathrm{IS}}),
-    \\[8pt]
-    \displaystyle
-    
-  \end{cases}
-\end{equation}
-where
-
+The dispersion relation~\eqref{eq:rel-3-22} is linear in $\sigma$
+in the BDNK formalism (no relaxation-time term).  In the low-$k$
+regime the inertial-wave frequency is
+$\sigma \approx \pm 2\Omega\cos\vartheta + i\,\nu_{\mathrm{rel}}\,k^{2}$,
+while at large $k$ the viscous damping dominates and the mode
+becomes purely imaginary ($\sigma \to i\,\nu_{\mathrm{rel}}\,k^{2}$).
+In either regime the BDNK frame coefficients guarantee that all
+characteristic speeds remain bounded by $c$.
 
 The \emph{phase velocity} $v_{\mathrm{ph}} = |\operatorname{Re}\sigma|/k$
 satisfies:
@@ -571,5 +560,5 @@ We collect the non-relativistic limits of the principal results.
 \end{enumerate}
 
 \noindent All relativistic results reduce exactly to the classical
-Chandrasekhar results when $v/c\to 0$, $p/(\rdensity c^{2})\to 0$,
-and $\taupi\to 0$.
+Chandrasekhar results when $v/c\to 0$ and $p/(\rdensity c^{2})\to 0$
+(in which limit the BDNK frame corrections also vanish).

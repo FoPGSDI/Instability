@@ -30,7 +30,7 @@ relativistic sound speed~$\cs$.
 For a perfect fluid with energy density~$\edensity$, pressure~$p$, and
 enthalpy density $\enthalpy = \edensity + p$, confined between rigid
 horizontal boundaries at $z = \pm\tfrac{1}{2}$, the linearised
-perturbation equations in the Boussinesq--Eckart limit
+perturbation equations in the Boussinesq limit
 (cf.\ \S\,\ref{sec:rel-9}) take the operator form
 \begin{equation}\label{eq:rel-2-277}
   \bigl(D^{2} - a^{2}\bigr)^{2} W
@@ -46,7 +46,7 @@ perturbation equations in the Boussinesq--Eckart limit
 where $D = \mathrm{d}/\mathrm{d}z$, $a$~is the horizontal wave number,
 $F$~encodes the temperature perturbation coupled to the heat flux, and
 $\Rarel$ is the relativistic Rayleigh number
-\begin{equation}\label{eq:rel-Ra-def}
+\begin{equation}\label{eq:rel-Ra-def-sec17}
   \Rarel = \frac{\alpha g\, d^{3}\,\Delta T}{\nu\kappa_{T}}
     \left[
       1
@@ -56,19 +56,18 @@ $\Rarel$ is the relativistic Rayleigh number
     \right].
 \end{equation}
 In the non-relativistic limit $c\to\infty$ (equivalently
-$\enthalpy/\rdensity c^{2}\to 0$ and $\tauq\to 0$),
-equations~\eqref{eq:rel-2-277}--\eqref{eq:rel-2-278} reduce to the
-classical pair~(277)--(278) of \S\,\ref{sec:17}.
+$\enthalpy/\rdensity c^{2}\to 0$ and the BDNK frame corrections
+vanishing), equations~\eqref{eq:rel-2-277}--\eqref{eq:rel-2-278}
+reduce to the classical pair~(277)--(278) of \S\,\ref{sec:17}.
 
 \begin{causalitycheck}
-The relaxation term proportional to~$\tauq$ in
-equation~\eqref{eq:rel-2-278} renders the heat equation hyperbolic.
-Perturbations therefore propagate at a finite speed bounded by
-\[
-  v_{\mathrm{heat}} = \sqrt{\frac{\kappa_{T}}{\tauq}} \leq c,
-\]
-as required by the BDNK theory.  Setting $\tauq = 0$ recovers
-the parabolic (acausal) Fourier law.
+In the BDNK theory, the heat equation remains first-order in time;
+causality is ensured not by a relaxation time but by the BDNK frame
+coefficients, which modify the principal symbol of the coupled
+conservation equations so that all characteristic speeds satisfy
+$|v_{\mathrm{char}}| \leq c$.  In the non-relativistic limit
+$c\to\infty$, the frame corrections become negligible and the
+parabolic Fourier law is recovered.
 \end{causalitycheck}
 
 \subsection{Boundary conditions}
@@ -329,8 +328,8 @@ For such a fluid, $\enthalpy/\rdensity c^{2}$ is of order unity
 (since $\enthalpy \sim 4\edensity/3$ and $\rdensity c^{2}$ is of
 comparable magnitude for a relativistic gas), and the correction
 factor~\eqref{eq:rel-correction-factor} gives
-$\Rarel/\Ra \sim 5/3$.  The causal relaxation times $\tauq$ and
-$\taupi$ are of order $1/T \sim 1$\,fm/$c$, which is comparable to
+$\Rarel/\Ra \sim 5/3$.  The microscopic time-scales governing
+transport are of order $1/T \sim 1$\,fm/$c$, which is comparable to
 the hydrodynamic evolution time of the fireball; thus the full
 BDNK dynamics (not merely the Navier--Stokes limit) governs
 the stability properties.
@@ -364,11 +363,10 @@ are:
 
 \item \textit{Causal vs.\ acausal heat transport.}  Replacing the
   BDNK causal heat equation by the acausal Fourier law
-  ($\tauq = 0$) produces spurious, superluminal thermal
-  runaway in the nonlinear regime, even though the linear onset
-  threshold is unaffected (the marginal mode is stationary).  This
-  underscores the necessity of the causal formulation for any
-  finite-amplitude analysis.
+  produces spurious, superluminal thermal runaway in the nonlinear
+  regime, even though the linear onset threshold is unaffected
+  (the marginal mode is stationary).  This underscores the necessity
+  of the causal formulation for any finite-amplitude analysis.
 
 \item \textit{Pattern formation.}  In the mildly supercritical regime
   ($\Rarel/\Rarel_{c} \lesssim 2$), the convective pattern for a
@@ -430,10 +428,12 @@ energy--momentum tensor.
 
 \end{enumerate}
 
-\noindent The BDNK theory replaces the acausal constitutive
+\noindent The Israel--Stewart theory replaces the acausal constitutive
 relations of Eckart (1940) and Landau \& Lifshitz (1959) with
-hyperbolic relaxation equations.  It is the minimal causal extension of
-relativistic dissipative fluid dynamics and provides the framework for
+hyperbolic relaxation equations.  The BDNK theory (Bemfica et~al.\
+2018; Kovtun 2019) achieves the same goal through a different mechanism:
+first-order constitutive relations in a general hydrodynamic frame, with
+no relaxation equations.  The BDNK formalism provides the framework for
 all perturbation analyses in the present chapter.
 
 \begin{enumerate}
