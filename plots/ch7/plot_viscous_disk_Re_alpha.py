@@ -3,7 +3,7 @@ Plot: Viscous accretion disk parameters: effective Reynolds number and
 Shakura-Sunyaev alpha parameter, with BDNK relativistic corrections.
 Agent 27, sec69-70.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
 setup_style()
 
 import numpy as np

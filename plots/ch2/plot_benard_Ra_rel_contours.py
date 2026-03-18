@@ -2,7 +2,7 @@
 Plot: Relativistic Benard problem - Ra_rel contours for neutron star ocean.
 Shows how the critical Rayleigh number varies with xi and boundary type.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS
 setup_style()
 
 import numpy as np

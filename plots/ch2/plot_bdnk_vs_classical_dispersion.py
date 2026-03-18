@@ -2,7 +2,7 @@
 Plot: BDNK vs classical dispersion relation for thermal modes in the Benard problem.
 Shows how BDNK modifies the dispersion at high wavenumber while preserving hydrodynamic modes.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS
 setup_style()
 
 import numpy as np

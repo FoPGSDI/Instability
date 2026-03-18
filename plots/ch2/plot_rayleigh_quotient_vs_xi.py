@@ -2,7 +2,7 @@
 Plot: Relativistic Rayleigh quotient as a function of xi.
 Shows how the enthalpy weight modifies the variational principle.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS
 setup_style()
 
 import numpy as np

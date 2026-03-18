@@ -2,7 +2,7 @@
 Plot: Relativistic parameter xi = p/(epsilon*c^2) across astrophysical regimes.
 Shows where relativistic corrections become significant for various systems.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS
 setup_style()
 
 import numpy as np

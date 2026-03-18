@@ -4,7 +4,7 @@ Kerr black holes with a/M = 0, 0.5, 0.998.
 Shows radial (kappa_r), vertical (kappa_z), and orbital (Omega_K) frequencies.
 Agent 26, sec68.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
 setup_style()
 
 import numpy as np

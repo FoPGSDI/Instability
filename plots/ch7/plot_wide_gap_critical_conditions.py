@@ -4,7 +4,7 @@ Shows T_c^rel vs kappa for eta=0.5 (wide gap), and the relativistic correction
 delta_rel as a function of gap ratio eta.
 Agent 29, sec72-73.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
 setup_style()
 
 import numpy as np

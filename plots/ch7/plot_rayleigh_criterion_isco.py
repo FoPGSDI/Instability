@@ -4,7 +4,7 @@ Shows the relativistic specific angular momentum tilde{ell}^2 vs r/r_g for
 Schwarzschild and Kerr black holes, highlighting the ISCO where d(tilde{ell}^2)/dr=0.
 Agent 24, sec64-66.
 """
-import sys; sys.path.insert(0, '../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
+import sys, os; sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')); from SHARED_PLOT_STYLE import setup_style, COLORS, LINE_STYLES
 setup_style()
 
 import numpy as np
