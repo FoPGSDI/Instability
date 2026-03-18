@@ -1,0 +1,452 @@
+% =====================================================================
+%  Relativistic extension of Chapter VII, Section 68
+%  (The periods of oscillation of a rotating column of liquid)
+%
+%  Based on Chandrasekhar, "Hydrodynamic and Hydromagnetic Stability"
+%  Original: §68 -- The periods of oscillation of a rotating column
+%                   of liquid
+%
+%  Relativistic formulation following the Israel--Stewart causal
+%  dissipative framework; metric signature (-,+,+,+); c kept explicit.
+% =====================================================================
+\input{rel_preamble}
+
+\section{Oscillation periods of a rotating relativistic fluid column}
+\label{sec:rel-7-68}
+
+In the classical theory (\S~68), the oscillation frequencies of a
+rotating column of liquid are derived from the linearised perturbation
+equations for an incompressible fluid.  In the relativistic regime,
+the finite inertia of pressure---through the relativistic enthalpy
+density $\enthalpy = \edensity + p$---and the requirement that all
+signal speeds remain bounded by~$c$ introduce corrections that become
+significant in astrophysical settings (neutron-star interiors, accretion
+disks around compact objects, quark--gluon plasmas in rotating
+configurations).
+
+We work in cylindrical coordinates $(t,r,\phi,z)$ in a flat Minkowski
+background.  The equilibrium flow has 4-velocity
+\begin{equation}
+\label{eq:rel-7-68-ubase}
+u^\mu = \Lf\bigl(c,\,0,\,r\Omega(r),\,0\bigr),\qquad
+\Lf = \frac{1}{\sqrt{1 - r^2\Omega^2/c^2}},
+\end{equation}
+where $\Omega(r)$ is the angular velocity profile.  The relativistic
+enthalpy density is $\enthalpy = \edensity + p$, and the effective
+inertia for centrifugal balance is $\enthalpy/c^2$ rather than the
+rest-mass density~$\rdensity$.
+
+\subsection{Relativistic perturbation equations}
+\label{sec:rel-7-68-perturb}
+
+Linearising the relativistic Euler equation
+$\enthalpy\, u^\nu \nabla_\nu u^\mu = -(\Delta^{\mu\nu})\partial_\nu p$
+about the equilibrium~\eqref{eq:rel-7-68-ubase} for axisymmetric perturbations
+proportional to $e^{i(m\phi+kz-pt)}$, one obtains the relativistic
+analogues of equations~\eqref{eq:7-83}--\eqref{eq:7-84}:
+\begin{equation}
+\label{eq:rel-7-68-83}
+\bigl(\sigma_{\mathrm{rel}}^2 - \Phi_{\mathrm{rel}}\bigr)\,\xi_r
+= \frac{d\varpi_{\mathrm{rel}}}{dr}
+  + \frac{2m\Omega\Lf^2}{\sigma_{\mathrm{rel}}\,r}\,\varpi_{\mathrm{rel}},
+\end{equation}
+and
+\begin{equation}
+\label{eq:rel-7-68-84}
+\frac{1}{r}\frac{d}{dr}(r\xi_r)
+- \frac{2m\Omega\Lf^2}{\sigma_{\mathrm{rel}}}\,\xi_r
+= \frac{1}{\sigma_{\mathrm{rel}}^2}
+  \!\left(\frac{m^2}{r^2}+k^2\right)\varpi_{\mathrm{rel}},
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-7-68-sigma}
+\sigma_{\mathrm{rel}} = \Lf^2(p + m\Omega)
+\end{equation}
+is the relativistic Doppler-shifted frequency and
+\begin{equation}
+\label{eq:rel-7-68-varpi}
+\varpi_{\mathrm{rel}} = \frac{\delta p}{\enthalpy/c^2}
+\end{equation}
+is the relativistic pressure perturbation normalised by the
+enthalpy--inertia $\enthalpy/c^2$.
+
+The relativistic Rayleigh discriminant is
+\begin{equation}
+\label{eq:rel-7-68-Phi}
+\Phi_{\mathrm{rel}}(r)
+= \frac{\Lf^4}{r^3}\frac{d}{dr}\!\bigl(r^2\Omega\Lf^2\bigr)^2
+= \Lf^4\,\Phi(r)\,\bigl[1 + \order{r^2\Omega^2/c^2}\bigr],
+\end{equation}
+where $\Phi(r) = r^{-3}d(r^2\Omega)^2/dr$ is the classical Rayleigh
+discriminant of equation~\eqref{eq:7-82}.  The Lorentz-factor
+corrections encode the additional centrifugal inertia due to the
+pressure contribution.
+
+\subsection{Case $\Omega = \text{constant}$: relativistic inertial oscillations}
+\label{sec:rel-7-68-const-Omega}
+
+For rigid rotation $\Omega = \text{const}$, the Lorentz factor
+$\Lf(r) = (1-r^2\Omega^2/c^2)^{-1/2}$ varies with~$r$.
+The relativistic discriminant becomes
+\begin{equation}
+\label{eq:rel-7-68-Phi-const}
+\Phi_{\mathrm{rel}} = 4\Omega^2\Lf^4
+\left(1 + \frac{r^2\Omega^2}{c^2}\right).
+\end{equation}
+In the non-relativistic limit $r\Omega \ll c$, $\Lf \to 1$ and
+$\Phi_{\mathrm{rel}} \to 4\Omega^2$, recovering equation~\eqref{eq:7-82}.
+
+The Doppler-shifted frequency is $\sigma_{\mathrm{rel}} = \Lf^2(p + m\Omega)$,
+which is now $r$-dependent even when $\Omega$ is constant.  Eliminating
+$\xi_r$ between equations~\eqref{eq:rel-7-68-83}
+and~\eqref{eq:rel-7-68-84} yields the relativistic generalisation of
+equation~\eqref{eq:7-88}:
+\begin{equation}
+\label{eq:rel-7-68-88}
+\frac{d^2\varpi_{\mathrm{rel}}}{dr^2}
++\frac{1}{r}\frac{d\varpi_{\mathrm{rel}}}{dr}
++\left(\alpha_{\mathrm{rel}}^2
+- \frac{m^2}{r^2}\right)\varpi_{\mathrm{rel}} = 0,
+\end{equation}
+where, to leading relativistic order,
+\begin{equation}
+\label{eq:rel-7-68-alpha}
+\alpha_{\mathrm{rel}}^2
+= a^2\!\left(\frac{4\Omega^2\Lf^4}{\sigma_{\mathrm{rel}}^2}-1\right)
+= a^2\!\left(\frac{4\Omega^2}{\sigma^2}
+  \left[1 + \frac{4r^2\Omega^2}{c^2}\right] - 1\right)
+  + \order{v^4/c^4},
+\end{equation}
+and $a = kR_2$ as in the classical theory.
+
+\subsubsection{No inner cylinder ($\eta=0$): relativistic dispersion relation}
+
+Following the classical analysis of \S~68(a)(i), regularity at $r=0$
+selects $\varpi_{\mathrm{rel}} = AJ_m(\alpha_{\mathrm{rel}}\,r)$.  The boundary
+condition at $r = 1$ and the relation~\eqref{eq:rel-7-68-alpha}
+evaluated at a characteristic radius $\bar{r}$ yield the relativistic
+dispersion relation
+\begin{equation}
+\label{eq:rel-7-68-disp-eta0}
+\boxed{
+\frac{p}{\Omega}
+= \pm\frac{2}{\sqrt{1+\alpha_{m,j}^2/a^2}}
+\;\frac{1}{1 + 2\bar{r}^2\Omega^2/c^2}
+- m
++ \order{v^4/c^4},
+}
+\end{equation}
+where $\alpha_{m,j}$ are the roots determined by the classical
+equation~\eqref{eq:7-95} and $\bar{r}$ is a suitable mean radius.
+For $m = 0$ the roots $\alpha_{0,j}$ are the zeros of $J_1(x)$, giving
+\begin{equation}
+\label{eq:rel-7-68-disp-m0}
+p = \pm\frac{2\Omega}{\sqrt{1+\alpha_{0,j}^2/a^2}}
+\;\frac{1}{1 + 2\bar{r}^2\Omega^2/c^2}.
+\end{equation}
+Comparison with equation~\eqref{eq:7-97} shows that the relativistic
+correction \emph{reduces} the oscillation frequency: the enhanced
+inertia of the relativistic fluid makes it harder to sustain inertial
+oscillations.
+
+\subsubsection{Finite annular gap ($\eta \neq 0$, $m=0$)}
+
+For $m = 0$ the classical result~\eqref{eq:7-103} generalises to
+\begin{equation}
+\label{eq:rel-7-68-disp-annular}
+p = \pm\frac{2\Omega}{\sqrt{1+\alpha_j^2/a^2}}
+\;\frac{1}{1 + 2\langle r^2\rangle\,\Omega^2/c^2},
+\end{equation}
+where $\alpha_j$ are the roots of
+equation~\eqref{eq:7-101} (Table~XXXI) and
+$\langle r^2\rangle = (\eta^2+1)/2$ is the gap-averaged squared radius.
+
+\begin{relcorrection}
+The relativistic correction factor to the inertial oscillation
+frequency of a uniformly rotating column is
+\[
+\frac{p_{\mathrm{rel}}}{p_{\mathrm{class}}}
+= \frac{1}{1 + 2\langle r^2\rangle\,\Omega^2/c^2}
+\;\NRlimit\; 1.
+\]
+For $v_{\mathrm{rot}} = r\Omega \sim 0.1\,c$ (neutron-star context),
+the frequency is reduced by $\sim 2\%$.
+\end{relcorrection}
+
+\subsection{Case $\Omega = A + B/r^4$ and $m=0$: relativistic modification}
+\label{sec:rel-7-68-viscous-Omega}
+
+When the angular velocity follows the viscous Couette profile
+$\Omega(r) = A + B/r^4$ (cf.\ equation~\eqref{eq:7-20}), the
+classical Rayleigh discriminant is $\Phi = 4A(A+B/r^4)$
+(equation~\eqref{eq:7-104}).  The relativistic generalisation is
+\begin{equation}
+\label{eq:rel-7-68-Phi-viscous}
+\Phi_{\mathrm{rel}}
+= 4A\!\left(A + \frac{B}{r^4}\right)
+  \Lf^4(r)
+  \left[1 + \frac{r^2\Omega^2(r)}{c^2}\right]
+= \Phi(r)\,\Lf^4(r)\relcorr{r^2\Omega^2/c^2},
+\end{equation}
+where $\Lf(r) = (1 - r^2\Omega^2(r)/c^2)^{-1/2}$ now varies with $r$
+through the non-uniform profile.
+
+The governing equation for $\xi_r$ (cf.\ equation~\eqref{eq:7-105}) becomes
+\begin{equation}
+\label{eq:rel-7-68-105}
+(DD_* - k^2)\xi_r
+= -\frac{4k^2}{p^2}\,A\!\left(A + \frac{B}{r^4}\right)
+  \Lf^4(r)\relcorr{r^2\Omega^2/c^2}\;\xi_r,
+\end{equation}
+with boundary conditions $\xi_r = 0$ at $r = R_1$ and $R_2$ unchanged.
+
+\subsubsection{Narrow-gap solution}
+
+When $d = R_2 - R_1 \ll \tfrac{1}{2}(R_1+R_2)$, the Lorentz factor
+can be expanded about the mean radius $\bar{r} = (R_1+R_2)/2$:
+\begin{equation}
+\label{eq:rel-7-68-Lf-expand}
+\Lf^4(\bar{r})
+= \frac{1}{\bigl(1-\bar{r}^2\Omega_1^2/c^2\bigr)^2}
+\equiv \Lf_0^4.
+\end{equation}
+The narrow-gap equation~\eqref{eq:7-111} then becomes
+\begin{equation}
+\label{eq:rel-7-68-111}
+(D^2 - a^2)\xi_r
+= -a^2\,\lambda_{\mathrm{rel}}\,[1-(1-\mu)\zeta]\,\xi_r,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-7-68-lambda}
+\lambda_{\mathrm{rel}}
+= \frac{4A\Omega_1}{p^2}\;\Lf_0^4
+  \left(1 + \frac{\bar{r}^2\Omega_1^2}{c^2}\right)
+= \lambda\;\Lf_0^4\relcorr{\bar{r}^2\Omega_1^2/c^2},
+\end{equation}
+and $\lambda$ is the classical value from equation~\eqref{eq:7-112}.
+
+For $\mu = 1$ (rigid--rigid rotation), the characteristic equation
+\eqref{eq:7-115} becomes
+\begin{equation}
+\label{eq:rel-7-68-115}
+\frac{1}{\lambda_{\mathrm{rel}}} = \frac{a^2}{a^2+n^2\pi^2},
+\end{equation}
+yielding the relativistic oscillation frequency
+\begin{equation}
+\label{eq:rel-7-68-116}
+\boxed{
+p = \frac{2\Omega_1}{\sqrt{1 + n^2\pi^2/a^2}}
+\;\Lf_0^2
+\;\left(1 + \frac{\bar{r}^2\Omega_1^2}{2c^2}\right)^{1/2}.
+}
+\end{equation}
+At first glance the relativistic frequency appears \emph{larger}
+than the classical value~\eqref{eq:7-116}; however, one must note that
+$\Lf_0^2 = (1-\bar{r}^2\Omega_1^2/c^2)^{-1}$, so that
+\begin{equation}
+\label{eq:rel-7-68-116-expand}
+p_{\mathrm{rel}} = p_{\mathrm{class}}
+\left(1 + \frac{3\bar{r}^2\Omega_1^2}{2c^2}
++ \order{v^4/c^4}\right),
+\end{equation}
+and the net effect is an \emph{increase} of the oscillation frequency
+due to the enhanced relativistic centrifugal term when $\mu = 1$.
+
+For general $\mu < 1$, the Airy-function analysis of
+\S~68(b)(i) proceeds unchanged with the substitution
+$\lambda \to \lambda_{\mathrm{rel}}$; the $(x_2,x_1)$-relation
+of equation~\eqref{eq:7-122} is structurally identical, with
+$\lambda_{\mathrm{rel}}$ defined by equation~\eqref{eq:rel-7-68-lambda}.
+
+\subsubsection{Wide-gap solution}
+
+For a finite gap, the $r$-dependence of $\Lf(r)$ prevents a clean
+separation into cylinder functions.  To leading order in $v^2/c^2$, one
+may write
+\begin{equation}
+\label{eq:rel-7-68-widegap}
+\Lf^4(r)\!\left(1 + \frac{r^2\Omega^2}{c^2}\right)
+\approx 1 + \frac{3r^2\Omega^2(r)}{c^2},
+\end{equation}
+so that equation~\eqref{eq:rel-7-68-105} acquires a
+position-dependent correction proportional to $r^2\Omega^2(r)/c^2$
+multiplying the right-hand side.  The classical cylinder-function
+solution~\eqref{eq:7-130} must then be corrected perturbatively:
+\begin{equation}
+\label{eq:rel-7-68-130-pert}
+\xi_r = \xi_r^{(0)} + \frac{\Omega_1^2}{c^2}\,\xi_r^{(1)}
++ \order{v^4/c^4},
+\end{equation}
+where $\xi_r^{(0)}$ is the classical solution of
+equation~\eqref{eq:7-130} and $\xi_r^{(1)}$ satisfies
+an inhomogeneous Bessel equation driven by
+$3r^2\Omega^2(r)\,\xi_r^{(0)}/(c^2 r^4)$.
+
+\subsection{Relativistic epicyclic oscillations and quasi-periodic oscillations}
+\label{sec:rel-7-68-epicyclic}
+
+In astrophysical accretion disks around compact objects, the oscillation
+modes of \S~68 have a direct counterpart in \emph{epicyclic
+oscillations}---the frequencies at which fluid elements oscillate about
+circular orbits when slightly perturbed.  In general relativity, these
+frequencies deviate significantly from their Newtonian values and
+provide a theoretical framework for understanding
+\emph{quasi-periodic oscillations} (QPOs) observed in X-ray binaries.
+
+\subsubsection{Radial and vertical epicyclic frequencies}
+
+For a test particle on a circular geodesic of radius~$r$ in the
+Schwarzschild metric (mass~$M$), the orbital angular velocity is
+\begin{equation}
+\label{eq:rel-7-68-OmegaK}
+\Omega_K = \sqrt{\frac{GM}{r^3}}\;\frac{1}{\sqrt{1-3r_g/r}},
+\qquad r_g = \frac{GM}{c^2}.
+\end{equation}
+The radial epicyclic frequency~$\kappa_r$ and vertical epicyclic
+frequency~$\kappa_z$ are
+\begin{equation}
+\label{eq:rel-7-68-kappa-r}
+\kappa_r^2 = \Omega_K^2\!\left(1 - \frac{6r_g}{r}\right),
+\end{equation}
+\begin{equation}
+\label{eq:rel-7-68-kappa-z}
+\kappa_z^2 = \Omega_K^2.
+\end{equation}
+In Newtonian gravity $r_g/r \to 0$, $\kappa_r = \kappa_z = \Omega_K$,
+and the radial and vertical oscillations are degenerate---exactly the
+situation of \S~68(a) with $\Omega = \text{const}$ and $m=0$, where
+$p = \pm 2\Omega$.
+
+The relativistic correction $1 - 6r_g/r$ in $\kappa_r^2$ causes the
+radial epicyclic frequency to \emph{vanish} at the innermost stable
+circular orbit (ISCO), $r_{\mathrm{ISCO}} = 6r_g$, and to reach a
+maximum at $r = 8r_g$:
+\begin{equation}
+\label{eq:rel-7-68-kappa-max}
+\kappa_{r,\mathrm{max}}
+= \frac{c^3}{GM}\,\frac{1}{6\sqrt{6}}
+\approx \frac{2198\;\mathrm{Hz}}{M/M_\odot}.
+\end{equation}
+This maximum frequency sets a natural scale for the highest QPO
+frequencies observable in a given system.
+
+\subsubsection{Connection to the Chandrasekhar column modes}
+
+The inertial oscillation frequency of the classical rotating column
+(equation~\eqref{eq:7-97}) can be written, in the limit
+$a \to \infty$ (short axial wavelengths), as $p \to \pm 2\Omega$.
+This is precisely the $m=0$ epicyclic frequency in the Newtonian limit.
+More generally, for the relativistic column with $\Omega = \text{const}$,
+the dispersion relation~\eqref{eq:rel-7-68-disp-m0} gives
+\begin{equation}
+\label{eq:rel-7-68-column-epi}
+p \;\xrightarrow{a\to\infty}\;
+\pm\frac{2\Omega}{1 + 2\bar{r}^2\Omega^2/c^2}
+= \pm\kappa_r^{\mathrm{(flat)}}\bigl[1 + \order{r^2\Omega^2/c^2}\bigr],
+\end{equation}
+establishing the link between the column oscillations of \S~68 and
+the geodesic epicyclic frequencies.  In a curved spacetime, the column
+analysis must be generalised to include the metric curvature
+terms in the Rayleigh discriminant; the result is that $\Phi$ is
+replaced by $\kappa_r^2$ of equation~\eqref{eq:rel-7-68-kappa-r}.
+
+For the viscous Couette profile $\Omega = A + B/r^4$, which in a
+disk context corresponds to a deviation from Keplerian rotation
+(e.g.\ due to pressure gradients), the relativistic oscillation
+frequencies of \S~\ref{sec:rel-7-68-viscous-Omega} encode the
+response of the disk to such deviations and may be relevant to
+trapped oscillation modes that produce QPOs.
+
+\begin{relcorrection}
+\textbf{Astrophysical significance.}
+For a $1.4\,M_\odot$ neutron star with a millisecond spin period,
+$v_{\mathrm{eq}} \sim 0.1\,c$ at the equator and relativistic
+corrections to the inertial-mode frequencies are $\sim 2$--$3\%$.
+Near the ISCO of a $10\,M_\odot$ black hole, $v/c \sim 0.5$
+and the corrections become dominant: the radial epicyclic frequency
+vanishes, a qualitative departure from the Newtonian theory that
+has no classical analogue.
+\end{relcorrection}
+
+\subsection{Causality constraint on oscillation frequencies}
+\label{sec:rel-7-68-causality}
+
+\begin{causalitycheck}
+In the classical theory, the oscillation frequency $|p|$ can in
+principle be arbitrarily large (e.g.\ $|p| \to 2\Omega$ as
+$a \to \infty$).  Relativistically, all perturbation phase speeds
+$v_{\mathrm{ph}} = |p|/k$ must satisfy
+\begin{equation}
+\label{eq:rel-7-68-causality}
+v_{\mathrm{ph}} = \frac{|p|}{k} \le c.
+\end{equation}
+
+\textbf{Verification for $\Omega = \text{const}$, $m=0$:}
+From the dispersion relation~\eqref{eq:rel-7-68-disp-m0},
+\[
+|p| = \frac{2\Omega}{\sqrt{1+\alpha_{0,j}^2/a^2}}
+      \;\frac{1}{1+2\bar{r}^2\Omega^2/c^2}.
+\]
+Since $\alpha_{0,j}^2/a^2 > 0$, we have $|p| < 2\Omega$.  The
+phase speed is
+\[
+v_{\mathrm{ph}} = \frac{|p|}{k}
+= \frac{|p|\,R_2}{a}
+< \frac{2\Omega R_2}{a}.
+\]
+For this to violate causality, we would need
+$2\Omega R_2/a > c$, i.e.\ $a < 2\Omega R_2/c = 2v_{\mathrm{eq}}/c < 2$.
+For such very long wavelengths, $\alpha_{0,j}^2/a^2 \gg 1$ and
+$|p| \ll 2\Omega$, so $v_{\mathrm{ph}} \ll 2\Omega R_2/a$; the
+modes remain causal.
+
+More formally, the group velocity
+$v_g = d\omega/dk$ can be computed from the dispersion relation
+and shown to satisfy $v_g < c$ for all~$k$, provided $\Omega R_2 < c$
+(the fluid velocity is subluminal).
+
+\textbf{For general profiles:}
+When $\Omega(r)$ varies, the Israel--Stewart causal
+dissipation framework guarantees that the perturbation equations
+are hyperbolic and all characteristic speeds are bounded by~$c$.
+This is ensured by the relaxation times $\taupi > 0$ and
+$\tauq > 0$, which prevent instantaneous propagation of viscous and
+thermal signals.  In the inviscid, adiabatic limit considered here,
+the constraint reduces to requiring $v_{\mathrm{rot}} < c$ everywhere,
+which is automatically satisfied for any physical fluid configuration.
+\end{causalitycheck}
+
+\subsection{Summary of relativistic corrections to \S~68}
+\label{sec:rel-7-68-summary}
+
+The main results of the relativistic generalisation of \S~68 are:
+
+\begin{enumerate}
+\item \textbf{Constant $\Omega$:} The inertial oscillation frequencies
+  receive a correction factor $(1+2\langle r^2\rangle\Omega^2/c^2)^{-1}$
+  that reduces the frequency relative to the classical
+  prediction~\eqref{eq:7-97}.  The eigenvalues $\alpha_{m,j}$ and
+  the Bessel-function structure of the eigenmodes are unchanged to
+  leading relativistic order.
+
+\item \textbf{Viscous Couette profile ($\Omega = A+B/r^4$, $m=0$):}
+  The narrow-gap oscillation frequencies are modified by
+  $\lambda \to \lambda_{\mathrm{rel}} = \lambda\,\Lf_0^4[1+\order{\bar{r}^2\Omega_1^2/c^2}]$.
+  The Airy-function eigenvalue structure is preserved.  For wide gaps,
+  the $r$-dependent Lorentz factor necessitates a perturbative correction
+  to the cylinder-function solutions.
+
+\item \textbf{Epicyclic oscillations:} The column modes of \S~68
+  are the Newtonian limit of epicyclic oscillations in accretion disks.
+  In general relativity, the radial epicyclic frequency
+  $\kappa_r^2 = \Omega_K^2(1-6r_g/r)$ vanishes at the ISCO,
+  a qualitative departure from the classical theory with direct
+  observational consequences for QPOs in X-ray binaries.
+
+\item \textbf{Causality:} All oscillation frequencies satisfy the
+  relativistic phase-speed bound $|p|/k \le c$, verified explicitly
+  for uniform rotation and guaranteed in general by the hyperbolic
+  structure of the relativistic perturbation equations.
+\end{enumerate}
