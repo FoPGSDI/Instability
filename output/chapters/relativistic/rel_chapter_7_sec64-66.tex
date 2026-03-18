@@ -363,3 +363,55 @@ causality bounds must be respected:
 \end{enumerate}
 These constraints have no analogue in the classical theory and become
 essential when assessing stability near the speed-of-light limit.
+
+%% ================================================================
+\subsection{Astrophysical application: accretion disk Keplerian flow
+  near the ISCO}
+\label{sec:rel-7-66-astro}
+
+The relativistic Rayleigh criterion finds its most direct astrophysical
+application in the stability of Keplerian accretion disks around compact
+objects \citep{NovikovThorne1973,ShakuraSunyaev1973}.  For a test particle
+on a circular geodesic in the Schwarzschild spacetime (mass~$M$,
+gravitational radius $r_{g}=GM/c^{2}$), the relativistic specific angular
+momentum is
+\begin{equation}
+\label{eq:rel-7-21}
+\widetilde{\ell}_{\mathrm{Schw}}^{\,2}(r)
+= \frac{r^{2}\,r_{g}}{r-3\,r_{g}}\,,
+\end{equation}
+which diverges as $r\to 3\,r_{g}$ and attains a minimum at the ISCO,
+$r_{\mathrm{ISCO}}=6\,r_{g}$.  At the ISCO,
+$d(\widetilde{\ell}^{2})/dr=0$, marking the boundary of Rayleigh
+stability: for $r>r_{\mathrm{ISCO}}$ the Keplerian flow is stable
+($\Phi_{\mathrm{rel}}>0$), while for
+$r<r_{\mathrm{ISCO}}$ no stable circular orbits exist.
+
+For Kerr black holes with spin parameter $a/M$, the ISCO moves inward
+as the spin increases: $r_{\mathrm{ISCO}}\approx 6\,r_{g}$ for $a=0$,
+$r_{\mathrm{ISCO}}\approx 4.23\,r_{g}$ for $a/M=0.5$, and
+$r_{\mathrm{ISCO}}\approx 1.24\,r_{g}$ for $a/M=0.998$
+\citep{Bardeen1972}.  In all cases, the Rayleigh stability boundary
+coincides with the ISCO, confirming that the relativistic Rayleigh
+criterion~\eqref{eq:rel-7-14} correctly predicts the onset of
+centrifugal instability in general-relativistic Keplerian flow.
+
+Figure~\ref{fig:rayleigh-isco} illustrates both
+$\widetilde{\ell}^{2}(r)$ and its radial derivative for Schwarzschild
+and Kerr spacetimes.  The transition from $d\widetilde{\ell}^{2}/dr>0$
+(Rayleigh stable) to $d\widetilde{\ell}^{2}/dr=0$ at the ISCO is
+clearly visible and shifts to smaller radii with increasing black-hole
+spin.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{plots/ch7/fig_rayleigh_criterion_isco.pdf}
+\caption{Left: relativistic specific angular momentum
+  $\widetilde{\ell}^{2}$ versus $r/r_{g}$ for Keplerian geodesic flow
+  in Schwarzschild ($a/M=0$) and Kerr ($a/M=0.5,\,0.998$) spacetimes.
+  Filled markers indicate the ISCO for each case.  Right: radial
+  derivative $d(\widetilde{\ell}^{2})/dr$; the Rayleigh-stable region
+  ($d\widetilde{\ell}^{2}/dr>0$) is shaded.  The ISCO coincides with
+  $d\widetilde{\ell}^{2}/dr=0$ in every case.}
+\label{fig:rayleigh-isco}
+\end{figure}

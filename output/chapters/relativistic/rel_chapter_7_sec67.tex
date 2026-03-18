@@ -419,3 +419,56 @@ with two essential modifications:
 \end{enumerate}
 In the non-relativistic limit $V/c\to0$ all expressions reduce to
 those of~\S\,67 of the original text.
+
+%% ================================================================
+\subsection*{(f) \emph{Astrophysical application: inviscid disk
+  stability and the Rayleigh discriminant profile}}
+\label{sec:rel-7-67f}
+
+The inviscid stability analysis of this section has a direct
+application to Keplerian accretion disks around compact objects
+\citep{Seguin1975,FrankKingRaine2002}.  For geodesic circular orbits
+in the Schwarzschild and Kerr metrics, the relativistic Rayleigh
+discriminant $\Phi_{\mathrm{rel}}(r)$ can be evaluated exactly.  In
+Schwarzschild geometry ($a=0$),
+\begin{equation}
+\label{eq:rel-7-Phi-Schw}
+\Phi_{\mathrm{rel}}^{\mathrm{Schw}}(r)
+= \Omega_{K}^{2}\!\left(1-\frac{6\,r_{g}}{r}\right),
+\end{equation}
+which vanishes at $r=6\,r_{g}$ (the ISCO) and is positive for all
+$r>6\,r_{g}$.  For Kerr black holes with spin $a/M$,
+\begin{equation}
+\label{eq:rel-7-Phi-Kerr}
+\Phi_{\mathrm{rel}}^{\mathrm{Kerr}}(r)
+= \Omega_{K}^{2}\!\left(1-\frac{6\,r_{g}}{r}
+  +\frac{8\,a\,r_{g}^{1/2}}{r^{3/2}}
+  -\frac{3\,a^{2}}{r^{2}}\right),
+\end{equation}
+where $\Omega_{K}=(r^{3/2}+a\,r_{g}^{1/2})^{-1}(GM)^{1/2}$ is the
+Kerr orbital frequency.
+
+Figure~\ref{fig:Phi-rel-disk} plots
+$\Phi_{\mathrm{rel}}(r)/\Omega_{K}^{2}(10\,r_{g})$ for spin parameters
+$a/M=0,\,0.5,\,0.9,\,0.998$.  The discriminant is positive (stable)
+outside the ISCO and passes through zero at the ISCO for each spin.
+Higher spins allow stable orbits closer to the hole, in direct
+correspondence with the narrower Couette gap that results from a
+smaller inner boundary.  The Howard semicircle theorem of
+\S\,\ref{sec:rel-7-67c} further constrains non-axisymmetric
+perturbation growth rates to lie within the range of local angular
+velocities, providing an upper bound on QPO growth in the stable
+region of the disk.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.75\textwidth]{plots/ch7/fig_Phi_rel_schwarzschild_kerr.pdf}
+\caption{Relativistic Rayleigh discriminant
+  $\Phi_{\mathrm{rel}}(r)$ for Keplerian circular orbits in
+  Schwarzschild and Kerr spacetimes.  The discriminant vanishes at the
+  ISCO (filled circles) and is positive outside.  Higher black-hole
+  spin shifts the ISCO inward, extending the stable Keplerian flow
+  region.  The shaded area marks the Rayleigh-unstable regime
+  ($\Phi_{\mathrm{rel}}<0$).}
+\label{fig:Phi-rel-disk}
+\end{figure}

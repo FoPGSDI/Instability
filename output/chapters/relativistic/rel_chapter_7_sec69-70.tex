@@ -523,3 +523,58 @@ introduces the following modifications to the classical theory of
   bounded by $v_{\mathrm{char}}\le c$, guaranteed by the BDNK
   causality conditions on the frame coefficients.
 \end{enumerate}
+
+%% ================================================================
+\subsection{Astrophysical application: viscous accretion disks and
+  the $\alpha$-parameter}
+\label{sec:rel-7-70-astro}
+
+The viscous Couette analysis of this section has an immediate
+application to the Shakura--Sunyaev $\alpha$-disk model
+\citep{ShakuraSunyaev1973}, which parametrises the turbulent viscosity
+as $\nu=\alpha\,c_{s}\,H$ where $c_{s}$ is the sound speed and $H$
+the disk scale height.  In the relativistic BDNK framework, the
+kinematic viscosity is $\nu_{\mathrm{rel}}=\eta_{\mathrm{s}}c^{2}/
+(\varepsilon+p)$ rather than $\eta_{\mathrm{s}}/\rho_{0}$, so the
+effective $\alpha$-parameter is modified:
+\begin{equation}
+\label{eq:rel-7-172}
+\alpha_{\mathrm{rel}}
+= \alpha_{\mathrm{cl}}
+  \times\frac{\rho_{0}\,c^{2}}{\varepsilon+p}
+= \frac{\alpha_{\mathrm{cl}}}{1+\xi}\,,
+\end{equation}
+where $\xi=(\varepsilon+p)/(\rho_{0}c^{2})-1$ is the relativistic
+correction parameter.  For a radiation-dominated disk ($p\sim\varepsilon/3$)
+near a stellar-mass black hole, $\xi\sim 0.3$ and $\alpha_{\mathrm{rel}}$
+is reduced by $\sim 23\%$ relative to the classical value.
+
+The effective Reynolds number, conversely, is \emph{enhanced}:
+\begin{equation}
+\label{eq:rel-7-173}
+\mathrm{Re}_{\mathrm{rel}}
+= \frac{V\,d}{\nu_{\mathrm{rel}}}
+= \mathrm{Re}_{\mathrm{cl}}\,(1+\xi),
+\end{equation}
+reflecting the increased inertia per unit viscous stress.  The critical
+Taylor number is raised by $(1+\xi)^{2}$, but since $\mathrm{Re}$
+also grows, the net effect is that the onset velocity for instability
+is reduced.
+
+Figure~\ref{fig:viscous-disk-alpha} illustrates these relativistic
+corrections.  The left panel shows
+$\mathrm{Re}_{\mathrm{rel}}/\mathrm{Re}_{\mathrm{cl}}$ as a function
+of~$\xi$, with representative astrophysical regimes marked.  The right
+panel compares the relativistic enhancement of the critical Taylor
+number with the reduction in the effective $\alpha$-viscosity.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.95\textwidth]{plots/ch7/fig_viscous_disk_Re_alpha.pdf}
+\caption{Left: ratio of relativistic to classical Reynolds number
+  versus the correction parameter~$\xi$, with astrophysical regimes
+  indicated.  Right: relativistic enhancement of the critical Taylor
+  number (solid) and suppression of the Shakura--Sunyaev
+  $\alpha$-parameter (dashed) as functions of~$\xi$.}
+\label{fig:viscous-disk-alpha}
+\end{figure}

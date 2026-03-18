@@ -450,3 +450,51 @@ The main results of the relativistic generalisation of \S~68 are:
   for uniform rotation and guaranteed in general by the hyperbolic
   structure of the relativistic perturbation equations.
 \end{enumerate}
+
+%% ================================================================
+\subsection{Astrophysical application: QPO frequencies from
+  epicyclic oscillations}
+\label{sec:rel-7-68-qpo-application}
+
+The epicyclic frequencies derived in
+\S\,\ref{sec:rel-7-68-epicyclic} provide a direct theoretical
+framework for modelling the quasi-periodic oscillations (QPOs)
+observed in X-ray binaries
+\citep{AbramowiczKluzniak2001,KatoFukue1980,OkazakiKatoFukue1987}.
+For a Kerr black hole of mass~$M$ and dimensionless spin~$a_{*}=a/M$,
+the radial and vertical epicyclic frequencies are
+\begin{align}
+\kappa_{r}^{2} &= \Omega_{K}^{2}\!\left(1
+  - \frac{6\,r_{g}}{r}+\frac{8\,a_{*}\,r_{g}^{3/2}}{r^{3/2}}
+  - \frac{3\,a_{*}^{2}\,r_{g}^{2}}{r^{2}}\right),
+\\
+\kappa_{z}^{2} &= \Omega_{K}^{2}\!\left(1
+  - \frac{4\,a_{*}\,r_{g}^{3/2}}{r^{3/2}}
+  + \frac{3\,a_{*}^{2}\,r_{g}^{2}}{r^{2}}\right).
+\end{align}
+Figure~\ref{fig:epicyclic-qpo} shows these frequencies for
+$a_{*}=0,\,0.5,\,0.998$ and a fiducial mass $M=10\,M_{\odot}$.
+Key observational predictions include:
+\begin{itemize}
+\item The maximum radial epicyclic frequency sets an upper limit on
+  the observed lower-kHz QPO frequency:
+  $\kappa_{r,\max}\approx 2198\,(M_{\odot}/M)$~Hz for Schwarzschild.
+\item For rapidly spinning Kerr holes ($a_{*}=0.998$), the frequencies
+  can exceed $\sim 2$~kHz for $M\sim 10\,M_{\odot}$, potentially
+  explaining the highest observed QPO frequencies.
+\item The ratio $\kappa_{z}/\kappa_{r}$ varies with radius and spin,
+  providing a diagnostic for the spin parameter when observed twin QPO
+  frequencies are identified with these epicyclic modes.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.98\textwidth]{plots/ch7/fig_epicyclic_frequencies_qpo.pdf}
+\caption{Epicyclic and orbital frequencies versus $r/r_{g}$ for
+  Kerr black holes with $a/M=0$ (Schwarzschild), $0.5$, and $0.998$.
+  Frequencies are shown in Hz for $M=10\,M_{\odot}$.  The inverted
+  triangles mark the maximum of $\kappa_{r}$, which sets the highest
+  possible radial QPO frequency.  The vertical grey lines indicate the
+  ISCO for each spin.}
+\label{fig:epicyclic-qpo}
+\end{figure}
