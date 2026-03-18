@@ -1,0 +1,3186 @@
+% Chapter II, Part 1: The Benard Problem (Sections 5-15)
+% PDF pages 25-58, book pages 9-42
+
+\chapter{THE THERMAL INSTABILITY OF A LAYER OF FLUID HEATED FROM BELOW}
+\label{ch:2}
+
+\begin{center}
+  {\Large 1. THE B\'ENARD PROBLEM}
+\end{center}
+
+\section{Introduction}\label{sec:5}
+
+The problem of the onset of thermal instability in horizontal layers of
+fluid heated from below is well suited to illustrate the many facets,
+mathematical and physical, of the general theory of hydrodynamic
+stability. If we enlarge the problem to include the effects of rotation
+and magnetic field, we can also exhibit the conflicting tendencies to
+which a fluid can be subject; and many striking aspects of fluid behaviour,
+disclosed by the mathematical theory in these connexions, have been
+experimentally demonstrated. For these reasons, we have selected the
+general topic of the instability of layers of fluid heated from below for a
+detailed treatment; and Chapters II--V are devoted to this problem.
+
+In this chapter we shall consider the simplest problem in the absence
+of rotation and magnetic field; the effects of these will be considered in
+the following chapters.
+
+\section{The nature of the physical problem}\label{sec:6}
+
+Consider then a horizontal layer of fluid in which an adverse temperature
+gradient is maintained by heating the underside. The temperature
+gradient thus maintained is qualified as adverse since, on account of
+thermal expansion, the fluid at the bottom will be lighter than the fluid
+at the top; and this is a top-heavy arrangement which is potentially
+unstable. Because of this latter instability there will be a tendency on
+the part of the fluid to redistribute itself and remedy the weakness in
+its arrangement. However, this natural tendency on the part of the
+fluid will be inhibited by its own viscosity. In other words, we expect
+that the adverse temperature gradient which is maintained must exceed
+a certain value before the instability can manifest itself.
+
+The earliest experiments to demonstrate in a definitive manner the
+onset of thermal instability in fluids are those of B\'enard in 1900, though
+the phenomenon of thermal convection itself had been recognized earlier
+by Count Rumford (1797) and James Thomson (1882). In \S~18 we shall
+describe the experiments of B\'enard and others. It will suffice to summarize here the principal facts established by them. They are: \emph{first},
+a certain critical adverse temperature gradient must be exceeded before
+instability can set in; and \emph{second}, the motions which ensue on surpassing
+the critical temperature gradient have a stationary cellular character.
+What actually happens at the onset of instability is that the layer of
+fluid resolves itself into a number of cells; and if the experiment is
+performed with sufficient care, the cells become equal and they align
+themselves to form a regular hexagonal pattern. Fig.~1 (which is a
+reproduction of one of B\'enard's early photographs) illustrates the
+phenomenon.
+
+\figurePlaceholder{1}{B\'enard cells in spermaceti. A reproduction of one of B\'enard's original photographs.}
+
+The theoretical foundations for a correct interpretation of the foregoing facts were laid by Lord Rayleigh in a fundamental paper. Rayleigh
+showed that what decides the stability, or otherwise, of a layer of fluid
+heated from below is the numerical value of the non-dimensional parameter,
+\begin{equation}
+\label{eq:2-1}
+R = \frac{g\alpha\beta}{\kappa\nu}\,d^4,
+\end{equation}
+where $g$ denotes the acceleration due to gravity, $d$ the depth of the layer,
+$\beta$ $(= |dT/dz|)$ the uniform adverse temperature gradient which is
+maintained, and $\alpha$, $\kappa$, and $\nu$ are the coefficients of volume expansion,
+thermometric conductivity, and kinematic viscosity, respectively; $R$ as
+defined here is called the \emph{Rayleigh number}. Rayleigh further showed that
+instability must set in when $R$ exceeds a certain critical value $R_c$, and
+that when $R$ just exceeds $R_c$ a stationary pattern of motions must come
+to prevail. The principal theoretical question is, therefore: how is one to
+determine $R_c$? This chapter is largely devoted to answering this question.
+
+\section{The basic hydrodynamic equations}\label{sec:7}
+
+For a general treatment of the problem of thermal instability described
+in \S~6, we need the equations governing the hydrodynamical flow of a
+viscous fluid of varying density and temperature. In this section we shall
+obtain these basic equations.
+
+Consider then a fluid in which the density $\rho$ is a function of position
+$x_j$ $(j = 1, 2, 3)$. Let $u_j$ $(j = 1, 2, 3)$ denote the components of the
+velocity. In writing the various equations we shall use the notation
+of Cartesian tensors with the usual summation convention.
+
+\subsection{The equation of continuity}\label{sec:7a}
+
+We have
+\begin{equation}
+\label{eq:2-2}
+\frac{\partial\rho}{\partial t} + \frac{\partial}{\partial x_j}(\rho u_j) = 0.
+\end{equation}
+This equation expresses the \emph{conservation of mass}: for, by integrating the
+equation over an arbitrary volume $V$, we obtain
+\begin{equation}
+\label{eq:2-3}
+\frac{\partial}{\partial t}\int\limits_V \rho\,d\tau = -\int\limits_V \frac{\partial}{\partial x_j}(\rho u_j)\,d\tau,
+\end{equation}
+where $d\tau$ $(= dx_1\,dx_2\,dx_3)$ is the element of volume. By Gauss's theorem,
+the volume integral on the right-hand side is equal to an integral over
+the bounding surface $S$ of $V$; thus,
+\begin{equation}
+\label{eq:2-4}
+\frac{\partial}{\partial t}\int\limits_V \rho\,d\tau = -\int\limits_S \rho u_j\,dS_j,
+\end{equation}
+where $dS_j$ represents a vector normal to the element of surface $dS$ and
+whose absolute magnitude is equal to $dS$. [The vector $dS_j$ is dual to
+the antisymmetric tensor $dS_{lm}$ whose components are equal to the projected areas of $dS$ on the coordinate planes.] Equation~(4) expresses the
+fact that the rate of change of the mass contained in a fixed volume of
+the fluid is given by the rate at which the fluid flows out of it across the
+boundary $S$. We could, indeed, have started with equation~(4) as the
+expression of the conservation of mass and retraced the arguments to
+derive equation~(\ref{eq:2-2}).
+
+An alternative form of equation~(\ref{eq:2-2}) which we shall find useful is
+\begin{equation}
+\label{eq:2-5}
+\frac{\partial\rho}{\partial t} + u_j\frac{\partial\rho}{\partial x_j} = -\rho\frac{\partial u_j}{\partial x_j}.
+\end{equation}
+The quantity on the left-hand side of equation~(\ref{eq:2-5}) is clearly the total
+derivative of $\rho$ with respect to the time.
+
+For an incompressible fluid, the equation of continuity reduces to
+\begin{equation}
+\label{eq:2-6}
+\frac{\partial u_j}{\partial x_j} = 0;
+\end{equation}
+in this case, the velocity field is, therefore, \emph{solenoidal}.
+
+\subsection{The equations of motion}\label{sec:7b}
+
+Before we can write down the equations of motion, it is necessary to
+know the \emph{stress} $P_{ij}$ acting in the direction of $x_j$ per unit area on an
+element of surface normal to $x_i$. This stress must be related to the \emph{rate
+of increase of strain} in the fluid; the latter is given by
+\begin{equation}
+\label{eq:2-7}
+e_{ij} = \frac{1}{2}\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\!.
+\end{equation}
+A basic assumption of fluid dynamics is that $P_{ij}$ and $e_{ij}$ are related \emph{linearly};
+thus,
+\begin{equation}
+\label{eq:2-8}
+P_{ij} = \varpi_{ij} + \eta_{ij;kl}\,e_{kl},
+\end{equation}
+where $\varpi_{ij}$ is a symmetric tensor to which $P_{ij}$ tends in the limit $e_{ij} = 0$,
+and $\eta_{ij;kl}$ is a tensor of the fourth rank. For an isotropic fluid, the form
+of the relation~(\ref{eq:2-8}) must be invariant to arbitrary rotations and translations of the coordinate system. This requires that $\varpi_{ij}$ and $\eta_{ij;kl}$ are
+\emph{isotropic tensors}; they must, therefore, have the forms
+\begin{equation}
+\label{eq:2-9}
+\varpi_{ij} = -p\,\delta_{ij}
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-10}
+\eta_{ij;kl} = \lambda\,\delta_{ij}\,\delta_{kl} + \mu(\delta_{ik}\,\delta_{jl} + \delta_{il}\,\delta_{jk}),
+\end{equation}
+where $p$, $\lambda$, and $\mu$ are (arbitrary) scalar functions of $x_i$. Inserting the
+expressions~(\ref{eq:2-9}) and~(\ref{eq:2-10}) in equation~(\ref{eq:2-8}), we have
+\begin{equation}
+\label{eq:2-11}
+P_{ij} = -p\,\delta_{ij} + 2\mu\,e_{ij} + \lambda\,\delta_{ij}\,e_{kk}.
+\end{equation}
+It is convenient to define $p$ as the isotropic pressure at $x_i$ when there is
+no strain; then,
+\begin{equation}
+\label{eq:2-12}
+P_{kk} = -3p + 2\mu\,e_{kk} + 3\lambda\,e_{kk}.
+\end{equation}
+Hence, with the definition of $p$ adopted,
+\begin{equation}
+\label{eq:2-13}
+\lambda = -\tfrac{2}{3}\mu
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-14}
+P_{ij} = -p\,\delta_{ij} + 2\mu\,e_{ij} - \tfrac{2}{3}\mu\,\delta_{ij}\,e_{kk}.
+\end{equation}
+The coefficient $\mu$ which occurs in this equation is the \emph{coefficient of viscosity};
+it can be an arbitrary function of position.
+
+The terms in~(\ref{eq:2-14}) which are proportional to $\mu$ define the stresses due
+to viscosity; denoting this by $p_{ij}$, we have
+\begin{equation}
+\label{eq:2-15}
+p_{ij} = \mu\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right) - \tfrac{2}{3}\mu\,\delta_{ij}\,\frac{\partial u_k}{\partial x_k}.
+\end{equation}
+For an incompressible fluid, the viscous tensor has the simpler form
+(cf.\ equation~(\ref{eq:2-8}))
+\begin{equation}
+\label{eq:2-16}
+p_{ij} = \mu\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\!.
+\end{equation}
+
+In terms of the stresses $P_{ij}$ we can write down the hydrodynamical
+equations of motion. We have
+\begin{equation}
+\label{eq:2-17}
+\rho\frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j} = \rho X_i + \frac{\partial P_{ij}}{\partial x_j},
+\end{equation}
+where $X_i$ is the $i$th component of whatever external force may be acting
+on the fluid. Substituting for $P_{ij}$ in this equation, we have
+\begin{equation}
+\label{eq:2-18}
+\rho\frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j} = \rho X_i - \frac{\partial p}{\partial x_i} + \frac{\partial}{\partial x_j}\!\left[\mu\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\right] - \tfrac{2}{3}\frac{\partial}{\partial x_i}\!\left(\mu\frac{\partial u_k}{\partial x_k}\right)\!.
+\end{equation}
+For an incompressible fluid in which $\mu$ is constant, equation~(\ref{eq:2-18}) simplifies to
+\begin{equation}
+\label{eq:2-19}
+\rho\frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j} = \rho X_i - \frac{\partial p}{\partial x_i} + \mu\nabla^2 u_i.
+\end{equation}
+This is the original form of the \emph{Navier--Stokes equations}.
+
+Equation~(\ref{eq:2-17}) expresses the \emph{conservation of momentum}. This can be
+seen by integrating the equation over an arbitrary volume $V$. We find
+\begin{equation}
+\label{eq:2-20}
+\int\limits_V\!\left(\rho\frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j}\right)d\tau = \int\limits_V \rho X_i\,d\tau + \int\limits_V \frac{\partial P_{ij}}{\partial x_j}\,d\tau.
+\end{equation}
+By integrating by parts the second integral on the left-hand side and
+transforming the integral over $P_{ij}$ on the right-hand side by Gauss's
+theorem, we obtain
+\begin{equation}
+\label{eq:2-21}
+\int\limits_V\!\left(\rho\frac{\partial u_i}{\partial t} - u_i\frac{\partial}{\partial x_j}(\rho u_j)\right)d\tau + \int\limits_S \rho u_i\,u_j\,dS_j = \int\limits_V \rho X_i\,d\tau + \int\limits_S P_{ij}\,dS_j.
+\end{equation}
+By making use of the equation of continuity, we find that the first of the
+two integrals on the left-hand side of~(\ref{eq:2-21}) is
+\begin{equation}
+\label{eq:2-22}
+\int\limits_V\!\left(\rho\frac{\partial u_i}{\partial t} + u_i\frac{\partial\rho}{\partial t}\right)d\tau = \frac{\partial}{\partial t}\int\limits_V \rho u_i\,d\tau.
+\end{equation}
+Equation~(\ref{eq:2-21}) can accordingly be written as
+\begin{equation}
+\label{eq:2-23}
+\frac{\partial}{\partial t}\int\limits_V \rho u_i\,d\tau = \int\limits_V \rho X_i\,d\tau + \int\limits_S P_{ij}\,dS_j - \int\limits_S \rho u_i\,u_j\,dS_j.
+\end{equation}
+This equation expresses the fact that the rate of change of the momentum
+contained in a fixed volume $V$ of the fluid is equal to the volume integral
+of the external forces acting on the elements of the fluid plus the surface integral of the normal stresses acting on the bounding surface $S$ of $V$
+minus the rate at which momentum flows out of $V$ across the boundaries
+of $V$ by the motions prevailing on $S$. It is clear that by expressing the
+law of the conservation of momentum in the form~(\ref{eq:2-23}), we can, conversely, derive the equation of motion~(\ref{eq:2-17}).
+
+\subsection{The rate of viscous dissipation}\label{sec:7c}
+
+By multiplying equation~(\ref{eq:2-17}) by $u_i$ (and, of course, summing over $i$)
+and integrating over a volume $V$, we obtain
+\begin{equation}
+\label{eq:2-24}
+\frac{1}{2}\int\limits_V \rho\frac{\partial}{\partial t}u_i^2\,d\tau + \frac{1}{2}\int\limits_V \rho u_j\frac{\partial}{\partial x_j}u_i^2\,d\tau = \int\limits_V \rho u_i\,X_i\,d\tau + \int\limits_V u_i\frac{\partial P_{ij}}{\partial x_j}\,d\tau.
+\end{equation}
+By a sequence of transformations similar to those used in passing from
+equation~(\ref{eq:2-20}) to equation~(\ref{eq:2-23}), we find
+\begin{equation}
+\label{eq:2-25}
+\frac{1}{2}\frac{\partial}{\partial t}\int\limits_V \rho u_i^2\,d\tau = \int\limits_V \rho u_i\,X_i\,d\tau + \int\limits_S u_i\,P_{ij}\,dS_j - \frac{1}{2}\int\limits_S \rho u_i^2\,u_j\,dS_j - \int\limits_V P_{ij}\frac{\partial u_i}{\partial x_j}\,d\tau.
+\end{equation}
+This equation gives the rate at which the kinetic energy contained in a
+volume $V$ of the fluid changes; and we observe that this is the sum of
+four terms. The first three terms represent, respectively, the rate at
+which the external forces do work on the elements of the fluid in $V$; the
+rate at which the stresses $P_{ij}$ do work on the surface bounding $V$; and
+finally, the rate at which energy actually flows out of $V$ across $S$.
+
+It remains to interpret the last term on the right-hand side of equation~(\ref{eq:2-25}); this is an integral over the volume of the quantity
+\begin{equation}
+\label{eq:2-26}
+-P_{ij}\frac{\partial u_i}{\partial x_j}.
+\end{equation}
+Using the definitions of $e_{ij}$ and $P_{ij}$ (equations~(\ref{eq:2-7}) and~(\ref{eq:2-14})), we can write
+\begin{equation}
+\label{eq:2-27}
+P_{ij}\frac{\partial u_i}{\partial x_j} = P_{ij}\,e_{ij} = (-p\,\delta_{ij} + 2\mu\,e_{ij} - \tfrac{2}{3}\mu\,\delta_{ij}\,e_{kk})e_{ij} = -p\,e_{jj} + 2\mu\,e_{ij}^2 - \tfrac{2}{3}\mu(e_{jj})^2.
+\end{equation}
+The first term on the right-hand side is
+\begin{equation}
+\label{eq:2-28}
+-p\,e_{jj} = -p\frac{\partial u_j}{\partial x_j} = \frac{p}{\rho}\!\left(\frac{\partial\rho}{\partial t} + u_j\frac{\partial\rho}{\partial x_j}\right) = \frac{p}{\rho}\frac{d\rho}{dt};
+\end{equation}
+the volume integral of this quantity represents, therefore, the increase
+in the internal energy due to the compression which the fluid experiences.
+The remaining term,
+\begin{equation}
+\label{eq:2-29}
+\Phi = 2\mu e_{ij}^2 - \tfrac{2}{3}\mu(e_{jj})^2,
+\end{equation}
+in~(\ref{eq:2-27}) must, therefore, represent the rate at which energy is dissipated,
+irreversibly, by viscosity in each element of volume of the fluid. Consistent with this statement, $\Phi$ is indeed positive definite: for, it can be
+readily verified that an equivalent form for $\Phi$ is
+\begin{equation}
+\label{eq:2-30}
+\Phi = 4\mu(e_{12}^2 + e_{13}^2 + e_{23}^2) + \tfrac{4}{3}\mu[(e_{11}-e_{22})^2 + (e_{22}-e_{33})^2 + (e_{33}-e_{11})^2].
+\end{equation}
+For an incompressible fluid $e_{jj} = 0$, and the corresponding expression
+for $\Phi$ is
+\begin{equation}
+\label{eq:2-31}
+\Phi = 2\mu e_{ij}^2.
+\end{equation}
+
+\subsection{The equation of heat conduction}\label{sec:7d}
+
+We have seen that the laws of conservation of mass and of momentum
+lead to the equations of continuity and motion, respectively. It remains
+to express the law of the \emph{conservation of energy}. As we shall presently see,
+this leads to the equation of heat conduction in the form required for
+our present purposes.
+
+Apart from an additive constant, the energy $\epsilon$ per unit mass of the
+fluid can be written as
+\begin{equation}
+\label{eq:2-32}
+\epsilon = \tfrac{1}{2}u_i^2 + c_v\,T,
+\end{equation}
+where $c_v$ is the specific heat at constant volume and $T$ is the temperature.
+Counting the gains and losses of energy which occur in a volume $V$ of
+the fluid, per unit time, we have
+\begin{align}
+\label{eq:2-33}
+\frac{\partial}{\partial t}\int\limits_V \rho\epsilon\,d\tau &= \text{rate at which work is done on the boundary } S \text{ of } V \text{ by the} \notag\\
+& \quad\text{stresses } P_{ij} + {} \notag\\
+& \quad{} + \text{rate at which work is done on each element of the fluid} \notag\\
+& \quad\text{inside } V \text{ by the external forces---} \notag\\
+& \quad{} - \text{rate at which energy in the form of heat is \emph{conducted} across } S\text{---} \notag\\
+& \quad{} - \text{rate at which energy is \emph{convected} across } S \text{ by the prevailing} \notag\\
+& \quad\text{mass motions} \notag\\[4pt]
+&= \int\limits_S u_i\,P_{ij}\,dS_j + \int\limits_V \rho u_i\,X_i\,d\tau + \int\limits_S k\frac{\partial T}{\partial x_j}\,dS_j - \int\limits_S \rho\epsilon\,u_j\,dS_j,
+\end{align}
+where $k$ is the coefficient of heat conduction. Making use of equations~(\ref{eq:2-25}),~(\ref{eq:2-27}),~(\ref{eq:2-28}), and~(\ref{eq:2-29}), we can rewrite the first term on the
+right-hand side of equation~(\ref{eq:2-33}) as
+\begin{equation}
+\label{eq:2-34}
+\int\limits_S u_i\,P_{ij}\,dS_j = \frac{1}{2}\frac{\partial}{\partial t}\int\limits_V \rho u_i^2\,d\tau + \frac{1}{2}\int\limits_S \rho u_i^2\,u_j\,dS_j - \int\limits_V \rho u_i\,X_i\,d\tau - \int\limits_V p\frac{\partial u_j}{\partial x_j}\,d\tau + \int\limits_V \Phi\,d\tau;
+\end{equation}
+also, alternative forms of the third and the fourth terms are
+\begin{equation}
+\label{eq:2-35}
+\int\limits_S k\frac{\partial T}{\partial x_j}\,dS_j = \int\limits_V \frac{\partial}{\partial x_j}\!\left(k\frac{\partial T}{\partial x_j}\right)d\tau
+\end{equation}
+and
+\begin{align}
+\label{eq:2-36}
+-\int\limits_S \rho\epsilon\,u_j\,dS_j &= -\int\limits_V \rho(\tfrac{1}{2}u_i^2 + c_v\,T)u_j\,dS_j \notag\\
+&= -\frac{1}{2}\int\limits_S \rho u_i^2\,u_j\,dS_j - \int\limits_V \frac{\partial}{\partial x_j}(\rho c_v\,T\,u_j)\,d\tau.
+\end{align}
+Combining the foregoing equations, we have
+\begin{equation}
+\label{eq:2-37}
+\int\limits_V \frac{\partial}{\partial t}(\rho c_v\,T)\,d\tau = \int\limits_V \frac{\partial}{\partial x_j}\!\left(k\frac{\partial T}{\partial x_j}\right)d\tau - \int\limits_V p\frac{\partial u_j}{\partial x_j}\,d\tau + \int\limits_V \Phi\,d\tau - \int\limits_V \frac{\partial}{\partial x_j}(\rho c_v\,T\,u_j)\,d\tau.
+\end{equation}
+Since this equation must hold for every volume $V$, we must have
+\begin{equation}
+\label{eq:2-38}
+\frac{\partial}{\partial t}(\rho c_v\,T) + \frac{\partial}{\partial x_j}(\rho c_v\,T\,u_j) = \frac{\partial}{\partial x_j}\!\left(k\frac{\partial T}{\partial x_j}\right) - p\frac{\partial u_j}{\partial x_j} + \Phi.
+\end{equation}
+Making use of the equation of continuity, we can simplify the foregoing
+equation to the form
+\begin{equation}
+\label{eq:2-39}
+\rho\frac{\partial}{\partial t}(c_v\,T) + \rho u_j\frac{\partial}{\partial x_j}(c_v\,T) = \frac{\partial}{\partial x_j}\!\left(k\frac{\partial T}{\partial x_j}\right) - p\frac{\partial u_j}{\partial x_j} + \Phi.
+\end{equation}
+
+Equations~(\ref{eq:2-2}),~(\ref{eq:2-14}),~(\ref{eq:2-17}),~(\ref{eq:2-29}), and~(\ref{eq:2-39}) are the basic hydrodynamic
+equations. They must be supplemented by an equation of state. For
+substances with which we shall be principally concerned, we can write
+\begin{equation}
+\label{eq:2-40}
+\rho = \rho_0[1 - \alpha(T - T_0)],
+\end{equation}
+where $\alpha$ is the coefficient of volume expansion and $T_0$ is the temperature
+at which $\rho = \rho_0$.
+
+\section{The Boussinesq approximation}\label{sec:8}
+
+In deriving the hydrodynamical equations in the preceding section,
+no assumptions were made regarding the constancy, or otherwise, of the
+various coefficients ($\mu$, $c_v$, $\alpha$, and $k$) which were introduced. The equations which were derived are, therefore, of quite general validity. However, as was first pointed out by Boussinesq, there are many situations
+of practical occurrence in which the basic equations can be simplified
+considerably. These situations occur when the variability in the
+density and in the various coefficients is due to variations in the temperature of only moderate amounts. The origin of the simplifications in
+these cases is due to the smallness of the coefficient of volume expansion:
+for gases and liquids such as we shall be mostly concerned with, $\alpha$ is in
+the range $10^{-3}$ to $10^{-4}$. For variations in temperature not exceeding $10^\circ$
+(say), the variations in the density are at most 1 per cent. The variations
+in the other coefficients (consequent to variations in density of the
+amounts stated) must be of the same order. Variations of this small
+amount can, in general, be ignored. But there is one important exception: the variability of $\rho$ in the term $\rho X_i$ in the equation of motion
+cannot be ignored; this is because the acceleration resulting from $\delta\rho\,X_i = \alpha\,\Delta T\,X_i$
+(where $\Delta T$ is a measure of the variations in temperature which occur)
+can be quite large; larger than, for example, the acceleration due to the
+inertial term $u_j\,\partial u_i/\partial x_j$ in the equation of motion. Accordingly, we may
+treat $\rho$ as a constant in all terms in the equations of motion except the
+one in the external force. This is the \emph{Boussinesq approximation}. We
+shall verify in \S~9 that for the particular problem of thermal instability
+we need not make the Boussinesq approximation: for, we shall show that
+in this case the general equations of \S~7 lead to the same perturbation
+equations. Nevertheless, the equations which follow on the Boussinesq
+approximation are of interest in themselves; and they provide also the
+basis for further developments in the non-linear domain.
+
+On the basis of the foregoing remarks, we first replace the equation
+of continuity~(\ref{eq:2-6}) by
+\begin{equation}
+\label{eq:2-41}
+\frac{\partial u_j}{\partial x_j} = 0;
+\end{equation}
+for, the terms on the left-hand side of~(\ref{eq:2-5}) are of order $\alpha$ compared with
+those on the right-hand side. With this condition on $u_j$, the expression
+for the viscous stress-tensor is
+\begin{equation}
+\label{eq:2-42}
+p_{ij} = \mu\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\!,
+\end{equation}
+where for the same reason we may treat $\mu$ as a constant. In the frame of
+these approximations, the equation of motion~(\ref{eq:2-17}) becomes
+\begin{equation}
+\label{eq:2-43}
+\frac{\partial u_i}{\partial t} + u_j\frac{\partial u_i}{\partial x_j} = -\frac{1}{\rho_0}\frac{\partial\,\delta p}{\partial x_i} + \left(1 + \frac{\delta\rho}{\rho_0}\right)X_i + \nu\nabla^2 u_i,
+\end{equation}
+where $\nu$ $(= \mu/\rho_0)$ denotes the \emph{kinematic viscosity}, $\rho_0$ is the density at some
+properly chosen mean temperature $T_0$, and
+\begin{equation}
+\label{eq:2-44}
+\delta\rho = -\rho_0\,\alpha(T - T_0).
+\end{equation}
+
+Considering next the equation of heat conduction~(\ref{eq:2-39}), we can treat
+$c_v$ and $k$ as constants and take them outside the differentiation signs;
+and we can ignore also the term $-p\operatorname{div}\mathbf{u}$ on the right-hand side. The
+term in the viscous dissipation $\Phi$ can also be ignored: for, according to
+equations~(\ref{eq:2-43}) and~(\ref{eq:2-44}), the prevailing velocities are of the order
+$[\alpha\,\Delta T\,|\mathbf{X}|\,d^2]$, where $d$ is a measure of the linear dimensions of a system.
+Consequently, the term in $\Phi$ is of the order
+\begin{equation}
+\label{eq:2-45}
+\mu\alpha|\mathbf{X}|d/k
+\end{equation}
+relative to the term arising from the conduction of heat; and this ratio
+for ordinary liquids (such as water and mercury) is $10^{-7}$ or $10^{-8}$ for
+$d \sim 1$~cm and $|\mathbf{X}| \sim g$ (the acceleration due to gravity). Under these
+circumstances, the equation of heat conduction~(\ref{eq:2-39}) reduces to
+\begin{equation}
+\label{eq:2-46}
+\frac{\partial T}{\partial t} + u_j\frac{\partial T}{\partial x_j} = \kappa\nabla^2 T,
+\end{equation}
+where $\kappa$ $(= k/\rho_0 c_v)$ is the \emph{coefficient of thermometric conductivity}.
+
+Equations~(\ref{eq:2-41}),~(\ref{eq:2-43}),~(\ref{eq:2-44}), and~(\ref{eq:2-46}) are the basic equations in the
+Boussinesq approximation.
+
+\section{The perturbation equations}\label{sec:9}
+
+Consider an infinite horizontal layer of fluid in which a steady adverse
+temperature gradient is maintained; further, let there be no motions.
+The initial state is, therefore, one in which
+\begin{equation}
+\label{eq:2-47}
+u_j = 0 \quad\text{and}\quad T = T(\lambda_j x_j),
+\end{equation}
+where $\boldsymbol{\lambda} = (0,0,1)$ is a unit vector in the direction of the vertical.
+
+When no motions are present, the hydrodynamical equations require
+only that the pressure distribution is governed by the equation (cf.\
+equation~(\ref{eq:2-18}))
+\begin{equation}
+\label{eq:2-48}
+\frac{\partial p}{\partial x_i} = \rho\,X_i = -g\rho\lambda_i,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-49}
+\rho = \rho_0[1 + \alpha(T_0 - T)]
+\end{equation}
+and $\rho_0$ and $T_0$ are the density and the temperature at the lower boundary
+($z = \lambda_j x_j = 0$, say). The temperature distribution is governed by the
+equation
+\begin{equation}
+\label{eq:2-50}
+\nabla^2 T = 0.
+\end{equation}
+In writing equation~(\ref{eq:2-39}), under conditions of a steady state in the form~(\ref{eq:2-50}), we have assumed that the coefficient of heat conduction $k$ is a
+constant independent of $T$; this assumption is justified in our present
+connexion.
+
+The solution of equation~(\ref{eq:2-50}) appropriate to the problem on hand is
+\begin{equation}
+\label{eq:2-51}
+T = T_0 - \beta\lambda_j x_j;
+\end{equation}
+$\beta$ is the adverse temperature gradient which is maintained. The corresponding distribution of the density is given by
+\begin{equation}
+\label{eq:2-52}
+\rho = \rho_0(1 + \alpha\beta\lambda_j x_j).
+\end{equation}
+With this expression for $\rho$, equation~(\ref{eq:2-48}) can be integrated to give
+\begin{equation}
+\label{eq:2-53}
+p = p_0 - g\rho_0(\lambda_i x_i + \tfrac{1}{2}\alpha\beta\lambda_i\lambda_j x_i x_j).
+\end{equation}
+
+Let the initial state described by equations~(\ref{eq:2-47}),~(\ref{eq:2-51}),~(\ref{eq:2-52}), and~(\ref{eq:2-53}) be
+slightly perturbed. Let $u_i$ denote the velocity in the perturbed state,
+and let the altered temperature distribution be
+\begin{equation}
+\label{eq:2-54}
+T' = T_0 - \beta\lambda_j x_j + \theta.
+\end{equation}
+Finally, let $\delta p$ denote the change in the pressure distribution. We shall
+now obtain the linearized form of the equations of motion which govern
+this perturbed state.
+
+We shall first consider the problem on the basis of Boussinesq's
+approximation. By ignoring terms of the second and higher orders in the
+perturbations, equations~(\ref{eq:2-43}) and~(\ref{eq:2-46}) give (see equation~(\ref{eq:2-62}) below)
+\begin{equation}
+\label{eq:2-55}
+\frac{\partial u_i}{\partial t} = -\frac{\partial}{\partial x_i}\!\left(\frac{\delta p}{\rho_0}\right) + g\alpha\theta\lambda_i + \nu\nabla^2 u_i
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-56}
+\frac{\partial\theta}{\partial t} = \beta\lambda_j u_j + \kappa\nabla^2\theta;
+\end{equation}
+and the velocity field remains, of course, solenoidal:
+\begin{equation}
+\label{eq:2-57}
+\frac{\partial u_j}{\partial x_j} = 0.
+\end{equation}
+
+It is of interest to verify that we obtain the same equations~(\ref{eq:2-55})--(\ref{eq:2-57})
+from the general equations of motion without first making the Boussinesq approximation. The general equations of motion are:
+\begin{equation}
+\label{eq:2-58}
+\frac{\partial\rho}{\partial t} + u_j\frac{\partial\rho}{\partial x_j} = -\rho\frac{\partial u_j}{\partial x_j},
+\end{equation}
+\begin{equation}
+\label{eq:2-59}
+\frac{\partial T}{\partial t} + u_j\frac{\partial T}{\partial x_j} = \kappa\nabla^2 T - \frac{p}{\rho c_v}\frac{\partial u_j}{\partial x_j} + \frac{1}{\rho c_v}\Phi,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-60}
+\rho\frac{\partial u_i}{\partial t} + \rho u_j\frac{\partial u_i}{\partial x_j} = -\frac{\partial p}{\partial x_i} + \frac{\partial}{\partial x_j}\!\left[\mu\!\left(\frac{\partial u_i}{\partial x_j}+\frac{\partial u_j}{\partial x_i}\right)\right] - \tfrac{2}{3}\frac{\partial}{\partial x_i}\!\left(\mu\frac{\partial u_k}{\partial x_k}\right) - g\rho\lambda_i.
+\end{equation}
+
+In the unperturbed state
+\begin{equation}
+\label{eq:2-61}
+\frac{\partial p}{\partial x_i} = \lambda_i\,\rho_0\,\alpha\beta;
+\end{equation}
+and the change in the density $\delta\rho$ caused by the perturbation $\theta$ in the
+temperature is given by
+\begin{equation}
+\label{eq:2-62}
+\delta\rho = -\alpha\rho\,\theta = -\alpha\rho_0(1 + \alpha\beta\lambda_j x_j)\theta.
+\end{equation}
+Consequently, while the first-order terms on the left-hand side of
+equation~(\ref{eq:2-58}) occur with the factor $\alpha$, the corresponding terms on the
+right-hand side do not have this factor; and since $\alpha \sim 10^{-3}$--$10^{-4}$, we
+may neglect the term $\lambda_j u_j\alpha\beta$ on the left-hand side and \emph{deduce} the
+solenoidal character of $\mathbf{u}$. Making use of this fact and remembering
+that the dissipation term $\Phi$ is of the second order in $\mathbf{u}$ in any case, we
+obtain for $\theta$ the equation
+\begin{equation}
+\label{eq:2-63}
+\frac{\partial\theta}{\partial t} = \beta\lambda_j u_j + \kappa\nabla^2\theta;
+\end{equation}
+this is the same equation as~(\ref{eq:2-56}).
+
+Considering next equation~(\ref{eq:2-60}), we first observe that we may treat $\mu$
+as a constant; for, the variations in $\mu$ must be of order $\alpha\,\delta\rho$ and we may
+ignore variations of this order when they occur multiplied by $u_i$. Thus
+we obtain the linearized equation
+\begin{equation}
+\label{eq:2-64}
+\frac{\partial u_i}{\partial t} = -\frac{1}{\rho}\frac{\partial}{\partial x_i}\,\delta p + \frac{\mu}{\rho}\nabla^2 u_i + g\alpha\theta\lambda_i;
+\end{equation}
+and in this equation we may clearly write $\rho_0$ in place of $\rho$. We thus
+recover the equations which were obtained earlier on the Boussinesq
+approximation.
+
+Returning to equations~(\ref{eq:2-55})--(\ref{eq:2-57}), we eliminate the term $\partial p/\rho_0$ in~(\ref{eq:2-55}) by applying the operator,
+\begin{equation}
+\label{eq:2-65}
+\operatorname{curl}_k = \epsilon_{ijk}\frac{\partial}{\partial x_j},
+\end{equation}
+to the $k$-component of the equation. Letting
+\begin{equation}
+\label{eq:2-66}
+\omega_i = \epsilon_{ijk}\frac{\partial u_k}{\partial x_j}
+\end{equation}
+denote the \emph{vorticity}, we have the equation
+\begin{equation}
+\label{eq:2-67}
+\frac{\partial\omega_i}{\partial t} = g\alpha\epsilon_{ijk}\frac{\partial\theta}{\partial x_j}\lambda_k + \nu\nabla^2\omega_i.
+\end{equation}
+Taking the curl of this equation once again, we have
+\begin{equation}
+\label{eq:2-68}
+\frac{\partial}{\partial t}\frac{\partial\omega_k}{\partial x_j}\epsilon_{ijk} = g\alpha\epsilon_{ijk}\epsilon_{klm}\frac{\partial^2\theta}{\partial x_j\partial x_l}\lambda_m + \nu\nabla^2\frac{\partial\omega_k}{\partial x_j}\epsilon_{ijk}.
+\end{equation}
+Making use of the identity
+\begin{equation}
+\label{eq:2-69}
+\epsilon_{ijk}\,\epsilon_{klm} = \delta_{il}\,\delta_{jm} - \delta_{im}\,\delta_{jl},
+\end{equation}
+we find
+\begin{equation}
+\label{eq:2-70}
+\epsilon_{ijk}\frac{\partial\omega_k}{\partial x_j} = \epsilon_{ijk}\,\epsilon_{klm}\frac{\partial^2 u_m}{\partial x_j\partial x_l} = \frac{\partial}{\partial x_i}\!\left(\frac{\partial u_l}{\partial x_l}\right) - \nabla^2 u_i = -\nabla^2 u_i.
+\end{equation}
+Similarly,
+\begin{equation}
+\label{eq:2-71}
+\epsilon_{ijk}\,\epsilon_{klm}\frac{\partial^2\theta}{\partial x_j\partial x_l}\lambda_m = \lambda_i\frac{\partial^2\theta}{\partial x_j\partial x_j} - \lambda_j\frac{\partial^2\theta}{\partial x_i\partial x_j} = \lambda_i\nabla^2\theta.
+\end{equation}
+Thus, equation~(\ref{eq:2-68}) becomes
+\begin{equation}
+\label{eq:2-72}
+\frac{\partial}{\partial t}\nabla^2 u_i = g\alpha\!\left(\lambda_i\nabla^2\theta - \lambda_j\frac{\partial^2\theta}{\partial x_i\partial x_j}\right) + \nu\nabla^4 u_i.
+\end{equation}
+
+Now multiplying equations~(\ref{eq:2-67}) and~(\ref{eq:2-72}) by $\lambda_i$, we get
+\begin{equation}
+\label{eq:2-73}
+\frac{\partial\zeta}{\partial t} = \nu\nabla^2\zeta
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-74}
+\frac{\partial}{\partial t}\nabla^2 w = g\alpha\!\left(\frac{\partial^2\theta}{\partial x_1^2}+\frac{\partial^2\theta}{\partial x_2^2}\right) + \nu\nabla^4 w,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-75}
+\zeta = \lambda_i\omega_i \quad\text{and}\quad w = \lambda_i u_i
+\end{equation}
+are the $z$-components of the vorticity and the velocity. We also have
+the equation (cf.\ equation~(\ref{eq:2-56}))
+\begin{equation}
+\label{eq:2-76}
+\frac{\partial\theta}{\partial t} = \beta w + \kappa\nabla^2\theta.
+\end{equation}
+
+Equations~(\ref{eq:2-73}),~(\ref{eq:2-74}), and~(\ref{eq:2-76}) are the required perturbation equations.
+We must seek solutions of these equations which satisfy certain boundary
+conditions. We shall now formulate these conditions.
+
+\subsection{The boundary conditions}\label{sec:9a}
+
+The fluid is confined between the planes $z = 0$ and $z = d$; on these
+two planes certain boundary conditions must be satisfied. Regardless
+of the nature of these bounding surfaces, we must require
+\begin{equation}
+\label{eq:2-77}
+\theta = 0 \quad\text{and}\quad w = 0 \qquad\text{for } z = 0 \text{ and } d;
+\end{equation}
+for, the surfaces $z = 0$ and $d$ are maintained at constant temperatures
+and as such they can suffer no change; and it is also clear that the normal
+component of the velocity must vanish on these surfaces. There are two
+further boundary conditions which, however, depend on the nature of
+the surfaces at $z = 0$ and $d$.
+
+We shall distinguish two kinds of bounding surfaces: \emph{rigid surfaces} on
+which no slip occurs and \emph{free surfaces} on which no tangential stresses act.
+
+Consider first a rigid surface. The condition that no slip occurs on
+this surface implies that not only $w$, but also the horizontal components
+of the velocity, $u$ and $v$, vanish. Thus
+\begin{equation}
+\label{eq:2-78}
+u = 0 \quad\text{and}\quad v = 0 \quad\text{in addition to}\quad w = 0 \;\text{on a rigid surface.}
+\end{equation}
+Since this condition must be satisfied for all $x$ and $y$ on the surface, it
+follows from the equation of continuity,
+\begin{equation}
+\label{eq:2-79}
+\frac{\partial u}{\partial x} + \frac{\partial v}{\partial y} + \frac{\partial w}{\partial z} = 0,
+\end{equation}
+that
+\begin{equation}
+\label{eq:2-80}
+\frac{\partial w}{\partial z} = 0 \qquad\text{on a rigid surface.}
+\end{equation}
+
+The conditions on a free surface are
+\begin{equation}
+\label{eq:2-81}
+P_{xz} = P_{yz} = 0.
+\end{equation}
+Since the isotropic term $-p\,\delta_{ij}$ has no transverse component, the condition~(\ref{eq:2-81}) is equivalent to the vanishing of the components $p_{xz}$ and $p_{yz}$ of
+the viscous stress tensor:\footnote{It will be observed that we are applying the conditions~(\ref{eq:2-81}) on the undisplaced surface; in so doing we are ignoring, for example, the effects arising from the existence of gravity waves (see Chapter X, \S~94). If one should want to include such effects, then the conditions~(\ref{eq:2-81}) should be applied to the surface as displaced by the perturbation.}
+\begin{equation}
+\label{eq:2-82}
+p_{xz} = \mu\!\left(\frac{\partial u}{\partial z}+\frac{\partial w}{\partial x}\right) \quad\text{and}\quad p_{yz} = \mu\!\left(\frac{\partial v}{\partial z}+\frac{\partial w}{\partial y}\right)\!.
+\end{equation}
+Since $w$ vanishes (for all $x$ and $y$) on the bounding surface, it follows from~(\ref{eq:2-82}) that
+\begin{equation}
+\label{eq:2-83}
+\frac{\partial u}{\partial z} = \frac{\partial v}{\partial z} = 0 \qquad\text{on a free surface.}
+\end{equation}
+From the equation of continuity~(\ref{eq:2-79}) differentiated with respect to $z$,
+we conclude that
+\begin{equation}
+\label{eq:2-84}
+\frac{\partial^2 w}{\partial z^2} = 0 \qquad\text{on a free surface.}
+\end{equation}
+
+The boundary conditions on the normal component of the vorticity $\zeta$
+can be deduced from the foregoing. Since
+\begin{equation}
+\label{eq:2-85}
+\zeta = \frac{\partial v}{\partial x} - \frac{\partial u}{\partial y},
+\end{equation}
+it follows from equations~(\ref{eq:2-78}) and~(\ref{eq:2-83}) that
+\begin{equation}
+\label{eq:2-86}
+\zeta = 0 \qquad\text{on a rigid surface}
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-87}
+\frac{\partial\zeta}{\partial z} = 0 \qquad\text{on a free surface.}
+\end{equation}
+
+\section{The analysis into normal modes}\label{sec:10}
+
+According to the general ideas described in Chapter~I (\S~3), we must
+analyse an arbitrary disturbance into a complete set of normal modes
+and examine the stability of each of these modes, individually. For the
+problem on hand, the analysis can be made in terms of two-dimensional
+periodic waves of assigned wave numbers. Thus, we ascribe to all
+quantities describing the perturbation a dependence on $x$, $y$, and $t$ of
+the form
+\begin{equation}
+\label{eq:2-88}
+\exp[i(k_x\,x + k_y\,y) + pt],
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-89}
+k = \sqrt{k_x^2 + k_y^2}
+\end{equation}
+is the wave number of the disturbance and $p$ is a constant (which can be
+complex). As we have explained in \S~3, the solution of the stability
+problem requires the specification of the states, for each $k$, which are
+characterized by the real part of $p$ being zero.
+
+In accordance with the remarks in the preceding paragraph, we
+suppose that the perturbations $\theta$, $w$, and $\zeta$ have the forms:
+\begin{equation}
+\label{eq:2-90}
+w = W(z)\exp[i(k_x\,x + k_y\,y) + pt], \quad
+\theta = \Theta(z)\exp[i(k_x\,x + k_y\,y) + pt], \quad
+\zeta = Z(z)\exp[i(k_x\,x + k_y\,y) + pt].
+\end{equation}
+For functions with this dependence on $x$, $y$, and $t$,
+\begin{equation}
+\label{eq:2-91}
+\frac{\partial}{\partial t} = p, \quad \frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2} = -k^2, \quad\text{and}\quad \nabla^2 = \frac{d^2}{dz^2} - k^2;
+\end{equation}
+and equations~(\ref{eq:2-73}),~(\ref{eq:2-74}), and~(\ref{eq:2-76}) become
+\begin{equation}
+\label{eq:2-92}
+p\!\left(\frac{d^2}{dz^2}-k^2\right)\!W = -g\alpha k^2\Theta + \nu\!\left(\frac{d^2}{dz^2}-k^2\right)^{\!2}W,
+\end{equation}
+\begin{equation}
+\label{eq:2-93}
+p\,\Theta = \beta W + \kappa\!\left(\frac{d^2}{dz^2}-k^2\right)\!\Theta,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-94}
+pZ = \nu\!\left(\frac{d^2}{dz^2}-k^2\right)\!Z.
+\end{equation}
+Solutions of these equations must be sought which satisfy the boundary
+conditions
+\begin{equation}
+\label{eq:2-95}
+\Theta = 0 \;\text{ and }\; W = 0 \qquad\text{for } z = 0 \text{ and } d,
+\end{equation}
+\begin{equation}
+\label{eq:2-96}
+\left.\begin{aligned}
+& Z = 0 \;\text{ and }\; \frac{dW}{dz} = 0 &&\text{on a rigid surface}\\
+& \frac{dZ}{dz} = 0 \;\text{ and }\; \frac{d^2W}{dz^2} = 0 &&\text{on a free surface}
+\end{aligned}\right\}
+\end{equation}
+
+It is convenient to discuss equations~(\ref{eq:2-92})--(\ref{eq:2-94}) in non-dimensional
+variables. Choose the units
+\begin{equation}
+\label{eq:2-97}
+[L] = d \quad\text{and}\quad [T] = d^2/\nu
+\end{equation}
+and let
+\begin{equation}
+\label{eq:2-98}
+a = kd \quad\text{and}\quad \sigma = pd^2/\nu
+\end{equation}
+be the wave number and the `time constant' in these units. We shall,
+however, let $x$, $y$, $z$ stand for the coordinates in the new unit of length $d$.
+Equations~(\ref{eq:2-92}) and~(\ref{eq:2-93}) become
+\begin{equation}
+\label{eq:2-99}
+(D^2 - a^2)(D^2 - a^2 - \sigma)W = -\left(\frac{g\alpha}{\kappa\nu}\,d^4\right)a^2\Theta
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-100}
+(D^2 - a^2 - p\sigma)\Theta = -\left(\frac{\beta}{\kappa}\,d^2\right)W,
+\end{equation}
+where $D = d/dz$ and $\mathrm{p}$ $(= \nu/\kappa)$ is the Prandtl number. [Observe that
+$W$ and $\Theta$ have their usual dimensions: these are not measured in the
+units which follow from~(\ref{eq:2-97}).] The associated boundary conditions are
+\begin{equation}
+\label{eq:2-101}
+\Theta = 0, \quad W = 0 \quad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+\begin{equation}
+\label{eq:2-102}
+DW = 0 \;\text{ for } z = 0 \text{ and } 1 \quad\text{if both bounding surfaces are rigid}
+\end{equation}
+or
+\begin{equation}
+\label{eq:2-103}
+DW = 0 \;\text{ for } z = 0 \quad\text{and}\quad D^2W = 0 \;\text{ for } z = 1
+\end{equation}
+if the bottom surface is rigid and the top surface is free.
+
+By eliminating $\Theta$ between the equations~(\ref{eq:2-99}) and~(\ref{eq:2-100}), we obtain
+\begin{equation}
+\label{eq:2-104}
+(D^2-a^2)(D^2-a^2-\sigma)(D^2-a^2-\mathrm{p}\sigma)W = -Ra^2 W,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-105}
+R = \frac{g\alpha\beta}{\kappa\nu}\,d^4
+\end{equation}
+is the Rayleigh number. An identical equation governs $\Theta$.
+
+\subsection{The solutions for the horizontal components of the velocity}\label{sec:10a}
+
+Once we have obtained the proper solutions of equations~(\ref{eq:2-99}) and~(\ref{eq:2-100}) we can complete the solution of the problem by determining the
+horizontal components of the velocity as follows.
+
+Express $u$ and $v$ in terms of two functions $\phi$ and $\psi$ in the manner
+\begin{equation}
+\label{eq:2-106}
+u = \frac{\partial\phi}{\partial x}+\frac{\partial\psi}{\partial y} \quad\text{and}\quad v = \frac{\partial\phi}{\partial y}-\frac{\partial\psi}{\partial x}.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:2-107}
+\frac{\partial w}{\partial z} = \frac{\partial u}{\partial x}+\frac{\partial v}{\partial y} = \frac{\partial^2\phi}{\partial x^2}+\frac{\partial^2\psi}{\partial x\partial y}+\frac{\partial^2\phi}{\partial y^2}-\frac{\partial^2\psi}{\partial x\partial y} = -a^2\phi
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-108}
+d\zeta = \frac{\partial v}{\partial x}-\frac{\partial u}{\partial y} = \frac{\partial^2\phi}{\partial x\partial y}-\frac{\partial^2\psi}{\partial x^2}-\frac{\partial^2\phi}{\partial x\partial y}-\frac{\partial^2\psi}{\partial y^2} = -a^2\psi.
+\end{equation}
+Hence,
+\begin{equation}
+\label{eq:2-109}
+\phi = -\frac{1}{k^2}\frac{\partial w}{\partial z} \quad\text{and}\quad \psi = -\frac{d}{k^2}\zeta.
+\end{equation}
+and we can write
+\begin{align}
+\label{eq:2-110}
+u &= \frac{1}{a^2}\!\left(\frac{\partial^2 w}{\partial x\partial z}-\frac{\partial \zeta}{\partial y}\right) = \frac{1}{a^2}(a_x\,DW + a_y\,dZ)\exp[i(a_x\,x+a_y\,y)+\sigma t] \\
+\label{eq:2-111}
+v &= \frac{1}{a^2}\!\left(\frac{\partial^2 w}{\partial y\partial z}+\frac{\partial \zeta}{\partial x}\right) = \frac{1}{a^2}(a_y\,DW - a_x\,dZ)\exp[i(a_x\,x+a_y\,y)+\sigma t].
+\end{align}
+The foregoing equations relating $u$ and $v$ with the normal components
+of the velocity and the vorticity are quite general: they are not restricted
+to this particular problem.
+
+\section{The principle of the exchange of stabilities}\label{sec:11}
+
+We shall now show that, for the problem under discussion, the principle
+of the exchange of stabilities is valid, i.e.\ $\sigma$ is real and the marginal states
+are characterized by $\sigma = 0$.
+
+Let
+\begin{equation}
+\label{eq:2-112}
+G = (D^2 - a^2)W
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-113}
+F = (D^2-a^2)(D^2-a^2-\sigma)W = (D^2-a^2-\sigma)G.
+\end{equation}
+According to equation~(\ref{eq:2-99}), the condition $\Theta = 0$ on the bounding
+surfaces is equivalent to
+\begin{equation}
+\label{eq:2-114}
+F = 0 \qquad\text{for } z = 0 \text{ and } 1.
+\end{equation}
+In terms of $F$, the equation satisfied by $W$ is
+\begin{equation}
+\label{eq:2-115}
+(D^2-a^2-\mathrm{p}\sigma)F = -Ra^2 W.
+\end{equation}
+We shall now prove that $\sigma$ is real for all positive $R$.
+
+Multiply equation~(\ref{eq:2-115}) by $F^*$ (the complex conjugate of $F$) and
+integrate over the range of $z$. We have
+\begin{equation}
+\label{eq:2-116}
+\int_0^1 F^*(D^2-a^2-\mathrm{p}\sigma)F\,dz = -Ra^2\!\int_0^1 F^*W\,dz.
+\end{equation}
+By an integration by parts we obtain
+\begin{equation}
+\label{eq:2-117}
+\int_0^1 F^*D^2F\,dz = -\int_0^1 |DF|^2\,dz,
+\end{equation}
+since the integrated part vanishes on account of the boundary condition~(\ref{eq:2-114}). Hence
+\begin{equation}
+\label{eq:2-118}
+\int_0^1 \{|DF|^2 + (a^2+\mathrm{p}\sigma)|F|^2\}\,dz = Ra^2\!\int_0^1 WF^*\,dz.
+\end{equation}
+Consider the integral on the right-hand side. We have
+\begin{equation}
+\label{eq:2-119}
+\int_0^1 WF^*\,dz = \int_0^1 W(D^2-a^2-\sigma^*)G^*\,dz.
+\end{equation}
+\begin{equation}
+\label{eq:2-120}
+= \int_0^1 WD^2G^*\,dz - (a^2+\sigma^*)\!\int_0^1 WG^*\,dz.
+\end{equation}
+By successive integrations by parts, we obtain
+\begin{equation}
+\label{eq:2-121}
+\int_0^1 WD^2G^*\,dz = -\int_0^1 DWDG^*\,dz = \int_0^1 G^*D^2W\,dz,
+\end{equation}
+the integrated part vanishing each time on account of the boundary
+conditions $W = 0$ and \emph{either} $DW = 0$ or $G^* = (D^2-a^2)W^* = 0$
+(depending on whether the particular bounding surface is rigid or free).
+Thus
+\begin{equation}
+\label{eq:2-122}
+\int_0^1 WF^*\,dz = \int_0^1 G^*\{(D^2-a^2)W - \sigma^*W\}\,dz = \int_0^1 |G|^2\,dz - \sigma^*\!\int_0^1 WD^2W^*\,dz.
+\end{equation}
+Again, by an integration by parts, we have
+\begin{equation}
+\label{eq:2-123}
+\int_0^1 WD^2W^*\,dz = -\int_0^1 |DW|^2\,dz.
+\end{equation}
+Combining equations~(\ref{eq:2-118}),~(\ref{eq:2-122}), and~(\ref{eq:2-123}), we obtain
+\begin{equation}
+\label{eq:2-124}
+\int_0^1 \{|DF|^2+a^2|F|^2+\mathrm{p}\sigma|F|^2\}\,dz - Ra^2\!\int_0^1\{|G|^2+\sigma^*[|DW|^2+a^2|W|^2]\}\,dz = 0.
+\end{equation}
+The real and the imaginary parts of this equation must vanish separately;
+and the vanishing of the imaginary part gives
+\begin{equation}
+\label{eq:2-125}
+\operatorname{im}(\sigma)\!\left\{\mathrm{p}\!\int_0^1|F|^2\,dz + Ra^2\!\int_0^1[|DW|^2+a^2|W|^2]\,dz\right\} = 0.
+\end{equation}
+But the quantity inside the curly brackets is positive definite for $R > 0$.
+Hence
+\begin{equation}
+\label{eq:2-126}
+\operatorname{im}(\sigma) = 0.
+\end{equation}
+This establishes that $\sigma$ is real for $R > 0$ and that the principle of the
+exchange of stabilities is valid for this problem.
+
+\section{The equations governing the marginal state and the reduction to a characteristic value problem}\label{sec:12}
+
+Since $\sigma$ is real for all positive Rayleigh numbers (i.e.\ for all adverse
+temperature gradients), it follows that the transition from stability to
+instability must occur via a stationary state. The equations governing
+the marginal state are therefore to be obtained by setting $\sigma = 0$ in the
+relevant equations. Thus, we have (cf.\ equations~(\ref{eq:2-99}) and~(\ref{eq:2-100}))
+\begin{equation}
+\label{eq:2-127}
+(D^2-a^2)^2 W = +\left(\frac{g\alpha}{\kappa\nu}\,d^4\right)a^2\Theta
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-128}
+(D^2-a^2)\Theta = -\left(\frac{\beta}{\kappa}\,d^2\right)W.
+\end{equation}
+Eliminating $\Theta$ between these equations, we obtain
+\begin{equation}
+\label{eq:2-129}
+(D^2-a^2)^3 W = -Ra^2 W.
+\end{equation}
+Solutions of this equation must be sought which satisfy the boundary
+conditions
+\begin{equation}
+\label{eq:2-130}
+W = 0, \quad (D^2-a^2)^2W = 0 \quad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+and either $DW$ or $D^2W = 0$ depending on the nature of the
+bounding surfaces at $z = 0$ and 1.
+
+Alternatively, we can eliminate $W$ between the equations~(\ref{eq:2-127}) and~(\ref{eq:2-128}) and obtain
+\begin{equation}
+\label{eq:2-131}
+(D^2-a^2)^3\Theta = -Ra^2\Theta,
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:2-132}
+\Theta = 0, \quad (D^2-a^2)\Theta = 0 \quad\text{for } z = 0 \text{ and } 1,
+\end{equation}
+and either $D(D^2-a^2)\Theta$ or $D\{D(D^2-a^2)\Theta\} = 0$ depending on the
+nature of the bounding surfaces at $z = 0$ and~1.
+
+In either of the two foregoing formulations (equations~(\ref{eq:2-129}) and~(\ref{eq:2-130}) or equations~(\ref{eq:2-131}) and~(\ref{eq:2-132})) we have a differential equation of order
+six and we have to satisfy six boundary conditions, three at $z = 0$
+and three at $z = 1$; this we cannot in general do. Only for particular
+values of $R$ (for given $a^2$) will the problem allow a non-zero solution. We
+have thus a \emph{characteristic value problem} for $R$.
+
+The manner in which the solution of the stability problem is to be
+carried out is clear. For a given $a^2$ we must determine the lowest characteristic value for $R$; the minimum with respect to $a^2$ of the characteristic
+values so obtained is the critical Rayleigh number at which instability
+will manifest itself.
+
+\section{The variational principles}\label{sec:13}
+
+We shall now show that the solution of the characteristic value
+problems formulated in \S~12 can be expressed in terms of variational
+principles. The first of these is due to Pellew and Southwell.
+
+\subsection{The first variational principle}\label{sec:13a}
+
+Consider first the characteristic value problem expressed in terms
+of $W$. Letting
+\begin{equation}
+\label{eq:2-133}
+F = (D^2-a^2)^2 W = (D^2-a^2)G,
+\end{equation}
+we have
+\begin{equation}
+\label{eq:2-134}
+(D^2-a^2)F = -Ra^2 W;
+\end{equation}
+and the boundary conditions are:
+\begin{equation}
+\label{eq:2-135}
+W = 0 \;\text{ and }\; F = 0 \;\text{ for } z = 0 \text{ and } 1; \;\text{ and \emph{either} } DW = 0 \;\text{ \emph{or} } D^2W = 0
+\end{equation}
+depending on the nature of the bounding surfaces at $z = 0$ and~1.
+
+Let $R_1$ be a characteristic value; and let the solution belonging to $R_1$
+be distinguished by a subscript $j$. Multiplying the equation satisfied by
+$W_i$ by $F_j$ (belonging to a different characteristic value $R_j$) and integrating over the range of $z$, we have
+\begin{equation}
+\label{eq:2-136}
+\int_0^1 F_i(D^2-a^2)F_j\,dz = -R_j\,a^2\!\int_0^1 W_i(D^2-a^2)G_j\,dz.
+\end{equation}
+By a sequence of integrations by parts similar to that followed in \S~11,
+we obtain from equation~(\ref{eq:2-136}) the result (cf.\ equation~(\ref{eq:2-124}))
+\begin{equation}
+\label{eq:2-137}
+\int_0^1(DF_i\,DF_j+a^2 F_i\,F_j)\,dz = R_j\,a^2\!\int_0^1 G_i\,G_j\,dz.
+\end{equation}
+Interchanging $i$ and $j$ in this last equation, we have
+\begin{equation}
+\label{eq:2-138}
+\int_0^1(DF_j\,DF_i+a^2 F_j\,F_i)\,dz = R_i\,a^2\!\int_0^1 G_j\,G_i\,dz.
+\end{equation}
+From equations~(\ref{eq:2-137}) and~(\ref{eq:2-138}) it is apparent that
+\begin{equation}
+\label{eq:2-139}
+\int_0^1 G_i\,G_j\,dz = 0 \qquad\text{if } i \neq j.
+\end{equation}
+
+\emph{The functions $G_j$ belonging to the different characteristic values are, therefore,
+orthogonal.}
+
+When $i = j$, equation~(\ref{eq:2-137}) gives
+\begin{equation}
+\label{eq:2-140}
+R_j\,a^2\!\int_0^1 G_j^2\,dz = \int_0^1[(DF_j)^2+a^2 F_j^2]\,dz,
+\end{equation}
+which expresses $R_j$ as the ratio of two positive definite integrals. Indeed, we shall show that $R$ given by the formula
+\begin{equation}
+\label{eq:2-141}
+R = \frac{\displaystyle\int_0^1[(DF)^2+a^2 F^2]\,dz}{a^2\!\displaystyle\int_0^1 G^2\,dz} = \frac{\mathscr{I}_1}{\mathscr{I}_2} \quad\text{(say)}
+\end{equation}
+has a stationary property when the quantities on the right-hand side
+are evaluated in terms of the true characteristic functions.
+
+To prove the stationary property, let $\mathscr{R}$ be evaluated in accordance
+with equation~(\ref{eq:2-141}) in terms of a function $W$ which is arbitrary except
+for the requirement (apart from boundedness and continuity) that it
+satisfy the boundary conditions~(\ref{eq:2-135}). Let $\delta R$ be the change in $\mathscr{R}$ when
+$W$ is subjected to a small variation $\delta W$ which is again compatible with the
+boundary conditions on $W$; i.e.
+\begin{equation}
+\label{eq:2-142}
+\delta W = 0 \text{ and } \delta F = 0 \text{ for } z = 0 \text{ and } 1;\text{ and either } D\,\delta W = 0 \text{ or } D^2\delta W = 0
+\end{equation}
+depending on the nature of the bounding surfaces at $z = 0$ and~1.
+
+According to equation~(\ref{eq:2-141}),
+\begin{equation}
+\label{eq:2-143}
+\delta R = \frac{1}{\mathscr{I}_2}(\delta\mathscr{I}_1 - \tfrac{\mathscr{I}_1}{\mathscr{I}_2}\delta\mathscr{I}_2) = \frac{1}{\mathscr{I}_2}(\delta\mathscr{I}_1 - Ra^2\delta\mathscr{I}_2),
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-144}
+\delta\mathscr{I}_1 = 2\!\int_0^1(DFD\delta F + a^2 F\,\delta F)\,dz
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-145}
+\delta\mathscr{I}_2 = 2\!\int_0^1[(D^2-a^2)W](D^2-a^2)\,\delta W\,dz
+\end{equation}
+are the variations in $\mathscr{I}_1$ and $\mathscr{I}_2$ consequent to the variation $\delta W$ in $W$. After
+a sequence of integrations by parts, we readily find
+\begin{equation}
+\label{eq:2-146}
+\delta\mathscr{I}_1 = -2\!\int_0^1 \delta F(D^2-a^2)F\,dz
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-147}
+\delta\mathscr{I}_2 = 2\!\int_0^1 W(D^2-a^2)^2\,\delta F\,dz = 2\!\int_0^1 W\,\delta F\,dz.
+\end{equation}
+Thus
+\begin{equation}
+\label{eq:2-148}
+\delta R = -\frac{2}{\mathscr{I}_2}\!\int_0^1 \delta F\{(D^2-a^2)F + Ra^2 W\}\,dz.
+\end{equation}
+
+From~(\ref{eq:2-148}) it follows that $\delta R = 0$ \emph{if}
+\begin{equation}
+\label{eq:2-149}
+(D^2-a^2)F = -Ra^2 W;
+\end{equation}
+\emph{and, conversely, if $\delta R = 0$ for any arbitrary $\delta F$ $[= (D^2-a^2)^2\delta W]$ compatible
+with the boundary conditions of the problem, then equation}~(\ref{eq:2-149}) \emph{must hold
+and the function $F$ in terms of which $R$ was initially calculated must have
+been a solution of the characteristic value problem.}
+
+The foregoing arguments establish the stationary property of the
+characteristic values when they are regarded as given by equation~(\ref{eq:2-141}).
+We shall now show, further, that the lowest characteristic value of $R$
+is, indeed, a true minimum.
+
+We have seen that the functions $G_j$ form an orthogonal set. We shall
+suppose that they are also normalized so that
+\begin{equation}
+\label{eq:2-150}
+\int_0^1 G_i\,G_j\,dz = \delta_{ij}.
+\end{equation}
+Let
+\begin{equation}
+\label{eq:2-151}
+G = (D^2-a^2)W,
+\end{equation}
+where $W$ is an arbitrary, continuous, bounded function which satisfies
+the boundary conditions of the problem. We shall suppose that $G$ can
+be expanded in the basic set of functions $G_j$; thus,
+\begin{equation}
+\label{eq:2-152}
+G = \sum_{j=1}^{\infty} A_j\,G_j,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-153}
+A_j = \int_0^1 G\,G_j\,dz.
+\end{equation}
+Suppose $G$ is normalized: then
+\begin{equation}
+\label{eq:2-154}
+1 = \int_0^1 G^2\,dz = \sum_j\sum_k A_j\,A_k\!\int_0^1 G_j\,G_k\,dz = \sum_j A_j^2.
+\end{equation}
+
+Associated with the expansion~(\ref{eq:2-152}) for $G_j$, we have
+\begin{equation}
+\label{eq:2-155}
+W = \sum_{j=1}^{\infty} A_j\,W_j
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-156}
+F = \sum_{j=1}^{\infty} A_j(D^2-a^2)W_j = \sum_{j=1}^{\infty} A_j(D^2-a^2)G_j.
+\end{equation}
+From equation~(\ref{eq:2-156}) it follows that
+\begin{equation}
+\label{eq:2-157}
+(D^2-a^2)F = \sum_{j=1}^{\infty} A_j(D^2-a^2)^2 W_j = -a^2\sum_{j=1}^{\infty} A_j\,R_j\!\int_0^1 W_j(D^2-a^2)W_k\,dz.
+\end{equation}
+Multiply this last equation by $F$ and integrate over the range of $z$. We
+obtain
+\begin{align}
+\label{eq:2-158}
+\int_0^1 F(D^2-a^2)F\,dz &= -a^2\sum_j\sum_k A_j\,R_j\!\left\{\sum_k A_k\!\int_0^1 W_j(D^2-a^2)W_k\,dz\right\} \notag\\
+&= -a^2\sum_j\sum_k A_j\,A_k\!\int_0^1 (D^2-a^2)W_j(D^2-a^2)W_k\,dz \notag\\
+&= -a^2\sum_j\sum_k A_j\,A_k\,R_j\!\int_0^1 G_j\,G_k\,dz \notag\\
+&= -a^2\sum_{j=1}^{\infty} A_j^2\,R_j.
+\end{align}
+Thus
+\begin{equation}
+\label{eq:2-159}
+\int_0^1[(DF)^2+a^2 F^2]\,dz = a^2\sum_{j=1}^{\infty} A_j^2\,R_j.
+\end{equation}
+or, making use of~(\ref{eq:2-154}), we can write
+\begin{align}
+\label{eq:2-160}
+\int_0^1[(DF)^2+a^2 F^2]\,dz - a^2 R_1 &= a^2\!\left\{\sum_{j=1}^{\infty} A_j^2\,R_j - R_1\sum_{j=1}^{\infty} A_j^2\right\} \notag\\
+&= a^2\sum_{j=2}^{\infty} A_j^2(R_j - R_1).
+\end{align}
+It is clear that the last summation in~(\ref{eq:2-160}) cannot be negative. Hence
+\begin{equation}
+\label{eq:2-161}
+R_1\,a^2 \leqslant \int_0^1[(DF)^2+a^2 F^2]\,dz,
+\end{equation}
+where the equality sign can hold if and only if $A_j = 0$ for all $j$ greater
+than 1. \emph{This proves that the quantity on the right-hand side of}~(\ref{eq:2-161}) \emph{attains
+its true minimum when $F$ belongs to $R_1$.}
+
+\subsection{The second variational principle}\label{sec:13b}
+
+There is a second variational principle which one can obtain by
+considering the characteristic value problem expressed in terms of $\Theta$.
+
+Letting
+\begin{equation}
+\label{eq:2-162}
+G' = (D^2-a^2)\Theta,
+\end{equation}
+we write the equation governing $\Theta$ in the form
+\begin{equation}
+\label{eq:2-163}
+(D^2-a^2)^2 G' = -Ra^2\Theta;
+\end{equation}
+and the boundary conditions are
+\begin{equation}
+\label{eq:2-164}
+\Theta = 0 \;\text{ and }\; G' = 0 \;\text{ for } z = 0 \text{ and } 1; \text{ and \emph{either} } DG' = 0 \;\text{ \emph{or} }\; D^2G' = 0
+\end{equation}
+depending on the nature of the bounding surfaces at $z = 0$ and~1.
+
+Let the solution belonging to a particular characteristic value $R_j$ be
+distinguished by a subscript $j$. Multiplying the equation satisfied by
+$\Theta_j$ by $G'_i$ (belonging to $R_i$) and integrating over the range of $z$, we obtain
+\begin{equation}
+\label{eq:2-165}
+\int_0^1 G'_i(D^2-a^2)^2 G'_j\,dz = -R_j\,a^2\!\int_0^1 \Theta_j(D^2-a^2)\Theta_i\,dz.
+\end{equation}
+By an integration by parts, the right-hand side becomes
+\begin{equation}
+\label{eq:2-166}
+R_j\,a^2\!\int_0^1[(D\Theta_i)(D\Theta_j) + a^2\Theta_i\,\Theta_j]\,dz;
+\end{equation}
+the integrated parts vanish on account of the boundary condition $\Theta = 0$
+for $z = 0$ and~1. Similarly, we obtain after successive integrations by
+parts
+\begin{align}
+\label{eq:2-167}
+\int_0^1 G'_i\,D^2(D^2-a^2)G'_j\,dz &= -\int_0^1 DG'_i\,D(D^2-a^2)G'_j\,dz \notag\\
+&= +\int_0^1 D^2 G'_i\,(D^2-a^2)G'_j\,dz;
+\end{align}
+again the integrated parts vanish on account of the boundary conditions
+on $G'$. Thus, we obtain
+\begin{equation}
+\label{eq:2-168}
+R_j\,a^2\!\int_0^1[(D\Theta_i)(D\Theta_j)+a^2\Theta_i\,\Theta_j]\,dz = \int_0^1[(D^2-a^2)G'_i][(D^2-a^2)G'_j]\,dz.
+\end{equation}
+From~(\ref{eq:2-168}) it follows that
+\begin{equation}
+\label{eq:2-169}
+\int_0^1(D^2-a^2)G'_i\,[(D^2-a^2)G'_j]\,dz = 0 \qquad\text{if } i \neq j;
+\end{equation}
+and that (when $i = j$)
+\begin{equation}
+\label{eq:2-170}
+R_j = \frac{\displaystyle\int_0^1[(D^2-a^2)G'_j]^2\,dz}{a^2\!\displaystyle\int_0^1[(D\Theta_j)^2+a^2\Theta_j^2]\,dz}.
+\end{equation}
+
+Again it can be shown that $R$ given by the foregoing formula has a
+stationary property and that the true minimum of the quantity on the
+right-hand side is the lowest characteristic value of $R$.
+
+\section{The thermodynamic significance of the variational principle}\label{sec:14}
+
+We have seen that the Rayleigh number, at which disturbances of an
+assigned wave number become unstable, is the minimum value which a
+certain ratio of two positive definite integrals can attain. We shall now
+show that the quantity which is thus minimized has a simple physical
+meaning.
+
+First we observe that when marginal conditions prevail, the $z$-component of the vorticity vanishes. This follows from equation~(\ref{eq:2-94}); for,
+when $\sigma = 0$,
+\begin{equation}
+\label{eq:2-171}
+(D^2-a^2)Z = 0;
+\end{equation}
+and this equation does not allow a non-zero solution which satisfies the
+boundary conditions (cf.\ equation~(\ref{eq:2-96})) on $Z$. [The vanishing of $Z$ under
+stationary conditions follows even more generally from equation~(\ref{eq:2-73});
+for, when $\partial\zeta/\partial t = 0$, $\nabla^2\zeta = 0$ and as is well known, Laplace's equation
+does not allow non-zero solutions which (or, the normal derivatives of
+which) vanish on a closed boundary.] Hence, in this case, the solutions
+for the horizontal components of the velocity given by equations~(\ref{eq:2-110})
+and~(\ref{eq:2-111}) become
+\begin{equation}
+\label{eq:2-172}
+u = \frac{1}{a^2}\frac{\partial^2 w}{\partial x\partial z} \quad\text{and}\quad v = \frac{1}{a^2}\frac{\partial^2 w}{\partial y\partial z}.
+\end{equation}
+
+To be specific, let
+\begin{equation}
+\label{eq:2-173}
+w = W(z)\cos a_x\,x\cos a_y\,y,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-174}
+a^2 = a_x^2+a_y^2.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:2-175}
+u = -\frac{DW}{a^2}\,a_x\sin a_x\,x\cos a_y\,y; \qquad v = -\frac{DW}{a^2}\,a_y\cos a_x\,x\sin a_y\,y.
+\end{equation}
+
+Now consider the average rate of viscous dissipation of energy by a
+unit (vertical) column of the fluid. This is given by\footnote{Note that in this equation (as in all equations after~(\ref{eq:2-98})) length is measured in the unit $d$; this is the origin of the factor $\frac{1}{d^2}$ in this equation.}
+\begin{align}
+\label{eq:2-176}
+\epsilon_v &= -\frac{\rho\nu}{d^2}\!\int_0^1\{(w\nabla^2 w)+(u\nabla^2 u)+(v\nabla^2 v)\}\,dz \notag\\
+&= -\frac{\rho\nu}{d^2}\!\int_0^1\{(w(D^2-a^2)w)+(u(D^2-a^2)u)+(v(D^2-a^2)v)\}\,dz,
+\end{align}
+where angular brackets signify that the quantity enclosed is averaged
+over the horizontal plane. For $w$, $u$, and $v$ given by equations~(\ref{eq:2-173}) and~(\ref{eq:2-175}), we have
+\begin{align}
+\label{eq:2-177}
+\epsilon_v &= -\frac{\rho\nu}{4d^2}\!\int_0^1\!\left\{W(D^2-a^2)W + \frac{a_x^2}{a^2}\overline{DW}(D^2-a^2)DW + \right. \notag\\
+&\qquad\qquad\qquad\left. +\frac{a_y^2}{a^2}DW(D^2-a^2)DW\right\}dz \notag\\
+&= -\frac{\rho\nu}{4d^2}\!\int_0^1\{a^2 W(D^2-a^2)W + DW(D^2-a^2)DW\}\,dz.
+\end{align}
+Integrating by parts the second term on the right-hand side, we obtain
+(cf.\ equation~(\ref{eq:2-133}))
+\begin{equation}
+\label{eq:2-178}
+\epsilon_v = \frac{\rho\nu}{4d^2}\!\int_0^1[(D^2-a^2)W]^2\,dz = \frac{\rho\nu}{4d^2}\!\int_0^1 G^2\,dz.
+\end{equation}
+
+Consider next the average rate at which energy is released in a unit
+column of the fluid by the buoyancy force $g\,\delta\rho$ $(= -g\alpha\rho\theta)$ acting on the
+fluid. This is given by
+\begin{equation}
+\label{eq:2-179}
+\epsilon_g = \rho g\alpha\!\int_0^1(\theta w)\,dz.
+\end{equation}
+Making use of equation~(\ref{eq:2-76}) (and remembering that in this equation
+length is \emph{not} measured in the unit $d$) we can rewrite~(\ref{eq:2-179}) in the form
+\begin{equation}
+\label{eq:2-180}
+\epsilon_g = -\frac{\rho g\alpha\kappa}{4\beta d^2}\!\int_0^1\Theta(D^2-a^2)\Theta\,dz.
+\end{equation}
+After an integration by parts, we have
+\begin{equation}
+\label{eq:2-181}
+\epsilon_g = \frac{\rho g\alpha\kappa}{4\beta d^2}\!\int_0^1[(D\Theta)^2+a^2\Theta^2]\,dz.
+\end{equation}
+On the other hand, according to equations~(\ref{eq:2-127}) and~(\ref{eq:2-133})
+\begin{equation}
+\label{eq:2-182}
+\Theta = \frac{\nu}{g\alpha d^2}(D^2-a^2)^2 W = \frac{\nu}{g\alpha d^2}F.
+\end{equation}
+In terms of $F$, the expression for $\epsilon_g$ becomes
+\begin{equation}
+\label{eq:2-183}
+\epsilon_g = \frac{\rho\nu^2\kappa}{4g\alpha\beta d^6}\!\int_0^1[(DF)^2+a^2 F^2]\,dz.
+\end{equation}
+
+In a steady state, the kinetic energy dissipated by viscosity must be
+balanced by the internal energy released by the buoyancy force (see
+Appendix~I). We must therefore require that
+\begin{equation}
+\label{eq:2-184}
+\epsilon_v = \epsilon_g.
+\end{equation}
+Equations~(\ref{eq:2-178}) and~(\ref{eq:2-183}) now give
+\begin{equation}
+\label{eq:2-185}
+\frac{\rho\nu}{4d^2}\!\int_0^1 G^2\,dz = \frac{\rho\nu^2\kappa}{4g\alpha\beta d^6}\!\int_0^1[(DF)^2+a^2 F^2]\,dz;
+\end{equation}
+or, alternatively,
+\begin{equation}
+\label{eq:2-186}
+R = \frac{g\alpha\beta}{\kappa\nu}\,d^4 = \frac{\displaystyle\int_0^1[(DF)^2+a^2 F^2]\,dz}{a^2\!\displaystyle\int_0^1 G^2\,dz}.
+\end{equation}
+This is the same as equation~(\ref{eq:2-141}) which led to the first of the two
+variational principles considered in \S~13. We may therefore state the
+physical content of this variational principle as follows.
+
+\emph{Instability occurs at the minimum temperature gradient at which a
+balance can be steadily maintained between the kinetic energy dissipated
+by viscosity and the internal energy released by the buoyancy force.}
+
+\section{Exact solutions of the characteristic value problem}\label{sec:15}
+
+We now return to the characteristic value problem formulated in
+\S~12. We shall obtain the solution for the following three cases.
+
+\begin{enumerate}[label=(\alph*)]
+\item Both the bounding surfaces are free, in which case
+\begin{equation}
+\label{eq:2-187}
+W = (D^2-a^2)^2 W = 0 \quad\text{and}\quad D^2 W = 0 \;\text{ for } z = 0 \text{ and } 1.
+\end{equation}
+\item Both the bounding surfaces are rigid, in which case
+\begin{equation}
+\label{eq:2-188}
+W = (D^2-a^2)^2 W = 0 \quad\text{and}\quad DW = 0 \;\text{ for } z = 0 \text{ and } 1.
+\end{equation}
+\item One of the bounding surfaces (say, $z = 0$) is rigid and the other
+bounding surface ($z = 1$) is free, in which case
+\begin{equation}
+\label{eq:2-189}
+W = (D^2-a^2)^2 W = 0 \;\text{ for } z = 0 \text{ and } 1; \text{ and } DW = 0 \;\text{ for } z = 0 \;\text{ and}\;
+D^2 W = 0 \;\text{ for } z = 1.
+\end{equation}
+\end{enumerate}
+
+From the point of view of realizability in the laboratory for precise
+quantitative experiments, case~(b) is, of course, of the greatest interest.
+Case~(c) is of interest when the top surface is kept free for visual observations (as in B\'enard's original experiments). Case~(a) (which was first
+considered by Rayleigh) can be realized, if at all, only under very
+artificial conditions (e.g.\ by having the liquid layer floating on top of a
+somewhat heavier liquid); nevertheless, the case is of theoretical interest
+because it allows an explicit solution and clearly this has some
+advantages.
+
+\subsection{The solution for two free boundaries}\label{sec:15a}
+
+In this case the boundary conditions~(\ref{eq:2-187}) require
+\begin{equation}
+\label{eq:2-190}
+W = D^2W = D^4W = 0 \qquad\text{for } z = 0 \text{ and } 1;
+\end{equation}
+from the equation satisfied by $W$ (namely~(\ref{eq:2-129})) it now follows that
+$D^6W = 0$ for $z = 0$ and~1. From equation~(\ref{eq:2-129}) differentiated twice
+with respect to $z$, we next conclude that $D^8W = 0$ is also zero for $z = 0$
+and~1. By further differentiations of equation~(\ref{eq:2-129}), we can conclude,
+successively, that all the even derivatives of $W$ vanish on the boundaries.
+Thus
+\begin{equation}
+\label{eq:2-191}
+D^{2m}W = 0 \qquad\text{for } z = 0 \text{ and } 1 \quad\text{and}\quad m = 1, 2, \ldots\,.
+\end{equation}
+From this it follows that the required solutions must be
+\begin{equation}
+\label{eq:2-192}
+W = A\sin n\pi z \qquad(n = 1, 2, \ldots),
+\end{equation}
+where $A$ is a constant and $n$ is an integer. Substitution of this solution
+in equation~(\ref{eq:2-129}) leads to the \emph{characteristic equation}
+\begin{equation}
+\label{eq:2-193}
+R = (n^2\pi^2+a^2)^3/a^2.
+\end{equation}
+For a given $a^2$, the lowest value of $R$ occurs when $n = 1$; then
+\begin{equation}
+\label{eq:2-194}
+R = \frac{(\pi^2+a^2)^3}{a^2}.
+\end{equation}
+The meaning of this last relation is this: for all Rayleigh numbers less
+than that given by~(\ref{eq:2-194}), disturbances with the wave number $a$ will be
+stable; these disturbances will become marginally stable when the
+Rayleigh number equals the value given by~(\ref{eq:2-194}); and when the Rayleigh
+number exceeds the value given by~(\ref{eq:2-194}), the same disturbances will
+be unstable. The critical Rayleigh number for the onset of instability
+is, therefore, determined by the condition
+\begin{equation}
+\label{eq:2-195}
+\frac{\partial R}{\partial a^2} = 3\frac{(\pi^2+a^2)^2}{a^2}-\frac{(\pi^2+a^2)^3}{a^4} = 0,
+\end{equation}
+or, \qquad $3a^2 = \pi^2+a^2$ \quad or \quad $a^2 = \pi^2/2$.
+
+The corresponding value of $R$ is
+\begin{equation}
+\label{eq:2-196}
+R_c = \frac{(\frac{3}{2}\pi^2)^3}{\frac{1}{2}\pi^2} = \frac{27}{4}\pi^4 = 657\!\cdot\!5;
+\end{equation}
+and the disturbances which will be manifest at marginal stability will
+be characterized by the wavelength
+\begin{equation}
+\label{eq:2-197}
+\lambda = \frac{2\pi}{k} = \frac{2\pi}{a}\,d = 2\sqrt{2}\,d.
+\end{equation}
+
+\subsection{The solution for two rigid boundaries}\label{sec:15b}
+
+In view of the symmetry of the two bounding planes with respect to
+the two bounding planes, it will be convenient to translate the origin of $z$ to be
+midway between the two planes. Then, the fluid will be confined between
+$z = \pm\frac{1}{2}$; and we have to seek solutions of the equation
+\begin{equation}
+\label{eq:2-198}
+(D^2-a^2)^3 W = -Ra^2 W
+\end{equation}
+which satisfy the boundary conditions
+\begin{equation}
+\label{eq:2-199}
+W = DW = (D^2-a^2)^2 W = 0 \qquad\text{for } z = \pm\tfrac{1}{2}.
+\end{equation}
+
+We may first observe that it follows from the evenness of the operator
+$(D^2-a^2)^3$, and the identity of the boundary conditions which have to be
+satisfied at $z = \pm\frac{1}{2}$, that the proper solutions of equation~(\ref{eq:2-198}) fall
+into two non-combining groups of even and odd solutions. From general
+considerations, it is clear that the lowest `state' will be even with no nodes
+while the first `excited state' will be odd with a node at $z = 0$.
+
+It is evident that the general solution of equation~(\ref{eq:2-198}) can be expressed as a superposition of solutions of the form
+\begin{equation}
+\label{eq:2-200}
+W = e^{qz},
+\end{equation}
+where $q^2$ is a root of the equation
+\begin{equation}
+\label{eq:2-201}
+(q^2-a^2)^3 = -Ra^2.
+\end{equation}
+Letting
+\begin{equation}
+\label{eq:2-202}
+Ra^2 = \tau^3 a^6,
+\end{equation}
+we find that the roots of equation~(\ref{eq:2-201}) are given by
+\begin{equation}
+\label{eq:2-203}
+q^2 = -a^2(\tau-1) \quad\text{and}\quad q^2 = a^2[1+\tfrac{1}{2}\tau(1\pm i\sqrt{3})];
+\end{equation}
+or, taking the square roots, we have the six roots\footnote{An asterisk to a quantity denotes its complex conjugate.}
+\begin{equation}
+\label{eq:2-204}
+\pm iq_0, \quad \pm q, \quad\text{and}\quad \pm q^*,
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-205}
+q_0 = a(\tau - 1)^{1/2},
+\end{equation}
+\begin{align}
+\label{eq:2-206}
+\operatorname{re}(q) &= q_1 = a\{\tfrac{1}{2}[\sqrt{1+\tau+\tau^2}+\tfrac{1}{2}(1+\tfrac{1}{2}\tau)]\}^{1/2}, \notag\\
+\operatorname{im}(q) &= q_2 = a\{\tfrac{1}{2}[\sqrt{1+\tau+\tau^2}-\tfrac{1}{2}(1+\tfrac{1}{2}\tau)]\}^{1/2}.
+\end{align}
+From~(\ref{eq:2-203}) we readily obtain the following relations which we shall
+find useful:
+\begin{equation}
+\label{eq:2-207}
+(q_0^2+a^2)^2 = a^4\tau^2
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-208}
+(q^2-a^2)^2 = \tfrac{1}{4}a^4\tau^2(-1\pm i\sqrt{3}).
+\end{equation}
+
+\paragraph{(i) The even solutions}
+
+Considering first the even solutions, we can clearly write
+\begin{equation}
+\label{eq:2-209}
+W = A_0\cos q_0\,z + A\cosh qz + A^*\cosh q^*z,
+\end{equation}
+where $A_0$ and $A$ are constants, the latter being complex. We must now
+impose the boundary conditions~(\ref{eq:2-199}) on this solution.
+
+From~(\ref{eq:2-209}) we obtain
+\begin{equation}
+\label{eq:2-210}
+DW = -A_0\,q_0\sin q_0\,z + Aq\sinh qz + A^*q^*\sinh q^*z,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-211}
+(D^2-a^2)^2W = A_0(q_0^2+a^2)^2\cos q_0\,z + A(q^2-a^2)^2\cosh qz + A^*(q^{*2}-a^2)^2\cosh q^*z.
+\end{equation}
+Using the relations~(\ref{eq:2-207}), we can rewrite~(\ref{eq:2-211}) in the form
+\begin{equation}
+\label{eq:2-212}
+(D^2-a^2)^2W = \tfrac{1}{4}a^4\tau^2[2A_0\cos q_0\,z + A(i\sqrt{3}-1)\cosh qz - (i\sqrt{3}+1)A^*\cosh q^*z].
+\end{equation}
+The boundary conditions~(\ref{eq:2-199}), therefore, require
+\begin{equation}
+\label{eq:2-213}
+\begin{vmatrix}
+\cos\frac{1}{2}q_0 & \cosh\frac{1}{2}q & \cosh\frac{1}{2}q^* \\
+-q_0\sin\frac{1}{2}q_0 & q\sinh\frac{1}{2}q & q^*\sinh\frac{1}{2}q^* \\
+\cos\frac{1}{2}q_0 & \frac{1}{2}(i\sqrt{3}-1)\cosh\frac{1}{2}q & -\frac{1}{2}(i\sqrt{3}+1)\cosh\frac{1}{2}q^*
+\end{vmatrix} = 0.
+\end{equation}
+For a non-vanishing solution, the determinant of the matrix in~(\ref{eq:2-213}) must vanish. This condition is
+\begin{equation}
+\label{eq:2-214}
+\begin{vmatrix}
+1 & 1 & 1 \\
+-q_0\tan\frac{1}{2}q_0 & q\tanh\frac{1}{2}q & q^*\tanh\frac{1}{2}q^* \\
+1 & \frac{1}{2}(i\sqrt{3}-1) & -\frac{1}{2}(i\sqrt{3}+1)
+\end{vmatrix} = 0.
+\end{equation}
+Subtracting the first row from the third row and dividing the result by
+$-\sqrt{3}/2$, we get
+\begin{equation}
+\label{eq:2-215}
+\begin{vmatrix}
+1 & 1 & 1 \\
+-q_0\tan\frac{1}{2}q_0 & q\tanh\frac{1}{2}q & q^*\tanh\frac{1}{2}q^* \\
+0 & \sqrt{3}-i & \sqrt{3}+i
+\end{vmatrix} = 0.
+\end{equation}
+Expanding this last determinant, we have
+\begin{equation}
+\label{eq:2-216}
+\operatorname{im}\{(\sqrt{3}+i)(q_1+iq_2)\tanh\frac{1}{2}q\} + q_0\tan\frac{1}{2}q_0 = 0.
+\end{equation}
+
+\begin{table}[htbp]
+\centering
+\caption{The exact characteristic values for the first even and odd modes of instability}
+\label{tab:2-I}
+\medskip
+\begin{tabular}{@{}c cc cc@{}}
+\toprule
+& \multicolumn{2}{c}{Even solution} & \multicolumn{2}{c}{Odd solution} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+$a$ & $R$ & $a(\tau-1)^{\frac{1}{2}}$ & $R$ & $a(\tau-1)^{\frac{1}{2}}$ \\
+\midrule
+$0^+$    & $\infty$  & $\pi$       & $\infty$  & $7{\cdot}3313$   \\
+$1{\cdot}0$ & $5854{\cdot}8$ & $4{\cdot}143514$ & $15312{\cdot}6$ & $7{\cdot}333940$  \\
+$1{\cdot}5$ & $2737{\cdot}1$ & $4{\cdot}071304$ & $4700{\cdot}5$ & $7{\cdot}059910$  \\
+$2{\cdot}0$ & $2171{\cdot}28$ & $3{\cdot}949002$ & $4544{\cdot}6$ & $7{\cdot}052095$  \\
+$3{\cdot}117$ & $1797{\cdot}762$ & $3{\cdot}923639$ & $2498{\cdot}2$ & $7{\cdot}3569$ \\
+$4{\cdot}0$ & $1859{\cdot}10$ & $3{\cdot}985334$ & $1068{\cdot}6$ & $7{\cdot}143707$ \\
+$4{\cdot}0$ & $2439{\cdot}23$ & $3{\cdot}786334$ & $1773{\cdot}1$ & $7{\cdot}158372$  \\
+$5{\cdot}365$ & $3417{\cdot}98$ & $3{\cdot}706519$ & $1761{\cdot}39$ & $7{\cdot}143877$  \\
+$6{\cdot}0$ & $4018{\cdot}54$ & $3{\cdot}653524$ & $1953{\cdot}8$ & $7{\cdot}044460$  \\
+$8{\cdot}0$ & $7084{\cdot}51$ & $3{\cdot}581053$ & $2240{\cdot}5$ & $6{\cdot}989981$ \\
+ & & & & $6{\cdot}833135$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+We can write this equation, alternatively, as
+\begin{equation}
+\label{eq:2-217}
+-q_0\tan\frac{1}{2}q_0 = \operatorname{im}\!\left\{(\sqrt{3}+i)(q_1+iq_2)\frac{\sinh q_1+i\sin q_2}{\cosh q_1+\cos q_2}\right\}\!.
+\end{equation}
+Simplifying the right-hand side of equation~(\ref{eq:2-217}), we have
+\begin{equation}
+\label{eq:2-218}
+-q_0\tan\frac{1}{2}q_0 = \frac{(q_1+q_2\sqrt{3})\sinh q_1+(q_1\sqrt{3}-q_2)\sin q_2}{\cosh q_1+\cos q_2}.
+\end{equation}
+
+Equation~(\ref{eq:2-218}) is a transcendental equation relating $a$ and
+$\tau$ $(= \sqrt[3]{R/a^2})$, and it must be solved numerically by trial and error.
+The method is to determine $\tau$ for a given $a$; the corresponding characteristic
+value of $R$ then follows from equation~(\ref{eq:2-202}). In this way the solution
+of this problem was first accomplished by Pellew and Southwell, though
+the exact solution had been obtained earlier by a somewhat different
+(but equivalent) method by Low. However, the definitive treatment of
+the problem is due to Reid and Harris; their results are given in Table~I
+and illustrated in Fig.~2. It will be observed that the function attains
+its minimum at
+\begin{equation}
+\label{eq:2-219}
+a = 3{\cdot}117, \quad\text{where } R = 1707{\cdot}762.
+\end{equation}
+The corresponding solutions for $W$ and $F$ $(= (a^2R)^{-1}F$ in~(\ref{eq:2-209}) set
+equal to~1):
+\begin{align}
+\label{eq:2-220}
+W &= \cos q_0\,z - 0{\cdot}06151664\cosh q_1\,z\cos q_2\,z + 0{\cdot}10388700\sinh q_1\,z\sin q_2\,z, \notag\\
+(a^2R)^{-1}F &= \cos q_0\,z + 0{\cdot}12072710\cosh q_1\,z\cos q_2\,z + {} \notag\\
+&\qquad\qquad\qquad{} + 0{\cdot}001331473\sinh q_1\,z\sin q_2\,z.
+\end{align}
+
+\figurePlaceholder{2}{The Rayleigh numbers at which instability sets in for disturbances of different wave numbers $a$ for the first even (curve labelled 1) and the first odd (curve labelled 2) mode.}
+
+where
+\begin{equation}
+\label{eq:2-221}
+q_0 = 3{\cdot}973839; \quad q_1 = 5{\cdot}195214; \quad q_2 = 2{\cdot}126096.
+\end{equation}
+The solutions $W$ and $F$ are given in Table~II and illustrated in Fig.~3.
+
+\paragraph{(ii) The odd solutions}
+
+Considering next the odd solutions, we now have (instead of~(\ref{eq:2-209}))
+\begin{equation}
+\label{eq:2-222}
+W = A_0\sin q_0\,z + A\sinh qz + A^*\sinh q^*z.
+\end{equation}
+The characteristic determinant which follows from this solution is
+(cf.\ equation~(\ref{eq:2-215}))
+\begin{equation}
+\label{eq:2-223}
+\begin{vmatrix}
+1 & 1 & 1 \\
+q_0\cot\frac{1}{2}q_0 & q\coth\frac{1}{2}q & q^*\coth\frac{1}{2}q^* \\
+0 & \sqrt{3}-i & \sqrt{3}+i
+\end{vmatrix} = 0,
+\end{equation}
+and this leads to the equation
+\begin{equation}
+\label{eq:2-224}
+q_0\cot\frac{1}{2}q_0 = \operatorname{im}\!\left\{(\sqrt{3}+i)(q_1+iq_2)\frac{\sinh q_1-i\sin q_2}{\cosh q_1-\cos q_2}\right\}\!.
+\end{equation}
+On simplifying this last equation, we obtain
+\begin{equation}
+\label{eq:2-225}
+q_0\cot\frac{1}{2}q_0 = \frac{(q_1+q_2\sqrt{3})\sinh q_1-(q_1\sqrt{3}-q_2)\sin q_2}{\cosh q_1-\cos q_2}.
+\end{equation}
+
+The results of Reid and Harris derived on the basis of the solution~(\ref{eq:2-225}) are included in Tables~I and~II; and the solutions $W$ and $F$ for
+the lowest odd mode are (see also Fig.~3):
+\begin{align}
+\label{eq:2-226}
+W &= \sin q_0\,z - 0{\cdot}01707389\sinh q_1\,z\cos q_2\,z + 0{\cdot}00345645\cosh q_1\,z\sin q_2\,z, \notag\\
+(a^2R)^{-1}F &= \sin q_0\,z + 0{\cdot}01153032\sinh q_1\,z\cos q_2\,z + {} \notag\\
+&\qquad\qquad\qquad{} + 0{\cdot}01305820\cosh q_1\,z\sin q_2\,z,
+\end{align}
+where
+\begin{equation}
+\label{eq:2-227}
+q_0 = 7{\cdot}137877; \quad q_1 = 9{\cdot}110819; \quad q_2 = 3{\cdot}789330.
+\end{equation}
+The first excited mode for the value of $a$ $(= 3{\cdot}117)$ at which the lowest
+even mode gives its minimum has $R = 17\,610{\cdot}39$.
+
+\begin{table}[htbp]
+\centering
+\caption{The solutions for $W$ and $(a^2 R)^{-1}F$ for the first even and odd modes of instability}
+\label{tab:2-II}
+\medskip
+\begin{tabular}{@{}c cccc@{}}
+\toprule
+$z$ & $W_{\text{even}}$ & $(a^2R)^{-1}F_{\text{even}}$ & $W_{\text{odd}}$ & $(a^2R)^{-1}F_{\text{odd}}$ \\
+\midrule
+$0{\cdot}00$ & $+0{\cdot}938434$ & $+1{\cdot}120727$ & $0{\cdot}000000$ & $0{\cdot}000000$\\
+$0{\cdot}05$ & $+0{\cdot}937350$ & $+1{\cdot}100728$ & $+0{\cdot}069030$ & $+0{\cdot}072860$\\
+$0{\cdot}10$ & $+0{\cdot}931100$ & $+1{\cdot}181891$ & $+0{\cdot}130497$ & $+0{\cdot}145830$\\
+$0{\cdot}15$ & $+0{\cdot}915004$ & $+1{\cdot}148709$ & $+0{\cdot}203157$ & $+0{\cdot}207189$\\
+$0{\cdot}20$ & $+0{\cdot}890138$ & $+1{\cdot}110353$ & $+0{\cdot}274005$ & $+0{\cdot}288004$\\
+$0{\cdot}25$ & $+0{\cdot}792804$ & $+1{\cdot}014961$ & $+0{\cdot}348796$ & $+0{\cdot}374315$\\
+$0{\cdot}30$ & $+0{\cdot}709730$ & $+0{\cdot}917372$ & $+0{\cdot}406450$ & $+0{\cdot}453906$\\
+$0{\cdot}35$ & $+0{\cdot}490256$ & $+0{\cdot}707835$ & $+0{\cdot}348446$ & $+0{\cdot}455965$\\
+$0{\cdot}40$ & $+0{\cdot}118970$ & $+0{\cdot}409438$ & $+0{\cdot}188600$ & $+0{\cdot}343300$\\
+$0{\cdot}45$ & $-0{\cdot}443530$ & $+0{\cdot}009139$ & $-0{\cdot}028960$ & $+0{\cdot}080456$\\
+$0{\cdot}50$ & $0{\cdot}000000$ & $0{\cdot}000000$ & $-0{\cdot}300000$ & $-0{\cdot}300000$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\figurePlaceholder{3}{The proper solutions for $W$ (curve 1) and $(a^2 R)^{-1}F$ (curve 2) for the state of marginal stability for the case when both bounding surfaces are rigid.}
+
+
+% ========================================================================
+% [MERGED] Content below was originally in chapter_2_part2.tex
+% ========================================================================
+
+
+%%---------------------------------------------------------------------
+%% §15 continued
+%%---------------------------------------------------------------------
+
+The Rayleigh number obtained is also of interest (cf.\ Chapter~VII, 71\,(d)).
+The corresponding solutions for $W$ and $\Theta$ are
+\begin{align}
+\label{eq:2-225a}
+W &= \sin q_0\,z - 0{\cdot}045302\sinh q_1\,z\cos q_2\,z + 0{\cdot}012173\cosh q_1\,z\sin q_2\,z, \notag\\
+(a^2 R)^{-1}F &= \sin q_0\,z + 0{\cdot}033193\sinh q_1\,z\cos q_2\,z + {} \notag\\
+&\qquad\qquad\qquad{} + 0{\cdot}033146\cosh q_1\,z\sin q_2\,z,
+\end{align}
+where
+\begin{equation}
+\label{eq:2-225p}
+q_0 = 7{\cdot}2569;\quad q_1 = 7{\cdot}3711;\quad q_2 = 3{\cdot}6643.
+\end{equation}
+
+\figurePlaceholder{4}{The proper solutions for $W$ (curve 1) and $(a^2 R)^{-1}F$ (curve 2) for the state of marginal stability for the case when one bounding surface is rigid and the other is free.}
+
+\subsection*{(c) The solution for one rigid and one free boundary}
+
+The solution for the case when the top surface (for example) is free
+and the bottom surface is rigid can be deduced from the results for the
+first odd mode given in the last subsection: for it is evident that this odd
+solution satisfies at $z = 0$ the boundary conditions appropriate for a
+free surface, i.e.\ $W$, $D^2W$, and $(D^2 - a^2)^2W$ all vanish at $z = 0$.
+Accordingly, an odd solution for the case of two rigid boundaries, applicable
+to a cell depth~$d$, also provides a solution for the present case applicable,
+however, to a cell depth~$\tfrac{1}{2}d$. When $a$ and $R$ are defined (as usual) with
+respect to the depth of the layer, we can infer from the results given in
+Table~\ref{tab:2-I} that for the present case
+\begin{equation}
+\label{eq:2-226b}
+a = 5{\cdot}365/2 = 2{\cdot}682_4 \quad\text{and}\quad R_c = 17\,610{\cdot}39/16 = 1100{\cdot}65.
+\end{equation}
+
+\subsection*{(d) Summary of the results for the three cases}
+
+The results for the three cases we have considered are summarized in
+Table~\ref{tab:2-III}.
+
+\begin{table}[htbp]
+\centering
+\caption{The parameters characterizing the marginal state for three cases}
+\label{tab:2-III}
+\medskip
+\begin{tabular}{@{}l ccc@{}}
+\toprule
+Nature of the bounding surfaces & $R_c$ & $a$ & $2a/\pi$ \\
+\midrule
+Both free        & $657{\cdot}511$  & $2{\cdot}2214$ & $2{\cdot}828$ \\
+Both rigid       & $1707{\cdot}762$ & $3{\cdot}117$  & $2{\cdot}016$ \\
+One rigid and one free & $1100{\cdot}65$  & $2{\cdot}682$  & $2{\cdot}342$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%%---------------------------------------------------------------------
+\section{The cell patterns}\label{sec:16}
+%%---------------------------------------------------------------------
+
+We have seen that at the onset of instability the disturbances which
+will be manifested will be characterized by a particular wave number.
+Nevertheless, the pattern which the convection cells will exhibit is
+completely unspecified. This arises from the fact that a given wave
+vector~$\mathbf{a}$ can be resolved into two orthogonal components in infinitely
+many ways; and, moreover, the waves corresponding to differing resolutions
+can be superposed with arbitrary amplitudes and phases. The
+present theory is unable to distinguish between these infinitely many
+possibilities. However, if we should specify from considerations of
+symmetry, or otherwise, the kind of cell patterns that can prevail, then
+the theory can describe the details of the resulting cell structures. Thus,
+it may be reasonable to argue that since there are no points or directions
+in the horizontal plane which are preferred, the entire layer in the
+marginal state must be tessellated into regular polygons with the cell-walls
+being surfaces of symmetry. Such complete symmetry will
+require that the polygons be either equilateral triangles, squares, or
+regular hexagons.\footnote{If $n$ is the number of sides of the regular polygon, then the angle at a vertex
+$(= \pi(1-2/n))$ must divide $2\pi$ an integral number of times. Hence we must have
+$1 - 2/n = 2/m$, where $m$ is an integer; this relation can be satisfied only for $n = 3$, 4,
+and 6, when $m = 6$, 4, and 3, respectively.} The structures of the cells in these special cases
+are worth examining.
+
+First, it may be useful to state precisely what we mean when we say
+that a certain periodic cell pattern is presented. We mean that there is
+a unit cell which repeats itself regularly; that the walls of the unit cell
+are vertical and are surfaces of symmetry; that on the cell-walls the
+normal gradient of the vertical velocity vanishes; and, finally, that the
+cells occur contiguously.
+
+The condition that the normal gradient of vertical velocity vanishes
+on the cell-walls requires
+\begin{equation}
+\label{eq:2-227b}
+(\mathbf{n}\cdot\boldsymbol{\nabla}_1)w = 0,
+\end{equation}
+where $\mathbf{n}$ is a unit vector normal to the cell-walls and
+\begin{equation}
+\label{eq:2-228}
+\boldsymbol{\nabla}_1 = \biggl(\frac{\partial}{\partial x},\,\frac{\partial}{\partial y},\,0\biggr).
+\end{equation}
+
+For the problem under consideration, the condition~(\ref{eq:2-227b}) is equivalent
+to requiring that the component of the horizontal velocity normal to
+the cell-wall vanishes. To see this, we recall that according to equations
+(91) and (171)
+\begin{equation}
+\label{eq:2-229}
+w = F(x,y)\,W(z) \quad (\nabla_1^2\,F = -a^2 F),
+\end{equation}
+\begin{equation}
+\label{eq:2-230}
+\text{and}\qquad u = \frac{1}{a^2}\frac{\partial^2 w}{\partial x\partial z} \quad\text{and}\quad v = \frac{1}{a^2}\frac{\partial^2 w}{\partial y\partial z}.
+\end{equation}
+Therefore,
+\begin{equation}
+\label{eq:2-231}
+\nabla_1 w = W\nabla_1 F, \qquad \mathbf{u}_1 = \frac{DW}{a^2}\nabla_1 F,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-232}
+\mathbf{u}_1 = \frac{1}{a^2}\frac{DW}{W}\,\nabla_1 w.
+\end{equation}
+The vanishing of $\nabla_1 w$ along a certain direction implies the vanishing
+of $\mathbf{u}_1$ along the same direction; and conversely.
+
+\subsection*{(a) Rolls}
+
+A particularly simple pattern occurs when all the quantities depend
+on only one of the two horizontal coordinates, say~$x$. In this case the
+cells are infinitely elongated and it is more appropriate to call them \emph{rolls}.
+
+Let
+\begin{equation}
+\label{eq:2-233}
+w = W(z)\cos\frac{2\pi}{L}\,x,
+\end{equation}
+where $L$ $(= 2\pi/a)$ is a constant. Corresponding to this solution for~$w$,
+\begin{equation}
+\label{eq:2-234}
+u = -\frac{DW}{a^2}\,\frac{2\pi}{L}\sin\frac{2\pi}{L}\,x \quad\text{and}\quad v = 0.
+\end{equation}
+There are, therefore, no horizontal motions along the direction of the
+rolls; also
+\begin{equation}
+\label{eq:2-235}
+u = 0 \quad\text{for}\quad x = \pm(n+\tfrac{1}{2})L\ \text{and}\ \pm nL,
+\end{equation}
+where $n$ is an integer. For values of $x$ given in~(\ref{eq:2-235}), the gradient of
+$w$ normal to the roll is zero; the width of the roll is therefore~$L$; it is the
+same as the wavelength of the disturbance.
+
+\subsection*{(b) Rectangular and square cells}
+
+Consider the solution
+\begin{equation}
+\label{eq:2-236}
+w = W(z)\cos\frac{2\pi}{L_x}\,x\cos\frac{2\pi}{L_y}\,y,
+\end{equation}
+where $L_x$ and $L_y$ are the wavelengths of the disturbance in the $x$- and
+the $y$-directions; they are related to $a$ by
+\begin{equation}
+\label{eq:2-237}
+a^2 = 4\pi^2\!\left(\frac{1}{L_x^2}+\frac{1}{L_y^2}\right)\!.
+\end{equation}
+According to the solution~(\ref{eq:2-236}),
+
+$w = W(z)$ at the points, $(\pm nL_x,\,0)$, $[\pm(n+\tfrac{1}{2})L_y,\,\pm\tfrac{1}{2}L_y]$, etc.,
+
+$w = -W(z)$ at the points, $[\pm(n+\tfrac{1}{2})L_x,\,0]$, $(\pm nL_x,\,\pm\tfrac{1}{2}L_y)$, etc.,
+\begin{equation}
+\label{eq:2-238}
+\end{equation}
+and \quad $w = 0$ along the lines, $x = \pm\tfrac{1}{4}L_x$, $\pm\tfrac{3}{4}L_x$, etc.; and
+\begin{equation}
+\label{eq:2-239}
+y = \pm\tfrac{1}{4}L_y,\quad \pm\tfrac{3}{4}L_y,\quad\text{etc.},
+\end{equation}
+where $n$ is an integer.
+
+The horizontal components of the velocity are given by
+\begin{equation}
+\label{eq:2-240}
+\begin{split}
+u &= -\frac{DW}{a^2}\,\frac{2\pi}{L_x}\sin\frac{2\pi}{L_x}\,x\cos\frac{2\pi}{L_y}\,y,\\
+v &= -\frac{DW}{a^2}\,\frac{2\pi}{L_y}\cos\frac{2\pi}{L_x}\,x\sin\frac{2\pi}{L_y}\,y.
+\end{split}
+\end{equation}
+Hence, $u = 0$ along the lines $x = 0$, $\pm\tfrac{1}{2}L_x$, $\pm L_x$, etc.; and
+\begin{equation}
+\label{eq:2-241}
+y = \pm\tfrac{1}{4}L_y,\quad \pm\tfrac{3}{4}L_y,\quad\text{etc.},
+\end{equation}
+and \quad $v = 0$ along the lines $y = 0$, $\pm\tfrac{1}{2}L_y$, $\pm L_y$, etc.; and
+\begin{equation}
+\label{eq:2-242}
+x = \pm\tfrac{1}{4}L_x,\quad \pm\tfrac{3}{4}L_x,\quad\text{etc.}
+\end{equation}
+From the proportionality of $\mathbf{u}_1$ and $\boldsymbol{\nabla}_1 w$, it follows that
+$\partial w/\partial x = 0$ along the lines $v$ is zero,
+\begin{equation}
+\label{eq:2-242b}
+\text{and}\qquad \partial w/\partial y = 0 \quad\text{along the lines}\ u\ \text{is zero.}
+\end{equation}
+The cells are, therefore, rectangles with sides of lengths $L_x$ and $L_y$; and
+the pattern of the motions in the cell, centred at $x = 0$ and $y = 0$, and
+bounded by $x = \pm\tfrac{1}{2}L_x$ and $y = \pm\tfrac{1}{2}L_y$, is repeated in all the others.
+From the expressions for $u$ and $v$ given in~(\ref{eq:2-240}), we find
+\begin{equation}
+\label{eq:2-243}
+L_x u \pm L_y v = -\frac{2\pi}{a^2}\,DW\sin 2\pi\!\left(\frac{x}{L_x}\pm\frac{y}{L_y}\right)\!;
+\end{equation}
+and it follows from this equation that
+\begin{equation}
+\label{eq:2-244}
+L_x u + L_y v = 0 \quad\text{for}\quad x/L_x + y/L_y = 0 \quad\text{and}\quad \pm\tfrac{1}{2},
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-245}
+L_x u - L_y v = 0 \quad\text{for}\quad x/L_x - y/L_y = 0 \quad\text{and}\quad \pm\tfrac{1}{2};
+\end{equation}
+in other words, the streamlines intersect a principal diagonal in directions
+which are normal to the other.
+
+The streamlines of the motion in the horizontal plane are determined
+by the equation
+\begin{equation}
+\label{eq:2-246}
+\frac{dx}{dy} = \frac{u}{v} = \frac{L_y}{L_x}\,\frac{\sin(2\pi x/L_x)}{\sin(2\pi y/L_y)}\,\frac{\cos(2\pi y/L_y)}{\cos(2\pi x/L_x)}.
+\end{equation}
+
+\figurePlaceholder{5}{The streamlines in the horizontal plane for a rectangular cell.}
+
+\figurePlaceholder{6}{The streamlines in the horizontal plane for a square cell.}
+
+On integrating this equation, we obtain
+\begin{equation}
+\label{eq:2-247}
+\frac{\sin\dfrac{2\pi x}{L_x}}{\sin\dfrac{2\pi y}{L_y}} = \text{constant}\biggl|\sin\frac{2\pi y}{L_y}\biggr|^{L_x^2/L_y^2}.
+\end{equation}
+The streamlines derived from this equation are illustrated in Fig.~5 for
+the case $L_y = \sqrt{3}\,L_x/2$.
+The solution for the case of square cells can be obtained from the
+foregoing by setting $L_x = L_y$. The corresponding streamlines of the
+motion are illustrated in Fig.~6.
+
+\subsection*{(c) Hexagonal cells}
+
+The solution for the hexagonal pattern was discovered by Christopherson. His solution is
+\begin{equation}
+\label{eq:2-248}
+w = \tfrac{1}{3}W(z)\biggl\{2\cos\frac{2\pi}{\sqrt{3}L}\,x\cos\frac{2\pi}{3L}\,y + \cos\frac{4\pi}{3L}\,y\biggr\}.
+\end{equation}
+Alternative forms of this solution are
+\begin{equation}
+\label{eq:2-249}
+w = \tfrac{1}{3}W(z)\biggl\{\cos\frac{4\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x + \tfrac{1}{2}y\Bigr) + \cos\frac{4\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x - \tfrac{1}{2}y\Bigr) + \cos\frac{4\pi}{3L}\,y\biggr\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-250}
+w = \tfrac{1}{3}W(z)\biggl\{4\cos\frac{2\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x - \tfrac{1}{2}y\Bigr)\cos\frac{2\pi}{3L}\Bigl(\frac{\sqrt{3}}{2}\,x + \tfrac{1}{2}y\Bigr)\cos\frac{2\pi}{3L}\,y - 1\biggr\}.
+\end{equation}
+
+We shall presently show that $L$ measures the side of the hexagon. But
+first we shall verify that the solution~(\ref{eq:2-248}) does, indeed, represent a
+periodic disturbance of a given total wave number~$a$. We have
+\begin{align}
+\label{eq:2-251}
+\nabla_1^2\,w &= -\tfrac{1}{3}W(z)\biggl\{\biggl(\frac{2\pi}{\sqrt{3}L}\biggr)^{\!2}(3+1)\cos\frac{2\pi}{\sqrt{3}L}\,x\cos\frac{4\pi}{3L}\,y + \frac{4\pi}{3L}\cos\frac{4\pi}{3L}\,y\biggr\} \notag\\
+&= -\biggl(\frac{4\pi}{3L}\biggr)^{\!2}w.
+\end{align}
+Hence,
+\begin{equation}
+\label{eq:2-252}
+a = 4\pi/3L.
+\end{equation}
+
+The basic hexagonal symmetry of the solution expressed by~(\ref{eq:2-249}) becomes
+apparent when we write
+\begin{equation}
+\label{eq:2-253}
+x = \varpi\cos\theta \quad\text{and}\quad y = \varpi\sin\theta.
+\end{equation}
+Then
+\begin{equation}
+\label{eq:2-254}
+\frac{\sqrt{3}}{2}\,x \pm \tfrac{1}{2}y = \varpi\sin(60^\circ \pm \theta),
+\end{equation}
+and we can rewrite equation~(\ref{eq:2-249}) in the form
+\begin{equation}
+\label{eq:2-255}
+w = \tfrac{1}{3}W(z)\biggl\{\cos\biggl[\frac{4\pi\varpi}{3L}\sin(\theta+120^\circ)\biggr] + \cos\biggl[\frac{4\pi\varpi}{3L}\sin(\theta+60^\circ)\biggr] + \cos\biggl[\frac{4\pi\varpi}{3L}\sin\theta\biggr]\biggr\},
+\end{equation}
+from which it is apparent that
+\begin{equation}
+\label{eq:2-256}
+w(\varpi,\,\theta) = w(\varpi,\,\theta+60^\circ).
+\end{equation}
+In addition to this invariance for rotation by $60^\circ$ about the origin, the
+solution exhibits periodicity in the $x$- and $y$-directions as well; thus
+\begin{equation}
+\label{eq:2-257}
+w(x+nL\sqrt{3},\; y+3mL) = w(x,y),
+\end{equation}
+where $n$ and $m$ are (arbitrary) integers. The wavelength of the periodicity
+in the $y$-direction is seen to be $\sqrt{3}$ times the wavelength in the $x$-direction.
+
+We next observe that according to equation~(\ref{eq:2-250})
+\begin{equation}
+\label{eq:2-258}
+w(0) = W(z);
+\end{equation}
+also, along the three pairs of lines,
+\begin{equation}
+\label{eq:2-259}
+y = \pm\tfrac{1}{2}L, \quad x\sqrt{3}+y = \pm\tfrac{3}{2}L, \quad x\sqrt{3}-y = \pm\tfrac{3}{2}L,
+\end{equation}
+which describes the hexagon $GHIJKL$ (see Fig.~7$a$),
+\begin{equation}
+\label{eq:2-260}
+w = -\tfrac{1}{2}W(z);
+\end{equation}
+and at the six points,
+\begin{equation}
+\label{eq:2-261}
+\Bigl(\frac{\sqrt{3}}{2}\,L,\;\pm\tfrac{1}{2}L\Bigr), \quad (0,\,\pm L), \quad \Bigl(-\frac{\sqrt{3}}{2}\,L,\;\pm\tfrac{1}{2}L\Bigr),
+\end{equation}
+which are the vertices of the hexagon $ABCDEF$,
+\begin{equation}
+\label{eq:2-262}
+w = -\tfrac{1}{4}W(z).
+\end{equation}
+
+The horizontal components of the velocity are given by
+\begin{equation}
+\label{eq:2-263}
+u = \frac{1}{a^2}\frac{\partial^2 w}{\partial x\partial z} = -\frac{DW}{3a^2}\,\frac{4\pi}{L\sqrt{3}}\sin\frac{2\pi}{L\sqrt{3}}\,x\cos\frac{2\pi}{3L}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-264}
+v = \frac{1}{a^2}\frac{\partial^2 w}{\partial y\partial z} = -\frac{DW}{3a^2}\,\frac{4\pi}{3L}\biggl(\cos\frac{2\pi}{L\sqrt{3}}\,x + 2\cos\frac{2\pi}{3L}\,y\biggr)\sin\frac{2\pi}{3L}\,y.
+\end{equation}
+From these equations it follows that
+
+$u = 0$ \quad for \quad $x = 0$, $x = \pm\tfrac{\sqrt{3}}{2}L$ \quad and \quad $y = \pm\tfrac{3}{2}L$,
+\begin{equation}
+\label{eq:2-264b}
+\end{equation}
+and
+
+$v = 0$ \quad for \quad $y = 0$ \quad and \quad $y = \pm\tfrac{3}{2}L$.
+
+There is thus no flow across $OD$ ($u = 0$ for $x = 0$), $BC$ ($u = 0$ for
+$x = L\sqrt{3}/2$), and $OI$ ($v = 0$ for $y = 0$). From the invariance of the
+solution for rotations by $60^\circ$, we conclude that there is no flow across \emph{any}
+of the sides of the six equilateral triangles which form the hexagon
+$ABCDEF$, nor across any of the perpendiculars drawn from the centre
+of the hexagon to the sides. From the proportionality of $\mathbf{u}_1$ and $\boldsymbol{\nabla}_1 w$,
+it follows that the walls of the prisms, whose sections are the six equilateral
+triangles, are surfaces of symmetry. Again, from the fact that the
+flow is normal to $KJ$ ($u = 0$ for $y = 3L/4$), we conclude that there
+is no flow \emph{along} the sides of the inscribed hexagon $GHIJKL$; and this is
+consistent with the fact that $w$ is constant along these same sides.
+
+In Fig.~7$b$ the flow pattern in the horizontal plane is illustrated.
+The nature of the flow in the vertical planes is somewhat more
+complicated. However, in the planes $x = 0$ and $y = 0$ they are two-dimensional
+and can be described simply. Thus
+\begin{equation}
+\label{eq:2-265}
+\left.
+\begin{aligned}
+u &= 0\\
+v &= -\frac{DW}{3a^2}\,\frac{4\pi}{3L}\biggl(1+2\cos\frac{2\pi}{3L}\,y\biggr)\sin\frac{2\pi}{3L}\,y\\
+w &= \tfrac{1}{3}W\biggl(2\cos\frac{2\pi}{3L}\,y + \cos\frac{4\pi}{3L}\,y\biggr)
+\end{aligned}
+\right\}\quad (x = 0),
+\end{equation}
+
+\figurePlaceholder{7a}{The geometry of the hexagonal cells.}
+
+and
+\begin{equation}
+\label{eq:2-266}
+\left.
+\begin{aligned}
+u &= -\frac{DW}{3a^2}\,\frac{4\pi}{L\sqrt{3}}\sin\frac{2\pi}{L\sqrt{3}}\,x\\
+v &= 0\\
+w &= \tfrac{1}{3}W\biggl(2\cos\frac{2\pi}{L\sqrt{3}}\,x + 1\biggr)
+\end{aligned}
+\right\}\quad (y = 0).
+\end{equation}
+
+For $v$ and $w$ given by~(\ref{eq:2-265}), the equation, $dy/v = dz/w$, governing the
+streamlines in the $(y,z)$-plane can be readily integrated to give
+\begin{equation}
+\label{eq:2-267}
+\biggl|\frac{1+2\cos(2\pi y/3L)}{1+\cos(2\pi y/3L)}\biggr|^3\sin\frac{2\pi}{3L}\,y\biggr|^s W(z) = \text{constant}.
+\end{equation}
+
+\figurePlaceholder{7b}{The curves of constant $w$ (normalized to unity at the centre) in the horizontal plane for a hexagonal cell. The curves labelled 1, 2, \ldots, 12 are for values of $w = 0{\cdot}75$, $0{\cdot}50$, $0{\cdot}25$, $0$, $-0{\cdot}20$, $-0{\cdot}25$, $-0{\cdot}30$, $-0{\cdot}325$, $-0{\cdot}38$, $-0{\cdot}40$, $-0{\cdot}44$, and $-0{\cdot}48$, respectively. The value of $w$ on the inscribed hexagon (shown by broken lines) is $-\tfrac{1}{2}$ and at the vertices of the principal hexagon it has the value $-\tfrac{1}{4}$. The streamlines are orthogonal to the curves of constant $w$.}
+
+Similarly, from~(\ref{eq:2-266}) it follows that the streamlines in the $(x,z)$-plane
+are given by
+\begin{equation}
+\label{eq:2-268}
+\biggl\{\biggl(1-\cos\frac{2\pi}{L\sqrt{3}}\,x\biggr)\sin\frac{2\pi}{L\sqrt{3}}\,x\biggr\}^{\frac{1}{3}} W(z) = \text{constant}.
+\end{equation}
+The streamlines of the flow derived from equations~(\ref{eq:2-267}) and~(\ref{eq:2-268}) are
+illustrated in Fig.~8.
+
+\subsection*{(d) Triangular cells}
+
+This case does not need a separate discussion. The pattern which we
+considered as hexagonal can be considered, equally, as triangular. The
+unit cell is then represented by the equilateral triangle $OMN$ (see Fig.~7$a$)
+whose sides are of length $L\sqrt{3}$. Along the sides of this triangle there are
+no transverse motions; and at its vertices $w$ takes the same value (which
+is twice that at the centroid~$C$ and of the opposite sign).
+
+\subsection*{(e) More general cell patterns}
+
+A generalization of Christopherson's solution was discovered by
+Bisshopp. Bisshopp's solution appears to give the most general cell
+
+\figurePlaceholder{8}{The streamlines in a hexagonal cell in the planes of symmetry at the onset of instability for the first even mode. The streamlines (normalized to unity at the maxima) are computed in accordance with equations~(\ref{eq:2-267}) (the patterns on the right) and~(\ref{eq:2-268}) (the patterns at the bottom); the curves are labelled by the values of the constants to which they refer.}
+
+\noindent
+patterns which exhibit definite periodicities in the $x$- and $y$-directions
+and are characterized by a given total wave number~$a$.
+
+Starting with a term having the periodicity of the assigned wave
+number~$a$ in a particular direction (say, the $y$-direction), we write the
+solution in the form
+\begin{equation}
+\label{eq:2-269}
+w = W(z)\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y + \cos\,a(y-y_0)\biggr\},
+\end{equation}
+where $m$ is an integer greater than 1 and $A$ and $y_0$ are constants. The
+solution~(\ref{eq:2-269}) is constructed so as to satisfy two conditions: \emph{first}, any
+periodic term which we may add to $\cos a(y-y_0)$ has a wave number in
+the $y$-direction which is a divisor of~$a$ (for, only then can we include
+the periodicity already implied by $\cos a(y-y_0)$); and \emph{second} the added term
+has a periodicity in the $x$-direction of a wave number such as to make the
+total wave number~$a$. These conditions are manifestly satisfied by the
+solution~(\ref{eq:2-269}). Thus
+\begin{equation}
+\label{eq:2-270}
+\nabla_1^2\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y = -a^2\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-271}
+\nabla_1^2\,w = -a^2 w
+\end{equation}
+as required.
+
+The wavelengths of the disturbance in the $x$- and the $y$-directions are
+\begin{equation}
+\label{eq:2-272}
+\lambda_x = \frac{2\pi}{a}\,\frac{m}{\sqrt{m^2-1}} \quad\text{and}\quad \lambda_y = \frac{2\pi}{a}\,m.
+\end{equation}
+
+\figurePlaceholder{9}{A complex cell pattern derived from the solution $w = \tfrac{1}{2}W_s\{\cos[\tfrac{1}{2}a(\sqrt{8}+y)] + \cos[\tfrac{1}{2}a(\sqrt{8}-y)] + \cos ay\}$.}
+
+The components of the horizontal velocity are
+\begin{equation}
+\label{eq:2-273}
+u = \frac{DW}{a}\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}} A \times
+\sin\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y,
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-274}
+v = \frac{DW}{a}\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\frac{1}{m}\sin\frac{a}{m}\,y +
+\sin a(y-y_0)\biggr\}.
+\end{equation}
+The velocities transverse to the lines
+\begin{equation}
+\label{eq:2-275}
+x = \pm\tfrac{1}{2}n\lambda_x \quad\text{and}\quad y = \pm\tfrac{1}{2}n\lambda_y
+\end{equation}
+(where $n$ is an integer) will vanish if $y_0 = 0$.
+Accordingly, the solution
+\begin{equation}
+\label{eq:2-276}
+w = W(z)\biggl\{A\cos\biggl[a\Bigl(1-\frac{1}{m^2}\Bigr)^{\!\frac{1}{2}}x\biggr]\cos\frac{a}{m}\,y + \cos ay\biggr\}
+\end{equation}
+describes a cell pattern in which the unit cell is a rectangle with sides
+$\lambda_x$ and $\lambda_y$ along the two directions. However, the motions inside the unit
+cells are far more complicated than in the simple rectangular cells
+considered in \S\,(b).
+
+Finally, it may be noted that we recover Christopherson's solution
+(\ref{eq:2-248}) as a special case of~(\ref{eq:2-276}) by setting $A = 2$ and $m = 2$. An example
+of these more general cell patterns is shown in Fig.~9.
+
+%%---------------------------------------------------------------------
+\section{The variational solution}\label{sec:17}
+%%---------------------------------------------------------------------
+
+In \S~15 we have seen how the characteristic value problem underlying
+the determination of the critical Rayleigh number for the onset of
+instability can be solved exactly. In this section we shall describe an
+alternative method based on the variational principles of \S~13. While this
+is necessarily an approximate method, it appears that by a judicious
+procedure, the method can lead to results of high precision. This is of
+some importance since most of the other problems we shall encounter
+do not easily lend themselves to an exact solution; and variational
+methods appear to be the only practicable ones. It is therefore fortunate
+that there is this one case in which the results of the approximate
+method can be compared with those of an exact calculation and some
+idea gained as to the accuracy which can be attained in the solution of
+similar problems by the variational method.
+
+Consider then the problem appropriate to the case when the liquid is
+confined between two rigid boundaries at $z = \pm\tfrac{1}{2}$. The problem then is
+to solve the equations
+\begin{equation}
+\label{eq:2-277}
+(D^2 - a^2)^2 W = F
+\end{equation}
+and
+\begin{equation}
+\label{eq:2-278}
+(D^2 - a^2) F = -Ra^2 W,
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:2-279}
+F = 0 \quad\text{and}\quad W = DW = 0 \quad\text{for}\quad z = \pm\tfrac{1}{2}.
+\end{equation}
+
+As we have already pointed out in \S~15, the solutions of equations
+(\ref{eq:2-277}) and~(\ref{eq:2-278}) satisfying the boundary conditions~(\ref{eq:2-279}) are either even or
+odd. Consider the even solutions. Then $F$ is even and since it is required
+to vanish at $z = \pm\tfrac{1}{2}$, we can expand it in a cosine series in the form
+\begin{equation}
+\label{eq:2-280}
+F = \sum_0^\infty A_m \cos[(2m+1)\pi z].
+\end{equation}
+The summation over $m$ in~(\ref{eq:2-280}) may be assumed to run from zero to
+infinity; but this is not necessary since we shall consider the coefficients
+$A_m$ as variational parameters (see below).
+
+With $F$ given by~(\ref{eq:2-280}), we \emph{determine} $W$ as a solution of the equation
+\begin{equation}
+\label{eq:2-281}
+(D^2 - a^2)^2 W = \sum_m A_m \cos[(2m+1)\pi z]
+\end{equation}
+which satisfies the remaining boundary conditions on~$W$. In view of the
+linearity of equation~(\ref{eq:2-281}), we can express $W$ as a sum in the form
+\begin{equation}
+\label{eq:2-282}
+W = \sum_m A_m\,W_m(z),
+\end{equation}
+where $W_m$ is a solution of the equation
+\begin{equation}
+\label{eq:2-283}
+(D^2 - a^2)^2 W_m = \cos[(2m+1)\pi z]
+\end{equation}
+which satisfies the boundary conditions
+\begin{equation}
+\label{eq:2-284}
+W_m = DW_m = 0 \quad\text{for}\quad z = \pm\tfrac{1}{2};
+\end{equation}
+since equation~(\ref{eq:2-283}) is of the fourth order, such a solution can be found
+and is in fact uniquely determined. We shall presently obtain the
+solution explicitly.
+
+The variational principle formulated in \S~13 is equivalent to minimizing
+\begin{equation}
+\label{eq:2-285}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} [(DF)^2 + a^2 F^2]\,dz,
+\end{equation}
+for such variations of $F$ which preserve the constancy of
+\begin{equation}
+\label{eq:2-286}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} [(D^2 - a^2)W]^2\,dz.
+\end{equation}
+Introducing $Ra^2$ as a Lagrangian undetermined multiplier, we can
+equally minimize
+\begin{equation}
+\label{eq:2-287}
+J = \int_{-\frac{1}{2}}^{+\frac{1}{2}} [(DF)^2 + a^2 F^2]\,dz - Ra^2 \int_{-\frac{1}{2}}^{+\frac{1}{2}} [(D^2 - a^2)W]^2\,dz,
+\end{equation}
+for entirely arbitrary variations of~$F$. When we choose for $F$ a \emph{trial
+function} with a certain number of parameters, the method is to minimize
+with respect to those parameters. Thus, if the expansion~(\ref{eq:2-280}) for $F$
+is considered as a trial function, then the coefficients of the expansion
+$A_m$ play the role of the variational parameters and the minimization of
+$J$ is with respect to them.
+
+When $F$ and $W$ satisfy the boundary conditions required of them and
+are related as in equation~(\ref{eq:2-277}), an alternative form for $J$ is
+\begin{equation}
+\label{eq:2-288}
+J = -\int_{-\frac{1}{2}}^{+\frac{1}{2}} F(D^2 - a^2)F\,dz - Ra^2 \int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz.
+\end{equation}
+
+We shall now evaluate the integrals on the right-hand side of~(\ref{eq:2-288})
+when $F$ and $W$ are given by equations~(\ref{eq:2-280}) and~(\ref{eq:2-282}). We have
+\begin{equation}
+\label{eq:2-289}
+-\int_{-\frac{1}{2}}^{+\frac{1}{2}} F(D^2 - a^2)F\,dz = \int_{-\frac{1}{2}}^{+\frac{1}{2}} dz\,\sum A_m\cos[(2m+1)\pi z] \times
+\sum A_n[(2n+1)^2\pi^2+a^2]\cos[(2n+1)\pi z] = \frac{1}{2}\sum_m \frac{A_m^2}{\gamma_{2m+1}},
+\end{equation}
+where
+\begin{equation}
+\label{eq:2-290}
+\gamma_{2m+1} = \frac{1}{(2m+1)^2\pi^2+a^2}.
+\end{equation}
+Next, considering the second integral on the right-hand side of~(\ref{eq:2-288}), we
+have
+\begin{equation}
+\label{eq:2-291}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz = \sum A_n \int_{-\frac{1}{2}}^{+\frac{1}{2}} dz\cos[(2n+1)\pi z]\;\sum A_m\,W_m(z).
+\end{equation}
+Letting
+\begin{equation}
+\label{eq:2-292}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{\cos[(2n+1)\pi z]\}W_m(z)\,dz,
+\end{equation}
+we can write
+\begin{equation}
+\label{eq:2-293}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} WF\,dz = \sum\sum A_n(n|m)A_m.
+\end{equation}
+The matrix $(n|m)$ which we have defined in~(\ref{eq:2-292}) is symmetric: for,
+\begin{align}
+\label{eq:2-294}
+(n|m) &= \int_{-\frac{1}{2}}^{+\frac{1}{2}} W_m(z)\cos[(2n+1)\pi z]\,dz \notag\\
+&= \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{(D^2-a^2)^2 W_n(z)\}\{(D^2-a^2)^2 W_m(z)\}\,dz,
+\end{align}
+and the symmetry is apparent.
+
+Returning to equation~(\ref{eq:2-288}) and making use of equations~(\ref{eq:2-289}) and
+(\ref{eq:2-293}), we have
+\begin{equation}
+\label{eq:2-295}
+J = \frac{1}{2}\sum_m \frac{A_m^2}{\gamma_{2m+1}} - Ra^2 \sum\sum A_n(n|m)A_m;
+\end{equation}
+and we must minimize this expression with respect to the parameters~$A_n$.
+Therefore, requiring
+\begin{equation}
+\label{eq:2-296}
+\frac{\partial J}{\partial A_n} = 0 \qquad (n = 0, 1, \ldots),
+\end{equation}
+we obtain
+\begin{equation}
+\label{eq:2-297}
+\sum_m \biggl[\frac{\delta_{mn}}{2a^2\gamma_{2m+1}\,R} - 2(n|m)\biggr] A_m = 0 \qquad (n = 0, 1, \ldots).
+\end{equation}
+This represents a system of linear homogeneous equations for the
+coefficients~$A_n$. For a non-zero solution of these equations to exist, the
+determinant of the system must vanish. We thus obtain the condition
+\begin{equation}
+\label{eq:2-298}
+\left|\frac{\delta_{mn}}{a^2 A_n^2 \gamma_{2m+1}} - 2(n|m)\right| = 0
+\end{equation}
+which is in the form of a \emph{characteristic equation} of a matrix.
+
+Restricting ourselves to the first $n$ coefficients $A_0, A_1, \ldots, A_n$ in~(\ref{eq:2-280})
+and setting the others equal to zero is the same as considering a trial
+function for $F$ with $n$ parameters. The minimization of $J$ is then with
+respect to these $n$ parameters; and the order of the resulting `secular'
+determinant~(\ref{eq:2-298}) will also be~$n$.
+
+While we have derived the condition~(\ref{eq:2-298}) as a consequence of the
+variational principle, it is of some significance to observe that it follows
+also from equation~(\ref{eq:2-278}) by equating the Fourier coefficients of either
+side. Thus substituting for $F$ and $W$ in accordance with equations
+(\ref{eq:2-280}) and~(\ref{eq:2-282}) in equation~(\ref{eq:2-278}), we have
+\begin{equation}
+\label{eq:2-299}
+\sum \frac{A_m}{\gamma_{2m+1}}\cos[(2m+1)\pi z] = Ra^2 \sum A_m\,W_m(z).
+\end{equation}
+Multiplying this equation by $\cos[(2n+1)\pi z]$ and integrating over the
+range of $z$, we obtain
+\begin{equation}
+\label{eq:2-300}
+\frac{1}{2}\,\frac{A_n}{\gamma_{2m+1}} = Ra^2 \sum (n|m)A_m \qquad (n = 0, 1, 2, \ldots);
+\end{equation}
+this represents the same set of equations as~(\ref{eq:2-297}) and leads to the same
+secular determinant~(\ref{eq:2-298}). The present method of deriving the condition
+(\ref{eq:2-298}) is applicable even if a variational principle does not underlie the
+problem. But the existence of a variational principle ensures that by
+keeping more and more terms in the Fourier expansion~(\ref{eq:2-280}) for $F$ and
+solving the secular determinant~(\ref{eq:2-298}) for~$R$, we approach the true
+characteristic value \emph{monotonically from above}.
+
+We now return to equation~(\ref{eq:2-283}) to determine the explicit form of
+the solution for $W_m$ and of the matrix $(n|m)$.
+
+The general solution of equation~(\ref{eq:2-283}) which is even in $z$ is
+\begin{equation}
+\label{eq:2-301}
+W_m = P_m \cosh az + Q_m\,z\sinh az + \gamma_{2m+1}^2 \cos[(2m+1)\pi z],
+\end{equation}
+where $\gamma_{2m+1}$ is defined in~(\ref{eq:2-290}) and $P_m$ and $Q_m$ are constants of integration
+which are to be determined by the boundary conditions~(\ref{eq:2-284}). These
+latter conditions give
+\begin{equation}
+\label{eq:2-302}
+P_m \cosh\tfrac{1}{2}a + \tfrac{1}{2}Q_m \sinh\tfrac{1}{2}a = 0
+\end{equation}
+and
+\begin{equation}
+P_m\,a\sinh\tfrac{1}{2}a + Q_m(\tfrac{1}{2}a\cosh\tfrac{1}{2}a + \sinh\tfrac{1}{2}a) = (2m+1)\pi\gamma_{2m+1}^2\,(-1)^m.
+\end{equation}
+Solving these equations for $P_m$ and $Q_m$, we find
+\begin{equation}
+\label{eq:2-303}
+P_m = (-1)^{m+1}\frac{(2m+1)\pi\gamma_{2m+1}^2}{a + \sinh a}\sinh\tfrac{1}{2}a,
+\end{equation}
+and
+\begin{equation}
+Q_m = (-1)^m\frac{2(2m+1)\pi\gamma_{2m+1}^2}{a + \sinh a}\cosh\tfrac{1}{2}a.
+\end{equation}
+
+The matrix element $(n|m)$ is now given by
+\begin{equation}
+\label{eq:2-304}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \{P_m \cosh az + Q_m\,z\sinh az + \gamma_{2m+1}^2\cos[(2m+1)\pi z]\} \times \cos[(2n+1)\pi z]\,dz
+\end{equation}
+or,
+\begin{equation}
+\label{eq:2-305}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} + P_m \int_{-\frac{1}{2}}^{+\frac{1}{2}} \cosh az\cos[(2n+1)\pi z]\,dz +
+Q_m \int_{-\frac{1}{2}}^{+\frac{1}{2}} z\sinh az\cos[(2n+1)\pi z]\,dz.
+\end{equation}
+
+The integrals on the right-hand side of~(\ref{eq:2-305}) are readily evaluated. We
+find
+\begin{equation}
+\label{eq:2-306}
+\begin{split}
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} \cosh az\cos[(2n+1)\pi z]\,dz &= 2(-1)^n(2n+1)\pi\gamma_{2n+1}\cosh\tfrac{1}{2}a,\\
+\int_{-\frac{1}{2}}^{+\frac{1}{2}} z\sinh az\cos[(2n+1)\pi z]\,dz &= (-1)^n(2n+1)\pi\gamma_{2n+1}(\sinh\tfrac{1}{2}a - 4a\gamma_{2n+1}\cosh\tfrac{1}{2}a).
+\end{split}
+\end{equation}
+We thus have
+\begin{equation}
+\label{eq:2-307}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} + (2n+1)\pi\gamma_{2n+1}(-1)^n \times
+\bigl[2P_m\cosh\tfrac{1}{2}a + Q_m(\sinh\tfrac{1}{2}a - 4a\gamma_{2n+1}\cosh\tfrac{1}{2}a)\bigr].
+\end{equation}
+Substituting for $P_m$ and $Q_m$ from~(\ref{eq:2-303}) in the foregoing equation and
+simplifying, we find
+\begin{equation}
+\label{eq:2-308}
+(n|m) = \tfrac{1}{2}\gamma_{2m+1}^2\,\delta_{mn} - 8a(-1)^{n+m}(2n+1)(2m+1)\pi^2\gamma_{2n+1}^2\gamma_{2m+1}^2\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}.
+\end{equation}
+This is symmetrical in $n$ and $m$ as required.
+The explicit form of the secular determinant~(\ref{eq:2-298}) is, therefore,
+\begin{equation}
+\label{eq:2-309}
+\left|\left(\frac{1}{a^2 R\gamma_{2m+1}} - \gamma_{2m+1}^2\right)\delta_{mn} +
+(-1)^{n+m} 16a\pi^2 (2n+1)(2m+1)\gamma_{2n+1}^2\gamma_{2m+1}^2\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}\right| = 0.
+\end{equation}
+
+A first approximation to $R$ will be given by setting the $(0,0)$ element
+of the secular matrix equal to zero and ignoring all the others. This
+corresponds to the choice of $\cos\pi z$ as a trial function for~$F$, i.e.\ one
+with \emph{no} variational parameters. The corresponding result is
+\begin{equation}
+\label{eq:2-310}
+\frac{1}{a^2 R\gamma_1} = \gamma_1^2 - 16a\pi^2\gamma_1^4\,\frac{\cosh^2\!\tfrac{1}{2}a}{\sinh a + a}.
+\end{equation}
+Or, since $\gamma_1 = (\pi^2 + a^2)^{-1}$,
+\begin{equation}
+\label{eq:2-311}
+R = \frac{(\pi^2 + a^2)^3}{a^2\{1 - 16a\pi^2\cosh^2\!\tfrac{1}{2}a/[(\pi^2+a^2)^2(\sinh a+a)]\}}.
+\end{equation}
+This formula gives
+\begin{equation}
+\label{eq:2-312}
+R = 1715{\cdot}08 \quad\text{for}\quad a = 3{\cdot}117;
+\end{equation}
+this should be contrasted with the result $(1707{\cdot}76)$ of the exact calculation
+for the same value of~$a$. Thus, even with no variational parameters,
+the method achieves an accuracy somewhat better than $\tfrac{1}{2}$ per cent.
+This accuracy is attained largely on account of the fact that in the
+process of applying the variational method, we solved the fourth-order
+differential equation~(\ref{eq:2-277}) relating $F$ and~$W$, i.e.\ in effect we solved
+`two-thirds' of the problem exactly!
+
+By including additional terms in the expansion for $F$, we can naturally
+reach higher precision in the deduced values of~$R$. This is illustrated
+in Table~\ref{tab:2-IV}.
+
+\begin{table}[htbp]
+\centering
+\caption{Rayleigh numbers derived by the variational method}
+\label{tab:2-IV}
+\medskip
+\begin{tabular}{@{}l l l@{}}
+\toprule
+\multicolumn{3}{c}{(i) The even mode} \\
+\multicolumn{3}{c}{$a = 3{\cdot}117$} \\
+\midrule
+First approximation  & $R = 1715{\cdot}08$ & \\
+Second approximation & $R = 1707{\cdot}938$ & $A_1/A_0 = +0{\cdot}028923$ \\
+Third approximation  & $R = 1707{\cdot}775$ & $A_1/A_0 = +0{\cdot}028963;$ \\
+                     &                      & $A_2/A_0 = -0{\cdot}002594$ \\
+Exact value          & $R = 1707{\cdot}76$  & \\
+\midrule
+\multicolumn{3}{c}{(ii) The odd mode} \\
+\multicolumn{3}{c}{$a = 5{\cdot}365$} \\
+\midrule
+First approximation  & $R = 17803{\cdot}24$ & \\
+Second approximation & $R = 17\,611{\cdot}74$ & $A_1/A_0 = +0{\cdot}06304$ \\
+Third approximation  & $R = 17\,611{\cdot}84$ & $A_1/A_0 = +0{\cdot}069943;$ \\
+                     &                        & $A_2/A_0 = -0{\cdot}002085$ \\
+Exact value          & $R = 17\,610{\cdot}39$ & \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The odd mode (in terms of which we found in \S~15 the solution for
+the case of one rigid and one free boundary) can also be obtained by the
+variational method. Thus, we now assume for $F$ an expansion of the
+form
+\begin{equation}
+\label{eq:2-313}
+F = \sum A_m \sin 2m\pi z.
+\end{equation}
+The corresponding solution for $W_m$ is
+\begin{equation}
+\label{eq:2-314}
+W_m = P_m \sinh az + Q_m\,z\cosh az + \gamma_{2m}^*\sin 2m\pi z,
+\end{equation}
+where $P_m$ and $Q_m$ are constants of integration and
+\begin{equation}
+\label{eq:2-315}
+\gamma_{2m}^* = \frac{1}{4m^2\pi^2 + a^2}.
+\end{equation}
+The boundary conditions determine $P_m$ and $Q_m$. We find
+\begin{equation}
+\label{eq:2-316}
+\begin{split}
+P_m &= (-1)^{m+1}\frac{2m\pi\gamma_{2m}^{*2}}{\sinh a - a}\cosh\tfrac{1}{2}a,\\
+Q_m &= (-1)^{m+1}\frac{4m\pi\gamma_{2m}^{*2}}{\sinh a - a}\sinh\tfrac{1}{2}a.
+\end{split}
+\end{equation}
+
+The matrix element $(n|m)$ is now given by
+\begin{equation}
+\label{eq:2-317}
+(n|m) = \int_{-\frac{1}{2}}^{+\frac{1}{2}} \sin 2n\pi z\{P_m \sinh az + Q_m\,z\cosh az + \gamma_{2m}^*\sin 2m\pi z\}\,dz.
+\end{equation}
+On evaluating the integrals, we find
+\begin{equation}
+\label{eq:2-318}
+(n|m) = \tfrac{1}{2}\gamma_{2m}^{*2}\,\delta_{mn} - 32(-1)^{n+m} amn\pi^2 \gamma_{2n}^*\gamma_{2m}^*\,\frac{\sinh^2\!\tfrac{1}{2}a}{\sinh a - a};
+\end{equation}
+and the secular determinant takes the form
+\begin{equation}
+\label{eq:2-319}
+\left|\left(\frac{1}{a^2 R\gamma_{2m}} - \gamma_{2m}^{*2}\right)\delta_{mn} + (-1)^{n+m} 64an^2\pi^2\,\frac{\sinh^2\!\tfrac{1}{2}a}{\sinh a - a}\,mn\pi^2\gamma_{2n}^*\gamma_{2m}^*\right| = 0.
+\end{equation}
+
+The first approximation to $R$ will be given by setting the $(1,1)$ element
+of the secular matrix equal to zero and ignoring all the others. Thus
+we obtain
+\begin{equation}
+\label{eq:2-320}
+R = \frac{1}{a^2\gamma_2^{*}\{1 - 64a\pi^2\gamma_2^{*4}\tfrac{1}{4}a/(\sinh a - a)\}},
+\end{equation}
+or, substituting for $\gamma_{2}^*$, we have
+\begin{equation}
+\label{eq:2-321}
+R = \frac{(4\pi^2+a^2)^3}{a^2\{1 - 64a\pi^2\sinh^2\!\tfrac{1}{2}a/[(4\pi^2+a^2)^2(\sinh a - a)]\}}.
+\end{equation}
+This formula gives
+\begin{equation}
+\label{eq:2-322}
+R = 17\,803{\cdot}24 \quad\text{for}\quad a = 5{\cdot}365;
+\end{equation}
+this should be contrasted with the result $17\,610{\cdot}39$ of the exact calculation.
+The results obtained by including further terms in the expansion
+of~$F$ are given in Table~\ref{tab:2-IV}. Again, we observe the high precision which
+can be reached by the variational method.
+
+%%---------------------------------------------------------------------
+%% §18.  Experiments on the onset of thermal instability in fluids
+%%---------------------------------------------------------------------
+
+\section{Experiments on the onset of thermal instability in fluids}\label{sec:18}
+
+In this section we shall give an account of some of the experimental
+work on the onset of thermal instability in fluids which bears on the
+theoretical developments.
+
+As we stated at the outset, and as the subtitle to this chapter indicates,
+the experiments which stimulated this field of inquiry are those of
+B\'enard.  Indeed, it was to account for the `interesting results obtained
+by B\'enard's careful and skilful experiments' that Rayleigh undertook
+his theoretical investigation; the quotation is in fact the opening remark
+in Rayleigh's paper.
+
+%%---------------------------------------------------------------------
+%% (a) Bénard's experiments
+%%---------------------------------------------------------------------
+
+\subsection*{(a) B\'enard's experiments}
+
+B\'enard carried out his experiments on very thin layers of fluid, about
+a millimetre in depth, or less, standing on a levelled metallic plate
+
+\figurePlaceholder{10}{The original apparatus of B\'enard.}
+
+\noindent
+maintained at a constant temperature (see Fig.~10).  The upper surface
+was usually free and being in contact with the air was at a lower temperature.
+B\'enard experimented with several liquids of differing physical
+constants.  He was particularly interested in the r\^ole of viscosity; and
+as liquids of high viscosity he used melted spermaceti and paraffin.  In
+all cases, B\'enard found that when the temperature of the lower surface
+was gradually increased, at a certain instant, the layer became reticulated
+and revealed its dissection into cells.  He further noticed that there were
+motions inside the cells: of ascension at the centre, and of descension
+at the boundaries with the adjoining cells.  B\'enard distinguished two
+phases in the succeeding development of the cellular pattern: an initial
+phase of short duration in which the cells acquire a moderate degree
+of regularity and become convex polygons with four to seven sides and
+vertical walls; and a second phase of relative permanence in which the
+cells all become equal, hexagonal, and properly aligned.  Fig.~1, which is
+a reproduction of one of B\'enard's original photographs, illustrates the
+remarkable regularity which can be attained.  B\'enard himself was so
+interested in observing the emergence of the second phase and the
+associated motions that he was not very explicit regarding the conditions
+necessary for the onset of instability.  However, in a later analysis of his
+early observations, he states that they are in qualitative agreement with
+the requirements of Rayleigh's criterion.
+
+Some doubts have recently been raised whether, in view of the thinness
+of the layers of fluid with which B\'enard experimented, his observations
+can all be accounted for in terms of effects arising from surface
+tension.  As B\'enard himself pointed out quite explicitly in his early papers,
+effects of surface tension are undoubtedly present; but they do not
+appear to be primary in most of his experiments.
+
+%%---------------------------------------------------------------------
+%% (b) The Schmidt–Milverton principle (beginning)
+%%---------------------------------------------------------------------
+
+\subsection*{(b) The Schmidt--Milverton principle for detecting the onset of thermal instability}
+
+Of the vast literature on experiments relating to thermal convection,
+we shall refer only to that which bears directly on the detection of the
+onset of thermal instability, and the determination of the critical
+Rayleigh number.  The earliest of the experiments in this latter category
+appear to be those of Schmidt and Milverton.  In their experiments,
+Schmidt and Milverton incorporated a principle for the detection of the
+onset of thermal instability which is so direct and simple that it has
+served as the basis for all later experiments in this subject.  In view of
+the importance of this principle, we shall explain its origin and the
+manner of its use.
+
+Suppose that a difference of temperature $\Delta T$ $(= T_1 - T_2;\; T_2 > T_1)$
+is maintained between the two sides of a layer of fluid of depth~$d$.  In a
+steady state, this implies that there is a constant outward flux of heat
+from the surface at the higher temperature.  Let $\mathscr{Q}$ denote this flux
+of heat: it measures the quantity of heat (in calories) emerging from the
+surface, per unit area and per unit time.  If the flow of heat across the
+fluid layer is entirely by conduction, then clearly
+\begin{equation}
+\label{eq:2-323}
+\mathscr{Q} = k\,\Delta T / d,
+\end{equation}
+where $k$ is the coefficient of heat conduction.
+
+\section*{BIBLIOGRAPHICAL NOTES}
+
+The phenomenon of thermal convection in fluids, as we now understand it, was
+discovered by Count Rumford:
+
+\begin{enumerate}
+
+\item \textsc{Count Rumford}, ``Of the propagation of heat in fluids'',
+  \textit{Complete Works}, \textbf{1}, 239, American Academy of Arts and Sciences,
+  Boston, 1870.
+
+\end{enumerate}
+
+\noindent An interesting account of Rumford's discovery with relevant extracts from his
+writings will be found in:
+
+\begin{enumerate}
+\setcounter{enumi}{1}
+
+\item \textsc{S. C. Brown}, ``Count Rumford discovers thermal convection'',
+  \textit{Daedalus}, \textbf{86}, 340--3 (1957).
+
+\end{enumerate}
+
+\noindent In reference~2, Brown points out that the term `convection' was first introduced
+in science by William Prout:
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+
+\item \textsc{W. Prout}, \textit{Bridgewater Treatises}, \textbf{8}, 65, edited by
+  W.~Pickering, London, 1834.
+
+\end{enumerate}
+
+\noindent The following extract from Prout is taken from reference~2:
+
+\begin{quote}
+`There is at present no single term in our language employed to denote this
+mode of propagation of heat; but we venture to propose for that purpose the
+term convection (convectio, a carrying or converging), which not only expresses
+the leading facts, but also accords very well with the two other terms (conduction
+and radiation).'
+\end{quote}
+
+\noindent The fact that convection in horizontal layers of fluid is often accompanied by
+a cellular pattern of motions seems to have been first observed by James Thomson:
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+
+\item \textsc{J. Thomson}, ``On a changing tesselated structure in certain liquids'',
+  \textit{Proc.\ Phil.\ Soc.\ Glasgow}, \textbf{13}, 464--8 (1882).
+
+\end{enumerate}
+
+\noindent The following extract is from reference~4:
+
+\begin{quote}
+`The occurrence of the phenomena seems to be associated essentially with
+cooling of the liquid at its surface where exposed to the air, when the main
+body of the liquid is at a temperature somewhat above that assumed by a thin
+superficial film. A very slight excess of temperature in the body of the fluid
+above that of the surrounding air is sufficient to institute the tesselated
+changing structure\,\ldots. The motions now described and explained as occurring
+in the soapy water and other liquids when showing the tesselated structure
+he [Thomson] thus believes constitute one special case of what is often called
+convective circulation. He points out, however, that this case, with a thin
+film cooled at the surface while the great body of the liquid is at a somewhat
+higher temperature, presents essential distinctions from the case in which
+convective circulation is caused by heat applied at the bottom of the vessel.
+The surface phenomena and the actual motions throughout the body of the
+liquid are very different in the two cases, as may easily be seen by a little
+consideration, both theoretical and observational.'
+\end{quote}
+
+\noindent The first quantitative experiments on the onset of thermal instability and the
+recognition of the role of viscosity in the phenomenon are due to H.~B\'enard:
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+
+\item \textsc{H. B\'enard}, ``Les Tourbillons cellulaires dans une nappe liquide'',
+  \textit{Revue g\'en\'erale des Sciences pures et appliqu\'ees}, \textbf{11},
+  1261--71 and 1309--28 (1900).
+
+\item -------, ``Les Tourbillons cellulaires dans une nappe liquide transportant de
+  la chaleur par convection en r\'egime permanent'', \textit{Annales de Chimie et de
+  Physique}, \textbf{23}, 62--144 (1901).
+
+\end{enumerate}
+
+\noindent On the theoretical side, the fundamental paper is that of Lord Rayleigh:
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+
+\item \textsc{Lord Rayleigh}, ``On convective currents in a horizontal layer of fluid
+  when the higher temperature is on the under side'', \textit{Phil.\ Mag.},
+  \textbf{32}, 529--46 (1916); also \textit{Scientific Papers}, \textbf{6}, 432--46,
+  Cambridge, England, 1920.
+
+\end{enumerate}
+
+\noindent The paper by Lord Rayleigh is included in an anthology of related papers edited
+by Saltzmann:
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+
+\item \textsc{B. Saltzmann}, ``The general circulation as a problem in thermal convection:
+  A collection of classical and modern theoretical papers'', \textit{Scientific Report
+  No.~1}, General Circulation Project, Department of Meteorology, Massachusetts
+  Institute of Technology, 1958.
+
+\end{enumerate}
+
+\noindent A collection of papers containing some beautiful illustrations of convection
+phenomena in Nature is:
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+
+\item \textit{Convection Patterns in the Atmosphere and Ocean}, edited by
+  \textsc{R. W. Miner}, \textit{Annals of the New York Academy of Sciences},
+  \textbf{48}, 1947.
+
+\end{enumerate}
+
+\noindent References to the B\'enard convection cells from the standpoint of meteorology
+will be found in:
+
+\begin{enumerate}
+\setcounter{enumi}{9}
+
+\item \textsc{D. Brunt}, \textit{Physical and Dynamical Meteorology}, 219--21,
+  Cambridge, England, 1939.
+
+\item \textsc{O. G. Sutton}, \textit{Micrometeorology}, 119--25, McGraw-Hill Book Co.\
+  Inc., New York, 1953.
+
+\end{enumerate}
+
+\noindent And a general account of the subject treated in this and the following chapters
+is given in:
+
+\begin{enumerate}
+\setcounter{enumi}{11}
+
+\item \textsc{S. Chandrasekhar}, ``Thermal convection'', \textit{Daedalus},
+  \textbf{86}, 323--39 (1957).
+
+\end{enumerate}
+
+\noindent \S\,7. A useful reference for the foundations of hydrodynamics is:
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+
+\item \textsc{S. Goldstein}, \textit{Modern Developments in Fluid Dynamics},
+  \textbf{1}, 90--101 and \textbf{2}, 601--9, Oxford, England, 1938.
+
+\end{enumerate}
+
+\noindent See also:
+
+\begin{enumerate}
+\setcounter{enumi}{13}
+
+\item \textsc{W. F. Cope}, ``The equations of hydrodynamics in a very general form'',
+  \textit{Aeronautical Research Committee Reports and Memoranda}, No.~1903, 1--6,
+  (1942).
+
+\end{enumerate}
+
+\noindent For the notation of Cartesian tensors see:
+
+\begin{enumerate}
+\setcounter{enumi}{14}
+
+\item \textsc{H. Jeffreys}, \textit{Cartesian Tensors}, Cambridge, England, 1931.
+
+\item \textsc{H.} and \textsc{B. S. Jeffreys}, \textit{Methods of Mathematical Physics},
+  chapter~3, Cambridge, England, 1956.
+
+\end{enumerate}
+
+\noindent \S\,8. The approximation introduced in this section is due to:
+
+\begin{enumerate}
+\setcounter{enumi}{16}
+
+\item \textsc{J. Boussinesq}, \textit{Th\'eorie Analytique de la Chaleur}, \textbf{2},
+  172, Gauthier-Villars, Paris, 1903.
+
+\end{enumerate}
+
+\noindent \S\S\,9 and~10. As we have stated, the foundations of the subject were laid by Lord
+Rayleigh in reference~7. The theory, from a somewhat more general point of
+view and leading to equation~(104), is due to Jeffreys:
+
+\begin{enumerate}
+\setcounter{enumi}{17}
+
+\item \textsc{H. Jeffreys}, ``The stability of a layer of fluid heated below'',
+  \textit{Phil.\ Mag.}, \textbf{2}, 833--44 (1926).
+
+\item -------, ``Some cases of instability in fluid motion'',
+  \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{118}, 195--208 (1928).
+
+\end{enumerate}
+
+\noindent See also:
+
+\begin{enumerate}
+\setcounter{enumi}{19}
+
+\item \textsc{H. Jeffreys}, ``The instability of a compressible fluid heated below'',
+  \textit{Proc.\ Camb.\ Phil.\ Soc.}, \textbf{26}, 170--2 (1930).
+
+\end{enumerate}
+
+\noindent In reference~20, Jeffreys shows that the criterion for the onset of instability
+derived for incompressible fluids can, under certain conditions, be used for
+compressible fluids if $\beta$ is interpreted as the difference between the adiabatic
+temperature gradient and the prevailing temperature gradient.
+
+\noindent \S\,11. The validity of the principle of the exchange of stabilities for this problem
+was proved by Rayleigh (reference~7) for the case of two free boundaries. The
+proof in the general case is due to Pellew and Southwell:
+
+\begin{enumerate}
+\setcounter{enumi}{20}
+
+\item \textsc{A. Pellew} and \textsc{R. V. Southwell}, ``On maintained convective motion in
+  a fluid heated from below'', \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{176},
+  312--43 (1940).
+
+\end{enumerate}
+
+\noindent \S\,13. The first of the two variational principles considered in this section is due
+to Pellew and Southwell (reference~21); for the second of these see:
+
+\begin{enumerate}
+\setcounter{enumi}{21}
+
+\item \textsc{S. Chandrasekhar}, ``On characteristic value problems in high order
+  differential equations which arise in studies on hydrodynamic and hydromagnetic
+  stability'', \textit{American Math.\ Monthly}, \textbf{61}, 32--45 (1954).
+
+\end{enumerate}
+
+\noindent The fact that the variational principle gives the true minimum does not seem to
+have been proved before.
+
+\noindent \S\,14. The thermodynamic significance of the variational principle was first
+considered explicitly though in the context of a somewhat different problem by:
+
+\begin{enumerate}
+\setcounter{enumi}{22}
+
+\item \textsc{H. Jeffreys}, ``The thermodynamics of thermal instability in liquids'',
+  \textit{Quart.\ J.\ Mech.\ Appl.\ Math.}, \textbf{9}, 1--5 (1956).
+
+\end{enumerate}
+
+\noindent Less explicitly, it is contained in:
+
+\begin{enumerate}
+\setcounter{enumi}{23}
+
+\item \textsc{W. V. R. Malkus}, ``The heat transport and spectrum of thermal turbulence'',
+  \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{225}, 196--212 (1954).
+
+\end{enumerate}
+
+\noindent A complete discussion of the underlying principle including sources of dissipation,
+besides viscosity, and allowing for overstability will be found in:
+
+\begin{enumerate}
+\setcounter{enumi}{24}
+
+\item \textsc{S. Chandrasekhar}, ``The thermodynamics of thermal instability in liquids'',
+  \textit{Max Planck Festschrift 1958}, 103--14, Veb Deutscher Verlag der Wissenschaften,
+  Berlin, 1958.
+
+\end{enumerate}
+
+\noindent \S\,15. The exact solution of the basic characteristic value problem was first
+accomplished by:
+
+\begin{enumerate}
+\setcounter{enumi}{25}
+
+\item \textsc{A. R. Low}, ``On the criterion for stability of a layer of viscous fluid heated
+  from below'', \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{125}, 180--95 (1929).
+
+\end{enumerate}
+
+\noindent By a somewhat different method it was also carried out by Pellew and Southwell
+(reference~21). The method followed in the text is essentially that of Pellew
+and Southwell. The definitive treatment of the problem is due to:
+
+\begin{enumerate}
+\setcounter{enumi}{26}
+
+\item \textsc{W. H. Reid} and \textsc{D. L. Harris}, ``Some further results on the B\'enard
+  problem'', \textit{The Physics of Fluids}, \textbf{1}, 102--10 (1958).
+
+\item -------, ``Streamlines in B\'enard convection cells'', ibid.\ \textbf{2}, 716--17
+  (1959).
+
+\end{enumerate}
+
+\noindent \S\,16. The solution of the equation
+%
+\[ \frac{\partial^2\phi}{\partial x^2} + \frac{\partial^2\phi}{\partial y^2} = -a^2\phi \]
+%
+appropriate for a hexagonal cell pattern was discovered by:
+
+\begin{enumerate}
+\setcounter{enumi}{28}
+
+\item \textsc{D. G. Christopherson}, ``Note on the vibration of membranes'',
+  \textit{Quart.\ J.\ of Math.\ (Oxford Series)}, \textbf{11}, 63--65 (1940).
+
+\end{enumerate}
+
+\noindent The generalization of Christopherson's solution given in \S\,(e) is due to:
+
+\begin{enumerate}
+\setcounter{enumi}{29}
+
+\item \textsc{F. E. Bisshopp}, ``On two-dimensional cell patterns'',
+  \textit{J.\ Math.\ Analysis and Applications}, \textbf{1}, 373--85 (1960).
+
+\end{enumerate}
+
+\noindent \S\,17. Variational solutions have been given by Pellew and Southwell (reference~21)
+and Reid and Harris~(27).
+
+\noindent \S\,18. The references for the experimental work described in this section are:
+
+\begin{enumerate}
+\setcounter{enumi}{30}
+
+\item \textsc{H. B\'enard} and \textsc{D. Avsec}, ``Travaux r\'ecents sur les tourbillons cellulaires
+  et les tourbillons en bandes; applications \`a l'astrophysique et \`a la m\'et\'eorologie'',
+  \textit{Le Journal de physique et le radium}, \textbf{9}, 486--500 (1938).
+
+\item \textsc{R. J. Schmidt} and \textsc{S. W. Milverton}, ``On the instability of a fluid when
+  heated from below'', \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{152}, 586--94
+  (1935).
+
+\item ------- and \textsc{O. A. Saunders}, ``On the motion of a fluid heated from below'',
+  ibid.\ \textbf{165}, 216--28 (1938).
+
+\item \textsc{O. A. Saunders}, \textsc{M. Fishenden}, and \textsc{H. D. Mansion}, ``Some measurements
+  of convection by an optical method'', \textit{Engineering}, \textbf{139}, 483--5 (1935).
+
+\item \textsc{P. L. Silveston}, ``W\"armedurchgang in waagerechten Fl\"ussigkeitsschichten'',
+  Part~1, \textit{Forsch.\ Ing.\ Wes.}, \textbf{24}, 29--32 and 59--69 (1958).
+
+\end{enumerate}
+
+\noindent See also:
+
+\begin{enumerate}
+\setcounter{enumi}{35}
+
+\item \textsc{W. V. R. Malkus}, ``Discrete transitions in turbulent convection'',
+  \textit{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{225}, 185--95 (1954).
+
+\end{enumerate}
+
+\noindent In reference~31, B\'enard's earlier work (references~5 and~6) is summarized and
+applications to astrophysical and meteorological phenomena are considered. The
+role of surface tension in B\'enard's experiments is discussed by:
+
+\begin{enumerate}
+\setcounter{enumi}{36}
+
+\item \textsc{J. R. A. Pearson}, ``On convection cells induced by surface tension'',
+  \textit{J.\ Fluid Mech.}, \textbf{4}, 489--500 (1958).
+
+\end{enumerate}
+
+\noindent The `Schmidt--Milverton' principle is described in reference~32. And the experimental
+arrangement used in securing the photographs illustrated in Fig.~15 is
+described in reference~34.
+
+\medskip
+
+\noindent Matters closely related to the subject-matter of this chapter, but not explicitly
+considered, are treated in:
+
+\begin{enumerate}
+\setcounter{enumi}{37}
+
+\item \textsc{H. Tippelskirch}, ``Weitere Konvektionsversuche: der Nachweis der
+  Ringzellen und ihrer Verallgemeinerung'', \textit{Beitr\"age zur Physik der
+  Atmosph\"are}, \textbf{32}, 2--22 (1959).
+
+\item -------, ``\"Uber Konvektionszellen, insbesondere im fl\"ussigen Schwefel'',
+  ibid.\ \textbf{29}, 37--54 (1956).
+
+\item \textsc{J. Zierep}, ``\"Uber die Bevorzugung der Sechseckzellen bei Konvektionsstr\"omungen
+  \"uber einer gleichm\"assig erw\"armten Grundfl\"ache'', ibid.\ \textbf{31}, 31--39
+  (1958).
+
+\item -------, ``Zur Theorie der Zellularkonvektion III'', ibid.\ \textbf{32}, 23--33 (1959).
+
+\item -------, ``\"Uber rotationssymmetrische Zellularkonvektionsstr\"omungen'',
+  \textit{Z.\ f\"ur angewandte Mathematik und Mechanik}, \textbf{38}, 1--4 (1958).
+
+\end{enumerate}
+
+\noindent Some progress has recently been achieved in developing theories which will be
+applicable to Rayleigh numbers slightly in excess of $R_c$ and when the amplitudes
+are finite. The following references may be noted in this connexion:
+
+\begin{enumerate}
+\setcounter{enumi}{42}
+
+\item \textsc{W. V. R. Malkus} and \textsc{G. Veronis}, ``Finite amplitude cellular convection'',
+  \textit{J.\ Fluid Mech.}, \textbf{4}, 225--60 (1958).
+
+\item \textsc{L. P. Gor'kov}, ``Stationary convection in a plane liquid layer near the
+  critical heat transfer point'', \textit{Soviet Physics, JETP}, \textbf{6}, 311--15 (1958).
+
+\end{enumerate}
+
+\noindent See also Appendix~I.

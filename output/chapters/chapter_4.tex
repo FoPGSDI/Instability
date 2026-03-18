@@ -1,0 +1,1946 @@
+\chapter{THE THERMAL INSTABILITY OF A LAYER OF FLUID HEATED FROM BELOW}
+\label{ch:4}
+\setcounter{section}{35}
+
+%% 3. THE EFFECT OF A MAGNETIC FIELD
+
+\section{Hydromagnetics}\label{sec:36}
+
+In this chapter we shall consider the effect of an externally impressed magnetic field on the onset of thermal instability in electrically conducting fluids. This brings us to the subject of \emph{Hydromagnetics}. In broad terms, the subject of hydromagnetics is concerned with the ways in which magnetic fields can affect fluid behaviour. The subject has many ramifications; and the introduction of it in the context of a special problem is perhaps not the best way. But the problem of thermal instability in the presence of a magnetic field does illustrate the general principles of the subject. Moreover, the consideration of this problem in juxtaposition with a similar consideration of the effects of rotation brings out some striking similarities between the effects of rotation and magnetic field: they both impart to the fluid a certain rigidity; at the same time, they also impart to it certain properties of elasticity which enable it to transmit disturbances by new modes of wave propagation. To emphasize this similarity, we shall preface the discussion of thermal instability by a brief introduction to hydromagnetics and its basic theorems.
+
+\section{The basic equations of hydromagnetics}\label{sec:37}
+
+Consider a fluid which has the property of electrical conduction; and suppose also that magnetic fields are prevalent. The electrical conductivity of the fluid and the prevalence of magnetic fields contribute to effects of two kinds: \emph{first}, by the motion of the electrically conducting fluid across the magnetic lines of force, electric currents are generated and the associated magnetic fields contribute to changes in the existing fields; and \emph{second}, the fact that the fluid elements carrying currents traverse magnetic lines of force contributes to additional forces acting on the fluid elements. It is this twofold interaction between the motions and the fields that is responsible for patterns of behaviour which are often unexpected and striking.
+
+We shall now write down the basic equations which express the interactions between the fluid motions and the magnetic fields. These are, of course, contained in Maxwell's equations and in the equations of hydrodynamics suitably modified. There is, however, one basic simplification which is possible. Since we shall not be concerned with effects which are related in any way to the propagation of electromagnetic waves, we can ignore the displacement currents in Maxwell's equations. Closely related to this approximation is the further possibility of avoiding any explicit reference to the charge density. The reason for this is not that it is small in itself, but rather that its variations affect the equation expressing the conservation of charge only by terms of order $u^2/c^2$; and terms of this order we can legitimately ignore.
+
+With the displacement currents ignored, Maxwell's equations are
+\begin{equation}
+\label{eq:4-1}
+\operatorname{div} \mathbf{H} = 0,
+\end{equation}
+\begin{equation}
+\label{eq:4-2}
+\operatorname{curl} \mathbf{H} = 4\pi \mathbf{J},
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-3}
+\operatorname{curl} \mathbf{E} = -\mu \frac{\partial \mathbf{H}}{\partial t},
+\end{equation}
+where in electromagnetic units, $\mathbf{E}$ and $\mathbf{H}$ are the intensities of the electric and the magnetic fields, $\mathbf{J}$ is the current density, and $\mu$ is the magnetic permeability. The magnetic permeability will be taken as unity in all applications; it is retained only to identify the units.
+
+To complete the equations for the field, we need an equation for the current density. This requires some assumption concerning the nature of the fluid. In this book the assumption will be made that the fluid may be considered as continuous and that the macroscopic properties need be taken into account only indirectly through the effects of viscosity and the heat and electrical conductivities. And the coefficients expressing these latter effects will in turn be defined only phenomenologically.
+
+Consider a fluid element. If it has a velocity $\mathbf{u}$, the electric field it will experience is not $\mathbf{E}$, as measured by a stationary observer, but $\mathbf{E}+\mu\mathbf{u}\times\mathbf{H}$. If in accordance with our assumptions we suppose that a coefficient of electrical conductivity $\sigma$ can be defined, then the current density will be given by
+\begin{equation}
+\label{eq:4-4}
+\mathbf{J} = \sigma(\mathbf{E}+\mu\mathbf{u}\times\mathbf{H}).
+\end{equation}
+
+Equations~(\ref{eq:4-1})--(\ref{eq:4-4}) are the basic equations of the field appropriate for hydromagnetics. Through the occurrence of the velocity $\mathbf{u}$ in the expression for $\mathbf{J}$, the equations incorporate the effect of fluid motions on the electromagnetic field. The inverse effect of the field on the motions results from the force which the fluid elements experience in virtue of their carrying currents across magnetic lines of force. This is the \emph{Lorentz force} given by
+\begin{equation}
+\label{eq:4-5}
+\boldsymbol{\mathscr{L}} = \mu \mathbf{J}\times\mathbf{H},
+\end{equation}
+or, according to equation~(\ref{eq:4-2}),
+\begin{equation}
+\label{eq:4-6}
+\boldsymbol{\mathscr{L}} = \frac{\mu}{4\pi}\operatorname{curl}\mathbf{H}\times\mathbf{H}.
+\end{equation}
+An alternative form for $\boldsymbol{\mathscr{L}}$ is
+\begin{equation}
+\label{eq:4-7}
+\mathscr{L}_i = \frac{\mu}{4\pi}e_{ilk}\frac{\partial H_m}{\partial x_l}H_k = \frac{\mu}{4\pi}\Bigl(\delta_{ik}\delta_{lm}-\delta_{im}\delta_{lk}\Bigr)\frac{\partial H_m}{\partial x_l}H_k = \frac{\mu}{4\pi}H_k\Bigl(\frac{\partial H_i}{\partial x_k}+\frac{\partial H_k}{\partial x_i}\Bigr).
+\end{equation}
+Since $H_i$ is solenoidal, we can also write
+\begin{equation}
+\label{eq:4-8}
+\mathscr{L}_i = -\frac{\partial}{\partial x_i}\Bigl(\mu\frac{|\mathbf{H}|^2}{8\pi}\Bigr)+\frac{\partial}{\partial x_k}\Bigl(\mu\frac{H_i H_k}{4\pi}\Bigr).
+\end{equation}
+This last form for the Lorentz force expresses it as the sum of a hydrostatic pressure, $\mu|\mathbf{H}|^2/8\pi$, and a tension, $\mu|\mathbf{H}|^2/4\pi$, along the lines of force; or, equivalently as the sum of a pressure, $\mu|\mathbf{H}|^2/8\pi$, transverse to the lines of force and a tension, $\mu|\mathbf{H}|^2/8\pi$, along the lines of force.
+
+Including the Lorentz force among the other forces acting on the fluid, we have the equation of motion (cf.\ equation~II~(17))
+\begin{equation}
+\label{eq:4-9}
+\rho\frac{d\mathbf{u}}{dt} = \operatorname{div}\mathbf{P}+\rho\mathbf{X}+\mu\mathbf{J}\times\mathbf{H},
+\end{equation}
+where $\mathbf{P}$ is the total stress-tensor and $\mathbf{X}$ includes the external forces of non-electromagnetic origin.
+
+For an incompressible fluid, the equation of motion takes the explicit form
+\begin{equation}
+\label{eq:4-10}
+\frac{\partial u_i}{\partial t}+u_j\frac{\partial u_i}{\partial x_j} = -\frac{\partial}{\partial x_i}\Bigl(\frac{p}{\rho}+\mu\frac{|\mathbf{H}|^2}{8\pi\rho}\Bigr)+\frac{\mu H_j}{4\pi\rho}\frac{\partial H_i}{\partial x_j}+\nu\nabla^2 u_i,
+\end{equation}
+where the form~(\ref{eq:4-8}) for the Lorentz force has been used.
+
+\section{The equation of motion governing the magnetic field and some of its consequences}\label{sec:38}
+
+We shall now obtain an equation of motion for the magnetic field. According to equation~(\ref{eq:4-4}),
+\begin{equation}
+\label{eq:4-11}
+\mathbf{E} = \frac{1}{\sigma}\mathbf{J}-\mu\mathbf{u}\times\mathbf{H},
+\end{equation}
+or, making use of equation~(\ref{eq:4-2}), we have
+\begin{equation}
+\label{eq:4-12}
+\mathbf{E} = \frac{1}{4\pi\sigma}\operatorname{curl}\mathbf{H}-\mu\mathbf{u}\times\mathbf{H}.
+\end{equation}
+Inserting this expression for $\mathbf{E}$ in equation~(\ref{eq:4-3}), we obtain
+\begin{equation}
+\label{eq:4-13}
+\frac{\partial\mathbf{H}}{\partial t} = -\operatorname{curl}(\mathbf{u}\times\mathbf{H}) = -\operatorname{curl}(\eta\operatorname{curl}\mathbf{H}),
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-14}
+\eta = \frac{1}{4\pi\mu\sigma}
+\end{equation}
+We shall call $\eta$ the \emph{resistivity} though it differs from the usual definition by a factor $1/(4\pi)$. It may be further noted that $\eta$ (like $\nu$ and $\kappa$) is of the dimension cm$^2$\,sec$^{-1}$.
+
+Equation~(\ref{eq:4-13}) is entirely general; in particular, it is not restricted to incompressible fluids.
+
+If $\eta$ is assumed to be a constant, equation~(\ref{eq:4-13}), in Cartesian coordinates, takes the form (cf.\ equations~III~(13), (24), and (25))
+\begin{equation}
+\label{eq:4-15}
+\frac{\partial H_i}{\partial t}+\frac{\partial}{\partial x_j}(u_j H_i - u_i H_j) = \eta\nabla^2 H_i.
+\end{equation}
+
+The elimination of $\mathbf{E}$ to obtain an equation for $\mathbf{H}$ represents an important simplification. For since the Lorentz force is also expressed in terms of $\mathbf{H}$ only, it follows that in the subsequent analysis we need not make any further reference to the electric field. Once $\mathbf{u}$ and $\mathbf{H}$ have been determined through a solution of equations~(\ref{eq:4-1}), (\ref{eq:4-9}), and (\ref{eq:4-15}), we can, if we like, use equation~(\ref{eq:4-12}) to evaluate $\mathbf{E}$; but it plays no significant role in the solution of the problem itself. This minor role to which $\mathbf{E}$ is reduced is peculiar to hydromagnetics: it derives from the neglect of the displacement currents.
+
+Several important consequences for the field follow from equation~(\ref{eq:4-13}); we shall now consider some of them.
+
+\subsection*{(a) \emph{The decay of a magnetic field in the absence of fluid motions. The Joule dissipation}}
+
+We shall first consider the case when there are no fluid motions. In this case equation~(\ref{eq:4-13}) becomes
+\begin{equation}
+\label{eq:4-16}
+\frac{\partial\mathbf{H}}{\partial t} = -\operatorname{curl}(\eta\operatorname{curl}\mathbf{H}).
+\end{equation}
+
+From this equation it follows that the magnetic energy in any closed volume $V$ must decrease monotonically with time so long as no energy flows into $V$ across its boundary. To see this, multiply equation~(\ref{eq:4-16}) scalarly by $\mathbf{H}$ and integrate over the volume. We obtain
+\begin{equation}
+\label{eq:4-17}
+\frac{1}{2}\frac{\partial}{\partial t}\int_V |\mathbf{H}|^2\,dV = -\int_V \mathbf{H}\cdot\operatorname{curl}(\eta\operatorname{curl}\mathbf{H})\,dV.
+\end{equation}
+Quite generally we have the identity
+\begin{equation}
+\label{eq:4-18}
+\int \boldsymbol{\varphi}\cdot\operatorname{curl}\boldsymbol{\psi}\,dV = \int \boldsymbol{\psi}\cdot\operatorname{curl}\boldsymbol{\varphi}\,dV - \oint \boldsymbol{\varphi}\times\boldsymbol{\psi}\cdot d\mathbf{S},
+\end{equation}
+where $\boldsymbol{\varphi}$ and $\boldsymbol{\psi}$ represent any two vector fields and $S$ is the boundary of $V$.
+
+Making use of the identity~(\ref{eq:4-18}), we can rewrite equation~(\ref{eq:4-17}) in the form
+\begin{equation}
+\label{eq:4-19}
+\frac{1}{2}\frac{\partial}{\partial t}\int_V |\mathbf{H}|^2\,dV = -\int_V \eta|\operatorname{curl}\mathbf{H}|^2\,dV + \oint_S \eta(\mathbf{H}\times\operatorname{curl}\mathbf{H})\cdot d\mathbf{S}.
+\end{equation}
+The magnetic energy $\mathfrak{M}$ inside $V$ is given by
+\begin{equation}
+\label{eq:4-20}
+\mathfrak{M} = \frac{\mu}{8\pi}\int_V |\mathbf{H}|^2\,dV.
+\end{equation}
+Accordingly,
+\begin{equation}
+\label{eq:4-21}
+\frac{\partial\mathfrak{M}}{\partial t} = -\int_V |\mathbf{J}|^2/\sigma\,dV + \frac{1}{4\pi}\oint_S \frac{1}{2}\mathbf{H}\times\mathbf{J}\cdot d\mathbf{S},
+\end{equation}
+where in reducing equation~(\ref{eq:4-19}) to this form we have made use of equations~(\ref{eq:4-2}) and (\ref{eq:4-14}). Since $\mathbf{J}=\sigma\mathbf{E}$ when there are no motions, a still further form of equation~(\ref{eq:4-21}) is
+\begin{equation}
+\label{eq:4-22}
+\frac{\partial\mathfrak{M}}{\partial t} = -\int_V \frac{|\mathbf{J}|^2}{\sigma}\,dV + \frac{1}{4\pi}\oint_S \mathbf{H}\times\mathbf{E}\cdot d\mathbf{S}.
+\end{equation}
+The change in the magnetic energy inside $V$, therefore, consists of a volume integral which represents a loss of energy resulting from the Joule heating by the currents flowing in the conductor, and a surface integral which represents the Poynting flux of energy flowing from the external field into the conductor. If there should be no inward directed Poynting flux at the boundary, the field must necessarily decay.
+
+The precise manner in which a given initial field will decay can, in principle, be determined; but it will depend on the particular shape of volume enclosing the conductor and on the nature of the initial field. The general method, when $\eta$ is constant, is the following. We first consider separable solutions of the equation
+\begin{equation}
+\label{eq:4-23}
+\frac{\partial\mathbf{H}}{\partial t} = -\eta\operatorname{curl}(\operatorname{curl}\mathbf{H}),
+\end{equation}
+whose dependence on time is like $e^{-\lambda t}$. Then
+\begin{equation}
+\label{eq:4-24}
+\operatorname{curl}(\operatorname{curl}\mathbf{H}) = \frac{\lambda}{\eta}\mathbf{H};
+\end{equation}
+and we must solve this equation together with suitable boundary conditions on the surface $S$ of the conductor and at infinity. The problem, in fact, reduces to one in characteristic values: the different characteristic values $q_j$ (say) and the solutions $\mathbf{H}_j$ belonging to them form a \emph{complete set} in the sense that any arbitrary field satisfying the same boundary conditions on $S$ and at infinity can be expanded in terms of them. Thus, if $\mathbf{H}(0)$ is the field at time $t=0$, we can expand it in the manner
+\begin{equation}
+\label{eq:4-25}
+\mathbf{H}(0) = \sum A_j \mathbf{H}_j,
+\end{equation}
+where the coefficients $A_j$ of the expansion are uniquely determined by $\mathbf{H}(0)$. In terms of such an expansion, the field at a later time is given by
+\begin{equation}
+\label{eq:4-26}
+\mathbf{H}(t) = \sum A_j e^{-q_j\eta t}\mathbf{H}_j.
+\end{equation}
+
+This equation shows how the various modes of the field decay independently of each other.
+
+While the procedure which we have described can be carried out explicitly for a number of special geometries, the essential physical content of the theory, for our present purposes, can be deduced quite simply by considering an infinite homogeneous medium and asking for the rate of decay of a periodic field of a given wavelength. Thus, considering the equation
+\begin{equation}
+\label{eq:4-27}
+\frac{\partial H_p}{\partial t} = \eta\nabla^2 H_p,
+\end{equation}
+we seek a solution whose spatial dependence is $\exp(ik_j x_j)$. Equation~(\ref{eq:4-27}) then gives
+\begin{equation}
+\label{eq:4-28}
+\frac{\partial H_p}{\partial t} = -k^2\eta H_p.
+\end{equation}
+Therefore,
+\begin{equation}
+\label{eq:4-29}
+\mathbf{H} = \mathbf{H}(0)\exp[i(k_j x_j-k^2\eta t)],
+\end{equation}
+where $\mathbf{H}(0)$ is the amplitude of the field at $t=0$. It is seen that the field decays with a mean life
+\begin{equation}
+\label{eq:4-30}
+\tau = \frac{1}{k^2\eta} = \frac{\lambda^2\mu\sigma}{\pi},
+\end{equation}
+where $\lambda\;(=2\pi/k)$ is the wavelength. Equation~(\ref{eq:4-30}) establishes the general result: \emph{a magnetic field of a linear scale $L$ has a mean life of the order $L^2/\eta$}. An immediate consequence of this result is that magnetic fields in systems of large linear dimensions can endure for relatively long periods of time.
+
+\subsection*{(b) \emph{The case when there are motions and the conductivity is infinite}}
+
+The case when the electrical conductivity of the medium may be considered as infinite is of particular interest. The resistivity is then zero and the equation for $\mathbf{H}$ becomes
+\begin{equation}
+\label{eq:4-31}
+\frac{\partial\mathbf{H}}{\partial t}-\operatorname{curl}(\mathbf{u}\times\mathbf{H}) = 0.
+\end{equation}
+
+Even if the conductivity should be finite, equation~(\ref{eq:4-31}) will still suffice to give the variations in the field for times which are short compared to its decay time. Since this time can be very long for systems of large linear dimensions, it is clear that the variations of $\mathbf{H}$ in accordance with equation~(\ref{eq:4-31}) are of particular interest for cosmical and geophysical problems.
+
+When equation~(\ref{eq:4-31}) is used, the corresponding equation for determining the electric field is
+\begin{equation}
+\label{eq:4-32}
+\mathbf{E} = -\mu\mathbf{u}\times\mathbf{H}.
+\end{equation}
+
+\subsubsection*{(i) \emph{Conservation theorems}}
+
+It will be observed that equation~(\ref{eq:4-31}) for $\mathbf{H}$ is of exactly the same form as the equation for the vorticity derived in Chapter~III (\S\,20, equation~(13)). The identity of the two equations is, in fact, complete since $\mathbf{H}$ is also solenoidal. All the theorems proved for the vorticity in \S\,20 have their counterparts for the magnetic field. In terms of $\mathbf{H}$, the theorems are as follows.
+
+First, we may observe that magnetic lines of force and magnetic tubes of force can be defined in the same way as vortex lines and vortex tubes were defined. And from $\operatorname{div}\mathbf{H}=0$, it follows that \emph{the normal magnetic flux across any section of a magnetic tube of force is the same; and the magnetic lines of force must either be closed or terminate on the boundaries.}
+
+But, of course, the most important theorem is the counterpart of the Helmholtz--Kelvin theorem; it states
+\begin{equation}
+\label{eq:4-33}
+\oint \mathbf{H}\cdot d\mathbf{S} = \text{constant}.
+\end{equation}
+In words: \emph{the integral of the normal component of $\mathbf{H}$ over any surface $\mathcal{S}$ bounded by a closed curve remains constant as we follow the surface $\mathcal{S}$ with the motion of the fluid elements constituting it.}
+
+For an incompressible fluid, equation~(\ref{eq:4-31}) has the alternative form (cf.\ equation~(\ref{eq:4-15}))
+\begin{equation}
+\label{eq:4-34}
+\frac{dH_i}{dt} = \frac{\partial H_i}{\partial t}+u_j\frac{\partial H_i}{\partial x_j} = H_j\frac{\partial u_i}{\partial x_j}.
+\end{equation}
+From this equation it follows (as in the corresponding discussion of $\boldsymbol{\omega}$ based on equation~III~(27)) that \emph{a magnetic line of force consists of the same fluid elements: it moves with the fluid like a material substance and behaves as though it is permanently attached to the fluid.}
+
+There is a simple generalization of the foregoing result for a compressible fluid which we may notice. The equation
+\begin{equation}
+\label{eq:4-35}
+\frac{\partial H_i}{\partial t}+\frac{\partial}{\partial x_j}(u_j H_i) = H_j\frac{\partial u_i}{\partial x_j},
+\end{equation}
+\begin{equation}
+\label{eq:4-36}
+\frac{\partial\rho}{\partial t}+\frac{\partial}{\partial x_j}(\rho u_j) = 0,
+\end{equation}
+can be combined to give
+\begin{equation}
+\label{eq:4-37}
+\frac{d}{dt}\Bigl(\frac{H_i}{\rho}\Bigr) = \frac{\partial}{\partial t}\Bigl(\frac{H_i}{\rho}\Bigr)+u_j\frac{\partial}{\partial x_j}\Bigl(\frac{H_i}{\rho}\Bigr) = \frac{H_j}{\rho}\frac{\partial u_i}{\partial x_j}.
+\end{equation}
+Thus $H_i/\rho$ satisfies an equation of the same form as equation~III~(37); and the arguments following it can be repeated with $H_i/\rho$.
+
+\subsubsection*{(ii) \emph{The transformation of magnetic energy into kinetic energy and conversely}}
+
+Consider next what equation~(\ref{eq:4-31}) implies for the change in the magnetic energy contained in a closed volume $V$ of the fluid. We have
+\begin{equation}
+\label{eq:4-38}
+\frac{\partial\mathfrak{M}}{\partial t} = \frac{\mu}{4\pi}\int_V \mathbf{H}\cdot\operatorname{curl}(\mathbf{u}\times\mathbf{H})\,dV.
+\end{equation}
+Making use of the identity~(\ref{eq:4-18}), we now obtain
+\begin{equation}
+\label{eq:4-39}
+\frac{\partial\mathfrak{M}}{\partial t} = \frac{\mu}{4\pi}\int_V (\mathbf{u}\times\mathbf{H})\cdot\operatorname{curl}\mathbf{H}\,dV - \frac{\mu}{4\pi}\oint_S \mathbf{H}\times(\mathbf{u}\times\mathbf{H})\cdot d\mathbf{S}.
+\end{equation}
+If the fluid is confined inside $V$, the normal component of $\mathbf{u}$ on $S$ must vanish and we can rewrite equation~(\ref{eq:4-39}) in the form
+\begin{equation}
+\label{eq:4-40}
+\frac{\partial\mathfrak{M}}{\partial t} = \mu\int_V \mathbf{u}\cdot(\mathbf{H}\times\mathbf{J})\,dV + \frac{\mu}{4\pi}\oint_S (\mathbf{H}\cdot\mathbf{u})\mathbf{H}\cdot d\mathbf{S}.
+\end{equation}
+We observe that the volume integral on the right-hand side of equation~(\ref{eq:4-40}) is
+\begin{equation}
+\label{eq:4-41}
+-\int_V \mathbf{u}\cdot\boldsymbol{\mathscr{L}}\,dV,
+\end{equation}
+where $\boldsymbol{\mathscr{L}}$ is the Lorentz force: it therefore represents the \emph{loss} in the magnetic energy resulting from the work done by the field on the fluid.
+
+For an incompressible fluid, we can obtain an alternative form of the energy equation by starting with the equation of motion in the form~(\ref{eq:4-35}); thus,
+\begin{equation}
+\label{eq:4-42}
+\frac{\partial\mathfrak{M}}{\partial t} = -\frac{\mu}{4\pi}\int_V H_i\frac{\partial}{\partial x_j}(u_j H_i - u_i H_j)\,dV = -\frac{\mu}{8\pi}\oint_S |\mathbf{H}|^2 u_j\,dS_j + \frac{\mu}{4\pi}\int_V H_j\frac{\partial u_i}{\partial x_j}H_i\,dV.
+\end{equation}
+The surface integral clearly vanishes and we are left with
+\begin{equation}
+\label{eq:4-43}
+\frac{\partial\mathfrak{M}}{\partial t} = \frac{\mu}{4\pi}\int_V H_j\frac{\partial u_i}{\partial x_j}H_i\,dV.
+\end{equation}
+This equation represents the change in the magnetic energy inside $V$ as a \emph{gain} resulting from the \emph{stretching of the magnetic lines of force} by the fluid elements dragging them around with their motions.
+
+\subsection*{(c) \emph{The general energy equation}}
+
+In the general case when the dissipation of the magnetic energy by Joule heating and the gain in the energy by the mechanism of the stretching of the lines of force are both present, the corresponding energy equation can be obtained by combining equations~(\ref{eq:4-21}) and (\ref{eq:4-43}); thus
+\begin{equation}
+\label{eq:4-44}
+\frac{\partial\mathfrak{M}}{\partial t} = -\int_V \frac{|\mathbf{J}|^2}{\sigma}\,dV + \frac{\mu}{4\pi}\int_V \mathbf{H}\cdot(\nabla\mathbf{u})\cdot\mathbf{H}\,dV + \frac{1}{4\pi}\oint_S \frac{1}{2}\mathbf{H}\times\mathbf{J}\cdot d\mathbf{S},
+\end{equation}
+where $\nabla\mathbf{u}$ stands for the dyadic $\partial u_i/\partial x_j$. Now substituting for $\mathbf{J}$ from equation~(\ref{eq:4-4}), we have
+\begin{multline}
+\label{eq:4-45}
+\frac{\partial\mathfrak{M}}{\partial t} = -\int_V \frac{|\mathbf{J}|^2}{\sigma}\,dV + \frac{\mu}{4\pi}\int_V \mathbf{H}\cdot(\nabla\mathbf{u})\cdot\mathbf{H}\,dV + {} \\
+{} + \frac{1}{4\pi}\oint_S \mathbf{H}\times\mathbf{E}\cdot d\mathbf{S} + \frac{\mu}{4\pi}\oint_S \mathbf{H}\times(\mathbf{u}\times\mathbf{H})\cdot d\mathbf{S}.
+\end{multline}
+Expanding the vector triple product in the last term, we obtain
+\begin{multline}
+\label{eq:4-46}
+\frac{\partial\mathfrak{M}}{\partial t} = -\int_V \frac{|\mathbf{J}|^2}{\sigma}\,dV + \frac{\mu}{4\pi}\int_V \mathbf{H}\cdot(\nabla\mathbf{u})\mathbf{H}\,dV + {} \\
+{} + \frac{1}{4\pi}\oint_S \mathbf{H}\times\mathbf{E}\cdot d\mathbf{S} - \frac{\mu}{4\pi}\oint_S (\mathbf{H}\cdot\mathbf{u})(\mathbf{H}\cdot d\mathbf{S}).
+\end{multline}
+The physical meanings of the various terms in this equation have already been explained.
+
+\section{The Alfv\'en waves}\label{sec:39}
+
+We shall now consider solutions of the hydromagnetic equations which represent the propagation of waves.
+
+Suppose that a uniform magnetic field $\mathbf{H}$ in the absence of motions prevails in an infinite homogeneous medium of an incompressible fluid of kinematic viscosity $\nu$ and electrical resistivity $\eta$; and consider small oscillations about the equilibrium state.
+
+The linearized forms of equations~(\ref{eq:4-10}) and (\ref{eq:4-15}) are
+\begin{equation}
+\label{eq:4-47}
+\frac{\partial u_i}{\partial t} - \frac{\mu H_j}{4\pi\rho}\frac{\partial h_i}{\partial x_j} = -\frac{\partial}{\partial x_k}\delta\varpi + \nu\nabla^2 u_i
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-48}
+\frac{\partial h_i}{\partial t} - H_j\frac{\partial u_i}{\partial x_j} = \eta\nabla^2 h_i,
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-49}
+\delta\varpi = \frac{\delta p}{\rho}+\mu\frac{\mathbf{H}\cdot\mathbf{h}}{4\pi\rho}
+\end{equation}
+and $\mathbf{h}$ is the perturbation in the magnetic field. By taking the divergence of equation~(\ref{eq:4-47}) and remembering that $\mathbf{u}$ and $\mathbf{h}$ are both solenoidal, we get
+\begin{equation}
+\label{eq:4-50}
+\nabla^2\delta\varpi = 0;
+\end{equation}
+and the solution of this equation relevant to the problem on hand is
+\begin{equation}
+\label{eq:4-51}
+\delta\varpi = 0.
+\end{equation}
+Thus, equation~(\ref{eq:4-47}) reduces to
+\begin{equation}
+\label{eq:4-52}
+\frac{\partial u_i}{\partial t} = \frac{\mu H_j}{4\pi\rho}\frac{\partial h_i}{\partial x_j}+\nu\nabla^2 u_i.
+\end{equation}
+In addition to equations~(\ref{eq:4-48}) and (\ref{eq:4-52}), we also have
+\begin{equation}
+\label{eq:4-53}
+\frac{\partial u_i}{\partial x_i} = 0 \quad \text{and} \quad \frac{\partial h_i}{\partial x_i} = 0.
+\end{equation}
+
+We now seek solutions of equations~(\ref{eq:4-48}), (\ref{eq:4-52}), and (\ref{eq:4-53}) whose dependence on space and time is given by
+\begin{equation}
+\label{eq:4-54}
+e^{i(k_j x_j+\omega t)};
+\end{equation}
+the equations then give
+\begin{equation}
+\label{eq:4-55}
+(\omega-i\nu k^2)u_i = \frac{\mu}{4\pi\rho}(k_j H_j)h_i,
+\end{equation}
+\begin{equation}
+\label{eq:4-56}
+(\omega-i\eta k^2)h_i = (k_j H_j)u_i,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-57}
+k_j h_j = 0, \qquad k_j u_j = 0.
+\end{equation}
+From equations~(\ref{eq:4-55}) and (\ref{eq:4-56}) we obtain
+\begin{equation}
+\label{eq:4-58}
+(\omega-i\nu k^2)(\omega-i\eta k^2)u_i = \frac{\mu}{4\pi\rho}(k_j H_j)^2 u_i,
+\end{equation}
+and an exactly similar equation for $h_i$. The required `dispersion relation' is, therefore,
+\begin{equation}
+\label{eq:4-59}
+(\omega-i\nu k^2)(\omega-i\eta k^2) = V^2_A k^2,
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-60}
+V_A = \left(\frac{\mu}{4\pi\rho}\right)^{\!1/2}\!H\cos\vartheta,
+\end{equation}
+and $\vartheta$ is the inclination of the direction of propagation to the direction of $\mathbf{H}$. The quantity $V_A$ defines a velocity: it is called the \emph{Alfv\'en velocity}.
+
+According to equations~(\ref{eq:4-57}) these waves are \emph{transverse}; and when the viscosity and the resistivity are finite, the waves are damped.
+
+\subsection*{(a) \emph{The case when $\nu=\eta=0$}}
+
+In this case the waves are undamped and
+\begin{equation}
+\label{eq:4-61}
+\frac{\omega}{k} = \pm V_A = \pm\left(\frac{\mu}{4\pi\rho}\right)^{\!1/2}\!H\cos\vartheta.
+\end{equation}
+
+The velocity of propagation of these undamped waves is the Alfv\'en velocity. Also, in this case,
+\begin{equation}
+\label{eq:4-62}
+u_i = \frac{1}{\omega}\frac{\mu k}{4\pi\rho}(H\cos\vartheta)h_i,
+\end{equation}
+or, making use of equation~(\ref{eq:4-61}),
+\begin{equation}
+\label{eq:4-63}
+u_i = \pm\left(\frac{\mu}{4\pi\rho}\right)^{\!1/2}\!h_i \quad \text{and} \quad \tfrac{1}{2}\rho|\mathbf{u}|^2 = \frac{\mu}{8\pi}|\mathbf{h}|^2.
+\end{equation}
+\emph{The mean energy of the wave in the magnetic field and in the kinetic motions is the same.}
+
+According to equation~(\ref{eq:4-61}), the group velocity of the waves is given by
+\begin{equation}
+\label{eq:4-64}
+\frac{\partial\omega}{\partial k_i} = \pm\left(\frac{\mu}{4\pi\rho}\right)^{\!1/2}\!H_i.
+\end{equation}
+\emph{A wave-packet must therefore follow the lines of force with a velocity $(\mu/4\pi\rho)^{1/2}\mathbf{H}$.}
+
+As Alfv\'en has pointed out, these hydromagnetic waves can be regarded as originating in the vibration of the magnetic lines of force as stretched strings. For as we have seen, the stresses caused by the magnetic field are equivalent to a hydrostatic pressure, $\mu|\mathbf{H}|^2/8\pi$, and a tension, $\mu|\mathbf{H}|^2/4\pi$, along the lines of force; if in addition to associating the magnetic lines of force with this tension we ascribe to them a line-density $\rho$, the formula,
+\begin{equation}
+\label{eq:4-65}
+\frac{\omega}{k} = \sqrt{\frac{\text{tension}}{\text{line-density}}},
+\end{equation}
+valid for the vibration of stretched strings, gives the correct Alfv\'en velocity.
+
+\subsection*{(b) \emph{The effects of finite viscosity and resistivity}}
+
+Returning to equation~(\ref{eq:4-59}), we have the general solution
+\begin{equation}
+\label{eq:4-66}
+\omega = \pm k_A[V_A^2 - \tfrac{1}{4}(\nu-\eta)^2 k^2]^{1/2} + \tfrac{1}{2}i(\nu+\eta)k^2.
+\end{equation}
+The effects of finite viscosity and resistivity are therefore: \emph{first}, a damping of the waves in which $\nu$ and $\eta$ occur additively; and \emph{second}, an alteration of the Alfv\'en velocity in which $\nu$ and $\eta$ occur differentially.
+
+In the limit $\nu\to 0$ and $\eta\to 0$, we have the approximate formula
+\begin{equation}
+\label{eq:4-67}
+\omega = \pm V_A k\Bigl[1-\frac{1}{8}\frac{(\nu-\eta)^2}{V_A^2}k^2\Bigr]+\tfrac{1}{2}i(\nu+\eta)k^2.
+\end{equation}
+
+\section{Some special solutions of the hydrodynamic equations. The analogue of the Taylor--Proudman theorem}\label{sec:40}
+
+For an incompressible, inviscid fluid of zero resistivity in a potential field, the basic hydrodynamic equations are:
+\begin{equation}
+\label{eq:4-68}
+\frac{\partial u_i}{\partial t}+u_j\frac{\partial u_i}{\partial x_j}-\frac{\mu}{4\pi\rho}H_j\frac{\partial H_i}{\partial x_j} = -\frac{\partial}{\partial x_i}\Bigl(\frac{p}{\rho}+\mu\frac{|\mathbf{H}|^2}{8\pi\rho}+V\Bigr),
+\end{equation}
+\begin{equation}
+\label{eq:4-69}
+\frac{\partial H_i}{\partial t}+u_j\frac{\partial H_i}{\partial x_j} = H_j\frac{\partial u_i}{\partial x_j},
+\end{equation}
+and the divergence conditions on $\mathbf{u}$ and $\mathbf{H}$. By making use of the identity given in equation~III~(9) and reverting to the original form of the Lorentz force given in equation~(\ref{eq:4-6}), we can rewrite equation~(\ref{eq:4-68}) in the form
+\begin{equation}
+\label{eq:4-70}
+\frac{\partial\mathbf{u}}{\partial t}-\mathbf{u}\times\operatorname{curl}\mathbf{u}+\frac{\mu}{4\pi\rho}\mathbf{H}\times\operatorname{curl}\mathbf{H} = -\operatorname{grad}\Bigl\{\frac{p}{\rho}+\tfrac{1}{2}|\mathbf{u}|^2+V\Bigr\}.
+\end{equation}
+Under conditions of a steady state, the foregoing equations allow some special solutions which are worth noting.
+
+\subsection*{(a) \emph{The equipartition solution}}
+
+A particularly simple solution of equations~(\ref{eq:4-68}) and (\ref{eq:4-69}) is given by
+\begin{equation}
+\label{eq:4-71}
+u_i = \pm\left(\frac{\mu}{4\pi\rho}\right)^{\!1/2}\!H_i
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-72}
+\frac{\partial}{\partial x_i}\Bigl(\frac{p}{\rho}+\mu\frac{|\mathbf{H}|^2}{8\pi\rho}+V\Bigr) = 0.
+\end{equation}
+On this solution, the fluid velocity at every point is parallel to the direction of the magnetic field at that point; also, their relative magnitudes are such that the energies in the two forms are equal:
+\begin{equation}
+\label{eq:4-73}
+\tfrac{1}{2}\rho|\mathbf{u}|^2 = \mu\frac{|\mathbf{H}|^2}{8\pi}.
+\end{equation}
+
+While this solution of the equations may appear artificial, it is important to note that except for the condition of \emph{hydrostatic equilibrium}~(\ref{eq:4-72}), there are no restrictions on the spatial dependence of the field (\emph{or} the motions). Moreover, as we shall show in Chapter~XII, \S\,113, these solutions are stable with respect to small perturbations.
+
+\subsection*{(b) \emph{Force-free fields}}
+
+A second class of special solutions arises when the Lorentz force vanishes, there are no fluid motions, and the condition of hydrostatic equilibrium is satisfied, i.e.\ when
+\begin{equation}
+\label{eq:4-74}
+4\pi\boldsymbol{\mathscr{L}} = \operatorname{curl}\mathbf{H}\times\mathbf{H} = 0, \quad \mathbf{u}=\mathbf{0}_s \quad \text{and} \quad \operatorname{grad}(V+p/\rho) = 0.
+\end{equation}
+Fields for which $\boldsymbol{\mathscr{L}}=0$ are called \emph{force-free}. Clearly, the vanishing of the Lorentz force requires that the field and the current density are everywhere parallel. One simple way in which this latter condition can be satisfied is to take
+\begin{equation}
+\label{eq:4-75}
+\operatorname{curl}\mathbf{H} = \alpha\mathbf{H},
+\end{equation}
+where $\alpha$ is a constant. Solutions of equation~(\ref{eq:4-75}) for various simple geometries can be easily written down.
+
+It is important to remark that force-free fields imply boundary conditions which it may not always be possible to satisfy. To see this, consider the volume integral
+\begin{equation}
+\label{eq:4-76}
+\int_V \mathbf{r}\cdot(\operatorname{curl}\mathbf{H}\times\mathbf{H})\,dV = \int_V \operatorname{curl}\mathbf{H}\cdot(\mathbf{H}\times\mathbf{r})\,dV.
+\end{equation}
+Transforming this integral with the aid of the identity~(\ref{eq:4-18}), we have
+\begin{equation}
+\label{eq:4-77}
+\int_V \mathbf{r}\cdot(\operatorname{curl}\mathbf{H}\times\mathbf{H})\,dV = \int_V \mathbf{H}\cdot\operatorname{curl}(\mathbf{H}\times\mathbf{r})\,dV - \oint_S (\mathbf{H}\times\mathbf{r})\times\mathbf{H}\cdot d\mathbf{S}.
+\end{equation}
+On further reduction of the volume integral on the right-hand side, and expanding the vector triple product in the last term, we find
+\begin{equation}
+\label{eq:4-78}
+\int_V \mathbf{r}\cdot(\operatorname{curl}\mathbf{H}\times\mathbf{H})\,dV = \tfrac{1}{2}\int_V |\mathbf{H}|^2\,dV - \tfrac{1}{2}\oint_S |\mathbf{H}|^2 \mathbf{r}_j\,dS_j + \oint_S (\mathbf{H}\cdot\mathbf{r})(\mathbf{H}\cdot d\mathbf{S}).
+\end{equation}
+Consequently, if the force-free condition is satisfied inside $V$,
+\begin{equation}
+\label{eq:4-79}
+\int_V |\mathbf{H}|^2\,dV = \oint_S |\mathbf{H}|^2\mathbf{r}\cdot d\mathbf{S} - 2\oint_S (\mathbf{H}\cdot\mathbf{r})(\mathbf{H}\cdot d\mathbf{S}).
+\end{equation}
+Clearly, this condition cannot be met (except trivially) if $\mathbf{H}$ were to vanish on $S$; in other words, while we may be able to cancel the stresses inside a given region, we cannot arrange for its cancellation everywhere.
+
+There is a simple generalization of the solution~(\ref{eq:4-75}) allowing fluid motions. Since the equation of motion for $\mathbf{H}$ can be satisfied if $\mathbf{u}$ is everywhere parallel to $\mathbf{H}$, we take
+\begin{equation}
+\label{eq:4-80}
+\mathbf{u} = \beta\Bigl(\frac{\mu}{4\pi\rho}\Bigr)^{\!1/2}\!\mathbf{H},
+\end{equation}
+where $\beta$ is a constant. If we suppose in addition that the field is force-free, equation~(\ref{eq:4-70}) can be satisfied if
+\begin{equation}
+\label{eq:4-81}
+\operatorname{grad}(\tfrac{1}{2}|\mathbf{u}|^2+V+p/\rho) = 0.
+\end{equation}
+
+\subsection*{(c) \emph{The analogue of the Taylor--Proudman theorem}}
+
+Suppose that a uniform magnetic field $\mathbf{H}$ is impressed on the fluid when there are no motions. Let the system be perturbed; and suppose that a steady state in which the departures from the initial state are small comes to prevail. Let $\mathbf{h}$ denote the perturbation in the magnetic field and $\mathbf{u}$ the velocity; according to equations~(\ref{eq:4-68}) and (\ref{eq:4-69}) these quantities will be governed by
+\begin{equation}
+\label{eq:4-82}
+\mu H_j\frac{\partial h_i}{\partial x_j} = \frac{\partial}{\partial x_i}\Bigl(\frac{\delta p}{\rho}+\frac{\mathbf{H}\cdot\mathbf{h}}{4\pi\rho}+\delta V\Bigr),
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-83}
+H_j\frac{\partial u_i}{\partial x_j} = 0.
+\end{equation}
+From equation~(\ref{eq:4-83}) it follows that \emph{the motions cannot vary in the direction of $\mathbf{H}$}. In other words: \emph{all steady slow motions in the presence of a uniform magnetic field are necessarily two-dimensional}. This is exactly analogous to the Taylor--Proudman theorem for rotating fluids.
+
+\section{The problem of thermal instability in the presence of a magnetic field: general considerations}\label{sec:41}
+
+From the theorems proved in the preceding sections it is apparent that a strong magnetic field impressed on an electrically conducting fluid should have a profound effect on the onset of thermal instability. For convection implies motions which have of necessity a three-dimensional character. Such motions are expressly forbidden for fluids of zero resistivity, as we have seen in \S\,40\,(c); slow steady two-dimensional motions are the only ones that are allowed. A fluid of zero resistivity should, therefore, be thermally stable for all adverse temperature gradients. Moreover, it is clear that a magnetic field will generally have the effect of inhibiting the onset of convection. For, in addition to the dissipation of energy by viscosity, there will be the dissipation by Joule heating. In a steady state, the energy released by the buoyancy force acting on the fluid must balance the energy dissipated by both means (cf.\ \S\,43\,(b) below); and this can be achieved only at higher adverse temperature gradients than are sufficient in the absence of Joule heating.
+
+There is a further factor to remember: it is that in the presence of a magnetic field disturbances can be propagated as Alfv\'en waves. For this reason, the possibility of instability occurring as overstability should not be overlooked.
+
+\section{The perturbation equations}\label{sec:42}
+
+Consider then an infinite, horizontal layer of an electrically conducting fluid upon which is impressed a uniform magnetic field. As in Chapters~II and III, it will suffice to consider the relevant equations of motion and heat conduction on the Boussinesq approximation. The only additional factor we must allow for now is the Lorentz force in the equation of motion. Thus, in place of equation~II~(43) we now have (cf.\ equation~(\ref{eq:4-10}))
+\begin{equation}
+\label{eq:4-84}
+\frac{\partial u_i}{\partial t}+u_j\frac{\partial u_i}{\partial x_j}-\frac{\mu}{4\pi\rho_0}H_j\frac{\partial H_i}{\partial x_j} = -\frac{\partial}{\partial x_i}\Bigl(\frac{p}{\rho_0}+\mu\frac{|\mathbf{H}|^2}{8\pi\rho_0}\Bigr)+\Bigl(1+\frac{\delta\rho}{\rho_0}\Bigr)\mathbf{X}_i+\nu\nabla^2 u_i.
+\end{equation}
+Equations~II~(41), (44), and (46) are unaffected; and we also have the equations
+\begin{equation}
+\label{eq:4-85}
+\frac{\partial H_i}{\partial t}+u_j\frac{\partial H_i}{\partial x_j} = H_j\frac{\partial u_i}{\partial x_j}+\eta\nabla^2 H_i
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-86}
+\frac{\partial H_i}{\partial x_i} = 0.
+\end{equation}
+
+We envisage now an initial state in which a steady adverse temperature gradient $\beta$ is maintained and there are no motions. The characterization of this initial state differs in no respect from that described in Chapter~II, \S\,9; and the equations governing small perturbations can be obtained similarly. Thus, in place of equation~II~(55) we now have
+\begin{equation}
+\label{eq:4-87}
+\frac{\partial u_i}{\partial t} = -\frac{\partial}{\partial x_i}(\delta\varpi)+g\alpha\Theta\lambda_i+\nu\nabla^2 u_i+\frac{\mu H_j}{4\pi\rho_0}\frac{\partial h_i}{\partial x_j},
+\end{equation}
+where $\boldsymbol{\lambda}=(0,0,1)$ is a unit vector in the direction of the vertical, $\mathbf{H}$ is the impressed magnetic field, $\mathbf{h}$ is the perturbation in it, and
+\begin{equation}
+\label{eq:4-88}
+\delta\varpi = \frac{\delta p}{\rho_0}+\mu\frac{\mathbf{H}\cdot\mathbf{h}}{4\pi\rho_0}.
+\end{equation}
+The corresponding linearized forms of equations~(\ref{eq:4-85}) and (\ref{eq:4-86}) are
+\begin{equation}
+\label{eq:4-89}
+\frac{\partial h_i}{\partial t} = H_j\frac{\partial u_i}{\partial x_j}+\eta\nabla^2 h_i
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-90}
+\frac{\partial h_i}{\partial x_i} = 0.
+\end{equation}
+In addition to the foregoing equations, we have (cf.\ equations~II (56) and (57))
+\begin{equation}
+\label{eq:4-91}
+\frac{\partial\Theta}{\partial t} = \beta\lambda_i u_i+\kappa\nabla^2\Theta
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-92}
+\frac{\partial u_i}{\partial x_i} = 0.
+\end{equation}
+
+As in Chapters~II and III, we eliminate the term in $\operatorname{grad}\delta\varpi$ in equation~(\ref{eq:4-87}) by applying the operator $\epsilon_{ilk}\partial/\partial x_l$ to the $k$-component of the equation. The result is (cf.\ equation~II~(67))
+\begin{equation}
+\label{eq:4-93}
+\frac{\partial\omega_i}{\partial t} = g\alpha\epsilon_{ilk}\frac{\partial\Theta}{\partial x_l}\lambda_k+\nu\nabla^2\omega_i+\frac{\mu H_j}{4\pi\rho_0}\frac{\partial\upsilon_i}{\partial x_j},
+\end{equation}
+where in analogy with the vorticity $\omega$ we have defined
+\begin{equation}
+\label{eq:4-94}
+\boldsymbol{\upsilon} = \operatorname{curl}\mathbf{h}.
+\end{equation}
+Apart from a factor $1/(4\pi)$, $\boldsymbol{\upsilon}$ is the current density induced by the perturbation. Taking the curl of equation~(\ref{eq:4-93}) once again (cf.\ equation~II~(73))
+\begin{equation}
+\label{eq:4-95}
+\frac{\partial}{\partial t}\nabla^2 u_i = g\alpha\Bigl(\epsilon_{ilk}\frac{\partial^2\Theta}{\partial x_l\partial x_k}\lambda_k\Bigr)+\nu\nabla^4 u_i+\frac{\mu H_j}{4\pi\rho_0}\frac{\partial}{\partial x_j}\nabla^2 h_i.
+\end{equation}
+Similarly, taking the curl of equation~(\ref{eq:4-89}) we have
+\begin{equation}
+\label{eq:4-96}
+\frac{\partial\upsilon_i}{\partial t} = H_j\frac{\partial\omega_i}{\partial x_j}+\eta\nabla^2\upsilon_i.
+\end{equation}
+Now multiplying equations~(\ref{eq:4-89}), (\ref{eq:4-93}), (\ref{eq:4-95}), and (\ref{eq:4-96}) by $\lambda_i$, we get the following set of equations:
+\begin{equation}
+\label{eq:4-97}
+\frac{\partial h_z}{\partial t} = \eta\nabla^2 h_z + H_j\frac{\partial w}{\partial x_j},
+\end{equation}
+\begin{equation}
+\label{eq:4-98}
+\frac{\partial\zeta}{\partial t} = \eta\nabla^2\zeta + H_j\frac{\partial\xi}{\partial x_j},
+\end{equation}
+\begin{equation}
+\label{eq:4-99}
+\frac{\partial\xi}{\partial t} = \nu\nabla^2\xi+\frac{\mu H_j}{4\pi\rho_0}\frac{\partial\zeta}{\partial x_j},
+\end{equation}
+\begin{equation}
+\label{eq:4-100}
+\frac{\partial}{\partial t}\nabla^2 w = g\alpha\Bigl(\frac{\partial^2\Theta}{\partial x^2}+\frac{\partial^2\Theta}{\partial y^2}\Bigr)+\nu\nabla^4 w+\frac{\mu H}{4\pi\rho_0}\frac{\partial}{\partial x_j}\nabla^2 h_z,
+\end{equation}
+where $w$, $\zeta$, and $\xi/4\pi$ are the $z$-components of the velocity, the vorticity, and the current density, respectively.
+
+Most of our discussions relating to the foregoing equations will be restricted to the case when $\mathbf{H}$ and $\mathbf{g}$ are parallel; the case when they are not will be considered in \S\,47.
+
+When the direction of the impressed magnetic field coincides with the vertical, the relevant equations are:
+\begin{equation}
+\label{eq:4-101}
+\frac{\partial\Theta}{\partial t} = \kappa\nabla^2\Theta+\beta w,
+\end{equation}
+\begin{equation}
+\label{eq:4-102}
+\frac{\partial h_z}{\partial t} = \eta\nabla^2 h_z + H\frac{\partial w}{\partial z},
+\end{equation}
+\begin{equation}
+\label{eq:4-103}
+\frac{\partial\zeta}{\partial t} = \eta\nabla^2\zeta + H\frac{\partial\xi}{\partial z},
+\end{equation}
+\begin{equation}
+\label{eq:4-104}
+\frac{\partial\xi}{\partial t} = \nu\nabla^2\xi + \frac{\mu H}{4\pi\rho_0}\frac{\partial\zeta}{\partial z},
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-105}
+\frac{\partial}{\partial t}\nabla^2 w = g\alpha\Bigl(\frac{\partial^2\Theta}{\partial x^2}+\frac{\partial^2\Theta}{\partial y^2}\Bigr)+\nu\nabla^4 w+\frac{\mu H}{4\pi\rho_0}\frac{\partial}{\partial z}\nabla^2 h_z.
+\end{equation}
+
+\subsection*{(a) \emph{The boundary conditions}}
+
+We must seek solutions of equations~(\ref{eq:4-101})--(\ref{eq:4-105}) which satisfy various boundary conditions; those on $w$ and $\zeta$ have already been described (Chapter~II, \S\,9\,(a)); it remains to consider the boundary conditions on $h_z$ and $\xi$. These latter conditions depend upon the electrical properties of the medium adjoining the fluid. We shall consider two cases.
+
+If the medium adjoining the fluid is electrically non-conducting, then no currents can cross the boundary and we must require that $J_z=0$. Moreover, the field, $\mathbf{h}^{\text{ext}}$, in the electrically non-conducting medium must be that appropriate to a vacuum and be derivable from a potential. Thus,
+\begin{equation}
+\label{eq:4-106}
+\mathbf{h}^{\text{ext}} = \operatorname{grad}\psi, \quad \text{where}\quad \nabla^2\psi = 0;
+\end{equation}
+and on the interface between the fluid and the medium the field must be continuous. We shall call this case~A. Thus, the conditions on $\mathbf{h}$ and $\xi\;(=4\pi J_z)$ are
+\begin{equation}
+\label{eq:4-107}
+\mathbf{h} = \mathbf{h}^{\text{ext}} \quad\text{and}\quad \xi = 0 \quad \text{on the bounding surface in case~A.}
+\end{equation}
+
+If, on the other hand, the medium adjoining the fluid is a perfect conductor, then no magnetic field can cross the boundary and we must require that
+\begin{equation}
+\label{eq:4-108}
+h_z = 0 \quad\text{and}\quad E_x = E_y = 0 \quad\text{on a plane boundary adjoining a}\\ \text{perfect conductor.}
+\end{equation}
+We shall associate the electromagnetic conditions~(\ref{eq:4-108}) with a rigid boundary. In this case, there will be no motions at the boundary and the conditions~(\ref{eq:4-108}) are equivalent to
+\begin{equation}
+\label{eq:4-109}
+h_z = 0 \quad\text{and}\quad J_x = J_y = 0.
+\end{equation}
+We shall call this case~B. From $\operatorname{div}\mathbf{J}=0$ and the fact that $J_x=J_y=0$ on the plane boundary, we conclude that $\partial J_z/\partial z=0$. Thus, the conditions on $h_z$ and $\xi$ are
+\begin{equation}
+\label{eq:4-110}
+h_z = 0 \quad\text{and}\quad \frac{\partial\xi}{\partial z} = 0 \quad \text{on the bounding surface in case~B.}
+\end{equation}
+Since $\partial w/\partial z = 0$ on a rigid boundary, it follows from equation~(\ref{eq:4-102}) that
+\begin{equation}
+\label{eq:4-111}
+\nabla^2 h_z = 0 \quad \text{on the bounding surface in case~B.}
+\end{equation}
+
+\subsection*{(b) \emph{The analysis into normal modes}}
+
+Following our standard procedure, we analyse $w$, $\Theta$, $\zeta$, $h_z$, and $\xi$ into two-dimensional waves; and considering disturbances characterized by a particular wave number $k$, we suppose that $w$, $\Theta$, and $\zeta$ have the forms assumed in equation~II~(90); further, we now suppose that
+\begin{equation}
+\label{eq:4-112}
+\xi = X(z)\exp\{i(k_x x+k_y y)+pt\}, \quad h_z = K(z)\exp\{i(k_x x+k_y y)+pt\}.
+\end{equation}
+Equations~(\ref{eq:4-101})--(\ref{eq:4-105}) become
+\begin{equation}
+\label{eq:4-113}
+p\Theta = \beta W + \kappa\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)\Theta,
+\end{equation}
+\begin{equation}
+\label{eq:4-114}
+pK = H\frac{dW}{dz}+\eta\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)K,
+\end{equation}
+\begin{equation}
+\label{eq:4-115}
+p\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)W = -g\alpha k^2\Theta+\nu\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)^{\!2}W+\frac{\mu H}{4\pi\rho_0}\frac{d}{dz}\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)K,
+\end{equation}
+\begin{equation}
+\label{eq:4-116}
+pX = H\frac{dZ}{dz}+\eta\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)X,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-117}
+pZ = \frac{\mu H}{4\pi\rho_0}\frac{dX}{dz}+\nu\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)Z.
+\end{equation}
+We observe that the equations for $X$ and $Z$ are formally independent of the others.
+
+Measuring length in the unit $d$ and letting
+\begin{equation}
+\label{eq:4-118}
+a = kd, \quad \sigma = pd^2/\nu, \quad p_1 = \nu/\kappa, \quad \text{and}\quad p_2 = \nu/\eta,
+\end{equation}
+we can rewrite equations~(\ref{eq:4-113})--(\ref{eq:4-117}) in the forms
+\begin{equation}
+\label{eq:4-119}
+(D^2-a^2-p_1\sigma)\Theta = -\Bigl(\frac{\beta d^2}{\kappa}\Bigr)W,
+\end{equation}
+\begin{equation}
+\label{eq:4-120}
+(D^2-a^2-p_2\sigma)K = -\Bigl(\frac{Hd}{\eta}\Bigr)DW,
+\end{equation}
+\begin{equation}
+\label{eq:4-121}
+(D^2-a^2)(D^2-a^2-\sigma)W+\Bigl(\frac{\mu Hd}{4\pi\rho\nu}\Bigr)D(D^2-a^2)K = \Bigl(\frac{g\alpha d^2}{\nu}\Bigr)a^2\Theta,
+\end{equation}
+\begin{equation}
+\label{eq:4-122}
+(D^2-a^2-p_2\sigma)X = -\Bigl(\frac{Hd}{\eta}\Bigr)DZ,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-123}
+(D^2-a^2-\sigma)Z = -\Bigl(\frac{\mu Hd}{4\pi\rho\nu}\Bigr)DX,
+\end{equation}
+where $D=d/dz$ ($z$ being measured in the unit $d$).
+
+Solutions of equations~(\ref{eq:4-119})--(\ref{eq:4-123}) must satisfy the boundary conditions given in equations~II~(95) and (96) as well as the further conditions (see equations~(\ref{eq:4-107}), (\ref{eq:4-110}), and (\ref{eq:4-111})):
+\begin{equation}
+\label{eq:4-124}
+X = 0 \quad\text{and}\quad \mathbf{h}\text{ is continuous with an external vacuum field on a non-conducting boundary,}
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-125}
+DX = 0 \quad\text{and}\quad K = 0 \quad \text{on a perfectly conducting boundary.}
+\end{equation}
+
+\subsection*{(c) \emph{The solutions for the horizontal components of the velocity and the magnetic field}}
+
+Equations~(\ref{eq:4-119})--(\ref{eq:4-123}) determine the $z$-components of the various quantities. To complete the solution we must determine the horizontal components of the velocity and the magnetic field. We have already shown in Chapter~II, \S\,10\,(a) how the horizontal components of the velocity can be determined from a knowledge of $w$ and $\zeta$. The horizontal components of the magnetic field can be determined, similarly, from a knowledge of $h_z$ and $\xi$. Since $h_x$ and $h_y$ are related to the vertical components of $\mathbf{h}$ and $\boldsymbol{\upsilon}$ in exactly the same way as $u$ and $v$ are related to the vertical components of $\mathbf{u}$ and $\boldsymbol{\omega}$, it is clear that the required relations are
+\begin{equation}
+\label{eq:4-126}
+h_x = \frac{1}{a^2}\Bigl(\frac{\partial^2 h_z}{\partial x\partial z}+d\frac{\partial\xi}{\partial y}\Bigr)
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-127}
+h_y = \frac{1}{a^2}\Bigl(\frac{\partial^2 h_z}{\partial y\partial z}-d\frac{\partial\xi}{\partial x}\Bigr).
+\end{equation}
+
+\section{The case when instability sets in as stationary convection. A variational principle}\label{sec:43}
+
+As in Chapter~III, we shall first consider the case when instability sets in as stationary convection. Whether instability can set in as overstability will be considered in \S\,46.
+
+When instability sets in as ordinary convection, the marginal state will be characterized by $\sigma=0$ and the basic equations reduce to (cf.\ equations~(\ref{eq:4-119})--(\ref{eq:4-123}))
+\begin{equation}
+\label{eq:4-128}
+(D^2-a^2)\Theta = -\Bigl(\frac{\beta d^2}{\kappa}\Bigr)W,
+\end{equation}
+\begin{equation}
+\label{eq:4-129}
+(D^2-a^2)K = -\Bigl(\frac{Hd}{\eta}\Bigr)DW,
+\end{equation}
+\begin{equation}
+\label{eq:4-130}
+(D^2-a^2)^2 W + \Bigl(\frac{\mu Hd}{4\pi\rho\nu}\Bigr)D(D^2-a^2)K = \Bigl(\frac{g\alpha d^2}{\nu}\Bigr)a^2\Theta,
+\end{equation}
+\begin{equation}
+\label{eq:4-131}
+(D^2-a^2)X = -\Bigl(\frac{Hd}{\eta}\Bigr)DZ,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-132}
+(D^2-a^2)Z = -\Bigl(\frac{\mu Hd}{4\pi\rho\nu}\Bigr)DX.
+\end{equation}
+
+We can eliminate $K$ from equation~(\ref{eq:4-130}) by making use of equation~(\ref{eq:4-129}); thus,
+\begin{equation}
+\label{eq:4-133}
+(D^2-a^2)^2 W - QD^2 W = \Bigl(\frac{g\alpha d^2}{\nu}\Bigr)a^2\Theta,
+\end{equation}
+where (cf.\ equation~(\ref{eq:4-14}))
+\begin{equation}
+\label{eq:4-134}
+Q = \frac{\mu H^2 d^2}{4\pi\rho\nu\eta} = \frac{\mu^2 H^2\sigma d^2}{4\pi\rho\nu}
+\end{equation}
+is a non-dimensional `number'. This number $Q$ plays for problems involving magnetic fields the same role which the Taylor number $T$ plays for problems involving rotation. (Notice that the elimination of $K$ did not require any differentiation.)
+
+We can eliminate $\Theta$ from equation~(\ref{eq:4-133}) by applying the operator $(D^2-a^2)$ and making use of equation~(\ref{eq:4-128}). We obtain
+\begin{equation}
+\label{eq:4-135}
+(D^2-a^2)\bigl[(D^2-a^2)^2-QD^2\bigr]W = -Ra^2 W,
+\end{equation}
+where $R$ is the Rayleigh number.
+
+From equations~(\ref{eq:4-131}) and (\ref{eq:4-132}), we obtain
+\begin{equation}
+\label{eq:4-136}
+\bigl[(D^2-a^2)^2-QD^2\bigr]X = \bigl[(D^2-a^2)^2-QD^2\bigr]Z = 0.
+\end{equation}
+It is apparent that for the problem on hand
+\begin{equation}
+\label{eq:4-137}
+X = 0 \quad\text{and}\quad Z = 0.
+\end{equation}
+In other words: \emph{in this problem the $z$-components of the vorticity and the current density vanish identically.}
+
+Returning to equations~(\ref{eq:4-129}) and (\ref{eq:4-135}), we must seek solutions of these equations which satisfy the boundary conditions:
+\begin{equation}
+\label{eq:4-138}
+W = 0, \quad \bigl[(D^2-a^2)^2-QD^2\bigr]W = 0 \quad \text{for}\quad z = 0\;\text{and}\;1,
+\end{equation}
+\begin{equation}
+\label{eq:4-139}
+\left.\begin{array}{l}
+\emph{either}\quad DW = 0 \quad\text{(on a rigid surface)}\\
+\emph{or}\quad D^2 W = 0 \quad\text{(on a free surface)}
+\end{array}\right\}
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-140}
+\left.\begin{array}{l}
+\emph{either}\quad\text{$\mathbf{h}$ is continuous with an external field}\\
+\quad\text{derived from a potential with a spatial dependence}\\
+\quad e^{ik_j x_j}\;\text{(on a non-conducting boundary)}\\
+\emph{or}\quad K = 0\;\text{(on a perfectly conducting boundary)}
+\end{array}\right\}
+\end{equation}
+
+Since neither equation~(\ref{eq:4-135}) nor the boundary conditions~(\ref{eq:4-138}) and (\ref{eq:4-139}) involve $K$, it is clear that \emph{the underlying characteristic value problem can be carried out independently of the boundary conditions on the magnetic field}. However, the boundary conditions~(\ref{eq:4-140}) are needed for a complete solution of the problem.
+
+\subsection*{(a) \emph{A variational principle}}
+
+As in the case of similar characteristic value problems considered in Chapters~II and III, the problem presented by equation~(\ref{eq:4-135}) and the boundary conditions~(\ref{eq:4-138}) and (\ref{eq:4-139}) can also be formulated in terms of a variational principle.
+
+Letting
+\begin{equation}
+\label{eq:4-141}
+F = (D^2-a^2)^2 W - QD^2 W,
+\end{equation}
+we can rewrite the differential equation governing $W$ in the form
+\begin{equation}
+\label{eq:4-142}
+(D^2-a^2)F = -Ra^2 W.
+\end{equation}
+The boundary conditions~(\ref{eq:4-138}) require that
+\begin{equation}
+\label{eq:4-143}
+F = 0 \quad\text{and}\quad W = 0 \quad \text{for}\quad z = 0\;\text{and}\;1.
+\end{equation}
+
+Now multiply equation~(\ref{eq:4-142}) by $F$ and integrate over the range of $z$. After an integration by parts, we obtain
+\begin{equation}
+\label{eq:4-144}
+\int_0^1 \bigl[(DF)^2+a^2 F^2\bigr]\,dz = Ra^2\int_0^1 WF\,dz.
+\end{equation}
+The integral on the right-hand side is
+\begin{equation}
+\label{eq:4-145}
+\int_0^1 WF\,dz = \int_0^1 W\bigl[(D^2-a^2)^2 W - QD^2 W\bigr]\,dz.
+\end{equation}
+After further integrations by parts, this becomes (cf.\ similar reductions in equations~II~(120) and (121) and equation~III~(110))
+\begin{equation}
+\label{eq:4-146}
+\int_0^1 WF\,dz = \int_0^1\bigl\{[(D^2-a^2)W]^2+Q(DW)^2\bigr\}\,dz.
+\end{equation}
+The result of multiplying equation~(\ref{eq:4-142}) by $F$ and integrating over $z$ is
+\begin{equation}
+\label{eq:4-147}
+R = \frac{\displaystyle\int_0^1 \bigl[(DF)^2+a^2 F^2\bigr]\,dz}{a^2\displaystyle\int_0^1\bigl\{[(D^2-a^2)W]^2+Q(DW)^2\bigr\}\,dz}.
+\end{equation}
+
+This formula expresses $R$ as the ratio of two positive definite integrals; and it can be shown, as in the other cases we have considered, that equation~(\ref{eq:4-147}) provides the basis for a variational treatment of the problem. Indeed, \emph{the critical Rayleigh number for the onset of instability as stationary convection is the absolute minimum of the quantity on the right-hand side of equation~(\ref{eq:4-147})}.
+
+\subsection*{(b) \emph{The thermodynamic significance of the variational principle}}
+
+In Chapter~II, \S\,14 we showed that for the simple B\'enard problem, the quantity which is minimized in the variational treatment of the problem expresses, simply, the equality of the rate of dissipation of energy by viscosity and the rate of liberation of energy by the buoyancy force. In Chapter~III, \S\,33\,(a) we showed that the same thing was true when the system was subject to rotation. In both these cases viscosity provided the only source of irreversible dissipation of energy. But when a magnetic field is present, there is an additional source for irreversible dissipation of energy, namely, Joule heating. Under these circumstances, we should expect that the condition for marginal stability expresses the equality of the rate of dissipation of energy by both means with the rate of liberation of energy by the buoyancy force. We shall now show that this is indeed the case.
+
+Since in the present problem, as in the simple B\'enard problem, the $z$-component of vorticity vanishes, the expression obtained in Chapter~II, \S\,14 for the average rate of viscous dissipation of energy in a unit column of the fluid is applicable. Therefore (cf.\ equations~II (177) and (180))
+\begin{equation}
+\label{eq:4-148}
+\epsilon_v = \frac{\rho\nu}{4a^2 d^2}\int_0^1 \bigl[(D^2-a^2)W\bigr]^2\,dz,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-149}
+\epsilon_v = \frac{g\alpha\kappa}{4\beta d^2}\int_0^1 \bigl[(D\Theta)^2+a^2\Theta^2\bigr]\,dz.
+\end{equation}
+On the other hand, according to equations~(\ref{eq:4-133}) and (\ref{eq:4-141}),
+\begin{equation}
+\label{eq:4-150}
+\Theta = -\frac{\nu}{g\alpha d^2 a^2}F.
+\end{equation}
+In terms of $F$, the expression for $\epsilon_v$ is
+\begin{equation}
+\label{eq:4-151}
+\epsilon_v = \frac{\rho\kappa\nu^2}{4g\beta\alpha^2 d^4}\int_0^1 \bigl[(DF)^2+a^2 F^2\bigr]\,dz.
+\end{equation}
+
+It remains to evaluate the average rate of dissipation of energy $\epsilon_\eta$ by Joule heating in a unit column of the fluid; this is given by
+\begin{equation}
+\label{eq:4-152}
+\epsilon_\eta = \frac{1}{\sigma d^2}\int_0^1 \langle|\mathbf{J}|^2\rangle\,dz = \frac{\mu\eta}{4\pi d^2}\int_0^1 \langle|\operatorname{curl}\mathbf{h}|^2\rangle\,dz.
+\end{equation}
+
+It should be noted that we are including under Joule heating only the volume integral over $|\mathbf{J}|^2/\sigma$ on the right-hand side of equation~(\ref{eq:4-46}). Of the remaining integrals in equation~(\ref{eq:4-46}), the second over the dyadic $\nabla\mathbf{u}$ represents no real loss (or gain) since this same term occurs with the opposite sign in the corresponding expression for the rate of change of the kinetic energy; and the surface integral over the Poynting flux clearly vanishes when averaged. However, the last surface integral will not in general vanish: it will vanish only when the boundary conditions are those appropriate to a rigid surface.
+
+In the case under discussion $J_z=0$, and we can write the expression for $\epsilon_\eta$ in the form
+\begin{equation}
+\label{eq:4-153}
+\epsilon_\eta = \frac{\mu\eta}{4\pi d^2}\int_0^1\left\langle\Bigl(\frac{\partial h_y}{\partial z}-\frac{\partial h_z}{\partial y}\Bigr)^{\!2}+\Bigl(\frac{\partial h_x}{\partial z}-\frac{\partial h_z}{\partial x}\Bigr)^{\!2}\right\rangle dz.
+\end{equation}
+In the present connexion there is no loss of generality if we suppose that the expression for $h_z$ (corresponding to the expression~II~(172) for $W$) is
+\begin{equation}
+\label{eq:4-154}
+h_z = K(z)\cos a_x x\cos a_y y.
+\end{equation}
+Since the $z$-component of the current density is zero, the expressions for $h_x$ and $h_y$ are:
+\begin{equation}
+\label{eq:4-155}
+\left.\begin{array}{l}
+h_x = \dfrac{1}{a^2}\dfrac{\partial^2 h_z}{\partial x\partial z} = -\dfrac{DK}{a^2}a_x\sin a_x x\cos a_y y, \\[8pt]
+h_y = \dfrac{1}{a^2}\dfrac{\partial^2 h_z}{\partial y\partial z} = -\dfrac{DK}{a^2}a_y\cos a_x x\sin a_y y.
+\end{array}\right\}
+\end{equation}
+Inserting these expressions for the components of $\mathbf{h}$ in equation~(\ref{eq:4-153}), we obtain
+\begin{multline}
+\label{eq:4-156}
+\epsilon_\eta = \frac{\mu\eta}{4\pi d^2 a^4}\int_0^1\bigl\{[a_y\cos a_x x\sin a_y y(D^2-a^2)K]^2 + {} \\
+{} + [a_x\sin a_x x\cos a_y y(D^2-a^2)K]^2\bigr\}\,dz.
+\end{multline}
+We thus obtain
+\begin{equation}
+\label{eq:4-157}
+\epsilon_\eta = \frac{\mu\eta}{16\pi d^2 a^2}\int_0^1 \bigl[(D^2-a^2)K\bigr]^2\,dz.
+\end{equation}
+
+Now making use of equation~(\ref{eq:4-129}) and recalling the definition of $Q$, we have
+\begin{equation}
+\label{eq:4-158}
+\epsilon_\eta = \frac{\rho\nu}{4a^2 d^2}Q\int_0^1 (DW)^2\,dz.
+\end{equation}
+
+The average rate of dissipation of energy, by viscosity and by Joule heating, in a unit column of the fluid, is obtained by adding the contributions given by equations~(\ref{eq:4-148}) and (\ref{eq:4-158}). Thus,
+\begin{equation}
+\label{eq:4-159}
+\epsilon_v+\epsilon_\eta = \frac{\rho\nu}{4a^2 d^2}\int_0^1 \bigl\{[(D^2-a^2)W]^2+Q(DW)^2\bigr\}\,dz.
+\end{equation}
+By equating this expression for $\epsilon_v+\epsilon_\eta$ with that for $\epsilon_v$ given in equation~(\ref{eq:4-151}), we obtain
+\begin{equation}
+\label{eq:4-160}
+R = \frac{\displaystyle\int_0^1\bigl[(DF)^2+a^2 F^2\bigr]\,dz}{a^2\displaystyle\int_0^1\bigl\{[(D^2-a^2)W]^2+Q(DW)^2\bigr\}\,dz}.
+\end{equation}
+But this is exactly the same expression for $R$ which is minimized in the variational method. The general principle formulated in Chapter~III, \S\,33 is, therefore, valid if we include with the dissipation of energy by viscosity (which is explicitly mentioned) all manners of irreversible dissipation of energy which can take place.
+
+\section{Solutions for the case when instability sets in as stationary convection}\label{sec:44}
+
+We shall again obtain the solution for the following three cases: when both bounding surfaces are free; when both bounding surfaces are rigid; and when one bounding surface is rigid and the other is free.
+
+\subsection*{(a) \emph{The solution for two free boundaries}}
+
+In this case the boundary conditions~(\ref{eq:4-138}) and (\ref{eq:4-139}) require
+\begin{equation}
+\label{eq:4-161}
+W = D^2 W = D^4 W = 0 \quad \text{for}\quad z = 0\;\text{and}\;1.
+\end{equation}
+From the equation satisfied by $W$ (namely~(\ref{eq:4-135})), it follows that $D^6 W=0$ for $z=0$ and $1$. By differentiating equation~(\ref{eq:4-135}) even
+%
+\begin{table}[t]
+\centering
+\caption{Critical Rayleigh numbers and the wave numbers of the unstable modes at marginal stability for the onset of stationary convection in the case when both bounding surfaces are free}
+\label{tab:XIV}
+\smallskip
+\begin{tabular}{r@{\quad}r@{\quad}r@{\quad}r@{\quad}r@{\quad}r@{\quad}r@{\quad}r}
+\hline
+$Q$ & $a_c$ & $R_c$ & $R_c/R_c^{(0)}$ & $Q$ & $a_c$ & $R_c$ & $R_c/R_c^{(0)}$ \\
+\hline
+0 & 2.233 & $657{\cdot}511$ & 1.000 & 6{,}500 & 8.030 & $86343{\cdot}6$ & $131{\cdot}5$ \\
+5 & 2.43 & $793{\cdot}73$ & 1.115 & 7{,}000 & 8.190 & $80442{\cdot}0$ & $122{\cdot}5$ \\
+10 & 2.99 & $923{\cdot}070$ & 1.4039 & 7{,}500 & 8.190 & $91705{\cdot}7$ & $139{\cdot}7$ \\
+20 & 2.855 & $1154{\cdot}19$ & 1.755 & 8{,}500 & 8.290 & $97256{\cdot}1$ & $148{\cdot}0$ \\
+50 & 3.19 & $1754{\cdot}6$ & 2.670 & & & & \\
+100 & 3.676 & $3053{\cdot}21$ & 4.645 & & & & \\
+150 & 3.996 & $3437{\cdot}67$ & 5.231 & & & & \\
+200 & 4.310 & $4358{\cdot}49$ & 6.630 & & & & \\
+300 & 4.545 & $5190{\cdot}5$ & 7.893 & & & & \\
+400 & 4.790 & $6433{\cdot}7$ & 9.785 & & & & \\
+500 & 5.10 & $8000{\cdot}0$ & 12.17 & & & & \\
+700 & 5.321 & $11383{\cdot}2$ & 17.32 & & & & \\
+1{,}000 & 5.86 & $14684$ & $22{\cdot}3$ & & & & \\
+1{,}500 & 6.53 & $30139$ & $45{\cdot}8$ & & & & \\
+2{,}000 & 6.55 & $30137$ & $45{\cdot}84$ & & & & \\
+2{,}500 & 7.02 & $52378$ & $79{\cdot}7$ & & & & \\
+3{,}000 & 7.42 & $57341{\cdot}6$ & $87{\cdot}2$ & & & & \\
+4{,}000 & 7.94 & $73418{\cdot}1$ & $111{\cdot}7$ & & & & \\
+4{,}500 & 7.94 & $85299{\cdot}5$ & $129{\cdot}8$ & & & & \\
+5{,}000 & 7.717 & $68597{\cdot}3$ & $104{\cdot}4$ & & & & \\
+5{,}500 & 7.839 & $74931{\cdot}4$ & $114{\cdot}0$ & & & & \\
+\hline
+\end{tabular}
+\end{table}
+%
+numbers of times, we can successively conclude that all the even derivatives of $W$ must vanish for $z=0$ and $1$. The proper solution for $W$ appropriate for the lowest mode is therefore
+\begin{equation}
+\label{eq:4-162}
+W = A\sin\pi z,
+\end{equation}
+where $A$ is a constant. Substitution of the solution~(\ref{eq:4-162}) in equation~(\ref{eq:4-135}) leads to the characteristic equation
+\begin{equation}
+\label{eq:4-163}
+R = \frac{\pi^2+a^2}{a^2}\bigl[(\pi^2+a^2)^2+\pi^2 Q\bigr].
+\end{equation}
+Letting
+\begin{equation}
+\label{eq:4-164}
+a^2 = \pi^2 x,
+\end{equation}
+equation~(\ref{eq:4-163}) becomes
+\begin{equation}
+\label{eq:4-165}
+R = \pi^4\frac{1+x}{x}\Bigl[(1+x)^2+\frac{Q}{\pi^2}\Bigr].
+\end{equation}
+As a function of $x$, $R$ given by equation~(\ref{eq:4-165}) attains its minimum when
+\begin{equation}
+\label{eq:4-166}
+2x^3+3x^2 = 1+Q/\pi^2.
+\end{equation}
+In some ways it is remarkable that this cubic equation is the same as the
+
+\figurePlaceholder{39}{The variation of the critical Rayleigh number $R_c$ for the onset of instability as a function of $Q$ for the three cases (i) both bounding surfaces free (curve labelled $aa$), (ii) one bounding surface free and the other rigid (curve labelled $b$), and (iii) both bounding surfaces rigid (curve labelled $cc$).}
+
+one which occurs in the corresponding rotational problem (see equation~III~(131)); the parameter $Q/\pi^2$ now plays the role of $T/\pi^4$.
+
+With $x$ determined as a solution of equation~(\ref{eq:4-166}), equation~(\ref{eq:4-165}) will give the required critical Rayleigh number $R_c$. Values of $R_c$ determined in this fashion for various values of $Q$ are given in Table~\ref{tab:XIV}; the wave numbers characterizing the marginal states are also given. The results are further illustrated in Figs.~39 and 40. The inhibiting effect of the magnetic field on the onset of instability is apparent from these results.
+
+For $Q/\pi^2$ sufficiently large, the required root of equation~(\ref{eq:4-166}) tends to
+\begin{equation}
+\label{eq:4-167}
+x_{\min} \to (Q/2\pi^2)^{1/3} \quad (Q\to\infty).
+\end{equation}
+The corresponding asymptotic behaviours of $R_c$ and $a_{\min}$ are
+\begin{equation}
+\label{eq:4-168}
+R_c \to \pi^2 Q \quad\text{and}\quad a_{\min} \to (\tfrac{1}{2}\pi^4 Q)^{1/6}.
+\end{equation}
+
+\figurePlaceholder{40}{The variation of the wave number $a_c$ (in the unit $1/d$) at the onset of instability as a function of $Q$ for the three cases (i) both bounding surfaces free (curve labelled $aa$), (ii) one bounding surface free and the other rigid (curve labelled $b$), and (iii) both bounding surfaces rigid (curve labelled $cc$).}
+
+Substituting for $R$ and $Q$ in accordance with their definitions, we find that the formula which determines the critical temperature gradient for the onset of stationary convection, when $Q\to\infty$, is
+\begin{equation}
+\label{eq:4-169}
+g\alpha\beta_c \to \pi^2\frac{\mu^2 H^2\sigma}{\rho}\kappa d^{-4} \quad (H\to\infty,\;\text{or}\;\sigma\to\infty,\;\text{or}\;\nu\to 0).
+\end{equation}
+We observe that \emph{in this limit, the critical temperature gradient has become independent of the kinematic viscosity.} We shall return to the meaning of this result in \S\,45.
+
+\subsection*{(b) \emph{The solution for two rigid boundaries}}
+
+We shall obtain the solution for this case by the variational method. In view of the symmetry of this problem with respect to the bounding planes, we shall find it convenient to translate the origin of $z$ to midway between the two planes. The fluid will then be confined between $z=\pm\tfrac{1}{2}$ and we shall have to seek solutions of equations~(\ref{eq:4-141}) and (\ref{eq:4-142}) which satisfy the boundary conditions
+\begin{equation}
+\label{eq:4-170}
+F = W = DW = 0 \quad \text{for}\quad z = \pm\tfrac{1}{2}.
+\end{equation}
+
+It is apparent from the equations and the boundary conditions that the proper solutions of the problem fall into two non-combining groups of even and odd solutions, respectively; and it is also clear that the lowest
+
+\begin{table}[t]
+\centering
+\caption{Critical Rayleigh numbers and related constants when both bounding surfaces are rigid and the onset of instability is as stationary convection}
+\label{tab:XV}
+\smallskip
+\begin{tabular}{r@{\qquad}c@{\qquad}c@{\qquad}c@{\qquad}c}
+\hline
+& \multicolumn{4}{c}{$R_c$} \\
+\cline{2-5}
+& \emph{First} & \emph{Second} & \emph{Third} & \\
+$Q$ & \emph{approxi-} & \emph{approxi-} & \emph{approxi-} & \multirow{2}{*}{$F=\cos\pi z+A\bigl(1+\cos 2\pi z\bigr)$} \\
+& \emph{mation} & \emph{mation} & \emph{mation} & \\
+\hline
+0 & 3.13 & $1715{\cdot}1$ & & $1707{\cdot}8$ \\
+10 & 3.25 & $1953{\cdot}7$ & $1946{\cdot}0$ & $1945{\cdot}8$ \\
+50 & 3.68 & $2831{\cdot}4$ & $2804{\cdot}8$ & \\
+100 & 4.09 & $3797{\cdot}6$ & $3752{\cdot}8$ & $3757{\cdot}3$ \\
+200 & 4.645 & $5499{\cdot}0$ & & $5489{\cdot}6$ \\
+300 & 5.10 & $7370{\cdot}4$ & & \\
+500 & 5.80 & $11216$ & & $11234$ \\
+1{,}000 & 6.53 & $17116$ & & $17103$ \\
+2{,}000 & 6.53 & $30139$ & $30127$ & \\
+3{,}000 & 7.50 & $54271$ & $54200$ & \\
+4{,}000 & 7.94 & $73418{\cdot}5$ & & \\
+4{,}500 & 7.94 & $85242{\cdot}8$ & & \\
+6{,}000 & 7.94 & $128405$ & $104560$ & \\
+8{,}000 & 8.35 & $162159$ & $124599$ & \\
+10{,}000 & 8.66 & $114523$ & $114511$ & $114599$ \\
+\hline
+\end{tabular}
+\end{table}
+%
+characteristic values of $R$ occur among the even solutions. We shall accordingly consider such solutions.
+
+Since $F$ is assumed to be even and is required to vanish at $z=\pm\tfrac{1}{2}$, we can expand it in a cosine series in the form
+\begin{equation}
+\label{eq:4-171}
+F = \sum A_m\cos\bigl[(2m+1)\pi z\bigr],
+\end{equation}
+where the summation over $m$ may be assumed to run from zero to infinity; but this is not necessary since we shall consider the coefficients $A_m$ as variational parameters.
+
+With the chosen form of $F$, the equation to be solved for $W$ is
+\begin{equation}
+\label{eq:4-172}
+\bigl[(D^2-a^2)^2-QD^2\bigr]W = \sum A_m\cos\bigl[(2m+1)\pi z\bigr].
+\end{equation}
+Expressing $W$ as a sum in the form
+\begin{equation}
+\label{eq:4-173}
+W = \sum A_m W_m,
+\end{equation}
+we have to solve
+\begin{equation}
+\label{eq:4-174}
+\bigl[(D^2-a^2)^2-QD^2\bigr]W_m = \cos\bigl[(2m+1)\pi z\bigr].
+\end{equation}
+
+The general solution of this equation is
+\begin{equation}
+\label{eq:4-175}
+W_m = \gamma_{2m+1}\cos\bigl[(2m+1)\pi z\bigr]+\sum_{j=1}^{2}B_j^{(m)}\cosh q_j z,
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-176}
+\frac{1}{\gamma_{2m+1}} = \bigl[(2m+1)^2\pi^2+a^2\bigr]^2+(2m+1)^2\pi^2 Q;
+\end{equation}
+the $B_j^{(m)}$'s $(j=1,2)$ are constants of integration; and the $q_j$'s $(j=1,2)$ are the roots of the quadratic equation
+\begin{equation}
+\label{eq:4-177}
+(q^2-a^2)^2-Qq^2 = 0.
+\end{equation}
+According to equation~(\ref{eq:4-177}),
+\begin{equation}
+\label{eq:4-178}
+q_1 = \tfrac{1}{2}[\sqrt{(Q+4a^2)}+\sqrt{Q}] \quad\text{and}\quad q_2 = \tfrac{1}{2}[\sqrt{(Q+4a^2)}-\sqrt{Q}];
+\end{equation}
+an identity which follows from the same equation is
+\begin{equation}
+\label{eq:4-179}
+\frac{1}{\gamma_{2m+1}} = \prod_{j=1}^{2}\bigl[(2m+1)^2\pi^2+q_j^2\bigr].
+\end{equation}
+
+The constants $B_j^{(m)}$ in the solution~(\ref{eq:4-175}) are determined by the boundary conditions on $W_m$ which require that $W_m$ and $DW_m$ vanish for $z=\pm\tfrac{1}{2}$. These conditions give
+\begin{equation}
+\label{eq:4-180}
+\left.\begin{array}{l}
+\displaystyle\sum_{j=1}^{2}B_j^{(m)}\cosh\tfrac{1}{2}q_j = 0 \\[6pt]
+\displaystyle\sum_{j=1}^{2}B_j^{(m)}q_j\sinh\tfrac{1}{2}q_j = (-1)^m(2m+1)\pi\gamma_{2m+1}
+\end{array}\right\}
+\end{equation}
+
+On solving these equations, we find
+\begin{equation}
+\label{eq:4-181}
+\left.\begin{array}{l}
+B_1^{(m)} = +(-1)^m(2m+1)\pi\gamma_{2m+1}\,\Delta\,\operatorname{sech}\tfrac{1}{2}q_1 \\[4pt]
+B_2^{(m)} = -(-1)^m(2m+1)\pi\gamma_{2m+1}\,\Delta\,\operatorname{sech}\tfrac{1}{2}q_2
+\end{array}\right\}
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-182}
+\Delta = \frac{1}{q_1\tanh\tfrac{1}{2}q_1-q_2\tanh\tfrac{1}{2}q_2}.
+\end{equation}
+
+Substituting for $F$ and $W$ in accordance with equations~(\ref{eq:4-171}), (\ref{eq:4-173}), and (\ref{eq:4-175}) in equation~(\ref{eq:4-142}), and integrating over the range of $z$, we obtain
+\begin{equation}
+\label{eq:4-183}
+\sum A_m c_{2m+1}\cos\bigl[(2m+1)\pi z\bigr] = Ra^2\sum A_m\Bigl[\gamma_{2m+1}\cos(2m+1)\pi z+\sum_{j=1}^{2}B_j^{(m)}\cosh q_j z\Bigr],
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-184}
+c_{2m+1} = (2m+1)^2\pi^2+a^2.
+\end{equation}
+Multiplying equation~(\ref{eq:4-183}) by $\cos[(2n+1)\pi z]$ and integrating over the range of $z$, we obtain
+\begin{equation}
+\label{eq:4-185}
+\tfrac{1}{2}c_{2n+1}\,A_n = Ra^2\Bigl[\tfrac{1}{2}\gamma_{2n+1}A_n+\sum_m (n|m)A_m\Bigr],
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-186}
+(n|m) = \sum_{j=1}^{2}B_j^{(m)}\int_{-1/2}^{1/2}\cosh q_j z\cos(2n+1)\pi z\,dz
+\end{equation}
+\begin{equation*}
+= 2(2n+1)\pi(-1)^n\sum_{j=1}^{2}\frac{B_j^{(m)}\cosh\tfrac{1}{2}q_j}{(2n+1)^2\pi^2+q_j^2}.
+\end{equation*}
+
+Equations~(\ref{eq:4-185}) provide a set of linear homogeneous equations for the constants $A_m$; this same set of equations ensures that the expression~(\ref{eq:4-147}) for $R$ is a minimum for all variations of the $A_m$'s which preserve the constancy of~(\ref{eq:4-146}). In this latter formulation, $Ra^2$ is the Lagrangian undetermined multiplier.
+
+The determinant of the system of equations represented by~(\ref{eq:4-185}) must vanish; and this provides the characteristic equation for $R$; thus
+\begin{equation}
+\label{eq:4-187}
+\left|\tfrac{1}{2}\Bigl(\frac{c_{2n+1}}{Ra^2}-\gamma_{2n+1}\Bigr)\delta_{nm}-(n|m)\right| = 0.
+\end{equation}
+
+Substituting for the $B_j^{(m)}$'s in accordance with equations~(\ref{eq:4-181}), and making use of the identity~(\ref{eq:4-179}), we find after some minor reductions that the expression for $(n|m)$ becomes
+\begin{equation}
+\label{eq:4-188}
+(n|m) = (-1)^{m+n}\,2(2n+1)(2m+1)\pi^2\gamma_{2m+1}\,\Delta\,(q_1^2-q_2^2).
+\end{equation}
+Inserting for $\Delta$, $q_1^2$, and $q_2^2$ their values, we have
+\begin{multline}
+\label{eq:4-189}
+(n|m) = (-1)^{m+n}\,2(2n+1)(2m+1)\pi^2\gamma_{2m+1}\gamma_{2n+1} \times {} \\
+{}\times \frac{\sqrt{Q(Q+4a^2)}}{q_1\tanh\tfrac{1}{2}q_1-q_2\tanh\tfrac{1}{2}q_2}.
+\end{multline}
+This expression for $(n|m)$ is manifestly symmetric in $n$ and $m$.
+
+By solving the determinantal equation~(\ref{eq:4-187}) by including successively more rows and columns, we can evaluate the required characteristic values of $R$ with increasing precision. The results of such calculations are summarized in Table~\ref{tab:XV} and illustrated in Figs.~39 and 40. It will be seen that in no case is it really necessary to go to higher than the second approximation.
+
+\subsection*{(c) \emph{The solution for one rigid and one free boundary}}
+
+In this case the conditions to be satisfied on the two bounding surfaces are different. However, the solution for this case can be reduced to that
+
+\begin{table}[t]
+\centering
+\caption{Critical Rayleigh numbers and related constants for the case when one bounding surface is rigid and the other is free and the onset of instability is as stationary convection}
+\label{tab:XVI}
+\smallskip
+\begin{tabular}{r@{\qquad}c@{\quad}c@{\qquad}c@{\quad}c}
+\hline
+& \multicolumn{2}{c}{$R_c$} & & \\
+\cline{2-3}
+& \emph{First} & \emph{Second} & & \\
+$Q$ & \emph{approxi-} & \emph{approxi-} & $a_c$ & $A$ \\
+& \emph{mation} & \emph{mation$^\dagger$} & & \\
+\hline
+0 & 2.68 & $1112{\cdot}7$ & $1100{\cdot}25$ & $0{\cdot}2943$ \\
+2.5 & 2.75 & $1129{\cdot}4$ & & $0{\cdot}2016$ \\
+12.5 & 2.97 & $1428{\cdot}3$ & $1415{\cdot}5$ & $0{\cdot}1995$ \\
+25 & 3.17 & $1717{\cdot}7$ & $1694{\cdot}4$ & $0{\cdot}1990$ \\
+50 & 3.45 & $2237{\cdot}3$ & $2177{\cdot}0$ & $0{\cdot}1616$ \\
+125 & 4.10 & $3560{\cdot}2$ & $3358{\cdot}1$ & $0{\cdot}1336$ \\
+250 & 4.50 & $5507{\cdot}3$ & $5113{\cdot}3$ & $0{\cdot}1085$ \\
+500 & 5.10 & $9318{\cdot}7$ & $9304{\cdot}5$ & $0{\cdot}0865$ \\
+1{,}000 & 5.75 & $10433$ & $10410$ & $0{\cdot}0671$ \\
+1{,}500 & 6.09 & $24566$ & & $0{\cdot}0575$ \\
+2{,}000 & 6.50 & $28893$ & $28879$ & $0{\cdot}0516$ \\
+2{,}500 & 6.75 & $35948$ & $35044$ & $0{\cdot}0472$ \\
+5{,}000 & 7.65 & $64861$ & $64847$ & $0{\cdot}0359$ \\
+10{,}000 & 8.65 & $122155$ & $122140$ & $0{\cdot}0270$ \\
+\hline
+\end{tabular}
+
+\smallskip
+$\dagger$ This approximation was obtained with the trial function $F = \sin 2\pi z + A(\sin\pi z + \sin 3\pi z)$.
+\end{table}
+%
+of case~(\ref{eq:4-170}) above. To see this, consider odd (instead of even) solutions for $W$ satisfying the boundary conditions appropriate to case~(b). For it is clear that an odd solution for $W$ satisfying the boundary conditions appropriate to case~(b) at $z=0$, the boundary conditions on $W$ appropriate to a free surface are satisfied. Consequently, a solution with $W$ odd, suitable for case~(b) and applicable to a cell depth $d$, provides a solution for case~(c) applicable to a cell depth $\tfrac{1}{2}d$, a Rayleigh number sixteen times smaller, and a $Q$-number four times smaller.
+
+By considering odd solutions for $W$ appropriate to case~(b), we can again obtain the solution by the variational method. Thus by expanding $F$ in a sine series of the form
+\begin{equation}
+\label{eq:4-190}
+F = \sum A_m\sin 2m\pi z,
+\end{equation}
+the solution can be found by following a procedure identical to that described in \S\,(b) above. In this manner, we obtain the secular determinant
+\begin{equation}
+\label{eq:4-191}
+\left|\tfrac{1}{2}\Bigl(\frac{c_{2m}}{Ra^2}-\gamma_{2m}\Bigr)\delta_{nm}-(n|m)\right| = 0,
+\end{equation}
+where $c_{2m}$ and $\gamma_{2m}$ are defined as in equations~(\ref{eq:4-176}) and (\ref{eq:4-184}) (with $2m$ replacing $2m+1$) and $(n|m)$ is now given by (cf.\ equation~(\ref{eq:4-189}))
+\begin{equation}
+\label{eq:4-192}
+(n|m) = (-1)^{m+n}\,8nm\pi^2\gamma_{2m}\gamma_{2n}\frac{\sqrt{Q(Q+4a^2)}}{q_1\coth\tfrac{1}{2}q_1-q_2\coth\tfrac{1}{2}q_2}.
+\end{equation}
+
+The secular equation~(\ref{eq:4-191}) has been solved in various approximations. The results of such calculations are summarized in Table~\ref{tab:XVI} and illustrated in Figs.~39 and 40.
+
+\subsection*{(d) \emph{Cell patterns}}
+
+Since the $z$-component of the vorticity vanishes, the expressions for the horizontal components of the velocity in terms of $W(z)$ are formally the same as in the simple B\'enard problem; and for the case of two free surfaces, even $W(z)$ is the same. The cell patterns which can emerge are, therefore, the same as those described in Chapter~II, \S\,16. There is, however, one important quantitative difference: the actual wave numbers appropriate for the marginal state are different; they depend on $Q$, and as $Q$ increases, the cells tend to become narrow and elongated; this is illustrated in Fig.~41.
+
+\figurePlaceholder{41}{The streamlines in a hexagonal cell in the planes of symmetry at the onset of instability for the first odd mode for various values of $Q$: (a) $Q=12{\cdot}5$, $a_c=2{\cdot}97$; (b) $Q=1{,}000$, $a_c=5{\cdot}75$; (c) $Q=40{,}000$, $a_c=10{\cdot}48$. Normalized to unity at the centre, the approximate streamlines are for the values 0.9, 0.8, \ldots, 0.1, respectively. The patterns on the top are in the plane of symmetry normal to a pair of opposite sides of the hexagon and the patterns on the bottom are in the plane of symmetry through two opposite vertices of the hexagon. Notice the progressive elongation of the cells with increasing $Q$ (compare with Fig.~8).}
+
+\section{The origin of the $\pi^2Q$-law and an invariant}\label{sec:45}
+
+From the results for the three sets of boundary conditions illustrated in Figs.~39 and 40, it is apparent that all three cases exhibit the same general features. This is particularly true of the asymptotic dependence on $Q$ of the critical Rayleigh number and the associated wave number. For the case of two free boundaries, the laws
+\begin{equation}
+\label{eq:4-193}
+R_c \to \pi^2 Q \quad\text{and}\quad a_c \to (\tfrac{1}{2}\pi^4 Q)^{1/6}
+\end{equation}
+follow directly from the solution of the characteristic value problem. From the results of the calculations for the two other cases, it appears that the same power laws with the same constants of proportionality hold for them also. We shall now examine the physical origin of these laws.
+
+We have seen in \S\,44\,(a) (see equation~(\ref{eq:4-169})) that the proportionality of $R$ and $Q$ as $Q\to\infty$, implies that in this limit the critical temperature gradient for the onset of instability becomes independent of the viscosity and depends instead on the coefficient of electrical conductivity and the strength of the magnetic field. From this it would appear that the origin of the laws~(\ref{eq:4-193}) must lie in the circumstance that when $Q\to\infty$ (i.e.\ when $H\to\infty$, or $\sigma\to\infty$, or $\nu\to 0$) the dissipation of energy $\epsilon_\eta$ by Joule heating predominates the dissipation of energy $\epsilon_v$ by viscosity; and that in consequence the state of marginal stability is essentially determined by the equality of $\epsilon_\eta$ and $\epsilon_v$ (cf.\ \S\,43\,(b)). By starting with the equations appropriate for an inviscid fluid, we shall verify that this is, in fact, the case.
+
+The equations appropriate for an inviscid fluid can be obtained by simply putting $\nu=0$ in the set of equations~(\ref{eq:4-113})--(\ref{eq:4-117}). The basic equations then are
+\begin{equation}
+\label{eq:4-194}
+p\Theta = \beta W + \kappa\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)\Theta,
+\end{equation}
+\begin{equation}
+\label{eq:4-195}
+pK = H\frac{dW}{dz}+\eta\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)K,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-196}
+p\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)W = -g\alpha k^2\Theta + \frac{\mu H}{4\pi\rho_0}\frac{d}{dz}\Bigl(\frac{d^2}{dz^2}-k^2\Bigr)K.
+\end{equation}
+
+For the onset of stationary convection, $p=0$; and the elimination of $K$ and $\Theta$ is immediate. We obtain
+\begin{equation}
+\label{eq:4-197}
+D^2(D^2-a^2)W = \frac{R}{Q}a^2 W
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:4-198}
+W = 0 \quad\text{and}\quad D^2 W = 0 \quad \text{for}\quad z = 0\;\text{and}\;1.
+\end{equation}
+(In passing from equations~(\ref{eq:4-194})--(\ref{eq:4-196}) to~(\ref{eq:4-197}) we have reverted to $d$ as the unit of distance.)
+
+Observe that equation~(\ref{eq:4-197}) is what we should have obtained from equation~(\ref{eq:4-135}) by retaining only the term in $Q$.
+
+Clearly the proper solution of equation~(\ref{eq:4-197}) appropriate for the lowest mode is
+\begin{equation}
+\label{eq:4-199}
+W = A\sin\pi z,
+\end{equation}
+where $A$ is a constant. The corresponding characteristic equation is
+\begin{equation}
+\label{eq:4-200}
+R/Q = \frac{\pi^2(\pi^2+a^2)}{a^2}.
+\end{equation}
+The minimum temperature gradient occurs for $a\to\infty$, when
+\begin{equation}
+\label{eq:4-201}
+R/Q = \pi^2 \quad (a\to\infty),
+\end{equation}
+which is the correct asymptotic behaviour. \emph{In this inviscid limit the cells which appear at marginal stability are infinitely narrow.}
+
+According to equation~(\ref{eq:4-201}), the critical temperature gradient at which instability sets in is given by (cf.\ equation~(\ref{eq:4-169}))
+\begin{equation}
+\label{eq:4-202}
+g\alpha\beta_c = \pi^2\frac{\mu^2 H^2\sigma}{\rho}\kappa d^{-4}.
+\end{equation}
+Comparing this with the corresponding equation,
+\begin{equation}
+\label{eq:4-203}
+g\alpha\beta_c = \text{constant}\;\nu\kappa d^{-4},
+\end{equation}
+which obtains for a viscous liquid in the absence of a magnetic field, one may say that \emph{the presence of the magnetic field imparts to the liquid an effective kinematic viscosity}
+\begin{equation}
+\label{eq:4-204}
+\nu_{\text{eff}} = \text{constant}\;\frac{\mu}{\rho}(\mu Hd)^2.
+\end{equation}
+(We shall see in \S\,47 that only the component of the magnetic field parallel to $\mathbf{g}$ is effective.)
+
+The foregoing discussion, applicable strictly for $\nu=0$, can be extended to predict the correct dependence of the wave number $a$ on $Q$, if in equation~(\ref{eq:4-135}) we retain the term $a^4 W$ in addition to $-QD^2 W$. We should then obtain
+\begin{equation}
+\label{eq:4-205}
+(D^2-a^2)(QD^2-a^4)W = Ra^2 W
+\end{equation}
+together with the boundary conditions
+\begin{equation}
+\label{eq:4-206}
+W = 0 \quad\text{and}\quad (QD^2-a^4)W = 0 \quad \text{for}\quad z = 0\;\text{and}\;1.
+\end{equation}
+The proper solution of equation~(\ref{eq:4-205}) appropriate for the lowest mode is again given by~(\ref{eq:4-199}); but in place of equation~(\ref{eq:4-206}), we now have
+\begin{equation}
+\label{eq:4-207}
+R = \frac{\pi^2+a^2}{a^2}(a^4+Q\pi^2).
+\end{equation}
+Comparison with equation~(\ref{eq:4-163}) shows that equation~(\ref{eq:4-207}) will suffice to predict the correct asymptotic behaviours of both $R_c$ and $a_{\min}$. The fact that we have to go to this one higher order to obtain a finite value for the wave number at marginal stability means that it is viscosity which prevents the cells from collapsing into lines.
+
+\subsection*{(a) \emph{An invariant}}
+
+Closely related to the remarks in the preceding paragraph on the role of viscosity in keeping the cross-sections of the cells finite is the existence of an invariant similar to the one which exists for the rotational problem (see Chapter~III, \S\,28, equation~(105)). It will be recalled that when the fluid is in rotation, the $z$-component of the vorticity does not vanish and contributes to the horizontal components of the velocity. The resulting increase in the mean kinetic energy in the horizontal motions compensates for the reduction in it caused by the increase in the wave number; and for the case of two free boundaries, the compensation is exact and $\langle |u_\perp|^2\rangle$ becomes independent of rotation. In the present problem, there is no such additional contribution to $u_\perp$. Instead, a magnetic field in the horizontal directions comes to prevail; and \emph{a new invariant emerges} which is associated with this magnetic energy in the horizontal directions.
+
+The horizontal components of the magnetic field are given by equations~(\ref{eq:4-155}); they depend on the scalar $K$ which is to be determined from the equation (see equation~(\ref{eq:4-129}))
+\begin{equation}
+\label{eq:4-208}
+(D^2-a^2)K = -\frac{Hd}{\eta}DW.
+\end{equation}
+For the case of two free boundaries,
+\begin{equation}
+\label{eq:4-209}
+W = W_0\sin\pi z;
+\end{equation}
+and the required solution of equation~(\ref{eq:4-208}) is
+\begin{equation}
+\label{eq:4-210}
+K = \frac{Hd}{\eta}\frac{\pi}{\pi^2+a^2}W_0\cos\pi z + B\cosh az,
+\end{equation}
+where $B$ is a constant to be determined by the boundary conditions~(\ref{eq:4-140}). The part of the magnetic field derived from $B\cosh az$ does not contribute to the Joule-dissipation $\epsilon_\eta$ (cf.\ equation~(\ref{eq:4-157})); we shall ignore this part and consider only the part which contributes to $\epsilon_\eta$. The components of this latter field $\mathbf{h}_1^{(0)}$ are given by
+\begin{equation}
+\label{eq:4-211}
+\left.\begin{array}{l}
+h_x^{(0)} = W_0\dfrac{Hd}{\eta}\dfrac{\pi^2}{\pi^2+a^2}\dfrac{a_x^2}{a^2}\sin a_x x\cos a_y y\sin\pi z, \\[8pt]
+h_y^{(0)} = W_0\dfrac{Hd}{\eta}\dfrac{\pi^2}{\pi^2+a^2}\dfrac{a_y^2}{a^2}\cos a_x x\sin a_y y\sin\pi z.
+\end{array}\right\}
+\end{equation}
+The corresponding solutions for the horizontal components of the velocity are
+\begin{equation}
+\label{eq:4-212}
+\left.\begin{array}{l}
+u_x = -\pi\dfrac{a_x}{a^2}W_0\sin a_x x\cos a_y y\cos\pi z, \\[8pt]
+u_y = -\pi\dfrac{a_y}{a^2}W_0\cos a_x x\sin a_y y\cos\pi z.
+\end{array}\right\}
+\end{equation}
+
+According to these equations,
+\begin{equation}
+\label{eq:4-213}
+\langle\langle |\mathbf{h}_1^{(0)}|^2\rangle\rangle = \frac{1}{8}\frac{\pi^4}{a^2(\pi^2+a^2)^2}\frac{H^2 d^2}{\eta^2}W_0^2
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-214}
+\langle\langle |\mathbf{u}_\perp|^2\rangle\rangle = \frac{1}{8}\frac{\pi^2}{a^2}W_0^2,
+\end{equation}
+where the double angular brackets signify that the quantity enclosed is averaged both over the horizontal plane and the vertical direction.
+
+Now consider the quantity
+\begin{equation}
+\label{eq:4-215}
+\Psi = \eta\frac{\mu}{8\pi}\langle\langle |\mathbf{h}_1^{(0)}|^2\rangle\rangle + \tfrac{1}{2}\rho\nu\langle\langle |\mathbf{u}_\perp|^2\rangle\rangle.
+\end{equation}
+An equivalent expression for $\Psi$ is
+\begin{equation}
+\label{eq:4-216}
+\Psi = \eta\times\text{average energy in the magnetic field associated with }\mathbf{h}_1^{(0)} + \nu\times\text{average energy in the fluid motions associated with }\mathbf{u}_\perp.
+\end{equation}
+Using equations~(\ref{eq:4-213}) and (\ref{eq:4-214}), we obtain
+\begin{equation}
+\label{eq:4-217}
+\Psi = \tfrac{1}{16}\rho\nu\Bigl[\frac{\nu}{a^2}+Q\frac{\pi^4}{a^2(\pi^2+a^2)^2}\Bigr]W_0^2.
+\end{equation}
+Letting $a^2=\pi^2 x$ (as in \S\,44\,(a), equation~(\ref{eq:4-164})), we have
+\begin{equation}
+\label{eq:4-218}
+\Psi = \tfrac{1}{16}\rho\nu\frac{(1+x)^2+Q/\pi^2}{x(1+x)^2}W_0^2.
+\end{equation}
+On the other hand, the value of $x$ at the onset of instability is related to $Q$ by equation~(\ref{eq:4-166}); using this equation to eliminate $Q$ from equation~(\ref{eq:4-218}), we find that we are left with
+\begin{equation}
+\label{eq:4-219}
+\Psi = \tfrac{1}{2}\rho\nu W_0^2.
+\end{equation}
+Thus, \emph{the energy associated with the horizontal components of the magnetic field and the fluid motions, weighted by their respective dissipative coefficients, is, for a constant amplitude of the vertical velocity, independent of the strength of the impressed magnetic field.}
+
+\section{On the onset of convection as overstability}\label{sec:46}
+
+We shall now take up the question set aside in \S\,43 of whether or not instability can arise as oscillations of increasing amplitude. This requires us to return to equations~(\ref{eq:4-119})--(\ref{eq:4-123}) which include the time constant $\sigma$. However, in discussing this question of overstability, we shall mostly restrict ourselves to the case when the fluid is confined between two free boundaries.
+
+By applying the operator $(D^2-a^2-p_1\sigma)(D^2-a^2-p_2\sigma)$ to equation~(\ref{eq:4-121}), we can eliminate $K$ and $\Theta$ and obtain
+\begin{multline}
+\label{eq:4-220}
+(D^2-a^2)(D^2-a^2-\sigma)(D^2-a^2-p_2\sigma)W - {} \\
+{} - Ra^2(D^2-a^2-p_2\sigma)W = 0.
+\end{multline}
+As in \S\,44\,(a), we can show that in this case also the proper solution for $W$ belonging to the lowest mode is
+\begin{equation}
+\label{eq:4-221}
+W = \text{constant}\,\sin\pi z.
+\end{equation}
+Substituting this solution for $W$ in equation~(\ref{eq:4-220}), we obtain the characteristic equation
+\begin{equation}
+\label{eq:4-222}
+(\pi^2+a^2)(\pi^2+a^2+p_1\sigma)(\pi^2+a^2+\sigma)(\pi^2+a^2+p_2\sigma)+Q\pi^2] = Ra^2(\pi^2+a^2+p_2\sigma),
+\end{equation}
+where it must be remembered that $\sigma$ can be complex. Letting
+\begin{equation}
+\label{eq:4-223}
+x = \frac{a^2}{\pi^2}, \quad i\sigma_1 = \frac{\sigma}{\pi^2}, \quad R_1 = \frac{R}{\pi^4}, \quad\text{and}\quad Q_1 = \frac{Q}{\pi^2},
+\end{equation}
+we can rewrite equation~(\ref{eq:4-222}) in the form
+\begin{multline}
+\label{eq:4-224}
+(1+x)(1+x+i\sigma_1)[(1+x+ip_2\sigma_1)(1+x+i\sigma_1)+Q_1] = {} \\
+{} = R_1 x(1+x+ip_2\sigma_1),
+\end{multline}
+or
+\begin{multline}
+\label{eq:4-225}
+(1+x+i\sigma_1)(1+x+ip_2\sigma_1)(1+x+ip_1\sigma_1)+Q_1(1+x+ip_1\sigma_1) = {} \\
+{} = R_1\frac{x}{1+x}(1+x+ip_2\sigma_1).
+\end{multline}
+
+It is apparent from equation~(\ref{eq:4-225}) that for an arbitrarily assigned $\sigma_1$, $R_1$ will be complex. But the physical meaning of $R_1$ requires it to be real. Consequently, the condition that $R_1$ be real implies a relation between the real and the imaginary parts of $\sigma_1$.
+
+Since our present interest is to specify the critical Rayleigh number for the onset of instability via a state of purely oscillatory motions, it will suffice to seek the conditions that equation~(\ref{eq:4-225}) will allow solutions for which $\sigma_1$ is real. Assuming, then, that $\sigma_1$ is real, and equating, separately, the real and the imaginary parts of equation~(\ref{eq:4-225}), we obtain
+\begin{equation}
+\label{eq:4-226}
+R_1 x = (1+x)^3-\sigma_1^2(1+x)(p_1+p_2+p_1 p_2)+Q_1(1+x)
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-227}
+R_1\frac{x}{1+x}p_2 = (1+x)^2(1+p_1+p_2)-p_1 p_2\sigma_1^2+p_1 Q_1.
+\end{equation}
+Alternatively, we can write
+\begin{equation}
+\label{eq:4-228}
+R_1 = \frac{1+x}{x}\bigl[(1+x)^2+Q_1-\sigma_1^2(p_1+p_2+p_1 p_2)\bigr],
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-229}
+p_1 p_2\sigma_1^2 = (1+x)^2(1+p_1+p_2)+p_1 Q_1 - R_1\frac{x}{1+x}p_2.
+\end{equation}
+Substituting for $R_1 x/(1+x)$ in~(\ref{eq:4-229}) from~(\ref{eq:4-228}), we obtain on simplification,
+\begin{equation}
+\label{eq:4-230}
+\sigma_1^2 p_1^2 = \frac{p_2-p_1}{1+p_2}Q_1-(1+x)^2.
+\end{equation}
+Using this expression for $\sigma_1^2$ in equation~(\ref{eq:4-228}), we obtain the result
+\begin{equation}
+\label{eq:4-231}
+R_1 = \frac{(1+p_2)(p_1+p_2)}{p_1^2}\frac{1+x}{x}\Bigl[(1+x)^2+Q_1\frac{p_1^2}{(1+p_1)(p_1+p_2)}\Bigr].
+\end{equation}
+
+Equations~(\ref{eq:4-230}) and (\ref{eq:4-231}) are the equations which must be satisfied if overstability is to occur for a wave number corresponding to $x$ and a $Q$-value corresponding to $Q_1$.
+
+One conclusion which equation~(\ref{eq:4-230}) enables us to draw at once is that solutions describing overstability \emph{cannot} occur if
+\begin{equation}
+\label{eq:4-232}
+p_2 < p_1;
+\end{equation}
+for $\sigma_1^2$ would then be negative, contrary to hypothesis. Recalling the definitions of $p_1$ and $p_2$ (given in~(\ref{eq:4-118})), the foregoing condition is equivalent to
+\begin{equation}
+\label{eq:4-233}
+\kappa < \eta.
+\end{equation}
+Thus, \emph{for $\kappa<\eta$, overstability cannot occur and the principle of the exchange of stabilities is valid.}
+
+The condition $\kappa<\eta$ will be met by a large margin under most terrestrial conditions. Thus, for mercury at room temperatures,
+\begin{equation}
+\label{eq:4-234}
+\eta = 7{\cdot}6\times 10^3\;\text{cm}^2\;\text{sec}^{-1} \quad\text{and}\quad \kappa = 4{\cdot}5\times 10^{-2}\;\text{cm}^2\;\text{sec}^{-1}.
+\end{equation}
+
+For overstability to be at all possible, $p_2>p_1$; and even when this is the case, we shall obtain real frequencies $\sigma_1$ only if
+\begin{equation}
+\label{eq:4-235}
+Q_1 > (1+x)^2\frac{1+p_2}{p_2-p_1}.
+\end{equation}
+For a given $Q_1$, overstable solutions are, therefore, possible only for $x<x_*$, where $x_*$ is such that
+\begin{equation}
+\label{eq:4-236}
+x_*(1+x_*)^2 = Q_1\frac{p_2-p_1}{1+p_2}.
+\end{equation}
+When $x=x_*$, $\sigma_1^2=0$ and (cf.\ equation~(\ref{eq:4-228}))
+\begin{equation}
+\label{eq:4-237}
+R_1 = \frac{1+x_*}{x_*}\bigl[(1+x_*^2)+Q_1\bigr];
+\end{equation}
+and this is, as one should expect, the value of $R_1$ at which stationary convection will occur for a wave number corresponding to $x^*$. For $x>x_*$, overstability is not possible for the given $p_1$, $p_2$, and $Q_1$; and the
+
+\figurePlaceholder{42}{The variation of the critical Rayleigh number $R_c$ as a function of $Q$ when the onset of instability can occur as overstability. The curves labelled $a$, $b$, and $c$ are for values of the Prandtl numbers: $p_1=1$, $p_2=2$; $p_1=1$, $p_2=4$; $p_1=1$, $p_2=10$, respectively.}
+
+onset of instability as stationary convection remains the only possibility. For $x<x_*$, overstability is possible and the question of discriminating between the two manners of instability arises. As we have shown in detail in the discussion of the analogous problem in Chapter~III (\S\S\,29 and 30), that manner of instability will occur that allows a solution for a lower Rayleigh number.
+
+Consider the $(x, R_1)$-plane. In this plane we have, first, the curve,
+\begin{equation}
+\label{eq:4-238}
+R_1^{(0)} = \frac{1+x}{x}\bigl[(1+x)^2+Q_1\bigr],
+\end{equation}
+which defines the locus of states which are marginal with respect to stationary convection. The overstable solutions branch off from this locus at the point $x_*$ (see equation~(\ref{eq:4-237})), and for $x<x_*$ they are described by (cf.\ equations~(\ref{eq:4-228}) and (\ref{eq:4-231}))
+\begin{multline}
+\label{eq:4-239}
+R_1^{(0)} = R_1^{(0)}-(p_1+p_2+p_1 p_2)\sigma_1^2\frac{1+x}{x} = {} \\
+{} = \frac{(1+p_2)(p_1+p_2)}{p_1^2}\frac{1+x}{x}\bigl[(1+x)^2+Q_1\frac{p_1^2}{(1+p_1)(p_1+p_2)}\bigr],
+\end{multline}
+where the first form shows that (when this branch of the solution exists) it \emph{always} lies \emph{less} than $R_1^{(0)}$. Depending on $p_1$, $p_2$, and $Q_1$, the branch point $x_*$ can occur either before or after the point $x_{\min}$ at which $R_1^{(0)}$ attains its minimum. If $x_*>x_{\min}$, then it is clear that for all $x<x_*$, overstability is the preferred manner of instability.
+
+According to equations~(\ref{eq:4-168}) and (\ref{eq:4-236}), for $Q_1\to\infty$, are
+\begin{equation}
+\label{eq:4-240}
+x_* \to \left(\frac{p_2-p_1}{1+p_2}Q_1\right)^{\!1/3} \quad\text{and}\quad x_{\min}^{(0)} \to (\tfrac{1}{2}Q_1)^{1/3} \quad (Q_1\to\infty).
+\end{equation}
+For a sufficiently large $Q_1$, $x_*>x_{\min}^{(0)}$; and from our earlier remarks it follows that overstability is the preferred manner of instability for $Q_1$ sufficiently large. Moreover, from the monotonic dependence of $x_*$ and $x_{\min}^{(0)}$ on $Q_1$, \emph{we may conclude that for $p_2>p_1$, there exists a $Q^{(\text{tr})}$ such that for $Q_1\leq Q^{(\text{tr})}$ the onset of instability will be as stationary convection, while for $Q_1>Q^{(\text{tr})}$ it will be as overstability.}
+
+There is no simple formula which gives $Q^{(\text{tr})}$ as a function of $p_1$ and $p_2$: it is simply determined by the condition that $R_{\min}^{(0)}$ and $R_{\min}^{(\text{ov})}$ are equal for $Q=Q^{(\text{tr})}$. However, in any given case, the complete $(R_c, Q)$-relation can be determined quite simply as follows.
+
+The first part of the $(R_c, Q)$-relation, where instability sets in as stationary convection, is known from the results of Table~\ref{tab:XIV}. This part of the relation terminates at $Q=Q^{(\text{tr})}$; and beyond this point the relation continues along the overstable branch. This overstable part of the relation can be deduced from the results given in Table~\ref{tab:XIV} by a simple transformation of scales: for, according to equation~(\ref{eq:4-239}), we have only to interpret $Q$ in Table~\ref{tab:XIV} as signifying $Qp_1^2/[(1+p_1)(p_1+p_2)]$ and multiply the values under $R_c$ by $(1+p_2)(p_1+p_2)/p_1^2$. The intersection of the relation so deduced with the first part of the relation given directly by Table~\ref{tab:XIV} determines $Q^{(\text{tr})}$ (see Fig.~42).
+
+The asymptotic behaviours of the Rayleigh number and the related quantities, at the onset of overstability, and for $Q\to\infty$, may be noted; they are
+\begin{equation}
+\label{eq:4-241}
+R_c^{(\text{ov})} \to \pi^2\frac{(1+p_2)}{(1+p_1)p_2}Q^2, \quad a_c^{(\text{ov})} \to \left[\pi^4\frac{p_1^2}{(1+p_1)(p_1+p_2)}\frac{Q}{2}\right]^{1/6} \quad (Q\to\infty).
+\end{equation}
+
+In terms of the gyration frequency of the overstable oscillations, the last of the foregoing relations gives
+\begin{equation}
+\label{eq:4-242}
+|p| = \frac{\pi^2}{d^2}\nu|\sigma_1| \to \frac{\pi^2}{d^2}\Bigl(\frac{\mu}{4\pi\rho\eta}\Bigr)^{\!1/2}\!\frac{Hd}{p_2}\Bigl(\frac{p_2-p_1}{1+p_1}\Bigr)^{\!1/2},
+\end{equation}
+or,
+\begin{equation}
+\label{eq:4-243}
+|p| \to \left[\frac{p_2-p_1}{p_2(1+p_1)}\right]^{1/2}\frac{V_A}{d},
+\end{equation}
+where $V_A$ is the Alfv\'en speed. According to equation~(\ref{eq:4-243}), \emph{the frequency of oscillation at marginal stability is essentially determined by the time required for the Alfv\'en wave to travel a distance equal to the depth of the layer.}
+
+Since under terrestrial conditions the overstable case is not of much interest, extensive calculations such as those described for the rotational problem in Chapter~III have not been undertaken for the present problem. For the same reason we shall omit the discussion of the problem for other boundary conditions; it can be carried out, if necessary, in a manner quite analogous to the corresponding treatment of the rotational problem in Chapter~III, \S\S\,30 and 31.
+
+\section{The case when $\mathbf{H}$ and $\mathbf{g}$ act in different directions}\label{sec:47}
+
+We shall now consider the case when $\mathbf{H}$ and $\mathbf{g}$ act in different directions. For this purpose we must return to equations~(\ref{eq:4-97})--(\ref{eq:4-101}) in which the assumption that $\mathbf{H}$ and $\mathbf{g}$ are parallel has not yet been made.
+
+Let $\mathbf{H}$ be inclined at an angle $\vartheta$ to the direction of the vertical. Also, let the direction of the $x$-axis be so chosen that $\mathbf{H}$ lies in the $xz$-plane. Then
+\begin{equation}
+\label{eq:4-244}
+\boldsymbol{\lambda} = (0,0,1) \quad\text{and}\quad \mathbf{H} = H(\sin\vartheta, 0, \cos\vartheta),
+\end{equation}
+and equations~(\ref{eq:4-97}) and (\ref{eq:4-100}) become
+\begin{equation}
+\label{eq:4-245}
+\frac{\partial h_z}{\partial t} = \eta\nabla^2 h_z + H\Bigl(\cos\vartheta\frac{\partial^2}{\partial z^2}+\sin\vartheta\frac{\partial^2}{\partial z\partial x}\Bigr)w
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-246}
+\frac{\partial}{\partial t}\nabla^2 w = g\alpha\Bigl(\frac{\partial^2\Theta}{\partial x^2}+\frac{\partial^2\Theta}{\partial y^2}\Bigr)+\nu\nabla^4 w + \frac{\mu H}{4\pi\rho_0}\Bigl(\cos\vartheta\frac{\partial}{\partial z}+\sin\vartheta\frac{\partial}{\partial x}\Bigr)\nabla^2 h_z.
+\end{equation}
+We shall not need equations~(\ref{eq:4-98}) and (\ref{eq:4-99}), and equation~(\ref{eq:4-101}) is unaffected.
+
+If we seek solutions of equations~(\ref{eq:4-101}), (\ref{eq:4-245}), and (\ref{eq:4-246}) which are independent of $x$, then equations~(\ref{eq:4-245}) and (\ref{eq:4-246}) reduce to equations~(\ref{eq:4-102}) and (\ref{eq:4-105}) with the only difference that $H$ is replaced by $H\cos\vartheta$. Consequently, if we restrict ourselves to the onset of instability as rolls in the $x$-direction, then all of the discussions of the preceding sections will apply if we interpret $H$ everywhere to mean the component of $\mathbf{H}$ in the direction of $\mathbf{g}$. The question whether lower Rayleigh numbers can be reached by considering more general patterns of motion than rolls will now be considered; but we shall restrict our consideration to the case when instability sets in as stationary convection.
+
+When instability sets in as stationary convection, the equations governing the marginal state are
+\begin{equation}
+\label{eq:4-247}
+\eta\nabla^2 h_z = -H\Bigl(\cos\vartheta\frac{\partial}{\partial z}+\sin\vartheta\frac{\partial}{\partial x}\Bigr)^{\!2}w
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-248}
+\nu\nabla^4 w + \frac{\mu H}{4\pi\rho_0}\Bigl(\cos\vartheta\frac{\partial}{\partial z}+\sin\vartheta\frac{\partial}{\partial x}\Bigr)\nabla^2 h_z = -g\alpha\Bigl(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\Bigr)\Theta.
+\end{equation}
+The term in $\nabla^2 h_z$ in equation~(\ref{eq:4-248}) can be directly eliminated by making use of equation~(\ref{eq:4-247}); we obtain
+\begin{equation}
+\label{eq:4-249}
+\nabla^4 w - \frac{\mu H^2}{4\pi\rho\nu\eta}\Bigl(\cos\vartheta\frac{\partial}{\partial z}+\sin\vartheta\frac{\partial}{\partial x}\Bigr)^{\!2}w = -\frac{g\alpha}{\nu}\Bigl(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\Bigr)\Theta.
+\end{equation}
+This equation must be considered together with the equation
+\begin{equation}
+\label{eq:4-250}
+\nabla^2\Theta = -\frac{\beta}{\kappa}w.
+\end{equation}
+
+If we measure all linear dimensions in units of the depth $d$ of the layer, and let
+\begin{equation}
+\label{eq:4-251}
+Q = \frac{\mu H^2\cos^2\vartheta}{4\pi\rho\nu\eta}\,d^2 = \frac{\mu^2 H^2\sigma\cos^2\vartheta}{\rho\nu}\,d^2,
+\end{equation}
+equations~(\ref{eq:4-249}) and (\ref{eq:4-250}) become
+\begin{equation}
+\label{eq:4-252}
+\nabla^4 w - Q\Bigl(\frac{\partial}{\partial z}+\tan\vartheta\frac{\partial}{\partial x}\Bigr)^{\!2}w = -\Bigl(\frac{g\alpha d^4}{\nu\kappa}\Bigr)\Bigl(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\Bigr)\Theta
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-253}
+\nabla^2\Theta = -\Bigl(\frac{\beta d^2}{\kappa}\Bigr)w.
+\end{equation}
+
+And eliminating $\Theta$ between these equations, we have
+\begin{equation}
+\label{eq:4-254}
+\nabla^2\Bigl[\nabla^4-Q\Bigl(\frac{\partial}{\partial z}+\tan\vartheta\frac{\partial}{\partial x}\Bigr)^{\!2}\Bigr]w = R\Bigl(\frac{\partial^2}{\partial x^2}+\frac{\partial^2}{\partial y^2}\Bigr)w.
+\end{equation}
+
+Following our standard procedure, we analyse the disturbances $w$ and $\Theta$ into two-dimensional waves of assigned wave numbers in the $x$- and the $y$-directions. Thus:
+\begin{equation}
+\label{eq:4-255}
+\left.\begin{array}{l}
+w = W(z)\exp\{i(a_x x+a_y y)\} \\
+\Theta = \Theta(z)\exp\{i(a_x x+a_y y)\}
+\end{array}\right\}
+\end{equation}
+Equations~(\ref{eq:4-252}) and (\ref{eq:4-254}) then become
+\begin{equation}
+\label{eq:4-256}
+\bigl[(D^2-a^2)^2-Q(D+ic)^2\bigr]W = \Bigl(\frac{g\alpha d^4}{\nu\kappa}\Bigr)a^2\Theta,
+\end{equation}
+and
+\begin{equation}
+\label{eq:4-257}
+(D^2-a^2)\bigl[(D^2-a^2)^2-Q(D+ic)^2\bigr]W = -Ra^2 W,
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-258}
+D = d/dz, \quad a^2 = a_x^2+a_y^2, \quad\text{and}\quad c = a_x\tan\vartheta.
+\end{equation}
+The boundary conditions with respect to which equation~(\ref{eq:4-258}) must be solved are:
+\begin{equation}
+\label{eq:4-259}
+W = \Theta = 0 \quad \text{for}\quad z = 0\;\text{and}\;1;
+\end{equation}
+and,
+\begin{equation}
+\label{eq:4-260}
+\left.\begin{array}{l}
+\emph{either}\quad DW = 0\quad\text{(on a rigid surface),}\\
+\emph{or}\quad D^2 W = 0\quad\text{(on a free surface).}
+\end{array}\right.
+\end{equation}
+
+In view of equation~(\ref{eq:4-256}), the boundary conditions~(\ref{eq:4-259}) are equivalent to
+\begin{equation}
+\label{eq:4-261}
+W = 0 \quad\text{and}\quad \bigl[(D^2-a^2)^2-Q(D+ic)^2\bigr]W = 0 \quad \text{for}\;z = 0\;\text{and}\;1.
+\end{equation}
+
+Since $W$ is complex, equation~(\ref{eq:4-257}) together with the boundary conditions~(\ref{eq:4-260}) and (\ref{eq:4-261}) constitutes a characteristic value problem in an equation effectively of order twelve. And the solution of the physical problem requires the minimum of the lowest characteristic value of equation~(\ref{eq:4-257}) considered as a function of the two variables $a$ and $c$.
+
+It can be shown by methods with which we are now familiar that the characteristic value problem presented by equations~(\ref{eq:4-257}), (\ref{eq:4-260}), and
+
+\begin{table}[t]
+\centering
+\caption{Rayleigh numbers for $Q=100$ and for various values of $a$ and $c$ for the case when both bounding surfaces are rigid}
+\label{tab:XVII}
+\smallskip
+\begin{tabular}{cccccccc}
+\hline
+$c$ & $a$ & $R$ & & $c$ & $a$ & $R$ \\
+\cline{1-3} \cline{5-7}
+$\infty$ & $4{\cdot}0$ & 5{,}268 & & 3.9 & $4{\cdot}0$ & 4{,}190 \\
+& $4{\cdot}0$ & 3{,}797 & & 2.0 & $4{\cdot}0$ & 4{,}181 \\
+0.5 & $4{\cdot}0$ & 3{,}795 & & & $4{\cdot}1$ & 4{,}195 \\
+& $4{\cdot}1$ & 3{,}793 & & & & \\
+& & & & 3.9 & $4{\cdot}0$ & 5{,}433 \\
+1.0 & $3{\cdot}875$ & $3{,}879$ & & & $4{\cdot}1$ & 5{,}474 \\
+& $3{\cdot}828$ & $3{,}878$ & & & & \\
+& & & & 3.9 & $4{\cdot}0$ & 3{,}494 \\
+\hline
+\end{tabular}
+\end{table}
+%
+(\ref{eq:4-261}) can be formulated in terms of a variational principle. The critical Rayleigh number $R$ (for a given $Q$) is in fact the absolute minimum which can be attained by
+\begin{equation}
+\label{eq:4-262}
+\frac{\displaystyle\int_0^1 \bigl[|DF|^2+a^2|F|^2\bigr]\,dz}{a^2\displaystyle\int_0^1\bigl\{|(D^2-a^2)W|^2+Q|DW+icW|^2\bigr\}\,dz},
+\end{equation}
+where
+\begin{equation}
+\label{eq:4-263}
+F = \bigl[(D^2-a^2)^2-Q(D+ic)^2\bigr]W.
+\end{equation}
+
+By the variational method, $R$ has been evaluated for a number of values of $a$ and $c$ for several different values of $Q$ and for different boundary conditions. A sample set from such calculations is shown in Table~\ref{tab:XVII}. In this table the entry for $c=0$ is for the value of $a$ for which it is known from the results given in Table~\ref{tab:XV} that the minimum Rayleigh number occurs when the pattern of convection which appears at marginal stability is in the form of \emph{longitudinal rolls} (i.e.\ rolls extended in directions parallel to the plane containing $\mathbf{H}$ and $\mathbf{g}$). Thus, for example, for $c=0.5$ and $Q=100$, the minimum Rayleigh number is 3,793; this should be contrasted with $R_c=3{,}768$ for $c=0$. For larger values of $c$, the minimum appears to shift to somewhat higher values of $a$; but the Rayleigh number now exceeds $R_c$ by a substantial margin. Thus, in the example considered, the minimum Rayleigh number for $c=1.0$ is 3,871 and this occurs for $a=4{\cdot}1$. The results for other values of $Q$ and other boundary conditions exhibit the same general behaviour and confirm that \emph{when $\mathbf{H}$ and $\mathbf{g}$ act in different directions, convection when it first sets in appears as longitudinal rolls.}
+
+In some ways the conclusion arrived at in the last paragraph is a paradoxical one. For when $\mathbf{H}$ and $\mathbf{g}$ are parallel, the Rayleigh number depends only on $a^2=a_x^2+a_y^2$ and we expect convection at marginal stability to have a cellular pattern. How then, one may ask, does this situation change discontinuously when $\mathbf{H}$ is inclined only very slightly to the vertical and when it is asserted convection at marginal stability must appear as longitudinal rolls? The resolution of this paradox is as follows.
+
+When $\mathbf{H}$ and $\mathbf{g}$ act in different directions, differing Rayleigh numbers are required for the marginal appearance of convection of pre-assigned patterns. In particular, the most `difficult' pattern to excite (other things being equal) is the system of the \emph{transverse} rolls. Once the Rayleigh number is high enough to excite these transverse rolls, we may expect a proper cellular pattern of convection to emerge. The \emph{difference} in the minimum Rayleigh numbers required to excite the longitudinal and the transverse rolls is, therefore, a measure of the extent to which a proper cellular pattern is suppressed at marginal stability when longitudinal rolls appear. But, and this is the main point of the argument, this difference in the two Rayleigh numbers tends to zero as $c\;(=a_x\tan\vartheta\leq a\tan\vartheta)$ tends to zero. In other words, when $\mathbf{H}$ is only very slightly inclined to the direction of gravity, the extent to which \emph{transverse} rolls are suppressed at marginal stability (when \emph{longitudinal} rolls appear) is also only very slight. Finally, when $\mathbf{H}$ is exactly parallel to $\mathbf{g}$ (or, when $|\mathbf{H}|\to 0$), this suppression of the cellular pattern ceases and longitudinal and transverse rolls appear simultaneously at marginal stability.
+
+The picture we have thus arrived at as to what really `happens' when $\mathbf{H}$ and $\mathbf{g}$ act in different directions constitutes an essential simplification for the general theory of thermal instability. For it effectively ensures that conclusions reached after an examination of special geometrical situations (such as $\mathbf{H}$ and $\mathbf{g}$ being parallel) are of wider scope and generality than the geometrical restrictions, under which they were arrived at, would appear to warrant. Thus in Chapter~III, the principal results on the effect of rotation on thermal instability were derived for the case when $\boldsymbol{\Omega}$ and $\mathbf{g}$ are parallel. One may now feel confident that if $\boldsymbol{\Omega}$ and $\mathbf{g}$ are not parallel, convection at marginal stability will manifest itself as longitudinal rolls (cf.\ Chapter~III, \S\,34).
+
+\section{Experiments on the inhibition of thermal convection by a magnetic field}\label{sec:48}
+
+Experiments on the onset of thermal instability in layers of mercury heated from below and subject to magnetic fields have been carried out by Nakagawa, Jirlow, and Lehnert and Little. A brief account of some of these experiments will be given.
+
+In Nakagawa's experiments, the magnetic field was provided by a reconditioned electromagnet of a disused $36\tfrac{1}{2}$-in.\ cyclotron of the Enrico Fermi Institute of the University of Chicago. The electromagnet provided a uniform magnetic field in a cylindrical volume, 78\,cm in diameter and 22\,cm in height; the strength of the field could be varied up to a maximum of 13{,}000 gauss.
+
+The experimental arrangement was similar to that used in the experiments on overstable convection in rotating mercury described in Chapter~III, \S\,35\,(b). The critical temperature gradient at which instability set in was determined by the Schmidt--Milverton method. By working with layers of mercury 3, 4, 5, and 6\,cm in depth and magnetic fields varying in strength from 250 to 8{,}000 gauss, Nakagawa was able to carry out experiments for $Q$-values in the range $10^2$--$10^5$. The results of the experiments together with the appropriate theoretical relation is shown in Fig.~43. It will be seen that the agreement of the experimental results with the theoretical predictions is very satisfactory.
+
+\figurePlaceholder{43}{A comparison of the experimental and theoretical results on the critical Rayleigh numbers for the onset of instability. The theoretical $(R_c, Q_1)$-relation is shown by the full-line curve. The solid circles ($\bullet$), squares ($\blacksquare$), open circles ($\circ$), and triangles ($\triangle$) are the experimentally determined points with the $36\tfrac{1}{2}$-in.\ magnet for layers of depths $d = 6$, 5, 4, and 3~cm, respectively; the four crosses represent the result with a small magnet with $H = 1{,}600$~G and $d = 6$, 5, 4, and 3~cm, respectively.}
+
+In another set of experiments, Nakagawa took a large number of streak photographs of the cell patterns which developed on the top surface at instability. An example is shown in Fig.~44. (The arrangements used in these experiments are described in Chapter~V, \S\,54\,(b).) The
+
+\figurePlaceholder{44}{Examples of streak photographs of the convective motion on the surface of mercury, obtained for three different strengths of the magnetic field: (a) $H = 125$~G, $Q_1 = 9{\cdot}46$; (b) $H = 7{,}600$~G, $Q_1 = 3{\cdot}49\times 10^4$; (c) $H = 3{,}000$~G, $Q_1 = 5{\cdot}76\times 10^3$.}
+
+dimensions of the cells were estimated by measurements made on these photographs. The method was the following. As representative of the dimensions, the distances between the centres of adjacent cells were measured. It was found that in most cases they formed equilateral triangles. This is consistent with the supposition that the basic cell pattern is hexagonal.
+
+The side $L$ of the unit hexagon is related to the wave number $a$ of the associated disturbance by (see \S\,16\,(c), equation~(262))
+\begin{equation}
+\label{eq:4-264}
+L = \frac{4\pi d}{3a},
+\end{equation}
+and the distance $b$ between the centres of adjacent cells is $L\sqrt{3}$ (see Fig.~7\,a, p.~49). Hence
+\begin{equation}
+\label{eq:4-265}
+b = \frac{4\pi d}{a\sqrt{3}}.
+\end{equation}
+Since $a$ is known as a function of $Q$, the theory predicts a definite relation between $b$ and $Q$; this relation together with the results of Nakagawa's measurements are shown in Fig.~45. It will be seen that the agreement between the measurements and the theory is again satisfactory.
+
+\figurePlaceholder{45}{A comparison of the experimental (solid circles) and the theoretical (the full-line curve) results on the sizes of the cells manifested at marginal stability.}
+
+Lehnert and Little, in their experiments, have verified another important aspect of the theoretical predictions. We have seen that when the direction of the impressed magnetic field is different from the vertical, only the component of the magnetic field in the direction of the vertical is effective; and further, that the cells which appear at onset must be longitudinal rolls in directions parallel to the plane containing $\mathbf{H}$ and $\mathbf{g}$. By using homogeneous oblique magnetic fields, Lehnert and Little were able to verify these predictions in a very striking way. They found, for example, that a magnetic field as strong as 4{,}500 gauss impressed in a horizontal direction had no discernible effect in inhibiting convection even though the field was five times that necessary to suppress convection, if acting in the vertical direction. Lehnert and Little further found that the pattern of convection which emerged under these conditions was, indeed, in the form of elongated cells extending across the entire vessel with the streamlines running, principally, parallel with the magnetic field. Fig.~46, which is a reproduction of one of their photographs, illustrates the phenomenon.
+
+\figurePlaceholder{46}{Cellular convection in a layer of mercury in a magnetic field parallel to the free surface of the layer. This picture taken by Lehnert and Little shows the surface as seen from above. The magnetic field ($H = 4{,}500$~G) runs from the right to the left and the cells are seen to be elongated in the field direction and to extend across the whole vessel.}
+
+\section*{BIBLIOGRAPHICAL NOTES}
+
+The following general references on the subject of hydromagnetics may be noted:
+\begin{enumerate}
+\item T.~G. \textsc{Cowling}, \emph{Magnetohydrodynamics}, Interscience Tracts on Physics and Astronomy, No.~4, Interscience Publishers, Inc., New York, 1957.
+\item W.~M. \textsc{Elsasser}, `Hydromagnetism. I. A review', \emph{American J.\ of Phys.}\ \textbf{23}, 590--609 (1955); `Hydromagnetism. II. A review', ibid.\ \textbf{24}, 85--110 (1956).
+\item S. \textsc{Lundquist}, `Studies in magneto-hydrodynamics', \emph{Arkiv f\"or Fysik}, \textbf{5}, 297--347 (1952).
+\item G.~B.~A. \textsc{Cole}, `Some aspects of magnetohydrodynamics', \emph{Advances in Phys.}\ \textbf{5}, 452--97 (1956).
+\end{enumerate}
+
+\S\,38\,(a). On the decay of magnetic fields in a conducting fluid sphere and the interaction of such fields with the prevailing motions, the fundamental papers are:
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item W.~M. \textsc{Elsasser}, `Induction effects in terrestrial magnetism, Part I. Theory', \emph{Physical Rev.}\ \textbf{69}, 106--16 (1946).
+\item ------, `Induction effects in terrestrial magnetism, Part II. The secular variation', ibid.\ \textbf{70}, 202--12 (1946).
+\item ------, `Induction effects in terrestrial magnetism, Part III. Electric modes', ibid.\ \textbf{72}, 821--33 (1947).
+\end{enumerate}
+
+The decay of magnetic fields under astrophysical conditions is considered in:
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item T.~G. \textsc{Cowling}, `On the sun's general magnetic field', \emph{Monthly Notices Roy.\ Astron.\ Soc.\ London}, \textbf{105}, 166--74 (1945).
+\item ------, `The growth and decay of the sunspot magnetic field', ibid.\ \textbf{106}, 218--24 (1946).
+\end{enumerate}
+
+On the related subject of dynamo action and the maintenance of magnetic fields against decay by fluid motions, see:
+\begin{enumerate}
+\setcounter{enumi}{9}
+\item T.~G. \textsc{Cowling}, `The magnetic field of sunspots', \emph{Monthly Notices Roy.\ Astron.\ Soc.\ London}, \textbf{94}, 39--48 (1933).
+\item W.~M. \textsc{Elsasser}, `The earth's interior and geomagnetism', \emph{Rev.\ Modern Phys.}\ \textbf{22}, 1--35 (1950).
+\item ------, `Hydromagnetic dynamo theory', ibid.\ \textbf{28}, 135--63 (1956).
+\item E.~C. \textsc{Bullard} and H. \textsc{Gellman}, `Homogeneous dynamos and terrestrial magnetism', \emph{Philos.\ Trans.\ Roy.\ Soc.\ (London)} A, \textbf{247}, 213--78 (1954).
+\item G.~E. \textsc{Backus} and S. \textsc{Chandrasekhar}, `On Cowling's theorem on the impossibility of self-maintained axisymmetric homogeneous dynamos', \emph{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{42}, 105--9 (1956).
+\item T.~G. \textsc{Cowling} and A. \textsc{Hart}, `Two-dimensional problems of the decay of magnetic fields in magnetohydrodynamics', \emph{Quart.\ J.\ Mech.\ Appl.\ Math.}\ \textbf{10}, 385--405 (1957).
+\end{enumerate}
+
+\S\,38\,(b). In his discussion of various physical problems, Alfv\'en has extensively used the fact that in a medium of infinite electrical conductivity, the magnetic lines of force behave as though they are permanently attached to the fluid elements. Many of Alfv\'en's ideas are described in:
+\begin{enumerate}
+\setcounter{enumi}{15}
+\item H. \textsc{Alfv\'en}, \emph{Cosmical Electrodynamics}, International Series of Monographs on Physics, Oxford, England, 1950.
+\end{enumerate}
+
+See also:
+\begin{enumerate}
+\setcounter{enumi}{16}
+\item T.~G. \textsc{Cowling}, `Solar electrodynamics', \emph{The Sun}, chapter 8, edited by G.~P.~Kuiper, University of Chicago Press, Chicago, 1953.
+\item J.~W. \textsc{Dungey}, \emph{Cosmic Electrodynamics}, Cambridge Monographs on Mechanics and Applied Mathematics, Cambridge, England, 1958.
+\end{enumerate}
+
+\S\,39. Alfv\'en's discovery of the waves named after him is announced in:
+\begin{enumerate}
+\setcounter{enumi}{18}
+\item H. \textsc{Alfv\'en}, `The existence of electromagnetic-hydrodynamic waves', \emph{Arkiv f.\ mat.\ astr.\ o.\ Fysik}, \textbf{29}, 1--7, (1942).
+\item ------, `On the existence of electromagnetic-hydrodynamic waves', \emph{Arkiv f.\ mat.\ astr.\ o.\ Fysik}, \textbf{29}, 1--7, (1942).
+\end{enumerate}
+
+An experimental demonstration of the Alfv\'en waves is described by:
+\begin{enumerate}
+\setcounter{enumi}{20}
+\item S. \textsc{Lundquist}, `Experimental investigations of magneto-hydrodynamic waves', \emph{Phys.\ Rev.}\ \textbf{76}, 1805--9 (1949).
+\end{enumerate}
+
+Related experiments are described in:
+\begin{enumerate}
+\setcounter{enumi}{21}
+\item B. \textsc{Lehnert}, `On the behaviour of an electrically conductive liquid in a magnetic field', \emph{Arkiv f\"or Fysik}, \textbf{5}, 69--90 (1952).
+\item ------, `Experiments on non-laminar flow of mercury in presence of a magnetic field', \emph{Tellus}, \textbf{4}, 63--67 (1952).
+\item ------, `Magneto-hydrodynamic waves in liquid sodium', \emph{Phys.\ Rev.}\ \textbf{94}, 815--24 (1954).
+\end{enumerate}
+
+The propagation of hydromagnetic waves in a compressible medium is considered in:
+\begin{enumerate}
+\setcounter{enumi}{24}
+\item H.~C. \textsc{van de Hulst}, `Interstellar polarization and magneto-hydrodynamic waves', \emph{Problems of Cosmical Aerodynamics}, International Union of Theoretical and Applied Mechanics and International Astronomical Union, 45--56, Central Air Documents Office, Dayton, Ohio, 1951.
+\item N. \textsc{Herlofson}, `Magneto-hydrodynamic waves in a compressible fluid conductor', \emph{Nature}, \textbf{165}, 1020--1 (1950).
+\end{enumerate}
+
+\S\,40. The stability of the equipartition solution considered in \S\,40\,(a) is proved in:
+\begin{enumerate}
+\setcounter{enumi}{26}
+\item S. \textsc{Chandrasekhar}, `On the stability of the simplest solution of the equations of hydromagnetics', \emph{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{42}, 273--6 (1956).
+\end{enumerate}
+
+Some references on force-free magnetic fields are:
+\begin{enumerate}
+\setcounter{enumi}{27}
+\item S. \textsc{Lundquist}, `Magneto-hydrostatic fields', \emph{Arkiv f\"or Fysik}, \textbf{2}, 361--5 (1950).
+\item R. \textsc{L\"ust} and A. \textsc{Schl\"uter}, `Kraftfreie Magnetfelder', \emph{Z.\ f.\ Astrophysik}, \textbf{34}, 263--82 (1954).
+\item S. \textsc{Chandrasekhar}, `On force-free magnetic fields', \emph{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{42}, 1--5 (1956).
+\item ------, and P.~C. \textsc{Kendall}, `On force-free magnetic fields', \emph{Astrophys.\ J.}\ \textbf{126}, 457--60 (1957).
+\item L. \textsc{Woltjer}, `The Crab nebula', \emph{Bull.\ Astr.\ Inst.\ Netherlands}, \textbf{14}, 39--80 (1958).
+\end{enumerate}
+
+\S\,41. The effect of an impressed magnetic field on the onset of thermal instability in electrically conducting fluids is considered in:
+\begin{enumerate}
+\setcounter{enumi}{32}
+\item W.~B. \textsc{Thompson}, `Thermal convection in a magnetic field', \emph{Phil.\ Mag.\ Ser.\ 7}, \textbf{42}, 1417--32 (1951).
+\item S. \textsc{Chandrasekhar}, `On the inhibition of convection by a magnetic field', ibid.\ \textbf{43}, 501--32 (1952).
+\end{enumerate}
+
+\S\S\,42--46. The analyses in these sections are largely based on (34). The thermodynamic significance of the variational principle is discussed in:
+\begin{enumerate}
+\setcounter{enumi}{34}
+\item S. \textsc{Chandrasekhar}, `The thermodynamics of thermal instability in liquids', \emph{Max Planck Festschrift 1958}, 103--14, Veb Deutscher Verlag der Wissenschaften, Berlin, 1958.
+\end{enumerate}
+
+\S\,47. This section is based on:
+\begin{enumerate}
+\setcounter{enumi}{35}
+\item S. \textsc{Chandrasekhar}, `On the inhibition of convection by a magnetic field. II', \emph{Phil.\ Mag.\ Ser.\ 7}, \textbf{45}, 1177--91 (1954).
+\end{enumerate}
+
+\S\,48. The references for the experimental work described in this section are:
+\begin{enumerate}
+\setcounter{enumi}{36}
+\item Y. \textsc{Nakagawa}, `An experiment on the inhibition of thermal convection by a magnetic field', \emph{Nature}, \textbf{175}, 417--19 (1955).
+\item Y. \textsc{Nakagawa}, `Experiments on the inhibition of thermal convection by a magnetic field', \emph{Proc.\ Roy.\ Soc.\ (London)} A, \textbf{240}, 108--13 (1957).
+\item ------, `Experiments on the instability of a layer of mercury heated from below and subject to the simultaneous action of a magnetic field and rotation. II', ibid.\ \textbf{249}, 138--45 (1959).
+\item ------, `Apparatus for studying convection under the simultaneous action of a magnetic field and rotation', \emph{The Review of Scientific Instruments}, \textbf{28}, 63--9 (1957).
+\item B. \textsc{Lehnert} and N.~C. \textsc{Little}, `Experiments on the effect of inhomogeneity and obliquity of a magnetic field in inhibiting convection', \emph{Tellus}, \textbf{9}, 97--103 (1957).
+\end{enumerate}
+
+See also:
+\begin{enumerate}
+\setcounter{enumi}{41}
+\item K. \textsc{Jirlow}, `Experimental investigation of the inhibition of convection by a magnetic field', ibid.\ \textbf{8}, 252--3 (1956).
+\end{enumerate}
+

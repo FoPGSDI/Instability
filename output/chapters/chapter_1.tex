@@ -1,0 +1,383 @@
+% Chapter I: Basic Concepts
+% Transcribed from PDF pages 17--24 (book pages 1--8)
+
+\chapter{Basic Concepts}
+\label{ch:1}
+
+\section{Introduction}
+\label{sec:1-1}
+
+The equations of hydrodynamics, in spite of their complexity, allow
+some simple patterns of flow (such as between parallel planes, or rotating
+cylinders) as stationary solutions.  These patterns of flow can, however,
+be realized only for certain ranges of the parameters characterizing them.
+Outside these ranges, they cannot be realized.  The reason for this lies
+in their inherent \emph{instability}, i.e.\ in their inability to sustain themselves
+against small perturbations to which any physical system is subject.  It
+is in the differentiation of the stable from the unstable patterns of
+permissible flows that the problems of \emph{hydrodynamic stability} originate.
+
+In recent years the class of such problems of stability has been enlarged
+by the interest in hydrodynamic flows of electrically conducting fluids
+in the presence of magnetic fields.  This is the domain of \emph{hydromagnetics};
+and there are problems of \emph{hydromagnetic stability} even as there are
+problems of hydrodynamic stability.
+
+This book is devoted to a consideration of some typical problems in
+hydrodynamic and hydromagnetic stability; and in this introductory
+chapter we shall formulate the basic principles and concepts of the
+subject.
+
+\section{Basic concepts}
+\label{sec:1-2}
+
+Suppose, then, that we have a hydrodynamic system which, in
+accordance with the equations governing it, is in a \emph{stationary} state, i.e.\
+in a state in which none of the variables describing it is a function of
+time.  Let $X_1, X_2, \ldots, X_j$ be a set of parameters which define the system.
+These parameters will include geometrical parameters such as the
+dimensions of the system; parameters characterizing the velocity field
+which may prevail in the system; the magnitudes of the forces which
+may be acting on the system, such as pressure gradients, temperature
+gradients, magnetic fields and rotation; and others.
+
+In considering the stability of such a system (with a given set of
+parameters $X_1, \ldots, X_j$) we essentially seek to determine the reaction of
+the system to small disturbances.  Specifically, we ask: if the system is
+disturbed, will the disturbance gradually die down, or will the disturbance
+grow in amplitude in such a way that the system progressively departs
+from the initial state and never reverts to it?  In the former case, we say
+that the system is \emph{stable} with respect to the particular disturbance; and
+in the latter case, we say that it is \emph{unstable}.  Clearly, a system must be
+considered as unstable even if there is only \emph{one} special mode of disturbance with respect to which it is unstable.  And a system cannot be
+considered stable unless it is stable with respect to \emph{every} possible disturbance to which it can be subject.  In other words, stability must imply
+that there exists no mode of disturbance for which it is unstable.
+
+If all initial states are classified as stable, or unstable, according to
+the criteria stated, then in the space of the parameters, $X_1, \ldots, X_j$, the
+locus which separates the two classes of states defines the states of
+\emph{marginal stability} of the system.  By this definition, a \emph{marginal state} is
+a state of \emph{neutral stability}.
+
+The locus of the marginal states in the $(X_1, \ldots, X_j)$-space will be defined
+by an equation of the form
+\begin{equation}
+\label{eq:1-1}
+\Sigma(X_1, \ldots, X_j) = 0.
+\end{equation}
+The determination of this locus is one of the prime objects of an investigation on hydrodynamic stability.
+
+In thinking of the stability of a hydrodynamic system, it is often
+convenient to suppose that all parameters of the system, save one, are
+kept constant while the chosen one is continuously varied.  We shall
+then pass from stable to unstable states when the particular parameter
+we are varying takes a certain critical value.  We may say that \emph{instability}
+sets in at this value of the chosen parameter when all the others have
+their preassigned values.
+
+States of marginal stability can be of one of two kinds.  The two kinds
+correspond to the two ways in which the amplitudes of a small disturbance can grow or be damped: they can grow (or be damped) aperiodically; or they can grow (or be damped) by oscillations of increasing (or
+decreasing) amplitude.  In the former case, the transition from stability
+to instability takes place via a marginal state exhibiting a stationary
+pattern of motions.  In the latter case, the transition takes place via a
+marginal state exhibiting oscillatory motions with a certain definite
+characteristic frequency.
+
+If at the onset of instability a stationary pattern of motions prevails,
+then one says that the \emph{principle of the exchange of stabilities} is valid and
+that instability sets in as stationary \emph{cellular convection}, or \emph{secondary
+flow}.  (The significance of the qualification `cellular' will become clear
+presently.)  On the other hand, if at the onset of instability oscillatory
+motions prevail, then one says (following Eddington) that one has a
+case of \emph{overstability}.  Eddington explains this choice of the terminology
+as follows: `In the usual kinds of instability, a slight displacement
+provokes restoring forces tending away from equilibrium; in overstability
+it provokes restoring forces so strong as to overshoot the corresponding
+position on the other side of equilibrium.'
+
+In classifying marginal states into two classes---stationary and
+oscillatory---we have supposed that we are dealing with \emph{dissipative
+systems}.  In non-dissipative, conservative, systems the situation is
+generally somewhat different.  In these cases the stable states, when
+perturbed, execute undamped oscillations with certain definite characteristic frequencies; while in the unstable states small initial perturbations tend to grow exponentially with time; and the marginal states
+themselves are stationary.
+
+\section{The analysis in terms of normal modes}
+\label{sec:1-3}
+
+The mathematical treatment of a problem in stability generally
+proceeds along the following lines.
+
+We start from an initial flow which represents a stationary state of
+the system.  By supposing that the various physical variables describing
+the flow suffer small (infinitesimal) increments, we first obtain the
+equations governing these increments.  In obtaining these equations
+from the relevant equations of motion, we neglect all products and
+powers (higher than the first) of the increments and retain only terms
+which are linear in them.  The theory derived on the basis of such
+\emph{linearized equations} is called the linear stability theory in contrast to
+\emph{non-linear theories} which attempt to allow for the finite amplitudes of
+the perturbations.  In this book we shall be concerned only with the
+linear stability theory which presupposes that the perturbations are
+infinitesimal; and this must be understood even if the qualification is
+not explicitly made every time.
+
+As we have explained, stability means stability with respect to all
+possible (infinitesimal) disturbances.  Accordingly, for an investigation
+on stability to be complete, it is necessary that the reaction of the system
+to all possible disturbances be examined.  In practice, this is accomplished
+by expressing an arbitrary disturbance as a superposition of certain
+basic possible modes and examining the stability of the system with
+respect to each of these modes.  In illustration of how one does this,
+consider a system confined between two parallel planes and in which
+the physical variables in the stationary state are functions only of the
+coordinate ($z$, say) normal to the planes.  In this case, we may analyse
+an arbitrary disturbance in terms of two-dimensional periodic waves.
+Thus, if $A(x, y, z, t)$ represents a typical amplitude describing the
+disturbance, we expand it in the manner
+\begin{equation}
+\label{eq:1-2}
+A(x, y, z, t) = \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty}
+dk_x\, dk_y\, A_k(z, t) \exp[i(k_x x + k_y y)],
+\end{equation}
+where
+\begin{equation}
+\label{eq:1-3}
+k = \sqrt{k_x^2 + k_y^2}
+\end{equation}
+is the wave number associated with the disturbance $A_k(z, t)$.  Since the
+perturbation equations are linear, the reaction of the system to a general
+disturbance can be determined if we know the reaction of the system to
+disturbances of all assigned wave numbers.  In particular, the stability
+of the system will depend on its stability to disturbances of \emph{all} wave
+numbers; and instability will follow from its instability to disturbances
+of even one wave number.  From this discussion it is clear that for `plane
+problems' of the kind considered, the marginal state will be of neutral
+stability for disturbances of one particular wave number ($k_c$, say) and
+will be stable for disturbances of all other wave numbers.  At the onset
+of instability, therefore, motions (stationary or oscillatory, as the case
+may be) will be manifested which will belong to a particular wave
+number (namely, $k_c$); they will accordingly present a cellular pattern,
+the horizontal dimension of the cell being determined by the wavelength
+$\lambda_c = 2\pi/k_c$.
+
+In problems with other geometries, the disturbance will have to be
+analysed correspondingly.  Thus, if the stationary state has symmetry
+about an axis, we may expand the disturbance in the manner
+\begin{equation}
+\label{eq:1-4}
+A(\varpi, z, \theta, t) = \sum_{m=-\infty}^{+\infty} \int_{-\infty}^{+\infty}
+A_{m,k}(\varpi, t) e^{i(kz + m\theta)}\, dk
+\end{equation}
+(where $z$ is measured along the axis of symmetry, $\varpi$ is the distance from
+the axis, and $\theta$ is the azimuthal angle), and investigate the stability of the
+system with respect to all modes distinguished by $k$ and $m$.  Similarly,
+if the initial state has spherical symmetry, we may expand the disturbance in spherical harmonics, $Y_l^m(\theta, \varphi)$, in the manner
+\begin{equation}
+\label{eq:1-5}
+A(r, \theta, \varphi) = \sum_{l=0}^{\infty} \sum_{m=-l}^{+l}
+Y_l^m(\theta, \varphi) A_l^m(r, t)
+\end{equation}
+(where $r$ denotes the distance from the origin, and $\theta$ and $\varphi$ are the
+spherical polar angles), and investigate the stability of the system with
+respect to all modes distinguished by $m$ and $l$.
+
+The essential point of the foregoing remarks is that in all cases the
+disturbance must be expanded in terms of some suitable set of \emph{normal
+modes} which must be \emph{complete} for such an expansion to be possible.  Let
+the various modes appropriate to a particular problem be distinguished
+by the symbol~$\mathbf{k}$.  In practice, several parameters may be needed to
+distinguish the different modes; and the symbol~$\mathbf{k}$ is assumed to represent
+all the parameters that may be needed.  With this understanding, we
+may write (again, symbolically)
+\begin{equation}
+\label{eq:1-6}
+A(\mathbf{r}, t) = \int A_{\mathbf{k}}(\mathbf{r}, t)\, d\mathbf{k}.
+\end{equation}
+
+The equations governing the general (infinitesimal) perturbations
+can be specialized for the normal modes.  We then eliminate the dependence on time by seeking solutions of the form
+\begin{equation}
+\label{eq:1-7}
+A_{\mathbf{k}}(\mathbf{r}, t) = A_{\mathbf{k}}(\mathbf{r}) e^{p_{\mathbf{k}} t},
+\end{equation}
+where $p_{\mathbf{k}}$ is a constant to be determined.  The subscript~$\mathbf{k}$ has been
+attached to $p$ to emphasize that the value of this constant will be different
+for the different normal modes distinguished by~$\mathbf{k}$.
+
+With the dependence on time separated in this manner, the perturbation equations will involve $p_{\mathbf{k}}$ as a parameter.  And solutions of these last
+equations must be sought which satisfy certain necessary boundary
+conditions (such as, that there be no slip at a `rigid boundary', or that
+there be no tangential viscous stresses at a `free boundary').  In general
+the equations will not allow non-trivial solutions (i.e.\ not vanishing
+everywhere) for any arbitrarily assigned~$p_{\mathbf{k}}$.  Indeed, the requirement
+that the equations allow non-trivial solutions satisfying the various
+boundary conditions leads directly to a \emph{characteristic value problem} for
+$p_{\mathbf{k}}$.  The problem is thus reduced to determining $p_{\mathbf{k}}$ for the various modes.
+In general the characteristic values for $p_{\mathbf{k}}$ will be complex:
+\begin{equation}
+\label{eq:1-8}
+p_{\mathbf{k}} = p_{\mathbf{k}}^{(r)} + i p_{\mathbf{k}}^{(i)},
+\end{equation}
+where $p_{\mathbf{k}}^{(r)}$ and $p_{\mathbf{k}}^{(i)}$ will depend, apart from~$\mathbf{k}$, on the parameters $X_1, \ldots, X_j$
+of the basic flow.  The condition for stability is that $p_{\mathbf{k}}^{(r)}$ be negative for
+all~$\mathbf{k}$.  The states which will be of neutral stability with respect to
+disturbances belonging to~$\mathbf{k}$ will be characterized by
+\begin{equation}
+\label{eq:1-9}
+p_{\mathbf{k}}^{(r)}(X_1, \ldots, X_j) = 0.
+\end{equation}
+This is a condition on the parameters $X_1, \ldots, X_j$; and it defines a locus,
+\begin{equation}
+\label{eq:1-10}
+\Sigma_{\mathbf{k}}(X_1, \ldots, X_j) = 0,
+\end{equation}
+in the $(X_1, \ldots, X_j)$-space; this locus separates states which are stable
+from those which are unstable with respect to disturbances belonging
+to the particular mode~$\mathbf{k}$.  It follows from this that the \emph{locus $\Sigma(X_1, \ldots, X_j)$
+separating the regions of complete stability from the regions of instability
+in the $(X_1, \ldots, X_j)$-space is the envelope of the loci $\Sigma_{\mathbf{k}}$}; further, \emph{that when the
+system becomes unstable as we cross $\Sigma$ at some particular point, the mode
+of disturbance which will be manifested (at onset) will be the one whose
+locus $\Sigma_{\mathbf{k}}$ touches $\Sigma$ at that point.}
+
+A further observation might be made.  The distinction between the
+two kinds of marginal states (stationary and oscillatory) made in \S\,2
+corresponds to whether or not the imaginary part, $p_{\mathbf{k}}^{(i)}$ of $p_{\mathbf{k}}$, vanishes
+when the real part, $p_{\mathbf{k}}^{(r)}$ of $p_{\mathbf{k}}$, does.  If $p_{\mathbf{k}}^{(i)} = 0$ implies that $p_{\mathbf{k}}^{(r)} = 0$ for
+every~$\mathbf{k}$, then the principle of the exchange of stabilities will be valid;
+otherwise, we will have overstability at least when instability sets in as
+certain modes.  If overstability occurs, then $p_{\mathbf{k}}^{(i)}$ will have determinate
+values on~$\Sigma_{\mathbf{k}}$.  Accordingly, in case of overstability, the theory must tell
+us not only what the mode of disturbance is that will be manifested at
+onset of instability, but also the characteristic frequency of the oscillations.
+
+\section{Non-dimensional numbers}
+\label{sec:1-4}
+
+As we have explained, the solution of a problem in stability generally
+centres on the determination of the locus~$\Sigma$ of the marginal states in the
+space of the parameters $\{X_1, \ldots, X_j\}$ characterizing the initial flow.  In
+expressing the results of the theory, it will often be convenient to combine
+the various parameters into certain non-dimensional combinations or
+\emph{numbers}.  The most famous of such numbers is the \emph{Reynolds number}~$\mathrm{R}$
+which is a combination of the form
+\begin{equation}
+\label{eq:1-11}
+\mathrm{R} = Lv/\nu,
+\end{equation}
+where $L$ is a typical dimension of the system, $v$ is a measure of the
+velocities which prevail in the stationary flow, and $\nu$ is the kinematic
+viscosity.  However, particular problems may require the definition of
+special numbers.  Thus, in the problem of the stability of viscous flow
+between two rotating coaxial cylinders, the parameters are the radii
+$R_1$ and $R_2$ of the two cylinders, the angular velocities $\Omega_1$ and $\Omega_2$ of their
+rotations, and the kinematic viscosity~$\nu$.  The non-dimensional combinations of these parameters in terms of which it is convenient to discuss
+this problem are (see Chapter~VII):
+\begin{equation}
+\label{eq:1-12}
+\eta = \frac{R_1}{R_2},\quad \mu = \frac{\Omega_2}{\Omega_1},
+\quad\text{and}\quad
+\mathscr{T} = \frac{4\Omega_1^2 R_1^4}{\nu^2}
+\cdot \frac{(1-\mu)(1-\mu/\eta^2)}{(1-\eta^2)^2}.
+\end{equation}
+
+The combination
+\begin{equation}
+\label{eq:1-13}
+\frac{4\Omega^2 L^4}{\nu^2}
+\end{equation}
+of an angular velocity~$\Omega$, a linear dimension~$L$, and the kinematic
+viscosity~$\nu$, which occurs in the definition of~$\mathscr{T}$, always appears when we
+are dealing with rotating systems; it is called the \emph{Taylor number}.
+Similarly, in the problem of the thermal stability of a horizontal layer
+of fluid heated from below, the combinations which occur are:
+\begin{equation}
+\label{eq:1-14}
+R = \frac{g\alpha\beta}{\kappa\nu}d^4 \quad\text{and}\quad p = \nu/\kappa,
+\end{equation}
+where $g$ is the acceleration due to gravity, $d$ is the depth of the layer,
+$\beta$ is the adverse temperature gradient which is maintained, and
+$\alpha$, $\kappa$, and $\nu$ are the coefficients of volume expansion, thermometric
+conductivity, and kinematic viscosity, respectively; $R$ as defined here
+is called the \emph{Rayleigh number}; and $p$ is the \emph{Prandtl number}.  And when
+we are dealing with an electrically conducting fluid in which a magnetic
+field $H$ prevails, a `number' of frequent occurrence is
+\begin{equation}
+\label{eq:1-15}
+Q = \frac{\mu_e H^2 \sigma}{\rho\nu}d^2,
+\end{equation}
+where $\mu_e$ denotes the magnetic permeability, $\rho$ is the density, $\sigma$ is the
+coefficient of electrical conductivity, and $d$ is a linear dimension.
+
+It should be pointed out that there is nothing unique in the way these
+various numbers are defined; they happen to be the ones which have been
+chosen; and in some sense they occur most naturally in certain types of
+problems.
+
+\section*{Bibliographical Notes}
+\label{sec:1-bib}
+
+The only book which is devoted exclusively to problems in hydrodynamic and
+hydromagnetic stability is:
+
+\begin{enumerate}
+\item C.~C.~\textsc{Lin}, \emph{The Theory of Hydrodynamic Stability}, Cambridge, England, 1955.
+
+A major portion of Lin's book treats problems which are related to viscous shear
+flows and the Orr--Sommerfeld equation: topics which on account of their very
+special character will not be considered in this book.
+\end{enumerate}
+
+\noindent
+Problems in hydromagnetic stability are also considered in:
+
+\begin{enumerate}\setcounter{enumi}{1}
+\item T.~G.~\textsc{Cowling}, \emph{Magnetohydrodynamics}, Interscience Tracts on Physics
+  and Astronomy, No.~4, Interscience Publishers, Inc., New York, 1957;
+  see particularly chapter~4.
+\end{enumerate}
+
+\noindent
+Among other books on related subjects, we may refer to:
+
+\begin{enumerate}\setcounter{enumi}{2}
+\item H.~\textsc{Alfv\'en}, \emph{Cosmical Electrodynamics}, International Series of Monographs
+  on Physics, Oxford, England, 1950.
+\item \textsc{Lyman Spitzer, Jr.}, \emph{Physics of Fully Ionized Gases}, Interscience Tracts
+  on Physics and Astronomy, No.~3, Interscience Publishers, Inc., New York,
+  1956.
+\item J.~W.~\textsc{Dungey}, \emph{Cosmic Electrodynamics}, Cambridge Monographs on
+  Mechanics and Applied Mathematics, Cambridge, England, 1958.
+\end{enumerate}
+
+\noindent
+The following review articles bear on topics treated in this book:
+
+\begin{enumerate}\setcounter{enumi}{5}
+\item S.~\textsc{Lundquist}, `Studies in magneto-hydrodynamics', \emph{Arkiv f\"or Fysik}, \textbf{5},
+  297--347 (1952).
+\item T.~G.~\textsc{Cowling}, `Solar electrodynamics', \emph{The Sun}, chapter~8, edited by
+  G.~P.~Kuiper, University of Chicago Press, Chicago, 1953.
+\item W.~M.~\textsc{Elsasser}, `Hydromagnetism.\ I.\ A review', \emph{American J.\ Physics},
+  \textbf{23}, 590--609 (1955); `Hydromagnetism.\ II.\ A review', ibid.\ \textbf{24}, 85--110
+  (1956).
+\item G.~H.~A.~\textsc{Cole}, `Some aspects of magnetohydrodynamics', \emph{Advances in
+  Physics}, \textbf{5}, 452--497 (1956).
+\end{enumerate}
+
+\noindent
+This book represents an expansion of the point of view taken in:
+
+\begin{enumerate}\setcounter{enumi}{9}
+\item S.~\textsc{Chandrasekhar}, `Problems of stability in hydrodynamics and hydromagnetics', \emph{Monthly Notices Roy.\ Astron.\ Soc.\ London}, \textbf{113}, 667--78 (1953).
+\item S.~\textsc{Chandrasekhar}, `Thermal convection', \emph{Daedalus}, \textbf{86}, 323--39 (1957).
+\end{enumerate}
+
+\noindent
+\S\,2.\ The quotation from Eddington is from:
+
+\begin{enumerate}\setcounter{enumi}{11}
+\item A.~S.~\textsc{Eddington}, \emph{The Internal Constitution of the Stars}, p.~201, Cambridge,
+  England, 1926.
+\end{enumerate}
