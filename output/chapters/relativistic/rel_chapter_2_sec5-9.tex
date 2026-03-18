@@ -1,7 +1,7 @@
 % Relativistic Chapter II, Sections 5--9
-% Bénard problem: perturbation equations in a relativistic framework
+% Bénard problem: perturbation equations in a relativistic BDNK framework
 % Based on Chandrasekhar Ch.~II §5--9, extended to special-relativistic hydrodynamics
-% Conventions: see RELATIVISTIC_CONVENTIONS.md
+% Conventions: see BDNK_CONVENTIONS.md
 
 \chapter{RELATIVISTIC THERMAL INSTABILITY OF A HEATED FLUID LAYER}
 \label{ch:rel2}
@@ -25,10 +25,14 @@ the B\'enard problem within a relativistic setting.
 \emph{First}, Fourier's law predicts infinite speed of propagation for
 thermal signals: a temperature perturbation at one point is felt
 instantaneously everywhere.  This parabolic character of the
-diffusion equation violates relativistic causality.  The Israel--Stewart
-theory of dissipative relativistic fluids replaces Fourier's law by a
-\emph{hyperbolic} transport equation with a finite relaxation time $\tau_q$,
-restoring causal propagation of thermal disturbances.
+diffusion equation violates relativistic causality.  The BDNK
+(Bemfica--Disconzi--Noronha--Kovtun) formalism of first-order causal
+viscous relativistic hydrodynamics addresses this issue not by introducing
+relaxation equations (as in the Israel--Stewart approach), but by a careful
+choice of \emph{hydrodynamic frame} and constrained first-order transport
+coefficients.  The resulting theory is causal, strongly hyperbolic, and
+involves \emph{no additional dynamical degrees of freedom} beyond the
+standard hydrodynamic variables $(\varepsilon, n, u^\mu)$.
 
 \emph{Second}, in relativistic fluids it is not the rest-mass density
 $\rho_0$ alone that provides the inertia; rather, it is the \emph{enthalpy
@@ -42,16 +46,16 @@ of the rest-mass energy.
 \emph{Third}, a systematic relativistic treatment reveals how the
 classical Rayleigh number is modified when pressure contributions to
 inertia, relativistic thermodynamics, and causal heat transport are
-included.  The corrections are of order $v^2/c^2$ and $\tau_q/\tau_{\mathrm{diff}}$,
-and they qualitatively change the stability boundary in the
-high-temperature regime.
+included.  The corrections are of order $v^2/c^2$, and they qualitatively
+change the stability boundary in the high-temperature regime.
 
 Our aim in the present chapter is therefore to derive, from first principles
-of relativistic fluid dynamics, the perturbation equations governing the
-onset of convective instability in a relativistic fluid layer heated from
-below.  The analysis parallels that of Chandrasekhar's classical treatment
-(\S\S~5--9 of Chapter~II) step by step, so that the non-relativistic limit
-can be recovered at every stage by taking $c \to \infty$ and $\tau_q \to 0$.
+of relativistic fluid dynamics in the BDNK formalism, the perturbation
+equations governing the onset of convective instability in a relativistic
+fluid layer heated from below.  The analysis parallels that of
+Chandrasekhar's classical treatment (\S\S~5--9 of Chapter~II) step by step,
+so that the non-relativistic limit can be recovered at every stage by
+taking $c \to \infty$.
 
 %======================================================================
 \section{The nature of the physical problem}\label{sec:rel6}
@@ -109,15 +113,15 @@ and $\nu = \eta_{\mathrm{s}} / w_0$ is the \emph{relativistic} kinematic viscosi
 Instability sets in when $\mathrm{Ra}_{\mathrm{rel}}$ exceeds a critical value
 $\mathrm{Ra}_{\mathrm{rel},c}$.
 
-A key qualitative difference from the classical problem is the role of the
-heat-flux relaxation time $\tau_q$.  In the Israel--Stewart framework, heat
-does not propagate instantaneously; instead, it obeys a telegraph-type
-equation.  This renders the perturbation equations \emph{hyperbolic} rather
-than parabolic, and introduces an additional dimensionless parameter
-$\tau_q \kappa_T / d^2$ which can shift the critical Rayleigh number and---for
-sufficiently large $\tau_q$---can change the onset from stationary to
-oscillatory (overstable) convection even in the absence of rotation or a
-magnetic field.
+A key qualitative difference from both the classical problem and the
+Israel--Stewart formulation is the mechanism by which causality is enforced.
+In the BDNK framework, there are \emph{no relaxation times}
+$\tau_q$, $\tau_\pi$; instead, causality and hyperbolicity are ensured by
+the choice of hydrodynamic frame, encoded in frame coefficients that
+modify the out-of-equilibrium definitions of energy density, pressure,
+and heat flux.  The perturbation equations are therefore \emph{lower order}
+in time derivatives than in the Israel--Stewart theory, yet remain
+hyperbolic.
 
 %======================================================================
 \section{The basic relativistic hydrodynamic equations}\label{sec:rel7}
@@ -144,18 +148,55 @@ The projection tensor orthogonal to $u^\mu$ is
 \subsection{The energy--momentum tensor}\label{sec:rel7a}
 %----------------------------------------------------------------------
 
-For a dissipative fluid, the energy--momentum tensor in the
-Israel--Stewart (extended irreversible thermodynamics) framework is
+In the BDNK formalism, the energy--momentum tensor is decomposed in a
+\emph{general hydrodynamic frame} (neither Landau nor Eckart):
 \begin{equation}
 \label{eq:rel2-7}
-  T^{\mu\nu} = \varepsilon\,\frac{u^\mu u^\nu}{c^2}
-    + (p + \Pi)\,\Delta^{\mu\nu}
-    + \pi^{\mu\nu}
-    + \frac{1}{c^2}\bigl(q^\mu u^\nu + q^\nu u^\mu\bigr),
+  T^{\mu\nu} = E\,\frac{u^\mu u^\nu}{c^2}
+    + P\,\Delta^{\mu\nu}
+    + \Pi^{\mu\nu}
+    + \frac{1}{c^2}\bigl(Q^\mu u^\nu + Q^\nu u^\mu\bigr),
 \end{equation}
-where $\Pi$ is the bulk viscous pressure, $\pi^{\mu\nu}$ is the shear-stress
-tensor (symmetric, traceless, and orthogonal to $u^\mu$), and $q^\mu$ is the
-heat-flux 4-vector (orthogonal to $u^\mu$: $q^\mu u_\mu = 0$).
+where $E$ is the (out-of-equilibrium) energy density, $P$ is the
+(out-of-equilibrium) isotropic pressure, $\Pi^{\mu\nu}$ is the
+anisotropic stress tensor (symmetric, traceless, and orthogonal to
+$u^\mu$), and $Q^\mu$ is the heat-flux 4-vector (orthogonal to $u^\mu$:
+$Q^\mu u_\mu = 0$).
+
+The crucial distinction from the Israel--Stewart decomposition is that
+$E$, $P$, $Q^\mu$, and $\Pi^{\mu\nu}$ are given by \emph{algebraic}
+(first-order gradient) constitutive relations, not by separate evolution
+equations.  Specifically, the BDNK constitutive relations are:
+\begin{align}
+\label{eq:rel2-7a}
+  E &= \varepsilon + \varepsilon_1, \qquad
+  \varepsilon_1 = -\zeta_1\,\nabla_\alpha u^\alpha
+    - \frac{\beta_1}{T}\,u^\alpha\partial_\alpha T
+    - \alpha_1\,u^\alpha\partial_\alpha\!\left(\frac{\mu}{T}\right), \\[4pt]
+\label{eq:rel2-7b}
+  P &= p + \Pi_{\mathrm{bulk}}, \qquad
+  \Pi_{\mathrm{bulk}} = -\zeta\,\nabla_\alpha u^\alpha + \ldots
+    \;\text{(frame corrections)}, \\[4pt]
+\label{eq:rel2-7c}
+  Q^\mu &= -\kappa\,T\,\Delta^{\mu\alpha}\partial_\alpha\!\left(\frac{\mu}{T}\right)
+    + \text{(BDNK frame corrections)}, \\[4pt]
+\label{eq:rel2-7d}
+  \Pi^{\mu\nu} &= -2\eta\,\sigma^{\mu\nu},
+\end{align}
+where $\varepsilon$ and $p$ are the \emph{equilibrium} energy density and
+pressure, $\eta$ is the shear viscosity, $\zeta$ is the bulk viscosity,
+$\kappa$ is the thermal conductivity, and $\varepsilon_1$, $\beta_1$,
+$\alpha_1$, $\zeta_1$ are BDNK \emph{frame coefficients} that encode the
+departure of the hydrodynamic frame from the Landau frame.  The shear
+tensor $\sigma^{\mu\nu}$ is defined in equation~\eqref{eq:rel2-16} below.
+
+\medskip
+\noindent\textbf{Remark.}\quad
+In the Landau frame one sets $\varepsilon_1 = 0$ and $Q^\mu = 0$, but
+this choice renders the first-order theory acausal (the Eckart/Hiscock--Lindblom
+instability).  The BDNK frame avoids this pathology by retaining
+non-zero frame coefficients, which contribute to the principal part of the
+equations of motion and restore strong hyperbolicity.
 
 %----------------------------------------------------------------------
 \subsection{The equation of continuity (baryon-number conservation)}%
@@ -202,18 +243,22 @@ gravitational field $g$ in the $-z$ direction,
 where $\lambda^\mu$ is the unit vector in the $z$-direction (with appropriate
 covariant components in the weak-field limit).
 
+In the BDNK formalism, no separate evolution equations for $Q^\mu$ or
+$\Pi^{\mu\nu}$ are needed: the dissipative fluxes are expressed directly
+in terms of gradients of the primary hydrodynamic variables through
+the constitutive relations~\eqref{eq:rel2-7a}--\eqref{eq:rel2-7d}.
 Projecting equation~\eqref{eq:rel2-10} orthogonally to $u^\mu$ (using
 $\Delta^{\mu}{}_{\alpha}$) yields the relativistic Euler equation with
-dissipative corrections:
+first-order dissipative corrections:
 \begin{equation}
 \label{eq:rel2-12}
   w\, u^\nu\nabla_\nu u^\mu
   = -\Delta^{\mu\nu}\nabla_\nu p
-    - \Delta^{\mu\nu}\nabla_\nu \Pi
-    + \Delta^{\mu}{}_{\alpha}\nabla_\beta\pi^{\alpha\beta}
+    - \Delta^{\mu\nu}\nabla_\nu \Pi_{\mathrm{bulk}}
+    + \Delta^{\mu}{}_{\alpha}\nabla_\beta\Pi^{\alpha\beta}
     + \frac{1}{c^2}\Delta^{\mu}{}_{\alpha}\bigl(
-        q^\alpha\nabla_\beta u^\beta
-      + q^\beta\nabla_\beta u^\alpha
+        Q^\alpha\nabla_\beta u^\beta
+      + Q^\beta\nabla_\beta u^\alpha
       \bigr)
     + f^\mu_{\perp},
 \end{equation}
@@ -222,9 +267,13 @@ $c^2$ (the relativistic inertial mass density), and
 $f^\mu_\perp = \Delta^{\mu}{}_\alpha f^\alpha_{\mathrm{ext}}$
 is the spatial projection of the gravitational force.
 
+Since $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ algebraically in the BDNK
+theory (no relaxation equation), the shear-stress divergence can be
+directly expressed in terms of velocity gradients.
+
 In the non-relativistic limit, $w \to \rho_0$,
 $\Delta^{\mu\nu}\nabla_\nu p \to \partial p / \partial x^i$, the
-$q$-dependent terms vanish, and the shear-stress divergence reduces to
+$Q$-dependent terms vanish, and the shear-stress divergence reduces to
 $\mu\nabla^2 u_i$.  We thus recover the Navier--Stokes equation~(18) of
 Chapter~II.
 
@@ -238,10 +287,10 @@ equation in the local rest frame:
 \label{eq:rel2-13}
   u^\mu\nabla_\mu\varepsilon
   + (\varepsilon + p)\,\nabla_\mu u^\mu
-  = -\Pi\,\nabla_\mu u^\mu
-    - \pi^{\mu\nu}\nabla_\mu u_\nu
-    - \nabla_\mu q^\mu
-    - \frac{1}{c^2}\,q^\mu u^\nu\nabla_\nu u_\mu\,.
+  = -\Pi_{\mathrm{bulk}}\,\nabla_\mu u^\mu
+    - \Pi^{\mu\nu}\nabla_\mu u_\nu
+    - \nabla_\mu Q^\mu
+    - \frac{1}{c^2}\,Q^\mu u^\nu\nabla_\nu u_\mu\,.
 \end{equation}
 The left-hand side is the relativistic generalization of the material
 derivative of the internal energy plus the $p\,\mathrm{div}\,\mathbf{u}$
@@ -249,41 +298,57 @@ work term.  The right-hand side collects the dissipative contributions:
 bulk-viscous heating, shear-viscous heating, heat-flux divergence, and
 a relativistic correction involving the acceleration of the heat flux.
 
+In the BDNK theory, the heat flux $Q^\mu$ appearing in
+equation~\eqref{eq:rel2-13} is given by the constitutive
+relation~\eqref{eq:rel2-7c}; no separate evolution equation for $Q^\mu$ is
+needed.  The divergence $\nabla_\mu Q^\mu$ thus yields second-order spatial
+derivatives of the temperature, producing the standard diffusive operator
+at leading order.
+
 In the non-relativistic limit, equation~\eqref{eq:rel2-13} reduces to
 the heat equation~(39) of Chapter~II (upon identifying
 $\varepsilon \approx \rho_0 c_v T + \mathrm{const}$ and
-$\nabla_\mu q^\mu \to -\partial/\partial x_j(k\,\partial T/\partial x_j)$).
+$\nabla_\mu Q^\mu \to -\partial/\partial x_j(k\,\partial T/\partial x_j)$).
 
 %----------------------------------------------------------------------
-\subsection{Israel--Stewart transport equations (causal dissipation)}%
+\subsection{BDNK constitutive relations (causal first-order dissipation)}%
 \label{sec:rel7e}
 %----------------------------------------------------------------------
 
-The crucial departure from Fourier's law is the replacement of the
-instantaneous constitutive relation $q^i = -k\,\partial T/\partial x^i$ by
-the Israel--Stewart \emph{relaxation equation} for the heat flux:
+The crucial feature of the BDNK formalism is that it replaces the
+Israel--Stewart \emph{relaxation equations} with \emph{algebraic}
+constitutive relations at first order in gradients, while maintaining
+causality through the choice of hydrodynamic frame.
+
+\paragraph{Heat flux.}
+In the BDNK general frame, the heat flux is given by
 \begin{equation}
 \label{eq:rel2-14}
-  \tau_q\,\Delta^{\mu\alpha}\, u^\beta\nabla_\beta q_\alpha + q^\mu
-  = -\kappa_{\mathrm{IS}}\!\left(
-      \Delta^{\mu\nu}\nabla_\nu T
-      + \frac{T}{c^2}\,u^\nu\nabla_\nu u^\mu
-    \right),
+  Q^\mu = -\kappa\,T\,\Delta^{\mu\alpha}\partial_\alpha\!\left(\frac{\mu}{T}\right)
+    + \varepsilon_Q\,\Delta^{\mu\alpha}\,u^\beta\nabla_\beta u_\alpha
+    + \text{(additional frame terms)},
 \end{equation}
-where $\kappa_{\mathrm{IS}}$ is the thermal conductivity and $\tau_q > 0$ is
-the heat-flux relaxation time.  The term $Tu^\nu\nabla_\nu u^\mu / c^2$ is
-a relativistic correction ensuring that $q^\mu$ remains orthogonal to
-$u^\mu$ under time evolution.
+where $\kappa$ is the thermal conductivity, $\mu$ is the chemical potential,
+and $\varepsilon_Q$ is a BDNK frame coefficient.  For a single-component
+fluid, $\partial_\alpha(\mu/T)$ can be re-expressed in terms of $\partial_\alpha T$
+and $\partial_\alpha p$ using the Gibbs--Duhem relation; in the simplest
+case (no conserved charge gradients) this reduces to
+\begin{equation}
+\label{eq:rel2-14b}
+  Q^\mu \approx -\kappa_{\mathrm{eff}}\,\Delta^{\mu\alpha}\partial_\alpha T
+    + \text{(frame corrections)},
+\end{equation}
+where $\kappa_{\mathrm{eff}}$ absorbs thermodynamic factors.
+Equation~\eqref{eq:rel2-14} is \emph{algebraic}---it contains no time
+derivatives of $Q^\mu$ itself.  There is no relaxation time $\tau_q$.
 
-Similarly, the shear stress satisfies
+\paragraph{Shear stress.}
+The anisotropic stress is given by
 \begin{equation}
 \label{eq:rel2-15}
-  \tau_\pi\,\Delta^{\mu\alpha}\Delta^{\nu\beta}\,u^\gamma\nabla_\gamma
-  \pi_{\alpha\beta} + \pi^{\mu\nu}
-  = 2\eta_{\mathrm{s}}\,\sigma^{\mu\nu},
+  \Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu},
 \end{equation}
-where $\eta_{\mathrm{s}}$ is the shear viscosity, $\tau_\pi$ is the
-shear-stress relaxation time, and
+where $\eta$ is the shear viscosity and
 \begin{equation}
 \label{eq:rel2-16}
   \sigma^{\mu\nu} = \frac{1}{2}\bigl(
@@ -292,18 +357,30 @@ shear-stress relaxation time, and
   \bigr)
   - \frac{1}{3}\Delta^{\mu\nu}\nabla_\alpha u^\alpha
 \end{equation}
-is the shear tensor.  The bulk viscous pressure obeys
+is the shear tensor.  This is again an algebraic relation; there is no
+relaxation time $\tau_\pi$.  In the non-relativistic Boussinesq limit,
+$\Pi_{ij} = -\eta(\partial_i u_j + \partial_j u_i)$, recovering the
+Navier--Stokes stress.
+
+\paragraph{Bulk viscous pressure.}
+The bulk viscous pressure is
 \begin{equation}
 \label{eq:rel2-17}
-  \tau_\Pi\, u^\alpha\nabla_\alpha\Pi + \Pi
-  = -\zeta\,\nabla_\mu u^\mu,
+  \Pi_{\mathrm{bulk}} = -\zeta\,\nabla_\mu u^\mu,
 \end{equation}
-where $\zeta$ is the bulk viscosity and $\tau_\Pi$ is the corresponding
-relaxation time.
+where $\zeta$ is the bulk viscosity.  Again, no relaxation time
+$\tau_\Pi$ appears.
 
-When $\tau_q = \tau_\pi = \tau_\Pi = 0$, the Israel--Stewart equations
-reduce to the (acausal) Eckart/Landau--Lifshitz first-order theory, and
-in the non-relativistic limit the heat equation becomes Fourier's law.
+\paragraph{Comparison with Israel--Stewart.}
+In the Israel--Stewart theory, $q^\mu$, $\pi^{\mu\nu}$, and $\Pi$ are
+promoted to independent dynamical variables satisfying relaxation equations
+(e.g.\ $\tau_q\,u^\alpha\nabla_\alpha q^\mu + q^\mu = \ldots$).  The BDNK
+approach eliminates these extra degrees of freedom entirely: the
+conservation laws $\nabla_\mu T^{\mu\nu} = 0$ and $\nabla_\mu(\rho_0 u^\mu) = 0$,
+together with the algebraic constitutive
+relations~\eqref{eq:rel2-14}--\eqref{eq:rel2-17}, form a \emph{closed}
+system for $(\varepsilon, u^\mu, \rho_0)$.  Causality is ensured not by
+relaxation times but by the frame coefficients.
 
 %----------------------------------------------------------------------
 \subsection{The rate of dissipation}\label{sec:rel7f}
@@ -313,11 +390,18 @@ The relativistic analogue of the viscous dissipation function $\Phi$ of
 equation~(29) in Chapter~II is
 \begin{equation}
 \label{eq:rel2-18}
-  \Phi_{\mathrm{rel}} = \pi^{\mu\nu}\sigma_{\mu\nu} + \Pi\,\nabla_\mu u^\mu\,.
+  \Phi_{\mathrm{rel}} = \Pi^{\mu\nu}\sigma_{\mu\nu}
+    + \Pi_{\mathrm{bulk}}\,\nabla_\mu u^\mu\,.
+\end{equation}
+Since $\Pi^{\mu\nu} = -2\eta\,\sigma^{\mu\nu}$ in the BDNK theory,
+\begin{equation}
+\label{eq:rel2-18b}
+  \Phi_{\mathrm{rel}} = 2\eta\,\sigma^{\mu\nu}\sigma_{\mu\nu}
+    + \zeta\,(\nabla_\mu u^\mu)^2\,.
 \end{equation}
 This quantity is non-negative by the second law of thermodynamics
 ($\Phi_{\mathrm{rel}} \ge 0$), provided the transport coefficients
-$\eta_{\mathrm{s}} \ge 0$, $\zeta \ge 0$.  In the non-relativistic limit
+$\eta \ge 0$, $\zeta \ge 0$.  In the non-relativistic limit
 with an incompressible fluid, $\Phi_{\mathrm{rel}} \to 2\mu\,e_{ij}^2$,
 recovering equation~(31) of Chapter~II.
 
@@ -373,44 +457,47 @@ following prescriptions:
   contributes to the buoyancy in the relativistic regime.
 
 \item \textbf{Constant transport coefficients:} The viscosity
-  $\eta_{\mathrm{s}}$, thermal conductivity $\kappa_{\mathrm{IS}}$, and
-  relaxation times $\tau_q$, $\tau_\pi$ are treated as constants
-  evaluated at the reference state.
+  $\eta$, thermal conductivity $\kappa$, and BDNK frame
+  coefficients are treated as constants evaluated at the reference state.
 \end{enumerate}
 
 Under these approximations, the relativistic momentum equation~%
-\eqref{eq:rel2-12} becomes, in the low-velocity limit (3-vector form):
+\eqref{eq:rel2-12} becomes, in the low-velocity limit (3-vector form),
+after substituting the BDNK algebraic constitutive relation
+$\Pi_{ij} = -2\eta\,\sigma_{ij}$ directly:
 \begin{equation}
 \label{eq:rel2-23}
   w_0\!\left(\frac{\partial u_i}{\partial t}
     + u_j\frac{\partial u_i}{\partial x_j}\right)
   = -\frac{\partial\,\delta p}{\partial x_i}
     + g\,\alpha_w\,w_0\,\theta\,\lambda_i
-    + \frac{\partial}{\partial x_j}\pi_{ij}\,,
+    + \eta\,\nabla^2 u_i\,,
 \end{equation}
-where $\theta$ is the temperature perturbation and the shear stress is
-governed by the Israel--Stewart equation~\eqref{eq:rel2-15}.
+where $\theta$ is the temperature perturbation.  Note that, unlike the
+Israel--Stewart formulation, the shear stress has been substituted
+\emph{algebraically}; no relaxation equation is needed.
 
 The heat equation, under the Boussinesq approximation and using the
-Israel--Stewart heat-flux equation~\eqref{eq:rel2-14}, becomes a
-\emph{telegraph-type} equation (see \S~\ref{sec:rel9} for the linearized
-form).
+BDNK constitutive relation for the heat flux~\eqref{eq:rel2-14b}, yields
+a \emph{first-order-in-time} diffusion equation for $\theta$ (see
+\S~\ref{sec:rel9} for the linearized form), in contrast to the
+second-order telegraph equation of the Israel--Stewart formulation.
 
 Dividing equation~\eqref{eq:rel2-23} by $w_0$, we define the
 \emph{relativistic kinematic viscosity}
 \begin{equation}
 \label{eq:rel2-24}
-  \nu_{\mathrm{rel}} = \frac{\eta_{\mathrm{s}}}{w_0}
-  = \frac{\eta_{\mathrm{s}}\,c^2}{\varepsilon_0 + p_0}\,.
+  \nu_{\mathrm{rel}} = \frac{\eta}{w_0}
+  = \frac{\eta\,c^2}{\varepsilon_0 + p_0}\,.
 \end{equation}
 In the classical limit $\varepsilon_0 \to \rho_0 c^2$, $p_0 \ll \rho_0 c^2$,
-so $\nu_{\mathrm{rel}} \to \eta_{\mathrm{s}}/\rho_0 = \nu$, the ordinary
+so $\nu_{\mathrm{rel}} \to \eta/\rho_0 = \nu$, the ordinary
 kinematic viscosity.
 
 Similarly, the \emph{relativistic thermal diffusivity} is
 \begin{equation}
 \label{eq:rel2-25}
-  \kappa_T = \frac{\kappa_{\mathrm{IS}}}{w_0\,c_p}\,,
+  \kappa_T = \frac{\kappa_{\mathrm{eff}}}{w_0\,c_p}\,,
 \end{equation}
 where $c_p$ is the specific heat at constant pressure.
 
@@ -427,8 +514,8 @@ steady adverse temperature gradient is maintained and no motions are present.
 The equilibrium (unperturbed) state is characterized by
 \begin{equation}
 \label{eq:rel2-26}
-  u^i = 0, \qquad T = T_0 - \beta z, \qquad q^\mu = 0,
-  \qquad \pi^{\mu\nu} = 0, \qquad \Pi = 0,
+  u^i = 0, \qquad T = T_0 - \beta z, \qquad Q^\mu = 0,
+  \qquad \Pi^{\mu\nu} = 0, \qquad \Pi_{\mathrm{bulk}} = 0,
 \end{equation}
 where $\beta > 0$ is the adverse temperature gradient.  The equilibrium
 pressure distribution satisfies the relativistic hydrostatic equation
@@ -452,24 +539,28 @@ Let the equilibrium state be slightly perturbed.  We write
 \begin{equation}
 \label{eq:rel2-29}
   u^i \to u^i, \quad T \to T_0 - \beta z + \theta, \quad
-  p \to p_0(z) + \delta p, \quad
-  q^\mu \to q^\mu, \quad \pi^{\mu\nu} \to \pi^{\mu\nu},
+  p \to p_0(z) + \delta p,
 \end{equation}
-where $u^i$, $\theta$, $\delta p$, $q^\mu$, and $\pi^{\mu\nu}$ are now
-understood as first-order perturbation quantities.
+where $u^i$, $\theta$, and $\delta p$ are first-order perturbation
+quantities.  In the BDNK formalism, the dissipative fluxes $Q^\mu$ and
+$\Pi^{\mu\nu}$ are \emph{not} independent perturbation variables; they are
+determined algebraically from the gradients of $(u^i, \theta, \delta p)$
+via the constitutive relations~\eqref{eq:rel2-14}--\eqref{eq:rel2-17}.
 
 The perturbation of the energy--momentum tensor~\eqref{eq:rel2-7}
 at first order is
 \begin{equation}
 \label{eq:rel2-30}
-  \delta T^{00} = \delta\varepsilon, \qquad
-  \delta T^{0i} = w_0\,c\,u^i + \frac{q^i}{c}, \qquad
-  \delta T^{ij} = \delta p\,\delta^{ij} + \pi^{ij},
+  \delta T^{00} = \delta\varepsilon + \delta\varepsilon_1, \qquad
+  \delta T^{0i} = w_0\,c\,u^i + \frac{\delta Q^i}{c}, \qquad
+  \delta T^{ij} = \delta p\,\delta^{ij} + \delta\Pi^{ij},
 \end{equation}
 where $\delta\varepsilon = (\partial\varepsilon/\partial T)_p\,\theta
-+ (\partial\varepsilon/\partial p)_T\,\delta p$.  The off-diagonal components
-$\delta T^{0i}$ reveal that in the relativistic theory the momentum density
-receives a contribution from the heat flux $q^i/c$, absent classically.
++ (\partial\varepsilon/\partial p)_T\,\delta p$, and
+$\delta\varepsilon_1$ is the BDNK frame correction to the energy density
+(first order in gradients of the perturbation).  The heat flux perturbation
+$\delta Q^i$ and anisotropic stress perturbation $\delta\Pi^{ij}$ are
+determined by the linearized constitutive relations.
 
 %----------------------------------------------------------------------
 \subsection{Linearized equations of motion}\label{sec:rel9c}
@@ -482,87 +573,67 @@ state and retaining only first-order terms, we obtain
   \frac{\partial u_i}{\partial t}
   = -\frac{1}{w_0}\frac{\partial\,\delta p}{\partial x_i}
     + g\,\alpha_w\,\theta\,\lambda_i
-    + \frac{1}{w_0}\frac{\partial\pi_{ij}}{\partial x_j}\,.
+    + \nu_{\mathrm{rel}}\,\nabla^2 u_i\,.
 \end{equation}
-The shear stress $\pi_{ij}$ is governed by the linearized Israel--Stewart
-equation~\eqref{eq:rel2-15}.  At first order, in the rest frame:
-\begin{equation}
-\label{eq:rel2-32}
-  \tau_\pi\frac{\partial\pi_{ij}}{\partial t} + \pi_{ij}
-  = \eta_{\mathrm{s}}\!\left(
-      \frac{\partial u_i}{\partial x_j}
-      + \frac{\partial u_j}{\partial x_i}
-      - \frac{2}{3}\delta_{ij}\frac{\partial u_k}{\partial x_k}
-    \right).
-\end{equation}
-In the Boussinesq approximation ($\partial u_k/\partial x_k = 0$) and when
-$\tau_\pi$ is small (so that $\pi_{ij}$ relaxes quickly to its Navier--Stokes
-value), we can substitute $\pi_{ij} \approx \eta_{\mathrm{s}}(\partial u_i/\partial x_j + \partial u_j/\partial x_i)$ into equation~\eqref{eq:rel2-31} and obtain
-\begin{equation}
-\label{eq:rel2-33}
-  \frac{\partial u_i}{\partial t}
-  = -\frac{1}{w_0}\frac{\partial\,\delta p}{\partial x_i}
-    + g\,\alpha_w\,\theta\,\lambda_i
-    + \nu_{\mathrm{rel}}\,\nabla^2 u_i\,,
-\end{equation}
-which is the relativistic counterpart of equation~(55) in Chapter~II.
-When the full relaxation dynamics is retained, equation~\eqref{eq:rel2-31}
-together with~\eqref{eq:rel2-32} constitutes a system that is hyperbolic
-in time.
+This is the relativistic counterpart of equation~(55) in Chapter~II,
+with $\nu_{\mathrm{rel}} = \eta/w_0$ replacing $\nu = \mu/\rho_0$ and
+$\alpha_w$ replacing $\alpha$.
+
+\medskip
+\noindent\textbf{Remark.}\quad
+In the Israel--Stewart formulation, the momentum equation at this stage
+would couple to a separate relaxation equation for $\pi_{ij}$ involving
+$\tau_\pi\,\partial\pi_{ij}/\partial t$.  In the BDNK formalism, the shear
+stress $\Pi_{ij} = -2\eta\,\sigma_{ij}$ is an algebraic function of the
+velocity gradients, so the substitution is immediate:
+$\partial_j \Pi_{ij} = \eta\,\nabla^2 u_i$ (for incompressible flow).
+The linearized momentum equation is therefore \emph{first order in time},
+identical in structure to the classical Navier--Stokes equation.
 
 %----------------------------------------------------------------------
 \subsection{Linearized heat equation}\label{sec:rel9d}
 %----------------------------------------------------------------------
 
-Linearizing the energy equation~\eqref{eq:rel2-13} and the Israel--Stewart
-heat-flux equation~\eqref{eq:rel2-14} about the equilibrium state, we
-obtain the following pair of coupled equations.
+Linearizing the energy equation~\eqref{eq:rel2-13} about the equilibrium
+state and substituting the BDNK constitutive relation for the heat flux
+from equation~\eqref{eq:rel2-14b}, we obtain the linearized heat equation
+directly.
 
-The energy balance at first order gives
+At first order, the divergence of $Q^\mu$ yields
+\begin{equation}
+  \nabla_\mu Q^\mu \big|_{\text{1st order}}
+  = -\kappa_{\mathrm{eff}}\,\nabla^2\theta + \text{(BDNK frame corrections)}.
+\end{equation}
+Substituting into the energy balance gives
 \begin{equation}
 \label{eq:rel2-34}
   w_0\,c_p\frac{\partial\theta}{\partial t}
   = w_0\,c_p\,\beta\,w
-    - \frac{\partial q_j}{\partial x_j}\,,
+    + \kappa_{\mathrm{eff}}\,\nabla^2\theta\,,
 \end{equation}
 where $w = \lambda_j u_j = u_3$ is the vertical component of velocity
-and $c_p$ is the specific heat at constant pressure.
-
-The linearized Israel--Stewart equation for the heat flux (spatial
-components, in the rest frame) is
-\begin{equation}
-\label{eq:rel2-35}
-  \tau_q\frac{\partial q_i}{\partial t} + q_i
-  = -\kappa_{\mathrm{IS}}\frac{\partial\theta}{\partial x_i}\,.
-\end{equation}
-Note that the relativistic correction term
-$T\,u^\nu\nabla_\nu u^\mu / c^2$ in equation~\eqref{eq:rel2-14}
-vanishes at first order about a static equilibrium (since $u^\mu$
-is already first-order for the spatial components).
-
-Eliminating $q_i$ between equations~\eqref{eq:rel2-34}
-and~\eqref{eq:rel2-35}: apply $\tau_q\,\partial/\partial t + 1$ to
-equation~\eqref{eq:rel2-34} and substitute
-$\partial q_j/\partial x_j$ from~\eqref{eq:rel2-35}:
+and $c_p$ is the specific heat at constant pressure.  Dividing by
+$w_0\,c_p$ and using $\kappa_T = \kappa_{\mathrm{eff}}/(w_0 c_p)$:
 \begin{equation}
 \label{eq:rel2-36}
   \boxed{
-  \tau_q\frac{\partial^2\theta}{\partial t^2}
-  + \frac{\partial\theta}{\partial t}
-  = \beta\!\left(\tau_q\frac{\partial w}{\partial t} + w\right)
-    + \kappa_T\,\nabla^2\theta\,,}
+  \frac{\partial\theta}{\partial t}
+  = \beta\,w + \kappa_T\,\nabla^2\theta\,.}
 \end{equation}
-where we have used $\kappa_T = \kappa_{\mathrm{IS}}/(w_0 c_p)$.  This is
-the \textbf{Cattaneo--Vernotte (telegraph) equation} for the temperature
-perturbation.  It is the relativistic replacement for equation~(56)
-of Chapter~II.
+This is the \textbf{BDNK heat equation} for the temperature perturbation.
+It is the relativistic replacement for equation~(56) of Chapter~II and
+is \emph{first order in time}---in contrast to the Israel--Stewart
+telegraph equation
+$\tau_q\,\partial^2\theta/\partial t^2 + \partial\theta/\partial t
+= \beta(\tau_q\,\partial w/\partial t + w) + \kappa_T\nabla^2\theta$,
+which is second order in time.
 
-In the limit $\tau_q \to 0$, equation~\eqref{eq:rel2-36} reduces to
-\begin{equation}
-\label{eq:rel2-37}
-  \frac{\partial\theta}{\partial t} = \beta\,w + \kappa_T\,\nabla^2\theta,
-\end{equation}
-recovering the classical equation~(76) of Chapter~II.
+Equation~\eqref{eq:rel2-36} is identical in form to the classical
+equation~(76) of Chapter~II; the relativistic content enters through the
+definitions of $\kappa_T$ and the BDNK frame coefficients that ensure
+causality.  The fact that BDNK yields a first-order-in-time heat equation
+(rather than a telegraph equation) reflects the central feature of the
+formalism: \emph{no relaxation times are introduced}.
 
 %----------------------------------------------------------------------
 \subsection{The solenoidal condition}\label{sec:rel9e}
@@ -583,12 +654,11 @@ as in the classical case (equation~(57) of Chapter~II).
 
 Following exactly the classical procedure of \S~9 (equations~(65)--(76) of
 Chapter~II), we take the curl and double curl of the momentum
-equation~\eqref{eq:rel2-33} to eliminate the pressure perturbation.
+equation~\eqref{eq:rel2-31} to eliminate the pressure perturbation.
 
 Defining the vorticity $\omega_i = \epsilon_{ijk}\,\partial u_k/\partial x_j$
 and the vertical components $\zeta = \lambda_i\omega_i$,
-$w = \lambda_i u_i$, and using the rapid-relaxation limit for the shear
-stress (i.e.\ $\tau_\pi \to 0$), we obtain:
+$w = \lambda_i u_i$, we obtain:
 
 \paragraph{Vorticity equation (vertical component):}
 \begin{equation}
@@ -596,7 +666,7 @@ stress (i.e.\ $\tau_\pi \to 0$), we obtain:
   \frac{\partial\zeta}{\partial t} = \nu_{\mathrm{rel}}\,\nabla^2\zeta\,,
 \end{equation}
 which is identical in form to the classical equation~(73), but with
-$\nu_{\mathrm{rel}} = \eta_{\mathrm{s}}/w_0$ replacing $\nu = \mu/\rho_0$.
+$\nu_{\mathrm{rel}} = \eta/w_0$ replacing $\nu = \mu/\rho_0$.
 
 \paragraph{Vertical velocity equation:}
 \begin{equation}
@@ -612,11 +682,23 @@ which is the relativistic counterpart of equation~(74), with
 $g\alpha \to g\alpha_w$ (reflecting the enthalpy contribution to buoyancy)
 and $\nu \to \nu_{\mathrm{rel}}$.
 
-Together with the telegraph heat equation~\eqref{eq:rel2-36}, the
+Together with the BDNK heat equation~\eqref{eq:rel2-36}, the
 solenoidal condition~\eqref{eq:rel2-38}, and the vorticity
 equation~\eqref{eq:rel2-39}, equations~\eqref{eq:rel2-40} constitute the
 \emph{complete set of linearized perturbation equations for the
-relativistic B\'enard problem}.
+relativistic B\'enard problem in the BDNK formalism}.
+
+\medskip
+\noindent\textbf{Remark on the order of the system.}\quad
+The BDNK perturbation system is \emph{lower order} than the Israel--Stewart
+system: the heat equation~\eqref{eq:rel2-36} is first order in time
+(not second), and the momentum equation~\eqref{eq:rel2-31} involves no
+relaxation dynamics for $\Pi_{ij}$.  The total number of independent
+dynamical equations is reduced because $Q^\mu$, $\Pi^{\mu\nu}$, and
+$\Pi_{\mathrm{bulk}}$ are determined algebraically.  Despite being lower
+order, the full BDNK system (before the Boussinesq/low-velocity limit)
+remains \emph{strongly hyperbolic}, as established rigorously by
+Bemfica, Disconzi, and Noronha.
 
 %----------------------------------------------------------------------
 \subsection{Boundary conditions}\label{sec:rel9g}
@@ -629,15 +711,14 @@ $z = d$.  For rigid, perfectly conducting boundaries:
   w = 0, \qquad \frac{\partial w}{\partial z} = 0, \qquad
   \theta = 0 \qquad \text{at } z = 0, d.
 \end{equation}
-For the heat flux, the Israel--Stewart equation requires an additional
-boundary condition.  At a rigid, perfectly conducting wall, the heat flux
-must be consistent with the imposed temperature:
-\begin{equation}
-\label{eq:rel2-42}
-  q_z = -\kappa_{\mathrm{IS}}\frac{\partial\theta}{\partial z}
-  \qquad \text{at } z = 0, d \quad
-  \text{(quasi-static heat flux at boundaries)}.
-\end{equation}
+In the BDNK formalism, because the heat flux is determined algebraically
+by the constitutive relation~\eqref{eq:rel2-14b}, no additional boundary
+condition on $Q_z$ is needed beyond the temperature boundary condition
+$\theta = 0$ (which already determines $Q_z$ through the gradient of
+$\theta$).  This is in contrast to the Israel--Stewart formulation, where
+the independent dynamical variable $q_z$ requires its own boundary
+condition.
+
 Alternatively, for ``free'' (stress-free) boundaries:
 \begin{equation}
 \label{eq:rel2-43}
@@ -645,11 +726,10 @@ Alternatively, for ``free'' (stress-free) boundaries:
   \theta = 0 \qquad \text{at } z = 0, d.
 \end{equation}
 These are the same conditions as in the classical theory (cf.\ Chapter~II,
-\S\S~12--14), supplemented by the heat-flux condition~\eqref{eq:rel2-42}
-when the full Israel--Stewart dynamics is retained.
+\S\S~12--14).
 
 %----------------------------------------------------------------------
-\subsection{Causality check: hyperbolicity of the perturbation system}%
+\subsection{Causality and hyperbolicity of the BDNK perturbation system}%
 \label{sec:rel9h}
 %----------------------------------------------------------------------
 
@@ -658,60 +738,94 @@ derived above respect causality, i.e.\ that perturbations propagate at
 finite speed bounded by $c$.
 
 \paragraph{Structure of the system.}
-The complete linearized system, retaining the Israel--Stewart relaxation
-terms, consists of:
+The complete linearized BDNK system consists of:
 \begin{itemize}
-\item Equation~\eqref{eq:rel2-31} + \eqref{eq:rel2-32}:
-  a \emph{second-order-in-time} system for $(u_i, \pi_{ij})$,
-\item Equation~\eqref{eq:rel2-36}:
-  a \emph{second-order-in-time} equation for $\theta$.
+\item Equation~\eqref{eq:rel2-31}: a \emph{first-order-in-time}
+  equation for $u_i$, with the shear stress given algebraically by
+  $\Pi_{ij} = -2\eta\,\sigma_{ij}$;
+\item Equation~\eqref{eq:rel2-36}: a \emph{first-order-in-time}
+  equation for $\theta$.
 \end{itemize}
+This is a \emph{lower-order} system than the Israel--Stewart perturbation
+equations, which are second order in time due to the relaxation terms.
 
-\paragraph{Characteristic speeds.}
-To determine the characteristic speeds, we seek plane-wave solutions
-$\propto \exp[i(\mathbf{k}\cdot\mathbf{x} - \omega t)]$.  From the heat
-sector (equation~\eqref{eq:rel2-36}), the dispersion relation at high
-frequency ($|\omega| \gg 1/\tau_q$, $|\omega| \gg \kappa_T k^2$) is
+\paragraph{Causality via BDNK frame coefficients.}
+In the BDNK formalism, causality is \emph{not} enforced by relaxation-time
+bounds of the form $\tau_q \ge \kappa_T/c^2$ (as in Israel--Stewart).
+Instead, causality is a consequence of the choice of hydrodynamic frame.
+The system of conservation equations $\nabla_\mu T^{\mu\nu} = 0$,
+$\nabla_\mu(\rho_0 u^\mu) = 0$, with the BDNK constitutive relations
+\eqref{eq:rel2-7a}--\eqref{eq:rel2-7d}, is \textbf{strongly hyperbolic}
+provided the transport coefficients and frame coefficients satisfy
+the following coupled inequalities:
+
+\begin{enumerate}
+\item \textbf{Positive dissipation:}
 \begin{equation}
 \label{eq:rel2-44}
-  \omega^2 \approx \frac{\kappa_T}{\tau_q}\,k^2
-  \quad\Longrightarrow\quad
-  v_{\mathrm{heat}}^2 = \frac{\kappa_T}{\tau_q}\,.
+  \eta > 0, \qquad \zeta + \tfrac{2}{3}\eta > 0, \qquad \kappa > 0.
 \end{equation}
-This is the \emph{thermal signal speed}.  Causality requires
+
+\item \textbf{BDNK frame bounds:}
+The frame coefficients ($\varepsilon_1$-type corrections, $\beta_1$,
+$\alpha_1$, $\zeta_1$, etc.)\ must satisfy a set of coupled nonlinear
+inequalities that ensure the principal symbol of the PDE system has real
+eigenvalues and a complete set of eigenvectors.  In the notation of
+Bemfica--Disconzi--Noronha--Kovtun (2023), these are:
 \begin{equation}
 \label{eq:rel2-45}
-  v_{\mathrm{heat}} = \sqrt{\frac{\kappa_T}{\tau_q}} \;\le\; c.
+  \mathcal{A}(\eta, \zeta, \kappa, \beta_1, \varepsilon_1, \ldots) > 0,
+  \qquad
+  \mathcal{B}(\eta, \zeta, \kappa, \beta_1, \varepsilon_1, \ldots) > 0,
 \end{equation}
-This is automatically satisfied provided the Israel--Stewart relaxation
-time obeys
+where $\mathcal{A}$ and $\mathcal{B}$ denote specific combinations of the
+transport and frame coefficients (see Bemfica et al., Phys.\ Rev.\ D 107,
+076012, 2023, for the explicit forms).
+
+\item \textbf{Subluminal signal speeds:} The characteristic speeds of
+the system are bounded:
 \begin{equation}
 \label{eq:rel2-46}
-  \tau_q \;\ge\; \frac{\kappa_T}{c^2}\,,
+  |v_{\mathrm{char}}| \le c,
 \end{equation}
-which is a known consistency condition of the Israel--Stewart theory.
+which is guaranteed when conditions~\eqref{eq:rel2-44}
+and~\eqref{eq:rel2-45} are satisfied.
+\end{enumerate}
 
-From the momentum sector, with the shear relaxation
-equation~\eqref{eq:rel2-32}, the analogous viscous signal speed is
+\paragraph{Comparison with Israel--Stewart causality.}
+In the Israel--Stewart theory, causality requires the relaxation-time bounds
+$\tau_q \ge \kappa_T/c^2$ and $\tau_\pi \ge \nu_{\mathrm{rel}}/c^2$,
+which ensure that the thermal and viscous signal speeds remain subluminal.
+The BDNK approach replaces these conditions with the frame-coefficient
+inequalities~\eqref{eq:rel2-45}, which are \emph{rigorous} (proven at
+the fully nonlinear level, not merely in linearization) and do not
+introduce any additional dynamical modes.
+
+\paragraph{Dispersion relation.}
+For plane-wave perturbations $\propto \exp[i(\mathbf{k}\cdot\mathbf{x} - \omega t)]$,
+the BDNK dispersion relation is a \emph{lower-degree} polynomial in $\omega$
+than the Israel--Stewart one (which has additional ``relaxation'' modes).
+Specifically, the heat sector yields a standard diffusive dispersion
+relation at low $k$,
 \begin{equation}
 \label{eq:rel2-47}
-  v_{\mathrm{visc}} = \sqrt{\frac{\nu_{\mathrm{rel}}}{\tau_\pi}}
-  \;\le\; c
-  \qquad\Longleftrightarrow\qquad
-  \tau_\pi \;\ge\; \frac{\nu_{\mathrm{rel}}}{c^2}\,.
+  \omega = -i\,\kappa_T\,k^2 + \mathcal{O}(k^3),
 \end{equation}
+while at high $k$ the BDNK frame coefficients modify the dispersion to
+ensure $|\mathrm{Re}\,\omega/k| \le c$.  There are no spurious
+high-frequency modes.
 
 \paragraph{Conclusion.}
-When the Israel--Stewart relaxation times satisfy
-equations~\eqref{eq:rel2-46} and~\eqref{eq:rel2-47}, the perturbation
-system is \textbf{symmetric hyperbolic} (in the sense of
-Geroch--Lindblom), and all signal speeds are bounded by $c$.  The
-classical parabolic limit is recovered when $\tau_q, \tau_\pi \to 0$
-(in which case perturbations propagate infinitely fast, as in Fourier/Navier--Stokes theory).
+The BDNK perturbation system is \textbf{strongly hyperbolic}
+(in the sense of Bemfica--Disconzi--Noronha), and all signal speeds are
+bounded by $c$, provided the frame coefficients satisfy the coupled
+inequalities~\eqref{eq:rel2-45}.  The classical parabolic limit is
+recovered when $c \to \infty$ (in which case the frame corrections become
+negligible and the system reduces to Fourier/Navier--Stokes theory).
 
 \medskip
 \noindent\textbf{Summary.}\quad
-The relativistic perturbation equations for the B\'enard problem are:
+The BDNK perturbation equations for the B\'enard problem are:
 \begin{alignat}{2}
 \label{eq:rel2-summary}
   &\text{(i)}\quad
@@ -721,10 +835,8 @@ The relativistic perturbation equations for the B\'enard problem are:
   + \nu_{\mathrm{rel}}\,\nabla^4 w, \\[4pt]
 \label{eq:rel2-summary2}
   &\text{(ii)}\quad
-  &&\tau_q\frac{\partial^2\theta}{\partial t^2}
-  + \frac{\partial\theta}{\partial t}
-  = \beta\!\left(\tau_q\frac{\partial w}{\partial t} + w\right)
-  + \kappa_T\,\nabla^2\theta, \\[4pt]
+  &&\frac{\partial\theta}{\partial t}
+  = \beta\,w + \kappa_T\,\nabla^2\theta, \\[4pt]
 \label{eq:rel2-summary3}
   &\text{(iii)}\quad
   &&\frac{\partial\zeta}{\partial t}
@@ -733,10 +845,14 @@ The relativistic perturbation equations for the B\'enard problem are:
   &\text{(iv)}\quad
   &&\frac{\partial u_j}{\partial x_j} = 0,
 \end{alignat}
-with $\nu_{\mathrm{rel}} = \eta_{\mathrm{s}}/w_0$,
+with $\nu_{\mathrm{rel}} = \eta/w_0$,
 $\alpha_w = \alpha + (\partial p/\partial T)_\rho / (w_0 c^2)$,
-$\kappa_T = \kappa_{\mathrm{IS}}/(w_0 c_p)$, and the causality bounds
-$\tau_q \ge \kappa_T/c^2$, $\tau_\pi \ge \nu_{\mathrm{rel}}/c^2$.
+$\kappa_T = \kappa_{\mathrm{eff}}/(w_0 c_p)$, and the BDNK causality
+conditions on the frame coefficients
+(equations~\eqref{eq:rel2-44}--\eqref{eq:rel2-45}).  In contrast to the
+Israel--Stewart summary equations, the heat equation (ii) is first order in
+time (no $\tau_q\,\partial^2\theta/\partial t^2$ term) and the shear stress
+is algebraic (no $\tau_\pi$).
+
 These reduce to the classical Chandrasekhar equations~(73), (74), (76), and
-(57) of Chapter~II when $c \to \infty$, $\tau_q \to 0$, and
-$w_0 \to \rho_0$.
+(57) of Chapter~II when $c \to \infty$ and $w_0 \to \rho_0$.
