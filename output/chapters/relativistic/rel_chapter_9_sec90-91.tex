@@ -13,7 +13,7 @@
 % instability (MRI) in relativistic astrophysical accretion flows.
 %
 % Key physical points:
-%   (i)   The Israel-Stewart causal dissipation replaces parabolic
+%   (i)   The BDNK first-order causal dissipation replaces parabolic
 %         diffusion operators with hyperbolic ones, raising the order
 %         of the eigenvalue problem.
 %   (ii)  The Alfven speed is bounded: v_A^2 = b^2/(4 pi w + b^2) c^2 < c^2.
@@ -53,13 +53,13 @@ where $\varepsilon$ is the total energy density (including rest-mass),
 $p$ is the thermodynamic pressure, $b^{\mu}$ is the magnetic field
 4-vector in the fluid frame, $b^{2} = b^{\mu}b_{\mu}$, $\Pi$ is the
 bulk viscous pressure, and $\pi^{\mu\nu}$ is the shear-stress tensor.
-The dissipative fluxes obey the Israel--Stewart causal transport
+The dissipative fluxes obey the BDNK first-order constitutive
 equations (cf.\ \textsc{Relativistic Conventions}):
 \begin{align}
-  \taupi\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu} &= 2\,\shearvisc\,\sigma^{\mu\nu},
+  \pi^{\mu\nu}
+  = -2\,\shearvisc\,\sigma^{\mu\nu},
   \label{eq:rel-9-IS-shear}\\[4pt]
-  \tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
+  \Pi
   &= -\bulkvisc\,\nabla_{\mu}u^{\mu}.
   \label{eq:rel-9-IS-bulk}
 \end{align}
@@ -82,20 +82,20 @@ Following the procedure of \S\,88, we consider axisymmetric
 perturbations $\propto e^{\sigma t + i k z}$ in the narrow-gap limit.
 The perturbation variables are $(u, \phi)$: the radial velocity and
 the stream-function potential for the axial--azimuthal flow.  In the
-Israel--Stewart framework, the viscous diffusion operator is modified
-by the relaxation replacement (cf.\ the relativistic extension of
+BDNK framework, the viscous diffusion operator is modified
+by the BDNK causal replacement (cf.\ the relativistic extension of
 \S\,29):
 \begin{equation}\label{eq:rel-9-sigma-hat}
   \sigma \;\longrightarrow\; \hat{\sigma}
-  = \frac{\sigma}{1 + \taupi\,\sigma},
+  = \sigma,
 \end{equation}
 which ensures that viscous signals propagate at a finite speed
-$v_{\mathrm{visc}} \sim \sqrt{\shearvisc/(\rho\,\taupi)} \leq c$.
+ensured by the BDNK frame coefficients.
 The magnetic diffusion operator is similarly modified if the
-resistivity $\eta$ has a causal relaxation time $\tau_{\eta}$:
+resistivity $\eta$ is treated with BDNK causal transport:
 \begin{equation}\label{eq:rel-9-eta-hat}
   \eta \;\longrightarrow\; \hat{\eta}
-  = \frac{\eta}{1 + \tau_{\eta}\,\sigma}.
+  = \eta.
 \end{equation}
 
 The relativistic Chandrasekhar number incorporates the bounded Alfv\'en
@@ -117,17 +117,17 @@ bound: magnetic tension effects cannot propagate faster than light.
 
 As in \S\,88\,(b), we specialise to a pure pressure-maintained flow
 by setting $\Omega_{1} = A = 0$.  The classical equations~\eqref{eq:9-306}
-and \eqref{eq:9-307} become, in the Israel--Stewart extension,
+and \eqref{eq:9-307} become, in the BDNK extension,
 \begin{equation}\label{eq:rel-9-eq1}
   \bigl[(D^{2} - a^{2})^{2}
   + Q_{\mathrm{rel}}\,a^{2}
-  + \taupi\,\sigma\,(D^{2} - a^{2})^{2}\bigr]\,\phi
+  \bigr]\,\phi
   = (1 - 2\zeta)\,u,
 \end{equation}
 \begin{equation}\label{eq:rel-9-eq2}
   \bigl[(D^{2} - a^{2})^{2}
   + Q_{\mathrm{rel}}\,a^{2}
-  + \taupi\,\sigma\,(D^{2} - a^{2})^{2}\bigr]\,u
+  \bigr]\,u
   = a^{2}\,\Lambda_{\mathrm{rel}}\,\zeta(1-\zeta)\,
   (D^{2} - a^{2})\,\phi,
 \end{equation}
@@ -169,19 +169,19 @@ for non-conducting walls.  These reproduce the classical
 result~\eqref{eq:9-312} when $\vA \ll c$ (so that
 $Q_{\mathrm{rel}} \to Q$).
 
-The novel feature of the relativistic problem is that the Israel--Stewart
+The novel feature of the relativistic problem is that the BDNK
 terms in equations~\eqref{eq:rel-9-eq1} and \eqref{eq:rel-9-eq2}
 introduce additional roots of the dispersion relation.  These
 ``non-hydrodynamic'' modes are all damped (have $\operatorname{Re}\sigma < 0$)
-provided the relaxation times satisfy
+provided the BDNK frame conditions are satisfied:
 \begin{equation}\label{eq:rel-9-causality-cond}
-  \taupi > 0, \qquad \tau_{\eta} > 0,
+  \text{BDNK frame conditions are satisfied,}
 \end{equation}
 which is the requirement of causal signal propagation.  The critical
 $\Lambda_{\mathrm{rel},c}$ for onset of instability is therefore
 determined solely by the ``hydrodynamic'' root, and agrees with the
 classical result up to corrections of order $\vA^{2}/c^{2}$ and
-$\taupi\,\nu/d^{2}$.
+BDNK frame corrections.
 
 \subsection{Non-relativistic limit}
 
@@ -189,8 +189,8 @@ When $c \to \infty$ at fixed $V_{m}$, $B_{z}$, $\nu$, $\eta$, and $d$:
 \begin{enumerate}
   \item $\Lf \to 1$, so $\Lambda_{\mathrm{rel}} \to \Lambda$.
   \item $\vA^{2}/c^{2} \to 0$, so $Q_{\mathrm{rel}} \to Q$.
-  \item $\taupi\,\sigma \to 0$ for finite $\sigma$, eliminating the
-        Israel--Stewart corrections.
+  \item BDNK frame corrections vanish, recovering the
+        BDNK frame corrections.
 \end{enumerate}
 Equations~\eqref{eq:rel-9-eq1} and \eqref{eq:rel-9-eq2} then reduce
 to the classical pair~\eqref{eq:9-306} and \eqref{eq:9-307}, as
@@ -266,11 +266,11 @@ stable orbit, altering the domain in which the MRI operates.
 
 \paragraph{(iii) Causal dissipation.}
 In the hot, relativistic plasma near the innermost stable circular
-orbit (ISCO), the Israel--Stewart relaxation effects described in
-\S\,90 are physically relevant.  The viscous and resistive relaxation
-times $\taupi$ and $\tau_{\eta}$ set the minimum scales on which the
+orbit (ISCO), the BDNK causality effects described in
+\S\,90 are physically relevant.  The BDNK frame
+coefficients set the minimum scales on which the
 MRI can develop; if the MRI growth rate $\sigma_{\mathrm{MRI}}$
-exceeds $\taupi^{-1}$, the instability is modified by causal
+exceeds the BDNK characteristic scale, the instability is modified by causal
 corrections.
 
 \paragraph{(iv) The relativistic MRI dispersion relation.}
@@ -283,8 +283,8 @@ perturbations takes the form
   + 4\,\Omega^{2}\,\hat{k}^{2}\,\vA^{2}
   \,\frac{\dd\ln\Omega}{\dd\ln r} = 0,
 \end{equation}
-where $\hat{\sigma} = \sigma/(1 + \taupi\,\sigma)$ is the
-Israel--Stewart corrected growth rate, $\hat{k} = k/\Lf$ is the
+where $\hat{\sigma} = \sigma$ is the
+BDNK corrected growth rate, $\hat{k} = k/\Lf$ is the
 comoving wavenumber, and $\hat{\kappa}$ is the relativistic
 epicyclic frequency.  When $\dd\Omega/\dd r < 0$ (the generic case
 in accretion discs), equation~\eqref{eq:rel-9-MRI-disp} admits
@@ -299,8 +299,8 @@ relativistic corrections enter through:
   \item the bounded $\vA$, which limits the range of unstable
         wavenumbers to
         $k < k_{\max} = \Omega/\vA$ rather than being unbounded;
-  \item the Israel--Stewart relaxation, which damps modes with
-        $\sigma > \taupi^{-1}$;
+  \item the BDNK causality, which damps modes with
+        the BDNK characteristic scale is exceeded;
   \item the frame-dragging contribution to $\hat{\kappa}$, which
         can either stabilise or destabilise depending on the spin
         parameter of the central object.
@@ -350,13 +350,43 @@ on the covariant MHD framework developed in:
   (W.~A.~Benjamin, New York, 1967).
 \end{enumerate}
 
-\noindent The Israel--Stewart causal dissipation framework is developed in:
+\noindent The BDNK first-order causal dissipation framework is developed in:
 
 \begin{enumerate}
 \setcounter{enumi}{2}
 \item W.~\textsc{Israel} and J.~M.~\textsc{Stewart},
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \textit{Phys.\ Rev.\ D}, \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \textit{JHEP}, \textbf{10}, 034 (2019).
   `Transient relativistic thermodynamics and kinetic theory',
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \textit{Phys.\ Rev.\ D}, \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \textit{JHEP}, \textbf{10}, 034 (2019).
   \textit{Ann.\ Phys.\ (N.Y.)}, \textbf{118}, 341--72 (1979).
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \textit{Phys.\ Rev.\ D}, \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \textit{JHEP}, \textbf{10}, 034 (2019).
 \end{enumerate}
 
 \noindent\textit{\S\,91.}

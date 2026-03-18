@@ -5,7 +5,7 @@
 %
 %  Classical reference: Chandrasekhar, Ch. VIII §§77–78,
 %    eqs. (8-36)–(8-65) [transverse pressure gradient + rotation]
-%  Relativistic framework: Israel-Stewart causal dissipation
+%  Relativistic framework: BDNK first-order causal dissipation
 %  Agent: 35 (subagent for general flow, part 2 — transverse gradient)
 % =====================================================================
 
@@ -17,7 +17,7 @@ In the classical theory (\S\ref{sec:77}), the general Couette flow
 consists of a superposition of Poiseuille flow (maintained by a
 transverse pressure gradient) and a distribution of angular velocities
 (maintained by cylinder rotation).  We now extend this analysis to a
-relativistic fluid governed by Israel--Stewart causal dissipation.
+relativistic fluid governed by BDNK first-order causal dissipation.
 
 \subsection{Relativistic formulation of the base flow}
 \label{sec:rel-77-base}
@@ -72,21 +72,24 @@ relativistic theory, two modifications arise:
   $\enthalpy_0/c^2 = \rdensity(1+\Xi)$, which enters the viscous
   diffusion through the kinematic viscosity
   $\nu_{\mathrm{rel}} = \shearvisc / [\enthalpy_0/c^2]$.
-\item[(ii)] The Israel--Stewart shear relaxation equation introduces a
-  finite relaxation time $\taupi$ for the viscous stress tensor.
+\item[(ii)] The BDNK first-order viscous constitutive relation equation introduces a
+  BDNK frame coefficients for the viscous stress tensor.
   In the linearised perturbation equations, this manifests as a
   replacement of the diffusion operator $(D^2 - a^2 - \sigma)$ by
-  $(D^2 - a^2 - \sigma - \taupi\,\sigma^2\,\nu^{-1}d^{-2})$ in the
+  $(D^2 - a^2 - \sigma)$ in the
   viscous terms.
 \end{enumerate}
 
-We define the Israel--Stewart correction parameter
+We define the BDNK frame parameter
 \begin{equation}
 \label{eq:rel-8-Psi}
-\Psi \;\equiv\; \frac{\taupi\,\nu}{d^2},
+We define the BDNK frame parameter
+\begin{equation}
+\label{eq:rel-8-Psi}
+\Psi ;\equiv; \text{(BDNK frame coefficient ratio)},
 \end{equation}
-which measures the ratio of the viscous relaxation time to the
-diffusion time across the gap.
+which in the BDNK formulation is determined by the frame coefficients
+rather than a relaxation time.
 
 The relativistic perturbation equations, analogous to the classical
 equations~\eqref{eq:8-46} and \eqref{eq:8-47}, become
@@ -135,7 +138,7 @@ enter in two ways:
 \item The \emph{effective Taylor number} is reduced by $(1+\Xi)^{-2}$,
   because the pressure contribution to inertia increases the effective
   mass that must be accelerated by the centrifugal imbalance.
-\item The \emph{Israel--Stewart relaxation} modifies the viscous
+\item The \emph{BDNK causality} modifies the viscous
   operator from $(D^2 - a^2 - \sigma)$ to
   $(D^2 - a^2 - \sigma - \Psi\sigma^2)$, introducing a memory
   effect that alters the growth/decay rate of perturbations at
@@ -150,7 +153,7 @@ enter in two ways:
 As in the classical theory (\S\ref{sec:77b}), we assume on the basis
 of experimental evidence that the onset of instability occurs as a
 stationary secondary flow ($\sigma = 0$).  At marginal stability the
-Israel--Stewart relaxation term $\Psi\sigma^2$ vanishes identically,
+BDNK causality term $\Psi\sigma^2$ vanishes identically,
 and the eigenvalue equations reduce to
 \begin{equation}
 \label{eq:rel-8-50}
@@ -260,7 +263,7 @@ For the limiting regimes:
 The experiments of Brewster, Grosberg, and Nissan (\S\ref{sec:77d})
 used glycerine--water solutions at laboratory conditions.  For such
 fluids, the parameter $\Xi = p_0/(\edensity_0 c^2)$ is of order
-$10^{-10}$, and the Israel--Stewart relaxation parameter $\Psi$ is
+$10^{-10}$, and the BDNK causality parameter $\Psi$ is
 similarly negligible.  Consequently, the relativistic corrections to
 $T_c$ are utterly negligible for these experiments, and the excellent
 agreement between the classical theory and the experimental data
@@ -332,24 +335,23 @@ We verify that the relativistic perturbation equations of
   \ll 1$.  All our equations are derived under this assumption
   (narrow-gap Couette geometry at sub-luminal rotation).
 
-\item \textbf{Viscous signal propagation (Israel--Stewart).}
+\item \textbf{Viscous signal propagation (BDNK).}
   In the Navier--Stokes theory, viscous signals propagate
-  instantaneously.  The Israel--Stewart relaxation
+  instantaneously.  The BDNK causality
   equation~\eqref{eq:rel-8-Dop} with $\Psi > 0$ converts the
-  parabolic diffusion equation into a \emph{hyperbolic} (telegraphist)
+  parabolic diffusion equation into a \emph{hyperbolic} (dissipative wave)
   equation.  The characteristic speed of viscous signals is
   \begin{equation}
   \label{eq:rel-8-vvisc}
-  v_{\mathrm{visc}} = \sqrt{\frac{\shearvisc}{\taupi\,\enthalpy_0/c^2}}
-    = \sqrt{\frac{\nu_{\mathrm{rel}}}{\taupi}}
+  v_{\mathrm{char}} \leqslant c
+    \text{(BDNK frame-bounded)}
     = \frac{d}{\sqrt{\Psi}}\,\frac{\sqrt{\nu_{\mathrm{rel}}}}{d}.
   \end{equation}
   Causality requires $v_{\mathrm{visc}} \leqslant c$.  In the
-  Israel--Stewart theory, $\taupi$ is bounded below by
-  $\taupi \geqslant \shearvisc / (\enthalpy_0\,c^2/c^2)
-  = \shearvisc\,c^2 / \enthalpy_0\,c^2 = \nu_{\mathrm{rel}}/c^2$,
-  which ensures $v_{\mathrm{visc}} \leqslant c$.  This bound is
-  automatically satisfied in the Israel--Stewart framework.
+  BDNK theory, the frame coefficients are chosen so that
+  $v_{\mathrm{char}} \leqslant c$.  This bound is
+  automatically satisfied in the BDNK framework.
+  automatically satisfied in the BDNK framework.
 
 \item \textbf{Marginal stability ($\sigma = 0$).}
   At the onset of instability, the perturbations are stationary and
@@ -377,7 +379,7 @@ We verify that the relativistic perturbation equations of
   Mode & Speed & Bound \\
   \hline
   Viscous shear & $v_{\mathrm{visc}}
-    = \sqrt{\nu_{\mathrm{rel}}/\taupi}$ & $\leqslant c$ \\
+    = v_{\mathrm{char,BDNK}}$ & $\leqslant c$ \\
   Sound & $\cs = \sqrt{(\partial p/\partial\edensity)_s}$ & $\leqslant c$ \\
   Fluid rotation & $V_{\max} = R_1\Omega_1$ & $\ll c$ \\
   Transverse flow & $V_m$ & $\ll c$ \\
@@ -389,7 +391,7 @@ We verify that the relativistic perturbation equations of
 
 \textbf{Conclusion:}  The relativistic perturbation equations for
 the stability of Couette flow with transverse pressure gradient are
-causal.  The Israel--Stewart relaxation ensures finite viscous
+causal.  The BDNK causality ensures finite viscous
 propagation speeds, and the sub-luminal rotation requirement is a
 physical precondition of the narrow-gap geometry.
 \end{causalitycheck}

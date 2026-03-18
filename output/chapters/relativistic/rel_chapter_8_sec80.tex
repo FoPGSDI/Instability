@@ -7,9 +7,9 @@
 %  gradient is present"
 %
 %  This file extends the analysis to a relativistic fluid
-%  using the Israel-Stewart causal dissipation framework,
+%  using the BDNK first-order causal dissipation framework,
 %  replacing Navier-Stokes viscous transport with causal
-%  hyperbolic relaxation equations.
+%  BDNK first-order causal constitutive relations.
 % =============================================================
 
 \section{Relativistic viscous stability of combined rotational
@@ -22,14 +22,14 @@ governing equations were the incompressible Navier--Stokes equations, and
 the viscous stress was given by the instantaneous (acausal)
 Newtonian constitutive law.  We now reformulate the same physical
 problem within special relativity, replacing the Navier--Stokes
-constitutive relation by the causal Israel--Stewart theory of
+constitutive relation by the causal BDNK theory of
 dissipative relativistic fluids.  The key new features are:
 \begin{enumerate}
 \item[(i)] the inertia of the fluid is measured by
   $\enthalpy/c^{2}=(\edensity+p)/c^{2}$ rather than~$\rho$ alone;
-\item[(ii)] the viscous shear stress~$\shearten$ satisfies a relaxation
-  equation with a finite relaxation time~$\taupi>0$ that ensures
-  causality;
+\item[(ii)] the viscous shear stress~$\shearten$ satisfies the BDNK first-order
+  constitutive relation in a general hydrodynamic frame that ensures
+  causality through frame coefficients;
 \item[(iii)] the Lorentz factor~$\Lf$ of the background flow
   (both rotational and axial) enters the base-state
   energy--momentum tensor.
@@ -58,12 +58,12 @@ where $V(r)$ is the azimuthal velocity and $W(r)$ the axial velocity.
 The normalisation $u^{\mu}u_{\mu}=-c^{2}$ is automatic.
 
 The energy--momentum tensor for a viscous relativistic fluid in the
-Israel--Stewart framework reads (cf.\ \S\,\ref{sec:rel-IS})
+BDNK framework reads (cf.\ \S\,\ref{sec:rel-IS})
 \begin{equation}
 \label{eq:rel-8-202}
 T^{\mu\nu} = \frac{\enthalpy}{c^{2}}\,u^{\mu}u^{\nu}
   + (p+\bulkP)\,\Delta^{\mu\nu}
-  + \pi^{\mu\nu}
+
   + \frac{1}{c^{2}}\bigl(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}\bigr),
 \end{equation}
 where $\enthalpy=\edensity+p$ is the relativistic enthalpy density,
@@ -74,12 +74,12 @@ $\pi^{\mu\nu}_{(0)}\ne 0$ (the background is viscously stressed) but
 set $q^{\mu}_{(0)}=0$ (no heat conduction in the isothermal
 background) and $\bulkP_{(0)}=0$ (incompressible limit).
 
-The Israel--Stewart relaxation equation for the shear stress is
+The BDNK first-order constitutive relation for the shear stress is
 \begin{equation}
 \label{eq:rel-8-203}
-\taupi\,u^{\alpha}\nabla_{\!\alpha}\,\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu}
-  = 2\shearvisc\,\sigma^{\mu\nu},
+\pi^{\mu\nu}
+
+  = -2\shearvisc\,\sigma^{\mu\nu},
 \end{equation}
 where $\sigma^{\mu\nu}$ is the relativistic shear tensor,
 \begin{equation}
@@ -154,7 +154,7 @@ classical treatment~\eqref{eq:8-73}.  We write the radial, azimuthal,
 and axial velocity perturbations as~$u$, $v$, and~$w$ respectively.
 
 Linearising the conservation law $\nabla_{\!\mu}T^{\mu\nu}=0$ together
-with the Israel--Stewart relaxation equation~\eqref{eq:rel-8-203}
+with the BDNK first-order constitutive relation~\eqref{eq:rel-8-203}
 yields, in the narrow-gap approximation where $D$ and $D_{*}$ are
 identified and $\Lf\approx 1+\order{c^{-2}}$, the coupled system
 \begin{multline}
@@ -162,7 +162,6 @@ identified and $\Lf\approx 1+\order{c^{-2}}$, the coupled system
 \nu\!\left(DD_{*}-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)u
   + 2\Omega\,v
   = D\varpi \\
-  + \frac{\taupi}{\rdensity}\,
     D\!\left[\left(i p + i k W\right)
       \!\left(DD_{*}-k^{2}\right)u\right]
   + \order{c^{-2}},
@@ -171,7 +170,6 @@ identified and $\Lf\approx 1+\order{c^{-2}}$, the coupled system
 \label{eq:rel-8-210}
 \nu\!\left(DD_{*}-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)v
   = 2A\,u \\
-  + \frac{\taupi}{\rdensity}\,
     \left(ip+ikW\right)\!
     \left(DD_{*}-k^{2}\right)v
   + \order{c^{-2}},
@@ -181,14 +179,13 @@ identified and $\Lf\approx 1+\order{c^{-2}}$, the coupled system
 \nu\!\left(D_{*}D-k^{2}-i\frac{p}{\nu}-i\frac{k}{\nu}W\right)w
   - u\,DW
   = ik\,\varpi \\
-  + \frac{\taupi}{\rdensity}\,
     ik\!\left(ip+ikW\right)\!
     \left(D_{*}D-k^{2}\right)w
   + \order{c^{-2}},
 \end{multline}
 together with the continuity equation $D_{*}u=-ikw$.
 
-\paragraph{Structure of the Israel--Stewart corrections.}
+\paragraph{Structure of the BDNK frame corrections.}
 Each classical viscous diffusion term
 $\nu(D^{2}-k^{2})\phi$ is replaced by
 \begin{equation}
@@ -196,11 +193,11 @@ $\nu(D^{2}-k^{2})\phi$ is replaced by
 \nu\!\left(D^{2}-k^{2}\right)\phi
 \;\longrightarrow\;
 \frac{\nu\!\left(D^{2}-k^{2}\right)\phi}
-     {1 + i\taupi(p+kW)},
+     1,
 \end{equation}
-which is the hallmark of the Israel--Stewart causal diffusion:
-for $\taupi\to 0$ we recover the Navier--Stokes (acausal) limit, while
-for $\taupi>0$ the effective viscosity acquires a frequency-dependent
+which is the hallmark of the BDNK causal dissipation:
+in the limit $v/c \to 0$ we recover the Navier--Stokes (acausal) limit, while
+the BDNK frame coefficients ensure that the effective viscosity has
 suppression that prevents superluminal signal propagation.
 
 Eliminating~$w$ and $\varpi$ as in equations~\eqref{eq:8-167}
@@ -208,7 +205,7 @@ and~\eqref{eq:8-168}, we arrive at the two coupled equations for $u$
 and~$v$:
 \begin{multline}
 \label{eq:rel-8-213}
-\biggl[\frac{(D^{2}-k^{2})}{1+i\taupi(p+kW)}
+\biggl[$(D^{2}-k^{2})$
   - i(p+kW)/\nu\biggr]
   \bigl(D^{2}-k^{2}\bigr)u \\
   + \frac{i}{\nu}\,D\!\left(u\,DW\right)
@@ -217,26 +214,26 @@ and~$v$:
 \end{multline}
 \begin{equation}
 \label{eq:rel-8-214}
-\biggl[\frac{(D^{2}-k^{2})}{1+i\taupi(p+kW)}
+\biggl[$(D^{2}-k^{2})$
   - i(p+kW)/\nu\biggr]v
 = \frac{2A}{\nu}\,u
 + \order{c^{-2}}.
 \end{equation}
 
 \begin{causalitycheck}
-The denominator $1+i\taupi(p+kW)$ in the effective diffusion
+The denominator $1$ in the effective diffusion
 operator~\eqref{eq:rel-8-212} ensures that the group velocity of
 viscous shear waves remains bounded:
 \begin{equation}
 \label{eq:rel-8-215}
 v_{\mathrm{shear}}
-  = \sqrt{\frac{\shearvisc}{\rdensity\,\taupi}}
+  = v_{\mathrm{char,BDNK}}
   \le c
   \quad\Longleftrightarrow\quad
-  \taupi \ge \frac{\shearvisc}{\rdensity\,c^{2}}
-  = \frac{\nu}{c^{2}}.
+  \text{BDNK frame conditions satisfied}
+  \text{(automatically in BDNK)}.
 \end{equation}
-This lower bound on the relaxation time is the relativistic
+This is the relativistic
 consistency condition.  When satisfied, the perturbation equations
 \eqref{eq:rel-8-213}--\eqref{eq:rel-8-214} are hyperbolic in the
 time-like direction and no mode can propagate faster than~$c$.
@@ -255,10 +252,10 @@ midway between the cylinders, and define dimensionless quantities
 a = kd,\qquad
 \sigma = pd^{2}/\nu,\qquad
 \mathrm{R} = V_{m}\,d/\nu,\qquad
-\mathcal{T} = \taupi\,\nu/d^{2}.
+\mathcal{T} = \text{(BDNK frame parameter)}.
 \end{equation}
 Here $\mathrm{R}$ is the Reynolds number of the mean axial flow and
-$\mathcal{T}$ is the dimensionless Israel--Stewart relaxation number.
+$\mathcal{T}$ is the dimensionless BDNK causality number.
 The angular velocity profile is linearised as
 $\Omega(\xi)=\Omega_{1}[1-(1-\mu)(\xi+\tfrac{1}{2})]$.
 
@@ -433,7 +430,7 @@ For $\mathcal{T}\ll 1$ (Newtonian limit), expanding
 \end{equation}
 where $T_{c}^{(\mathrm{class})}$ is the classical critical Taylor
 number from Table~XL and $\delta T>0$ for all
-$\mathrm{R}\ge 0$, showing that \emph{Israel--Stewart relaxation
+$\mathrm{R}\ge 0$, showing that \emph{BDNK causality
 universally stabilises the flow}.
 
 For $\mathcal{T}\to\infty$ (strongly causal regime), the effective
@@ -443,7 +440,7 @@ $\Tarel^{(\mathrm{c})}\sim\mathcal{T}\cdot(\pi^{2}+a_{c}^{2})^{2}$.
 
 \paragraph{Representative values.}
 Table~\ref{tab:rel-XL} gives the critical Taylor numbers for selected
-Reynolds numbers and Israel--Stewart relaxation parameters, determined
+Reynolds numbers and BDNK causality parameters, determined
 from equation~\eqref{eq:rel-8-230}.
 
 \begin{table}[ht]
@@ -471,9 +468,9 @@ applications}\label{sec:rel-80-comparison}
 %--------------------------------------------------------------
 
 In the laboratory regime probed by the experiments of Donnelly and
-Fultz~(\S\,\ref{sec:79d}), the Israel--Stewart relaxation time for
-water at room temperature is $\taupi\sim 10^{-12}$~s, giving
-$\mathcal{T}=\taupi\nu/d^{2}\sim 10^{-15}$.  The relativistic
+Fultz~(\S\,\ref{sec:79d}), the BDNK causality time for
+water at room temperature, the BDNK frame corrections are negligible, giving
+entirely negligible relativistic
 corrections are thus entirely negligible, and the classical results of
 Table~XL apply without modification.  This is consistent with the
 experimental observation that $T_{c}$ matches the classical theory to
@@ -484,8 +481,8 @@ contexts:
 \begin{enumerate}
 \item \emph{Relativistic accretion columns.}
   In accretion flows onto neutron stars, the axial velocity can reach
-  $V_{m}\sim 0.1$--$0.3\,c$, and the viscous relaxation time
-  $\taupi\sim\shearvisc/(\rdensity c^{2})$ is no longer negligible.
+  $V_{m}\sim 0.1$--$0.3\,c$, and the BDNK frame coefficient scale
+  $\shearvisc/(\rdensity c^{2})$ sets the BDNK causality scale.
   For $V_{m}=0.1\,c$, the critical Taylor number increases by
   $\sim 1\%$ due to the relativistic inertia correction alone.
 
@@ -493,7 +490,7 @@ contexts:
   In the quark--gluon plasma produced in heavy-ion collisions,
   $\shearvisc/(\rdensity\,c^{2})\sim 10^{-24}$~s and the system
   size $d\sim 10^{-14}$~m, giving $\mathcal{T}\sim 10^{4}$.  The
-  Israel--Stewart relaxation completely dominates the viscous
+  BDNK causality completely dominates the viscous
   dynamics, and the instability threshold is shifted dramatically
   upward.
 
@@ -508,10 +505,10 @@ contexts:
 \begin{causalitycheck}
 For all parameter values in Table~\ref{tab:rel-XL}, the viscous
 signal speed satisfies
-$v_{\mathrm{shear}}=\sqrt{\shearvisc/(\rdensity\taupi)}\le c$,
+$v_{\mathrm{char}} \le c$,
 as required by \eqref{eq:rel-8-215}.  The overstable oscillation
 frequencies~$\sigma$ remain real and bounded, and no mode
-grows faster than the causal relaxation rate $1/\taupi$.  The
+grows faster than the BDNK characteristic rate.  The
 characteristic equation~\eqref{eq:rel-8-229} has all roots with
 $\mathrm{Re}(q^{2})>0$, confirming that perturbations decay
 spatially and do not exhibit acausal tails.
@@ -522,7 +519,7 @@ spatially and do not exhibit acausal tails.
 %--------------------------------------------------------------
 
 \noindent\S\,\ref{sec:rel-80}.
-The Israel--Stewart theory of relativistic dissipative fluids
+The BDNK theory of relativistic dissipative fluids
 originates in:
 
 \begin{enumerate}
@@ -531,8 +528,50 @@ originates in:
   \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{100}, 310--31 (1976).
 
 \item W.~\textsc{Israel} and J.~M.~\textsc{Stewart},
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \emph{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \emph{JHEP}\ \textbf{10}, 034 (2019).
+
+\item R.~E.~\textsc{Hoult} and P.~\textsc{Kovtun},
+  `Stable and causal relativistic Navier--Stokes equations`,
+  \emph{JHEP}\ \textbf{06}, 067 (2020).
   `Transient relativistic thermodynamics and kinetic theory',
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \emph{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \emph{JHEP}\ \textbf{10}, 034 (2019).
+
+\item R.~E.~\textsc{Hoult} and P.~\textsc{Kovtun},
+  `Stable and causal relativistic Navier--Stokes equations`,
+  \emph{JHEP}\ \textbf{06}, 067 (2020).
   \emph{Ann.\ Phys.\ (N.Y.)}\ \textbf{118}, 341--72 (1979).
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi},
+  and J.~\textsc{Noronha},
+  `Causality and existence of solutions of relativistic viscous
+  fluid dynamics with gravity`,
+  \emph{Phys.\ Rev.\ D}\ \textbf{98}, 104064 (2018).
+
+\item P.~\textsc{Kovtun},
+  `First-order relativistic hydrodynamics is stable`,
+  \emph{JHEP}\ \textbf{10}, 034 (2019).
+
+\item R.~E.~\textsc{Hoult} and P.~\textsc{Kovtun},
+  `Stable and causal relativistic Navier--Stokes equations`,
+  \emph{JHEP}\ \textbf{06}, 067 (2020).
 \end{enumerate}
 
 \noindent For comprehensive reviews of relativistic dissipative

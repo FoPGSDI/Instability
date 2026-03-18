@@ -5,7 +5,7 @@
 % Requires: rel_preamble.tex (loaded by rel_main.tex)
 %
 % Classical reference: Chandrasekhar, Ch. IX, §§85--89
-% Relativistic framework: Israel-Stewart causal dissipation + resistive MHD
+% Relativistic framework: BDNK first-order causal dissipation + resistive MHD
 % =====================================================================
 
 \chapter*{Chapter IX (Relativistic): Dissipative Couette Flow in
@@ -18,19 +18,19 @@ In the classical treatment of Chapters~VII--IX, Chandrasekhar analyses
 the stability of viscous Couette flow in the presence of a uniform axial
 magnetic field.  The perturbation equations are parabolic: viscous
 stresses and Ohmic dissipation propagate instantaneously.  In a
-relativistic context this is unacceptable.  The Israel--Stewart theory
+relativistic context this is unacceptable.  The BDNK theory
 replaces the Navier--Stokes constitutive relation by hyperbolic
-relaxation equations for both the viscous stress tensor $\pi^{\mu\nu}$
+first-order constitutive relations for the viscous stress tensor $\pi^{\mu\nu}$
 and the heat flux $q^{\mu}$; resistive MHD likewise acquires a causal
-induction equation via a finite relaxation time $\tau_\eta$ for the
+induction equation.  In the BDNK formulation, the
 electric current.  The present chapter re-derives the dissipative
 Couette--MHD stability problem within this causal framework, keeping the
 speed of light $c$ explicit throughout so that the non-relativistic limit
 $c\to\infty$ is transparent at every stage.
 
 %======================================================================
-\section{The perturbation equations: relativistic Israel--Stewart
-  formulation with resistive MHD}
+\section{The perturbation equations: relativistic BDNK first-order causal
+  formulation with causal resistive MHD}
 \label{sec:rel-87}
 %======================================================================
 
@@ -65,40 +65,40 @@ The equilibrium magnetic 4-vector in the fluid rest frame is
 \end{equation}
 with $b^2_0 = b^{\mu}_0 b_{0\mu} = H^2 + \mathcal{O}(V^2H^2/c^2)$.
 
-\subsection{Israel--Stewart dissipative sector}
+\subsection{BDNK first-order dissipative sector}
 \label{sec:rel-87-IS}
 
 The relativistic viscous stress tensor $\pi^{\mu\nu}$ and the heat flux
-$q^{\mu}$ obey the Israel--Stewart relaxation equations (cf.\
+$q^{\mu}$ obey the BDNK first-order constitutive relations (cf.\
 \S\ref{sec:rel-87-setup} and the conventions of
 \texttt{RELATIVISTIC\_CONVENTIONS.md}):
 \begin{equation}
-  \taupi\, u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
-    + \pi^{\mu\nu}
-  = 2\shearvisc\,\sigma^{\mu\nu},
+  \pi^{\mu\nu}
+
+  = -2\shearvisc\,\sigma^{\mu\nu},
   \label{eq:rel-9-IS-pi}
 \end{equation}
 \begin{equation}
-  \tauq\, u^{\alpha}\nabla_{\alpha}q^{\langle\mu\rangle} + q^{\mu}
+  q^{\mu}
   = -\kappa\Bigl(\proj\,\nabla_{\nu}T
       + \frac{T}{c^2}\,u^{\mu}\,u^{\alpha}\nabla_{\alpha}u_{\mu}\Bigr),
   \label{eq:rel-9-IS-q}
 \end{equation}
-where $\taupi$ and $\tauq$ are the shear-stress and heat-flux relaxation
-times, $\shearvisc$ the dynamic shear viscosity, $\kappa$ the thermal
+where the transport coefficients are
+$\shearvisc$ the dynamic shear viscosity, $\kappa$ the thermal
 conductivity, and $\sigma^{\mu\nu}$ the shear tensor.  The angle-bracket
 notation denotes projection orthogonal to $u^{\mu}$ and symmetrised
-trace-free.  \emph{Causality requires $\taupi > 0$ and $\tauq > 0$}; the
-Navier--Stokes (parabolic) limit is recovered as $\taupi,\tauq\to 0$.
+trace-free.  Causality is ensured by the BDNK frame coefficients; the
+Navier--Stokes (parabolic) limit is recovered as $v/c \to 0$.
 
 For the resistive sector the Ohm's law in the fluid frame,
 \begin{equation}
-  J^{\mu} + \tau_\eta\,u^{\alpha}\nabla_{\alpha}J^{\langle\mu\rangle}
+  J^{\mu}
   = \sigma_{\mathrm{c}}\,E^{\mu}_{\mathrm{fluid}},
   \label{eq:rel-9-Ohm}
 \end{equation}
-introduces a resistive relaxation time $\tau_\eta$.  In the limit
-$\tau_\eta\to 0$ one recovers the standard (non-causal) resistive MHD.
+employs causal transport.  In the limit
+$v/c \to 0$ one recovers the standard resistive MHD.
 The magnetic diffusivity is $\eta = c^2/(4\pi\sigma_{\mathrm{c}})$.
 
 \subsection{Linearised perturbation equations}
@@ -113,11 +113,11 @@ Let the perturbed state be described by
   \label{eq:rel-9-pert-vars}
 \end{equation}
 where $\delta\pi^{\mu\nu}$ and $\delta q^{\mu}$ are the perturbations of
-the Israel--Stewart fields.  Restricting to axisymmetric perturbations
+the BDNK fields.  Restricting to axisymmetric perturbations
 (independent of $\theta$) and linearising, the radial and azimuthal
 momentum equations become
 \begin{align}
-  \Bigl(1 + \taupi\frac{\partial}{\partial t}\Bigr)
+  
   &\Bigl[\frac{\partial u_r}{\partial t} - 2\Omega u_\theta
     - \frac{\mu_{\mathrm{m}} H}{4\pi\enthalpy}
       \Bigl(1+\frac{b^2}{4\pi\enthalpy c^2}\Bigr)^{-1}
@@ -128,7 +128,7 @@ momentum equations become
   \label{eq:rel-9-149R}
 \end{align}
 \begin{align}
-  \Bigl(1 + \taupi\frac{\partial}{\partial t}\Bigr)
+  
   &\Bigl[\frac{\partial u_\theta}{\partial t}
     + \Bigl(\frac{dV}{dr}+\frac{V}{r}\Bigr)u_r
     - \frac{\mu_{\mathrm{m}} H}{4\pi\enthalpy}
@@ -146,13 +146,13 @@ the effective inertia.  In the non-relativistic limit
 $\enthalpy\to\rho$, $b^2/(4\pi\rho c^2)\to 0$, and these equations
 reduce to the classical equations~(149) and~(150) of~\S\,85.
 
-The Israel--Stewart operator
-$(1 + \taupi\,\partial/\partial t)$ acts on the left-hand side of each
+The BDNK operator
+The BDNK constitutive relations enter the
 momentum equation, converting the system from parabolic to hyperbolic.
 This is the fundamental mechanism ensuring causal propagation of viscous
 signals at a finite speed
 \begin{equation}
-  v_{\mathrm{visc}} = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}}
+  v_{\mathrm{char}} \leqslant c
     \le c.
   \label{eq:rel-9-vvisc}
 \end{equation}
@@ -160,14 +160,14 @@ signals at a finite speed
 Similarly, the induction equations acquire the resistive relaxation
 operator:
 \begin{equation}
-  \Bigl(1 + \tau_\eta\frac{\partial}{\partial t}\Bigr)
+  
   \Bigl[\frac{\partial h_r}{\partial t}
     - H\frac{\partial u_r}{\partial z}\Bigr]
   = \eta\Bigl(\nabla^2 h_r - \frac{h_r}{r^2}\Bigr),
   \label{eq:rel-9-152R}
 \end{equation}
 \begin{equation}
-  \Bigl(1 + \tau_\eta\frac{\partial}{\partial t}\Bigr)
+  
   \Bigl[\frac{\partial h_\theta}{\partial t}
     - H\frac{\partial u_\theta}{\partial z}
     - \Bigl(\frac{dV}{dr}-\frac{V}{r}\Bigr)h_r\Bigr]
@@ -176,7 +176,7 @@ operator:
 \end{equation}
 The resistive signal speed is bounded by
 \begin{equation}
-  v_{\mathrm{res}} = \sqrt{\frac{\eta}{\tau_\eta}} \le c,
+  v_{\mathrm{res,char}} \leqslant c \le c,
   \label{eq:rel-9-vres}
 \end{equation}
 which must be imposed as a consistency condition on $\tau_\eta$.
@@ -201,7 +201,7 @@ harmonic forms.  Substituting into the linearised equations and
 eliminating the pressure perturbation $\varpi$ as in the classical
 \S\,85, we obtain the relativistic normal-mode system:
 \begin{align}
-  \bigl(1 + \taupi p\bigr)
+  
   \Bigl[\bigl(DD_*-k^2-p/\nu\bigr)(DD_*-k^2)\,u
     &+ \frac{\mu_{\mathrm{m}}Hk}{4\pi\enthalpy\nu}\,
        \mathcal{A}^{-1}(DD_*-k^2)\phi\Bigr]
@@ -212,7 +212,7 @@ eliminating the pressure perturbation $\varpi$ as in the classical
 where $\mathcal{A} = 1 + b^2/(4\pi\enthalpy c^2)$ encodes the
 relativistic Alfv\'en correction, and the induction equation becomes
 \begin{equation}
-  \bigl(1+\tau_\eta p\bigr)
+  
   \bigl(DD_*-k^2-p/\eta\bigr)\phi = \frac{Hk}{\eta}\,u.
   \label{eq:rel-9-162R}
 \end{equation}
@@ -246,7 +246,7 @@ relativistic corrections.
 \label{sec:rel-87-marginal}
 
 For the onset of instability as a stationary secondary flow ($p = 0$),
-the Israel--Stewart operators reduce to identity and the marginal-state
+the BDNK operators reduce to identity and the marginal-state
 equations take the form
 \begin{equation}
   \Bigl[(DD_*-k^2)^2
@@ -284,11 +284,11 @@ The relativistic Chandrasekhar number $Q_{\mathrm{rel}}$ reduces to
 the classical $Q$ when $\enthalpy\to\rho$ and $\mathcal{A}\to 1$.
 
 \medskip
-\noindent\textbf{Remark on the marginal state and Israel--Stewart.}
+\noindent\textbf{Remark on the marginal state and BDNK.}
 At $p=0$ (stationary onset), the relaxation operators
-$(1+\taupi p)$ and $(1+\tau_\eta p)$ reduce to unity and the marginal
+the BDNK frame corrections vanish and the marginal
 eigenvalue problem is \emph{formally identical} to the classical one
-with the substitution $Q\to Q_{\mathrm{rel}}$.  The Israel--Stewart
+with the substitution $Q\to Q_{\mathrm{rel}}$.  The BDNK
 corrections manifest themselves through:
 \begin{enumerate}
 \item[(i)] the modified dispersion relation for \emph{oscillatory} onset
@@ -647,7 +647,7 @@ asymptotic eigenvalue problem (equations~(294)--(295)) is unchanged in
 form.
 
 %======================================================================
-\section*{Causality: Israel--Stewart ensures causal propagation}
+\section*{Causality: BDNK frame coefficients ensure causal propagation}
 \label{sec:rel-87-89-causality}
 \addcontentsline{toc}{section}{Causality Analysis}
 %======================================================================
@@ -658,18 +658,18 @@ causality constraints.
 
 \subsection*{Viscous sector}
 
-The Israel--Stewart shear relaxation converts the parabolic viscous
+The BDNK first-order viscous constitutive relation converts the parabolic viscous
 diffusion equation into a damped hyperbolic equation with characteristic
 speed
 \begin{equation}
   v_{\mathrm{visc}}
-  = \sqrt{\frac{\shearvisc}{\enthalpy\,\taupi}}\,.
+  = v_{\mathrm{char,BDNK}}\,.
   \label{eq:rel-causality-visc}
 \end{equation}
 Causality requires $v_{\mathrm{visc}} \le c$, i.e.,
 \begin{equation}
-  \taupi \ge \frac{\shearvisc}{\enthalpy\,c^2}\,.
-  \label{eq:rel-causality-taupi}
+  \text{BDNK frame conditions}\,.
+  \label{eq:rel-causality-\text{BDNK frame condition}}
 \end{equation}
 For the Couette problem, this bound is easily satisfied for laboratory
 fluids.
@@ -679,9 +679,9 @@ fluids.
 The causal Ohm's law~\eqref{eq:rel-9-Ohm} yields a resistive signal
 speed
 \begin{equation}
-  v_{\mathrm{res}} = \sqrt{\frac{\eta}{\tau_\eta}}\,,
+  v_{\mathrm{res,char}} \leqslant c\,,
   \qquad\text{with the causality bound}\qquad
-  \tau_\eta \ge \frac{\eta}{c^2}\,.
+  \text{BDNK resistive frame conditions}\,.
   \label{eq:rel-causality-taueta}
 \end{equation}
 
@@ -702,29 +702,29 @@ magnetosonic speeds are likewise bounded.
 
 The full dispersion relation for the relativistic system is obtained by
 setting the perturbations proportional to $\exp(pt)$ with complex $p$.
-In the Navier--Stokes limit ($\taupi=\tau_\eta=0$), each mode satisfies
+In the Navier--Stokes limit ($v/c \to 0$), each mode satisfies
 a polynomial of order~8 in $p$ (the classical system of combined
-order~8 after the $\eta\gg\nu$ simplification).  With Israel--Stewart
+order~8 after the $\eta\gg\nu$ simplification).  With the BDNK
 corrections, the order increases:
 \begin{itemize}
-\item The viscous relaxation operator $(1+\taupi p)$ adds one power of
-  $p$ per momentum equation (2 additional roots).
+\item In the BDNK formulation, no additional powers of
+  $p$ are introduced per momentum equation.
 \item The resistive relaxation operator $(1+\tau_\eta p)$ adds one power
-  of $p$ per induction equation (2 additional roots).
+  of $p$ per induction equation.
 \end{itemize}
-The resulting dispersion relation is of order~12 in $p$.  The additional
-4 roots correspond to rapidly decaying transient modes with decay rates
-$\sim 1/\taupi$ and $\sim 1/\tau_\eta$; they do not participate in the
+The resulting dispersion relation is of order~12 in $p$.  In contrast to the Israel--Stewart theory which has 4 additional non-hydrodynamic modes, the BDNK
+formulation has only the physical hydrodynamic modes with
+that are bounded by the BDNK characteristic speeds; they do not participate in the
 hydrodynamic instability but ensure that \emph{all} signal propagation
 remains causal.
 
 \medskip
 \noindent\textbf{Summary.}
-In the stationary-onset regime ($p=0$), the Israel--Stewart formulation
+In the stationary-onset regime ($p=0$), the BDNK formulation
 reduces to the classical eigenvalue problem with $Q\to Q_{\mathrm{rel}}$
 and $T\to\Ta_{\mathrm{rel}}$, so the classical solutions, variational
 principles, secular determinants, and numerical results carry over with
 only parametric reinterpretation.  The essential new physics appears for
 oscillatory (overstable) modes, where causality is enforced through the
-relaxation times, and for strongly magnetised relativistic plasmas where
+frame coefficients, and for strongly magnetised relativistic plasmas where
 $\vA/c$ is non-negligible.

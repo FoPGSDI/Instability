@@ -5,7 +5,8 @@
 % Requires: rel_preamble.tex (loaded by rel_main.tex)
 %
 % Classical reference: Chandrasekhar, Ch. VIII, §§75--76
-% Relativistic framework: Israel-Stewart causal dissipation theory
+% Relativistic framework: BDNK first-order causal dissipation theory
+% References: Bemfica, Disconzi & Noronha (2018); Kovtun (2019)
 % =====================================================================
 
 \chapter*{Chapter VIII (Relativistic): Stability of Viscous Flow in a
@@ -35,28 +36,34 @@ leading to a stationary instability characterised by the Dean number.
 When the fluid velocities or internal energies become relativistic---as
 in accretion tori around compact objects, or in curved ducts carrying
 relativistic plasma---the Navier--Stokes description must be replaced by
-the Israel--Stewart causal dissipation theory.  The principal changes are:
+the BDNK (Bemfica--Disconzi--Noronha--Kovtun) first-order causal
+dissipation theory.  The principal changes are:
 
 \begin{enumerate}
-\item The viscous stress is no longer instantaneously related to the
-  strain rate; it satisfies a hyperbolic relaxation equation with
-  relaxation time~$\taupi$.
+\item The viscous stress is given by first-order constitutive relations
+  $\pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu}$, but formulated in a
+  general hydrodynamic frame (neither Landau nor Eckart) with frame
+  coefficients chosen to guarantee causality and strong hyperbolicity.
 
 \item The inertia of the fluid is governed by the relativistic enthalpy
   density $\enthalpy = (\varepsilon + p)/c^2$ rather than the rest-mass
   density~$\rho_0$.
 
 \item All signal speeds emerging from the perturbation equations must
-  remain bounded by~$c$, a requirement that is violated by the classical
-  (parabolic) Navier--Stokes equations.
+  remain bounded by~$c$; this is ensured by the BDNK frame coefficients
+  without introducing auxiliary relaxation fields.
 \end{enumerate}
 
 We retain factors of~$c$ explicitly throughout, so the classical limit
-$c \to \infty$ (equivalently $\taupi \to 0$) can be recovered at every
-stage.
+$c \to \infty$ can be recovered at every stage.  Unlike the
+Israel--Stewart (IS) second-order theory, BDNK achieves causality through
+the choice of hydrodynamic frame rather than through relaxation equations
+with relaxation times $\taupi$, $\tauq$, $\tau_\Pi$
+(Bemfica et al., Phys.\ Rev.\ D \textbf{98}, 2018;
+Kovtun, JHEP \textbf{10}, 2019).
 
 %----------------------------------------------------------------------
-\section{The perturbation equations with Israel--Stewart viscosity
+\section{The perturbation equations with BDNK first-order causal viscosity
   in curved geometry}
 \label{sec:rel-76}
 %----------------------------------------------------------------------
@@ -75,27 +82,31 @@ T^{\mu\nu}_0 = \enthalpy_0\, u_0^{\mu}\, u_0^{\nu}
   + p_0\, g^{\mu\nu} + \pi_0^{\mu\nu},
 \end{equation}
 where $\pi_0^{\mu\nu}$ is the equilibrium shear stress satisfying the
-Israel--Stewart relation.  In the narrow-gap limit, $V_m \ll c$, and the
-equilibrium Lorentz factor is
+BDNK first-order constitutive relation.  In the narrow-gap limit,
+$V_m \ll c$, and the equilibrium Lorentz factor is
 \begin{equation}
 \label{eq:rel-8-3}
 \Lf_0 = \Bigl(1 - V^2/c^2\Bigr)^{-1/2}
   \approx 1 + \tfrac{1}{2}V^2/c^2 + \order{V^4/c^4}.
 \end{equation}
 
-\subsection{Linearised Israel--Stewart equations in the narrow-gap limit}
+\subsection{Linearised BDNK equations in the narrow-gap limit}
 \label{sec:rel-76-lin}
 
-The Israel--Stewart relaxation equation for the shear stress is
+In the BDNK first-order theory, the shear stress is given directly by
+the constitutive relation
 \begin{equation}
-\label{eq:rel-8-IS}
-\taupi\, u^{\alpha}\nabla_{\alpha}\,\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu},
+\label{eq:rel-8-BDNK}
+\pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu},
 \end{equation}
 where $\sigma^{\mu\nu}$ is the shear tensor and $\shearvisc$ is the
-dynamic shear viscosity.  For the classical Navier--Stokes limit one
-sets $\taupi = 0$, recovering $\pi^{\mu\nu} = 2\shearvisc\,\sigma^{\mu\nu}$
-instantaneously.
+dynamic shear viscosity.  Unlike the Israel--Stewart theory, there is no
+relaxation equation and no relaxation time $\taupi$; causality is
+instead guaranteed by the BDNK general-frame coefficients, which ensure
+strong hyperbolicity of the conservation laws alone
+(Bemfica et al., Phys.\ Rev.\ Lett.\ \textbf{122}, 2019;
+Hoult \& Kovtun, JHEP \textbf{06}, 2020).
+The Navier--Stokes limit is recovered directly for $v/c \to 0$.
 
 Linearising about the equilibrium and adopting the perturbation ansatz
 \begin{equation}
@@ -113,19 +124,13 @@ perturbation in the azimuthal velocity, the radial equation in the
 narrow-gap limit becomes
 \begin{equation}
 \label{eq:rel-8-10}
-\bigl(1 + \taupi^*\sigma_*\bigr)
 \bigl(D^2 - a^2 - \sigma_*\bigr)
 \bigl(D^2 - a^2\bigr)\,u
 = \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_1(\xi)\Bigr]
   \xi(1 - \xi)\, v,
 \end{equation}
-where $D = d/d\xi$, the dimensionless relaxation parameter is
-\begin{equation}
-\label{eq:rel-8-taustar}
-\taupi^* = \frac{\taupi\,\nu}{d^2},
-\end{equation}
-and $\mathcal{C}_1(\xi)$ encodes the relativistic enthalpy corrections
-from the curved geometry:
+where $D = d/d\xi$, and $\mathcal{C}_1(\xi)$ encodes the relativistic
+enthalpy corrections from the curved geometry:
 \begin{equation}
 \label{eq:rel-8-C1}
 \mathcal{C}_1(\xi) = 36\,\xi^2(1-\xi)^2
@@ -133,14 +138,15 @@ from the curved geometry:
 \end{equation}
 In the limit $c \to \infty$ (or $V_m/c \to 0$), the factor in square
 brackets becomes unity and equation~\eqref{eq:rel-8-10} reduces to the
-classical equation~(8.13) of Chandrasekhar multiplied by
-$(1 + \taupi^*\sigma_*)$.
+classical equation~(8.13) of Chandrasekhar.  Note that in the BDNK
+formulation no Israel--Stewart prefactor $(1 + \taupi^*\sigma_*)$ appears;
+causality is enforced by the frame coefficients rather than by
+relaxation dynamics.
 
 \medskip
 \noindent\textbf{Azimuthal momentum equation.}
 \begin{equation}
 \label{eq:rel-8-11}
-\bigl(1 + \taupi^*\sigma_*\bigr)
 \bigl(D^2 - a^2 - \sigma_*\bigr)\,v
 = \Lambda_{\mathrm{rel}}\, a^2\, (1 - 2\xi)\,
   \Bigl[1 + \frac{V_m^2}{c^2}\,\mathcal{C}_2(\xi)\Bigr]\, u,
@@ -171,13 +177,11 @@ As in the classical problem, the no-slip conditions at the walls give
 \label{eq:rel-8-17}
 u = Du = v = 0 \quad \text{for } \xi = 0 \text{ and } 1.
 \end{equation}
-In addition, the Israel--Stewart theory requires that the shear-stress
-perturbation $\delta\pi^{\mu\nu}$ be specified at the boundaries.  For
-rigid walls we impose vanishing perturbation stress at the surfaces:
-\begin{equation}
-\label{eq:rel-8-17b}
-\delta\pi^{\mu\nu}\big|_{\xi=0,1} = 0.
-\end{equation}
+In the BDNK theory no additional boundary conditions on the viscous
+stress perturbation are required, since the shear stress
+$\pi^{\mu\nu} = -2\shearvisc\,\sigma^{\mu\nu}$ is algebraically
+determined by the velocity field and does not constitute an independent
+dynamical degree of freedom.
 
 %----------------------------------------------------------------------
 \subsection{The characteristic value problem for $\sigma = 0$:
@@ -188,9 +192,8 @@ rigid walls we impose vanishing perturbation stress at the surfaces:
 As in the classical analysis (\S\,76\,(b)), we expect the onset of
 instability to manifest as a stationary secondary flow.  Setting
 $\sigma = 0$ (and hence $\sigma_* = 0$) in
-equations~\eqref{eq:rel-8-10} and~\eqref{eq:rel-8-11}, the
-Israel--Stewart prefactor $(1 + \taupi^*\sigma_*)$ reduces to unity,
-and the marginal-state equations become
+equations~\eqref{eq:rel-8-10} and~\eqref{eq:rel-8-11},
+the marginal-state equations become
 \begin{equation}
 \label{eq:rel-8-18}
 (D^2 - a^2)^2\,u
@@ -204,7 +207,9 @@ and the marginal-state equations become
 \end{equation}
 These equations, together with~\eqref{eq:rel-8-17}, constitute the
 eigenvalue problem for $\Lambda_{\mathrm{rel}}$ as a function of the
-wave number~$a$.
+wave number~$a$.  The $\sigma = 0$ marginal equations are identical
+in the BDNK and Israel--Stewart formulations, since all
+dissipative-framework corrections vanish at stationary onset.
 
 \medskip
 \noindent\textbf{Solution by Galerkin expansion.}
@@ -337,112 +342,79 @@ factor.
   inertia near the channel centre.}
 
 %----------------------------------------------------------------------
-\section{Causality: finite viscous signal propagation in the
+\section{Causality: BDNK causal viscous propagation in the
   curved channel}
 \label{sec:rel-76-causality}
 %----------------------------------------------------------------------
 
-\subsection{The viscous signal speed}
+\subsection{Causality in the BDNK framework}
 \label{sec:rel-76-caus-a}
 
 In the classical Navier--Stokes theory, the diffusion operator
 $(D^2 - a^2 - \sigma)$ implies that viscous signals propagate
-instantaneously.  This is the well-known parabolic character of the
-Navier--Stokes equations.  In the Israel--Stewart theory, the hyperbolic
-relaxation equation~\eqref{eq:rel-8-IS} replaces the instantaneous stress
-response with a causal, finite-speed propagation.
+instantaneously.  In the BDNK theory, causality is guaranteed
+not by a relaxation equation, but by the structure of the first-order
+constitutive relations in the general hydrodynamic frame.  The
+conservation laws $\nabla_\mu T^{\mu\nu} = 0$, together with the BDNK
+constitutive relations, form a strongly hyperbolic system whose
+characteristic speeds are bounded by~$c$
+(Bemfica et al., Phys.\ Rev.\ D \textbf{107}, 2023).
 
-To expose the signal-speed structure, consider the full perturbation
-system~\eqref{eq:rel-8-10}--\eqref{eq:rel-8-11} in the limit
-$a \to \infty$ (short wavelength, geometric optics limit).  Setting
-$u \sim \exp(i\omega t - ikz)$ with $k \gg 1$, the highest-order
-terms yield the dispersion relation
+The characteristic speeds of the BDNK viscous system satisfy
 \begin{equation}
-\label{eq:rel-8-disp}
-\bigl(\omega^2 - c_{\mathrm{visc}}^2\, k^2\bigr)
-\bigl(\omega^2 - c_{\mathrm{visc}}^2\, k^2\bigr) = 0,
+\label{eq:rel-8-BDNK-char}
+v_{\mathrm{char}}^2 \leqslant c^2,
 \end{equation}
-where the viscous signal speed is
-\begin{equation}
-\label{eq:rel-8-cvisc}
-c_{\mathrm{visc}}
-  = \sqrt{\frac{\shearvisc}{\enthalpy_0\,\taupi}}
-  = \sqrt{\frac{\nu}{\taupi}}\,
-  \sqrt{\frac{\rho_0}{\enthalpy_0}}.
-\end{equation}
-Here $\nu = \shearvisc/\rho_0$ is the kinematic viscosity.  In the
-non-relativistic limit $\enthalpy_0 \to \rho_0$ and
-$c_{\mathrm{visc}} \to \sqrt{\nu/\taupi}$, which is the standard
-Israel--Stewart viscous signal speed.
+provided the BDNK transport coefficients and frame coefficients satisfy
+the coupled nonlinear inequalities derived in
+Bemfica et al.\ (2018) and Kovtun (2019).  For a conformal fluid, the
+conditions reduce to $\shearvisc > 0$ together with bounds on the frame
+coefficients that ensure hyperbolicity.
 
-\subsection{Causality bound}
+\subsection{BDNK causality conditions}
 \label{sec:rel-76-caus-b}
 
-Thermodynamic stability and the second law require
-$\shearvisc \geqslant 0$ and $\taupi > 0$.  The causality constraint
-further demands
-\begin{equation}
-\label{eq:rel-8-causality}
-c_{\mathrm{visc}} \leqslant c
-\qquad\Longleftrightarrow\qquad
-\taupi \geqslant \frac{\shearvisc}{\enthalpy_0\, c^2}
-  = \frac{\nu}{c^2}\,\frac{\rho_0}{\enthalpy_0}.
-\end{equation}
-This provides a lower bound on the relaxation time.  In the
-non-relativistic regime ($\enthalpy_0 \approx \rho_0$), the bound
-becomes $\taupi \geqslant \nu/c^2$, which is extremely small and
-imposes no practical restriction.  In ultra-relativistic fluids
-($p \sim \varepsilon$, $\enthalpy_0 \sim 2\varepsilon/c^2$), the
-bound tightens to
-\begin{equation}
-\label{eq:rel-8-causality-UR}
-\taupi \geqslant \frac{\shearvisc}{2\varepsilon}.
-\end{equation}
-This is the well-known kinetic-theory result for ultra-relativistic
-gases.
+The BDNK theory requires:
+\begin{enumerate}
+\item $\shearvisc > 0$ (positive shear viscosity);
+\item $\bulkvisc + \tfrac{2}{3}\shearvisc > 0$ (positive bulk+shear
+  combination);
+\item The frame coefficients satisfy coupled inequalities that replace
+  the Israel--Stewart requirement $\taupi > 0$.
+\end{enumerate}
+These conditions ensure that all characteristic speeds of the
+perturbation equations remain bounded by~$c$, without the need for
+auxiliary relaxation fields.  In the non-relativistic limit
+($v/c \to 0$), the frame corrections vanish at $O(v^2/c^2)$ and the
+standard Navier--Stokes equations are recovered.
 
 \subsection{Implications for the Dean instability}
 \label{sec:rel-76-caus-c}
 
-The finite speed of viscous signal propagation has two consequences
-for the curved-channel stability problem:
+The BDNK formulation has the following consequences for the
+curved-channel stability problem:
 
 \begin{enumerate}
-\item \textbf{Modified growth rates.}  The Israel--Stewart factor
-  $(1 + \taupi^*\sigma_*)$ in
-  equations~\eqref{eq:rel-8-10}--\eqref{eq:rel-8-11} introduces an
-  additional root $\sigma_* = -1/\taupi^*$ of the characteristic
-  equation.  This is a rapidly decaying, non-hydrodynamic mode that
-  describes the transient relaxation of the viscous stress.  It has
-  no classical counterpart and decays on the timescale~$\taupi$.
+\item \textbf{Standard dispersion relation.}  Unlike the Israel--Stewart
+  theory, which introduces extra non-hydrodynamic modes (spurious
+  relaxation roots), the BDNK dispersion relation contains only the
+  physical hydrodynamic modes.  There are no additional rapidly decaying
+  transients; the mode spectrum is the standard one---shear diffusive
+  modes at low $k$, with causally bounded phase speeds at high $k$.
 
-\item \textbf{Finite critical-layer speed.}  In the classical analysis,
-  the marginal state ($\sigma = 0$) is unaffected by the parabolic vs.\
-  hyperbolic character of the viscous operator.  However, for
-  $\sigma \neq 0$ (i.e., finite growth or overstability), the
-  Israel--Stewart relaxation qualitatively alters the dispersion
-  relation.  In particular, the overstable branch that may connect the
-  Dean instability to the plane-Poiseuille Tollmien--Schlichting
-  instability in the limit $R_1/d \to \infty$ (cf.\ the discussion
-  at the end of \S\,76\,(c) in the classical text) now propagates at
-  finite speed.
-
-  The maximum group velocity of the overstable modes is bounded by
-  \begin{equation}
-  \label{eq:rel-8-vgroup}
-  v_g \leqslant c_{\mathrm{visc}}
-    = \sqrt{\frac{\nu}{\taupi}}\,
-      \sqrt{\frac{\rho_0}{\enthalpy_0}}
-    \leqslant c.
-  \end{equation}
+\item \textbf{Finite critical-layer speed.}  For $\sigma \neq 0$
+  (finite growth or overstability), the BDNK frame coefficients
+  ensure that the overstable branch connecting the Dean instability to
+  the plane-Poiseuille Tollmien--Schlichting instability in the limit
+  $R_1/d \to \infty$ propagates at finite speed bounded by~$c$.
   This resolves the conceptual difficulty of the classical theory, in
-  which the passage to the plane-parallel limit $R_1/d \to \infty$
-  involves signals of unbounded speed.
+  which the passage to the plane-parallel limit involves signals of
+  unbounded speed.
 \end{enumerate}
 
 \medskip
 \noindent\textbf{Summary of the dimensionless parameters.}
-The relativistic curved-channel problem is governed by three independent
+The relativistic curved-channel problem is governed by two independent
 dimensionless groups:
 \begin{equation}
 \label{eq:rel-8-params}
@@ -450,12 +422,11 @@ dimensionless groups:
   = 72\,\mathrm{R}^2\frac{d}{R_1}
   \bigl[1 + \tfrac{5}{2}\,V_m^2/c^2 + \cdots\bigr],
 \quad
-\taupi^* = \frac{\taupi\nu}{d^2},
-\quad
 \frac{V_m}{c}.
 \end{equation}
 The first is the generalised Dean parameter (enthalpy-corrected);
-the second measures the importance of viscous relaxation relative to
-the diffusion time; and the third is the relativistic Mach number of
-the mean flow.  In the triple limit $\taupi^* \to 0$, $V_m/c \to 0$,
+the second is the relativistic Mach number of the mean flow.
+In the BDNK framework, the Israel--Stewart relaxation parameter
+$\taupi^*$ does not appear as an independent parameter.
+In the limit $V_m/c \to 0$,
 one recovers the classical problem of Dean and Reid in its entirety.
