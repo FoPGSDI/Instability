@@ -6,39 +6,40 @@
 
 In \S\ref{sec:7-69} we described the classical viscous Couette flow
 between two coaxial rotating cylinders.  We now reformulate this
-problem in the relativistic framework, replacing the Navier--Stokes
-viscous stress by the Israel--Stewart causal dissipative theory.
+problem in the relativistic framework, using the BDNK
+(Bemfica--Disconzi--Noronha--Kovtun) first-order causal
+hydrodynamic theory \citep{Bemfica2018,Kovtun2019,Bemfica2019,HoultKovtun2020}.
 
-\subsection{Relativistic energy-momentum tensor with Israel--Stewart
+\subsection{Relativistic energy-momentum tensor with BDNK
   viscosity}\label{sec:rel-7-69a}
 
-The energy-momentum tensor for a relativistic dissipative fluid is
+The energy-momentum tensor for a relativistic dissipative fluid in
+the BDNK general-frame formulation is
 (cf.\ \textsc{RELATIVISTIC\_CONVENTIONS.md})
 \begin{equation}
 \label{eq:rel-7-134}
-T^{\mu\nu} = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}\,u^{\nu}
-  + (p + \Pi)\,\Delta^{\mu\nu}
-  + \pi^{\mu\nu}
-  + \frac{1}{c^{2}}\bigl(q^{\mu}u^{\nu}+q^{\nu}u^{\mu}\bigr),
+T^{\mu\nu} = \frac{E}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + P\,\Delta^{\mu\nu}
+  + \Pi^{\mu\nu}
+  + \frac{1}{c^{2}}\bigl(Q^{\mu}u^{\nu}+Q^{\nu}u^{\mu}\bigr),
 \end{equation}
-where $\varepsilon$ is the energy density, $p$ the equilibrium
-pressure, $\Pi$ the bulk viscous pressure, $\pi^{\mu\nu}$ the shear
-stress tensor, and $q^{\mu}$ the heat flux four-vector.  The
+where $E = \varepsilon + \varepsilon_{1}$ is the frame energy density
+(with $\varepsilon_{1}$ the BDNK first-order correction),
+$P = p + \Pi_{\mathrm{bulk}}$ is the frame pressure,
+$\Pi^{\mu\nu}$ is the traceless anisotropic stress, and
+$Q^{\mu}$ is the heat flux four-vector.  The
 projection tensor is
 $\Delta^{\mu\nu}=g^{\mu\nu}+u^{\mu}u^{\nu}/c^{2}$ and the
 four-velocity satisfies $u^{\mu}u_{\mu}=-c^{2}$.
 
-In the Israel--Stewart theory the shear stress is not given
-algebraically by the velocity gradient; instead it satisfies the
-\emph{relaxation equation}
+In the BDNK theory the anisotropic stress is given directly by the
+\emph{first-order constitutive relation}
 \begin{equation}
 \label{eq:rel-7-135}
-\tau_{\pi}\,u^{\alpha}\nabla_{\alpha}\pi^{\langle\mu\nu\rangle}
-  + \pi^{\mu\nu}
-  = 2\,\eta_{\mathrm{s}}\,\sigma^{\mu\nu},
+\Pi^{\mu\nu}
+  = -2\,\eta_{\mathrm{s}}\,\sigma^{\mu\nu},
 \end{equation}
-where $\tau_{\pi}>0$ is the shear relaxation time,
-$\eta_{\mathrm{s}}$ is the coefficient of shear viscosity, and
+where $\eta_{\mathrm{s}}>0$ is the coefficient of shear viscosity and
 $\sigma^{\mu\nu}$ is the relativistic shear tensor
 \begin{equation}
 \label{eq:rel-7-136}
@@ -47,31 +48,24 @@ $\sigma^{\mu\nu}$ is the relativistic shear tensor
     + \Delta^{\nu\alpha}\nabla_{\alpha}u^{\mu}\bigr)
   - \tfrac{1}{3}\,\Delta^{\mu\nu}\,\nabla_{\alpha}u^{\alpha}.
 \end{equation}
-The angular brackets in~\eqref{eq:rel-7-135} denote the symmetric,
-traceless, and transverse (to~$u^{\mu}$) projection.  The crucial
-feature of~\eqref{eq:rel-7-135} is that $\tau_{\pi}>0$ renders the
-viscous sector \emph{hyperbolic}: perturbations in $\pi^{\mu\nu}$
-propagate at a finite speed
+Unlike the acausal Eckart or Landau first-order theories, the BDNK
+formulation achieves causality and strong hyperbolicity not through
+relaxation equations, but through the choice of hydrodynamic frame:
+the frame coefficients (entering $\varepsilon_{1}$, $\Pi_{\mathrm{bulk}}$,
+and additional terms in $Q^{\mu}$) are constrained by coupled
+nonlinear inequalities that ensure all characteristic speeds satisfy
 \begin{equation}
 \label{eq:rel-7-137}
-v_{\mathrm{visc}} = \sqrt{\frac{\eta_{\mathrm{s}}}
-  {(\varepsilon+p)\,\tau_{\pi}/c^{2}}} \le c,
+v_{\mathrm{char}} \le c,
 \end{equation}
-so that causality is preserved.  When $\tau_{\pi}\to 0$
-equation~\eqref{eq:rel-7-135} reduces to the Navier--Stokes
-constitutive relation $\pi^{\mu\nu}=2\eta_{\mathrm{s}}\sigma^{\mu\nu}$,
-which is acausal (parabolic).
+rigorously and in the full nonlinear theory
+\citep{Bemfica2018,BemficaDN2023}.
+No relaxation times are needed; the only dynamical variables are the
+conserved quantities $(\varepsilon, n, u^{\mu})$.
 
-Similarly, the bulk viscous pressure satisfies
-\begin{equation}
-\label{eq:rel-7-138}
-\tau_{\Pi}\,u^{\alpha}\nabla_{\alpha}\Pi + \Pi
-  = -\zeta\,\nabla_{\mu}u^{\mu},
-\end{equation}
-with relaxation time $\tau_{\Pi}>0$ and bulk viscosity coefficient
-$\zeta$.  For incompressible flow ($\nabla_{\mu}u^{\mu}=0$) the bulk
-viscous pressure vanishes in equilibrium, and we shall henceforth
-set $\Pi=0$ and $q^{\mu}=0$ (no heat flux).
+For incompressible flow ($\nabla_{\mu}u^{\mu}=0$) the bulk
+viscous contribution vanishes, and we shall henceforth
+set $\Pi_{\mathrm{bulk}}=0$ and $Q^{\mu}=0$ (no heat flux).
 
 \subsection{Equilibrium Couette profile: relativistic
   corrections}\label{sec:rel-7-69b}
@@ -96,14 +90,13 @@ single independent component
 \sigma^{r\varphi}
   = \frac{\gamma^{2}}{2}\,r\,\frac{d\Omega}{dr}.
 \end{equation}
-In the Israel--Stewart equilibrium ($u^{\alpha}\nabla_{\alpha}
-\pi^{\mu\nu}=0$), the relaxation equation~\eqref{eq:rel-7-135}
-yields
+In the BDNK framework the constitutive
+relation~\eqref{eq:rel-7-135} gives directly
 \begin{equation}
 \label{eq:rel-7-141}
-\pi^{r\varphi}_{\mathrm{eq}}
-  = 2\eta_{\mathrm{s}}\,\sigma^{r\varphi}
-  = \eta_{\mathrm{s}}\,\gamma^{2}\,r\,\frac{d\Omega}{dr}.
+\Pi^{r\varphi}_{\mathrm{eq}}
+  = -2\eta_{\mathrm{s}}\,\sigma^{r\varphi}
+  = -\eta_{\mathrm{s}}\,\gamma^{2}\,r\,\frac{d\Omega}{dr}.
 \end{equation}
 
 The radial component of the relativistic momentum equation
@@ -169,13 +162,14 @@ with $\mu=\Omega_{2}/\Omega_{1}$ and $\eta=R_{1}/R_{2}$ retaining
 their classical definitions (equation~\eqref{eq:7-146}).
 
 \medskip
-\noindent\textbf{Remark (causality).}  In the Navier--Stokes
-formulation the viscous equilibrium~\eqref{eq:rel-7-144} is
-instantaneously established.  In the Israel--Stewart theory, the
-equilibrium is reached on a timescale $\sim\tau_{\pi}$; but once
-$t\gg\tau_{\pi}$ the stationary profiles~\eqref{eq:rel-7-145}
-and~\eqref{eq:rel-7-146} are the same.  The difference becomes
-crucial only for the perturbation dynamics.
+\noindent\textbf{Remark (causality).}  In the acausal Navier--Stokes
+(Eckart/Landau) formulation the viscous equilibrium~\eqref{eq:rel-7-144}
+is instantaneously established.  In the BDNK theory, causality is
+ensured by the frame-dependent structure of the constitutive relations
+rather than by relaxation dynamics.  The stationary
+profiles~\eqref{eq:rel-7-145} and~\eqref{eq:rel-7-146} are identical
+in both formulations---the difference arises in the perturbation
+dynamics and the causal propagation of viscous signals.
 
 %% ================================================================
 \section{The perturbation equations: relativistic
@@ -183,10 +177,9 @@ crucial only for the perturbation dynamics.
 
 We now investigate the stability of the relativistic Couette flow
 described in \S\ref{sec:rel-7-69}.  The perturbation analysis follows
-the structure of the classical treatment in \S\ref{sec:7-70}, but the
-viscous sector is governed by the Israel--Stewart relaxation
-equation~\eqref{eq:rel-7-135} rather than by the Navier--Stokes
-stress.
+the structure of the classical treatment in \S\ref{sec:7-70}, with the
+viscous sector governed by the BDNK first-order constitutive
+relation~\eqref{eq:rel-7-135}.
 
 \subsection{Linearized relativistic equations}\label{sec:rel-7-70a}
 
@@ -242,26 +235,24 @@ and equations~\eqref{eq:rel-7-149}--\eqref{eq:rel-7-152} reduce
 exactly to equations~\eqref{eq:7-149}--\eqref{eq:7-153} of
 \S\ref{sec:7-70}.
 
-\subsection{Israel--Stewart perturbation of the shear
+\subsection{BDNK perturbation of the anisotropic
   stress}\label{sec:rel-7-70b}
 
-The key difference from the classical analysis is that the viscous
-stress perturbation $\delta\pi^{\mu\nu}$ is not slaved to the
-velocity gradient; it satisfies the linearised Israel--Stewart
-equation
+In the BDNK first-order theory, the viscous stress perturbation
+$\delta\Pi^{\mu\nu}$ is given directly by the linearised constitutive
+relation
 \begin{equation}
 \label{eq:rel-7-153}
-\tau_{\pi}\,\frac{\partial\,\delta\pi^{\mu\nu}}{\partial t}
-  + \delta\pi^{\mu\nu}
-  = 2\eta_{\mathrm{s}}\,\delta\sigma^{\mu\nu}
-  - \tau_{\pi}\,(\delta u^{\alpha}\nabla_{\alpha})
-    \pi^{\mu\nu}_{\mathrm{eq}},
+\delta\Pi^{\mu\nu}
+  = -2\eta_{\mathrm{s}}\,\delta\sigma^{\mu\nu},
 \end{equation}
-where $\delta\sigma^{\mu\nu}$ is the perturbed shear tensor.  In the
-limit $\tau_{\pi}\to 0$ the left-hand side reduces to
-$\delta\pi^{\mu\nu}=2\eta_{\mathrm{s}}\delta\sigma^{\mu\nu}$,
-recovering the Navier--Stokes constitutive law and hence the
-classical perturbation equations.
+where $\delta\sigma^{\mu\nu}$ is the perturbed shear tensor.
+Unlike the Israel--Stewart second-order theory, no relaxation equation
+is needed; the viscous stress is algebraically determined by the
+velocity gradient at each instant.  Causality is nevertheless ensured
+by the BDNK frame coefficients, which modify the characteristic
+structure of the conservation equations to guarantee strong
+hyperbolicity \citep{Bemfica2018,Kovtun2019}.
 
 The explicit components of $\delta\sigma^{\mu\nu}$ in cylindrical
 coordinates for axisymmetric perturbations are
@@ -294,28 +285,28 @@ u_{z} &= e^{pt}\,w(r)\cos kz, &\quad
   \times\{\cos kz \text{ or } \sin kz\},
 \end{aligned}
 \end{equation}
-where $k$ is the axial wave number and $p$ may be complex.  For the
-Israel--Stewart stress components the relaxation
-equation~\eqref{eq:rel-7-153} yields the algebraic relation (for each
-mode)
+where $k$ is the axial wave number and $p$ may be complex.  In the
+BDNK framework the constitutive relation~\eqref{eq:rel-7-153}
+gives directly for each mode
 \begin{equation}
 \label{eq:rel-7-156}
-\Pi^{\mu\nu}(r)
-  = \frac{2\eta_{\mathrm{s}}}{1+\tau_{\pi}p}\,
-    \delta\sigma^{\mu\nu}_{\mathrm{mode}}(r)
-  - \frac{\tau_{\pi}}{1+\tau_{\pi}p}\,
-    (\delta u^{\alpha}\nabla_{\alpha})
-    \pi^{\mu\nu}_{\mathrm{eq}},
+\hat{\Pi}^{\mu\nu}(r)
+  = -2\eta_{\mathrm{s}}\,
+    \delta\sigma^{\mu\nu}_{\mathrm{mode}}(r),
 \end{equation}
-so that the Israel--Stewart viscous term in the momentum equations
-enters through an \emph{effective kinematic viscosity}
+so that the viscous term in the momentum equations enters through the
+\emph{kinematic viscosity}
 \begin{equation}
 \label{eq:rel-7-157}
-\nu_{\mathrm{eff}}(p) = \frac{\nu}{1+\tau_{\pi}p},
+\nu = \frac{\eta_{\mathrm{s}}}{w},
 \end{equation}
-which is frequency-dependent.  For steady perturbations ($p=0$),
-$\nu_{\mathrm{eff}}=\nu$ and the classical eigenvalue problem is
-recovered.
+which is frequency-independent (unlike the Israel--Stewart theory
+where an effective viscosity $\nu/(1+\tau_{\pi}p)$ appears).
+Causality in the BDNK theory is ensured not by frequency-dependent
+damping but by frame-dependent bounds on the transport coefficients
+\citep{Kovtun2019,HoultKovtun2020}.  At the marginal state $p=0$,
+both BDNK and Israel--Stewart reduce to the same eigenvalue problem
+with viscosity~$\nu$.
 
 Substituting~\eqref{eq:rel-7-156} into the linearised momentum
 equations and carrying out the same elimination of $w$ and $\varpi$
@@ -325,15 +316,15 @@ $a^{2}=k^{2}R_{2}^{2}$ and
 $\sigma=pR_{2}^{2}/\nu$):
 \begin{equation}
 \label{eq:rel-7-158}
-\frac{1}{1+\tau_{\pi}p}\bigl(DD_{*}-a^{2}\bigr)
-\Bigl[\frac{\gamma^{2}}{1+\tau_{\pi}p}\bigl(DD_{*}-a^{2}\bigr)
+\bigl(DD_{*}-a^{2}\bigr)
+\Bigl[\gamma^{2}\bigl(DD_{*}-a^{2}\bigr)
   - \sigma\gamma^{2}\Bigr]u
 = -T_{\mathrm{rel}}\,a^{2}
   \Bigl(\frac{1}{r^{2}}-\kappa_{\mathrm{rel}}\Bigr)v,
 \end{equation}
 \begin{equation}
 \label{eq:rel-7-159}
-\frac{\gamma^{2}}{1+\tau_{\pi}p}
+\gamma^{2}
   \bigl(DD_{*}-a^{2}\bigr)v
   - \sigma\gamma^{2}v
 = \bigl(D_{*}V\bigr)_{\mathrm{rel}}\,u,
@@ -366,9 +357,11 @@ at each cylinder wall.
 \noindent\textbf{Remark.}  The structure of
 equations~\eqref{eq:rel-7-158} and~\eqref{eq:rel-7-159} is
 identical to the classical system~\eqref{eq:7-167}--\eqref{eq:7-168}
-except for two modifications: (i) every occurrence of $\nu$ is
-replaced by $\nu_{\mathrm{eff}}(p)=\nu/(1+\tau_{\pi}p)$, and
-(ii)~factors of $\gamma^{2}$ multiply the inertial terms.
+with one modification: factors of $\gamma^{2}$ multiply the inertial
+terms, reflecting the relativistic enthalpy.  In the BDNK theory the
+viscosity $\nu$ appears without frequency-dependent modification;
+causality is instead enforced by the BDNK frame coefficients which
+bound the characteristic speeds of the conservation equations.
 
 \subsection{Stability for $\mu>\eta^{2}$: relativistic
   generalisation}\label{sec:rel-7-70d}
@@ -438,9 +431,10 @@ generalisation of equation~\eqref{eq:7-189}.
 
 The marginal state is defined by $\mathrm{re}(p)=0$.  Following
 the classical analysis, we expect the marginal state to be
-\emph{stationary} ($p=0$, exchange of stabilities), so that
-$\nu_{\mathrm{eff}}=\nu$ and the Israel--Stewart relaxation plays no
-role at onset.  In this case
+\emph{stationary} ($p=0$, exchange of stabilities).  In the BDNK
+theory there is no frequency-dependent effective viscosity, so the
+eigenvalue problem at onset takes the same form as in the classical
+case with $\nu$ replacing the Newtonian kinematic viscosity.  In this case
 equations~\eqref{eq:rel-7-158}--\eqref{eq:rel-7-159} reduce to the
 eigenvalue problem
 \begin{equation}
@@ -470,36 +464,36 @@ increase the critical Taylor number, i.e.\ relativity has a
 enhanced inertia ($\gamma^{2}$ factors) makes it harder to displace
 fluid elements against the centrifugal gradient.
 
-\subsection{Role of Israel--Stewart relaxation for oscillatory
+\subsection{BDNK causality bounds for oscillatory
   modes}\label{sec:rel-7-70f}
 
-While the Israel--Stewart relaxation drops out at marginal stability
-($p=0$), it is essential for the \emph{dynamics} of perturbations
-away from the marginal state.  For oscillatory modes ($p=i\omega$)
-the effective viscosity~\eqref{eq:rel-7-157} becomes
+In the BDNK theory the viscosity $\nu$ is frequency-independent,
+so for oscillatory modes ($p=i\omega$) the viscous damping rate
+takes the standard form
 \begin{equation}
 \label{eq:rel-7-170}
-\nu_{\mathrm{eff}}(i\omega)
-  = \frac{\nu}{1+i\tau_{\pi}\omega}
-  = \frac{\nu(1-i\tau_{\pi}\omega)}{1+\tau_{\pi}^{2}\omega^{2}},
+\mathrm{re}(p)
+  = -\nu k^{2} + \cdots,
 \end{equation}
-which has a reduced real part and a non-zero imaginary part.  The
-damping rate of stable modes is therefore modified:
+which is the same as in the Navier--Stokes theory.  The crucial
+difference is that the BDNK frame coefficients ensure that the
+\emph{characteristic speeds} of the full system of conservation
+equations remain bounded by~$c$.  This is guaranteed by the
+BDNK causality conditions---coupled inequalities on
+$(\eta_{\mathrm{s}}, \zeta, \kappa, \text{frame coefficients})$---which
+replace the Israel--Stewart requirement $\tau_{\pi}>0$
+\citep{Bemfica2018,Kovtun2019}.
+
 \begin{equation}
 \label{eq:rel-7-171}
-\mathrm{re}(p)
-  = -\frac{\nu k^{2}}{1+\tau_{\pi}^{2}\omega^{2}}
-    + \cdots,
+v_{\mathrm{char}} \le c
+\qquad\text{(BDNK causality bound)},
 \end{equation}
-showing that high-frequency perturbations are
-\emph{less efficiently damped} than in the Navier--Stokes theory.
-This is a direct consequence of causality: in the Israel--Stewart
-theory, viscous damping cannot act instantaneously.
-
-More significantly, for any mode the viscous signal speed is bounded
-by~\eqref{eq:rel-7-137}; perturbation fronts cannot outrun this
-speed regardless of frequency.  In the Navier--Stokes limit
-$\tau_{\pi}\to 0$ the signal speed diverges, violating causality.
+ensuring that perturbation fronts remain subluminal at all
+frequencies.  The BDNK theory thus achieves the same causal
+behaviour as Israel--Stewart but with a simpler (first-order)
+constitutive structure and without introducing additional dynamical
+degrees of freedom.
 
 \subsection{Summary of relativistic modifications}\label{sec:rel-7-70g}
 
@@ -512,19 +506,20 @@ introduces the following modifications to the classical theory of
   $V(r)=Ar+B/r$ receives corrections of order $V^{2}/c^{2}$
   (equation~\eqref{eq:rel-7-145}).
 \item \textbf{Viscous constitutive law:}  The Navier--Stokes
-  relation is replaced by the Israel--Stewart relaxation
-  equation~\eqref{eq:rel-7-135}, ensuring that viscous signals
-  propagate at finite speed $v_{\mathrm{visc}}\le c$.
+  relation is replaced by the BDNK first-order constitutive
+  relation $\Pi^{\mu\nu}=-2\eta_{\mathrm{s}}\sigma^{\mu\nu}$,
+  with causality ensured by frame-dependent bounds on the
+  transport coefficients \citep{Bemfica2018,Kovtun2019}.
 \item \textbf{Perturbation equations:}  The eigenvalue problem
-  acquires $\gamma^{2}$ factors and the frequency-dependent
-  effective viscosity $\nu_{\mathrm{eff}}=\nu/(1+\tau_{\pi}p)$.
+  acquires $\gamma^{2}$ factors from the relativistic enthalpy;
+  the viscosity $\nu$ enters without frequency-dependent modification.
 \item \textbf{Sufficient stability condition:}  The criterion
   $\mu>\eta^{2}$ remains sufficient for stability, with the proof
   carrying through thanks to the positive-definiteness of
   $\gamma^{2}$.
 \item \textbf{Critical Taylor number:}  $T_{\mathrm{rel,cr}}>
   T_{\mathrm{cl,cr}}$; relativity stabilises the flow.
-\item \textbf{Causality:}  All viscous propagation speeds are
-  bounded by $v_{\mathrm{visc}}\le c$, guaranteed by
-  $\tau_{\pi}>0$.
+\item \textbf{Causality:}  All characteristic speeds are
+  bounded by $v_{\mathrm{char}}\le c$, guaranteed by the BDNK
+  causality conditions on the frame coefficients.
 \end{enumerate}

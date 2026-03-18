@@ -16,38 +16,40 @@ same conclusion survive relativistic corrections?
 \subsection{Relativistic perturbation equations with time dependence}
 \label{sec:rel-7-72a}
 
-In the relativistic Israel--Stewart framework the linearised perturbation
+In the BDNK (Bemfica--Disconzi--Noronha--Kovtun) first-order causal
+framework \citep{Bemfica2018,Kovtun2019}, the linearised perturbation
 equations for the radial velocity perturbation~$\mathfrak{u}$ and the
-azimuthal velocity perturbation~$v$ acquire two new features compared
-with the classical equations~\eqref{eq:7-276}--\eqref{eq:7-277}:
-\begin{enumerate}
-\item The inertia of the perturbed fluid is governed by the relativistic
-  enthalpy density $\enthalpy = (\edensity + p)/c^{2}$ rather than the
-  rest-mass density~$\rdensity$ alone.  In the energy integrals this
-  replaces every occurrence of~$\rho$ by~$\enthalpy$.
-\item The Israel--Stewart relaxation times~$\taupi$ and~$\tauq$
-  introduce additional time derivatives, converting the parabolic
-  diffusion operators into hyperbolic ones.  Schematically, the viscous
-  operator $D^{2}-a^{2}-\sigma$ acquires a causal correction:
+azimuthal velocity perturbation~$v$ acquire the following modification
+compared with the classical equations~\eqref{eq:7-276}--\eqref{eq:7-277}:
+the inertia of the perturbed fluid is governed by the relativistic
+enthalpy density $\enthalpy = (\edensity + p)/c^{2}$ rather than the
+rest-mass density~$\rdensity$ alone.  In the energy integrals this
+replaces every occurrence of~$\rho$ by~$\enthalpy$.
+
+In the BDNK theory the viscous stress is given by the first-order
+constitutive relation $\Pi^{\mu\nu}=-2\eta\sigma^{\mu\nu}$ with no
+relaxation equation, so the viscous operator retains its classical form:
 \begin{equation}
 \label{eq:rel-7-276}
-D^{2}-a^{2}-\sigma
-\;\longrightarrow\;
-D^{2}-a^{2}-\sigma\bigl(1+\taupi\sigma\bigr).
+D^{2}-a^{2}-\sigma.
 \end{equation}
-\end{enumerate}
+Causality is ensured by the BDNK frame coefficients (constraints on
+the transport coefficients) rather than by relaxation terms.  At the
+marginal state $\sigma=0$ this is identical to what one obtains from
+the Israel--Stewart theory, since the IS relaxation terms vanish at
+$\sigma=0$.
 
 Translating the origin to the midpoint of the gap and rescaling as in
 \S\,\ref{sec:7-72}, the relativistic perturbation equations become
 \begin{equation}
 \label{eq:rel-7-277}
 \bigl(D^{2}-a^{2}\bigr)
-\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]\mathfrak{u}
+\bigl(D^{2}-a^{2}-\sigma\bigr)\mathfrak{u}
 = (1+\varepsilon x)\,v,
 \end{equation}
 \begin{equation}
 \label{eq:rel-7-278}
-\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]v
+\bigl(D^{2}-a^{2}-\sigma\bigr)v
 = -\mathscr{T}_{\mathrm{rel}}\,a^{2}\,\mathfrak{u},
 \end{equation}
 where
@@ -78,11 +80,11 @@ in~$\varepsilon$, exactly as in the Newtonian case).  This leaves
 \begin{equation}
 \label{eq:rel-7-281}
 \bigl(D^{2}-a^{2}\bigr)
-\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]\mathfrak{u} = v,
+\bigl(D^{2}-a^{2}-\sigma\bigr)\mathfrak{u} = v,
 \end{equation}
 \begin{equation}
 \label{eq:rel-7-282}
-\bigl[D^{2}-a^{2}-\sigma(1+\taupi\sigma)\bigr]v
+\bigl(D^{2}-a^{2}-\sigma\bigr)v
 = -\mathscr{T}_{\mathrm{rel}}\,a^{2}\,\mathfrak{u}.
 \end{equation}
 
@@ -94,7 +96,7 @@ yields
 \label{eq:rel-7-283}
 \int_{-1/2}^{+1/2} v\,\mathfrak{u}^{*}\,dx
 = \int_{-1/2}^{+1/2} \bigl|(D^{2}-a^{2})\mathfrak{u}\bigr|^{2}\,dx
-  + \sigma(1+\taupi\sigma)
+  + \sigma
     \int_{-1/2}^{+1/2}
     \bigl(|D\mathfrak{u}|^{2}+a^{2}|\mathfrak{u}|^{2}\bigr)\,dx.
 \end{equation}
@@ -104,7 +106,7 @@ Similarly, from~\eqref{eq:rel-7-282},
 -\mathscr{T}_{\mathrm{rel}}\,a^{2}
 \int_{-1/2}^{+1/2} v\,\mathfrak{u}^{*}\,dx
 = -\int_{-1/2}^{+1/2}
-  \bigl\{|Dv|^{2}+\bigl[a^{2}+\sigma^{*}(1+\taupi\sigma^{*})\bigr]
+  \bigl\{|Dv|^{2}+\bigl(a^{2}+\sigma^{*}\bigr)
   |v|^{2}\bigr\}\,dx.
 \end{equation}
 Combining \eqref{eq:rel-7-283} and \eqref{eq:rel-7-284} and equating
@@ -113,44 +115,39 @@ imaginary parts, we obtain
 \label{eq:rel-7-285}
 \operatorname{Im}(\sigma)\Biggl\{
   \mathscr{T}_{\mathrm{rel}}\,a^{2}
-  \bigl(1+\taupi\operatorname{Re}(\sigma)\bigr)
   \int_{-1/2}^{+1/2}
     \bigl(|D\mathfrak{u}|^{2}+a^{2}|\mathfrak{u}|^{2}\bigr)\,dx \\
-  +\bigl(1+\taupi\operatorname{Re}(\sigma)\bigr)
-  \int_{-1/2}^{+1/2} |v|^{2}\,dx
+  +\int_{-1/2}^{+1/2} |v|^{2}\,dx
 \Biggr\} = 0.
 \end{multline}
-In the regime of physical interest---near marginal stability where
-$\operatorname{Re}(\sigma)\approx 0$---the factor
-$1+\taupi\operatorname{Re}(\sigma)$ is positive (and strictly so for
-$\taupi > 0$).  All integrals are positive definite.  Hence
+All integrals are positive definite.  Hence
 \begin{equation}
 \label{eq:rel-7-286}
 \operatorname{Im}(\sigma) = 0
-\quad\text{when } \mathscr{T}_{\mathrm{rel}} > 0
-\;\text{ and }\;
-1+\taupi\operatorname{Re}(\sigma)>0.
+\quad\text{when } \mathscr{T}_{\mathrm{rel}} > 0.
 \end{equation}
 
 \begin{relcorrection}
 The classical result $\operatorname{Im}(\sigma)=0$ for
-$\mathscr{T}>0$ (equation~\eqref{eq:7-286}) is \emph{preserved} by
-the relativistic (Israel--Stewart) corrections, provided the relaxation
-time~$\taupi$ is not so large that
-$\taupi|\operatorname{Re}(\sigma)|\ge 1$.  This condition is
-automatically satisfied near marginal stability, where
-$\operatorname{Re}(\sigma)\to 0$.  Thus \textbf{the principle of the
-exchange of stabilities remains valid in the relativistic theory} for
-$\mu > 0$.
+$\mathscr{T}>0$ (equation~\eqref{eq:7-286}) is \emph{preserved} in
+the BDNK first-order causal theory.  Since the BDNK viscous operator
+retains the classical form $D^{2}-a^{2}-\sigma$ (with no
+relaxation-time modification), the energy argument is
+structurally identical to the classical one---only the enthalpy
+density $\enthalpy$ replaces~$\rdensity$ in the definitions.
+Thus \textbf{the principle of the exchange of stabilities remains
+valid in the relativistic BDNK theory} for $\mu > 0$.
 \end{relcorrection}
 
 \begin{causalitycheck}
-The Israel--Stewart modification~\eqref{eq:rel-7-276} renders the
-viscous sector hyperbolic.  The maximum signal speed for shear
-perturbations is $v_{\mathrm{visc}} = \sqrt{\shearvisc/(\enthalpy\,\taupi)}$.
-Causality requires $v_{\mathrm{visc}} \le c$, i.e.,
-$\taupi \ge \shearvisc/(\enthalpy\,c^{2})$.  This bound is satisfied by
-all known equations of state for relativistic fluids.
+In the BDNK framework, causality of the viscous sector is ensured by
+constraints on the frame coefficients rather than by relaxation times.
+The BDNK causality conditions require coupled inequalities on the
+transport coefficients $(\eta, \zeta, \kappa)$ and the frame
+coefficients $(\varepsilon_{1}, \beta_{1}, \alpha_{1})$, guaranteeing
+that all characteristic speeds satisfy $v_{\mathrm{char}} \le c$
+\citep{Bemfica2018,Kovtun2019,BemficaDN2023}.  These bounds are
+satisfied by all physically reasonable equations of state.
 \end{causalitycheck}
 
 \subsection{Remarks on the case $\mu < 0$}
@@ -158,14 +155,12 @@ all known equations of state for relativistic fluids.
 
 For $\mu < 0$ (counter-rotating cylinders), the classical argument
 already fails to exclude overstability, since the term in~$\varepsilon x$
-can no longer be neglected.  The relativistic corrections do not improve
-the situation: the Israel--Stewart terms contribute additional
-$\taupi$-dependent phases that, if anything, widen the parameter space in
-which oscillatory instability might occur.  As in the classical case
-(\S\,\ref{sec:7-72}), a definitive answer requires solving the full
-secular equation~\eqref{eq:7-287} with the replacements
-$\sigma\to\sigma(1+\taupi\sigma)$ and $T\to T_{\mathrm{rel}}$.  This
-computation has not yet been carried out and would be particularly
+can no longer be neglected.  In the BDNK theory the viscous operator
+retains the classical form, so the relativistic corrections enter only
+through the enthalpy-modified Taylor number $T_{\mathrm{rel}}$.
+As in the classical case (\S\,\ref{sec:7-72}), a definitive answer
+requires solving the full secular equation~\eqref{eq:7-287} with
+$T\to T_{\mathrm{rel}}$.  This computation would be particularly
 worthwhile for the case $\mu = -1$ in astrophysical applications
 (e.g.\ counter-rotating accretion discs).
 
@@ -475,10 +470,11 @@ destabilise the flow.
 \begin{causalitycheck}
 In the stationary marginal state ($\sigma = 0$) the perturbation
 equations are elliptic and no propagation speeds arise.  Causality is
-therefore trivially satisfied.  The Israel--Stewart relaxation
-times~$\taupi$ enter only through the time-dependent exchange-of-%
-stabilities argument (\S\,\ref{sec:rel-7-72}) and do not affect the
-critical Taylor number at marginal stability.
+therefore trivially satisfied.  The BDNK frame coefficients enter only
+through the time-dependent perturbation dynamics and the exchange-of-%
+stabilities argument (\S\,\ref{sec:rel-7-72}); they do not affect the
+critical Taylor number at marginal stability, which is identical in
+both the BDNK and Israel--Stewart formulations at $\sigma=0$.
 \end{causalitycheck}
 
 \medskip\noindent\textbf{Non-relativistic limit.}\quad
