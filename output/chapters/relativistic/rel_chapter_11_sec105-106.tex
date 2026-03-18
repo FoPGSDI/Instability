@@ -1,0 +1,468 @@
+% Relativistic Chapter XI, §105–106: Rotation and Magnetic Field Effects on KH
+% Relativistic generalization of Chandrasekhar, Chapter XI §105–106
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\section{The effect of rotation on the relativistic Kelvin--Helmholtz instability}
+\label{sec:rel-11-105}
+
+We now extend the relativistic Kelvin--Helmholtz analysis of the preceding
+sections to include the effect of uniform rotation about the $z$-axis with
+angular velocity $\Omega$.  In the classical theory (\S\,105), the Coriolis
+force modifies the perturbation equations by coupling the $x$- and
+$y$-components of the velocity, and introduces the dimensionless rotation
+parameter $\omega^{2}=4\Omega^{2}/gk$.  In the relativistic regime,
+the Coriolis coupling must be formulated covariantly, and new
+constraints arise from the requirement that all characteristic speeds
+remain subluminal.
+
+\subsection{Relativistic Coriolis coupling in a rotating frame}
+\label{sec:rel-11-105a}
+
+Consider two semi-infinite relativistic perfect fluids separated by
+a horizontal interface at $z=0$.  Let the fluids have relativistic
+enthalpy densities $w_{j}=(\varepsilon_{j}+p_{j})/c^{2}$ ($j=1,2$)
+and stream with four-velocities whose spatial projections give
+horizontal velocities $U_{1}$ and $U_{2}$ along the $x$-axis.  The
+entire system rotates uniformly about the $z$-axis with angular
+velocity~$\Omega$, subject to the causality requirement
+\begin{equation}
+\label{eq:rel-11-R1}
+\boxed{r\,\Omega < c \quad\text{for all } r \text{ of interest.}}
+\end{equation}
+
+In the co-rotating frame (valid when~\eqref{eq:rel-11-R1} holds),
+the linearised relativistic Euler equations for perturbations with
+the $(x,y,t)$-dependence $\exp[\mathrm{i}(k_{x}x+k_{y}y+nt)]$ become
+\begin{equation}
+\label{eq:rel-11-R2}
+\mathrm{i}\,\Lf_{j}^{2}\,w_{j}\,(n+k_{x}U_{j})\,\delta u
++ w_{j}\,(DU)\,\delta w - 2\,\Lf_{j}^{2}\,w_{j}\,\Omega\,\delta v
+= -\mathrm{i}k_{x}\,\delta p,
+\end{equation}
+\begin{equation}
+\label{eq:rel-11-R3}
+\mathrm{i}\,\Lf_{j}^{2}\,w_{j}\,(n+k_{x}U_{j})\,\delta v
++ 2\,\Lf_{j}^{2}\,w_{j}\,\Omega\,\delta u
+= -\mathrm{i}k_{y}\,\delta p,
+\end{equation}
+where $\Lf_{j}=(1-U_{j}^{2}/c^{2})^{-1/2}$ is the Lorentz factor
+of fluid~$j$ and $D\equiv d/dz$.  Compared with the classical
+equations~(136)--(137), each inertial term carries an additional
+factor $\Lf_{j}^{2}$ reflecting the relativistic enhancement of
+the effective inertia density $\Lf^{2}w$ in place of the
+Newtonian~$\rho$.
+
+Following the same algebraic steps as in the classical derivation
+(eliminating the horizontal velocities and the pressure perturbation
+in favour of the vertical displacement $\delta w$), one arrives at
+the relativistic generalisation of equation~(143):
+\begin{multline}
+\label{eq:rel-11-R4}
+\mathrm{i}\,\Lf^{2}\,w\,(n+k_{x}U)\!\left[
+1-\frac{4\,\Lf^{4}\,\Omega^{2}}{(n+k_{x}U)^{2}}
+\right]\!D(\delta w) \\
+-\,\mathrm{i}\,\Lf^{2}\,w\!\left(k_{x}
++\frac{2\,\mathrm{i}\,\Lf^{2}\,k_{x}\,\Omega}{n+k_{x}U}\right)
+\!(DU)\,\delta w
+= -k^{2}\,\delta p.
+\end{multline}
+Here $k^{2}=k_{x}^{2}+k_{y}^{2}$ and we have suppressed fluid-index
+subscripts for brevity.  The key relativistic modification is the
+replacement $4\Omega^{2}\to 4\Lf^{4}\Omega^{2}$ in the rotation
+term: the effective Coriolis parameter is enhanced by $\Lf^{2}$
+because the fluid's inertia grows with the Lorentz factor.
+
+\subsection{Two uniform relativistic fluids with rotation}
+\label{sec:rel-11-105b}
+
+In the two regions of constant $w_{j}$ and $U_{j}$,
+equation~\eqref{eq:rel-11-R4} reduces to
+\begin{equation}
+\label{eq:rel-11-R5}
+\left[1-\frac{4\,\Lf_{j}^{4}\,\Omega^{2}}{(n+k_{x}U_{j})^{2}}\right]
+D^{2}(\delta w) = k^{2}\,\delta w,
+\end{equation}
+whose bounded solutions are $\delta w\propto e^{\pm\kappa_{j}z}$ with
+\begin{equation}
+\label{eq:rel-11-R6}
+\kappa_{j} = \frac{k}{\sqrt{\displaystyle
+1-\frac{4\,\Lf_{j}^{4}\,\Omega^{2}}{(n+k_{x}U_{j})^{2}}}}\,.
+\end{equation}
+Matching the continuity conditions at $z=0$ (requiring
+$\delta w/(n+k_{x}U)$ continuous and integrating the governing
+equation across the interface) yields the relativistic characteristic
+equation
+\begin{multline}
+\label{eq:rel-11-R7}
+\alpha_{1}^{\mathrm{rel}}\,(n+k_{x}U_{1})^{2}\!
+\left[1-\frac{4\,\Lf_{1}^{4}\,\Omega^{2}}{(n+k_{1}U_{1})^{2}}
+\right]^{1/2}
++\alpha_{2}^{\mathrm{rel}}\,(n+k_{x}U_{2})^{2}\!
+\left[1-\frac{4\,\Lf_{2}^{4}\,\Omega^{2}}{(n+k_{x}U_{2})^{2}}
+\right]^{1/2} \\
+= gk\bigl(\alpha_{1}^{\mathrm{rel}}-\alpha_{2}^{\mathrm{rel}}\bigr)
++ \frac{k^{3}T}{w_{1}+w_{2}}\,,
+\end{multline}
+where the \emph{relativistic density fractions} are
+\begin{equation}
+\label{eq:rel-11-R8}
+\alpha_{j}^{\mathrm{rel}}
+= \frac{\Lf_{j}^{2}\,w_{j}}{\Lf_{1}^{2}\,w_{1}+\Lf_{2}^{2}\,w_{2}}\,,
+\qquad j=1,2,
+\end{equation}
+with $\alpha_{1}^{\mathrm{rel}}+\alpha_{2}^{\mathrm{rel}}=1$.
+
+In the non-relativistic limit $U_{j}/c\to 0$ (so $\Lf_{j}\to 1$ and
+$w_{j}\to\rho_{j}$), the characteristic equation~\eqref{eq:rel-11-R7}
+reduces exactly to the classical equation~(153).
+
+\subsection{Characteristic equation analysis}
+\label{sec:rel-11-105c}
+
+Setting $T=0$, restricting to perturbations along the streaming
+direction ($k_{x}=k$), and introducing the phase velocity $c_{p}=-n/k$,
+equation~\eqref{eq:rel-11-R7} becomes
+\begin{multline}
+\label{eq:rel-11-R9}
+\alpha_{1}^{\mathrm{rel}}\,(U_{1}-c_{p})^{2}
+\left[1-\frac{4\,\Lf_{1}^{4}\,\Omega^{2}}{k^{2}(U_{1}-c_{p})^{2}}
+\right]^{1/2}\\
++\,\alpha_{2}^{\mathrm{rel}}\,(U_{2}-c_{p})^{2}
+\left[1-\frac{4\,\Lf_{2}^{4}\,\Omega^{2}}{k^{2}(U_{2}-c_{p})^{2}}
+\right]^{1/2}
+= \frac{g}{k}\bigl(\alpha_{1}^{\mathrm{rel}}-\alpha_{2}^{\mathrm{rel}}\bigr).
+\end{multline}
+Introducing the dimensionless variables
+$\xi=(U_{1}-c_{p})\sqrt{k/g}$, $\eta=(U_{2}-c_{p})\sqrt{k/g}$, and
+the \emph{relativistic rotation parameter}
+\begin{equation}
+\label{eq:rel-11-R10}
+\omega_{j}^{2} = \frac{4\,\Lf_{j}^{4}\,\Omega^{2}}{gk}\,,
+\qquad j=1,2,
+\end{equation}
+equation~\eqref{eq:rel-11-R9} takes the same structural form as the
+classical equation~(158), but with $\omega\to\omega_{j}$ depending on
+the fluid label (the two fluids have different effective rotation
+parameters when their streaming velocities differ).
+
+The graphical analysis of the classical theory (\S\,105\,(b))---the
+$P$-, $S_{1}$-, $S_{2}$-, and $C$-branches in the
+$(\xi,\eta)$-plane---carries over verbatim with $\omega$ replaced by
+the fluid-dependent $\omega_{j}$.  The singular points become
+$(\xi_{0},\omega_{2})$ and $(\omega_{1},\eta_{0})$, and the principal
+result is:
+
+\smallskip
+\noindent\textit{For a system of two relativistic fluids partaking in
+rotation, the Kelvin--Helmholtz instability is suppressed so long as}
+\begin{equation}
+\label{eq:rel-11-R11}
+\boxed{
+|V|\,\sqrt{\frac{k}{g}}
+\leqslant
+\left\{\tfrac{1}{2}\,\omega_{2}^{2}
++\tfrac{1}{2}\!\left[\omega_{2}^{4}
++4\!\left(\frac{\alpha_{1}^{\mathrm{rel}}
+-\alpha_{2}^{\mathrm{rel}}}{\alpha_{2}^{\mathrm{rel}}}
+\right)^{\!2}\right]^{1/2}\right\}^{1/2}\!\!-\omega_{1}\,,}
+\end{equation}
+\textit{where $V=U_{1}-U_{2}$ is the relative streaming velocity.}
+
+\subsubsection*{Causality constraint}
+
+The phase velocity of any mode must satisfy $|c_{p}|<c$.  From
+equation~\eqref{eq:rel-11-R9}, the maximum phase velocity of the
+stable modes is bounded above by $\max(U_{1},U_{2})+\eta_{0}\sqrt{g/k}$.
+Causality therefore imposes an additional global condition:
+\begin{equation}
+\label{eq:rel-11-R12}
+\boxed{\max(|U_{1}|,\,|U_{2}|)
++ \eta_{0}\,\sqrt{g/k}\;<\;c\,.}
+\end{equation}
+When this bound is saturated, the perturbation can no longer be treated
+as a subluminal hydrodynamic mode; relativistic compressibility and
+radiation effects would need to be included.
+
+
+%% ================================================================
+\section{The effect of a horizontal magnetic field on the relativistic
+  Kelvin--Helmholtz instability}
+\label{sec:rel-11-106}
+
+We now consider the relativistic analogue of the magnetic
+stabilisation of the Kelvin--Helmholtz instability (\S\,106).  A
+uniform magnetic field, when aligned with the direction of streaming,
+introduces the Alfv\'en speed as a restoring agent; the competition
+between the destabilising velocity shear and the stabilising magnetic
+tension determines the onset of instability.
+
+\subsection{Relativistic Alfv\'en speed and magnetic tension}
+\label{sec:rel-11-106a}
+
+In the framework of relativistic ideal MHD (cf.\ the conventions in
+\textsc{Relativistic\_Conventions.md}), the energy-momentum tensor of
+a magnetised perfect fluid is
+\begin{equation}
+\label{eq:rel-11-R13}
+T^{\mu\nu}_{\mathrm{MHD}}
+= \left(w+\frac{b^{2}}{c^{2}}\right)u^{\mu}u^{\nu}
++ \left(p+\frac{b^{2}}{2}\right)g^{\mu\nu}
+- b^{\mu}b^{\nu},
+\end{equation}
+where $b^{\mu}$ is the magnetic four-vector in the fluid rest frame
+($b^{\mu}u_{\mu}=0$) and $b^{2}=b^{\mu}b_{\mu}$.  The relativistic
+Alfv\'en speed is
+\begin{equation}
+\label{eq:rel-11-R14}
+\vA^{2}
+= \frac{b^{2}}{4\pi\,w + b^{2}}\,c^{2}
+= \frac{v_{A,\mathrm{class}}^{2}}
+{1+v_{A,\mathrm{class}}^{2}/c^{2}}\,,
+\end{equation}
+where $v_{A,\mathrm{class}}^{2}=\mu H^{2}/(4\pi\rho)$ is the
+classical Alfv\'en speed and $w=(\varepsilon+p)/c^{2}$ is the
+relativistic enthalpy density.  By construction,
+\begin{equation}
+\label{eq:rel-11-R15}
+\boxed{\vA < c\,,}
+\end{equation}
+which is the fundamental causality bound for Alfv\'en waves.
+
+\subsection{Two uniform magnetised fluids: parallel field}
+\label{sec:rel-11-106b}
+
+Consider two semi-infinite relativistic fluids ($z<0$ and $z>0$) with
+enthalpy densities $w_{1}$, $w_{2}$, streaming velocities $U_{1}$,
+$U_{2}$ along $x$, and a uniform magnetic field $\mathbf{H}=H\,\hat{x}$
+also aligned with the streaming direction.  The linearised relativistic
+MHD perturbation equations, for modes with the $(x,y,t)$-dependence
+$\exp[\mathrm{i}(k_{x}x+k_{y}y+nt)]$, yield bounded solutions
+analogous to the classical equations~(199)--(200).
+
+Matching boundary conditions at $z=0$, we obtain the relativistic
+characteristic equation
+\begin{equation}
+\label{eq:rel-11-R16}
+\Lf_{1}^{2}\,w_{1}\,(n+k_{x}U_{1})^{2}
++\Lf_{2}^{2}\,w_{2}\,(n+k_{x}U_{2})^{2}
+= gk\bigl(\Lf_{1}^{2}\,w_{1}-\Lf_{2}^{2}\,w_{2}\bigr)
++ k_{x}^{2}\!\left(\frac{b_{1}^{2}}{4\pi}+\frac{b_{2}^{2}}{4\pi}\right),
+\end{equation}
+where $b_{j}^{2}$ is the comoving magnetic-pressure parameter of
+fluid~$j$.  The roots are
+\begin{multline}
+\label{eq:rel-11-R17}
+n = -k_{x}\bigl(\alpha_{1}^{\mathrm{rel}}U_{1}
++\alpha_{2}^{\mathrm{rel}}U_{2}\bigr) \\
+\pm\left[gk\bigl(\alpha_{1}^{\mathrm{rel}}-\alpha_{2}^{\mathrm{rel}}\bigr)
++ k_{x}^{2}\,\frac{b_{1}^{2}+b_{2}^{2}}
+{4\pi(\Lf_{1}^{2}w_{1}+\Lf_{2}^{2}w_{2})}
+- k_{x}^{2}\,\alpha_{1}^{\mathrm{rel}}\,\alpha_{2}^{\mathrm{rel}}\,
+(U_{1}-U_{2})^{2}\right]^{1/2}\!.
+\end{multline}
+
+The instability is suppressed when the discriminant is non-negative.
+For perturbations in the streaming direction ($k_{x}=k$) with
+$\alpha_{1}^{\mathrm{rel}}\geqslant\alpha_{2}^{\mathrm{rel}}$, the
+critical condition is:
+
+\smallskip
+\noindent\textit{A uniform magnetic field parallel to the direction of
+streaming suppresses the relativistic Kelvin--Helmholtz instability if
+and only if}
+\begin{equation}
+\label{eq:rel-11-R18}
+\boxed{
+\alpha_{1}^{\mathrm{rel}}\,\alpha_{2}^{\mathrm{rel}}\,(U_{1}-U_{2})^{2}
+\;\leqslant\;
+\frac{b_{1}^{2}+b_{2}^{2}}
+{4\pi\bigl(\Lf_{1}^{2}\,w_{1}+\Lf_{2}^{2}\,w_{2}\bigr)}\,,}
+\end{equation}
+\textit{i.e.\ the relative streaming velocity must not exceed the
+root-mean-square relativistic Alfv\'en speed in the two media.}
+
+Noting that $b_{j}^{2}/(4\pi w_{j})=\vA_{,j}^{2}/c^{2}\cdot w_{j}$
+and using~\eqref{eq:rel-11-R14}, the stability criterion can be
+rewritten as
+\begin{equation}
+\label{eq:rel-11-R19}
+(U_{1}-U_{2})^{2}
+\leqslant
+\frac{\Lf_{1}^{2}\,w_{1}\,\vA_{,1}^{2}
++\Lf_{2}^{2}\,w_{2}\,\vA_{,2}^{2}}
+{\Lf_{1}^{2}\,w_{1}\,\alpha_{2}^{\mathrm{rel}}
+\cdot c^{2}\cdot\alpha_{1}^{\mathrm{rel}}}\,,
+\end{equation}
+which manifestly reduces to the classical criterion~(205) in the
+limit $c\to\infty$.
+
+\subsubsection*{Effective surface tension}
+
+Comparing equation~\eqref{eq:rel-11-R16} with the field-free
+relativistic KH equation, the magnetic field acts as an effective
+surface tension of amount
+\begin{equation}
+\label{eq:rel-11-R20}
+T_{\mathrm{eff}}^{\mathrm{rel}}
+= \frac{b_{1}^{2}+b_{2}^{2}}{4\pi}\,\frac{k_{x}^{2}}{k^{2}}\,,
+\end{equation}
+which is the relativistic counterpart of equation~(203).  The field
+stabilises only perturbations with a component along the field
+direction ($k_{x}\neq 0$); purely transverse modes ($k_{x}=0$) are
+unaffected.
+
+\subsection{Transverse magnetic field: anisotropic stabilisation}
+\label{sec:rel-11-106c}
+
+When the impressed magnetic field $\mathbf{H}=H\,\hat{y}$ is
+transverse to the streaming direction, the relativistic MHD
+perturbation equations reduce, after lengthy but straightforward
+algebra, to a form that is identical to the field-free relativistic
+KH equation for perturbations propagating along the streaming
+direction.  This is the relativistic generalisation of
+equation~(210):
+
+\smallskip
+\noindent\textit{The development of the relativistic
+Kelvin--Helmholtz instability in the direction of streaming is
+uninfluenced by a magnetic field transverse to that direction.}
+
+\smallskip
+The physical explanation is the same as in the classical case: the
+magnetic tension from a transverse field acts only on perturbations
+that bend the field lines, i.e.\ those with a wavevector component
+along $\hat{y}$.  Perturbations propagating purely along $\hat{x}$
+(the streaming direction) leave the transverse field lines unperturbed
+and receive no restoring force.
+
+For oblique perturbations (both $k_{x}\neq 0$ and $k_{y}\neq 0$),
+the stabilisation is anisotropic: the magnetic tension provides a
+restoring force proportional to $k_{y}^{2}$ from the transverse
+field, which combines with the shear-driven instability proportional
+to $k_{x}^{2}$.  The instability is then confined to wavevectors
+within a cone around $\hat{x}$ whose half-angle shrinks as the
+magnetic field strength increases.
+
+\subsection{Causality: combined Alfv\'en and KH mode speeds}
+\label{sec:rel-11-106d}
+
+The relativistic treatment imposes a non-trivial constraint that has
+no classical counterpart.  The phase velocity of the coupled
+Alfv\'en--KH modes must satisfy
+\begin{equation}
+\label{eq:rel-11-R21}
+\boxed{|c_{p}| = \left|\frac{n}{k}\right| < c\,.}
+\end{equation}
+From equation~\eqref{eq:rel-11-R17}, the maximum phase speed of a
+stable mode is
+\begin{equation}
+\label{eq:rel-11-R22}
+|c_{p}|_{\max}
+\leqslant
+\alpha_{1}^{\mathrm{rel}}|U_{1}|
++\alpha_{2}^{\mathrm{rel}}|U_{2}|
++\left[\frac{g}{k}\bigl(\alpha_{1}^{\mathrm{rel}}
+-\alpha_{2}^{\mathrm{rel}}\bigr)
++\frac{\vA^{2}_{\mathrm{rms}}}{1}\right]^{1/2}\!,
+\end{equation}
+where $\vA^{2}_{\mathrm{rms}}$ is the enthalpy-weighted
+root-mean-square relativistic Alfv\'en speed.  Since each
+$|U_{j}|<c$ and each $\vA_{,j}<c$ by construction, the causality
+bound~\eqref{eq:rel-11-R21} is automatically satisfied whenever
+the individual fluid velocities and Alfv\'en speeds are subluminal.
+In the formal limit where either $|U_{j}|\to c$ or $\vA_{,j}\to c$,
+the incompressible treatment breaks down and a fully compressible
+relativistic MHD analysis is required.
+
+More precisely, the fast magnetosonic speed
+\begin{equation}
+\label{eq:rel-11-R23}
+v_{f}^{2} = \cs^{2}+\vA^{2}-\frac{\cs^{2}\,\vA^{2}}{c^{2}}
+\end{equation}
+provides the upper bound on any MHD mode; the algebraic form of
+equation~\eqref{eq:rel-11-R23} guarantees $v_{f}<c$ whenever
+$\cs<c$ and $\vA<c$.
+
+%% ================================================================
+\section*{Bibliographical Notes}
+\label{sec:rel-11-105-106-bib}
+
+The classical analysis of rotation effects on the Kelvin--Helmholtz
+instability is due to:
+
+\begin{enumerate}
+
+\item \textsc{S.\ Chandrasekhar}, `The effect of rotation on the
+  development of the Kelvin--Helmholtz instability', unpublished.
+
+\item \textsc{H.\ Solberg}, `Integrationen der
+  atmosph\"arischen St\"orungsgleichungen, I.\ Wellenbewegungen in
+  rotierenden, inkompressiblen Fl\"ussigkeitsschichten',
+  \emph{Geofysiske Publikasjoner}, \textbf{9}, 1--120 (1928).
+
+\medskip\noindent
+The classical hydromagnetic Kelvin--Helmholtz instability was treated by:
+
+\item \textsc{D.\ H.\ Michael}, `The stability of a combined current
+  and vortex sheet in a perfectly conducting fluid',
+  \emph{Proc.\ Camb.\ Phil.\ Soc.}, \textbf{51}, 528--32 (1955).
+
+\item \textsc{T.\ G.\ Northrop}, `Helmholtz instability of a plasma',
+  \emph{Physical Rev.}, \textbf{103}, 1150--4 (1956).
+
+\medskip\noindent
+The relativistic extension of the Kelvin--Helmholtz instability,
+particularly in the context of astrophysical jets, has been developed in:
+
+\item \textsc{A.\ Ferrari}, \textsc{E.\ Trussoni}, and
+  \textsc{L.\ Zaninetti}, `Relativistic Kelvin--Helmholtz instabilities
+  in radiative jets', \emph{Astron.\ Astrophys.}, \textbf{64}, 43--52
+  (1978).
+
+\item \textsc{P.\ E.\ Hardee}, `On the configuration and propagation of
+  jets in extragalactic radio sources',
+  \emph{Astrophys.\ J.}, \textbf{277}, 106--12 (1984).
+
+\item \textsc{M.\ Perucho}, \textsc{J.\ M.\ Mart\'{\i}},
+  \textsc{M.\ Hanasz}, `Stability of hydrodynamical relativistic
+  planar jets.\ I.\ Linear evolution and saturation of Kelvin--Helmholtz
+  modes', \emph{Astron.\ Astrophys.}, \textbf{427}, 415--29 (2004).
+
+\item \textsc{M.\ Perucho}, \textsc{J.\ M.\ Mart\'{\i}},
+  \textsc{J.\ M.\ Cela}, \textsc{M.\ Hanasz}, \textsc{R.\ de la Cruz},
+  and \textsc{F.\ Rubio}, `Stability of three-dimensional relativistic
+  jets', \emph{Astron.\ Astrophys.}, \textbf{519}, A41 (2010).
+
+\medskip\noindent
+The role of magnetic fields in stabilising relativistic jets against KH
+modes:
+
+\item \textsc{I.\ Mizuno}, \textsc{P.\ E.\ Hardee}, and
+  \textsc{K.-I.\ Nishikawa}, `Spatial growth of the current-driven and
+  Kelvin--Helmholtz instability in relativistic jets',
+  \emph{Astrophys.\ J.}, \textbf{734}, 19 (2011).
+
+\item \textsc{E.\ M.\ de Gouveia Dal Pino}, `Magnetic fields in
+  astrophysical jets', \emph{Adv.\ Space Res.}, \textbf{35},
+  908--17 (2005).
+
+\medskip\noindent
+The relativistic Alfv\'en speed and its role as a causality bound in
+MHD:
+
+\item \textsc{A.\ Lichnerowicz}, \emph{Relativistic Hydrodynamics and
+  Magnetohydrodynamics}, W.\ A.\ Benjamin, New York, 1967.
+
+\item \textsc{L.\ Rezzolla} and \textsc{O.\ Zanotti},
+  \emph{Relativistic Hydrodynamics}, Oxford University Press, Oxford,
+  2013.
+
+\medskip\noindent
+Causality constraints on relativistic MHD perturbations and their
+implications for jet stability:
+
+\item \textsc{S.\ S.\ Komissarov}, `On the properties of Alfv\'en
+  waves in relativistic magnetohydrodynamics',
+  \emph{Phys.\ Lett.\ A}, \textbf{232}, 435--42 (1997).
+
+\end{enumerate}
