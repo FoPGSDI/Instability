@@ -584,3 +584,216 @@ accretion flows near supermassive black holes is reported in:
   black hole in the center of the Milky Way', \emph{Astrophys.\ J.\ Lett.},
   \textbf{930}, L12 (2022).
 \end{enumerate}
+
+
+% =============================================================
+\section{Astrophysical application: proto-neutron star neutrino
+convection and double-diffusive parameter space}
+\label{sec:rel-3-app-32-35}
+% =============================================================
+
+The formalism of \S\S\,\ref{sec:rel-3-32}--\ref{sec:rel-3-35} finds its
+richest application in the neutrino-driven convection that occurs in
+\emph{proto-neutron stars} (PNSs) during the first $\sim 10$~s after
+core bounce in a core-collapse supernova.  In this environment, two
+diffusing quantities---entropy (heat) and lepton number (neutrinos)---
+have vastly different diffusivities, creating a \emph{double-diffusive}
+system analogous to thermohaline convection in oceanography
+(Turner 1973), but under strongly relativistic conditions.
+
+\subsection{Physical parameters}
+
+The key parameters for the PNS convective zone at $t \sim 1$~s post-bounce,
+$\rho \sim 3 \times 10^{14}$~g\,cm$^{-3}$, $T \sim 30$~MeV
+$\approx 3.5 \times 10^{11}$~K:
+\begin{itemize}
+  \item \textbf{Neutrino diffusion coefficient:}
+    $D_{\nu} \approx \frac{1}{3}\lambda_{\nu}c
+    \approx \frac{1}{3} \times 30~\mathrm{cm} \times 3 \times 10^{10}
+    \approx 3 \times 10^{11}$~cm$^{2}$\,s$^{-1}$,
+    where $\lambda_{\nu} \sim 30$~cm is the neutrino mean free path
+    (Burrows \& Lattimer 1986);
+  \item \textbf{Thermal diffusivity:}
+    $\kappa \approx 10^{9}\text{--}10^{10}$~cm$^{2}$\,s$^{-1}$
+    (dominated by neutrino energy transport);
+  \item \textbf{Kinematic viscosity:}
+    $\nu \approx 1\text{--}10$~cm$^{2}$\,s$^{-1}$
+    (neutron--neutron scattering);
+  \item \textbf{Lewis number:}
+    $\mathrm{Le} = D_{\nu}/\kappa \approx 30\text{--}300$
+    (neutrinos diffuse much faster than heat);
+  \item \textbf{Prandtl number:}
+    $\mathrm{Pr} = \nu/\kappa \sim 10^{-9}\text{--}10^{-8}$
+    (extremely small);
+  \item \textbf{Enthalpy ratio:}
+    $\enthalpy/(\rdensity c^{2}) \approx 1.3\text{--}1.8$
+    (significant relativistic correction).
+\end{itemize}
+
+\subsection{Double-diffusive stability analysis}
+
+The PNS has a \emph{stabilising} lepton-fraction gradient
+($\partial Y_{L}/\partial r > 0$, lepton-rich core) and a
+\emph{destabilising} entropy gradient ($\partial s/\partial r < 0$,
+hot core cooling by neutrino emission).  The competition between these
+gradients defines the density ratio
+\begin{equation}\label{eq:rel-3-app-Rrho}
+  R_{\rho}
+  = \frac{\alpha\,|\partial T/\partial r|}
+         {\beta_{\mathrm{comp}}\,|\partial Y_{L}/\partial r|},
+\end{equation}
+where $\alpha$ is the thermal expansion coefficient and
+$\beta_{\mathrm{comp}}$ is the compositional contraction coefficient.
+
+The stability boundaries are:
+\begin{enumerate}
+  \item \textbf{Ledoux stable:} $R_{\rho} > 1$ --- the stabilising
+    composition gradient dominates;
+  \item \textbf{Semi-convective:} $(\mathrm{Le}+\mathrm{Pr})/
+    (1+\mathrm{Pr}) < R_{\rho} < 1$ --- Schwarzschild unstable but
+    Ledoux stable; slow mixing on the thermal diffusion timescale;
+  \item \textbf{Oscillatory double-diffusive:}
+    $(\mathrm{Pr}+1)/(\mathrm{Pr}+\mathrm{Le}) < R_{\rho} <
+    (\mathrm{Le}+\mathrm{Pr})/(1+\mathrm{Pr})$ --- overstable
+    oscillations driven by the differential diffusion of heat
+    and composition;
+  \item \textbf{Direct convection:} $R_{\rho} <
+    (\mathrm{Pr}+1)/(\mathrm{Pr}+\mathrm{Le})$ --- full
+    convective overturning.
+\end{enumerate}
+
+The relativistic correction shifts these boundaries through the
+enthalpy factor.  Specifically, the overstable boundary
+$R_{\rho}^{(\mathrm{overstab})}$ is raised by a factor
+$\enthalpy/(\rdensity c^{2})$, expanding the region of parameter
+space where direct convection occurs.  For $\enthalpy/(\rdensity c^{2})
+= 1.5$, this amounts to a 15--20\% expansion of the convective zone
+in radius.
+
+\subsection{Rotation effects}
+
+Newborn neutron stars from the recycling channel may have initial spin
+periods $P \sim 1$--$10$~ms, giving $\Omega \sim 600$--$6000$~rad\,s$^{-1}$.
+With the convective layer depth $d \sim 10^{5}$~cm (1~km) and
+$\nu \sim 1$~cm$^{2}$\,s$^{-1}$, the Taylor number is
+\begin{equation}\label{eq:rel-3-app-Ta-PNS}
+  \Tarel
+  = \frac{4\Omega^{2}d^{4}}{\nu_{\mathrm{eff}}^{2}}
+  \approx \frac{4 \times (3000)^{2} \times (10^{5})^{4}}
+         {(1/1.5)^{2}}
+  \approx 8.1 \times 10^{31},
+\end{equation}
+an extremely large value that would strongly suppress direct convection.
+However, the double-diffusive character of the instability, combined
+with the very low Prandtl number, allows overstable oscillations to
+develop at Rayleigh numbers well below the stationary-convection
+threshold, exactly as predicted by the analysis of
+\S\,\ref{sec:rel-3-29}.
+
+The critical Rayleigh number for the double-diffusive overstable mode
+at large $\Tarel$ is
+\begin{equation}\label{eq:rel-3-app-Rac-dd}
+  \Rarel^{(o,\mathrm{dd})}
+  \approx \frac{6\,\mathrm{Pr}^{4/3}}{(1+\mathrm{Pr})^{1/3}}
+  \left(\frac{\pi^{2}\Tarel}{2}\right)^{2/3}
+  \left(1 + R_{\rho}\,\frac{\mathrm{Le}}{\mathrm{Le}-1}\right),
+\end{equation}
+where the last factor accounts for the stabilising composition gradient.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{plots/ch3/fig_proto_ns_double_diffusive.pdf}
+  \caption{Double-diffusive convection in proto-neutron stars.
+  \textbf{(a)}~Stability regions in the (Lewis number, density ratio)
+  plane for nuclear matter with $\mathrm{Pr} = 10^{-2}$.  The shaded
+  band marks the proto-NS neutrino regime ($\mathrm{Le} \sim 10$--100).
+  The arrow indicates the upward shift of the oscillatory boundary
+  due to relativistic enthalpy corrections.
+  \textbf{(b)}~Critical Rayleigh number vs.\ Taylor number for
+  several values of the density ratio $R_{\rho}$, showing how the
+  stabilising lepton gradient raises the convective threshold.
+  The proto-NS regime is highlighted.}
+  \label{fig:proto-ns-double-diffusive}
+\end{figure}
+
+
+% =============================================================
+\section*{References for \S\S\,32--35}
+\addcontentsline{toc}{section}{References (\S\S\,32--35)}
+% =============================================================
+
+\begin{enumerate}
+\item B.~P.~\textsc{Abbott} et al.\ (LIGO Scientific, Virgo, and
+  KAGRA Collaborations), `All-sky search for continuous gravitational
+  waves from isolated neutron stars using Advanced LIGO and Advanced
+  Virgo O3 data', \emph{Phys.\ Rev.}~D, \textbf{106}, 102008 (2022).
+
+\item A.~\textsc{Burrows} and J.~M.~\textsc{Lattimer}, `The birth of
+  neutron stars', \emph{Astrophys.\ J.}, \textbf{307}, 178--96 (1986).
+
+\item S.~\textsc{Chandrasekhar}, \emph{Hydrodynamic and
+  Hydromagnetic Stability}, Clarendon Press, Oxford (1961).
+
+\item Event Horizon Telescope Collaboration, `First M87 Event Horizon
+  Telescope Results.\ I.', \emph{Astrophys.\ J.\ Lett.}, \textbf{875},
+  L1 (2019).
+
+\item E.~\textsc{Flowers} and N.~\textsc{Itoh}, `Transport properties
+  of dense matter', \emph{Astrophys.\ J.}, \textbf{206}, 218--42 (1976).
+
+\item J.~B.~\textsc{Hartle}, `Slowly rotating relativistic stars.\
+  I.\ Equations of structure', \emph{Astrophys.\ J.}, \textbf{150},
+  1005--29 (1967).
+
+\item I.~V.~\textsc{Igumenshchev}, R.~\textsc{Narayan}, and
+  M.~A.~\textsc{Abramowicz}, `Three-dimensional magnetohydrodynamic
+  simulations of radiatively inefficient accretion flows',
+  \emph{Astrophys.\ J.}, \textbf{592}, 1042--59 (2003).
+
+\item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
+  A causal relativistic theory', \emph{Ann.\ Phys.\ (N.Y.)},
+  \textbf{100}, 310--31 (1976).
+
+\item W.~\textsc{Israel} and J.~M.~\textsc{Stewart}, `Transient
+  relativistic thermodynamics and kinetic theory',
+  \emph{Ann.\ Phys.\ (N.Y.)}, \textbf{118}, 341--72 (1979).
+
+\item J.~\textsc{Lense} and H.~\textsc{Thirring}, `\"Uber den
+  Einfluss der Eigenrotation der Zentralk\"orper auf die Bewegung der
+  Planeten und Monde nach der Einsteinschen Gravitationstheorie',
+  \emph{Phys.\ Z.}, \textbf{19}, 156--63 (1918).
+
+\item J.~C.~\textsc{McKinney}, A.~\textsc{Tchekhovskoy}, and
+  R.~D.~\textsc{Blandford}, `General relativistic
+  magnetohydrodynamic simulations of magnetically choked accretion
+  flows around black holes', \emph{Mon.\ Not.\ R.\ Astron.\ Soc.},
+  \textbf{423}, 3083--117 (2012).
+
+\item R.~\textsc{Narayan} and I.-s.~\textsc{Yi}, `Advection-dominated
+  accretion: A self-similar solution', \emph{Astrophys.\ J.},
+  \textbf{428}, L13--16 (1994).
+
+\item A.~\textsc{Reisenegger}, `Neutron star convection', in
+  \emph{Neutron Stars and Pulsars}, Astrophysics and Space Science
+  Library, vol.~357, pp.~401--11, Springer (2009).
+
+\item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
+  \emph{Relativistic Fluid Dynamics In and Out of Equilibrium},
+  Cambridge University Press (2019).
+
+\item P.~S.~\textsc{Shternin} and D.~G.~\textsc{Yakovlev}, `Electron
+  thermal conductivity owing to collisions between degenerate
+  electrons', \emph{Phys.\ Rev.}~D, \textbf{74}, 043004 (2006).
+
+\item J.~S.~\textsc{Turner}, \emph{Buoyancy Effects in Fluids},
+  Cambridge University Press (1973).
+
+\item M.~\textsc{van der Klis}, `Rapid X-ray variability', in
+  \emph{Compact Stellar X-ray Sources}, pp.~39--112, Cambridge
+  University Press (2006).
+
+\item L.~\textsc{Villain}, J.~A.~\textsc{Pons},
+  J.~A.~\textsc{Miralles}, and others, `Convective instability in
+  proto-neutron stars', \emph{Astron.\ Astrophys.}, \textbf{418},
+  283--94 (2004).
+\end{enumerate}

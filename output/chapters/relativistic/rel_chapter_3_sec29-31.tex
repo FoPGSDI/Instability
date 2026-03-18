@@ -490,3 +490,159 @@ propagation speed; the BDNK theory resolves this pathology.
 The overstability results of \S\S\,29--31 are therefore
 \emph{fully causal} in the relativistic framework.
 \end{causalitycheck}
+
+
+% ====================================================================
+\section{Astrophysical application: overstability in neutron star
+cores---BDNK cubic vs.\ classical}\label{sec:rel-3-app-29-31}
+% ====================================================================
+
+The overstability analysis of \S\S\,\ref{sec:rel-3-29}--\ref{sec:rel-3-31}
+has direct consequences for oscillation modes in neutron star cores,
+where the extremely low Prandtl number ($\mathrm{Pr} \sim 10^{-3}$)
+and enormous Taylor number ($\Tarel \sim 10^{12}$--$10^{24}$)
+place the system firmly in the overstable regime.
+
+\subsection{Growth rates: BDNK vs.\ classical vs.\ Israel--Stewart}
+
+The key advantage of the BDNK first-order causal formulation over
+the Israel--Stewart (IS) second-order theory is the preservation
+of the cubic character of the dispersion relation.  For neutron star
+core matter, we can estimate the relevant relaxation timescales:
+\begin{itemize}
+  \item Thermal relaxation time:
+    $\tauq \sim \ell_{\mathrm{mfp}}^{e}/c
+    \approx 10^{-2}~\mathrm{cm} / (3 \times 10^{10}~\mathrm{cm/s})
+    \sim 3 \times 10^{-13}$~s,
+    where $\ell_{\mathrm{mfp}}^{e}$ is the electron mean free path;
+  \item Viscous relaxation time:
+    $\taupi \sim \ell_{\mathrm{mfp}}^{n}/v_{F}^{n}
+    \approx 10^{-12}$~s,
+    where $v_{F}^{n}$ is the neutron Fermi velocity.
+\end{itemize}
+
+The overstable oscillation frequency at $\mathrm{Pr} \to 0$ is given
+by equation~\eqref{eq:rel-3-280}:
+\begin{equation}\label{eq:rel-3-app-fosc}
+  f_{\mathrm{osc}}
+  = \frac{1}{2\pi}\left(\frac{2}{3}\right)^{1/2}2\Omega
+    \left(\frac{\rdensity c^{2}}{\enthalpy}\right)^{1/2}.
+\end{equation}
+For a 500~Hz pulsar with $\enthalpy/(\rdensity c^{2}) = 1.3$:
+\begin{equation}\label{eq:rel-3-app-fosc-num}
+  f_{\mathrm{osc}}
+  \approx 0.816 \times 2 \times 3142
+    \times (1/1.3)^{1/2}
+  \approx 4490~\mathrm{Hz}.
+\end{equation}
+The relativistic enthalpy correction reduces this by $\sim 12\%$
+compared to the classical prediction of $\sim 5130$~Hz.
+
+The dimensionless product $\tauq \omega$ that controls the
+departure of the BDNK cubic from the classical cubic is
+\begin{equation}\label{eq:rel-3-app-tauomega}
+  \tauq \cdot 2\pi f_{\mathrm{osc}}
+  \sim 3 \times 10^{-13} \times 2.8 \times 10^{4}
+  \sim 10^{-8},
+\end{equation}
+which is extremely small.  This confirms that for neutron star
+core modes, the BDNK corrections to the classical cubic are
+perturbatively small at $\mathcal{O}(\tauq^{2}\omega^{2}) \sim 10^{-16}$.
+
+However, the BDNK formulation remains essential for two reasons:
+\begin{enumerate}
+  \item It guarantees that no spurious relaxation modes appear at
+    frequencies $\sim 1/\tauq \sim 10^{12}$~Hz, which would be
+    unphysical artefacts of the IS formulation;
+  \item It ensures that the thermal signal speed remains bounded
+    by $c$, which is critical for the stability of numerical
+    simulations of neutron star convection (Radice et al.\ 2017).
+\end{enumerate}
+
+\subsection{Comparison of growth rates near onset}
+
+Near the marginal state $\mathrm{Ra} = \mathrm{Ra}_{c}^{(o)}$,
+the growth rate of the overstable mode scales as
+\begin{equation}\label{eq:rel-3-app-gamma}
+  \gamma
+  \approx \frac{\mathrm{Ra} - \mathrm{Ra}_{c}^{(o)}}{\mathrm{Ra}_{c}^{(o)}}
+  \times (\pi^{2} + a^{2}) \times \mathrm{Pr}
+  \times \frac{\rdensity c^{2}}{\enthalpy},
+\end{equation}
+where the last factor is the relativistic correction.  For
+$\enthalpy/(\rdensity c^{2}) = 1.3$, this represents a 23\% reduction
+in the growth rate compared to the classical estimate, leading to
+a longer time to develop fully nonlinear convection.
+
+For nuclear matter with $\mathrm{Pr} = 10^{-3}$ and
+$\mathrm{Ra}/\mathrm{Ra}_{c}^{(o)} = 2$, the dimensional growth
+timescale is
+\begin{equation}\label{eq:rel-3-app-tgrowth}
+  t_{\mathrm{grow}}
+  = \frac{d^{2}}{\nu \cdot \gamma}
+  \approx \frac{(10^{4})^{2}}{10 \times 10}
+  \sim 10^{6}~\mathrm{s}
+  \approx 12~\mathrm{days}.
+\end{equation}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{plots/ch3/fig_ns_overstability_growth.pdf}
+  \caption{Overstability in neutron star cores.
+  \textbf{(a)}~Growth rate of the overstable mode near onset for
+  classical (Navier--Stokes), BDNK first-order, and
+  Israel--Stewart formulations, at $\mathrm{Pr} = 10^{-3}$,
+  $T_{1} = 10^{4}$.  The BDNK curve is shifted downward by the
+  enthalpy factor $\rdensity c^{2}/\enthalpy$; the IS curve
+  includes a small correction from $\tauq\omega \neq 0$.
+  \textbf{(b)}~Oscillation frequency of the overstable mode vs.\
+  relativistic Taylor number for several enthalpy ratios.
+  The frequency follows $\omega \propto \Tarel^{1/2}$ (inertial
+  scaling) but is suppressed by
+  $(\rdensity c^{2}/\enthalpy)^{1/2}$ in the relativistic theory.}
+  \label{fig:ns-overstability-growth}
+\end{figure}
+
+
+% ====================================================================
+\section*{References for \S\S\,29--31}
+\addcontentsline{toc}{section}{References (\S\S\,29--31)}
+% ====================================================================
+
+\begin{enumerate}
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi}, and
+  J.~\textsc{Noronha}, `Causality and existence of solutions of
+  relativistic viscous fluid dynamics with gravity',
+  \emph{Phys.\ Rev.}~D, \textbf{98}, 104064 (2018).
+
+\item S.~\textsc{Chandrasekhar}, \emph{Hydrodynamic and
+  Hydromagnetic Stability}, Clarendon Press, Oxford (1961).
+
+\item E.~\textsc{Flowers} and N.~\textsc{Itoh}, `Transport properties
+  of dense matter', \emph{Astrophys.\ J.}, \textbf{206}, 218--42
+  (1976).
+
+\item W.~\textsc{Israel}, `Nonstationary irreversible thermodynamics:
+  A causal relativistic theory', \emph{Ann.\ Phys.\ (N.Y.)},
+  \textbf{100}, 310--31 (1976).
+
+\item W.~\textsc{Israel} and J.~M.~\textsc{Stewart}, `Transient
+  relativistic thermodynamics and kinetic theory',
+  \emph{Ann.\ Phys.\ (N.Y.)}, \textbf{118}, 341--72 (1979).
+
+\item P.~\textsc{Kovtun}, `First-order relativistic hydrodynamics is
+  stable', \emph{J.\ High Energy Phys.}, 2019:34 (2019).
+
+\item D.~\textsc{Radice}, S.~\textsc{Bernuzzi}, and
+  C.~D.~\textsc{Ott}, `One-armed spiral instability in neutron star
+  mergers and its detectability in gravitational waves',
+  \emph{Phys.\ Rev.}~D, \textbf{94}, 064011 (2017).
+
+\item P.~\textsc{Romatschke} and U.~\textsc{Romatschke},
+  \emph{Relativistic Fluid Dynamics In and Out of Equilibrium},
+  Cambridge University Press (2019).
+
+\item P.~S.~\textsc{Shternin} and D.~G.~\textsc{Yakovlev}, `Electron
+  thermal conductivity owing to collisions between degenerate
+  electrons', \emph{Phys.\ Rev.}~D, \textbf{74}, 043004 (2006).
+\end{enumerate}

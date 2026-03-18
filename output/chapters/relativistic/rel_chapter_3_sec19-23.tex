@@ -562,3 +562,141 @@ We collect the non-relativistic limits of the principal results.
 \noindent All relativistic results reduce exactly to the classical
 Chandrasekhar results when $v/c\to 0$ and $p/(\rdensity c^{2})\to 0$
 (in which limit the BDNK frame corrections also vanish).
+
+
+% ===================================================================
+\section{Astrophysical application: frame-dragging effect on inertial
+waves in rotating neutron stars}\label{sec:rel-3-app-19-23}
+% ===================================================================
+
+The formalism developed in \S\S\,\ref{sec:rel-3-19}--\ref{sec:rel-3-23}
+finds its most compelling application in rapidly rotating neutron stars,
+where the Lense--Thirring frame-dragging modifies the spectrum of
+inertial waves that govern angular-momentum transport and convective
+stability in the stellar interior.
+
+\subsection{Quantitative estimates}
+
+Consider a millisecond pulsar with mass $M = 1.4\,M_{\odot}$, radius
+$R = 12$~km, spin frequency $\nu_{\mathrm{spin}} = 716$~Hz
+(PSR~J1748$-$2446ad, the fastest known pulsar; Hessels et al.\ 2006),
+and moment of inertia $I \approx 0.35\,MR^{2} \approx
+1.6 \times 10^{45}$~g\,cm$^{2}$.  The angular velocity is
+$\Omega = 2\pi\nu_{\mathrm{spin}} \approx 4498$~rad\,s$^{-1}$.
+
+The Lense--Thirring precession rate at the stellar surface is
+\begin{equation}\label{eq:rel-3-app-OmLT}
+  \Omega_{\mathrm{LT}}
+  = \frac{2GI\Omega}{c^{2}R^{3}}
+  \approx \frac{2 \times 6.67\times10^{-8} \times 1.6\times10^{45}
+    \times 4498}{(3\times10^{10})^{2} \times (1.2\times10^{6})^{3}}
+  \approx 180~\mathrm{rad\,s}^{-1},
+\end{equation}
+giving a frame-dragging fraction
+$\Omega_{\mathrm{LT}}/\Omega \approx 0.04$.
+
+The effective rotation rate entering the inertial-wave dispersion
+relation~\eqref{eq:rel-3-22} is therefore
+$\Omega_{\mathrm{eff}} = \Omega - \Omega_{\mathrm{LT}}
+\approx 4318$~rad\,s$^{-1}$, a 4\% reduction.  The inertial-wave
+frequency is shifted from $\sigma = \pm 2\Omega\cos\vartheta$ to
+\begin{equation}\label{eq:rel-3-app-sigma-eff}
+  \sigma_{\mathrm{eff}}
+  = \pm\,2(\Omega - \Omega_{\mathrm{LT}})\cos\vartheta
+  = \sigma_{\mathrm{classical}}
+    \left(1 - \frac{\Omega_{\mathrm{LT}}}{\Omega}\right).
+\end{equation}
+
+For the damping rate, the enthalpy correction enters through the
+relativistic kinematic viscosity
+$\nu_{\mathrm{rel}} = \shearvisc c^{2}/\enthalpy$.  In the NS core,
+$\enthalpy/(\rdensity c^{2}) \approx 1.2$--$1.5$ (depending on the
+equation of state), so the damping rate is reduced by a factor
+$\rdensity c^{2}/\enthalpy \approx 0.67$--$0.83$ compared to the
+naive Newtonian estimate.
+
+These corrections are observationally relevant because inertial modes
+in neutron stars:
+\begin{enumerate}
+  \item Set the frequency of $r$-mode oscillations that may emit
+    continuous gravitational waves detectable by LIGO/Virgo/KAGRA
+    (Andersson 1998; Owen et al.\ 1998);
+  \item Govern the Ekman pumping timescale that controls post-glitch
+    relaxation in pulsars (van Eysden \& Melatos 2010);
+  \item Affect the neutrino-driven convection that determines the
+    explosion dynamics in core-collapse supernovae (Janka 2012).
+\end{enumerate}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{fig_ns_frame_dragging_inertial.pdf}
+  \caption{Frame-dragging effect on inertial waves in rotating neutron
+  stars.  \textbf{(a)}~Inertial-wave frequency
+  $|\sigma| = 2\Omega_{\mathrm{eff}}\cos\vartheta$ vs.\ wavevector
+  angle~$\vartheta$ for a millisecond pulsar
+  ($\Omega = 4498$~rad\,s$^{-1}$) at several compactness values.
+  Frame dragging reduces $\Omega_{\mathrm{eff}}$ and hence the
+  wave frequency.
+  \textbf{(b)}~Percentage shifts in frequency (frame-dragging) and
+  damping rate (enthalpy correction) as functions of stellar
+  compactness $\mathcal{C} = GM/(Rc^{2})$.  For a canonical neutron
+  star with $\mathcal{C} = 0.2$, the corrections are of order 5--30\%.}
+  \label{fig:ns-frame-dragging-inertial}
+\end{figure}
+
+
+% ===================================================================
+\section*{References for \S\S\,19--23}
+\addcontentsline{toc}{section}{References (\S\S\,19--23)}
+% ===================================================================
+
+\begin{enumerate}
+\item N.~\textsc{Andersson}, `A new class of unstable modes of
+  rotating relativistic stars', \emph{Astrophys.\ J.}, \textbf{502},
+  708--13 (1998).
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi}, and
+  J.~\textsc{Noronha}, `Causality and existence of solutions of
+  relativistic viscous fluid dynamics with gravity',
+  \emph{Phys.\ Rev.}~D, \textbf{98}, 104064 (2018).
+
+\item S.~\textsc{Chandrasekhar}, \emph{Hydrodynamic and
+  Hydromagnetic Stability}, Clarendon Press, Oxford (1961).
+
+\item C.~A.~\textsc{van Eysden} and A.~\textsc{Melatos}, `Pulsar
+  glitch recovery and the superfluidity of the neutron star core',
+  \emph{Mon.\ Not.\ R.\ Astron.\ Soc.}, \textbf{409}, 1253--68
+  (2010).
+
+\item J.~W.~T.~\textsc{Hessels}, S.~M.~\textsc{Ransom},
+  I.~H.~\textsc{Stairs}, P.~C.~C.~\textsc{Freire},
+  V.~M.~\textsc{Kaspi}, and F.~\textsc{Camilo}, `A radio pulsar
+  spinning at 716~Hz', \emph{Science}, \textbf{311}, 1901--04 (2006).
+
+\item H.-T.~\textsc{Janka}, `Explosion mechanisms of core-collapse
+  supernovae', \emph{Annu.\ Rev.\ Nucl.\ Part.\ Sci.}, \textbf{62},
+  407--51 (2012).
+
+\item P.~\textsc{Kovtun}, `First-order relativistic hydrodynamics
+  is stable', \emph{J.\ High Energy Phys.}, 2019:34 (2019).
+
+\item J.~\textsc{Lense} and H.~\textsc{Thirring}, `\"Uber den Einfluss
+  der Eigenrotation der Zentralk\"orper auf die Bewegung der Planeten
+  und Monde nach der Einsteinschen Gravitationstheorie',
+  \emph{Phys.\ Z.}, \textbf{19}, 156--63 (1918).
+
+\item A.~\textsc{Lichnerowicz}, \emph{Relativistic Hydrodynamics and
+  Magnetohydrodynamics}, Benjamin, New York (1967).
+
+\item B.~J.~\textsc{Owen}, L.~\textsc{Lindblom},
+  C.~\textsc{Cutler}, B.~F.~\textsc{Schutz},
+  A.~\textsc{Vecchio}, and N.~\textsc{Andersson}, `Gravitational
+  waves from hot young rapidly rotating neutron stars',
+  \emph{Phys.\ Rev.}~D, \textbf{58}, 084020 (1998).
+
+\item J.~L.~\textsc{Synge}, \emph{Relativity: The Special Theory},
+  North-Holland, Amsterdam (1956).
+
+\item A.~H.~\textsc{Taub}, `Relativistic Rankine--Hugoniot equations',
+  \emph{Phys.\ Rev.}, \textbf{74}, 328--34 (1948).
+\end{enumerate}

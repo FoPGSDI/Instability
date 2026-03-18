@@ -583,3 +583,149 @@ and in the general time-dependent regime.
         $\enthalpy \to \rdensity c^2$, all results
         reduce to those of Chandrasekhar's original \S\S\,24--28.
 \end{enumerate}
+
+
+% =====================================================================
+\section{Astrophysical application: critical $\Rarel(\Tarel)$ for
+millisecond pulsars}\label{sec:rel-3-app-24-28}
+% =====================================================================
+
+We now apply the stability results of \S\S\,\ref{sec:rel-3-24}--\ref{sec:rel-3-28}
+to quantitatively assess the conditions for thermal convection in
+the interiors of millisecond pulsars, where the Taylor number reaches
+extreme values ($\Tarel \sim 10^{12}$--$10^{18}$).
+
+\subsection{Physical parameters for nuclear matter}
+
+The transport coefficients of dense nuclear matter at
+$\rho \sim 2\text{--}5\,\rho_{\mathrm{nuc}}$
+($\rho_{\mathrm{nuc}} = 2.8 \times 10^{14}$~g\,cm$^{-3}$) have been
+computed by Flowers \& Itoh (1976) and Shternin \& Yakovlev (2008):
+\begin{itemize}
+  \item Kinematic viscosity:
+    $\nu \approx 1\text{--}100$~cm$^{2}$\,s$^{-1}$
+    (dominated by neutron--neutron scattering at $T \sim 10^{9}$~K);
+  \item Thermal diffusivity:
+    $\kappa \approx 10^{4}\text{--}10^{6}$~cm$^{2}$\,s$^{-1}$
+    (dominated by electron thermal conduction);
+  \item Prandtl number:
+    $\mathrm{Pr} = \nu/\kappa \sim 10^{-5}\text{--}10^{-3}$.
+\end{itemize}
+
+For the fastest known millisecond pulsar PSR~J1748$-$2446ad
+($\nu_{\mathrm{spin}} = 716$~Hz, $\Omega = 4498$~rad\,s$^{-1}$)
+with a convective layer depth $d \sim 100$~m $= 10^{4}$~cm
+and $\nu \approx 10$~cm$^{2}$\,s$^{-1}$, the classical Taylor number is
+\begin{equation}\label{eq:rel-3-app-Ta-estimate}
+  \mathscr{T}
+  = \frac{4\Omega^{2}d^{4}}{\nu^{2}}
+  = \frac{4 \times (4498)^{2} \times (10^{4})^{4}}{(10)^{2}}
+  \approx 8.1 \times 10^{23}.
+\end{equation}
+
+The \emph{relativistic} Taylor number is enhanced by the enthalpy factor:
+\begin{equation}\label{eq:rel-3-app-Tarel}
+  \Tarel
+  = \mathscr{T}\left(\frac{\enthalpy}{\rdensity c^{2}}\right)^{2}
+  \approx 8.1 \times 10^{23} \times (1.3)^{2}
+  \approx 1.4 \times 10^{24},
+\end{equation}
+where we have used $\enthalpy/(\rdensity c^{2}) \approx 1.3$ for
+nuclear matter at $\rho \approx 3\rho_{\mathrm{nuc}}$ with the APR
+equation of state (Akmal, Pandharipande \& Ravenhall 1998).
+
+For more conservative estimates ($\nu \sim 100$~cm$^{2}$\,s$^{-1}$),
+the Taylor number drops to $\Tarel \sim 10^{20}$; the range
+$\Tarel \sim 10^{12}\text{--}10^{24}$ brackets the physically
+plausible parameter space.
+
+\subsection{Critical Rayleigh number}
+
+In the asymptotic regime $\Tarel \gg 1$, the critical Rayleigh number
+for stationary convection between two free boundaries
+(equation~\eqref{eq:rel-3-183}) gives
+\begin{equation}\label{eq:rel-3-app-Rac}
+  \Rarel^{(c)}
+  = 8.696\,\Tarel^{2/3}
+  \approx 8.696 \times (1.4 \times 10^{24})^{2/3}
+  \approx 1.1 \times 10^{17}.
+\end{equation}
+
+The corresponding critical temperature gradient is
+\begin{equation}\label{eq:rel-3-app-betac}
+  \beta_{c}
+  = \frac{\Rarel^{(c)}\,\shearvisc\,\kappa}{\rdensity\,g\,\alpha\,d^{4}}
+  \approx \frac{1.1 \times 10^{17} \times 10 \times 10^{5}}
+         {3 \times 10^{14} \times 2 \times 10^{14} \times 10^{-4}
+          \times 10^{16}}
+  \approx 1.8 \times 10^{-3}~\mathrm{K\,cm}^{-1},
+\end{equation}
+where we used $g \approx 2 \times 10^{14}$~cm\,s$^{-2}$,
+$\alpha \approx 10^{-4}$~K$^{-1}$ (thermal expansion coefficient for
+degenerate nuclear matter), and $\kappa \approx 10^{5}$~cm$^{2}$\,s$^{-1}$.
+
+This critical gradient is much larger than the typical thermal gradient
+in a mature neutron star ($\beta \sim 10^{-5}$~K\,cm$^{-1}$), confirming
+that \emph{rotation strongly suppresses convection in millisecond
+pulsars}.  However, in newly born neutron stars with
+$\beta \sim 10^{-1}$~K\,cm$^{-1}$ (set by neutrino cooling), the
+superadiabatic gradient can exceed $\beta_{c}$, allowing convection
+even at high Taylor numbers.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{fig_ms_pulsar_stability.pdf}
+  \caption{Stability diagram for rotating convection in millisecond
+  pulsars.  The critical Rayleigh number $\mathrm{Ra}_{c}$ is plotted
+  against the physical Taylor number $\mathrm{Ta}$ for several values
+  of the enthalpy ratio $\enthalpy/(\rdensity c^{2})$.  The shaded
+  band marks the regime $\mathrm{Ta} \sim 10^{12}\text{--}10^{18}$
+  relevant to millisecond pulsars.  Solid curves: stationary
+  convection; thin curves: overstability ($\mathrm{Pr} = 10^{-3}$).
+  The relativistic enhancement of $\Tarel$ shifts the stability
+  boundary upward, strengthening rotational stabilisation.
+  The top axis shows the corresponding rotation rate for
+  $\nu = 10$~cm$^{2}$\,s$^{-1}$ and $d = 100$~m.}
+  \label{fig:ms-pulsar-stability}
+\end{figure}
+
+
+% =====================================================================
+\section*{References for \S\S\,24--28}
+\addcontentsline{toc}{section}{References (\S\S\,24--28)}
+% =====================================================================
+
+\begin{enumerate}
+\item A.~\textsc{Akmal}, V.~R.~\textsc{Pandharipande}, and
+  D.~G.~\textsc{Ravenhall}, `Equation of state of nucleon matter and
+  neutron star structure', \emph{Phys.\ Rev.}~C, \textbf{58}, 1804--28
+  (1998).
+
+\item F.~S.~\textsc{Bemfica}, M.~M.~\textsc{Disconzi}, and
+  J.~\textsc{Noronha}, `Causality and existence of solutions of
+  relativistic viscous fluid dynamics with gravity',
+  \emph{Phys.\ Rev.}~D, \textbf{98}, 104064 (2018).
+
+\item S.~\textsc{Chandrasekhar}, \emph{Hydrodynamic and
+  Hydromagnetic Stability}, Clarendon Press, Oxford (1961).
+
+\item E.~\textsc{Flowers} and N.~\textsc{Itoh}, `Transport properties
+  of dense matter', \emph{Astrophys.\ J.}, \textbf{206}, 218--42
+  (1976).
+
+\item P.~\textsc{Kovtun}, `First-order relativistic hydrodynamics is
+  stable', \emph{J.\ High Energy Phys.}, 2019:34 (2019).
+
+\item A.~\textsc{Reisenegger}, `Neutron star convection', in
+  \emph{Neutron Stars and Pulsars}, Astrophysics and Space Science
+  Library, vol.~357, pp.~401--11, Springer (2009).
+
+\item P.~S.~\textsc{Shternin} and D.~G.~\textsc{Yakovlev}, `Electron
+  thermal conductivity owing to collisions between degenerate
+  electrons', \emph{Phys.\ Rev.}~D, \textbf{74}, 043004 (2006).
+
+\item L.~\textsc{Villain}, J.~A.~\textsc{Pons},
+  J.~A.~\textsc{Miralles}, and others, `Convective instability in
+  proto-neutron stars', \emph{Astron.\ Astrophys.}, \textbf{418},
+  283--94 (2004).
+\end{enumerate}
