@@ -770,6 +770,192 @@ factor $\Lf$.}
 \end{figure}
 
 % =================================================================
+\subsection{Z-pinch stability boundary for a GRB fireball:
+critical Lorentz factor for kink instability}
+\label{sec:rel-115-GRB}
+
+We now apply the relativistic pinch dispersion
+relation~\eqref{eq:rel-115-DR} to the specific case of a
+gamma-ray burst (GRB) fireball.  The question is: at what bulk
+Lorentz factor $\Gamma$ does the magnetically confined fireball
+become kink-unstable?  We compare the theoretical prediction with
+the observed range $\Gamma \sim 100$--$1000$.
+
+\paragraph{Model.}
+A GRB fireball at radius $r$ from the central engine is modelled
+as a relativistic Z-pinch: a cylindrical plasma column of
+comoving radius $R_{1} \sim r/\Gamma$ (the causal cross-section),
+carrying a toroidal magnetic field $B_{\varphi}$ and a poloidal
+field $B_{p}$ (both measured in the comoving frame).  The column
+moves with bulk Lorentz factor $\Gamma$ along its axis.
+
+The comoving enthalpy density of the fireball is
+\begin{equation}
+\enthalpy
+  = \frac{4}{3}\,a_{\mathrm{rad}}\,T^{4}/c^{2}
+    + n_{b}\,m_{p}
+  \equiv \enthalpy_{\mathrm{rad}} + \enthalpy_{\mathrm{bar}},
+\label{eq:rel-115-GRB-w}
+\end{equation}
+where $a_{\mathrm{rad}}$ is the radiation constant, $T$ the
+comoving temperature, $n_{b}$ the baryon number density, and
+$m_{p}$ the proton mass.  For a hot fireball
+($\enthalpy_{\mathrm{rad}} \gg \enthalpy_{\mathrm{bar}}$),
+the effective inertia is dominated by radiation:
+$\rho_{\mathrm{eff}} \approx \enthalpy_{\mathrm{rad}}/c^{2}
++ B^{2}/(8\pi c^{2})$.
+
+\paragraph{Kink instability criterion.}
+From the relativistic KS criterion~\eqref{eq:rel-115-KS}
+(adapted to the comoving frame), the $m = -1$ kink mode is
+unstable when
+\begin{equation}
+\frac{B_{\varphi}}{B_{p}}
+  > \frac{kR_{1}}{1 + \Gamma^{2}V^{2}/(2c^{2})}.
+\label{eq:rel-115-GRB-crit}
+\end{equation}
+However, for the GRB fireball the analysis is performed in the
+\emph{comoving} frame where the plasma is at rest ($V = 0$
+internally), and the bulk Lorentz factor $\Gamma$ enters through
+the geometry: the fireball expands relativistically, so the
+ratio $B_{\varphi}/B_{p}$ evolves with radius.
+
+For a magnetically dominated outflow, flux conservation gives
+$B_{\varphi} \propto 1/r$ and $B_{p} \propto 1/r^{2}$
+(from $\Phi = B_{p}\pi R_{1}^{2} = \mathrm{const}$ and
+$R_{1} = r/\Gamma$).  Thus
+\begin{equation}
+\frac{B_{\varphi}(r)}{B_{p}(r)}
+  = \frac{B_{\varphi,0}}{B_{p,0}}\,\frac{r}{r_{0}}
+  = \frac{B_{\varphi,0}}{B_{p,0}}\,\frac{\Gamma}{\Gamma_{0}}\,
+    \frac{R_{1}}{R_{1,0}},
+\label{eq:rel-115-GRB-ratio}
+\end{equation}
+where subscript~$0$ denotes values at the base of the outflow
+($r_{0} \sim R_{\mathrm{engine}}$).
+
+The most dangerous mode has $k = \pi/(2R_{1})$ (the longest
+wavelength fitting in the causal cross-section), so
+$kR_{1} = \pi/2$.  The kink instability condition in the
+comoving frame is then
+\begin{equation}
+\frac{B_{\varphi}}{B_{p}} > \frac{\pi}{2}.
+\label{eq:rel-115-GRB-crit2}
+\end{equation}
+
+\paragraph{Critical Lorentz factor.}
+The fireball becomes kink-unstable at the radius where
+$B_{\varphi}/B_{p}$ first exceeds $\pi/2$.  Using
+equation~\eqref{eq:rel-115-GRB-ratio} with $r/r_{0} = \Gamma/\Gamma_{0}$
+(appropriate for a coasting fireball) and
+$B_{\varphi,0}/B_{p,0} = \beta_{0}$ at the base:
+\begin{equation}
+\frac{B_{\varphi}}{B_{p}}
+  = \beta_{0}\,\frac{\Gamma}{\Gamma_{0}}.
+\label{eq:rel-115-GRB-BratioG}
+\end{equation}
+Setting this equal to $\pi/2$ gives the critical Lorentz factor:
+\begin{equation}
+\boxed{\;
+\Gamma_{\mathrm{crit}}
+  = \frac{\pi\,\Gamma_{0}}{2\,\beta_{0}}
+  = \frac{\pi}{2}\,\frac{\Gamma_{0}\,B_{p,0}}{B_{\varphi,0}}.
+\;}
+\label{eq:rel-115-GRB-Gcrit}
+\end{equation}
+
+\paragraph{Quantitative estimates.}
+For typical GRB parameters:
+\begin{itemize}
+\item Central engine: $r_{0} \sim 10^{7}\;\mathrm{cm}$,
+  $\Gamma_{0} \sim 1$ (initially sub-relativistic).
+\item Magnetic field at base: $B_{p,0} \sim B_{\varphi,0}$
+  (equipartition), so $\beta_{0} \sim 1$.
+\end{itemize}
+
+The critical Lorentz factor is
+$\Gamma_{\mathrm{crit}} = \pi/2 \approx 1.57$---which would mean
+the fireball is kink-unstable almost immediately.  However, this
+assumes perfect equipartition at the base.  In more realistic
+models:
+
+\begin{table}[htbp]
+\centering
+\caption{Critical Lorentz factor $\Gamma_{\mathrm{crit}}$ for kink
+instability of a GRB fireball, for different initial magnetic
+field ratios $\beta_{0} = B_{\varphi,0}/B_{p,0}$ at the central
+engine, with $\Gamma_{0} = 1$.}
+\label{tab:rel-GRB-Gcrit}
+\begin{tabular}{cccc}
+\hline
+$\beta_{0} = B_{\varphi,0}/B_{p,0}$ &
+$\Gamma_{\mathrm{crit}}$ &
+$r_{\mathrm{crit}}/r_{0}$ &
+Comparison with observed $\Gamma$\\
+\hline
+$1.0$   & $1.6$ & $1.6$ &
+  $\ll 100$: unstable long before coasting \\
+$0.1$   & $16$ & $16$ &
+  $\ll 100$: kink well before prompt phase \\
+$0.01$  & $157$ & $157$ &
+  $\sim 100$: kink near prompt emission \\
+$0.005$ & $314$ & $314$ &
+  $\sim 300$: kink during prompt emission \\
+$0.002$ & $785$ & $785$ &
+  $\sim 1000$: marginal for ultra-rel.\ GRBs \\
+$0.001$ & $1571$ & $1571$ &
+  $>1000$: fireball remains kink-stable \\
+\hline
+\end{tabular}
+\end{table}
+
+\noindent
+Table~\ref{tab:rel-GRB-Gcrit} shows that:
+\begin{enumerate}
+\item For $\beta_{0} \gtrsim 0.01$, the fireball becomes
+  kink-unstable at $\Gamma_{\mathrm{crit}} \lesssim 100$,
+  \emph{before} reaching the Lorentz factors inferred from
+  GRB afterglow observations ($\Gamma \sim 100$--$1000$).
+  This means that the kink instability is expected to develop
+  during the acceleration phase, potentially driving magnetic
+  energy dissipation and powering the prompt emission via
+  the ``ICMART'' (Internal-Collision-induced MAgnetic
+  Reconnection and Turbulence) mechanism~\citep{Zhang2011}.
+
+\item For $\beta_{0} \sim 0.005$--$0.01$, the kink onset
+  coincides with $\Gamma \sim 100$--$300$, precisely the range
+  inferred for GRB prompt emission.  This is suggestive: the
+  prompt emission itself may be triggered by the onset of kink
+  instability at $\Gamma \sim \Gamma_{\mathrm{crit}}$.
+
+\item For $\beta_{0} \lesssim 0.001$---i.e.\ a strongly
+  poloidal-dominated outflow at the base---the fireball
+  remains kink-stable up to $\Gamma \sim 1000$.  Such outflows
+  would produce ultra-relativistic, coherent jets as observed in
+  the most energetic GRBs.
+
+\item The observed range $\Gamma \sim 100$--$1000$ maps to
+  $\beta_{0} \sim 0.001$--$0.01$, implying that the central
+  engine produces outflows with $B_{\varphi}/B_{p} \sim
+  0.1$--$1\%$ at the base.  This is consistent with
+  Blandford--Znajek jet models where the poloidal field
+  threading the black hole dominates near the
+  engine~\citep{Blandford1977}.
+\end{enumerate}
+
+\begin{relcorrection}
+The Z-pinch kink instability boundary for a GRB fireball
+yields a critical Lorentz factor
+$\Gamma_{\mathrm{crit}} = (\pi/2)(B_{p,0}/B_{\varphi,0})$.
+For observed GRB Lorentz factors $\Gamma \sim 100$--$1000$,
+this requires the initial toroidal-to-poloidal field ratio at
+the central engine to be $\beta_{0} \sim 0.001$--$0.01$.
+The coincidence of $\Gamma_{\mathrm{crit}}$ with the observed
+$\Gamma$ range suggests that the kink instability may trigger
+the prompt GRB emission.
+\end{relcorrection}
+
+% =================================================================
 \subsection{Causality: all MHD modes subluminal}
 \label{sec:rel-115-causality}
 

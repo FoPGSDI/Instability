@@ -3,7 +3,7 @@ Relativistic Rossby number for known pulsars.
 Computes Ro_rel = U / (2 * Omega_eff * L) with relativistic corrections.
 Produces table and bar chart for ~5 pulsars.
 """
-import sys; sys.path.insert(0, '../../..'); from SHARED_PLOT_STYLE import setup_style, COLORS, G_cgs, c_cgs, M_sun
+import sys; sys.path.insert(0, '/data/haiyangw/claude/Instability'); from SHARED_PLOT_STYLE import setup_style, COLORS, G_cgs, c_cgs, M_sun
 import matplotlib.pyplot as plt
 import numpy as np
 
