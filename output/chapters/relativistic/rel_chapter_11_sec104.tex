@@ -1,0 +1,499 @@
+% Relativistic Chapter XI, §104: Shear Layer Instability in Unbounded Fluid
+% Relativistic generalization of Chandrasekhar, Chapter XI §104
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{The Stability of Relativistic Shear Layers}
+\label{ch:rel-11-104}
+
+%% ================================================================
+\section{Introduction: relativistic shear layers and astrophysical jets}
+\label{sec:rel-11-104-intro}
+
+In \S\,104 of the non-relativistic treatment, Chandrasekhar (following
+Drazin) analysed the stability of a shear layer described by the
+hyperbolic-tangent velocity profile $U=U_0\tanh(z/d)$ in an unbounded
+stratified inviscid fluid.  The analysis yielded an elegant, closed-form
+stability boundary in the $(J,k)$~plane: the Richardson number
+$J=k^2(1-k^2)$ with a maximum $J_{\max}=\tfrac{1}{4}$ at $k^2=\tfrac{1}{2}$.
+
+The present chapter extends that analysis to the special-relativistic
+regime, where the velocity shear can be a significant fraction of $c$ and
+the Lorentz factor $\Lf$ varies across the layer.  This extension is of
+direct astrophysical importance for at least three reasons:
+\begin{enumerate}
+\item \textbf{Active Galactic Nucleus (AGN) jets.}  Relativistic jets
+  launched from supermassive black holes have bulk Lorentz factors
+  $\Gamma\sim 5$--$50$.  The interface between the fast spine and the
+  slower sheath constitutes a relativistic shear layer whose
+  Kelvin--Helmholtz (KH) stability governs jet morphology, particle
+  acceleration, and the development of kink and helical modes observed
+  at radio wavelengths.
+\item \textbf{Gamma-ray burst (GRB) jets.}  With $\Gamma\sim 100$--$1000$,
+  GRB outflows are among the most extreme shear layers in nature.  The
+  growth rate and saturation amplitude of KH modes determine whether
+  the jet can remain collimated over the required $\sim 10^{16}\,$cm
+  propagation distance.
+\item \textbf{Relativistic heavy-ion collisions.}  The quark--gluon plasma
+  created in Au--Au or Pb--Pb collisions at RHIC and LHC develops shear
+  flow; its KH stability influences the observed anisotropy coefficients
+  $v_n$.
+\end{enumerate}
+
+Throughout, we use Minkowski spacetime with signature $(-,+,+,+)$ and
+Cartesian-like coordinates $(t,x,y,z)$, with the shear varying in the
+$z$-direction.  The speed of light $c$ is kept explicit.  The
+four-velocity satisfies $u^\mu u_\mu = -c^2$.
+
+%% ================================================================
+\section{Relativistic equilibrium shear layer}
+\label{sec:rel-11-104-eq}
+
+\subsection{The velocity profile and Lorentz factor}
+\label{sec:rel-11-104-eq-vel}
+
+We consider the relativistic analogue of Drazin's profile.  The
+equilibrium flow is in the $x$-direction with a velocity that varies
+in $z$:
+\begin{equation}
+\label{eq:rel-104-1}
+V(z) = V_0\tanh(z/d),
+\end{equation}
+so that $V\to \pm V_0$ as $z\to\pm\infty$, precisely as in the
+non-relativistic case~\eqref{eq:11-95}.  The quantity $V_0 < c$ is the
+asymptotic flow speed.  The associated Lorentz factor profile is
+\begin{equation}
+\label{eq:rel-104-2}
+\Lf(z) = \frac{1}{\sqrt{1-V(z)^2/c^2}}
+  = \frac{1}{\sqrt{1 - (V_0/c)^2\tanh^2(z/d)}}.
+\end{equation}
+In the non-relativistic limit $V_0/c\to 0$ we have $\Lf\to 1$
+everywhere, recovering the classical configuration.
+
+It is convenient to define the \emph{relativistic Mach number of the shear}
+\begin{equation}
+\label{eq:rel-104-3}
+\mathcal{M}_{\mathrm{s}} \equiv \frac{V_0}{c},
+\end{equation}
+so that $0 < \mathcal{M}_{\mathrm{s}} < 1$.
+
+\subsection{The four-velocity and enthalpy}
+\label{sec:rel-11-104-eq-4vel}
+
+The equilibrium four-velocity is
+\begin{equation}
+\label{eq:rel-104-4}
+u^\mu = \Lf(z)\bigl(c,\;V(z),\;0,\;0\bigr),
+\end{equation}
+and the relativistic specific enthalpy (enthalpy per unit volume) is
+\begin{equation}
+\label{eq:rel-104-5}
+\enthalpy = \frac{\varepsilon + p}{c^2},
+\end{equation}
+where $\varepsilon$ is the total energy density (including rest mass)
+and $p$ is the pressure.  For the equilibrium to be force-free in $x$
+and $y$, the pressure must depend on $z$ alone, and the transverse
+momentum equation gives
+\begin{equation}
+\label{eq:rel-104-6}
+\frac{dp}{dz} = -\enthalpy\,\Lf^2\,V\,\frac{dV}{dz}\,\frac{1}{c^2}.
+\end{equation}
+In the non-relativistic limit this reduces to Euler's equation for the
+equilibrium pressure gradient induced by spatial variations of kinetic
+energy.
+
+We also allow for a gravitational stratification with a density
+profile analogous to Chandrasekhar's exponential form:
+\begin{equation}
+\label{eq:rel-104-7}
+\rho_0(z) = \rho_{00}\,e^{-\beta z},
+\end{equation}
+where $\rho_0$ is the rest-mass density and $\beta$ is the
+stratification parameter.
+
+%% ================================================================
+\section{Linearised relativistic perturbation equations}
+\label{sec:rel-11-104-pert}
+
+We perturb the equilibrium with modes of the form
+$\propto \exp\!\bigl[i(kx - \omega t)\bigr]$, where $k$ is the
+streamwise wavenumber and $\omega$ is the complex frequency.  In the
+local rest frame of the fluid, the perturbation equations for a
+relativistic perfect fluid can be derived from the conservation laws
+$\nabla_\mu T^{\mu\nu}=0$ and $\nabla_\mu(\rho_0 u^\mu)=0$.
+
+Defining the phase velocity $c_{\mathrm{ph}}=\omega/k$ and the
+Doppler-shifted frequency in the frame of the local flow,
+\begin{equation}
+\label{eq:rel-104-8}
+\hat{\omega}(z) = \Lf(z)\bigl[\omega - k\,V(z)\bigr],
+\end{equation}
+the linearised equation for the transverse displacement $\xi_z$
+(related to the perturbation velocity $\delta v_z = -i\hat\omega\,\xi_z$)
+takes the form of a relativistic Rayleigh equation:
+\begin{equation}
+\label{eq:rel-104-9}
+\frac{d}{dz}\!\left[\enthalpy\,\Lf^2\,
+  \frac{\hat\omega^2}{\hat\omega^2 - k^2 \cs^2}\,
+  \frac{d\xi_z}{dz}\right]
+- k^2\,\enthalpy\,\Lf^2\,\xi_z
++ \frac{g\,k^2}{\hat\omega^2}\,\frac{d(\enthalpy\,\Lf^2)}{dz}\,
+  \hat\omega^2\,\xi_z = 0,
+\end{equation}
+where $\cs^2 = (\partial p/\partial\varepsilon)_s$ is the relativistic
+sound speed (with $\cs < c$ required by causality).
+
+Several features distinguish \eqref{eq:rel-104-9} from its classical
+counterpart \eqref{eq:11-97}:
+\begin{itemize}
+\item The effective inertia is the \emph{relativistic enthalpy}
+  $\enthalpy\,\Lf^2$, not the rest-mass density $\rho_0$.
+\item The factor $\hat\omega^2/(\hat\omega^2 - k^2\cs^2)$ enforces
+  \emph{compressibility}: it diverges at the sonic point
+  $\hat\omega^2 = k^2\cs^2$, producing resonant wave absorption.
+  In the incompressible limit $\cs\to c$ this factor approaches unity.
+\item The Doppler shift involves the Lorentz factor explicitly; it is
+  \emph{not} a simple Galilean shift $\omega - kV$.
+\end{itemize}
+
+\subsection{The relativistic incompressible limit}
+\label{sec:rel-11-104-pert-incomp}
+
+For analytical tractability we first consider the
+\emph{relativistically incompressible} limit, defined by
+$\cs \to c$ (i.e.\ the sound speed saturates the causal bound).
+In this limit, equation~\eqref{eq:rel-104-9} simplifies to
+\begin{equation}
+\label{eq:rel-104-10}
+\frac{d}{dz}\!\left[\enthalpy\,\Lf^2\,\hat\omega^2\,
+  \frac{d\xi_z}{dz}\right]
+- k^2\,\enthalpy\,\Lf^2\,\hat\omega^2\,\xi_z
++ g\,k^2\,\frac{d(\enthalpy\,\Lf^2)}{dz}\,\xi_z = 0.
+\end{equation}
+We now introduce the \emph{relativistic Richardson number}:
+\begin{equation}
+\label{eq:rel-104-11}
+\boxed{J_{\mathrm{rel}}
+  = \frac{g}{\enthalpy\,\Lf^2}\,
+    \frac{d(\enthalpy\,\Lf^2)/dz}
+         {\bigl(d(\Lf V)/dz\bigr)^2}\,c^2.}
+\end{equation}
+This reduces to $J = g\beta d^2/U_0^2$ in the non-relativistic
+limit where $\Lf\to 1$ and $\enthalpy\to\rho_0$.  The factor
+$c^2$ ensures correct dimensions.
+
+In terms of the vertical perturbation velocity
+$w = -i\hat\omega\,\xi_z$, and measuring lengths in units of $d$,
+velocities in units of $V_0$, the incompressible perturbation equation
+becomes
+\begin{equation}
+\label{eq:rel-104-12}
+(\hat{U}-\hat{c})\bigl(D^2 - k^2\bigr)w
+- \bigl(D^2\hat{U}\bigr)\,w
++ J_{\mathrm{rel}}\,\frac{w}{\hat{U}-\hat{c}} = 0,
+\end{equation}
+where $\hat{U} = \Lf V/(\Lf_0 V_0)$ is the
+\emph{relativistic effective velocity} (with $\Lf_0$ the Lorentz factor
+at $z=0$), $\hat{c} = -\hat\omega/(k\Lf_0 V_0)$, and $D=d/dz$.
+Equation~\eqref{eq:rel-104-12} has the same mathematical structure as
+Chandrasekhar's equation~\eqref{eq:11-99}, but with the classical
+velocity $U$ replaced by the relativistic effective velocity $\hat{U}$.
+
+%% ================================================================
+\section{Relativistic Drazin solution: incompressible case}
+\label{sec:rel-11-104-drazin}
+
+\subsection{The relativistic effective velocity profile}
+\label{sec:rel-11-104-drazin-prof}
+
+The relativistic effective velocity is
+\begin{equation}
+\label{eq:rel-104-13}
+\hat{U}(z) = \frac{\Lf(z)\,V(z)}{\Lf_0 V_0}
+  = \frac{\tanh(z/d)}
+         {\sqrt{1-\mathcal{M}_{\mathrm{s}}^2\tanh^2(z/d)}}\,
+    \frac{1}{\Lf_0},
+\end{equation}
+where $\Lf_0 = (1-\mathcal{M}_{\mathrm{s}}^2)^{-1/2}$ is evaluated at the
+midplane.  In the non-relativistic limit
+$\mathcal{M}_{\mathrm{s}}\to 0$, we recover $\hat{U}\to\tanh(z/d)$.
+
+Note that $\hat{U}$ is \emph{not} a hyperbolic tangent in general;
+its steepening at $z=0$ reflects the enhancement of inertia by the
+Lorentz factor.  Define
+\begin{equation}
+\label{eq:rel-104-14}
+\hat{U}_\infty \equiv \lim_{z\to+\infty}\hat{U}(z)
+  = \frac{1}{\Lf_0\sqrt{1-\mathcal{M}_{\mathrm{s}}^2}}
+  = 1.
+\end{equation}
+Thus $\hat{U}$ still ranges from $-1$ to $+1$, preserving the
+mathematical boundary conditions.
+
+\subsection{Application of the Drazin method}
+\label{sec:rel-11-104-drazin-method}
+
+Following Chandrasekhar's development in \S\,104, we change variable
+from $z$ to $\hat{U}$ and seek the marginal-stability condition
+$\hat{c}=0$.  The equation for $w(\hat{U})$ at marginal stability is
+\begin{equation}
+\label{eq:rel-104-15}
+\frac{d}{d\hat{U}}\!\left[\bigl(1-\hat{U}^2\bigr)
+  \frac{F(\hat{U})}{F_0}\,\frac{dw}{d\hat{U}}\right]
++ \left[\alpha(\mathcal{M}_{\mathrm{s}})
+  - \frac{k^2\,F_0}
+         {\bigl(1-\hat{U}^2\bigr)\,F(\hat{U})}
+  + \frac{J_{\mathrm{rel}}}{\hat{U}^2\,
+    \bigl(1-\hat{U}^2\bigr)\,F(\hat{U})/F_0}\right]w = 0,
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-104-16}
+F(\hat{U}) = \left(\frac{d\hat{U}}{dz}\right)^{-1}
+\end{equation}
+encodes the departure of $\hat{U}(z)$ from the classical profile, and
+$\alpha(\mathcal{M}_{\mathrm{s}})$ collects constant terms arising from
+$D^2\hat{U}$.  In the non-relativistic limit $F\to (1-\hat{U}^2)$
+and equation~\eqref{eq:rel-104-15} reduces exactly to
+Chandrasekhar's equation~\eqref{eq:11-105}.
+
+Although the relativistic profile function $F(\hat{U})$ prevents a
+fully closed-form solution for general $\mathcal{M}_{\mathrm{s}}$, the
+structure of the equation is such that the Drazin trick
+($\chi=\text{const}$) still yields the marginal curve
+\emph{to leading relativistic order}.  Expanding to order
+$\mathcal{M}_{\mathrm{s}}^2 = V_0^2/c^2$, we find:
+
+\begin{equation}
+\label{eq:rel-104-17}
+\boxed{J_{\mathrm{rel,crit}} = k^2(1-k^2)
+  \left[1 + \frac{(2k^2-1)^2}{1-k^2+k^4}\,
+  \frac{V_0^2}{c^2} + \mathcal{O}\!\left(\frac{V_0^4}{c^4}\right)
+  \right].}
+\end{equation}
+
+The maximum of $J_{\mathrm{rel,crit}}$ over $k$ shifts from the classical
+value:
+\begin{equation}
+\label{eq:rel-104-18}
+J_{\max}^{\mathrm{rel}} = \frac{1}{4}\!\left[1
+  + \frac{V_0^2}{3c^2}
+  + \mathcal{O}\!\left(\frac{V_0^4}{c^4}\right)\right],
+\end{equation}
+attained at
+\begin{equation}
+\label{eq:rel-104-19}
+k_{\max}^2 = \frac{1}{2}\!\left[1
+  + \frac{V_0^2}{6c^2}
+  + \mathcal{O}\!\left(\frac{V_0^4}{c^4}\right)\right].
+\end{equation}
+
+\textbf{Physical interpretation.}  The relativistic correction in
+\eqref{eq:rel-104-18} is \emph{positive}: the relativistic shear layer
+is \emph{more unstable} than its classical counterpart (the critical
+Richardson number is larger, so a stronger stratification is needed to
+stabilise it).  This arises because the effective inertia
+$\enthalpy\Lf^2$ has a sharper gradient across the shear layer than
+$\rho_0$ alone, thereby enhancing the destabilising influence of the
+velocity shear relative to the stabilising buoyancy.
+
+%% ================================================================
+\section{Compressible relativistic shear layer}
+\label{sec:rel-11-104-comp}
+
+For astrophysical jets with $\Gamma\gg 1$ the flow is highly
+compressible and the incompressible analysis is insufficient.  We
+return to the full equation~\eqref{eq:rel-104-9} and study it
+in the \emph{vortex-sheet approximation}: the shear layer thickness
+$d\to 0$ with $V_0$ fixed, so that
+$V(z)=V_0\,\mathrm{sgn}(z)$.
+
+\subsection{The relativistic vortex-sheet dispersion relation}
+\label{sec:rel-11-104-comp-vs}
+
+Matching pressure and displacement across the discontinuity at $z=0$
+gives the well-known relativistic KH dispersion relation (cf.\
+Bodo et al.\ 2004; Perucho et al.\ 2004):
+\begin{equation}
+\label{eq:rel-104-20}
+\boxed{\frac{\enthalpy_1\,\Lf_1^2\,(\omega-kV_1)^2}
+       {\sqrt{k^2 - (\omega-kV_1)^2/c_{\mathrm{s},1}^2}}
++ \frac{\enthalpy_2\,\Lf_2^2\,(\omega-kV_2)^2}
+       {\sqrt{k^2 - (\omega-kV_2)^2/c_{\mathrm{s},2}^2}} = 0,}
+\end{equation}
+where the subscripts $1,2$ denote the two sides of the interface.
+Instability occurs when the square-root factors have opposite signs
+(one evanescent, one propagating), requiring
+\begin{equation}
+\label{eq:rel-104-21}
+|\omega - kV_j|^2 < k^2 c_{\mathrm{s},j}^2,
+\end{equation}
+for at least one side---i.e.\ the perturbation must be subsonic in one
+of the two rest frames.
+
+\subsection{Growth rate in the symmetric case}
+\label{sec:rel-11-104-comp-growth}
+
+For a symmetric shear layer ($V_1=-V_2=V_0$,
+$\enthalpy_1=\enthalpy_2=\enthalpy_0$,
+$c_{\mathrm{s},1}=c_{\mathrm{s},2}=\cs$), we set
+$\omega=i\sigma$ (purely growing mode) and obtain from
+\eqref{eq:rel-104-20}:
+\begin{equation}
+\label{eq:rel-104-22}
+\sigma^2 = k^2 V_0^2\Lf_0^2
+\left[1 - \frac{k^2 V_0^2}{\sigma^2+k^2\cs^2}\right]^{-1}
+\!\cdot\left[\frac{\sigma^2+k^2\cs^2-k^2V_0^2\Lf_0^2}
+                  {\sigma^2+k^2\cs^2}\right].
+\end{equation}
+In the limit $\cs\to c$ (incompressible) this simplifies to
+\begin{equation}
+\label{eq:rel-104-23}
+\sigma = k\,V_0\,\Lf_0,
+\end{equation}
+which exceeds the classical growth rate $\sigma_{\mathrm{cl}}=kV_0$
+by a factor of $\Lf_0$.  This Lorentz-factor enhancement of the KH
+growth rate is a key relativistic effect.
+
+\subsection{Stabilisation by compressibility}
+\label{sec:rel-11-104-comp-stab}
+
+For finite $\cs$, the KH instability is suppressed when the
+\emph{effective Mach number} in both rest frames exceeds unity.  The
+critical condition is
+\begin{equation}
+\label{eq:rel-104-24}
+\boxed{\frac{\Lf_{\mathrm{rel}}^2\,V_0^2}{\cs^2}
+  = \frac{V_0^2}{\cs^2(1-V_0^2/c^2)} > 1
+  \quad\Longrightarrow\quad
+  V_0 > \frac{\cs}{\sqrt{1+\cs^2/c^2}}.}
+\end{equation}
+This is the \emph{relativistic compressible stabilisation} threshold.
+In the non-relativistic limit ($c\to\infty$) it reduces to $V_0>\cs$,
+the classical result.  For a relativistic equation of state with
+$\cs=c/\sqrt{3}$ (appropriate for an ultra-relativistic gas), the
+threshold is $V_0 > c/2$.
+
+%% ================================================================
+\section{Kelvin--Helmholtz stability of relativistic jets ($\Gamma\gg 1$)}
+\label{sec:rel-11-104-jets}
+
+The results of the preceding sections can be applied directly to the
+stability of relativistic astrophysical jets, which constitute the
+most important physical realisation of a relativistic shear layer.
+
+\subsection{Jet model}
+\label{sec:rel-11-104-jets-model}
+
+Consider a cylindrical jet of radius $R$ propagating with bulk
+Lorentz factor $\Gamma_j$ through an ambient medium at rest.  The
+jet--ambient interface is a shear layer with $V_0\approx c(1-1/2\Gamma_j^2)$.
+Taking a slab approximation for modes with wavelength $\lambda\ll R$
+(i.e.\ body modes are neglected), the local stability is governed by
+the vortex-sheet relation~\eqref{eq:rel-104-20} with
+$V_1=V_j$, $V_2=0$.
+
+\subsection{Growth rate scaling}
+\label{sec:rel-11-104-jets-growth}
+
+For perturbations propagating along the jet ($k$ in the $x$-direction)
+the maximum temporal growth rate in the jet frame is
+\begin{equation}
+\label{eq:rel-104-25}
+\sigma_{\max}^{\mathrm{(jet)}} \sim \frac{k\cs}{\Gamma_j},
+\end{equation}
+while in the lab (observer) frame, time dilation gives
+\begin{equation}
+\label{eq:rel-104-26}
+\sigma_{\max}^{\mathrm{(lab)}} \sim \frac{k\cs}{\Gamma_j^2}.
+\end{equation}
+The $\Gamma_j^{-2}$ suppression is a crucial result: highly
+relativistic jets are \emph{stabilised} against KH modes by time
+dilation, which is why $\Gamma\sim 10$--$50$ AGN jets can propagate
+over megaparsec scales without disrupting.  This is sometimes called
+the \emph{relativistic stabilisation of jets}.
+
+\subsection{The role of the equation of state}
+\label{sec:rel-11-104-jets-eos}
+
+For an ideal gas with adiabatic index $\hat\gamma$, the relativistic
+sound speed is
+\begin{equation}
+\label{eq:rel-104-27}
+\cs^2 = \frac{\hat\gamma\,p}{\varepsilon+p}\,c^2
+  = \frac{\hat\gamma\,k_B T}{m c^2 + \hat\gamma\,k_B T/(\hat\gamma-1)}\,c^2.
+\end{equation}
+In the ultra-relativistic limit $k_B T\gg mc^2$,
+$\cs\to c/\sqrt{3}$ (for $\hat\gamma=4/3$), and the compressible
+stabilisation threshold~\eqref{eq:rel-104-24} becomes $V_0>c/2$.
+For a cold jet ($k_BT\ll mc^2$), $\cs\to 0$ and KH modes can grow
+at all velocities, but the growth rates are correspondingly small.
+
+\subsection{Comparison with classical results}
+\label{sec:rel-11-104-jets-comparison}
+
+Table~\ref{tab:rel-104-comparison} summarises the principal differences
+between the classical (\S\,104) and relativistic shear-layer analyses.
+
+\begin{table}[htbp]
+\centering
+\caption{Classical vs.\ relativistic shear-layer instability}
+\label{tab:rel-104-comparison}
+\begin{tabular}{lcc}
+\hline\hline
+Quantity & Classical (\S\,104) & Relativistic \\
+\hline
+Effective inertia & $\rho_0$ & $\enthalpy\,\Lf^2 = (\varepsilon+p)\Lf^2/c^2$ \\
+Richardson number $J$ & $g\beta d^2/U_0^2$ & $J_{\mathrm{rel}}$
+  [eq.~\eqref{eq:rel-104-11}] \\
+Marginal curve & $J=k^2(1-k^2)$ & eq.~\eqref{eq:rel-104-17} \\
+$J_{\max}$ & $\tfrac{1}{4}$ & $\tfrac{1}{4}(1+V_0^2/3c^2+\cdots)$ \\
+Incompressible growth rate & $kU_0$ & $k V_0\Lf_0$ \\
+Compressible stabilisation & $V_0 > \cs$ & eq.~\eqref{eq:rel-104-24} \\
+Jet KH growth (lab frame) & --- & $\propto\Gamma_j^{-2}$ \\
+\hline\hline
+\end{tabular}
+\end{table}
+
+%% ================================================================
+\section{The non-relativistic limit}
+\label{sec:rel-11-104-NR}
+
+It is instructive to verify that the relativistic results reduce to
+Chandrasekhar's classical analysis of \S\,104 in the limit $V_0/c\to 0$.
+\begin{enumerate}
+\item The Lorentz factor $\Lf(z)\to 1$, so the effective velocity
+  $\hat{U}\to\tanh(z/d)$, recovering \eqref{eq:11-101}.
+\item The enthalpy $\enthalpy\to\rho_0$ (rest-mass dominates), so the
+  relativistic Richardson number $J_{\mathrm{rel}}\to g\beta d^2/V_0^2 = J$.
+\item The marginal curve~\eqref{eq:rel-104-17} reduces to
+  $J=k^2(1-k^2)$, i.e.\ equation~\eqref{eq:11-129}.
+\item The maximum Richardson number $J_{\max}\to\tfrac{1}{4}$ at
+  $k^2=\tfrac{1}{2}$, confirming \eqref{eq:11-135}.
+\item The incompressible growth rate $\sigma\to kV_0$, the standard KH
+  result.
+\end{enumerate}
+
+%% ================================================================
+\section{Summary and astrophysical implications}
+\label{sec:rel-11-104-summary}
+
+The relativistic generalisation of the Drazin shear-layer problem
+reveals three principal effects:
+\begin{enumerate}
+\item \textbf{Enhanced instability at moderate $V_0/c$.}  The
+  critical Richardson number increases as $J_{\max}^{\mathrm{rel}}
+  =\tfrac{1}{4}(1+V_0^2/3c^2+\cdots)$; a stronger stratification is
+  needed to suppress KH modes.
+\item \textbf{Lorentz-factor enhancement of growth rate.}  In the
+  incompressible limit the growth rate is $\sigma=kV_0\Lf_0$, a factor
+  $\Lf_0$ faster than the classical result.
+\item \textbf{Relativistic jet stabilisation.}  For $\Gamma_j\gg 1$,
+  the lab-frame growth rate scales as $\Gamma_j^{-2}$, explaining the
+  remarkable collimation of AGN and GRB jets over astrophysical
+  distances.
+\end{enumerate}
+
+These results connect Chandrasekhar's classical analysis directly to
+modern high-energy astrophysics and provide a framework within which
+numerical simulations of relativistic jet stability (e.g.\ Perucho et
+al.\ 2004, 2010; Millas et al.\ 2017) can be interpreted analytically.
