@@ -34,6 +34,7 @@
 \usepackage{tcolorbox}
 \usepackage{fancyhdr}
 \usepackage{natbib}
+\usepackage{longtable}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 \pdfstringdefDisableCommands{%
   \def\boldsymbol#1{#1}%
@@ -175,6 +176,9 @@
 % =====================================================================
 \begin{document}
 
+% =============================================================
+% Title page
+% =============================================================
 \begin{titlepage}
 \centering
 \vspace*{3cm}
@@ -190,18 +194,268 @@ Hydromagnetic Stability\par}
 {\large \today\par}
 \end{titlepage}
 
+% =============================================================
+% Front matter
+% =============================================================
+\frontmatter
+
+% --- Preface ---
+\chapter{Preface}
+\label{ch:preface}
+
+Chandrasekhar's 1961 monograph \emph{Hydrodynamic and Hydromagnetic Stability}
+remains one of the most influential works in theoretical fluid dynamics.  It
+provides a comprehensive, self-contained treatment of the principal
+instabilities that arise in non-relativistic fluids and plasmas---from thermal
+convection and rotating flows to the Rayleigh--Taylor and Kelvin--Helmholtz
+instabilities, gravitational collapse, and variational energy principles.
+
+The present volume extends every chapter of Chandrasekhar's treatise into the
+domain of special- and general-relativistic fluids.  The motivations are both
+theoretical and astrophysical.  On the theoretical side, relativistic
+corrections to classical instability criteria reveal new physics: enthalpy
+replaces rest-mass density as the inertial quantity; pressure contributes to
+gravitational attraction; and dissipative processes must be formulated
+carefully to preserve causality and thermodynamic stability.  On the
+astrophysical side, relativistic instabilities govern the dynamics of
+neutron-star mergers, gamma-ray burst jets, accretion flows around black holes,
+and the quark--gluon plasma produced in heavy-ion collisions.
+
+\paragraph{Why BDNK?}
+The treatment of viscous and thermally conducting fluids in relativity has a
+troubled history.  The classical relativistic Navier--Stokes equations
+(Eckart, 1940; Landau \& Lifshitz, 1959) are acausal and linearly unstable
+about equilibrium---a pathology first identified by Hiscock and Lindblom
+(1985).  The Israel--Stewart second-order theory (1979) restores causality by
+promoting dissipative fluxes to independent dynamical variables, but at the
+cost of introducing additional evolution equations and a large number of
+transport coefficients.
+
+The Bemfica--Disconzi--Noronha--Kovtun (BDNK) formalism, developed from 2018
+onward, offers a compelling alternative.  It remains a \emph{first-order}
+theory---dissipative fluxes are still algebraic functions of the fluid
+variables and their first gradients---but achieves causality and stability
+through a careful choice of hydrodynamic frame (the ``out-of-equilibrium''
+definitions of temperature, chemical potential, and flow velocity).  The
+resulting equations are no more complicated than Navier--Stokes, yet they are
+well-posed as an initial-value problem in full general relativity.
+
+This combination of simplicity and rigour makes BDNK the natural framework for
+extending Chandrasekhar's linear-stability analyses to relativistic regimes.
+Every dissipative correction in this book reduces to the classical
+Navier--Stokes result in the non-relativistic limit $v/c \to 0$, while
+remaining causal at all speeds.
+
+\paragraph{Structure of this book.}
+The book is divided into four parts, mirroring the thematic organisation of
+Chandrasekhar's original.  Three preliminary framework chapters develop the
+relativistic hydrodynamic, magnetohydrodynamic, and thermodynamic machinery
+needed throughout.  Part~I treats relativistic thermal instability
+(Chapters~I--VI), Part~II addresses the stability of relativistic flows
+(Chapters~VII--IX), Part~III considers relativistic superposed fluids
+(Chapters~X--XI), and Part~IV covers relativistic jets, gravitational
+instability, and general variational principles (Chapters~XII--XIV).  An
+epilogue collects the principal results in tabular form and identifies open
+problems.
+
+\paragraph{Prerequisites.}
+The reader is assumed to be familiar with Chandrasekhar's original treatise (or
+an equivalent background in classical hydrodynamic stability theory) and with
+the basics of special and general relativity at the level of a standard
+graduate text (e.g., Weinberg, Misner--Thorne--Wheeler, or Carroll).
+
+% --- Acknowledgments ---
+\chapter{Acknowledgments}
+\label{ch:acknowledgments}
+
+This work builds on the intellectual foundation laid by Subrahmanyan
+Chandrasekhar in his 1961 monograph.  We are indebted to the developers of
+the BDNK formalism---Marcelo~Disconzi, Fabio~Bemfica, Jorge~Noronha, and
+Pavel~Kovtun---whose work made a causal first-order relativistic viscous
+hydrodynamics possible.
+
+We thank the broader community of researchers in relativistic fluid dynamics,
+numerical relativity, and high-energy nuclear physics whose insights have
+shaped our understanding of relativistic instabilities.  In particular, we
+acknowledge the developers of the GRMHD simulation codes
+\texttt{BHAC}, \texttt{IllinoisGRMHD}, \texttt{AthenaK}, and
+\texttt{SpECTRE}, whose numerical experiments provide essential context for
+the analytic results presented here.
+
+% --- Notation Guide ---
+\chapter{Notation and Conventions}
+\label{ch:notation}
+
+We collect here the principal notation and sign conventions used throughout
+this book.  A summary table is provided at the end for quick reference.
+
+\section*{General Conventions}
+
+\begin{itemize}
+\item \textbf{Metric signature:} $(-,+,+,+)$.  The Minkowski metric is
+  $\eta_{\mu\nu} = \mathrm{diag}(-1,+1,+1,+1)$.
+\item \textbf{Speed of light:} $c$ is kept explicit in all formulae to
+  facilitate taking the non-relativistic limit $v/c \to 0$.
+\item \textbf{Units:} Gaussian--CGS units for electromagnetic quantities;
+  $G$ and $k_B$ are kept explicit.
+\item \textbf{Index conventions:} Greek indices $\mu, \nu, \alpha, \ldots$
+  run over $0,1,2,3$.  Latin indices $i, j, k, \ldots$ run over spatial
+  components $1,2,3$.  Einstein summation convention is assumed unless stated
+  otherwise.
+\item \textbf{Covariant derivative:} $\nabla_\mu$ denotes the covariant
+  derivative compatible with $g_{\mu\nu}$.
+\item \textbf{Lie derivative:} $\mathcal{L}_\xi$ denotes the Lie derivative
+  along the vector field $\xi^\mu$.
+\end{itemize}
+
+\section*{Fluid Variables}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$u^\mu$         & \verb|\fvel|       & Four-velocity (normalised: $u^\mu u_\mu = -c^2$) \\
+$\gamma$        & \verb|\Lf|         & Lorentz factor, $\gamma = (1 - v^2/c^2)^{-1/2}$ \\
+$\rho_0$        & \verb|\rdensity|   & Rest-mass (baryon) density \\
+$\varepsilon$   & \verb|\edensity|   & Energy density (in fluid rest frame) \\
+$p$             &                    & Thermodynamic pressure \\
+$w = \varepsilon + p$ & \verb|\enthalpy| & Relativistic enthalpy density \\
+$c_{\mathrm{s}}$ & \verb|\cs|       & Relativistic sound speed \\
+$T$             &                    & Temperature \\
+$s$             &                    & Entropy per baryon \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Electromagnetic and MHD Quantities}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$F^{\mu\nu}$    & \verb|\farad|    & Faraday (electromagnetic field) tensor \\
+${}^*\!F^{\mu\nu}$ & \verb|\dualF| & Dual Faraday tensor \\
+$b^\mu$         & \verb|\bfour|    & Magnetic four-vector (projection of $F^{\mu\nu}$ onto $u_\nu$) \\
+$b^2 \equiv b^\mu b_\mu$ & \verb|\bsq| & Magnetic pressure parameter \\
+$v_{\mathrm{A}}$ & \verb|\vA|     & Alfv\'en speed \\
+$v_{\mathrm{f}}$, $v_{\mathrm{s}}$ & \verb|\vf|, \verb|\vs| & Fast and slow magnetosonic speeds \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Tensors and Projectors}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$T^{\mu\nu}$    & \verb|\emt|        & Energy--momentum tensor \\
+$g_{\mu\nu}$    & \verb|\metricdown| & Spacetime metric \\
+$\eta_{\mu\nu}$ & (explicit)         & Minkowski metric \\
+$\Delta^{\mu\nu} = g^{\mu\nu} + u^\mu u^\nu/c^2$
+                & \verb|\proj|       & Spatial projection tensor \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{BDNK Dissipative Quantities}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$\Pi$           & \verb|\Pibulk|     & Bulk viscous pressure \\
+$\pi^{\mu\nu}$  & \verb|\shearten|   & Shear stress tensor \\
+$Q^\mu$         & \verb|\heatflux|   & Heat flux four-vector \\
+$\zeta$         & \verb|\bulkvisc|   & Bulk viscosity coefficient \\
+$\eta_{\mathrm{s}}$ & \verb|\shearvisc| & Shear viscosity coefficient \\
+$\kappa$        & \verb|\thermcond|  & Thermal conductivity \\
+$\varepsilon_1, \beta_1, \alpha_1$ & \verb|\epsone|, \verb|\betaone|, \verb|\alphaone| & BDNK frame coefficients \\
+$\sigma^{\mu\nu}$ & \verb|\sheartensor| & Shear tensor (kinematic) \\
+$\theta$        & \verb|\expansion|  & Expansion scalar, $\theta = \nabla_\mu u^\mu$ \\
+$\tau_q$        & \verb|\tauq|       & BDNK thermal relaxation scale \\
+$\tau_\pi$      & \verb|\taupi|      & BDNK viscous relaxation scale \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Dimensionless Numbers}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$\mathrm{Ra}_{\mathrm{rel}}$ & \verb|\Rarel| & Relativistic Rayleigh number \\
+$\mathrm{Ta}_{\mathrm{rel}}$ & \verb|\Tarel| & Relativistic Taylor number \\
+$Q_{\mathrm{rel}}$           & \verb|\Qrel|  & Relativistic Chandrasekhar number \\
+$\mathcal{M}$                & \verb|\Mach|  & Mach number \\
+$\mathrm{Pr}$                & \verb|\Pran|  & Prandtl number \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Operators and Shorthands}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Symbol} & \textbf{Macro} & \textbf{Meaning} \\
+\midrule
+$\Box$            & \verb|\dAlembert|  & d'Alembertian, $\Box = g^{\mu\nu}\nabla_\mu\nabla_\nu$ \\
+$\mathcal{O}(x)$  & \verb|\order{x}|  & Order-of-magnitude estimate \\
+$[1 + \mathcal{O}(x)]$ & \verb|\relcorr{x}| & Relativistic correction factor \\
+$\xrightarrow{v/c \to 0}$ & \verb|\NRlimit| & Non-relativistic limit arrow \\
+$\mathrm{d}$      & \verb|\dd|        & Roman ``d'' for differentials \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section*{Custom Highlight Environments}
+
+Three coloured boxes are used throughout the text:
+\begin{itemize}
+\item \texttt{causalitycheck} (yellow): verifies that BDNK causality constraints are satisfied.
+\item \texttt{relcorrection} (blue): highlights the key relativistic correction in each section.
+\item \texttt{bdnkframe} (green): specifies the BDNK frame choice for a given calculation.
+\end{itemize}
+
+
+% =============================================================
+% Table of contents
+% =============================================================
 \tableofcontents
 
 % =============================================================
-% Part I: Relativistic framework chapters
+% Main matter
 % =============================================================
+\mainmatter
+
+% =============================================================
+% Relativistic Framework Chapters (Preliminaries)
+% =============================================================
+\part{Relativistic Framework}
+\label{part:framework}
+
 \input{rel_framework_hydro}
 \input{rel_framework_mhd}
 \input{rel_framework_thermo}
 
 % =============================================================
-% Part II: Modified stability chapters (Ch I--XIV)
+% Part I: Relativistic Thermal Instability (Ch I--VI)
 % =============================================================
+\part{Relativistic Thermal Instability}
+\label{part:thermal}
 
 % --- Chapter I ---
 \input{rel_chapter_1}
@@ -238,6 +492,12 @@ Hydromagnetic Stability\par}
 \input{rel_chapter_6_sec60}
 \input{rel_chapter_6_sec61-63}
 
+% =============================================================
+% Part II: Relativistic Stability of Flows (Ch VII--IX)
+% =============================================================
+\part{Relativistic Stability of Flows}
+\label{part:flows}
+
 % --- Chapter VII ---
 \input{rel_chapter_7_sec64-66}
 \input{rel_chapter_7_sec67}
@@ -258,6 +518,12 @@ Hydromagnetic Stability\par}
 \input{rel_chapter_9_sec87-89}
 \input{rel_chapter_9_sec90-91}
 
+% =============================================================
+% Part III: Relativistic Stability of Superposed Fluids (Ch X--XI)
+% =============================================================
+\part{Relativistic Stability of Superposed Fluids}
+\label{part:superposed}
+
 % --- Chapter X ---
 \input{rel_chapter_10_sec90-92}
 \input{rel_chapter_10_sec93}
@@ -271,6 +537,13 @@ Hydromagnetic Stability\par}
 \input{rel_chapter_11_sec102-103}
 \input{rel_chapter_11_sec104}
 \input{rel_chapter_11_sec105-106}
+
+% =============================================================
+% Part IV: Relativistic Jets, Gravitational Instability,
+%          and General Principles (Ch XII--XIV)
+% =============================================================
+\part{Relativistic Jets, Gravitational Instability, and General Principles}
+\label{part:jets-grav}
 
 % --- Chapter XII ---
 \input{rel_chapter_12_sec107-109}
@@ -288,8 +561,15 @@ Hydromagnetic Stability\par}
 \input{rel_chapter_14_sec123}
 
 % =============================================================
+% Epilogue
+% =============================================================
+\input{rel_epilogue}
+
+% =============================================================
 % Back matter
 % =============================================================
+\backmatter
+
 \listoffigures
 
 \bibliographystyle{unsrt}

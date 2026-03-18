@@ -1,0 +1,166 @@
+% =============================================================
+% Epilogue: Summary, Relativistic Corrections, and Open Problems
+% =============================================================
+
+\chapter{Epilogue: Relativistic Corrections to Classical Instabilities}
+\label{ch:epilogue}
+
+\section{Summary of Relativistic Modifications}
+
+The preceding fourteen chapters have systematically extended every classical
+hydrodynamic and hydromagnetic instability treated by Chandrasekhar into the
+regime of special- and general-relativistic fluids, using the causal,
+first-order BDNK viscous hydrodynamics framework throughout.  The central
+lesson is that \emph{every} classical instability criterion acquires
+relativistic corrections that depend on the ratio of the fluid's enthalpy
+density to its rest-mass energy density, $\enthalpy / \rdensity c^2$, and on
+the flow Lorentz factor $\Lf$.  These corrections are not merely kinematic
+rescalings: the BDNK causal structure introduces new time-scales
+($\tauq$, $\taupi$) that modify overstability boundaries and can suppress or
+enhance instabilities that are absent in the Navier--Stokes limit.
+
+Below we collect the principal results in tabular form.
+
+\section{Master Table of Relativistic Correction Factors}
+\label{sec:master-table}
+
+Table~\ref{tab:master-corrections} summarises, for each instability, the
+leading-order relativistic correction factor that multiplies the classical
+threshold or growth rate.  In every case the non-relativistic limit
+$v/c \to 0$ recovers Chandrasekhar's original result.
+
+\begin{table}[htbp]
+\centering
+\small
+\caption{Summary of relativistic corrections to classical instabilities.
+Here $\Lf$ is the Lorentz factor, $\enthalpy = \edensity + p$ the relativistic
+enthalpy density, $\rdensity$ the rest-mass density, $\cs$ the relativistic
+sound speed, and $\tauq$, $\taupi$ the BDNK relaxation time-scales.}
+\label{tab:master-corrections}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}p{3.8cm}cp{5.5cm}@{}}
+\toprule
+\textbf{Instability (Chapter)} & \textbf{Key correction factor} & \textbf{Physical origin} \\
+\midrule
+Thermal convection (II--III)
+  & $\Rarel = \Ra\,\dfrac{\rdensity}{\enthalpy/c^2}$
+  & Inertia of enthalpy replaces rest mass \\[6pt]
+Thermal convection with rotation (IV--V)
+  & $\Tarel = \Ta\,\dfrac{\rdensity^2}{(\enthalpy/c^2)^2}$
+  & Relativistic Coriolis coupling \\[6pt]
+Thermal convection with magnetic field (VI)
+  & $\Qrel = Q\,\dfrac{\rdensity}{\enthalpy/c^2}\,\dfrac{1}{1+\bsq/\enthalpy}$
+  & Magnetic enthalpy contribution \\[6pt]
+Rayleigh--Taylor (X)
+  & $\Lf^2\,\dfrac{\enthalpy}{\rdensity c^2}$
+  & Relativistic effective inertia \\[6pt]
+Kelvin--Helmholtz (XI)
+  & $\Lf_1^2\Lf_2^2\,\dfrac{\enthalpy_1\,\enthalpy_2}{\rdensity_1\rdensity_2 c^4}$
+  & Lorentz-boosted interface momentum flux \\[6pt]
+Stability of Couette flow (VII)
+  & $\dfrac{\Lf^2\,\enthalpy}{\rdensity c^2}$
+  & Relativistic angular momentum density \\[6pt]
+Stability of viscous flow (VIII--IX)
+  & BDNK: $1 + \taupi\,\omega$
+  & Causal viscous propagation delay \\[6pt]
+Jeans / gravitational (XIII)
+  & $k_J^2 \to k_J^2\,\dfrac{\enthalpy}{\rdensity c^2}\bigl(1+\frac{3p}{\edensity}\bigr)$
+  & Pressure gravitates (Tolman--Oppenheimer--Volkoff) \\[6pt]
+Relativistic jets / current-driven (XII)
+  & $\Lf^2\bigl(1 + \vA^2/c^2\bigr)$
+  & Magnetic tension boosted by flow Lorentz factor \\[6pt]
+Variational / energy principles (XIV)
+  & $\delta^2 W \to \delta^2 W + \order{v^2/c^2}$
+  & Relativistic energy functional corrections \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Open Problems and Future Directions}
+\label{sec:open-problems}
+
+\begin{enumerate}
+\item \textbf{Nonlinear saturation in the relativistic regime.}
+  The present work is entirely linear.  Nonlinear saturation amplitudes for
+  relativistic Rayleigh--Taylor, Kelvin--Helmholtz, and magneto-rotational
+  instabilities remain poorly constrained analytically.
+
+\item \textbf{BDNK transport coefficients from kinetic theory.}
+  The BDNK frame coefficients $(\epsone, \betaone, \alphaone)$ used here are
+  treated as free parameters subject to causality and stability constraints.
+  First-principles derivations from relativistic Boltzmann theory for
+  astrophysical plasmas (as opposed to quark--gluon plasmas) are still needed.
+
+\item \textbf{General-relativistic extensions in strong-field backgrounds.}
+  We have worked in Minkowski or weakly curved backgrounds.  Extending these
+  results to Kerr spacetimes---relevant for accretion disks around spinning
+  black holes---requires coupling the BDNK equations to the full Einstein
+  field equations.
+
+\item \textbf{Numerical verification via GRMHD simulations.}
+  The analytic growth rates and threshold corrections derived here provide
+  quantitative predictions testable in state-of-the-art general-relativistic
+  magnetohydrodynamic codes such as \texttt{BHAC}, \texttt{IllinoisGRMHD},
+  \texttt{AthenaK}, and \texttt{SpECTRE}.  Systematic comparison between
+  linear theory and nonlinear simulation is a high-priority next step.
+
+\item \textbf{Instabilities in neutron-star mergers.}
+  The Kelvin--Helmholtz and magneto-rotational instabilities at the
+  merger interface of binary neutron stars operate at Lorentz factors
+  $\Lf \sim 1$--$2$ and temperatures $T \sim 50$\,MeV.  The BDNK corrections
+  derived in Chapters~X--XI and VII are directly applicable and could refine
+  sub-grid models used in numerical relativity simulations.
+
+\item \textbf{Resistive and radiative extensions.}
+  This monograph treats ideal MHD with viscous and thermal dissipation.
+  Resistive and optically thick (radiation-MHD) extensions of the BDNK
+  framework---and their implications for instability thresholds---remain
+  largely unexplored.
+
+\item \textbf{Turbulent transport in relativistic convection.}
+  The relativistic Rayleigh and B\'enard problems derived here set the stage
+  for a relativistic mixing-length theory.  Connecting the linear onset
+  criteria to turbulent transport coefficients in relativistic stellar
+  envelopes is an important astrophysical application.
+\end{enumerate}
+
+\section{Connection to Numerical GRMHD Simulations}
+\label{sec:grmhd-connection}
+
+Modern GRMHD codes solve the full nonlinear equations of relativistic
+magnetohydrodynamics on adaptive meshes, often coupled to nuclear
+equations of state and neutrino transport.  The linear-stability results of
+this book connect to simulations in three ways:
+
+\paragraph{Benchmark tests.}
+The analytic dispersion relations derived here---particularly for the
+relativistic Rayleigh--Taylor (Chapter~X), Kelvin--Helmholtz (Chapter~XI),
+and magnetorotational (Chapter~VII) instabilities---provide exact or
+semi-analytic growth rates that can serve as convergence tests for GRMHD
+codes.  A simulation that cannot reproduce the correct linear growth rate in
+the appropriate limit has a bug or insufficient resolution.
+
+\paragraph{Sub-grid models.}
+In large-scale astrophysical simulations (e.g., jet propagation, accretion
+disk evolution), the smallest unstable scales are unresolved.  The
+relativistic correction factors tabulated in
+Table~\ref{tab:master-corrections} can inform sub-grid prescriptions for
+turbulent viscosity and mixing, replacing \emph{ad hoc} Newtonian estimates
+with physically motivated relativistic expressions.
+
+\paragraph{Interpreting simulation results.}
+When a simulation exhibits an instability---for instance, kink modes in a
+relativistic jet---the analytic framework of Chapter~XII allows one to
+identify the dominant mode, predict its growth rate, and assess whether the
+observed behaviour is physical or numerical.
+
+\bigskip
+\noindent
+In summary, this monograph provides the theoretical scaffolding for
+understanding hydrodynamic and hydromagnetic instabilities in relativistic
+astrophysical flows.  The BDNK formalism ensures that the dissipative sector
+is causal and stable, resolving long-standing pathologies of relativistic
+Navier--Stokes theory.  The systematic chapter-by-chapter correspondence with
+Chandrasekhar's classical treatise is intended to make the relativistic
+generalisations as accessible as possible to researchers trained in the
+Newtonian theory.
