@@ -1,0 +1,742 @@
+% Relativistic Chapter II, Sections 5--9
+% Bénard problem: perturbation equations in a relativistic framework
+% Based on Chandrasekhar Ch.~II §5--9, extended to special-relativistic hydrodynamics
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{RELATIVISTIC THERMAL INSTABILITY OF A HEATED FLUID LAYER}
+\label{ch:rel2}
+
+\begin{center}
+  {\Large 1. THE RELATIVISTIC B\'ENARD PROBLEM}
+\end{center}
+
+%======================================================================
+\section{Introduction}\label{sec:rel5}
+%======================================================================
+
+The classical theory of thermal instability in a horizontal layer of fluid
+heated from below, as developed by Rayleigh and expounded in Chapter~II,
+rests on the Navier--Stokes equations supplemented by Fourier's law of
+heat conduction.  While this framework is entirely adequate for ordinary
+laboratory fluids at non-relativistic temperatures, there are compelling
+reasons---both of principle and of astrophysical application---to formulate
+the B\'enard problem within a relativistic setting.
+
+\emph{First}, Fourier's law predicts infinite speed of propagation for
+thermal signals: a temperature perturbation at one point is felt
+instantaneously everywhere.  This parabolic character of the
+diffusion equation violates relativistic causality.  The Israel--Stewart
+theory of dissipative relativistic fluids replaces Fourier's law by a
+\emph{hyperbolic} transport equation with a finite relaxation time $\tau_q$,
+restoring causal propagation of thermal disturbances.
+
+\emph{Second}, in relativistic fluids it is not the rest-mass density
+$\rho_0$ alone that provides the inertia; rather, it is the \emph{enthalpy
+density} $w = (\varepsilon + p)/c^2$ (where $\varepsilon$ is the energy density
+and $p$ the pressure) that plays the role of inertial mass density.
+This distinction becomes significant in astrophysical plasmas---neutron-star
+oceans, accretion-disc atmospheres, the early-universe quark--gluon
+plasma---where thermal and binding energies are a non-negligible fraction
+of the rest-mass energy.
+
+\emph{Third}, a systematic relativistic treatment reveals how the
+classical Rayleigh number is modified when pressure contributions to
+inertia, relativistic thermodynamics, and causal heat transport are
+included.  The corrections are of order $v^2/c^2$ and $\tau_q/\tau_{\mathrm{diff}}$,
+and they qualitatively change the stability boundary in the
+high-temperature regime.
+
+Our aim in the present chapter is therefore to derive, from first principles
+of relativistic fluid dynamics, the perturbation equations governing the
+onset of convective instability in a relativistic fluid layer heated from
+below.  The analysis parallels that of Chandrasekhar's classical treatment
+(\S\S~5--9 of Chapter~II) step by step, so that the non-relativistic limit
+can be recovered at every stage by taking $c \to \infty$ and $\tau_q \to 0$.
+
+%======================================================================
+\section{The nature of the physical problem}\label{sec:rel6}
+%======================================================================
+
+Consider a horizontal layer of relativistic fluid of depth $d$, confined
+between two plane boundaries at $z = 0$ (bottom) and $z = d$ (top).
+The bottom boundary is maintained at temperature $T_0$ and the top at
+$T_1 < T_0$, so that a steady adverse temperature gradient
+$\beta = (T_0 - T_1)/d > 0$ is established.  Gravity acts in the
+$-z$ direction with (proper) acceleration~$g$.
+
+In the classical theory, the inertia of a fluid element is determined
+solely by the rest-mass density $\rho$.  In the relativistic theory, the
+\emph{total inertial mass density} is
+\begin{equation}
+\label{eq:rel2-1}
+  w \;=\; \frac{\varepsilon + p}{c^2}\,,
+\end{equation}
+where $\varepsilon$ is the total energy density (rest-mass energy plus
+internal energy) and $p$ is the isotropic pressure.  For a
+non-relativistic ideal gas, $\varepsilon \approx \rho_0 c^2$ and
+$p \ll \rho_0 c^2$, so $w \approx \rho_0$; but in general the
+pressure and thermal energy contribute to $w$ and thereby modify the
+buoyancy force.
+
+The thermal expansion of the fluid is described, as classically, by
+\begin{equation}
+\label{eq:rel2-2}
+  \rho = \rho_0\bigl[1 - \alpha(T - T_0)\bigr],
+\end{equation}
+where $\alpha$ is the coefficient of volume expansion.  However, the energy
+density $\varepsilon$ and the pressure $p$ each depend on temperature, so
+the enthalpy density $w$ varies as
+\begin{equation}
+\label{eq:rel2-3}
+  w = w_0\bigl[1 - \alpha_w(T - T_0)\bigr], \qquad
+  \alpha_w = -\frac{1}{w_0}\frac{\partial w}{\partial T}\bigg|_{T_0}\,,
+\end{equation}
+where $\alpha_w$ is an \emph{effective enthalpy expansion coefficient}.  In
+general $\alpha_w \neq \alpha$; the discrepancy encodes genuinely
+relativistic corrections to the buoyancy.
+
+The instability is still controlled by a competition between buoyancy
+(proportional to $g\,\alpha\,\beta\,d$) and dissipation (viscous and thermal).
+Following the classical pattern, we define the \emph{relativistic Rayleigh number}
+\begin{equation}
+\label{eq:rel2-4}
+  \mathrm{Ra}_{\mathrm{rel}} = \frac{g\,\alpha\,\beta\,d^4}{\kappa_T\,\nu}
+  \left[1 + \mathcal{O}\!\left(\frac{v^2}{c^2}\right)\right],
+\end{equation}
+where $\kappa_T$ is the relativistic thermal diffusivity (to be defined below)
+and $\nu = \eta_{\mathrm{s}} / w_0$ is the \emph{relativistic} kinematic viscosity
+(note: the inertial mass density $w_0$, not $\rho_0$, enters the denominator).
+Instability sets in when $\mathrm{Ra}_{\mathrm{rel}}$ exceeds a critical value
+$\mathrm{Ra}_{\mathrm{rel},c}$.
+
+A key qualitative difference from the classical problem is the role of the
+heat-flux relaxation time $\tau_q$.  In the Israel--Stewart framework, heat
+does not propagate instantaneously; instead, it obeys a telegraph-type
+equation.  This renders the perturbation equations \emph{hyperbolic} rather
+than parabolic, and introduces an additional dimensionless parameter
+$\tau_q \kappa_T / d^2$ which can shift the critical Rayleigh number and---for
+sufficiently large $\tau_q$---can change the onset from stationary to
+oscillatory (overstable) convection even in the absence of rotation or a
+magnetic field.
+
+%======================================================================
+\section{The basic relativistic hydrodynamic equations}\label{sec:rel7}
+%======================================================================
+
+We work in the framework of special relativity in the presence of a
+uniform gravitational field $g$ (i.e.\ the weak-field limit where the
+spacetime is effectively Minkowski with a static gravitational potential
+$\Phi = g\,z$).  Greek indices $\mu,\nu,\ldots = 0,1,2,3$ label spacetime
+components; Latin indices $i,j,\ldots = 1,2,3$ label spatial components.
+The metric signature is $(-,+,+,+)$, and the 4-velocity $u^\mu$ is
+normalized according to
+\begin{equation}
+\label{eq:rel2-5}
+  u^\mu u_\mu = -c^2.
+\end{equation}
+The projection tensor orthogonal to $u^\mu$ is
+\begin{equation}
+\label{eq:rel2-6}
+  \Delta^{\mu\nu} = g^{\mu\nu} + \frac{u^\mu u^\nu}{c^2}\,.
+\end{equation}
+
+%----------------------------------------------------------------------
+\subsection{The energy--momentum tensor}\label{sec:rel7a}
+%----------------------------------------------------------------------
+
+For a dissipative fluid, the energy--momentum tensor in the
+Israel--Stewart (extended irreversible thermodynamics) framework is
+\begin{equation}
+\label{eq:rel2-7}
+  T^{\mu\nu} = \varepsilon\,\frac{u^\mu u^\nu}{c^2}
+    + (p + \Pi)\,\Delta^{\mu\nu}
+    + \pi^{\mu\nu}
+    + \frac{1}{c^2}\bigl(q^\mu u^\nu + q^\nu u^\mu\bigr),
+\end{equation}
+where $\Pi$ is the bulk viscous pressure, $\pi^{\mu\nu}$ is the shear-stress
+tensor (symmetric, traceless, and orthogonal to $u^\mu$), and $q^\mu$ is the
+heat-flux 4-vector (orthogonal to $u^\mu$: $q^\mu u_\mu = 0$).
+
+%----------------------------------------------------------------------
+\subsection{The equation of continuity (baryon-number conservation)}%
+\label{sec:rel7b}
+%----------------------------------------------------------------------
+
+The conservation of baryon number is expressed as
+\begin{equation}
+\label{eq:rel2-8}
+  \nabla_\mu\!\bigl(\rho_0\, u^\mu\bigr) = 0,
+\end{equation}
+where $\rho_0$ is the rest-mass density (baryon mass density) measured in the
+local rest frame.  In component form, in a coordinate system where the
+Christoffel symbols vanish (Minkowski background), this reads
+\begin{equation}
+\label{eq:rel2-9}
+  \frac{\partial}{\partial t}\bigl(\gamma\rho_0\bigr)
+  + \frac{\partial}{\partial x^j}\bigl(\gamma\rho_0\, v^j\bigr) = 0,
+\end{equation}
+where $v^j$ is the 3-velocity, $\gamma = (1 - v^2/c^2)^{-1/2}$ is the
+Lorentz factor, and $u^\mu = \gamma(c, v^j)$.
+
+In the non-relativistic limit ($\gamma \to 1$, $v \ll c$), equation~\eqref{eq:rel2-9}
+reduces to the classical continuity equation~(2) of Chandrasekhar's
+Chapter~II.
+
+%----------------------------------------------------------------------
+\subsection{The equations of motion (momentum conservation)}%
+\label{sec:rel7c}
+%----------------------------------------------------------------------
+
+The conservation of energy and momentum is encoded in
+\begin{equation}
+\label{eq:rel2-10}
+  \nabla_\nu T^{\mu\nu} = f^\mu_{\mathrm{ext}},
+\end{equation}
+where $f^\mu_{\mathrm{ext}}$ is the external 4-force density.  For a uniform
+gravitational field $g$ in the $-z$ direction,
+\begin{equation}
+\label{eq:rel2-11}
+  f^\mu_{\mathrm{ext}} = -w\,g\,\lambda^\mu, \qquad
+  \lambda^\mu = (0,0,0,1),
+\end{equation}
+where $\lambda^\mu$ is the unit vector in the $z$-direction (with appropriate
+covariant components in the weak-field limit).
+
+Projecting equation~\eqref{eq:rel2-10} orthogonally to $u^\mu$ (using
+$\Delta^{\mu}{}_{\alpha}$) yields the relativistic Euler equation with
+dissipative corrections:
+\begin{equation}
+\label{eq:rel2-12}
+  w\, u^\nu\nabla_\nu u^\mu
+  = -\Delta^{\mu\nu}\nabla_\nu p
+    - \Delta^{\mu\nu}\nabla_\nu \Pi
+    + \Delta^{\mu}{}_{\alpha}\nabla_\beta\pi^{\alpha\beta}
+    + \frac{1}{c^2}\Delta^{\mu}{}_{\alpha}\bigl(
+        q^\alpha\nabla_\beta u^\beta
+      + q^\beta\nabla_\beta u^\alpha
+      \bigr)
+    + f^\mu_{\perp},
+\end{equation}
+where $w = (\varepsilon + p)/c^2$ is the enthalpy per unit volume divided by
+$c^2$ (the relativistic inertial mass density), and
+$f^\mu_\perp = \Delta^{\mu}{}_\alpha f^\alpha_{\mathrm{ext}}$
+is the spatial projection of the gravitational force.
+
+In the non-relativistic limit, $w \to \rho_0$,
+$\Delta^{\mu\nu}\nabla_\nu p \to \partial p / \partial x^i$, the
+$q$-dependent terms vanish, and the shear-stress divergence reduces to
+$\mu\nabla^2 u_i$.  We thus recover the Navier--Stokes equation~(18) of
+Chapter~II.
+
+%----------------------------------------------------------------------
+\subsection{The energy equation}\label{sec:rel7d}
+%----------------------------------------------------------------------
+
+Projecting equation~\eqref{eq:rel2-10} along $u_\mu$ gives the energy
+equation in the local rest frame:
+\begin{equation}
+\label{eq:rel2-13}
+  u^\mu\nabla_\mu\varepsilon
+  + (\varepsilon + p)\,\nabla_\mu u^\mu
+  = -\Pi\,\nabla_\mu u^\mu
+    - \pi^{\mu\nu}\nabla_\mu u_\nu
+    - \nabla_\mu q^\mu
+    - \frac{1}{c^2}\,q^\mu u^\nu\nabla_\nu u_\mu\,.
+\end{equation}
+The left-hand side is the relativistic generalization of the material
+derivative of the internal energy plus the $p\,\mathrm{div}\,\mathbf{u}$
+work term.  The right-hand side collects the dissipative contributions:
+bulk-viscous heating, shear-viscous heating, heat-flux divergence, and
+a relativistic correction involving the acceleration of the heat flux.
+
+In the non-relativistic limit, equation~\eqref{eq:rel2-13} reduces to
+the heat equation~(39) of Chapter~II (upon identifying
+$\varepsilon \approx \rho_0 c_v T + \mathrm{const}$ and
+$\nabla_\mu q^\mu \to -\partial/\partial x_j(k\,\partial T/\partial x_j)$).
+
+%----------------------------------------------------------------------
+\subsection{Israel--Stewart transport equations (causal dissipation)}%
+\label{sec:rel7e}
+%----------------------------------------------------------------------
+
+The crucial departure from Fourier's law is the replacement of the
+instantaneous constitutive relation $q^i = -k\,\partial T/\partial x^i$ by
+the Israel--Stewart \emph{relaxation equation} for the heat flux:
+\begin{equation}
+\label{eq:rel2-14}
+  \tau_q\,\Delta^{\mu\alpha}\, u^\beta\nabla_\beta q_\alpha + q^\mu
+  = -\kappa_{\mathrm{IS}}\!\left(
+      \Delta^{\mu\nu}\nabla_\nu T
+      + \frac{T}{c^2}\,u^\nu\nabla_\nu u^\mu
+    \right),
+\end{equation}
+where $\kappa_{\mathrm{IS}}$ is the thermal conductivity and $\tau_q > 0$ is
+the heat-flux relaxation time.  The term $Tu^\nu\nabla_\nu u^\mu / c^2$ is
+a relativistic correction ensuring that $q^\mu$ remains orthogonal to
+$u^\mu$ under time evolution.
+
+Similarly, the shear stress satisfies
+\begin{equation}
+\label{eq:rel2-15}
+  \tau_\pi\,\Delta^{\mu\alpha}\Delta^{\nu\beta}\,u^\gamma\nabla_\gamma
+  \pi_{\alpha\beta} + \pi^{\mu\nu}
+  = 2\eta_{\mathrm{s}}\,\sigma^{\mu\nu},
+\end{equation}
+where $\eta_{\mathrm{s}}$ is the shear viscosity, $\tau_\pi$ is the
+shear-stress relaxation time, and
+\begin{equation}
+\label{eq:rel2-16}
+  \sigma^{\mu\nu} = \frac{1}{2}\bigl(
+    \Delta^{\mu\alpha}\nabla_\alpha u^\nu
+    + \Delta^{\nu\alpha}\nabla_\alpha u^\mu
+  \bigr)
+  - \frac{1}{3}\Delta^{\mu\nu}\nabla_\alpha u^\alpha
+\end{equation}
+is the shear tensor.  The bulk viscous pressure obeys
+\begin{equation}
+\label{eq:rel2-17}
+  \tau_\Pi\, u^\alpha\nabla_\alpha\Pi + \Pi
+  = -\zeta\,\nabla_\mu u^\mu,
+\end{equation}
+where $\zeta$ is the bulk viscosity and $\tau_\Pi$ is the corresponding
+relaxation time.
+
+When $\tau_q = \tau_\pi = \tau_\Pi = 0$, the Israel--Stewart equations
+reduce to the (acausal) Eckart/Landau--Lifshitz first-order theory, and
+in the non-relativistic limit the heat equation becomes Fourier's law.
+
+%----------------------------------------------------------------------
+\subsection{The rate of dissipation}\label{sec:rel7f}
+%----------------------------------------------------------------------
+
+The relativistic analogue of the viscous dissipation function $\Phi$ of
+equation~(29) in Chapter~II is
+\begin{equation}
+\label{eq:rel2-18}
+  \Phi_{\mathrm{rel}} = \pi^{\mu\nu}\sigma_{\mu\nu} + \Pi\,\nabla_\mu u^\mu\,.
+\end{equation}
+This quantity is non-negative by the second law of thermodynamics
+($\Phi_{\mathrm{rel}} \ge 0$), provided the transport coefficients
+$\eta_{\mathrm{s}} \ge 0$, $\zeta \ge 0$.  In the non-relativistic limit
+with an incompressible fluid, $\Phi_{\mathrm{rel}} \to 2\mu\,e_{ij}^2$,
+recovering equation~(31) of Chapter~II.
+
+%======================================================================
+\section{The relativistic Boussinesq approximation}\label{sec:rel8}
+%======================================================================
+
+The classical Boussinesq approximation (\S~8 of Chapter~II) rests on the
+smallness of the coefficient of thermal expansion $\alpha$: density
+variations are neglected everywhere except in the gravitational body-force
+term, where even a small $\delta\rho$ produces a significant buoyancy
+acceleration.
+
+In the relativistic setting, we adopt an analogous approximation but with
+an important modification: the inertia of the fluid is governed by the
+enthalpy density $w = (\varepsilon + p)/c^2$, not merely by $\rho_0$.
+The \textbf{relativistic Boussinesq approximation} therefore consists of the
+following prescriptions:
+
+\begin{enumerate}
+\item \textbf{Incompressibility:} The divergence of the 4-velocity in the
+  local rest frame is negligible,
+  \begin{equation}
+  \label{eq:rel2-19}
+    \nabla_\mu u^\mu \approx 0,
+  \end{equation}
+  which in the low-velocity limit gives $\partial u_j / \partial x_j = 0$
+  as in the classical case (equation~(41) of Chapter~II).
+
+\item \textbf{Constant inertial mass density:} In all terms except the
+  gravitational force, we replace $w$ by its reference value~$w_0$:
+  \begin{equation}
+  \label{eq:rel2-20}
+    w \approx w_0 \;=\; \frac{\varepsilon_0 + p_0}{c^2}\,.
+  \end{equation}
+
+\item \textbf{Buoyancy:} In the gravitational force term, we retain the
+  \emph{full} variation of $w$:
+  \begin{equation}
+  \label{eq:rel2-21}
+    \delta w \;=\; w - w_0
+    \;=\; -w_0\,\alpha_w\,(T - T_0),
+  \end{equation}
+  where $\alpha_w$ is the enthalpy expansion coefficient defined in
+  equation~\eqref{eq:rel2-3}.  Crucially, $\alpha_w$ receives contributions
+  from both $\delta\varepsilon$ and $\delta p$:
+  \begin{equation}
+  \label{eq:rel2-22}
+    \alpha_w = \alpha + \frac{1}{w_0 c^2}
+    \left(\frac{\partial p}{\partial T}\right)_{\!\rho}\,,
+  \end{equation}
+  so that the pressure variation with temperature (negligible classically)
+  contributes to the buoyancy in the relativistic regime.
+
+\item \textbf{Constant transport coefficients:} The viscosity
+  $\eta_{\mathrm{s}}$, thermal conductivity $\kappa_{\mathrm{IS}}$, and
+  relaxation times $\tau_q$, $\tau_\pi$ are treated as constants
+  evaluated at the reference state.
+\end{enumerate}
+
+Under these approximations, the relativistic momentum equation~%
+\eqref{eq:rel2-12} becomes, in the low-velocity limit (3-vector form):
+\begin{equation}
+\label{eq:rel2-23}
+  w_0\!\left(\frac{\partial u_i}{\partial t}
+    + u_j\frac{\partial u_i}{\partial x_j}\right)
+  = -\frac{\partial\,\delta p}{\partial x_i}
+    + g\,\alpha_w\,w_0\,\theta\,\lambda_i
+    + \frac{\partial}{\partial x_j}\pi_{ij}\,,
+\end{equation}
+where $\theta$ is the temperature perturbation and the shear stress is
+governed by the Israel--Stewart equation~\eqref{eq:rel2-15}.
+
+The heat equation, under the Boussinesq approximation and using the
+Israel--Stewart heat-flux equation~\eqref{eq:rel2-14}, becomes a
+\emph{telegraph-type} equation (see \S~\ref{sec:rel9} for the linearized
+form).
+
+Dividing equation~\eqref{eq:rel2-23} by $w_0$, we define the
+\emph{relativistic kinematic viscosity}
+\begin{equation}
+\label{eq:rel2-24}
+  \nu_{\mathrm{rel}} = \frac{\eta_{\mathrm{s}}}{w_0}
+  = \frac{\eta_{\mathrm{s}}\,c^2}{\varepsilon_0 + p_0}\,.
+\end{equation}
+In the classical limit $\varepsilon_0 \to \rho_0 c^2$, $p_0 \ll \rho_0 c^2$,
+so $\nu_{\mathrm{rel}} \to \eta_{\mathrm{s}}/\rho_0 = \nu$, the ordinary
+kinematic viscosity.
+
+Similarly, the \emph{relativistic thermal diffusivity} is
+\begin{equation}
+\label{eq:rel2-25}
+  \kappa_T = \frac{\kappa_{\mathrm{IS}}}{w_0\,c_p}\,,
+\end{equation}
+where $c_p$ is the specific heat at constant pressure.
+
+%======================================================================
+\section{The perturbation equations}\label{sec:rel9}
+%======================================================================
+
+%----------------------------------------------------------------------
+\subsection{The equilibrium state}\label{sec:rel9a}
+%----------------------------------------------------------------------
+
+Consider an infinite horizontal layer of relativistic fluid in which a
+steady adverse temperature gradient is maintained and no motions are present.
+The equilibrium (unperturbed) state is characterized by
+\begin{equation}
+\label{eq:rel2-26}
+  u^i = 0, \qquad T = T_0 - \beta z, \qquad q^\mu = 0,
+  \qquad \pi^{\mu\nu} = 0, \qquad \Pi = 0,
+\end{equation}
+where $\beta > 0$ is the adverse temperature gradient.  The equilibrium
+pressure distribution satisfies the relativistic hydrostatic equation
+\begin{equation}
+\label{eq:rel2-27}
+  \frac{\mathrm{d}p_0}{\mathrm{d}z} = -g\,w_0(z),
+\end{equation}
+with $w_0(z) = (\varepsilon_0 + p_0)/c^2$ evaluated at the local
+temperature $T_0 - \beta z$.  In the Boussinesq approximation, the
+enthalpy density varies linearly:
+\begin{equation}
+\label{eq:rel2-28}
+  w_0(z) = w_0\bigl(1 + \alpha_w\,\beta\,z\bigr).
+\end{equation}
+
+%----------------------------------------------------------------------
+\subsection{Perturbation of the energy--momentum tensor}\label{sec:rel9b}
+%----------------------------------------------------------------------
+
+Let the equilibrium state be slightly perturbed.  We write
+\begin{equation}
+\label{eq:rel2-29}
+  u^i \to u^i, \quad T \to T_0 - \beta z + \theta, \quad
+  p \to p_0(z) + \delta p, \quad
+  q^\mu \to q^\mu, \quad \pi^{\mu\nu} \to \pi^{\mu\nu},
+\end{equation}
+where $u^i$, $\theta$, $\delta p$, $q^\mu$, and $\pi^{\mu\nu}$ are now
+understood as first-order perturbation quantities.
+
+The perturbation of the energy--momentum tensor~\eqref{eq:rel2-7}
+at first order is
+\begin{equation}
+\label{eq:rel2-30}
+  \delta T^{00} = \delta\varepsilon, \qquad
+  \delta T^{0i} = w_0\,c\,u^i + \frac{q^i}{c}, \qquad
+  \delta T^{ij} = \delta p\,\delta^{ij} + \pi^{ij},
+\end{equation}
+where $\delta\varepsilon = (\partial\varepsilon/\partial T)_p\,\theta
++ (\partial\varepsilon/\partial p)_T\,\delta p$.  The off-diagonal components
+$\delta T^{0i}$ reveal that in the relativistic theory the momentum density
+receives a contribution from the heat flux $q^i/c$, absent classically.
+
+%----------------------------------------------------------------------
+\subsection{Linearized equations of motion}\label{sec:rel9c}
+%----------------------------------------------------------------------
+
+Linearizing the momentum equation~\eqref{eq:rel2-23} about the equilibrium
+state and retaining only first-order terms, we obtain
+\begin{equation}
+\label{eq:rel2-31}
+  \frac{\partial u_i}{\partial t}
+  = -\frac{1}{w_0}\frac{\partial\,\delta p}{\partial x_i}
+    + g\,\alpha_w\,\theta\,\lambda_i
+    + \frac{1}{w_0}\frac{\partial\pi_{ij}}{\partial x_j}\,.
+\end{equation}
+The shear stress $\pi_{ij}$ is governed by the linearized Israel--Stewart
+equation~\eqref{eq:rel2-15}.  At first order, in the rest frame:
+\begin{equation}
+\label{eq:rel2-32}
+  \tau_\pi\frac{\partial\pi_{ij}}{\partial t} + \pi_{ij}
+  = \eta_{\mathrm{s}}\!\left(
+      \frac{\partial u_i}{\partial x_j}
+      + \frac{\partial u_j}{\partial x_i}
+      - \frac{2}{3}\delta_{ij}\frac{\partial u_k}{\partial x_k}
+    \right).
+\end{equation}
+In the Boussinesq approximation ($\partial u_k/\partial x_k = 0$) and when
+$\tau_\pi$ is small (so that $\pi_{ij}$ relaxes quickly to its Navier--Stokes
+value), we can substitute $\pi_{ij} \approx \eta_{\mathrm{s}}(\partial u_i/\partial x_j + \partial u_j/\partial x_i)$ into equation~\eqref{eq:rel2-31} and obtain
+\begin{equation}
+\label{eq:rel2-33}
+  \frac{\partial u_i}{\partial t}
+  = -\frac{1}{w_0}\frac{\partial\,\delta p}{\partial x_i}
+    + g\,\alpha_w\,\theta\,\lambda_i
+    + \nu_{\mathrm{rel}}\,\nabla^2 u_i\,,
+\end{equation}
+which is the relativistic counterpart of equation~(55) in Chapter~II.
+When the full relaxation dynamics is retained, equation~\eqref{eq:rel2-31}
+together with~\eqref{eq:rel2-32} constitutes a system that is hyperbolic
+in time.
+
+%----------------------------------------------------------------------
+\subsection{Linearized heat equation}\label{sec:rel9d}
+%----------------------------------------------------------------------
+
+Linearizing the energy equation~\eqref{eq:rel2-13} and the Israel--Stewart
+heat-flux equation~\eqref{eq:rel2-14} about the equilibrium state, we
+obtain the following pair of coupled equations.
+
+The energy balance at first order gives
+\begin{equation}
+\label{eq:rel2-34}
+  w_0\,c_p\frac{\partial\theta}{\partial t}
+  = w_0\,c_p\,\beta\,w
+    - \frac{\partial q_j}{\partial x_j}\,,
+\end{equation}
+where $w = \lambda_j u_j = u_3$ is the vertical component of velocity
+and $c_p$ is the specific heat at constant pressure.
+
+The linearized Israel--Stewart equation for the heat flux (spatial
+components, in the rest frame) is
+\begin{equation}
+\label{eq:rel2-35}
+  \tau_q\frac{\partial q_i}{\partial t} + q_i
+  = -\kappa_{\mathrm{IS}}\frac{\partial\theta}{\partial x_i}\,.
+\end{equation}
+Note that the relativistic correction term
+$T\,u^\nu\nabla_\nu u^\mu / c^2$ in equation~\eqref{eq:rel2-14}
+vanishes at first order about a static equilibrium (since $u^\mu$
+is already first-order for the spatial components).
+
+Eliminating $q_i$ between equations~\eqref{eq:rel2-34}
+and~\eqref{eq:rel2-35}: apply $\tau_q\,\partial/\partial t + 1$ to
+equation~\eqref{eq:rel2-34} and substitute
+$\partial q_j/\partial x_j$ from~\eqref{eq:rel2-35}:
+\begin{equation}
+\label{eq:rel2-36}
+  \boxed{
+  \tau_q\frac{\partial^2\theta}{\partial t^2}
+  + \frac{\partial\theta}{\partial t}
+  = \beta\!\left(\tau_q\frac{\partial w}{\partial t} + w\right)
+    + \kappa_T\,\nabla^2\theta\,,}
+\end{equation}
+where we have used $\kappa_T = \kappa_{\mathrm{IS}}/(w_0 c_p)$.  This is
+the \textbf{Cattaneo--Vernotte (telegraph) equation} for the temperature
+perturbation.  It is the relativistic replacement for equation~(56)
+of Chapter~II.
+
+In the limit $\tau_q \to 0$, equation~\eqref{eq:rel2-36} reduces to
+\begin{equation}
+\label{eq:rel2-37}
+  \frac{\partial\theta}{\partial t} = \beta\,w + \kappa_T\,\nabla^2\theta,
+\end{equation}
+recovering the classical equation~(76) of Chapter~II.
+
+%----------------------------------------------------------------------
+\subsection{The solenoidal condition}\label{sec:rel9e}
+%----------------------------------------------------------------------
+
+From the relativistic Boussinesq approximation~\eqref{eq:rel2-19}
+and the low-velocity limit, the velocity field remains solenoidal:
+\begin{equation}
+\label{eq:rel2-38}
+  \frac{\partial u_j}{\partial x_j} = 0,
+\end{equation}
+as in the classical case (equation~(57) of Chapter~II).
+
+%----------------------------------------------------------------------
+\subsection{Perturbation equations for vorticity and vertical velocity}%
+\label{sec:rel9f}
+%----------------------------------------------------------------------
+
+Following exactly the classical procedure of \S~9 (equations~(65)--(76) of
+Chapter~II), we take the curl and double curl of the momentum
+equation~\eqref{eq:rel2-33} to eliminate the pressure perturbation.
+
+Defining the vorticity $\omega_i = \epsilon_{ijk}\,\partial u_k/\partial x_j$
+and the vertical components $\zeta = \lambda_i\omega_i$,
+$w = \lambda_i u_i$, and using the rapid-relaxation limit for the shear
+stress (i.e.\ $\tau_\pi \to 0$), we obtain:
+
+\paragraph{Vorticity equation (vertical component):}
+\begin{equation}
+\label{eq:rel2-39}
+  \frac{\partial\zeta}{\partial t} = \nu_{\mathrm{rel}}\,\nabla^2\zeta\,,
+\end{equation}
+which is identical in form to the classical equation~(73), but with
+$\nu_{\mathrm{rel}} = \eta_{\mathrm{s}}/w_0$ replacing $\nu = \mu/\rho_0$.
+
+\paragraph{Vertical velocity equation:}
+\begin{equation}
+\label{eq:rel2-40}
+  \frac{\partial}{\partial t}\nabla^2 w
+  = g\,\alpha_w\!\left(
+      \frac{\partial^2\theta}{\partial x_1^2}
+      + \frac{\partial^2\theta}{\partial x_2^2}
+    \right)
+    + \nu_{\mathrm{rel}}\,\nabla^4 w\,,
+\end{equation}
+which is the relativistic counterpart of equation~(74), with
+$g\alpha \to g\alpha_w$ (reflecting the enthalpy contribution to buoyancy)
+and $\nu \to \nu_{\mathrm{rel}}$.
+
+Together with the telegraph heat equation~\eqref{eq:rel2-36}, the
+solenoidal condition~\eqref{eq:rel2-38}, and the vorticity
+equation~\eqref{eq:rel2-39}, equations~\eqref{eq:rel2-40} constitute the
+\emph{complete set of linearized perturbation equations for the
+relativistic B\'enard problem}.
+
+%----------------------------------------------------------------------
+\subsection{Boundary conditions}\label{sec:rel9g}
+%----------------------------------------------------------------------
+
+The boundary conditions on the perturbations are specified at $z = 0$ and
+$z = d$.  For rigid, perfectly conducting boundaries:
+\begin{equation}
+\label{eq:rel2-41}
+  w = 0, \qquad \frac{\partial w}{\partial z} = 0, \qquad
+  \theta = 0 \qquad \text{at } z = 0, d.
+\end{equation}
+For the heat flux, the Israel--Stewart equation requires an additional
+boundary condition.  At a rigid, perfectly conducting wall, the heat flux
+must be consistent with the imposed temperature:
+\begin{equation}
+\label{eq:rel2-42}
+  q_z = -\kappa_{\mathrm{IS}}\frac{\partial\theta}{\partial z}
+  \qquad \text{at } z = 0, d \quad
+  \text{(quasi-static heat flux at boundaries)}.
+\end{equation}
+Alternatively, for ``free'' (stress-free) boundaries:
+\begin{equation}
+\label{eq:rel2-43}
+  w = 0, \qquad \frac{\partial^2 w}{\partial z^2} = 0, \qquad
+  \theta = 0 \qquad \text{at } z = 0, d.
+\end{equation}
+These are the same conditions as in the classical theory (cf.\ Chapter~II,
+\S\S~12--14), supplemented by the heat-flux condition~\eqref{eq:rel2-42}
+when the full Israel--Stewart dynamics is retained.
+
+%----------------------------------------------------------------------
+\subsection{Causality check: hyperbolicity of the perturbation system}%
+\label{sec:rel9h}
+%----------------------------------------------------------------------
+
+It is essential to verify that the relativistic perturbation equations
+derived above respect causality, i.e.\ that perturbations propagate at
+finite speed bounded by $c$.
+
+\paragraph{Structure of the system.}
+The complete linearized system, retaining the Israel--Stewart relaxation
+terms, consists of:
+\begin{itemize}
+\item Equation~\eqref{eq:rel2-31} + \eqref{eq:rel2-32}:
+  a \emph{second-order-in-time} system for $(u_i, \pi_{ij})$,
+\item Equation~\eqref{eq:rel2-36}:
+  a \emph{second-order-in-time} equation for $\theta$.
+\end{itemize}
+
+\paragraph{Characteristic speeds.}
+To determine the characteristic speeds, we seek plane-wave solutions
+$\propto \exp[i(\mathbf{k}\cdot\mathbf{x} - \omega t)]$.  From the heat
+sector (equation~\eqref{eq:rel2-36}), the dispersion relation at high
+frequency ($|\omega| \gg 1/\tau_q$, $|\omega| \gg \kappa_T k^2$) is
+\begin{equation}
+\label{eq:rel2-44}
+  \omega^2 \approx \frac{\kappa_T}{\tau_q}\,k^2
+  \quad\Longrightarrow\quad
+  v_{\mathrm{heat}}^2 = \frac{\kappa_T}{\tau_q}\,.
+\end{equation}
+This is the \emph{thermal signal speed}.  Causality requires
+\begin{equation}
+\label{eq:rel2-45}
+  v_{\mathrm{heat}} = \sqrt{\frac{\kappa_T}{\tau_q}} \;\le\; c.
+\end{equation}
+This is automatically satisfied provided the Israel--Stewart relaxation
+time obeys
+\begin{equation}
+\label{eq:rel2-46}
+  \tau_q \;\ge\; \frac{\kappa_T}{c^2}\,,
+\end{equation}
+which is a known consistency condition of the Israel--Stewart theory.
+
+From the momentum sector, with the shear relaxation
+equation~\eqref{eq:rel2-32}, the analogous viscous signal speed is
+\begin{equation}
+\label{eq:rel2-47}
+  v_{\mathrm{visc}} = \sqrt{\frac{\nu_{\mathrm{rel}}}{\tau_\pi}}
+  \;\le\; c
+  \qquad\Longleftrightarrow\qquad
+  \tau_\pi \;\ge\; \frac{\nu_{\mathrm{rel}}}{c^2}\,.
+\end{equation}
+
+\paragraph{Conclusion.}
+When the Israel--Stewart relaxation times satisfy
+equations~\eqref{eq:rel2-46} and~\eqref{eq:rel2-47}, the perturbation
+system is \textbf{symmetric hyperbolic} (in the sense of
+Geroch--Lindblom), and all signal speeds are bounded by $c$.  The
+classical parabolic limit is recovered when $\tau_q, \tau_\pi \to 0$
+(in which case perturbations propagate infinitely fast, as in Fourier/Navier--Stokes theory).
+
+\medskip
+\noindent\textbf{Summary.}\quad
+The relativistic perturbation equations for the B\'enard problem are:
+\begin{alignat}{2}
+\label{eq:rel2-summary}
+  &\text{(i)}\quad
+  &&\frac{\partial}{\partial t}\nabla^2 w
+  = g\,\alpha_w\!\left(\frac{\partial^2}{\partial x_1^2}
+    + \frac{\partial^2}{\partial x_2^2}\right)\theta
+  + \nu_{\mathrm{rel}}\,\nabla^4 w, \\[4pt]
+\label{eq:rel2-summary2}
+  &\text{(ii)}\quad
+  &&\tau_q\frac{\partial^2\theta}{\partial t^2}
+  + \frac{\partial\theta}{\partial t}
+  = \beta\!\left(\tau_q\frac{\partial w}{\partial t} + w\right)
+  + \kappa_T\,\nabla^2\theta, \\[4pt]
+\label{eq:rel2-summary3}
+  &\text{(iii)}\quad
+  &&\frac{\partial\zeta}{\partial t}
+  = \nu_{\mathrm{rel}}\,\nabla^2\zeta, \\[4pt]
+\label{eq:rel2-summary4}
+  &\text{(iv)}\quad
+  &&\frac{\partial u_j}{\partial x_j} = 0,
+\end{alignat}
+with $\nu_{\mathrm{rel}} = \eta_{\mathrm{s}}/w_0$,
+$\alpha_w = \alpha + (\partial p/\partial T)_\rho / (w_0 c^2)$,
+$\kappa_T = \kappa_{\mathrm{IS}}/(w_0 c_p)$, and the causality bounds
+$\tau_q \ge \kappa_T/c^2$, $\tau_\pi \ge \nu_{\mathrm{rel}}/c^2$.
+These reduce to the classical Chandrasekhar equations~(73), (74), (76), and
+(57) of Chapter~II when $c \to \infty$, $\tau_q \to 0$, and
+$w_0 \to \rho_0$.
