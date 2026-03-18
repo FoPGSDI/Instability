@@ -1,0 +1,511 @@
+% =======================================================================
+% Relativistic Extension of Chapter X, Sections 96--97
+% Magnetic Field Effects on Rayleigh--Taylor Instability
+%
+% Conventions: (-,+,+,+) signature, c explicit, u^mu u_mu = -c^2
+% Requires: rel_preamble.tex macros
+% =======================================================================
+
+\chapter{Relativistic Rayleigh--Taylor Instability with Magnetic Fields
+  (Ch.~X, \S\S96--97)}\label{ch:rel-10-96-97}
+
+In Chapter~X, \S\S96--97, Chandrasekhar analyses the stabilising
+influence of an impressed magnetic field on the Rayleigh--Taylor (RT)
+instability of two superposed fluids.  When the magnetic field is strong
+enough that the Alfv\'en speed~$\vA$ becomes an appreciable fraction of
+the speed of light, the classical analysis must be replaced by a fully
+relativistic treatment.  This chapter develops that extension for both
+vertical (\S\ref{sec:rel-96}) and horizontal
+(\S\ref{sec:rel-97}) magnetic fields.  The speed of light~$c$ is kept
+explicit throughout, so that every classical limit is recovered
+transparently by $c\to\infty$.
+
+%======================================================================
+\section{Relativistic preliminaries for magnetised RT
+  instability}\label{sec:rel-96-prelim}
+%======================================================================
+
+\subsection{Relativistic enthalpy and Alfv\'en speed}
+
+In the relativistic regime the inertial role of the mass density~$\rho$
+is assumed by the relativistic enthalpy density
+\begin{equation}
+  \enthalpy = \varepsilon + p,
+  \label{eq:rel96-enthalpy}
+\end{equation}
+where $\varepsilon$ is the total energy density (including rest-mass
+energy $\rho c^{2}$) and $p$ the isotropic pressure.  The effective
+inertia per unit volume appearing in the equation of motion is
+$\enthalpy/c^{2}$.
+
+The magnetic field in the fluid rest frame is described by the 4-vector
+$b^{\mu}$, with invariant magnitude $b^{2}=b^{\mu}b_{\mu}$.  The
+relativistic Alfv\'en speed along the background field direction is
+(cf.~RELATIVISTIC\_CONVENTIONS.md)
+\begin{equation}
+  \vA^{2}
+    = \frac{b^{2}\,c^{2}}{\enthalpy + b^{2}}
+    = \frac{b^{2}\,c^{2}}{4\pi\enthalpy/\mu + b^{2}}\;\Big|_{\text{Gaussian}},
+  \label{eq:rel96-vA}
+\end{equation}
+where in the Gaussian form $b^{2}=\mu H^{2}/(4\pi)$.
+
+\paragraph{Causality constraint.}
+Because the denominator $\enthalpy + b^{2}>0$, one has
+$\vA^{2}<c^{2}$ for any finite magnetic field and positive enthalpy.
+Thus \emph{the Alfv\'en speed is automatically sub-luminal}, ensuring
+that magnetic stabilisation of the RT instability never violates
+causality.
+
+\subsection{Classical limit}
+
+In the non-relativistic limit $\enthalpy\to\rho c^{2}$ and
+$b^{2}\ll\rho c^{2}$, so that
+\begin{equation}
+  \vA^{2}\;\longrightarrow\;
+  \frac{\mu H^{2}}{4\pi\rho}
+  = V_{a}^{2}\quad(c\to\infty),
+  \label{eq:rel96-vA-NR}
+\end{equation}
+recovering the classical Alfv\'en speed of Chapter~IV, \S\,38.
+
+\subsection{Relativistic ideal-MHD energy-momentum tensor}
+
+The total energy-momentum tensor for a perfect, magnetised fluid is
+\begin{equation}
+  T^{\mu\nu}
+    = \Bigl(\enthalpy + b^{2}\Bigr)\frac{u^{\mu}u^{\nu}}{c^{2}}
+      + \Bigl(p + \tfrac{1}{2}b^{2}\Bigr)g^{\mu\nu}
+      - b^{\mu}b^{\nu}.
+  \label{eq:rel96-Tmunu}
+\end{equation}
+This furnishes the starting point for the linearised perturbation
+analysis that follows.
+
+%======================================================================
+\section{The effect of a vertical magnetic field --- relativistic
+  extension}\label{sec:rel-96}
+%======================================================================
+
+We now extend \S96 of Chandrasekhar to the relativistic regime.  A
+uniform magnetic field $\mathbf{B}=B\hat{\mathbf{z}}$ is impressed
+parallel to the gravitational acceleration
+$\mathbf{g}=-g\hat{\mathbf{z}}$.  Two uniform fluids of relativistic
+enthalpy densities $\enthalpy_{1}$ (below, $z<0$) and $\enthalpy_{2}$
+(above, $z>0$) are separated by a horizontal interface at $z=0$.
+
+\subsection{Linearised relativistic perturbation equations}
+
+Linearising the conservation law $\nabla_{\mu}T^{\mu\nu}=0$ about a
+static equilibrium with 4-velocity $u^{\mu}=(c,\mathbf{0})$ and a
+uniform vertical field $b^{\mu}=(0,0,0,B_{0})$ in the fluid frame, we
+obtain the relativistic counterparts of Chandrasekhar's
+equations~\eqref{eq:10-171}--\eqref{eq:10-174}.  For perturbations with
+the dependence $\exp\!\bigl[i(k_{x}x+k_{y}y)+nt\bigr]$:
+\begin{gather}
+  \frac{\enthalpy}{c^{2}}\,n\,u
+    - \frac{b^{2}}{c^{2}}\,\frac{1}{n}\bigl(D h_{x}-ik_{x}h_{z}\bigr)
+    = -ik_{x}\,\delta p,
+  \label{eq:rel96-perturb-x}\\
+  \frac{\enthalpy}{c^{2}}\,n\,v
+    - \frac{b^{2}}{c^{2}}\,\frac{1}{n}\bigl(D h_{y}-ik_{y}h_{z}\bigr)
+    = -ik_{y}\,\delta p,
+  \label{eq:rel96-perturb-y}\\
+  \frac{\enthalpy}{c^{2}}\,n\,w
+    = -D\,\delta p + \frac{g}{n}\,D\!\Bigl(\frac{\enthalpy}{c^{2}}\Bigr)\,w,
+  \label{eq:rel96-perturb-z}\\
+  h_{z} = \frac{B_{0}}{n}\,Dw,
+  \label{eq:rel96-hz}
+\end{gather}
+together with the solenoidal conditions $ik_{x}u+ik_{y}v+Dw=0$ and
+$ik_{x}h_{x}+ik_{y}h_{y}+Dh_{z}=0$.  Here $D=d/dz$, and we note that
+the classical density~$\rho$ is everywhere replaced by the relativistic
+inertia $\enthalpy/c^{2}$.
+
+Following the same algebraic steps as in
+\S96 (eliminating $\delta p$ between the horizontal and vertical
+equations), one arrives at the relativistic master equation:
+\begin{equation}
+  D\!\Bigl(\frac{\enthalpy}{c^{2}}\,Dw\Bigr)
+    - \frac{\vA^{2}}{n^{2}}\,\frac{\enthalpy}{c^{2}\!-\!\vA^{2}}\,
+      (D^{2}-k^{2})\,D^{2}w
+    = k^{2}\frac{\enthalpy}{c^{2}}\,w
+      - \frac{gk^{2}}{n^{2}}\,D\!\Bigl(\frac{\enthalpy}{c^{2}}\Bigr)\,w.
+  \label{eq:rel96-master}
+\end{equation}
+In the limit $c\to\infty$ (so that $\vA^{2}/c^{2}\to0$ and
+$\enthalpy/c^{2}\to\rho$), the factor
+$\vA^{2}\enthalpy/(c^{2}-\vA^{2})\to\mu H^{2}/(4\pi)$ and
+equation~\eqref{eq:rel96-master} reduces to Chandrasekhar's
+equation~\eqref{eq:10-183}.
+
+\subsection{Integral relation and reality of $n^{2}$}
+
+Multiplying~\eqref{eq:rel96-master} by $w^{*}$ and integrating between
+the bounding surfaces (where $w=0$), we obtain
+\begin{equation}
+  \int\frac{\enthalpy}{c^{2}}
+    \bigl\{|Dw|^{2}+k^{2}|w|^{2}\bigr\}\,dz
+  + \frac{\vA^{2}}{n^{2}}\int\frac{\enthalpy}{c^{2}\!-\!\vA^{2}}
+    \bigl\{|D^{2}w|^{2}+k^{2}|Dw|^{2}\bigr\}\,dz
+  = \frac{gk^{2}}{n^{2}}\int D\!\Bigl(\frac{\enthalpy}{c^{2}}\Bigr)
+    |w|^{2}\,dz.
+  \label{eq:rel96-integral}
+\end{equation}
+Since $\vA^{2}<c^{2}$ (causality), all coefficients in the integrands
+are positive-definite.  The argument of
+Chandrasekhar (cf.\ equation~\eqref{eq:10-185}) therefore carries over:
+\emph{the characteristic values of $n^{2}$ are necessarily real in the
+relativistic theory as well}.
+
+\subsection{Two uniform fluids: the unstable case}
+\label{sec:rel96-unstable}
+
+For two uniform fluids the master equation in each region ($z\gtrless 0$)
+admits solutions $e^{\pm kz}$ and $e^{\pm qz}$ with the relativistic
+replacement
+\begin{equation}
+  q_{j}^{2}
+    = \frac{n^{2}}{c^{2}}\;\frac{\enthalpy_{j}\,(c^{2}-\vA^{2})}{\vA^{2}\,\enthalpy_{j}}
+    = \frac{n^{2}}{\vA^{2}}\;\Bigl(1 - \frac{\vA^{2}}{c^{2}}\Bigr)
+    \quad(j=1,2),
+  \label{eq:rel96-qj-gen}
+\end{equation}
+where $\vA$ is defined with the combined enthalpy.  More precisely,
+defining
+\begin{equation}
+  \vA^{2}
+    = \frac{b^{2}\,c^{2}}{\tfrac{1}{2}(\enthalpy_{1}+\enthalpy_{2}) + b^{2}},
+  \label{eq:rel96-vA-combined}
+\end{equation}
+and the enthalpy fractions
+\begin{equation}
+  \alpha_{1,\text{rel}}
+    = \frac{\enthalpy_{1}}{\enthalpy_{1}+\enthalpy_{2}},
+  \qquad
+  \alpha_{2,\text{rel}}
+    = \frac{\enthalpy_{2}}{\enthalpy_{1}+\enthalpy_{2}},
+  \label{eq:rel96-alpha-rel}
+\end{equation}
+the decay exponents become
+\begin{equation}
+  q_{j}
+    = \frac{n}{\vA}\,\sqrt{\alpha_{j,\text{rel}}}\;
+      \sqrt{1 - \frac{\vA^{2}}{c^{2}}}
+  \qquad(n>0,\;j=1,2).
+  \label{eq:rel96-qj}
+\end{equation}
+The factor $\sqrt{1-\vA^{2}/c^{2}}$ is the hallmark relativistic
+correction: it shrinks the spatial decay length, concentrating the
+perturbation closer to the interface as $\vA\to c$.
+
+\paragraph{Boundary conditions.}
+The continuity of $w$, $Dw$, and $D^{2}w$ across $z=0$ (cf.\
+equations~\eqref{eq:10-187}) remains valid in the relativistic theory,
+as does the jump condition obtained by integrating the master
+equation~\eqref{eq:rel96-master} across the interface.  The algebra
+proceeds exactly as in Chandrasekhar's derivation of the secular
+equation~\eqref{eq:10-200}, with every occurrence of $\rho_{j}$
+replaced by $\enthalpy_{j}/c^{2}$ and every $V_{a}$ replaced by
+the relativistic $\vA$.
+
+\paragraph{Relativistic dispersion relation.}
+Non-dimensionalising with the units
+\begin{equation}
+  [n] = g/\vA,\qquad [k] = g/\vA^{2},
+  \label{eq:rel96-units}
+\end{equation}
+the dispersion relation takes the form
+\begin{equation}
+  \boxed{%
+  \hat{n}^{3}
+    + 2\hat{k}\bigl(\sqrt{\alpha_{1,\text{rel}}}
+      +\sqrt{\alpha_{2,\text{rel}}}\bigr)\,
+      \Bigl(1-\frac{\vA^{2}}{c^{2}}\Bigr)^{1/2}\,\hat{n}^{2}
+    + \hat{k}\Bigl[2\hat{k}\Bigl(1-\frac{\vA^{2}}{c^{2}}\Bigr)
+      +\alpha_{1,\text{rel}}-\alpha_{2,\text{rel}}\Bigr]\hat{n}
+    + 2\hat{k}^{3}\bigl(\sqrt{\alpha_{2,\text{rel}}}
+      -\sqrt{\alpha_{1,\text{rel}}}\bigr)\,
+      \Bigl(1-\frac{\vA^{2}}{c^{2}}\Bigr)^{1/2}
+    = 0,}
+  \label{eq:rel96-dispersion}
+\end{equation}
+where $\hat{n}=n/[n]$ and $\hat{k}=k/[k]$.  When $\vA/c\to0$, the
+factor $(1-\vA^{2}/c^{2})^{1/2}\to1$ and
+equation~\eqref{eq:rel96-dispersion} reduces identically to
+Chandrasekhar's equation~\eqref{eq:10-209}.
+
+\paragraph{Asymptotic limits.}
+From~\eqref{eq:rel96-dispersion}:
+\begin{equation}
+  \left.
+  \begin{aligned}
+    n^{2}&\to gk\,(\alpha_{2,\text{rel}}-\alpha_{1,\text{rel}})
+      &&(k\to0),\\
+    n &\to \frac{g}{\vA}\,
+      \bigl(\sqrt{\alpha_{2,\text{rel}}}-\sqrt{\alpha_{1,\text{rel}}}\bigr)\,
+      \Bigl(1-\frac{\vA^{2}}{c^{2}}\Bigr)^{1/2}
+      &&(k\to\infty).
+  \end{aligned}
+  \right\}
+  \label{eq:rel96-asymptotics}
+\end{equation}
+The long-wavelength limit ($k\to0$) is \emph{unaffected} by the
+magnetic field, exactly as in the classical theory.  However, the
+short-wavelength saturation of the growth rate is reduced by the
+factor $(1-\vA^{2}/c^{2})^{1/2}$: as $\vA\to c$, the maximum growth
+rate is strongly suppressed.  This suppression reflects the additional
+inertia contributed by the magnetic-field energy density in the
+relativistic regime.
+
+\paragraph{Physical interpretation.}
+The factor $(1-\vA^{2}/c^{2})$ arises because, in the relativistic
+theory, the magnetic tension responsible for stabilisation acts on the
+total inertia $(\enthalpy+b^{2})/c^{2}$ rather than the mass
+density~$\rho$ alone.  As the field strength increases, the Alfv\'en
+speed approaches~$c$ but can never reach it; consequently, the magnetic
+stabilisation, while enhanced, always remains \emph{causal}.
+
+\subsection{Two uniform fluids: the stable case}
+\label{sec:rel96-stable}
+
+When $\alpha_{1,\text{rel}}>\alpha_{2,\text{rel}}$ (lighter fluid above
+denser), the constant term in the cubic~\eqref{eq:rel96-dispersion}
+is positive.  The Hurwitz criterion applied to the relativistic
+cubic yields $BC-D>0$, $D>0$ (the algebra is identical to
+equations~\eqref{eq:10-211}--\eqref{eq:10-212} with the replacement
+$\alpha_{j}\to\alpha_{j,\text{rel}}$ and multiplication by
+$(1-\vA^{2}/c^{2})^{1/2}$ in the appropriate places).  Hence all roots
+have negative real parts, and the configuration is stable.
+
+Setting $n=i\sigma$ for the oscillatory solutions, the perturbation in
+each half-space takes the form
+\begin{align}
+  w_{1} &= A_{1}\,e^{+kz}
+    + B_{1}^{-}\,e^{+i\sigma m_{1,\text{rel}}\,z}
+    + C_{1}^{-}\,e^{-i\sigma m_{1,\text{rel}}\,z}
+  \quad(z<0),
+  \label{eq:rel96-stable-w1}\\
+  w_{2} &= A_{2}\,e^{-kz}
+    + B_{2}^{+}\,e^{-i\sigma m_{2,\text{rel}}\,z}
+    + C_{2}^{+}\,e^{+i\sigma m_{2,\text{rel}}\,z}
+  \quad(z>0),
+  \label{eq:rel96-stable-w2}
+\end{align}
+where
+\begin{equation}
+  m_{j,\text{rel}}
+    = \frac{1}{\vA}\,\sqrt{\alpha_{j,\text{rel}}}\;
+      \sqrt{1-\frac{\vA^{2}}{c^{2}}}
+  \label{eq:rel96-mj}
+\end{equation}
+is the relativistic wavenumber of the Alfv\'en waves in medium~$j$.
+The oscillatory terms represent incoming and outgoing Alfv\'en waves
+exactly as in the classical theory (equations~\eqref{eq:10-213}
+and~\eqref{eq:10-214}), but now propagating at the relativistic Alfv\'en
+speed~$\vA<c$.
+
+As in the classical analysis, there is \emph{no dispersion relation
+between~$k$ and~$\sigma$}: the boundary conditions at $z=0$ yield four
+equations for six unknowns, leaving two free parameters that specify the
+amplitudes and phases of the incoming Alfv\'en waves from $z=\pm\infty$.
+The relativistic correction modifies only the propagation speed (and
+hence the wavelength) of these Alfv\'en waves, not the qualitative
+structure of the stable solution.
+
+\paragraph{Causality.}
+The Alfv\'en waves carry information at speed~$\vA<c$.  Since
+$m_{j,\text{rel}}$ is real and finite for $\vA<c$, the wave solutions
+are well-defined and causal.  In the ultra-relativistic limit
+$\vA\to c$, the wavelength diverges ($m_{j,\text{rel}}\to0$) and the
+oscillatory Alfv\'en modes decouple from the interface, leaving only the
+evanescent solutions $e^{\pm kz}$.
+
+%======================================================================
+\section{The effect of a horizontal magnetic field --- relativistic
+  extension}\label{sec:rel-97}
+%======================================================================
+
+We now extend \S97, where the impressed uniform field
+$\mathbf{B}=B\hat{\mathbf{x}}$ is perpendicular to the gravitational
+acceleration $\mathbf{g}=-g\hat{\mathbf{z}}$.
+
+\subsection{Relativistic perturbation equations with horizontal field}
+
+With the field along the $x$-axis, the linearised relativistic MHD
+equations for perturbations
+$\propto\exp\!\bigl[i(k_{x}x+k_{y}y)+nt\bigr]$ become:
+\begin{gather}
+  \frac{\enthalpy}{c^{2}}\,n\,u
+    = -ik_{x}\,\delta p,
+  \label{eq:rel97-x}\\
+  \frac{\enthalpy}{c^{2}}\,n\,v
+    - \frac{b^{2}}{c^{2}}\,\frac{ik_{x}}{n}
+      \bigl(ik_{x}v-ik_{y}u\bigr)
+    = -ik_{y}\,\delta p,
+  \label{eq:rel97-y}\\
+  \frac{\enthalpy}{c^{2}}\,n\,w
+    - \frac{b^{2}}{c^{2}}\,\frac{ik_{x}}{n}
+      \bigl(ik_{x}w-Du\bigr)
+    = -D\,\delta p
+      + \frac{g}{n}\,D\!\Bigl(\frac{\enthalpy}{c^{2}}\Bigr)\,w,
+  \label{eq:rel97-z}\\
+  \mathbf{h} = \frac{ik_{x}}{n}\,B_{0}\,\mathbf{u}.
+  \label{eq:rel97-h}
+\end{gather}
+These are the relativistic analogues of
+equations~\eqref{eq:10-215}--\eqref{eq:10-218}.
+
+\subsection{Vanishing of the vorticity component $\zeta$}
+
+Following the same combination of~\eqref{eq:rel97-x}
+and~\eqref{eq:rel97-y} as in the classical theory, one obtains
+\begin{equation}
+  \Bigl(\frac{\enthalpy}{c^{2}}\,n
+    + \frac{k_{x}^{2}}{n}\,\frac{b^{2}}{c^{2}}\Bigr)\,\zeta = 0,
+  \label{eq:rel97-zeta-eq}
+\end{equation}
+where $\zeta = ik_{x}v - ik_{y}u$.  Since the coefficient is strictly
+positive (both $\enthalpy>0$ and $b^{2}>0$), we conclude
+\begin{equation}
+  \zeta = 0.
+  \label{eq:rel97-zeta-zero}
+\end{equation}
+This is the relativistic analogue of equation~\eqref{eq:10-223}.
+
+\subsection{Relativistic master equation}
+
+Eliminating $\delta p$ between the simplified horizontal and vertical
+equations (following the algebraic route of
+\S97), one obtains the relativistic master equation for a horizontal
+field:
+\begin{equation}
+  D\!\Bigl(\frac{\enthalpy}{c^{2}}\,Dw\Bigr)
+    + \frac{\vA^{2}}{n^{2}}\,\frac{\enthalpy}{c^{2}-\vA^{2}}
+      \,\frac{k_{x}^{2}}{k^{2}}
+      \,(D^{2}-k^{2})\,Dw
+    - k^{2}\frac{\enthalpy}{c^{2}}\,w
+    = -\frac{gk^{2}}{n^{2}}\,
+      D\!\Bigl(\frac{\enthalpy}{c^{2}}\Bigr)\,w.
+  \label{eq:rel97-master}
+\end{equation}
+This reduces to Chandrasekhar's equation~\eqref{eq:10-229} in the limit
+$c\to\infty$.
+
+\paragraph{Anisotropy.}
+The magnetic term contains the factor $k_{x}^{2}/k^{2}=\cos^{2}\vartheta$,
+where $\vartheta$ is the angle between the wave vector and the field
+direction.  Consequently, the stabilising influence of the horizontal
+field is \emph{anisotropic}: it is maximal for perturbations propagating
+along the field ($\vartheta=0$) and vanishes for perturbations
+perpendicular to it ($\vartheta=\pi/2$).  This anisotropy is inherited
+directly from the classical theory and is not altered qualitatively by
+relativistic corrections.
+
+\subsection{Two uniform fluids: relativistic dispersion relation}
+
+For two uniform fluids with $w\propto e^{\mp kz}$ in $z\gtrless 0$
+(the solutions $e^{\pm kz}$ continue to hold since the magnetic
+contribution in~\eqref{eq:rel97-master} does not alter the spatial
+equation in homogeneous regions when $D(\enthalpy/c^{2})=0$), the
+interface jump condition gives
+\begin{equation}
+  \boxed{%
+  n^{2}
+    = gk\,\biggl[
+        \frac{\enthalpy_{2}-\enthalpy_{1}}{\enthalpy_{2}+\enthalpy_{1}}
+        - \frac{2b^{2}\,k_{x}^{2}}{(\enthalpy_{2}+\enthalpy_{1})\,k}
+          \;\frac{1}{1-\vA^{2}/c^{2}}
+      \biggr].}
+  \label{eq:rel97-dispersion}
+\end{equation}
+In the non-relativistic limit ($\enthalpy_{j}\to\rho_{j}c^{2}$,
+$b^{2}=\mu H^{2}/(4\pi)$, $\vA^{2}/c^{2}\to0$), this reduces exactly
+to Chandrasekhar's equation~\eqref{eq:10-234}:
+\begin{equation}
+  n^{2}\;\longrightarrow\;
+  gk\,\biggl[\frac{\rho_{2}-\rho_{1}}{\rho_{2}+\rho_{1}}
+    - \frac{\mu H^{2}k_{x}^{2}}{2\pi(\rho_{2}+\rho_{1})\,gk}\biggr]
+  \quad(c\to\infty).
+  \label{eq:rel97-NR-limit}
+\end{equation}
+
+\paragraph{Relativistic equivalent surface tension.}
+By analogy with equation~\eqref{eq:10-235}, the magnetic field acts as
+an equivalent surface tension
+\begin{equation}
+  T_{\text{eq,rel}}
+    = \frac{b^{2}}{k}\,\frac{\cos^{2}\vartheta}{1-\vA^{2}/c^{2}}.
+  \label{eq:rel97-Teq}
+\end{equation}
+The relativistic correction factor $1/(1-\vA^{2}/c^{2})$ \emph{enhances}
+the equivalent surface tension compared with the classical value.  This
+is physically intuitive: in the relativistic regime, the magnetic
+tension $b^{2}$ acts on the enhanced inertia
+$(\enthalpy+b^{2})/c^{2}$, and the net stabilising effect, expressed per
+unit Atwood number, is amplified.
+
+\subsection{Stability criterion and interchange instability}
+
+From~\eqref{eq:rel97-dispersion}, instability ($n^{2}>0$) occurs when
+the destabilising density contrast overcomes the magnetic stabilisation.
+Setting $n^{2}=0$ determines the critical wavenumber:
+\begin{equation}
+  k_{x,\text{crit}}^{2}
+    = \frac{(\enthalpy_{2}-\enthalpy_{1})\,gk}{2b^{2}}
+      \;\bigl(1-\vA^{2}/c^{2}\bigr).
+  \label{eq:rel97-kcrit}
+\end{equation}
+Modes with $k_{x}<k_{x,\text{crit}}$ are unstable; those with
+$k_{x}>k_{x,\text{crit}}$ are stabilised by magnetic tension.
+
+\paragraph{Interchange instability.}
+When $k_{x}=0$ (perturbations perpendicular to $\mathbf{B}$), the
+magnetic term in~\eqref{eq:rel97-dispersion} vanishes identically and
+the dispersion relation reduces to the purely hydrodynamic form:
+\begin{equation}
+  n^{2}\big|_{k_{x}=0}
+    = gk\,\frac{\enthalpy_{2}-\enthalpy_{1}}{\enthalpy_{2}+\enthalpy_{1}}.
+  \label{eq:rel97-interchange}
+\end{equation}
+This is the \emph{relativistic interchange instability}: perturbations
+that bend no field lines are unaffected by the magnetic field.  The only
+relativistic modification is the replacement of the density ratio by the
+enthalpy ratio, i.e.\ the Atwood number becomes
+\begin{equation}
+  \mathcal{A}_{\text{rel}}
+    = \frac{\enthalpy_{2}-\enthalpy_{1}}{\enthalpy_{2}+\enthalpy_{1}}
+  \label{eq:rel97-Atwood}
+\end{equation}
+rather than $(\rho_{2}-\rho_{1})/(\rho_{2}+\rho_{1})$.  For hot,
+relativistic fluids (where $p\sim\varepsilon/3$), the enthalpy
+$\enthalpy=\varepsilon+p=(4/3)\varepsilon$ differs substantially from
+$\rho c^{2}$, and the relativistic Atwood number can differ markedly
+from its classical counterpart.
+
+%======================================================================
+\section{Causality summary}\label{sec:rel-96-97-causality}
+%======================================================================
+
+Throughout the analysis of \S\S\ref{sec:rel-96} and~\ref{sec:rel-97},
+causality is maintained by the fundamental bound
+\begin{equation}
+  \vA^{2}
+    = \frac{b^{2}\,c^{2}}{\enthalpy + b^{2}}
+    < c^{2}.
+  \label{eq:rel96-97-causality}
+\end{equation}
+This bound ensures:
+\begin{enumerate}
+  \item The spatial decay exponents $q_{j}$ in the vertical-field
+    problem (\S\ref{sec:rel-96}) are real and positive for unstable modes.
+  \item The Alfv\'en wavenumbers $m_{j,\text{rel}}$ for stable modes
+    are real, corresponding to finite-speed wave propagation.
+  \item The equivalent surface tension $T_{\text{eq,rel}}$ in the
+    horizontal-field problem (\S\ref{sec:rel-97}) remains finite.
+  \item In the ultra-relativistic limit $\vA\to c$, growth rates are
+    \emph{suppressed} (not enhanced), reflecting the increasing
+    magnetic-field inertia.
+\end{enumerate}
+No additional constraint beyond $\vA<c$ is needed to ensure a causal
+and well-posed relativistic magnetised RT instability theory.
