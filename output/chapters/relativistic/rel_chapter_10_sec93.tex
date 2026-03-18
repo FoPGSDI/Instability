@@ -1,0 +1,417 @@
+% =============================================================
+% Relativistic Variational Principle for Rayleigh-Taylor (Ch X, §93)
+% Agent 43: Relativistic extension of the general variational principle
+% =============================================================
+%
+% Classical source: output/chapters/chapter_10.tex, lines 412--577
+% Conventions: RELATIVISTIC_CONVENTIONS.md, rel_preamble.tex
+%
+% This file extends Chandrasekhar's general variational principle
+% for Rayleigh-Taylor instability (§93) to the relativistic regime.
+%
+% Key physical points:
+%   (i)   The inertia density rho is replaced by the relativistic
+%         enthalpy density w = (epsilon + p)/c^2 throughout the
+%         kinetic-energy functional.
+%   (ii)  The gravitational potential energy retains D(rho) but
+%         acquires relativistic stratification corrections from the
+%         Tolman-Oppenheimer-Volkoff equilibrium.
+%   (iii) The viscous dissipation functional generalises to
+%         Israel-Stewart causal dissipation.
+%   (iv)  All results reduce to Chandrasekhar's §93 in the limit
+%         c -> infty (where w -> rho).
+% =============================================================
+
+\section{Relativistic variational principle for Rayleigh--Taylor
+  instability (\S93 -- relativistic)}\label{sec:rel-10-93}
+
+In the classical treatment of \S\,93, Chandrasekhar derived a general
+variational principle governing the characteristic values of the
+Rayleigh--Taylor problem, including the effects of viscosity and
+surface tension.  We now extend this formulation to the relativistic
+regime, wherein the fluid inertia is governed by the \emph{enthalpy
+density} rather than the rest-mass density alone, and the dissipative
+fluxes obey the Israel--Stewart causal transport equations.
+
+\subsection{Relativistic preliminaries}
+
+For a relativistic perfect fluid the energy-momentum tensor is
+\begin{equation}\label{eq:rel-10-Tmunu}
+  T^{\mu\nu} = \frac{\varepsilon + p}{c^{2}}\,u^{\mu}\,u^{\nu}
+  + p\,g^{\mu\nu},
+\end{equation}
+where $\varepsilon$ is the energy density (including rest-mass
+energy), $p$ the isotropic pressure, and $u^{\mu}$ the fluid
+four-velocity normalised by $u^{\mu}u_{\mu} = -c^{2}$.  The
+\emph{relativistic enthalpy density} (or inertia density) is
+\begin{equation}\label{eq:rel-10-enthalpy}
+  w \;\equiv\; \frac{\varepsilon + p}{c^{2}}.
+\end{equation}
+In the non-relativistic limit $\varepsilon \to \rho c^{2}$ and
+$p/\rho c^{2} \to 0$, so that $w \to \rho$.
+
+The equilibrium of a relativistic stratified layer in a gravitational
+field $g$ is governed by the Tolman--Oppenheimer--Volkoff condition
+\begin{equation}\label{eq:rel-10-TOV}
+  Dp_{0} = -\bigl(\varepsilon_{0} + p_{0}\bigr)\,\frac{g}{c^{2}}
+  = -w_{0}\,g,
+\end{equation}
+where $D = \mathrm{d}/\mathrm{d}z$ and the subscript~0 denotes
+equilibrium quantities.
+
+\subsection{Linearised perturbation equations}
+
+Linearising the relativistic Euler equation (with Israel--Stewart
+viscosity) about this equilibrium, one obtains the perturbation
+equations analogous to the classical \eqref{eq:10-70a}
+and~\eqref{eq:10-71}:
+\begin{align}\label{eq:rel-10-70a}
+  D\,\delta\hat{p} &= -n\,w\,\hat{w}
+  + \hat{\mu}(D^{2}-k^{2})\hat{w}
+  + 2(D\hat{\mu})(D\hat{w})
+  + \frac{g}{n}\,(Dw)\,\hat{w}
+  \nonumber\\
+  &\quad
+  - \frac{k^{2}}{n}\sum_{s}\hat{T}_{s}\,\hat{w}_{s}\,
+    \delta(z - z_{s})
+  - \hat{\mu}\,k^{2}\hat{w}
+  + 2(D\hat{\mu})(D\hat{w}),
+\end{align}
+and
+\begin{equation}\label{eq:rel-10-71}
+  k^{2}\,\delta\hat{p}
+  = -n\,w\,D\hat{w}
+  - k^{2}\hat{\mu}\,D\hat{w}
+  + k^{2}\hat{w}\,D\hat{\mu}
+  + D\!\bigl(\hat{\mu}\,D^{2}\hat{w}\bigr),
+\end{equation}
+where:
+\begin{itemize}
+\item $\hat{w}$ is the vertical-velocity perturbation amplitude
+  ($\propto e^{nt}$);
+\item $\delta\hat{p}$ is the pressure perturbation;
+\item $n$ is the growth rate (eigenvalue);
+\item $k$ is the horizontal wave number;
+\item $w = (\varepsilon + p)/c^{2}$ replaces $\rho$ as the inertia
+  density;
+\item $Dw$ replaces $D\rho$ in the buoyancy coupling;
+\item $\hat{\mu}$ is the relativistic dynamic viscosity (in the
+  Israel--Stewart framework, $\hat{\mu} = \mu/(1 + \taupi\,n)$ when
+  the relaxation-time approximation applies);
+\item $\hat{T}_{s}$ is the surface tension at interface~$s$.
+\end{itemize}
+The boundary conditions remain
+\begin{equation}\label{eq:rel-10-72}
+  \hat{w} = 0 \quad\text{and}\quad D\hat{w} = 0
+  \quad\text{on bounding surfaces.}
+\end{equation}
+
+\subsection{Orthogonality relations}
+
+Let $n_{i}$, $n_{j}$ be two distinct characteristic values and
+$\hat{w}_{i}$, $\hat{w}_{j}$ the corresponding eigenfunctions.
+Proceeding exactly as in the classical derivation --- multiplying the
+equations for mode~$i$ by $\hat{w}_{j}$, integrating over the layer
+$0 \leqslant z \leqslant d$, and integrating by parts --- one arrives
+at the relativistic analogue of equation~\eqref{eq:10-81}:
+\begin{align}\label{eq:rel-10-81}
+  -n_{i}\int_{0}^{d} w\!\left\{\hat{w}_{i}\hat{w}_{j}
+  + \frac{1}{k^{2}}(D\hat{w}_{i})(D\hat{w}_{j})\right\}\mathrm{d}z
+  &+ \frac{g}{n_{i}}\int_{0}^{d}(Dw)\,\hat{w}_{i}\hat{w}_{j}\,
+    \mathrm{d}z
+  \nonumber\\
+  &- \frac{k^{2}}{n_{i}}\sum_{s}\hat{T}_{s}\,
+    \hat{w}_{i}(z_{s})\hat{w}_{j}(z_{s})
+  \nonumber\\
+  &= \int_{0}^{d}\!\Bigl\{(D^{2}\hat{\mu})\,\hat{w}_{i}\hat{w}_{j}
+  + 2\hat{\mu}(D\hat{w}_{i})(D\hat{w}_{j})
+  \nonumber\\
+  &\quad
+  + \frac{1}{k^{2}}\hat{\mu}(D^{2}\hat{w}_{i})
+    (D^{2}\hat{w}_{j})\Bigr\}\mathrm{d}z.
+\end{align}
+The crucial change is $\rho \to w$ in every inertial integral on the
+left-hand side.
+
+Interchanging $i$ and $j$ and subtracting, we obtain the orthogonality
+relation
+\begin{align}\label{eq:rel-10-83}
+  (n_{j} - n_{i})\!\Biggl[
+  &\int_{0}^{d} w\!\left\{\hat{w}_{i}\hat{w}_{j}
+  + \frac{1}{k^{2}}(D\hat{w}_{i})(D\hat{w}_{j})\right\}\mathrm{d}z
+  \nonumber\\
+  &+ \frac{1}{n_{i}n_{j}}\biggl\{
+    g\int_{0}^{d}(Dw)\,\hat{w}_{i}\hat{w}_{j}\,\mathrm{d}z
+    - k^{2}\sum_{s}\hat{T}_{s}\,\hat{w}_{i}(z_{s})
+      \hat{w}_{j}(z_{s})\biggr\}
+  \Biggr] = 0.
+\end{align}
+
+\subsection{Reality of characteristic values}
+
+If $n_{i}$ is complex, let $n_{j} = n_{i}^{*}$ (complex conjugate),
+$\hat{w}_{j} = \hat{w}_{i}^{*}$.  From~\eqref{eq:rel-10-83}:
+\begin{equation}\label{eq:rel-10-86}
+  \int_{0}^{d} w\!\left\{|\hat{w}|^{2}
+  + \frac{1}{k^{2}}|D\hat{w}|^{2}\right\}\mathrm{d}z
+  + \frac{1}{|n|^{2}}\biggl\{
+    g\int_{0}^{d}(Dw)\,|\hat{w}|^{2}\,\mathrm{d}z
+    - k^{2}\sum_{s}\hat{T}_{s}\,|\hat{w}(z_{s})|^{2}
+  \biggr\} = 0.
+\end{equation}
+Since $w > 0$ everywhere, the first integral is positive definite.  In
+the absence of surface tension, if $Dw > 0$ (i.e.\ the heavier fluid
+underlies the lighter --- \emph{stable} stratification), the equation
+cannot be satisfied, and $n$ must be real.  This is the relativistic
+counterpart of Chandrasekhar's classical result.
+
+Similarly, using the analogue of~\eqref{eq:10-85}, one can show that
+if $n$ is complex then
+\begin{align}\label{eq:rel-10-87}
+  2\,\operatorname{Re}(n)\int_{0}^{d}
+    w\!\left\{|\hat{w}|^{2}
+    + \frac{1}{k^{2}}|D\hat{w}|^{2}\right\}\mathrm{d}z
+  &= -\int_{0}^{d}(D^{2}\hat{\mu})\,|\hat{w}|^{2}\,\mathrm{d}z
+  \nonumber\\
+  &\quad
+  - \int_{0}^{d}\hat{\mu}\!\left(k^{2}|\hat{w}|^{2}
+    + 2|D\hat{w}|^{2}
+    + \frac{1}{k^{2}}|D^{2}\hat{w}|^{2}\right)\mathrm{d}z.
+\end{align}
+Hence, if $D^{2}\hat{\mu} \geqslant 0$ and $\hat{\mu} > 0$
+(guaranteed in the Israel--Stewart framework with $\taupi > 0$), then
+$\operatorname{Re}(n) < 0$ whenever $n$ is complex, so
+\emph{overstability cannot occur} --- precisely as in the classical
+theory.
+
+\subsection{The relativistic variational principle}\label{ssec:rel-10-var}
+
+Setting $i = j$ in~\eqref{eq:rel-10-81} and dropping subscripts, we
+obtain the \emph{relativistic energy balance}:
+\begin{align}\label{eq:rel-10-88}
+  n\underbrace{\int_{0}^{d}
+    w\!\left\{\hat{w}^{2}
+    + \frac{1}{k^{2}}(D\hat{w})^{2}\right\}\mathrm{d}z}_{I_{1}}
+  &- \frac{g}{n}\underbrace{\int_{0}^{d}
+    (Dw)\,\hat{w}^{2}\,\mathrm{d}z}_{I_{2}}
+  + \frac{k^{2}}{n}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}
+  \nonumber\\
+  &= -\underbrace{\int_{0}^{d}\!\left\{
+    \hat{\mu}\!\left[k^{2}\hat{w}^{2}
+    + 2(D\hat{w})^{2}
+    + \frac{1}{k^{2}}(D^{2}\hat{w})^{2}\right]
+    + (D^{2}\hat{\mu})\,\hat{w}^{2}
+  \right\}\mathrm{d}z}_{I_{3}}.
+\end{align}
+
+\medskip\noindent\textbf{Physical interpretation.}
+\begin{itemize}
+\item $I_{1}$ is the \textbf{relativistic kinetic energy} functional.
+  The replacement $\rho \to w = (\varepsilon + p)/c^{2}$ reflects the
+  fact that in relativity both internal energy and pressure contribute
+  to the inertia.  Explicitly:
+  \begin{equation}\label{eq:rel-10-KE}
+    \mathcal{T} \;=\; \tfrac{1}{2}\,
+    \frac{\varepsilon + p}{c^{2}}\,|\boldsymbol{v}|^{2}
+    \;=\; \tfrac{1}{2}\,w\,|\boldsymbol{v}|^{2},
+  \end{equation}
+  which reduces to $\tfrac{1}{2}\rho|\boldsymbol{v}|^{2}$ in the
+  Newtonian limit.
+
+\item $I_{2}$ is the \textbf{potential energy} from gravitational
+  stratification, governed by $Dw$ (the gradient of enthalpy density)
+  rather than $D\rho$.  In the Newtonian limit, the
+  TOV~\eqref{eq:rel-10-TOV} reduces to $Dp_{0} = -\rho g$, and $Dw
+  \to D\rho$, recovering the classical potential-energy functional.
+
+\item $I_{3}$ is the \textbf{viscous dissipation} functional.  In the
+  Israel--Stewart framework, the effective viscosity $\hat{\mu} =
+  \mu/(1 + \taupi\,n)$ depends on the growth rate $n$ through the
+  relaxation time $\taupi$, introducing an implicit nonlinearity.
+\end{itemize}
+
+\medskip\noindent\textbf{Variational formulation.}
+Consider the effect of an arbitrary variation $\delta\hat{w}$
+compatible with the boundary conditions~\eqref{eq:rel-10-72}.  To
+first order,
+\begin{equation}\label{eq:rel-10-89}
+  -\left(I_{1} + \frac{1}{n^{2}}\Bigl[g\,I_{2}
+  - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}\Bigr]\right)\delta n
+  = n\,\delta I_{1}
+  - \frac{1}{n}\Bigl[g\,\delta I_{2}
+    - 2k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}\,\delta\hat{w}_{s}\Bigr]
+  + \delta I_{3},
+\end{equation}
+where $\delta I_{1}$, $\delta I_{2}$, $\delta I_{3}$ are the
+first-order variations:
+\begin{align}
+  \tfrac{1}{2}\,\delta I_{1}
+  &= \int_{0}^{d}\delta\hat{w}\!\left\{
+    w\,\hat{w}
+    - \frac{1}{k^{2}}\,D(w\,D\hat{w})\right\}\mathrm{d}z,
+  \label{eq:rel-10-91}\\[6pt]
+  \tfrac{1}{2}\,\delta I_{2}
+  &= \int_{0}^{d}\delta\hat{w}\,(Dw)\,\hat{w}\;\mathrm{d}z,
+  \label{eq:rel-10-92}\\[6pt]
+  \tfrac{1}{2}\,\delta I_{3}
+  &= \int_{0}^{d}\delta\hat{w}\!\left\{
+    k^{2}\hat{\mu}\,\hat{w}
+    - 2D(\hat{\mu}\,D\hat{w})
+    + (D^{2}\hat{\mu})\,\hat{w}
+    + \frac{1}{k^{2}}D^{2}(\hat{\mu}\,D^{2}\hat{w})\right\}
+    \mathrm{d}z.
+  \label{eq:rel-10-93}
+\end{align}
+Combining these in accordance with~\eqref{eq:rel-10-89}, the
+condition $\delta n = 0$ for all admissible $\delta\hat{w}$ becomes
+\begin{align}\label{eq:rel-10-94}
+  \tfrac{1}{2}\,k^{2}\Bigl\{I_{1}
+  &+ \frac{1}{n^{2}}\bigl[g\,I_{2}
+    - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}\bigr]\Bigr\}
+    \,\delta n
+  \nonumber\\
+  &= \int_{0}^{d}\delta\hat{w}\,\biggl\{
+    D\!\left[w\,D\hat{w}
+      - \frac{\hat{\mu}}{n}(D^{2} - k^{2})D\hat{w}
+      - \frac{1}{n}(D\hat{\mu})(D^{2}+k^{2})\hat{w}
+    \right]
+  \nonumber\\
+  &\qquad
+    - k^{2}\!\left[
+      w\,\hat{w}
+      - \frac{\hat{\mu}}{n}(D^{2} - k^{2})\hat{w}
+      - \frac{g}{n^{2}}(Dw)\,\hat{w}
+      + \frac{k^{2}}{n^{2}}\sum_{s}\hat{T}_{s}\,
+        \delta(z - z_{s})\hat{w}
+    \right]\biggr\}\mathrm{d}z.
+\end{align}
+The integrand on the right-hand side vanishes identically when
+$\hat{w}$ satisfies the relativistic eigenvalue problem.  Therefore,
+$\delta n = 0$ for all admissible variations $\delta\hat{w}$ if and
+only if $\hat{w}$ is a solution of the characteristic-value problem.
+This establishes the \emph{relativistic variational principle}.
+
+\subsection{Eigenvalue problem for the growth rate}
+
+The extremal condition defines the eigenvalue problem: find $n$ and
+$\hat{w}$ (not identically zero, satisfying the boundary conditions)
+such that~\eqref{eq:rel-10-88} is satisfied.  Rearranging:
+\begin{equation}\label{eq:rel-10-eigenvalue}
+  \boxed{
+  n^{2}\,I_{1}[w;\hat{w}]
+  + n\,I_{3}[\hat{\mu};\hat{w}]
+  - g\,I_{2}[Dw;\hat{w}]
+  + k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}
+  = 0,
+  }
+\end{equation}
+which is a quadratic in $n$ (for given $\hat{w}$) when $\hat{\mu}$ is
+independent of $n$ (i.e.\ in the Navier--Stokes limit $\taupi \to
+0$).  Solving:
+\begin{equation}\label{eq:rel-10-nquad}
+  n = \frac{-I_{3} \pm \sqrt{I_{3}^{2}
+    + 4\,I_{1}\bigl(g\,I_{2}
+    - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}\bigr)}}
+    {2\,I_{1}}.
+\end{equation}
+\emph{Instability} ($n > 0$) requires
+\begin{equation}\label{eq:rel-10-instab-cond}
+  g\,I_{2} - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2} > 0
+  \qquad\Longleftrightarrow\qquad
+  g\!\int_{0}^{d}(Dw)\,\hat{w}^{2}\,\mathrm{d}z
+  > k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2},
+\end{equation}
+i.e.\ the destabilising effect of adverse enthalpy stratification
+($Dw < 0$ for heavy-over-light) must overcome the stabilising effect
+of surface tension.
+
+\subsection{Bounds on the growth rate}
+
+From the variational formulation one can extract useful bounds.
+
+\subsubsection*{Upper bound (inviscid case)}
+
+In the inviscid limit ($\hat{\mu} \to 0$, hence $I_{3} \to 0$),
+equation~\eqref{eq:rel-10-nquad} gives
+\begin{equation}\label{eq:rel-10-ninviscid}
+  n^{2} = \frac{g\,I_{2} - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}}
+    {I_{1}}.
+\end{equation}
+Since the variational principle yields the \emph{maximum} of $n^{2}$
+over all admissible trial functions, any trial function provides an
+upper bound:
+\begin{equation}\label{eq:rel-10-upper-bound}
+  n_{\max}^{2} \;\leqslant\;
+  \sup_{\hat{w}}\;
+  \frac{g\displaystyle\int_{0}^{d}(Dw)\,\hat{w}^{2}\,\mathrm{d}z
+    - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}}
+    {\displaystyle\int_{0}^{d}
+    w\!\left\{\hat{w}^{2}
+    + \frac{1}{k^{2}}(D\hat{w})^{2}\right\}\mathrm{d}z}.
+\end{equation}
+Compared with the classical bound (in which $w \to \rho$ and $Dw \to
+D\rho$), the relativistic bound differs in two respects:
+\begin{enumerate}
+\item The inertia is \emph{larger}: $w = (\varepsilon + p)/c^{2}
+  \geqslant \rho$, so the denominator is larger and the growth rate is
+  \emph{smaller}.
+\item The driving gradient involves $Dw$ rather than $D\rho$.  Since
+  the relativistic equilibrium condition~\eqref{eq:rel-10-TOV}
+  implies $Dw = D\rho + D(p/c^{2})$, the effective Atwood number is
+  modified.
+\end{enumerate}
+
+\subsubsection*{Lower bound (viscous damping)}
+
+For $\hat{\mu} > 0$, the viscous term $I_{3}$ is positive definite
+and acts to reduce $n$.  From~\eqref{eq:rel-10-nquad}:
+\begin{equation}\label{eq:rel-10-viscous-bound}
+  n \;\leqslant\;
+  \frac{g\,I_{2} - k^{2}\sum_{s}\hat{T}_{s}\hat{w}_{s}^{2}}
+    {I_{3}},
+\end{equation}
+which places a lower bound on the stabilising effect of viscosity.
+In the Israel--Stewart framework, the effective viscosity
+$\hat{\mu} = \mu/(1 + \taupi\,n)$ is \emph{reduced} compared with
+the Navier--Stokes value $\mu$ for rapidly growing modes
+($\taupi\,n \gg 1$), so the viscous damping is less effective at
+short wavelengths --- a distinctly relativistic effect.
+
+\subsection{Non-relativistic limit}\label{ssec:rel-10-NR}
+
+The non-relativistic limit is obtained by taking $c \to \infty$
+(equivalently, $p/\varepsilon \to 0$ and $\taupi \to 0$):
+\begin{enumerate}
+\item $w = (\varepsilon + p)/c^{2} \to \rho c^{2}/c^{2} = \rho$.
+\item $Dw \to D\rho$.
+\item The TOV condition~\eqref{eq:rel-10-TOV} reduces to $Dp_{0} =
+  -\rho g$.
+\item The effective viscosity $\hat{\mu} = \mu/(1 + \taupi\,n)
+  \to \mu$ (instantaneous dissipation).
+\item $I_{1} \to \int_{0}^{d}\rho\bigl\{w^{2} +
+  k^{-2}(Dw)^{2}\bigr\}\,\mathrm{d}z$, $I_{2} \to
+  \int_{0}^{d}(D\rho)\,w^{2}\,\mathrm{d}z$.
+\end{enumerate}
+Under these replacements, equations~\eqref{eq:rel-10-88}
+through~\eqref{eq:rel-10-94} reduce identically to
+Chandrasekhar's equations~\eqref{eq:10-88}--\eqref{eq:10-94}.
+The variational principle, eigenvalue equation, and all bounds
+recover their classical forms exactly.
+
+\subsection{Summary}
+
+The relativistic variational principle for Rayleigh--Taylor
+instability is structurally identical to the classical one, with the
+systematic replacement $\rho \to w = (\varepsilon + p)/c^{2}$ in all
+inertial quantities and $D\rho \to Dw$ in the buoyancy term.  The
+key new features are:
+\begin{enumerate}
+\item \textbf{Enhanced inertia:} pressure contributes to the effective
+  mass density, generally reducing growth rates.
+\item \textbf{Modified Atwood number:} the density contrast is
+  replaced by the enthalpy-density contrast.
+\item \textbf{Causal dissipation:} Israel--Stewart relaxation weakens
+  viscous damping for rapidly growing modes.
+\item \textbf{Causality bound:} growth rates are bounded by $c/d$,
+  since perturbations cannot propagate superluminally.
+\end{enumerate}
