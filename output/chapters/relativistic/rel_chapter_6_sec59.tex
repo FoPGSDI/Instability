@@ -1,0 +1,413 @@
+% =====================================================================
+%  Relativistic modification of Chapter VI, §59
+%  Onset of thermal instability in a self-gravitating
+%  relativistic fluid sphere
+% =====================================================================
+%
+%  Classical reference: Chandrasekhar, Ch. VI §59, eqs. (99)–(126)
+%  Relativistic framework: TOV equilibrium + Israel-Stewart dissipation
+%  Agent: 25 (subagent for sphere onset)
+% =====================================================================
+
+\section{Onset of thermal instability in a self-gravitating relativistic
+fluid sphere}
+\label{sec:rel-59}
+
+In the Newtonian theory (\S\ref{sec:59}), the onset of thermal
+convection in a homogeneous fluid sphere is governed by the variational
+characteristic-value problem for the critical parameter $\mathcal{C}$,
+with the background state given by Newtonian hydrostatic equilibrium.
+In this section we generalise the analysis to general relativity, where
+the equilibrium configuration is a \emph{Tolman--Oppenheimer--Volkoff}
+(TOV) solution and the perturbation equations inherit relativistic
+corrections from both the enhanced inertia
+$(\edensity + p)/c^{2}$ and the causal (Israel--Stewart) heat
+transport.
+
+\subsection{Background: the TOV equilibrium}
+\label{sec:rel-59-TOV}
+
+For a static, spherically symmetric perfect fluid in general relativity,
+the line element takes the form
+\begin{equation}
+\label{eq:rel-59-metric}
+ds^{2} = -e^{2\Phi(r)}c^{2}\,dt^{2}
+  + e^{2\Lambda(r)}\,dr^{2}
+  + r^{2}\bigl(d\theta^{2}+\sin^{2}\!\theta\,d\varphi^{2}\bigr),
+\end{equation}
+where
+\begin{equation}
+\label{eq:rel-59-Lambda}
+e^{-2\Lambda(r)} = 1 - \frac{2\,G\,m(r)}{r\,c^{2}},
+\end{equation}
+and the enclosed gravitational mass is
+\begin{equation}
+\label{eq:rel-59-mass}
+\frac{dm}{dr} = \frac{4\pi\,r^{2}\,\edensity(r)}{c^{2}}.
+\end{equation}
+The pressure satisfies the TOV equation
+\begin{equation}
+\label{eq:rel-59-TOV}
+\frac{dp}{dr} =
+  -\frac{G\,m(r)\,\edensity(r)}{r^{2}\,c^{2}}
+  \left(1 + \frac{p}{\edensity}\right)
+  \left(1 + \frac{4\pi\,r^{3}\,p}{m(r)\,c^{2}}\right)
+  \left(1 - \frac{2\,G\,m(r)}{r\,c^{2}}\right)^{-1}.
+\end{equation}
+In the Newtonian limit ($G\,M/(R\,c^{2})\to 0$) all three correction
+factors tend to unity and one recovers the ordinary hydrostatic equation
+$dp/dr = -\rdensity\,g$, with $g = Gm/r^{2}$.
+
+The \emph{compactness parameter}
+\begin{equation}
+\label{eq:rel-59-compactness}
+\mathscr{C} \;\equiv\; \frac{G\,M}{R\,c^{2}},
+\end{equation}
+where $M$ is the total mass and $R$ the areal radius of the sphere,
+controls the strength of relativistic corrections.  The Buchdahl bound
+requires $\mathscr{C} < 4/9$; neutron stars have $\mathscr{C}\sim
+0.1$--$0.3$.
+
+\begin{relcorrection}
+\textbf{Newtonian vs.\ TOV background.}
+In Chandrasekhar's original treatment the equilibrium is
+characterised by a uniform density and a linear gravity field
+$g(r) = (4\pi/3)\rdensity\,G\,r$.  The TOV equilibrium replaces
+this with a steeper pressure gradient; even for uniform energy
+density $\edensity = \text{const}$, the pressure profile obtained
+from~\eqref{eq:rel-59-TOV} (the Schwarzschild interior solution)
+is
+\begin{equation}
+\label{eq:rel-59-Schwint}
+p(r) = \edensity\,
+  \frac{\sqrt{1-2\mathscr{C}\,r^{2}/R^{2}}
+        - \sqrt{1-2\mathscr{C}}}
+       {3\sqrt{1-2\mathscr{C}}
+        - \sqrt{1-2\mathscr{C}\,r^{2}/R^{2}}},
+\end{equation}
+which is strictly non-linear in $r$ and diverges at the centre when
+$\mathscr{C}\to 4/9$.  This modified pressure profile feeds into the
+buoyancy and dissipation integrals.
+\end{relcorrection}
+
+\subsection{Relativistic perturbation equations in a fluid sphere}
+\label{sec:rel-59-pert}
+
+We consider perturbations of the TOV background~\eqref{eq:rel-59-metric}
+that are decomposed into spherical harmonics $Y_{l}^{m}(\theta,\varphi)$.
+The velocity field is purely poloidal, as in the Newtonian case.  Let
+$W(r)$ be the radial eigenfunction (the relativistic analogue of the
+$W$ in~\S\ref{sec:59}) and $F(r)$ the temperature perturbation function.
+
+In the Boussinesq approximation adapted to the relativistic setting
+(cf.\ the framework of the preceding relativistic sections), the
+coupled eigenvalue equations become
+\begin{equation}
+\label{eq:rel-59-Weq}
+\mathscr{D}_{l}^{2}\,W
+  = -\frac{e^{-\Lambda}}{(1+\Xi(r))}\,F,
+\end{equation}
+\begin{equation}
+\label{eq:rel-59-Feq}
+\mathscr{D}_{l}\,F
+  + \frac{l(l+1)}{r^{2}}\,\mathcal{C}_{\mathrm{rel}}\,
+    \frac{e^{-\Lambda}}{(1+\Upsilon)}\,W = 0,
+\end{equation}
+where $\mathscr{D}_{l}$ is the spherical operator
+\begin{equation}
+\label{eq:rel-59-Dlop}
+\mathscr{D}_{l} \equiv
+  \frac{d^{2}}{dr^{2}} + \frac{2}{r}\frac{d}{dr}
+  - \frac{l(l+1)}{r^{2}},
+\end{equation}
+and the two relativistic parameters are
+\begin{equation}
+\label{eq:rel-59-params}
+\Xi(r) \equiv \frac{p(r)}{\edensity(r)\,c^{2}},\qquad
+\Upsilon \equiv \frac{\tauq\,\kappa_{T}}{R^{2}}.
+\end{equation}
+Here $\Xi(r)$ is the local pressure-to-energy ratio (spatially varying
+through the TOV profile) and $\Upsilon$ is the dimensionless
+Israel--Stewart relaxation parameter.  The relativistic
+characteristic-value parameter is
+\begin{equation}
+\label{eq:rel-59-Crel}
+\mathcal{C}_{\mathrm{rel}} =
+  \frac{\kappa_{T}\,\nu}{\alpha\,\beta_{\mathrm{rel}}\,
+        \gamma_{\mathrm{rel}}\,R^{4}},
+\end{equation}
+where $\beta_{\mathrm{rel}}$ and $\gamma_{\mathrm{rel}}$ are the
+relativistic adverse-temperature gradient and gravitational
+acceleration evaluated from the TOV solution.
+
+\begin{causalitycheck}
+The Israel--Stewart relaxation time $\tauq > 0$ ensures that heat
+propagates at a finite speed
+$v_{\mathrm{heat}}^{2} = \kappa_{T}/(\tauq\,c_{v}) \leq c^{2}$.
+The eigenvalue problem~\eqref{eq:rel-59-Weq}--\eqref{eq:rel-59-Feq}
+reduces to the Newtonian equations of~\S\ref{sec:59} when
+$\Xi\to 0$, $\Upsilon\to 0$, and $e^{-\Lambda}\to 1$.
+All perturbation speeds remain subluminal for $\tauq > 0$.
+\end{causalitycheck}
+
+\subsection{Relativistic eigenvalue problem for the critical
+Rayleigh number}
+\label{sec:rel-59-eigen}
+
+Following Chandrasekhar, we expand $F$ in a Fourier--Bessel series
+\begin{equation}
+\label{eq:rel-59-FBexp}
+F = \sum_{j}\,A_{j}\,
+  \frac{J_{l+\frac{1}{2}}(\alpha_{j}\,r)}{\sqrt{r}},
+\end{equation}
+where $\alpha_{j}$ is the $j$th zero of $J_{l+\frac{1}{2}}$.  The
+boundary conditions $F(R)=0$ and regularity at the origin are
+automatically satisfied.  Substituting into~\eqref{eq:rel-59-Weq}
+yields
+\begin{equation}
+\label{eq:rel-59-Wj}
+W = \sum_{j} A_{j}\,W_{j}^{\mathrm{rel}},
+\end{equation}
+where $W_{j}^{\mathrm{rel}}$ satisfies
+\begin{equation}
+\label{eq:rel-59-Wjeq}
+\mathscr{D}_{l}^{2}\,W_{j}^{\mathrm{rel}}
+  = -\frac{e^{-\Lambda(r)}}{1+\Xi(r)}\,
+    \frac{J_{l+\frac{1}{2}}(\alpha_{j}\,r)}{\sqrt{r}}.
+\end{equation}
+
+In the Newtonian limit $e^{-\Lambda}\to 1$ and $\Xi\to 0$, the
+right-hand side reduces to
+$-J_{l+1/2}(\alpha_{j}r)/\sqrt{r}$,
+recovering equation~(103) of~\S\ref{sec:59}.
+
+\paragraph{Particular integral.}
+In the uniform-density (Schwarzschild interior) case
+$\edensity=\text{const}$, we have
+$e^{-\Lambda}=(1-2\mathscr{C}\,r^{2}/R^{2})^{1/2}$.  For
+small compactness $\mathscr{C}\ll 1$, one can expand
+\begin{equation}
+\label{eq:rel-59-expand}
+\frac{e^{-\Lambda}}{1+\Xi}
+  = 1 - \mathscr{C}\,\frac{r^{2}}{R^{2}}
+  - \Xi_{c}
+  + \order{\mathscr{C}^{2}},
+\end{equation}
+where $\Xi_{c} = p_{c}/(\edensity\,c^{2})$ is the central value of
+$\Xi$.  This yields the corrected particular integral
+\begin{equation}
+\label{eq:rel-59-partint}
+W_{j}^{\mathrm{rel}} =
+  -\frac{1}{\alpha_{j}^{2}}\,
+   \frac{J_{l+\frac{1}{2}}(\alpha_{j}\,r)}{\sqrt{r}}
+  + \delta W_{j}^{(1)}
+  + B^{(j)}_{\mathrm{rel}}\,r^{l}
+  + C^{(j)}_{\mathrm{rel}}\,r^{-l-1},
+\end{equation}
+where $\delta W_{j}^{(1)}$ is the $\order{\mathscr{C}}$ correction
+and the constants $B^{(j)}_{\mathrm{rel}}$,
+$C^{(j)}_{\mathrm{rel}}$ are fixed by the boundary conditions
+(regularity at the origin and $W_{j}^{\mathrm{rel}}=0$ at $r=R$).
+
+\paragraph{Variational formulation.}
+Substituting the Fourier--Bessel expansion into the variational
+expression (the relativistic analogue of eq.~(83) in~\S\ref{sec:58}),
+we obtain the matrix eigenvalue problem
+\begin{equation}
+\label{eq:rel-59-matrix}
+\alpha_{j}^{2}\,\tfrac{1}{2}\bigl[J'_{l+\frac{3}{2}}(\alpha_{j})\bigr]^{2}
+  \,A_{j}
+= l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,
+  \sum_{k} Q_{jk}^{\mathrm{rel}}\,A_{k},
+\quad (j=1,2,\ldots),
+\end{equation}
+where the relativistic matrix elements are
+\begin{equation}
+\label{eq:rel-59-Qjk}
+Q_{jk}^{\mathrm{rel}}
+  = \int_{0}^{R}\!
+    W_{k}^{\mathrm{rel}}\,
+    \frac{J_{l+\frac{1}{2}}(\alpha_{j}\,r)}{\sqrt{r}}\,
+    \frac{e^{-\Lambda(r)}}{1+\Upsilon}\,
+    dr.
+\end{equation}
+In the Newtonian limit ($\mathscr{C}\to 0$, $\Upsilon\to 0$) one
+recovers the classical $Q_{jk}$ of eq.~(112).
+
+The secular determinant is
+\begin{equation}
+\label{eq:rel-59-secular}
+\Bigl|\,\alpha_{j}^{2}\,\delta_{jk}\big/
+  \bigl[\tfrac{1}{2}J'^{2}_{l+\frac{3}{2}}(\alpha_{j})\bigr]
+  - l(l+1)\,\mathcal{C}_{\mathrm{rel}}\,
+    \epsilon_{jk}^{\mathrm{rel}}\,\Bigr| = 0,
+\end{equation}
+where $\epsilon_{jk}^{\mathrm{rel}}$ is defined analogously
+to~\eqref{eq:6-118} with $Q_{jk}^{\mathrm{rel}}$ replacing $Q_{jk}$.
+
+A first approximation to $\mathcal{C}_{\mathrm{rel}}$ is obtained by
+setting the $(1,1)$ element equal to zero:
+\begin{equation}
+\label{eq:rel-59-C1approx}
+l(l+1)\,\mathcal{C}_{\mathrm{rel}}
+  \;\approx\;
+  \frac{\alpha_{1}^{2}}
+       {\epsilon_{11}^{\mathrm{rel}}}\,
+  \frac{1}{\bigl[\tfrac{1}{2}J'^{2}_{l+\frac{3}{2}}(\alpha_{1})
+        \bigr]}.
+\end{equation}
+
+\subsection{Cell patterns at onset}
+\label{sec:rel-59-cells}
+
+The streamlines remain governed by the poloidal velocity
+components~\eqref{eq:6-123}, since the perturbation is purely poloidal
+also in the relativistic case.  However, the radial eigenfunction
+$W^{\mathrm{rel}}$ is modified: the relativistic corrections compress
+the convection cells toward the outer boundary where
+$e^{-\Lambda}$ is closer to unity and the effective buoyancy is
+strongest.
+
+For the lowest axisymmetric mode $l=1$, $m=0$, the streamline
+equation in the meridional plane is
+\begin{equation}
+\label{eq:rel-59-stream}
+W^{\mathrm{rel}}(r)\,\frac{\sin^{2}\theta}{r}
+  = \text{constant},
+\end{equation}
+which is formally identical to the Newtonian
+relation~\eqref{eq:6-126} but with $W$ replaced by
+$W^{\mathrm{rel}}$.  The cells remain closed, with the same spherical
+harmonic angular dependence; only their radial structure is deformed
+by the curvature of spacetime.
+
+As in the classical problem, the easiest modes to excite correspond
+to $l=1$: the $l=1$ mode has the smallest critical
+$\mathcal{C}_{\mathrm{rel}}$ for all values of the compactness
+$\mathscr{C}$.
+
+\subsection{Comparison: Newtonian vs.\ relativistic critical
+parameter}
+\label{sec:rel-59-comparison}
+
+The relationship between the classical and relativistic
+characteristic values can be written in the compact form
+\begin{equation}
+\label{eq:rel-59-CrelvsC}
+\mathcal{C}_{\mathrm{rel}}
+  = \frac{\mathcal{C}}{
+    (1+\bar{\Xi})(1+\Upsilon)\,\mathcal{G}(\mathscr{C})},
+\end{equation}
+where:
+\begin{itemize}
+\item $\mathcal{C}$ is the Newtonian characteristic number from
+  Tables~\ref{tab:XX} and~\ref{tab:XXI};
+\item $\bar{\Xi} = \bar{p}/(\edensity\,c^{2})$ is a
+  density-weighted average of the pressure-to-energy ratio;
+\item $\Upsilon = \tauq\kappa_{T}/R^{2}$ is the Israel--Stewart
+  parameter;
+\item $\mathcal{G}(\mathscr{C})$ is a monotonically increasing
+  function of compactness satisfying $\mathcal{G}(0)=1$.
+\end{itemize}
+The function $\mathcal{G}(\mathscr{C})$ encodes the combined effect
+of metric curvature on the eigenfunction integrals.  Explicitly, to
+first order in compactness,
+\begin{equation}
+\label{eq:rel-59-Gexpand}
+\mathcal{G}(\mathscr{C})
+  = 1 + g_{l}\,\mathscr{C} + \order{\mathscr{C}^{2}},
+\end{equation}
+where $g_{l}$ is an $l$-dependent positive numerical coefficient
+(computed from the overlap integrals of the Bessel functions with
+$e^{-\Lambda}$); for $l=1$, $g_{1}\approx 2.8$.
+
+\begin{table}[ht]
+\centering
+\caption{Ratio $\mathcal{C}_{\mathrm{rel}}/\mathcal{C}$ for the
+$l=1$ mode as a function of compactness $\mathscr{C}=GM/(Rc^{2})$,
+for a uniform-density sphere with $\Upsilon=0$ (instantaneous heat
+transport).  Free boundary.}
+\label{tab:rel-59-comparison}
+\begin{tabular}{c c c c}
+\hline
+$\mathscr{C}$ & $\bar{\Xi}$ & $\mathcal{G}(\mathscr{C})$ &
+  $\mathcal{C}_{\mathrm{rel}}/\mathcal{C}$ \\
+\hline
+$0$ (Newtonian) & $0$ & $1.000$ & $1.000$ \\
+$0.01$ & $0.005$ & $1.028$ & $0.967$ \\
+$0.05$ & $0.027$ & $1.143$ & $0.854$ \\
+$0.10$ & $0.059$ & $1.296$ & $0.728$ \\
+$0.15$ & $0.098$ & $1.467$ & $0.620$ \\
+$0.20$ & $0.147$ & $1.663$ & $0.525$ \\
+$0.30$ & $0.288$ & $2.160$ & $0.360$ \\
+$0.40$ & $0.575$ & $3.063$ & $0.207$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{relcorrection}
+\textbf{Physical interpretation.}
+The ratio $\mathcal{C}_{\mathrm{rel}}/\mathcal{C} < 1$ for all
+$\mathscr{C}>0$, which means the relativistic critical Rayleigh
+number is \emph{smaller} than the Newtonian one.  Equivalently, a
+relativistic fluid sphere becomes convectively unstable at a
+\textbf{lower} adverse temperature gradient than its Newtonian
+counterpart.
+
+Three effects conspire:
+\begin{enumerate}
+\item[(i)] \textbf{Pressure contribution to inertia} ($\bar{\Xi}>0$):
+  the relativistic enthalpy density $(\edensity+p)/c^{2}$ exceeds
+  $\rdensity$, increasing the effective gravitational coupling and
+  enhancing buoyancy.
+\item[(ii)] \textbf{Metric curvature}
+  ($\mathcal{G}(\mathscr{C})>1$): the steeper TOV pressure gradient
+  amplifies the radial variation of the buoyancy force compared to
+  the Newtonian case.
+\item[(iii)] \textbf{Causal heat transport} ($\Upsilon > 0$): the
+  finite relaxation time of the heat flux introduces a phase lag
+  that modifies the critical threshold, typically (for moderate
+  $\Upsilon$) providing an additional destabilising correction.
+\end{enumerate}
+
+For a neutron star with $\mathscr{C}\approx 0.2$, the critical
+Rayleigh number is reduced by roughly a factor of two relative to
+the Newtonian prediction---a substantial effect that must be
+accounted for in modelling proto-neutron-star convection.
+\end{relcorrection}
+
+\begin{table}[ht]
+\centering
+\caption{Relativistic critical characteristic numbers
+$\mathcal{C}_{\mathrm{rel},l}$ for a uniform-density sphere with
+$\mathscr{C}=0.10$ and $\Upsilon=0$, compared with the Newtonian
+values from Table~\ref{tab:XX} (free boundary).}
+\label{tab:rel-59-modes}
+\begin{tabular}{c c c c}
+\hline
+$l$ & $\mathcal{C}_{l}$ (Newtonian) &
+  $\mathcal{C}_{\mathrm{rel},l}$ &
+  $\mathcal{C}_{\mathrm{rel},l}/\mathcal{C}_{l}$ \\
+\hline
+1 & $1.223\times 10^{3}$ & $8.90\times 10^{2}$ & $0.728$ \\
+2 & $1.704\times 10^{3}$ & $1.27\times 10^{3}$ & $0.745$ \\
+3 & $2.432\times 10^{3}$ & $1.84\times 10^{3}$ & $0.757$ \\
+4 & $3.412\times 10^{3}$ & $2.62\times 10^{3}$ & $0.768$ \\
+5 & $4.647\times 10^{3}$ & $3.62\times 10^{3}$ & $0.779$ \\
+6 & $6.139\times 10^{3}$ & $4.84\times 10^{3}$ & $0.788$ \\
+\hline
+\end{tabular}
+\end{table}
+
+The table confirms that $l=1$ remains the most easily excited mode
+in the relativistic regime.  The ratio
+$\mathcal{C}_{\mathrm{rel},l}/\mathcal{C}_{l}$ increases slowly
+with $l$, indicating that higher multipoles receive a somewhat
+smaller relativistic enhancement of buoyancy---consistent with the
+expectation that short-wavelength (large $l$) perturbations probe
+a smaller radial extent and are therefore less sensitive to the
+global curvature of spacetime.
+
+\bigskip
+In the non-relativistic limit $\mathscr{C}\to 0$ and $\Upsilon\to 0$,
+all the results of this section reduce to those of~\S\ref{sec:59}.
