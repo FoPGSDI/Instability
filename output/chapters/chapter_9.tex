@@ -1,0 +1,1837 @@
+\chapter{THE STABILITY OF COUETTE FLOW IN HYDROMAGNETICS}
+\label{ch:9}
+
+\section{The equations of hydromagnetics in cylindrical polar coordinates}
+\label{sec:80}
+
+In this chapter we shall extend to hydromagnetics the principal considerations of the last two chapters. In particular we shall be concerned with the stability of Couette flow when a uniform magnetic field is impressed in the direction of the axis and the fluid is an electrical conductor.
+
+The equations governing the fluid under the general circumstances envisaged have been derived in Chapter~IV, \S\,37 (equations IV\,(10) and (16)). However, for the treatment of problems in which the boundaries are cylinders and the basic flow is circular, it is convenient to have the fundamental equations written in cylindrical polar coordinates $(r, \theta, z)$. Denoting by $u_r$, $u_\theta$, and $u_z$ and $H_r$, $H_\theta$, and $H_z$ the components of the velocity and of the magnetic intensity in the radial $r$, the transverse $\theta$, and the axial $z$ directions, respectively, we have the equations:
+\begin{align}
+\frac{\partial u_r}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, u_r - \frac{u_\theta^2}{r} - \frac{\mu}{4\pi\rho}(\mathbf{H} \cdot \mathrm{grad})\, H_r - \frac{H_\theta^2}{r} \notag \\
+= -\frac{\partial \Pi}{\partial r} + \nu \left(\nabla^2 u_r - \frac{2}{r^2}\frac{\partial u_\theta}{\partial \theta} - \frac{u_r}{r^2}\right), \label{eq:9-1}
+\end{align}
+\begin{align}
+\frac{\partial u_\theta}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, u_\theta + \frac{u_r u_\theta}{r} - \frac{\mu}{4\pi\rho}(\mathbf{H} \cdot \mathrm{grad})\, H_\theta - \frac{H_r H_\theta}{r} \notag \\
+= -\frac{1}{r}\frac{\partial \Pi}{\partial \theta} + \nu \left(\nabla^2 u_\theta + \frac{2}{r^2}\frac{\partial u_r}{\partial \theta} - \frac{u_\theta}{r^2}\right), \label{eq:9-2}
+\end{align}
+\begin{equation}
+\frac{\partial u_z}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, u_z - \frac{\mu}{4\pi\rho}(\mathbf{H} \cdot \mathrm{grad})\, H_z = -\frac{\partial \Pi}{\partial z} + \nu \nabla^2 u_z, \label{eq:9-3}
+\end{equation}
+\begin{equation}
+\frac{\partial H_r}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, H_r - (\mathbf{H} \cdot \mathrm{grad})\, u_r = \eta \left(\nabla^2 H_r - \frac{2}{r^2}\frac{\partial H_\theta}{\partial \theta} - \frac{H_r}{r^2}\right), \label{eq:9-4}
+\end{equation}
+\begin{align}
+\frac{\partial H_\theta}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, H_\theta - (\mathbf{H} \cdot \mathrm{grad})\, u_\theta + \frac{1}{r}(u_\theta H_r - u_r H_\theta) \notag \\
+= \eta \left(\nabla^2 H_\theta + \frac{2}{r^2}\frac{\partial H_r}{\partial \theta} - \frac{H_\theta}{r^2}\right), \label{eq:9-5}
+\end{align}
+\begin{equation}
+\frac{\partial H_z}{\partial t} + (\mathbf{u} \cdot \mathrm{grad})\, H_z - (\mathbf{H} \cdot \mathrm{grad})\, u_z = \eta \nabla^2 H_z, \label{eq:9-6}
+\end{equation}
+where
+\begin{equation}
+\Pi = \frac{p}{\rho} + \frac{\mu |\mathbf{H}|^2}{8\pi\rho} + V, \label{eq:9-7}
+\end{equation}
+and $(\mathbf{u} \cdot \mathrm{grad})$ and $(\mathbf{H} \cdot \mathrm{grad})$ have the meanings
+\begin{equation}
+\mathbf{u} \cdot \mathrm{grad} = u_r \frac{\partial}{\partial r} + \frac{u_\theta}{r}\frac{\partial}{\partial \theta} + u_z \frac{\partial}{\partial z} \label{eq:9-8}
+\end{equation}
+and
+\begin{equation}
+\mathbf{H} \cdot \mathrm{grad} = H_r \frac{\partial}{\partial r} + \frac{H_\theta}{r}\frac{\partial}{\partial \theta} + H_z \frac{\partial}{\partial z}. \label{eq:9-9}
+\end{equation}
+Also, $\nabla^2$ stands for the Laplacian
+\begin{equation}
+\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial r} + \frac{1}{r^2}\frac{\partial^2}{\partial \theta^2} + \frac{\partial^2}{\partial z^2}. \label{eq:9-10}
+\end{equation}
+
+Further, in cylindrical polar coordinates, the conditions
+\begin{equation}
+\mathrm{div}\,\mathbf{u} = 0 \quad \text{and} \quad \mathrm{div}\,\mathbf{H} = 0 \label{eq:9-11}
+\end{equation}
+take the forms
+\begin{equation}
+\frac{\partial u_r}{\partial r} + \frac{u_r}{r} + \frac{1}{r}\frac{\partial u_\theta}{\partial \theta} + \frac{\partial u_z}{\partial z} = 0 \label{eq:9-12}
+\end{equation}
+and
+\begin{equation}
+\frac{\partial H_r}{\partial r} + \frac{H_r}{r} + \frac{1}{r}\frac{\partial H_\theta}{\partial \theta} + \frac{\partial H_z}{\partial z} = 0. \label{eq:9-13}
+\end{equation}
+
+It may be readily verified that the foregoing equations admit the stationary solution
+\begin{equation}
+u_r = u_z = 0, \quad u_\theta = V(r), \label{eq:9-14}
+\end{equation}
+\begin{equation}
+H_r = H_\theta = 0, \quad \text{and} \quad H_z = H = \text{constant}, \label{eq:9-15}
+\end{equation}
+provided
+\begin{equation}
+\frac{d\Pi}{dr} = \frac{V^2}{r}, \label{eq:9-16}
+\end{equation}
+and
+\begin{equation}
+\nu\left(\nabla^2 V - \frac{V}{r^2}\right) = \nu \frac{d}{dr}\left(\frac{dV}{dr} + \frac{V}{r}\right) = 0. \label{eq:9-17}
+\end{equation}
+The general solution of equation~\eqref{eq:9-17} is
+\begin{equation}
+V(r) = Ar + B/r, \label{eq:9-18}
+\end{equation}
+where $A$ and $B$ are two constants. Thus, the presence of a uniform magnetic field in the axial direction does not affect the distribution of the transverse velocity which is permissible in the absence of the field. The constants $A$ and $B$ in the solution~\eqref{eq:9-18} are related to the angular velocities $\Omega_1$ and $\Omega_2$ of the two cylinders confining the fluid; they are given by (cf.\ equations VII\,(146) and (149))
+\begin{equation}
+A = -\Omega_1 \eta^2 \frac{1-\mu}{1-\eta^2} \quad \text{and} \quad B = \Omega_1 \frac{R_1^2(1-\mu)}{1-\eta^2}, \label{eq:9-19}
+\end{equation}
+where
+\begin{equation}
+\mu = \Omega_2/\Omega_1 \quad \text{and} \quad \eta = R_1/R_2. \label{eq:9-20}
+\end{equation}
+
+If there should be a transverse pressure gradient (as in the problems considered in Chapter~VIII, \S\S\,76 and 77), then a Poiseuille type of flow will be superposed on the distribution~\eqref{eq:9-18} exactly as when the field is absent; and the flow will be described by the same equations VIII\,(5) and (6), and (36).
+
+\section{The stability of non-dissipative Couette flow when a magnetic field parallel to the axis is present}
+\label{sec:81}
+
+Before we investigate the stability of the flow described by equations \eqref{eq:9-14}, \eqref{eq:9-15}, and \eqref{eq:9-18}, allowing fully for the effects of viscosity and resistivity, it will be useful to consider the simpler case when neither of the two dissipative mechanisms is operative. When this is the case, the terms in $\nu$ and $\eta$ in equations \eqref{eq:9-1}--\eqref{eq:9-6} should be suppressed; and the resulting simpler set of equations allow the stationary solution
+\begin{equation}
+u_r = u_z = 0, \quad u_\theta = V(r) = r\Omega(r), \label{eq:9-21}
+\end{equation}
+\begin{equation}
+H_r = H_\theta = 0, \quad \text{and} \quad H_z = H = \text{constant}, \label{eq:9-22}
+\end{equation}
+where $V(r)$ is now an \emph{arbitrary function} of $r$.
+
+Consider an infinitesimal perturbation of the flow represented by the solution~\eqref{eq:9-21}. Let the perturbed state be described by
+\begin{equation}
+u_r, \quad V\!+\!u_\theta, \quad u_z, \quad \varpi (= \delta\Pi), \quad h_r, \quad h_\theta, \quad \text{and} \quad H\!+\!h_z. \label{eq:9-23}
+\end{equation}
+The linear equations governing these perturbations are readily found; they are:
+\begin{equation}
+\frac{\partial u_r}{\partial t} + \Omega \frac{\partial u_r}{\partial \theta} - 2\Omega u_\theta - \frac{\mu H}{4\pi\rho}\frac{\partial h_r}{\partial z} = -\frac{\partial \varpi}{\partial r}, \label{eq:9-24}
+\end{equation}
+\begin{equation}
+\frac{\partial u_\theta}{\partial t} + \Omega \frac{\partial u_\theta}{\partial \theta} + \left(\frac{dV}{dr} + \frac{V}{r}\right) u_r - \frac{\mu H}{4\pi\rho}\frac{\partial h_\theta}{\partial z} = -\frac{1}{r}\frac{\partial \varpi}{\partial \theta}, \label{eq:9-25}
+\end{equation}
+\begin{equation}
+\frac{\partial u_z}{\partial t} + \Omega \frac{\partial u_z}{\partial \theta} - \frac{\mu H}{4\pi\rho}\frac{\partial h_z}{\partial z} = -\frac{\partial \varpi}{\partial z}, \label{eq:9-26}
+\end{equation}
+\begin{equation}
+\frac{\partial h_r}{\partial t} + \Omega \frac{\partial h_r}{\partial \theta} - H \frac{\partial u_r}{\partial z} = 0, \label{eq:9-27}
+\end{equation}
+\begin{equation}
+\frac{\partial h_\theta}{\partial t} + \Omega \frac{\partial h_\theta}{\partial \theta} - H \frac{\partial u_\theta}{\partial z} + \left(\frac{dV}{dr} - \frac{V}{r}\right) h_r = 0, \label{eq:9-28}
+\end{equation}
+and
+\begin{equation}
+\frac{\partial h_z}{\partial t} + \Omega \frac{\partial h_z}{\partial \theta} - H \frac{\partial u_z}{\partial z} = 0. \label{eq:9-29}
+\end{equation}
+In addition to these equations, we have the conditions, \eqref{eq:9-12} and \eqref{eq:9-13}, expressing the solenoidal character of $\mathbf{u}$ and $\mathbf{h}$.
+
+Analysing the disturbance into normal modes, we seek solutions of the foregoing equations whose dependence on $t$, $\theta$, and $z$ is given by
+\begin{equation}
+e^{i(\sigma t + m\theta + kz)}, \label{eq:9-30}
+\end{equation}
+where $p$ is a constant (which can be complex), $m$ is an integer (positive, zero, or negative), and $k$ is the wave number of the disturbance in the $z$-direction.
+
+Let $u_r(r)$, $u_\theta(r)$, etc., now denote the amplitudes of the various perturbations whose $(t,\theta,z)$-dependence is given by \eqref{eq:9-30}. Equations \eqref{eq:9-24}--\eqref{eq:9-29} then give
+\begin{equation}
+i\sigma u_r - 2\Omega u_\theta - \frac{\mu H}{4\pi\rho}\, ikh_r = -\frac{d\varpi}{dr}, \label{eq:9-31}
+\end{equation}
+\begin{equation}
+i\sigma u_\theta + \left(\frac{dV}{dr} + \frac{V}{r}\right) u_r - \frac{\mu H}{4\pi\rho}\, ikh_\theta = -\frac{im}{r}\,\varpi, \label{eq:9-32}
+\end{equation}
+\begin{equation}
+i\sigma u_z - \frac{\mu H}{4\pi\rho}\, ikh_z = -ik\varpi, \label{eq:9-33}
+\end{equation}
+\begin{equation}
+i\sigma h_r = ikH u_r, \label{eq:9-34}
+\end{equation}
+\begin{equation}
+i\sigma h_\theta = ikH u_\theta, \label{eq:9-35}
+\end{equation}
+and
+\begin{equation}
+i\sigma h_z = ikH u_z, \label{eq:9-36}
+\end{equation}
+where
+\begin{equation}
+\sigma = p + m\Omega. \label{eq:9-37}
+\end{equation}
+
+Let
+\begin{equation}
+u_r = i\sigma\xi_r, \quad u_\theta = i\sigma\xi_\theta - r\frac{d\Omega}{dr}\xi_r, \quad \text{and} \quad u_z = i\sigma\xi_z, \label{eq:9-38}
+\end{equation}
+define the Lagrangian displacement $\boldsymbol{\xi}$ (cf.\ Chapter~VII, \S\,67\,(a)). From a comparison of this definition of $\boldsymbol{\xi}$ with equations \eqref{eq:9-34}--\eqref{eq:9-36} relating $\mathbf{h}$ and $\mathbf{u}$, it is clear that
+\begin{equation}
+\mathbf{h} = ikH\boldsymbol{\xi}. \label{eq:9-39}
+\end{equation}
+This proportionality of $\mathbf{h}$ and $\boldsymbol{\xi}$ is an expression of the fact that in a medium of zero resistivity, the lines of force are dragged with the fluid.
+
+In terms of $\boldsymbol{\xi}$, equations \eqref{eq:9-31}--\eqref{eq:9-33} become:
+\begin{equation}
+\left(\sigma^2 - 2r\Omega\frac{d\Omega}{dr} - \Omega_A^2\right)\xi_r + 2i\sigma\Omega\xi_\theta = \frac{d\varpi}{dr}, \label{eq:9-40}
+\end{equation}
+\begin{equation}
+(\sigma^2 - \Omega_A^2)\xi_\theta - 2i\sigma\Omega\xi_r = \frac{im}{r}\,\varpi, \label{eq:9-41}
+\end{equation}
+\begin{equation}
+(\sigma^2 - \Omega_A^2)\xi_z = ik\varpi, \label{eq:9-42}
+\end{equation}
+where
+\begin{equation}
+\Omega_A = \frac{\mu H^2}{4\pi\rho}\, k^2 \label{eq:9-43}
+\end{equation}
+is the Alfv\'en frequency. In addition to these equations, we have the equation of continuity (cf.\ equation VII\,(46))
+\begin{equation}
+D_*\xi_r + \frac{im}{r}\xi_\theta + ik\xi_z = 0, \label{eq:9-44}
+\end{equation}
+where
+\begin{equation}
+D_* = D + \frac{1}{r} = \frac{d}{dr} + \frac{1}{r}. \label{eq:9-45}
+\end{equation}
+
+Multiplying equations \eqref{eq:9-41} and \eqref{eq:9-42} by $-im/r$ and $-ik$, respectively, adding and making use of equation~\eqref{eq:9-44}, we obtain
+\begin{equation}
+(\sigma^2 - \Omega_A^2)\, D_*\xi_r - \frac{2m\sigma\Omega}{r}\xi_r = \left(\frac{m^2}{r^2} + k^2\right)\varpi. \label{eq:9-46}
+\end{equation}
+
+Next eliminating $\xi_\theta$ between equations \eqref{eq:9-40} and \eqref{eq:9-41}, we have
+\begin{equation}
+\left(\sigma^2 - \Omega_A^2 - 2r\Omega\frac{d\Omega}{dr} - \frac{4\Omega^2\sigma^2}{\sigma^2 - \Omega_A^2}\right)\xi_r = D\varpi + \frac{2m\sigma\Omega}{\sigma^2 - \Omega_A^2}\frac{\varpi}{r}. \label{eq:9-47}
+\end{equation}
+
+On the other hand,
+\begin{equation}
+2r\frac{d\Omega}{dr} + \frac{4\Omega^2\sigma^2}{\sigma^2 - \Omega_A^2} = 2r\Omega\frac{d\Omega}{dr} + 4\Omega^2 + \frac{4\Omega^2\Omega_A^2}{\sigma^2 - \Omega_A^2} = \Phi(r) + \frac{4\Omega^2\Omega_A^2}{\sigma^2 - \Omega_A^2}, \label{eq:9-48}
+\end{equation}
+where $\Phi(r)$ is Rayleigh's discriminant. Equation~\eqref{eq:9-47} can now be rewritten in the form
+\begin{equation}
+\left(\sigma^2 - \Omega_A^2 - \Phi(r) - \frac{4\Omega^2\Omega_A^2}{\sigma^2 - \Omega_A^2}\right)\xi_r = D\varpi + \frac{2m\sigma\Omega}{\sigma^2 - \Omega_A^2}\frac{\varpi}{r}. \label{eq:9-49}
+\end{equation}
+This equation must be considered together with equation~\eqref{eq:9-46}.
+
+If the fluid is confined between two rigid coaxial cylinders of radii $R_1$ and $R_2$, we must require that the radial component of the velocity vanishes at the walls. Thus, solutions of equations~\eqref{eq:9-46} and \eqref{eq:9-48} must be sought which satisfy the boundary conditions
+\begin{equation}
+\xi_r = 0 \quad \text{for } r = R_1 \text{ and } R_2. \label{eq:9-50}
+\end{equation}
+
+\subsection*{(a) The case $m = 0$}
+
+When $m = 0$, $\sigma = p$ and the basic equations are
+\begin{equation}
+\left(\sigma^2 - \Omega_A^2 - \Phi(r) - \frac{4\Omega^2\Omega_A^2}{\sigma^2 - \Omega_A^2}\right)\xi_r = D\varpi, \label{eq:9-51}
+\end{equation}
+and
+\begin{equation}
+(p^2 - \Omega_A^2)\, D_*\xi_r = k^2\varpi. \label{eq:9-52}
+\end{equation}
+Eliminating $\varpi$ between these equations, we obtain
+\begin{equation}
+\kappa (DD_* - k^2)\xi_r = -k^2 \left[\Phi(r) + \frac{4\Omega^2\Omega_A^2}{\kappa}\right]\xi_r, \label{eq:9-53}
+\end{equation}
+where
+\begin{equation}
+\kappa = p^2 - \Omega_A^2. \label{eq:9-54}
+\end{equation}
+
+Equation~\eqref{eq:9-53} together with the boundary conditions~\eqref{eq:9-50} constitute a characteristic value problem for $\kappa$. We shall first show that \emph{the characteristic values of $\kappa$ are all real}.
+
+Multiply equation~\eqref{eq:9-53} by $r\xi_r^*$ and integrate over the range of $r$. We obtain, after an integration by parts,
+\begin{equation}
+\kappa \int_{R_1}^{R_2} r\{|D_*\xi_r|^2 + k^2|\xi_r|^2\}\, dr = k^2 \int_{R_1}^{R_2} r\Phi(r)|\xi_r|^2\, dr + \frac{4\Omega_A^2 k^2}{\kappa^*} \int_{R_1}^{R_2} r\Omega^2|\xi_r|^2\, dr. \label{eq:9-55}
+\end{equation}
+
+The imaginary part of this equation gives
+\begin{equation}
+\mathrm{im}(\kappa) \left[\int_{R_1}^{R_2} r\{|D_*\xi_r|^2 + k^2|\xi_r|^2\}\, dr + \frac{4\Omega_A^2 k^2}{|\kappa|^2} \int_{R_1}^{R_2} r\Omega^2|\xi_r|^2\, dr\right] = 0. \label{eq:9-56}
+\end{equation}
+
+The factor of $\mathrm{im}(\kappa)$ in this equation is positive definite. Hence
+\begin{equation}
+\mathrm{im}(\kappa) = 0; \label{eq:9-57}
+\end{equation}
+and this proves the reality of $\kappa$. The characteristic values of $p^2$ and the proper functions to which these belong must, therefore, also be real.
+
+In view of the reality of the characteristic values of $\kappa$, we can rewrite equation~\eqref{eq:9-55} in the manner
+\begin{equation}
+\kappa^2 I_1 - \kappa k^2 I_2 - 4k^2 \Omega_A^2 I_3 = 0, \label{eq:9-58}
+\end{equation}
+where
+\begin{equation}
+I_1 = \int_{R_1}^{R_2} r\{(D_*\xi_r)^2 + k^2\xi_r^2\}\, dr, \label{eq:9-59}
+\end{equation}
+\begin{equation}
+I_2 = \int_{R_1}^{R_2} r\Phi(r)\xi_r^2\, dr, \label{eq:9-60}
+\end{equation}
+and
+\begin{equation}
+I_3 = \int_{R_1}^{R_2} r\Omega^2\xi_r^2\, dr. \label{eq:9-61}
+\end{equation}
+
+Equation~\eqref{eq:9-58} provides the basis for a variational formulation of the problem. To see this, consider the effect on $\kappa$ (determined as a root of equation~\eqref{eq:9-58}) of an arbitrary variation $\delta\chi$ in $\xi_r$ compatible only with the boundary conditions on $\chi$. To the first order in the variation, we have
+\begin{equation}
+2(\kappa I_1 - k^2 I_3)\delta\kappa = -(\kappa^2 \delta I_1 - 2\kappa\delta I_2 + \delta I_3 - \delta I_4), \label{eq:9-62}
+\end{equation}
+where $\delta I_1$, $\delta I_2$, $\delta I_3$, and $\delta I_4$ are the corresponding variations in the integrals $I_1$, $I_2$, $I_3$, and $I_4$. After an integration by parts (in each case), we find that the variations $\delta I_1$, $\delta I_3$, and $\delta I_4$ are given by:
+\begin{align}
+\delta I_1 &= -2 \int_{R_1}^{R_2} \delta\chi\{rDD_*\chi - k^2\chi\}r\, dr, \notag \\
+\delta I_2 &= -2 \int_{R_1}^{R_2} \delta\chi\{D(WD_*\chi) - k^2W\chi\}r\, dr, \label{eq:9-63} \\
+\delta I_3 &= -2 \int_{R_1}^{R_2} \delta\chi\{D(W^2 D_*\chi) - k^2 W^2\chi\}r\, dr; \notag
+\end{align}
+also,
+\begin{equation}
+\delta I_4 = 2 \int_{R_1}^{R_2} \delta\chi\, \Phi(r)\chi r\, dr. \label{eq:9-64}
+\end{equation}
+Inserting the foregoing expressions in \eqref{eq:9-62}, we obtain
+\begin{equation}
+(\kappa I_1 - k^2 I_3)\delta\kappa = \int_{R_1}^{R_2} \delta\chi\{\kappa^2 D[r(\kappa - W)^2 D_*\chi] - k^4 (\kappa - W)^2 \chi + \Phi(r)\chi\}r\, dr. \label{eq:9-65}
+\end{equation}
+
+We observe that the quantity which appears as a factor of $r\,\delta\chi$ under the integral sign on the right-hand side of equation~\eqref{eq:9-65} vanishes if equation~\eqref{eq:9-53} governing $\chi$ is satisfied.\footnote{Hence, a necessary and sufficient condition for $\delta\kappa$ to vanish identically to the first order, for all small variations in $\chi$ subject only to the boundary conditions, is that $\chi$ be a solution of the characteristic value problem. While this theorem provides the basis for a variational treatment of the problem, the principal conclusion we wish to draw from it and equation~\eqref{eq:9-58} is that \emph{other things being equal, there are two, and only two, branches to the dispersion relation}.}
+
+\subsection*{(ii) A variational principle for $\lambda^2$}
+
+Now consider equations~\eqref{eq:9-50} and \eqref{eq:9-52} as presenting a characteristic value problem for $\lambda^2$. If we restrict ourselves to real values of $c$ not included between $W_\mathrm{max}$ and $W_\mathrm{min}$, we can apply the standard theorems of the classical Sturmian theory (cf.\ \S\,67\,(b)) and conclude: the characteristic values of $\lambda^2$ are all positive if $\phi(r)$ is everywhere positive and they are all negative if $\phi(r)$ is everywhere negative; but if $\phi(r)$ should change sign anywhere inside the interval $(R_1, R_2)$, then there are two sets of real characteristic values which have the limit points $+\infty$ and $-\infty$. Moreover, solving equation~\eqref{eq:9-52} with the boundary conditions~\eqref{eq:9-50} is equivalent to finding extremal values of $\lambda^2$ given by
+\begin{equation}
+\lambda^2 = \frac{\displaystyle\int_{R_1}^{R_2} (c - W)^2\{(D_*\chi)^2 + k^2\chi^2\}r\, dr}{\displaystyle\int_{R_1}^{R_2} \phi(r)\chi^2 r\, dr} \label{eq:9-66}
+\end{equation}
+which are stationary with respect to arbitrary small variations of $\chi$ subject only to the boundary conditions~\eqref{eq:9-50}.
+
+\subsection*{(iii) The criterion for stability}
+
+The theorems enunciated in the preceding subsections enable us to derive a necessary and sufficient condition for stability.
+
+Consider first the case when $\phi(r)$ is everywhere negative. Then, for every real $k$ and for all real values of $c$ (not included between $W_\mathrm{max}$ and $W_\mathrm{min}$), the characteristic values of $\lambda^2$ are all negative. Consequently, if $\lambda^2$ is to be positive, $c$ must be complex; and this means instability.
+
+Consider next the case when $\phi(r)$ is everywhere positive. Then, for a given $k$ and $c$ (both assumed real and $c > W_\mathrm{max}$ or $c < W_\mathrm{min}$), the characteristic values, $\lambda_n^2$, of $\lambda^2$ are all positive. They can be arranged as an infinite, monotonic, increasing sequence; if $\lambda_n^2$ $(n = 1, 2, \ldots)$ represents this arrangement, the proper function $\chi_n$ belonging to $\lambda_n^2$ will have exactly $(n-1)$ nodes in the interval $(R_1, R_2)$. To emphasize the dependence of $\lambda_n^2$ and $\chi_n$ on $c$ (for assigned $k$) we shall write $\lambda_n^2(c)$ and $\chi_n(c)$.
+
+Now by the variational principle of \S\,(ii), the smallest of the characteristic values $\lambda_n^2(c)$ represents the absolute minimum which the quantity on the right-hand side of equation~\eqref{eq:9-66} can attain. Therefore, if $\lambda^2(c; \chi)$ denotes the value of $\lambda^2$ given by \eqref{eq:9-66} for some assigned $c$ and chosen $\chi$, then
+\begin{equation}
+\lambda^2(c; \chi) \geqslant \lambda_1^2(c). \label{eq:9-67}
+\end{equation}
+The equality sign in \eqref{eq:9-67} can hold if and only if $\chi = \chi_1(c)$, i.e.
+\begin{equation}
+\lambda^2(c; \chi_1(c)) = \lambda_1^2(c). \label{eq:9-68}
+\end{equation}
+
+We shall now show that $\lambda_1^2(c)$ \emph{is a monotonic increasing function for} $c > W_\mathrm{max}$ \emph{and a monotonic decreasing function for} $c < W_\mathrm{min}$.
+
+We first observe that according to equation~\eqref{eq:9-66}
+\begin{equation}
+\lambda^2(c_1; \chi_1(c_1)) < \lambda^2(c_2; \chi_1(c_1)) = \lambda_1^2(c_1) \quad \text{if } W_\mathrm{max} < c_1 < c_2. \label{eq:9-69}
+\end{equation}
+On the other hand, by \eqref{eq:9-67}
+\begin{equation}
+\lambda^2(c_2; \chi_1(c_1)) > \lambda_1^2(c_2). \label{eq:9-70}
+\end{equation}
+Hence, combining \eqref{eq:9-69} and \eqref{eq:9-70}, we have
+\begin{equation}
+\lambda_1^2(c_1) < \lambda_1^2(c_2) \quad \text{if } W_\mathrm{max} < c_1 < c_2. \label{eq:9-71}
+\end{equation}
+In exactly the same way, we can show that
+\begin{equation}
+\lambda_1^2(c_1) > \lambda_1^2(c_2) \quad \text{if } c_1 < c_2 < W_\mathrm{min}. \label{eq:9-72}
+\end{equation}
+
+It is also clear from \eqref{eq:9-66} that $\lambda^2(c)$ cannot be bounded as $c \to \pm\infty$. Hence,
+\begin{equation}
+\lambda_1^2(c) \to \infty \quad \text{as } c \to \pm\infty. \label{eq:9-73}
+\end{equation}
+Further, by letting $c$ approach $W_\mathrm{max}$ from above, or $W_\mathrm{min}$ from below, we can make $\lambda^2$ given by \eqref{eq:9-66} as small as we please; consequently,
+\begin{equation}
+\lambda_1^2(c) \to 0 \quad \text{as } c \to W_\mathrm{max} + 0 \quad \text{or} \quad W_\mathrm{min} - 0. \label{eq:9-74}
+\end{equation}
+(Note that $c = W_\mathrm{max}$ and $c = W_\mathrm{min}$ are excluded.)
+
+From the foregoing results, it follows that for every assigned $k^2$ and $\lambda^2 > 0$, there exist two real characteristic values for $c$, one larger than $W_\mathrm{max}$ and one less than $W_\mathrm{min}$; and that the proper functions belonging to these two values have no nodes in $(R_1, R_2)$. By similarly considering characteristic values $\lambda_n^2$ (whose proper functions have $n-1$ nodes), we can deduce that for every assigned $k^2$ and $\lambda^2 > 0$ there are two real characteristic values for $c$ (one larger than $W_\mathrm{max}$ and one less than $W_\mathrm{min}$) whose proper functions have $n-1$ nodes. On the other hand, by the variational principle of \S\,(i), there can be, in this case, no more than two branches to the dispersion relation. And since we have already accounted for two branches with real $c$'s, there is no room for further complex values. The flow is, therefore, stable when $\phi(r)$ is everywhere positive.
+
+When $\phi(r)$ changes sign in $(R_1, R_2)$, then the possible characteristic values of $\lambda^2$ (for any real $k$ and all real $c$'s not included between $W_\mathrm{max}$ and $W_\mathrm{min}$) form two distinct sequences with limit points at $+\infty$ and $-\infty$. The existence of this latter sequence (with the limit point at $-\infty$) guarantees that for any given $\lambda^2 > 0$ there exist axis modes with complex values $c$ which ensure instability.
+
+Thus, Rayleigh's criterion for the stability of a pure rotational flow continues to be valid in the presence of an arbitrary axial flow. This universality of Rayleigh's criterion is somewhat unexpected; but its origin is rooted in equation~\eqref{eq:9-49} which couples the radial and the transverse perturbations in the velocity. In this overpowering role of rotation, the present problem is, however, not unique: we have already encountered an example in Chapter~III (\S\,27\,(a), p.~97) in which the presence of rotation alters the character of the phenomenon equally.
+
+\section{The periods of oscillation of a rotating column of liquid when a magnetic field is impressed in the direction of the axis}
+\label{sec:82}
+
+In this section we shall consider the solution of equations~\eqref{eq:9-46} and \eqref{eq:9-49} in some special cases.
+
+\subsection*{(a) The case $\Omega = \mathrm{constant}$}
+
+When $\Omega = \text{constant}$, $\Phi = 4\Omega^2$ and
+\begin{equation}
+\Phi(r) + \frac{4\Omega^2\Omega_A^2}{\sigma^2 - \Omega_A^2} = \frac{4\Omega^2\sigma^2}{\sigma^2 - \Omega_A^2}, \label{eq:9-74a}
+\end{equation}
+where it will be recalled that
+\begin{equation}
+\sigma^2 - \Omega_A^2 = (p + m\Omega)^2 - \frac{\mu H^2}{4\pi\rho}\, k^2 = \kappa \text{ (say)}. \label{eq:9-75}
+\end{equation}
+Equations~\eqref{eq:9-46} and \eqref{eq:9-49} thus become, in this case,
+\begin{equation}
+\frac{d}{dr}(r\xi_r) - \frac{2m\sigma\Omega}{\kappa}\xi_r = \frac{1}{\kappa}\left(\frac{m^2}{r} + k^2 r\right)\varpi \label{eq:9-76}
+\end{equation}
+and
+\begin{equation}
+\left(\kappa - \frac{4\Omega^2\sigma^2}{\kappa}\right)\xi_r = \frac{d\varpi}{dr} + \frac{2m\sigma\Omega}{\kappa}\frac{\varpi}{r}. \label{eq:9-77}
+\end{equation}
+
+Eliminating $\xi_r$ between these equations and rearranging, we find
+\begin{equation}
+\frac{d^2\varpi}{dr^2} + \frac{1}{r}\frac{d\varpi}{dr} + \left[k^2\left(\frac{4\Omega^2\sigma^2}{\kappa^2} - 1\right) - \frac{m^2}{r^2}\right]\varpi = 0; \label{eq:9-78}
+\end{equation}
+and the boundary conditions require
+\begin{equation}
+\frac{d\varpi}{dr} + \frac{2m\sigma\Omega}{\kappa}\frac{\varpi}{r} = 0 \quad \text{for } r = R_1 \text{ and } R_2. \label{eq:9-79}
+\end{equation}
+
+Comparing equations~\eqref{eq:9-78} and \eqref{eq:9-79} with equations VII\,(88) and (89), we observe that the equations become identical if
+\begin{equation}
+\frac{\kappa}{\sigma} \text{ in equations \eqref{eq:9-78} and \eqref{eq:9-79} is replaced by } \sigma. \label{eq:9-80}
+\end{equation}
+Hence, if $\sigma_0$ is the characteristic value (for a given $k$) of the hydrodynamic problem considered in \S\,68\,(a), the characteristic value $\sigma$ for the present hydromagnetic problem is given by
+\begin{equation}
+\sigma_0 = \frac{\kappa}{\sigma} = \frac{\sigma^2 - \Omega_A^2}{\sigma}, \label{eq:9-81}
+\end{equation}
+\begin{equation}
+\sigma^2 - \sigma_0 \sigma - \Omega_A^2 = 0. \label{eq:9-82}
+\end{equation}
+Thus, the presence of an axial magnetic field splits each characteristic value $\sigma$ (in the absence of the field) into two, $\sigma_1$ and $\sigma_2$, such that
+\begin{equation}
+\sigma_1 + \sigma_2 = \sigma_0 \quad \text{and} \quad \sigma_1 \sigma_2 = -\Omega_A^2; \label{eq:9-83}
+\end{equation}
+more particularly,
+\begin{equation}
+\sigma = \tfrac{1}{2}[\sigma_0 \pm \sqrt{(\sigma_0^2 + 4\Omega_A^2)}]. \label{eq:9-84}
+\end{equation}
+
+\subsection*{(b) The case $m = 0$ and $\Omega = A + B/r^2$; the stabilizing effect of a magnetic field in the case of narrow gaps}
+
+As a second example we shall consider equation~\eqref{eq:9-53} in case $\Omega(r)$ has the form, $A + B/r^2$, permissible under viscous flow. In this case
+\begin{equation}
+\Phi(r) = 4A\Omega(r), \label{eq:9-85}
+\end{equation}
+and equation~\eqref{eq:9-53} has explicitly the form
+\begin{equation}
+(DD_* - k^2)\xi_r = -\frac{4k^2}{\kappa}\left(Ap^2 + \Omega_A^2 \frac{B^2}{R_0^2 r^2}\right)\Omega\xi_r. \label{eq:9-86}
+\end{equation}
+
+If the gap $d = R_2 - R_1$ between the cylinders is small compared to the mean radius $R_0 = \frac{1}{2}(R_1 + R_2)$, then we may, as in such past instances, ignore the difference between $D$ and $D_*$ and, further, replace $\Omega(r)$ by
+\begin{equation}
+\Omega = \Omega_1[1 - (1 - \mu)\zeta], \label{eq:9-87}
+\end{equation}
+where
+\begin{equation}
+\zeta = (r - R_1)/d. \label{eq:9-88}
+\end{equation}
+In the same approximation
+\begin{equation}
+A \simeq -\tfrac{1}{2}\Omega_1 \frac{1-\mu}{1-\eta} \quad \text{and} \quad \frac{B}{r^2} \simeq \tfrac{1}{2}\Omega_1 \frac{1-\mu}{1-\eta}. \label{eq:9-89}
+\end{equation}
+
+Thus, in the framework of these approximations, equation~\eqref{eq:9-86} becomes
+\begin{equation}
+(D^2 - a^2)\xi_r = a^2 \frac{2\Omega_1^2(1-\mu)}{\kappa(1-\eta)}\,[1 - (1 - \mu)\zeta]\xi_r, \label{eq:9-90}
+\end{equation}
+where
+\begin{equation}
+k = a/d, \quad D = d/d\zeta, \quad \mu = \Omega_2/\Omega_1, \label{eq:9-91}
+\end{equation}
+and
+\begin{equation}
+\lambda = \frac{2\Omega_1^2(1-\mu)}{\kappa(1-\eta)} = -\frac{2\Omega_1^2 R_0(1-\mu)}{d\kappa}. \label{eq:9-92}
+\end{equation}
+If we let
+\begin{equation}
+\lambda = \frac{2\Omega_1^2(1-\mu)}{\kappa(1-\eta)} = -\frac{2\Omega_1^2\, R_0(1-\mu)}{d\kappa}, \label{eq:9-92a}
+\end{equation}
+equation~\eqref{eq:9-90} becomes identical with equation VII\,(111). Hence, if $\lambda(a; \mu)$ is the characteristic value determined by Reid for the problem considered in \S\,68\,(b)\,(i), the required value of $\kappa$ is given by
+\begin{equation}
+\kappa = -\frac{2\Omega_1^2\, R_0(1-\mu)}{d\lambda(a;\mu)}. \label{eq:9-93}
+\end{equation}
+Hence,
+\begin{equation}
+p^2 = \Omega_A^2 - \frac{2\Omega_1^2 R_0(1-\mu)}{d\lambda(a;\mu)}. \label{eq:9-94}
+\end{equation}
+Inserting the expression~\eqref{eq:9-43} for $\Omega_A^2$ in \eqref{eq:9-94}, we can write\footnote{To avoid using $\mu$ with two different meanings (once as the magnetic permeability and once as the ratio of the angular velocities), we are temporarily letting $\mu_m$ denote the magnetic permeability.}
+\begin{equation}
+p^2 = k^2 \left[\frac{\mu_m H^2}{4\pi\rho} - \frac{2\Omega_1^2 R_0 d(1-\mu)}{a^2 \lambda(a;\mu)}\right]. \label{eq:9-95}
+\end{equation}
+
+Therefore, disturbances with a wave number $k = a/d$ will be stabilized if
+\begin{equation}
+\frac{\mu_m H^2}{4\pi\rho} > 2\Omega_1^2\, R_0 d[(1-\mu)\Lambda(a;\mu)], \label{eq:9-96}
+\end{equation}
+where
+\begin{equation}
+\Lambda(a;\mu) = \frac{1}{a^2 \lambda(a;\mu)}. \label{eq:9-97}
+\end{equation}
+
+\figurePlaceholder{99}{The function $\Lambda(a;\mu)$ (see equation~\eqref{eq:9-97}) for various values of $\mu$.}
+
+\begin{table}[ht]
+\centering
+\caption*{TABLE XLI}
+\caption*{\textit{Values of $\Lambda_0(\mu)$ and $(1-\mu)\Lambda_0(\mu)$}}
+\begin{tabular}{ccccccc}
+\hline
+$1-\mu$ & $\Lambda_0(\mu)$ & $(1-\mu)\Lambda_0(\mu)$ & $1-\mu$ & $\Lambda_0(\mu)$ & $(1-\mu)\Lambda_0(\mu)$ \\
+\hline
+0 & 0.01253 & 0 & 1.10 & 0.04631 & 0.05315 \\
+0.25 & 0.01543 & 0.02111 & 1.15 & 0.04601 & 0.05315 \\
+0.50 & 0.07654 & 0.03817 & 1.00 & 0.04418 & 0.05302 \\
+0.75 & 0.06455 & 0.04836 & 1.25 & 0.04208 & 0.04766 \\
+1.00 & 0.05377 & 0.05377 & 1.50 & 0.03266 & 0.04901 \\
+1.05 & 0.05053 & 0.05305 & 1.75 & 0.03513 & 0.04997 \\
+\hline
+\end{tabular}
+\end{table}
+
+The function $\Lambda(a;\mu)$ is illustrated in Fig.~99 for $\mu = 1$, 0, and $-1$. It will be observed that $\Lambda(a;\mu)$ is a monotonic decreasing function of $a$. Consequently, if
+\begin{equation}
+\Lambda_0(\mu) = \lim_{a \to 0} \Lambda(a;\mu), \label{eq:9-98}
+\end{equation}
+the adverse flow represented by \eqref{eq:9-87} (for $\mu < 1$) will be stabilized for all wave numbers (i.e.\ stabilized completely) if
+\begin{equation}
+\frac{\mu_m H^2}{4\pi\rho} > 2\Omega_1^2 R_0 d[(1-\mu)\Lambda_0(\mu)]. \label{eq:9-99}
+\end{equation}
+
+Numerical values of $\Lambda_0(\mu)$ and $(1-\mu)\Lambda_0(\mu)$ are listed in Table~XLI (see also Fig.~100).
+
+It will be observed that $(1-\mu)\Lambda_0(\mu)$ exhibits a maximum at $\mu \simeq -0.1275$, where it has a value $\sim 0.0532$. Hence, \emph{all adverse flows will be stabilized} if
+\begin{equation}
+\frac{\mu_m H^2}{4\pi\rho} > q_c(2\Omega_1^2 R_0 d), \quad \text{where } q_c \simeq 0.0532. \label{eq:9-100}
+\end{equation}
+
+For $(1 - \mu) \to \infty$, it can be shown that
+\begin{equation}
+\Lambda_0(\mu) \to \frac{1}{(-a_1)^3(1-\mu)^2} = \frac{0.07824}{(1-\mu)^2} \quad (1-\mu \to \infty), \label{eq:9-101}
+\end{equation}
+
+\figurePlaceholder{100}{The behaviour of $(1-\mu)\Lambda_0(\mu)$ (see equation~\eqref{eq:9-99}).}
+
+where $a_1$ is the first zero of Airy's function $\mathrm{Ai}(x)$ (see p.~289); therefore, in this limit
+\begin{equation}
+\frac{\mu_m H^2}{4\pi\rho} > 0.1565\, \frac{\Omega_1^2 R_0 d}{1-\mu} \quad (1-\mu \to \infty). \label{eq:9-102}
+\end{equation}
+
+\section{The stability of non-dissipative Couette flow when a current flows parallel to the axis}
+\label{sec:83}
+
+Another interesting example of non-dissipative Couette flow occurs when a stationary distribution of current parallel to the axis is present. In this case, a magnetic field in the transverse $\theta$-direction will prevail; and, as we shall see, its effect on the stability of the flow is quite different from that of a magnetic field in the axial $z$-direction.
+
+Equations \eqref{eq:9-1}--\eqref{eq:9-6}, with the terms in $\nu$ and $\eta$ suppressed, allow the stationary solution
+\begin{equation}
+u_r = u_z = 0, \quad u_\theta = V(r), \quad H_r = H_z = 0, \quad H_\theta = H_\theta(r), \label{eq:9-103}
+\end{equation}
+and
+\begin{equation}
+\frac{d\Pi}{dr} = -\frac{V^2}{r} + \frac{\mu}{4\pi\rho}\frac{H_\theta^2}{r}. \label{eq:9-104}
+\end{equation}
+Let a perturbed state of this flow be described by
+\begin{equation}
+u_r, \quad u_\theta, \quad V(r) + u_\theta, \quad h_r, \quad h_\theta, \quad H_\theta(r) + h_\theta, \quad \text{and} \quad \varpi = \delta\Pi. \label{eq:9-105}
+\end{equation}
+Restricting ourselves to a disturbance belonging to a particular mode by seeking solutions whose $(t,\theta,z)$-dependence is given by \eqref{eq:9-30}, we readily find that the relevant equations are:
+\begin{equation}
+i\sigma u_r - 2\Omega u_\theta - \frac{\mu}{4\pi\rho}\left(\frac{imH_\theta}{r}h_r - 2\frac{H_\theta h_\theta}{r}\right) = -D\varpi, \label{eq:9-106}
+\end{equation}
+\begin{equation}
+i\sigma u_\theta + (D_*V)u_r - \frac{\mu}{4\pi\rho}\left(\frac{imH_\theta}{r}h_\theta + (D_*H_\theta)h_r\right) = -\frac{im}{r}\,\varpi, \label{eq:9-107}
+\end{equation}
+\begin{equation}
+i\sigma u_z - \frac{\mu}{4\pi\rho}\left(\frac{imH_\theta}{r}h_z\right) = -ik\varpi, \label{eq:9-108}
+\end{equation}
+\begin{equation}
+i\sigma h_r = \frac{imH_\theta}{r}\, u_r, \label{eq:9-109}
+\end{equation}
+\begin{equation}
+i\sigma h_\theta = -ru_r \frac{d}{dr}\!\left(\frac{H_\theta}{r}\right) + r h_r \frac{d\Omega}{dr} + \frac{imH_\theta}{r}\, u_\theta, \label{eq:9-110}
+\end{equation}
+and
+\begin{equation}
+i\sigma h_z = \frac{imH_\theta}{r}\, u_z, \label{eq:9-111}
+\end{equation}
+where the various symbols have the same meanings as in \S\,81; in particular,
+\begin{equation}
+\sigma = p + m\Omega \quad \text{and} \quad D_* = D + \frac{1}{r} = \frac{d}{dr} + \frac{1}{r}. \label{eq:9-112}
+\end{equation}
+(Note that $h_r = h_z = 0$ for the $m = 0$ modes.)
+
+Letting $\boldsymbol{\xi}$ denote the Lagrangian displacement defined as in equations \eqref{eq:9-38} and inserting $\mathbf{u}$ in terms of $\boldsymbol{\xi}$ in equations \eqref{eq:9-108}--\eqref{eq:9-111}, we find that
+\begin{equation}
+h_r = \frac{imH_\theta}{r}\, \xi_r, \qquad h_z = -\frac{imH_\theta}{r}\, \xi_r, \label{eq:9-113}
+\end{equation}
+and
+\begin{equation}
+h_\theta = \frac{imH_\theta}{r}\, \xi_\theta - r\xi_r \frac{d}{dr}\!\left(\frac{H_\theta}{r}\right). \label{eq:9-114}
+\end{equation}
+
+Now substituting from equations \eqref{eq:9-38}, \eqref{eq:9-113}, and \eqref{eq:9-114} in equations \eqref{eq:9-106}--\eqref{eq:9-108}, we find after some reductions
+\begin{align}
+\left[\sigma^2 - m^2\Omega_H^2 - 2r\Omega\frac{d\Omega}{dr} + \frac{\mu r}{4\pi\rho}\frac{d}{dr}\!\left(\frac{H_\theta^2}{r^2}\right)\right]\xi_r + 2i(\sigma\Omega - m\Omega_H^2)\xi_\theta &= D\varpi, \label{eq:9-115} \\
+(\sigma^2 - m^2\Omega_H^2)\xi_\theta - 2i(\sigma\Omega - m\Omega_H^2)\xi_r &= \frac{im}{r}\,\varpi, \label{eq:9-116}
+\end{align}
+and
+\begin{equation}
+(\sigma^2 - m^2\Omega_H^2)\xi_z = ik\varpi, \label{eq:9-117}
+\end{equation}
+where
+\begin{equation}
+\Omega_H^2 = \frac{\mu}{4\pi\rho}\left(\frac{H_\theta}{r}\right)^2. \label{eq:9-118}
+\end{equation}
+
+In addition to equations \eqref{eq:9-115}--\eqref{eq:9-117}, we have the equation of continuity~\eqref{eq:9-44}.
+
+Multiplying equations~\eqref{eq:9-116} and \eqref{eq:9-117} by $-im/r$ and $-ik$, respectively, adding and making use of the equation of continuity, we obtain
+\begin{equation}
+(\sigma^2 - m^2\Omega_H^2)\, D_*\xi_r - \frac{2m}{r}(\sigma\Omega - m\Omega_H^2)\xi_r = \left(\frac{m^2}{r^2} + k^2\right)\varpi; \label{eq:9-119}
+\end{equation}
+while eliminating $\xi_\theta$ between equations \eqref{eq:9-115} and \eqref{eq:9-116}, we obtain
+\begin{align}
+\left[\sigma^2 - m^2\Omega_H^2 - 2r\Omega\frac{d\Omega}{dr} + \frac{\mu}{4\pi\rho}\frac{r\, d}{dr}\!\left(\frac{H_\theta^2}{r^2}\right) - \frac{4(\sigma\Omega - m\Omega_H^2)^2}{\sigma^2 - m^2\Omega_H^2}\right]\xi_r \notag \\
+= D\varpi + \frac{2m}{r}\frac{\sigma\Omega - m\Omega_H^2}{\sigma^2 - m^2\Omega_H^2}\,\varpi. \label{eq:9-120}
+\end{align}
+
+Solutions of equations~\eqref{eq:9-119} and \eqref{eq:9-120} must be sought which satisfy the boundary conditions
+\begin{equation}
+\xi_r = 0 \quad \text{for } r = R_1 \text{ and } R_2. \label{eq:9-121}
+\end{equation}
+
+\subsection*{(a) The case $m = 0$}
+
+When $m = 0$, equations~\eqref{eq:9-119} and \eqref{eq:9-120} simplify considerably. And since, moreover, $\sigma = p$ in this case, we are left with
+\begin{equation}
+D_*\xi_r = \frac{k^2}{p^2}\,\varpi \label{eq:9-122}
+\end{equation}
+and
+\begin{equation}
+[p^2 - \Psi(r)]\xi_r = D\varpi, \label{eq:9-123}
+\end{equation}
+where
+\begin{equation}
+\Psi(r) = 2r\Omega\frac{d\Omega}{dr} + 4\Omega^2 - \frac{\mu}{4\pi\rho}\, r\frac{d}{dr}\!\left(\frac{H_\theta^2}{r^2}\right). \label{eq:9-124}
+\end{equation}
+Recalling the definition of Rayleigh's discriminant $\Phi(r)$, we can write
+\begin{equation}
+\Psi(r) = \Phi(r) - \frac{\mu}{4\pi\rho}\, r\frac{d}{dr}\!\left(\frac{H_\theta}{r}\right)^2. \label{eq:9-125}
+\end{equation}
+
+Now eliminating $\varpi$ between equations~\eqref{eq:9-122} and \eqref{eq:9-123}, we obtain
+\begin{equation}
+(DD_* - k^2)\xi_r = -\frac{k^2}{p^2}\, \Psi(r)\xi_r. \label{eq:9-126}
+\end{equation}
+
+Comparing equation~\eqref{eq:9-126} with equation VII\,(58) we observe that $\Psi(r)$ plays for this problem exactly the same role which Rayleigh's discriminant, $\Phi(r)$, does for the hydrodynamic problem. We may, therefore, conclude: \emph{a necessary and sufficient condition, for the flow represented by \eqref{eq:9-103} to be stable for axisymmetric perturbations, is that $\Psi(r)$ be positive throughout the interval $(R_1, R_2)$; likewise, the flow is necessarily unstable if $\Psi(r)$ should change sign anywhere inside the interval.} This theorem was first established by Michael.
+
+\subsection*{(b) The case $m \ne 0$}
+
+When $m \ne 0$, equations~\eqref{eq:9-119}--\eqref{eq:9-121}, considered as a characteristic value problem for $k^2$, can be formulated in variational form; and the basis for such a formulation is provided by the following integral relation which can be readily established:
+\begin{align}
+\int_{R_1}^{R_2} r\!\left\{(\sigma^2 - m^2\Omega_H^2 - V(r) + 4\Omega^2 + \frac{4(\sigma\Omega - m\Omega_H^2)^2}{\sigma^2 - m^2\Omega_H^2}\right\}\!\xi_r^2\, dr \notag \\
+= -\int_{R_1}^{R_2} \frac{1}{r}\left(\frac{m^2}{r} + k^2 r\right)\varpi^2\, dr. \label{eq:9-127}
+\end{align}
+However, the conditions for the stability of these modes, $m \ne 0$, have not been examined.
+
+\section{The stability of non-dissipative Couette flow when an axial and a transverse magnetic field are present}
+\label{sec:84}
+
+We shall briefly consider the case when superposed on a uniform axial magnetic field $H_z$ there is a distribution of current density which produces an azimuthal magnetic field $H_\theta(r)$. In examining the stability of a non-dissipative Couette flow under these circumstances, we shall restrict ourselves to axisymmetric perturbations.
+
+Proceeding as in \S\S\,81 and 83, we readily find that in place of equations \eqref{eq:9-31}--\eqref{eq:9-36} and \eqref{eq:9-106}--\eqref{eq:9-111} we now have
+\begin{equation}
+ip u_r - 2\Omega u_\theta - \frac{\mu}{4\pi\rho}\left(ikH_z h_r - 2\frac{H_\theta h_\theta}{r}\right) = -D\varpi, \label{eq:9-128}
+\end{equation}
+\begin{equation}
+ip u_\theta + (D_*V) u_r - \frac{\mu}{4\pi\rho}(ikH_z h_\theta + h_r(D_*H_\theta)) = 0, \label{eq:9-129}
+\end{equation}
+\begin{equation}
+ip u_z - \frac{\mu}{4\pi\rho}\cdot ikH_z h_z = -ik\varpi, \label{eq:9-130}
+\end{equation}
+\begin{equation}
+iph_r = ikH_z\, u_r, \label{eq:9-131}
+\end{equation}
+\begin{equation}
+iph_\theta = ikH_z u_\theta + rh_r\frac{d\Omega}{dr} - ru_r\frac{d}{dr}\!\left(\frac{H_\theta}{r}\right), \label{eq:9-132}
+\end{equation}
+and
+\begin{equation}
+iph_z = ikH_z\, h_r. \label{eq:9-133}
+\end{equation}
+
+We now define the Lagrangian displacement $\boldsymbol{\xi}$ by the equations
+\begin{equation}
+u_r = ip\xi_r, \quad u_\theta = ip\xi_\theta - r\frac{d\Omega}{dr}\xi_r, \quad \text{and} \quad u_z = ip\xi_r. \label{eq:9-134}
+\end{equation}
+(These equations differ from \eqref{eq:9-38} only by the replacement of $\sigma$ by $p$ as is appropriate for the case $m = 0$.) From a comparison of equations \eqref{eq:9-131}--\eqref{eq:9-133} with \eqref{eq:9-134}, it follows that
+\begin{equation}
+h_r = ikH_z\xi_r, \quad h_\theta = ikH_z\xi_\theta - r\xi_r\frac{d}{dr}\!\left(\frac{H_\theta}{r}\right), \quad \text{and} \quad h_z = ikH_z\xi_r. \label{eq:9-135}
+\end{equation}
+
+With $\mathbf{u}$ and $\mathbf{h}$ expressed in this manner in terms of $\boldsymbol{\xi}$, equations~\eqref{eq:9-128} and \eqref{eq:9-129} become
+\begin{equation}
+\left(p^2 - \Omega_A^2 - r\frac{d}{dr}\Omega_A^2 + r\frac{d}{dr}\Omega_H^2\right)\xi_r + 2i(p\Omega - \Omega_A\Omega_H)\xi_\theta = D\varpi, \label{eq:9-136}
+\end{equation}
+and
+\begin{equation}
+(p^2 - \Omega_A^2)\xi_\theta - 2i(p\Omega - \Omega_A\Omega_H)\xi_r = 0, \label{eq:9-137}
+\end{equation}
+where
+\begin{equation}
+\Omega_A^2 = \frac{\mu H_z^2 k^2}{4\pi\rho} \quad \text{and} \quad \Omega_H^2 = \frac{\mu H_\theta^2}{4\pi\rho r^2} \label{eq:9-138}
+\end{equation}
+have the same meanings as in \S\S\,81 and 83 (cf.\ equations \eqref{eq:9-43} and \eqref{eq:9-118}).
+
+Similarly, equation~\eqref{eq:9-130} becomes
+\begin{equation}
+(p^2 - \Omega_A^2)\xi_z = ik\varpi; \label{eq:9-139}
+\end{equation}
+but the equation of continuity in the present axisymmetric case requires
+\begin{equation}
+D_*\xi_r = -ik\xi_z; \label{eq:9-140}
+\end{equation}
+hence,
+\begin{equation}
+(p^2 - \Omega_A^2)\, D_*\xi_r = k^2\varpi. \label{eq:9-141}
+\end{equation}
+
+By suitably combining equations \eqref{eq:9-136}, \eqref{eq:9-137}, and \eqref{eq:9-141}, we finally obtain
+\begin{align}
+(p^2 - \Omega_A^2)(DD_* - k^2)\xi_r = -k^2 \left[\frac{d}{dr}(\sigma^2 - \Omega_A^2) + \left(\frac{p\Omega - \Omega_A\Omega_H}{p^2 - \Omega_A^2}\right)^2\right]\xi_r. \label{eq:9-142}
+\end{align}
+
+The full implications of this equation have not been explored; but the special case, $\Omega = 0$, offers no difficulty.
+
+\subsection*{(a) The case $\Omega = 0$}
+
+In this case equation~\eqref{eq:9-142} reduces to
+\begin{equation}
+\kappa(DD_* - k^2)\xi_r = -k^2 \left\{-\frac{d\Omega_H^2}{dr} + \frac{4\Omega_A^2\Omega_H^2}{\kappa}\right\}\xi_r, \label{eq:9-143}
+\end{equation}
+where
+\begin{equation}
+\kappa = p^2 - \Omega_A^2. \label{eq:9-144}
+\end{equation}
+On comparing equation~\eqref{eq:9-143} with equation~\eqref{eq:9-53}, we observe that the two equations are of exactly the same form with $\Omega_H$ and $-rd\Omega_H/dr$ playing the roles of $\Omega$ and $\Phi(r)$, respectively. Accordingly, the theorems of \S\,81\,(a) have now their exact counterparts. Thus, the characteristic values of $\kappa$ (and, therefore, also of $p^2$) are real; and a necessary and sufficient condition for stability is (cf.\ equation~\eqref{eq:9-70})
+\begin{equation}
+I_1 \Omega_A^2 > k^2 \int_{R_1}^{R_2} \left(4\Omega_H^2 + r\frac{d\Omega_H^2}{dr}\right) r\xi_r^2\, dr. \label{eq:9-145}
+\end{equation}
+
+Substituting for $\Omega_A^2$ and $\Omega_H^2$ from \eqref{eq:9-138} in \eqref{eq:9-145}, we have
+\begin{equation}
+I_1 H_z^2 > \int_{R_1}^{R_2} \left(\frac{H_\theta^2}{r^2} + \frac{d}{dr}\!\left(\frac{H_\theta}{r}\right)^2\right) r\xi_r^2\, dr. \label{eq:9-146}
+\end{equation}
+
+An equivalent form of this inequality is
+\begin{equation}
+I_1 H_z^2 > \int_{R_1}^{R_2} \frac{\mu^2_m}{r}\frac{d}{dr}(r^2 H_\theta^2)\, dr. \label{eq:9-147}
+\end{equation}
+
+From this it follows that \emph{a sufficient condition for stability is that $H_\theta(r)$ decreases more rapidly than $1/r$}.
+
+\section{The stability of dissipative Couette flow in hydromagnetics. The perturbation equations}
+\label{sec:85}
+
+As we have seen in \S\,80, the equations of hydromagnetics allow, in the presence of an impressed, uniform, axial magnetic field, the same stationary distribution of $V(r)$ as in the absence of a field. Nevertheless, in analogy with the B\'enard problem considered in Chapter~IV, we should expect that the magnetic field will have a very pronounced effect on the onset of instability. In this section we begin the investigation of this problem.
+
+Let a perturbed state of the flow be described by
+\begin{equation}
+u_r, \quad V\!+\!u_\theta, \quad u_z, \quad h_r, \quad h_\theta, \quad H\!+\!h_z, \quad \text{and} \quad \varpi\; (= \delta\Pi). \label{eq:9-148}
+\end{equation}
+We shall assume further that the various perturbations are axisymmetric and independent of $\theta$. We then obtain from equations \eqref{eq:9-1}--\eqref{eq:9-6} the linearized equations
+\begin{equation}
+\frac{\partial u_r}{\partial t} - 2\Omega u_\theta - \frac{\mu H}{4\pi\rho}\frac{\partial h_r}{\partial z} = -\frac{\partial \varpi}{\partial r} + \nu\left(\nabla^2 u_r - \frac{u_r}{r^2}\right), \label{eq:9-149}
+\end{equation}
+\begin{equation}
+\frac{\partial u_\theta}{\partial t} + \left(\frac{dV}{dr} + \frac{V}{r}\right) u_r - \frac{\mu H}{4\pi\rho}\frac{\partial h_\theta}{\partial z} = \nu\left(\nabla^2 u_\theta - \frac{u_\theta}{r^2}\right), \label{eq:9-150}
+\end{equation}
+\begin{equation}
+\frac{\partial u_z}{\partial t} - \frac{\mu H}{4\pi\rho}\frac{\partial h_z}{\partial z} = -\frac{\partial \varpi}{\partial z} + \nu \nabla^2 u_z, \label{eq:9-151}
+\end{equation}
+\begin{equation}
+\frac{\partial h_r}{\partial t} - H \frac{\partial u_r}{\partial z} = \eta\left(\nabla^2 h_r - \frac{h_r}{r^2}\right), \label{eq:9-152}
+\end{equation}
+\begin{equation}
+\frac{\partial h_\theta}{\partial t} - H \frac{\partial u_\theta}{\partial z} - \left(\frac{dV}{dr} - \frac{V}{r}\right) h_r = \eta\left(\nabla^2 h_\theta - \frac{h_\theta}{r^2}\right), \label{eq:9-153}
+\end{equation}
+and
+\begin{equation}
+\frac{\partial h_z}{\partial t} - H \frac{\partial u_z}{\partial z} = \eta \nabla^2 h_z, \label{eq:9-154}
+\end{equation}
+where $\nabla^2$ now has the meaning
+\begin{equation}
+\nabla^2 = \frac{\partial^2}{\partial r^2} + \frac{1}{r}\frac{\partial}{\partial r} + \frac{\partial^2}{\partial z^2}. \label{eq:9-155}
+\end{equation}
+
+Also, for axisymmetric perturbations, the conditions requiring $\mathbf{u}$ and $\mathbf{h}$ to be solenoidal are
+\begin{equation}
+\frac{\partial u_r}{\partial r} + \frac{u_r}{r} + \frac{\partial u_z}{\partial z} = 0 \label{eq:9-156}
+\end{equation}
+and
+\begin{equation}
+\frac{\partial h_r}{\partial r} + \frac{h_r}{r} + \frac{\partial h_z}{\partial z} = 0. \label{eq:9-157}
+\end{equation}
+
+By analysing the disturbance into normal modes, we seek solutions of the foregoing equations which are of the forms
+\begin{equation}
+\begin{aligned}
+u_r &= e^{pt}u(r)\cos kz; & h_r &= e^{pt}\phi(r)\cos kz; \\
+u_\theta &= e^{pt}v(r)\cos kz; & h_\theta &= e^{pt}\chi(r)\sin kz; \\
+u_z &= e^{pt}w(r)\sin kz; & h_z &= e^{pt}\psi(r)\cos kz,
+\end{aligned} \label{eq:9-158}
+\end{equation}
+and
+\[
+\varpi = \varpi(r) e^{pt}\cos kz,
+\]
+where, as the notation implies, $u$, $v$, etc., are all functions of $r$ only. For solutions of the form~\eqref{eq:9-158}, equations \eqref{eq:9-149}--\eqref{eq:9-154} become
+\begin{equation}
+\nu\left(DD_* - k^2 - \frac{p}{\nu}\right) u + \frac{\mu Hk}{4\pi\rho}\, \phi + 2\Omega v = D\varpi, \label{eq:9-159}
+\end{equation}
+\begin{equation}
+\nu\left(DD_* - k^2 - \frac{p}{\nu}\right) v + \frac{\mu Hk}{4\pi\rho}\, \chi - (D_*V) u = -k\varpi, \label{eq:9-160}
+\end{equation}
+\begin{equation}
+\nu\left(D_*D - k^2 - \frac{p}{\nu}\right) w - \frac{\mu Hk}{4\pi\rho}\, \psi = -k\varpi, \label{eq:9-161}
+\end{equation}
+\begin{equation}
+\eta\left(DD_* - k^2 - \frac{p}{\eta}\right) \phi = Hku, \label{eq:9-162}
+\end{equation}
+\begin{equation}
+\eta\left(DD_* - k^2 - \frac{p}{\eta}\right) \chi = Hkv - \left(\frac{dV}{dr} - \frac{V}{r}\right)\phi, \label{eq:9-163}
+\end{equation}
+\begin{equation}
+\eta\left(D_*D - k^2 - \frac{p}{\eta}\right) \psi = -Hkw, \label{eq:9-164}
+\end{equation}
+\begin{equation}
+D_* u = -kw, \label{eq:9-165}
+\end{equation}
+and
+\begin{equation}
+D_* \phi = +k\psi, \label{eq:9-166}
+\end{equation}
+where $D$ and $D_*$ have the same meanings as in the preceding sections (cf.\ equation~\eqref{eq:9-112}).
+
+Considering equations \eqref{eq:9-159}--\eqref{eq:9-166}, we first observe that equations \eqref{eq:9-162}, \eqref{eq:9-164}, \eqref{eq:9-165}, and \eqref{eq:9-166} are not all independent; for, by applying $D_*$ to equation~\eqref{eq:9-162} and making use of equations \eqref{eq:9-165} and \eqref{eq:9-166}, we recover equation~\eqref{eq:9-164}.
+
+Eliminating $\varpi$ between equations \eqref{eq:9-159} and \eqref{eq:9-161}, we obtain
+\begin{align}
+-\nu\left(DD_* - k^2 - \frac{p}{\nu}\right) u + \frac{\mu Hk}{4\pi\rho}\, \phi + 2\Omega v \notag \\
+= -\frac{\nu}{k}\left(DD_* - k^2 - \frac{p}{\nu}\right) Dv + \frac{\mu H}{4\pi\rho}\, D_*\psi. \label{eq:9-167}
+\end{align}
+
+Replacing $w$ and $\psi$ in this equation by $-D_*u/k$ and $D_*\phi/k$ (in accordance with equations \eqref{eq:9-165} and \eqref{eq:9-166}), we obtain, after some rearrangement,
+\begin{equation}
+\left(DD_* - k^2 - \frac{p}{\nu}\right)(DD_* - k^2)u + \frac{\mu Hk}{4\pi\rho\nu}(DD_* - k^2)\phi = \frac{2\Omega k}{\nu}\, v. \label{eq:9-168}
+\end{equation}
+
+Equations~\eqref{eq:9-160}, \eqref{eq:9-162}, \eqref{eq:9-163}, and \eqref{eq:9-168} provide a system of equations of combined order ten for $u$, $v$, $\phi$, and $\chi$.
+
+\subsection*{(a) The boundary conditions}
+
+The boundary conditions on $u$, $v$, and $w$ require that they vanish on the walls. According to equation~\eqref{eq:9-165} the condition $w = 0$ can be replaced by $D_*u = 0$; and since $u = 0$ on the walls, this last condition is also equivalent to $Du = 0$. Hence the conditions on $u$ and $v$ are
+\begin{equation}
+u = v = 0 \quad \text{and} \quad Du = 0 \quad \text{for } r = R_1 \text{ and } R_2. \label{eq:9-169}
+\end{equation}
+
+The remaining boundary conditions refer to $\phi$ and $\chi$; and they depend on the nature of the walls confining the fluid. As we have seen in Chapter~IV, \S\,42\,(a), we might in this connexion consider two cases: when the walls are of non-conducting material and when they are of perfectly conducting material. (These are the cases distinguished as A and B in \S\,42\,(a).) The boundary conditions appropriate to these two cases are (cf.\ equations IV\,(106) and (108))
+\begin{equation}
+J_z = 0 \quad \text{(on non-conducting walls)} \label{eq:9-170}
+\end{equation}
+and
+\begin{equation}
+h_r = 0 \quad \text{and} \quad J_z = 0 \quad \text{(on conducting walls).} \label{eq:9-171}
+\end{equation}
+Equivalent forms of these conditions are
+\begin{equation}
+(\mathrm{curl}\,\mathbf{h})_z = 0 \quad \text{(on non-conducting walls)} \label{eq:9-172}
+\end{equation}
+and
+\begin{equation}
+h_r = 0 \quad \text{and} \quad (\mathrm{curl}\,\mathbf{h})_z = 0 \quad \text{(on conducting walls).} \label{eq:9-173}
+\end{equation}
+
+Since we are considering axisymmetric perturbations, the condition in \eqref{eq:9-172} requires $\partial h_\theta/\partial z = 0$; and according to the form of the solutions assumed (cf.\ equation~\eqref{eq:9-158}), this requires $\chi = 0$. Again, the condition $(\mathrm{curl}\,\mathbf{h})_z = 0$, for the form of the solutions assumed, requires $D_*h_\theta = 0$, i.e.\ $D_*\chi = 0$. Thus, the conditions \eqref{eq:9-172} and \eqref{eq:9-173} require
+\begin{equation}
+\phi = 0 \quad \text{(on non-conducting walls)} \label{eq:9-174}
+\end{equation}
+and
+\begin{equation}
+\phi = 0 \quad \text{and} \quad D_*\chi = 0 \quad \text{(on conducting walls).} \label{eq:9-175}
+\end{equation}
+
+\subsection*{(b) The equations governing the marginal state when the onset of instability is as a stationary secondary flow}
+
+So far no rigorous discussion has been undertaken to determine whether the principle of the exchange of stabilities is valid for the problem under consideration. However, on the basis of experimental evidence, we shall investigate only the case when instability sets in as a stationary secondary flow. In this case, the equations governing the marginal state can be obtained by setting $p = 0$ in the relevant equations, namely, \eqref{eq:9-160}, \eqref{eq:9-162}, \eqref{eq:9-163}, and \eqref{eq:9-168}. We have
+\begin{equation}
+(DD_* - k^2)^2 u + \frac{\mu Hk}{4\pi\rho\nu}\, k (DD_* - k^2)\phi = \frac{2\Omega k}{\nu}\, v, \label{eq:9-176}
+\end{equation}
+\begin{equation}
+(DD_* - k^2)v + \frac{\mu Hk}{4\pi\rho\nu}\, \chi = \frac{1}{\nu}(D_*V)u, \label{eq:9-177}
+\end{equation}
+\begin{equation}
+(D_1D_* - k^2)\phi = \frac{kH}{\eta}\, u, \label{eq:9-178}
+\end{equation}
+and
+\begin{equation}
+(DD_* - k^2)\chi = \frac{kH}{\eta}\, v - \frac{1}{\eta}\left(\frac{dV}{dr} - \frac{V}{r}\right)\phi. \label{eq:9-179}
+\end{equation}
+
+We can eliminate $\chi$ from equation~\eqref{eq:9-176} by directly substituting equation~\eqref{eq:9-178}. We obtain
+\begin{equation}
+\left[(DD_* - k^2)^2 + \frac{\mu H^2}{4\pi\rho\nu}\, k^2\right] u = \frac{2\Omega k}{\nu}\, v. \label{eq:9-180}
+\end{equation}
+
+In deriving the foregoing equations, we have not made any use of the special distribution of the angular velocity given by \eqref{eq:9-18}; they are therefore of general applicability to any Couette flow. However, when $\Omega(r)$ has the form~\eqref{eq:9-18},
+\begin{equation}
+D_*V = 2A \quad \text{and} \quad \frac{dV}{dr} - \frac{V}{r} = -2\frac{B}{r^2}. \label{eq:9-181}
+\end{equation}
+
+The boundary conditions with respect to which equations \eqref{eq:9-177}--\eqref{eq:9-180} must be solved are the same as those described in \S\,(a) above.
+
+\subsection*{(c) The reduction to the case of a narrow gap}
+
+We shall restrict our discussion of equations \eqref{eq:9-177}--\eqref{eq:9-180} to the case when the gap $d = R_2 - R_1$ between the cylinders is small compared to the mean radius $R_0 = \frac{1}{2}(R_1 + R_2)$. Then in a scheme of approximation with which we are now familiar, equations \eqref{eq:9-177}--\eqref{eq:9-180} become
+\begin{equation}
+(D^2 - a^2)^2 u + \frac{\mu Hd}{4\pi\rho\nu}\, a\phi = \frac{2Ad^2}{\nu}\, v, \label{eq:9-182}
+\end{equation}
+\begin{equation}
+(D^2 - a^2)\chi = \frac{Hd}{\eta}\, av, \label{eq:9-183}
+\end{equation}
+\begin{equation}
+(D^2 - a^2)\chi = \frac{Hd}{\eta}\, av + \frac{2Bd^2}{R_0^2\eta}\, \phi, \label{eq:9-184}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = \frac{2\Omega_1 d^2}{\nu}\, a^2[1 - (1-\mu)\zeta]v, \label{eq:9-185}
+\end{equation}
+where
+\begin{equation}
+\zeta = (r - R_1)/d, \quad k = a/d, \quad \mu = \Omega_2/\Omega_1, \label{eq:9-186}
+\end{equation}
+and\footnote{It is, again, unfortunate that $\mu$ occurs in these few equations with two meanings: as magnetic permeability and as $\Omega_2/\Omega_1$. Once the equations are reduced to their non-dimensional forms and the magnetic permeability has been `absorbed' into $Q$, this ambiguity will cease; and no confusion is likely in the meantime.}
+\begin{equation}
+Q = \frac{\mu H^2}{4\pi\rho\nu}\, d^2 = \frac{\mu^2 H^2 d^2}{\rho\nu}, \label{eq:9-187}
+\end{equation}
+is the same non-dimensional number which we introduced in Chapter~IV (equation IV\,(134)).
+
+Under terrestrial conditions, the relative magnitude of $\nu$ and $\eta$ enables an important simplification of the foregoing equations. Thus, considering mercury at room temperatures as typical of the fluids to which we may wish to apply the theory, we have
+\begin{equation}
+\eta = 7.6 \times 10^3\;\text{cm}^2/\text{s}\quad \text{while}\quad \nu = 1.1 \times 10^{-3}\;\text{cm}^2/\text{s}; \label{eq:9-189}
+\end{equation}
+whereas in the framework of the approximations underlying equation~\eqref{eq:9-188}, the constants $A$ and $B/R_0^2$ are of equal magnitude (though of opposite signs (cf.\ equation~(89))). Therefore, in equation~\eqref{eq:9-184}, $B/R_0^2 \eta$ can be neglected, entirely, in comparison with $A/\nu$; and we shall be left with
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\phi = \frac{2Ad^2}{\nu}\,\frac{Hd}{\eta}\, au. \label{eq:9-190}
+\end{equation}
+
+For the same reason, we can neglect the term in $\chi$ on the right-hand side of equation~\eqref{eq:9-184} and write
+\begin{equation}
+(D^2 - a^2)\chi = \frac{Hd}{\eta}\, av. \label{eq:9-191}
+\end{equation}
+
+Substituting for $v$ from this last equation in equation~\eqref{eq:9-185}, we get
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = \frac{2\Omega_1 d^2}{\nu}\, a^2[1-(1-\mu)\zeta](D^2 - a^2)\phi. \label{eq:9-192}
+\end{equation}
+
+By the further transformation
+\begin{equation}
+\psi \to \frac{Hda}{n}\frac{2Ad^2}{\nu}\, \psi, \label{eq:9-193}
+\end{equation}
+equations~\eqref{eq:9-190} and \eqref{eq:9-192} become
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi = u \label{eq:9-194}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = -Ta^2[1 - (1-\mu)\zeta](D^2 - a^2)\psi, \label{eq:9-195}
+\end{equation}
+where
+\begin{equation}
+T = -\frac{4\Omega_1^2}{v^2}\, d^4 \label{eq:9-196}
+\end{equation}
+is the Taylor number as we have usually defined it for narrow gaps.
+
+The appropriate boundary conditions are
+\begin{gather}
+\text{for } \zeta = 0 \text{ and } 1, \quad u = 0, \quad Du = 0, \quad (D^2 - a^2)\psi = 0, \quad \text{and either } \psi = 0 \notag \\
+\text{or } D\psi = 0 \label{eq:9-197}
+\end{gather}
+depending on whether the walls are of non-conducting or conducting material.
+
+An important consequence of the circumstance, that under terrestrial conditions $\eta \sim 10^6 \nu$, is that the order of the system of equations we have to solve has been reduced from 10 to 8.
+
+Finally, we may note that equations~\eqref{eq:9-194} and \eqref{eq:9-195} can be combined to give the single equation
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]^2\psi = -Ta^2[1 - (1-\mu)\zeta](D^2 - a^2)\psi. \label{eq:9-198}
+\end{equation}
+However, we shall not find this form very useful.
+
+\section{The solution of the characteristic value problem for the case $\mu > 0$}
+\label{sec:86}
+
+We have seen in Chapter~VII, \S\,71\,(d) (see also Chapter~VIII, \S\,77\,(c)) that, in the case when the cylinders are rotating in the same direction, we can replace the term which allows for the variation of $\Omega$ through the gap by its average value. With this replacement and the definitions
+\begin{equation}
+\mathscr{T} = \tfrac{1}{2}(1+\mu)T \label{eq:9-199}
+\end{equation}
+and
+\begin{equation}
+G = (D^2 - a^2)\psi, \label{eq:9-200}
+\end{equation}
+the equations to be solved are
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi = u \label{eq:9-201}
+\end{equation}
+and
+\begin{equation}
+(D^2 - a^2)^2 + Qa^2]u = -\mathscr{T} a^2 G. \label{eq:9-202}
+\end{equation}
+
+In considering the equations in the forms~\eqref{eq:9-201} and \eqref{eq:9-202}, we shall find it convenient to translate the origin of $\zeta$ to be midway between the two cylinders. The boundary conditions, then, are
+\begin{equation}
+u = 0, \quad Du = 0, \quad G = 0, \quad \text{and \emph{either} } \psi \text{ \emph{or} } D\psi = 0 \quad \text{for } \zeta = \pm\tfrac{1}{2}. \label{eq:9-203}
+\end{equation}
+
+From the symmetry of equations~\eqref{eq:9-201} and \eqref{eq:9-202} and the boundary conditions~\eqref{eq:9-203}, for reflection about $\zeta = 0$, it follows that the proper solutions of the characteristic value problem fall into two non-combining groups of even and odd solutions. And it is also clear that the lowest characteristic values must occur among the even solutions.
+
+\subsection*{(a) A variational principle}
+
+As in the case of similar characteristic value problems considered in Chapters~II, III, and IV, the problem presented by equations~\eqref{eq:9-201}--\eqref{eq:9-203} allows a variational formulation; and the characteristic values of $\mathscr{T}$ represent extremal values which a certain ratio of two positive definite integrals can attain. To obtain this ratio, multiply equation~\eqref{eq:9-202} by $u$ and integrate over the range of $\zeta$. We have
+\begin{align}
+\int_{-1/2}^{+1/2} u\{(D^2 - a^2)^2 u + Qa^2 u\}\, d\zeta &= -\mathscr{T} a^2 \int_{-1/2}^{+1/2} u(D^2 - a^2)\psi\, d\zeta \notag \\
+&= -\mathscr{T} a^2 \int_{-1/2}^{+1/2} (D^2 - a^2)\psi\{(D^2 - a^2)^2 + Qa^2\}\psi\, d\zeta. \label{eq:9-204}
+\end{align}
+
+After one or more integrations by parts (in which the integrated parts vanish on account of one or other of the boundary conditions), we find that both sides of \eqref{eq:9-204} can be brought to positive definite forms. The result is
+\begin{align}
+\int_{-1/2}^{+1/2} \{[(D^2 - a^2)u]^2 + Qa^2 u^2\}\, d\zeta \notag \\
+= \mathscr{T}\, a^2 \int_{-1/2}^{+1/2} \{[(D\phi)^2 + a^2 G^2 + Qa^2\{(D\psi)^2 + a^2\psi^2\}]\}\, d\zeta. \label{eq:9-205}
+\end{align}
+
+And it can be shown, as in other similar instances, that the solution of the characteristic value problem is equivalent to finding extremal values of $\mathscr{T}$ given by the expression on the right-hand side of \eqref{eq:9-205} for arbitrary variations of $\psi$ subject to the boundary conditions and the additional `constraint'
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi = u. \label{eq:9-206}
+\end{equation}
+
+The critical Taylor number $\mathscr{T}$ for the onset of instability (for a given $Q$) represents, in fact, the \emph{absolute minimum} which the quantity on the right-hand side of \eqref{eq:9-205} can attain.
+
+\subsection*{(b) The solution of the characteristic value problem. The secular determinant}
+
+In solving the characteristic value problem presented by equations \eqref{eq:9-201}--\eqref{eq:9-203}, we shall follow a method similar to the ones we have used in other instances: we expand $u$ in terms of a set of orthogonal functions each of which satisfies the boundary conditions on $u$; we then solve equation~\eqref{eq:9-201} for $\psi$ and arrange that the boundary conditions on $\psi$ are also satisfied. With all the boundary conditions thus met, we insert the assumed expansion for $u$ and the derived expansion for $\psi$ in equation~\eqref{eq:9-202}; and this will lead us directly to the secular determinant in the usual manner. The underlying self-adjoint character of the problem must reflect itself in the symmetry of the deduced secular matrix.
+
+Our first problem is then the selection of a suitable set of orthogonal functions in terms of which to expand $u$. The functions which have been constructed and studied in detail by Harris and Reid provide such a set. These functions are determined as the proper solutions of the characteristic value problem presented by the equation,
+\begin{equation}
+\frac{d^2 y}{dx^2} = \alpha^4 y, \label{eq:9-207}
+\end{equation}
+and the boundary conditions
+\begin{equation}
+y = y' = 0 \quad \text{for } x = \pm\tfrac{1}{2}. \label{eq:9-208}
+\end{equation}
+The proper solutions fall into two non-combining groups of even and odd functions, respectively. The standard forms of these solutions are
+\begin{equation}
+C_m(x) = \frac{\cosh \lambda_m x}{\cosh \frac{1}{2}\lambda_m} - \frac{\cos \lambda_m x}{\cos \frac{1}{2}\lambda_m} \label{eq:9-209}
+\end{equation}
+and
+\begin{equation}
+S_n(x) = \frac{\sinh \mu_n x}{\sinh \frac{1}{2}\mu_n} - \frac{\sin \mu_n x}{\sin \frac{1}{2}\mu_n}, \label{eq:9-210}
+\end{equation}
+where $\lambda_m$ and $\mu_n$ $(m = 1, 2, 3, \ldots)$ are the positive roots of the equations
+\begin{equation}
+\tanh \tfrac{1}{2}\lambda + \tan \tfrac{1}{2}\lambda = 0 \quad \text{and} \quad \coth \tfrac{1}{2}\mu - \cot \tfrac{1}{2}\mu = 0. \label{eq:9-211}
+\end{equation}
+
+The functions $C_m(x)$ and $S_n(x)$ satisfy the orthogonality relations
+\begin{equation}
+\int_{-1/2}^{+1/2} C_m(x) C_n(x)\, dx = \delta_{mn} \label{eq:9-212}
+\end{equation}
+and
+\begin{equation}
+\int_{-1/2}^{+1/2} C_m(x) S_n(x)\, dx = 0. \label{eq:9-213}
+\end{equation}
+
+Returning to equations \eqref{eq:9-201}--\eqref{eq:9-203} and restricting ourselves to the even solutions, we expand $u$ in terms of the functions $C_m$; thus
+\begin{equation}
+u = \sum_m A_m C_m(\zeta), \label{eq:9-214}
+\end{equation}
+where the summation over $m$ may be considered as running from 1 to $\infty$. The corresponding expansion for $\psi$ is given by
+\begin{equation}
+\psi = \sum_m A_m \psi_m(\zeta), \label{eq:9-215}
+\end{equation}
+where $\psi_m(\zeta)$ is the solution of the equation
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi_m = C_m \label{eq:9-216}
+\end{equation}
+which is even and satisfies the boundary conditions on $\psi$.
+
+The general solution of equation~\eqref{eq:9-216} which is even can be written in the form
+\begin{align}
+\psi_m &= \frac{1}{\lambda_m^4 - a^4 + Qa^2}\frac{1}{\cosh \frac{1}{2}\lambda_m}\,\cosh\lambda_m\zeta + \notag \\
+&\quad + B_1^{(m)}\cosh q_1\zeta + B_2^{(m)}\cosh q_2\zeta, \label{eq:9-217}
+\end{align}
+where $B_1^{(m)}$ and $B_2^{(m)}$ are constants of integration, and
+\begin{equation}
+q_1^2 = a^2 + ia\sqrt{Q} \quad \text{and} \quad q_2^2 = a^2 - ia\sqrt{Q} \label{eq:9-218}
+\end{equation}
+are the roots of the equation
+\begin{equation}
+(q^2 - a^2)^2 + Qa^2 = 0. \label{eq:9-219}
+\end{equation}
+Without loss of generality, we may write
+\begin{equation}
+q_1 = \alpha_1 + i\alpha_2 \quad \text{and} \quad q_2 = \alpha_1 - i\alpha_2, \label{eq:9-220}
+\end{equation}
+where
+\begin{equation}
+\alpha_1 = \{\tfrac{1}{2}\sqrt{(a^4 + Qa^2)} + \tfrac{1}{2}a^2\}^{1/2} \quad \text{and} \quad \alpha_2 = \{\tfrac{1}{2}\sqrt{(a^4 + Qa^2)} - \tfrac{1}{2}a^2\}^{1/2}. \label{eq:9-221}
+\end{equation}
+
+An identity which follows from equation~\eqref{eq:9-219} is
+\begin{equation}
+\Gamma_m = \frac{1}{(\lambda_m^4 - a^4)^2 + Qa^2\{(\lambda_m^4 + a^4)^2 + Qa^2\}} \label{eq:9-222}
+\end{equation}
+\[
+= \frac{1}{(\lambda_m^2 - q_1^2)(\lambda_m^2 - q_2^2)} = \frac{1}{(\lambda_m^2 + q_1^2)(\lambda_m^2 + q_2^2)}
+\]
+\[
+= \frac{1}{(\lambda_m^2 - q_1^2)(\lambda_m^2 - q_1^2)} \cdot \frac{1}{|\lambda_m^2 - q_1^2|^2}.
+\]
+
+On the other hand, according to equations~\eqref{eq:9-218}
+\begin{equation}
+\lambda_m^4 - q_1^4 a = \lambda_m^4 - a^4 + a^2 Q \mp 2ia^3\sqrt{Q}. \label{eq:9-223}
+\end{equation}
+
+If we let
+\begin{equation}
+g_{Cm} = \frac{1}{a\sqrt{Q}}\,(\lambda_m^4 - a^4 + Qa^2), \label{eq:9-224}
+\end{equation}
+then
+\begin{equation}
+\lambda_m^4 - q_1^2 a = (g_m \mp 2ia^2)a\sqrt{Q}. \label{eq:9-225}
+\end{equation}
+An alternative expression for $\Gamma_m$ is, therefore,
+\begin{equation}
+\frac{1}{\Gamma_m} = (g_m^2 + 4a^4)a^2 Q. \label{eq:9-226}
+\end{equation}
+
+Making use of all the foregoing relations and definitions, we can rewrite the solution~\eqref{eq:9-217} for $\psi_m$ in the form
+\begin{align}
+\psi_m &= \Gamma_m\{(\lambda_m^4 + a^4 + Qa^2)C_m(\zeta) + 2a^2 C_m''(\zeta)\} + \notag \\
+&\quad + B_1^{(m)}\cosh q_1\zeta + B_2^{(m)}\cosh q_2\zeta, \label{eq:9-227}
+\end{align}
+where
+\begin{equation}
+C_m''(\zeta) = \frac{d^2 C_m}{d\zeta^2} = \lambda_m^4\left(\frac{\cosh\lambda_m\zeta}{\cosh\frac{1}{2}\lambda_m} + \frac{\cos\lambda_m\zeta}{\cos\frac{1}{2}\lambda_m}\right). \label{eq:9-228}
+\end{equation}
+
+From \eqref{eq:9-227} we readily find
+\begin{align}
+G_m &= (D^2 - a^2)\psi_m \notag \\
+&= \Gamma_m\{a^2(\lambda_m^4 - a^4 - Qa^2)C_m(\zeta) + (\lambda_m^4 - a^4 + Qa^2)C_m''(\zeta)\} + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\cosh q_1\zeta - B_2^{(m)}\cosh q_2\zeta\}, \label{eq:9-229}
+\end{align}
+where we have made use of equation~\eqref{eq:9-218}.
+
+The boundary conditions~\eqref{eq:9-197} require that $G_m$ and either $\psi_m$ or $D\psi_m$ vanish for $\zeta = \pm\frac{1}{2}$; and these conditions will determine the constants $B_1^{(m)}$ and $B_2^{(m)}$. Postponing for the present the explicit determination of the constants, we shall proceed with the setting up of the secular matrix.
+
+Our next step is the substitution of the expansions for $u$ and $\psi$ in equation~\eqref{eq:9-202}; but first, we may observe that
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]C_m = (\lambda_m^4 + a^4 + Qa^2)C_m - 2a^2 C_m''. \label{eq:9-230}
+\end{equation}
+Therefore, the result of the substitution is
+\begin{align}
+\frac{1}{\mathscr{T} a^2} &\sum_m A_m\{(\lambda_m^4 + a^4 + Qa^2)C_m - 2a^2 C_m''\} + \notag \\
+&+ \sum_m A_{Sm}\{\Gamma_{Sm}[a^2(\lambda_m^4 - a^4 - Qa^2)C_m + (\lambda_m^4 - a^4 + Qa^2)C_m''] + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\cosh q_1\zeta - B_2^{(m)}\cosh q_2\zeta\}\} = 0. \label{eq:9-231}
+\end{align}
+
+The secular determinant for $\mathscr{T}$ now follows from this equation after multiplication by $C_n(\zeta)$ and $S_n(\zeta)$, and integration over the range of $\zeta$, with the further definitions
+\begin{equation}
+X_\mathrm{mn} = \int_{-1/2}^{+1/2} C_m''(\zeta) C_n(\zeta)\, d\zeta = \frac{2}{\lambda_m^4 - \lambda_n^4}\,(C_m'' C_n' - C_m' C_n'')_{+1} \quad (m \ne n) \label{eq:9-232}
+\end{equation}
+\[
+= \tfrac{1}{2}\{4C_m'' C_n' - \tfrac{1}{2}(C_m'')^2\}_{+1} \quad (m = n);
+\]
+and
+\begin{equation}
+\langle\cosh q_1\zeta|C_n\rangle = \int_{-1/2}^{+1/2} C_n(\zeta)\cosh q_1\zeta\, d\zeta, \label{eq:9-233}
+\end{equation}
+we can write
+\begin{align}
+\bigg|\frac{1}{\mathscr{T} a^2}\{(\lambda_m^4 + a^4 + Qa^2)\delta_{mn} - 2a^2 X_\mathrm{mn}\} + \notag \\
++ \Gamma_m\{a^2(\lambda_m^4 - a^4 - Qa^2)\delta_{mn} + (\lambda_m^4 - a^4 + Qa^2)X_\mathrm{mn}\} + \notag \\
++ ia\sqrt{Q}\{B_1^{(m)}\langle\cosh q_1\zeta|C_n\rangle - B_2^{(m)}\langle\cosh q_2\zeta|C_n\rangle\}\bigg| = 0. \label{eq:9-234}
+\end{align}
+
+By elementary calculations we find\footnote{The results quoted can be found in the very convenient tables of integrals which Reid and Harris have provided (see reference~10 in the Bibliographical Notes at the end of this chapter).}
+\begin{equation}
+X_\mathrm{mn} = \frac{2}{\lambda_m^4 - \lambda_n^4}\,(C_m'' C_n' - C_m'' C_n')_{+1} \quad (m \ne n) \label{eq:9-235}
+\end{equation}
+\[
+= \tfrac{1}{2}\{\tfrac{3}{2}S_m'' S_n - \tfrac{1}{2}(S_m'')^2\}_{+1} \quad (m = n);
+\]
+and
+\begin{equation}
+X_\mathrm{mn}^{(S)} = \frac{2}{\mu_m^4 - \mu_n^4}\,(S_m'' S_n' - S_m' S_n'')_{+1} \quad (m \ne n) \label{eq:9-236}
+\end{equation}
+\[
+= \frac{4}{\lambda_m^4 - \mu_n^4}\,(C_m'' S_n' - C_m' S_n'')_{+1} \quad (m = n);
+\]
+where it may be noted that
+\begin{equation}
+C_m''(\tfrac{1}{2}) = 2\lambda_m^4, \quad \text{and} \quad C_m'''(\tfrac{1}{2}) = 2\lambda_m^4 \tanh\tfrac{1}{2}\lambda_m. \label{eq:9-237}
+\end{equation}
+
+The last line in \eqref{eq:9-234} can be simplified by making appropriate use of equations~\eqref{eq:9-222} and \eqref{eq:9-224}--\eqref{eq:9-226}. Thus, we find successively
+\begin{align}
+&ia\sqrt{Q}\{B_1^{(m)}\langle\cosh q_1\zeta|C_n\rangle - B_2^{(m)}\langle\cosh q_2\zeta|C_n\rangle\} \notag \\
+&\quad = 4a^2\sqrt{Q}\,\mathrm{re}\{i(\lambda_n^4 - q_1^2)B_1^{(m)}[C_n'(\tfrac{1}{2})\cosh\tfrac{1}{2}q_1 - C_n(\tfrac{1}{2})q_1\sinh\tfrac{1}{2}q_1]\} \notag \\
+&\quad = 4a^2 Q\Gamma_m\,\mathrm{re}\{(-2a^2 + ig_m)B_1^{(m)}[C_n'(\tfrac{1}{2})\cosh\tfrac{1}{2}q_1 - C_n(\tfrac{1}{2})q_1\sinh\tfrac{1}{2}q_1]\}. \label{eq:9-238}
+\end{align}
+Thus, the secular equation finally takes the form
+\begin{align}
+\bigg|\frac{1}{\mathscr{T} a^2}\{(\lambda_m^4 + a^4 + Qa^2)\delta_{mn} - 2a^2 X_\mathrm{mn}\} + \notag \\
++ \Gamma_m\{a^2(\lambda_m^4 - a^4 - Qa^2)\delta_{mn} + \sigma_n X_\mathrm{mn} + \notag \\
++ 4a^2 Q\Gamma_m\,\mathrm{re}\{(-2a^2 + ig_m)B_1^{(m)}[C_n'(\tfrac{1}{2})\cosh\tfrac{1}{2}q_1 - C_n(\tfrac{1}{2})q_1\sinh\tfrac{1}{2}q_1]\}\bigg| = 0. \label{eq:9-239}
+\end{align}
+
+The further reduction of the secular matrix requires an explicit evaluation of the constant $B_1^{(m)}$; and this depends on the choice of the boundary conditions. We consider the two cases separately.
+
+\subsection*{(c) The case of non-conducting walls}
+
+In this case the boundary conditions are that $G_m$ and $\psi_m$ vanish at $\zeta = \pm\frac{1}{2}$. Applying these conditions to the solutions~\eqref{eq:9-227} and \eqref{eq:9-229}, we obtain
+\begin{equation}
+B_1^{(m)}\cosh\tfrac{1}{2}q_1 + B_2^{(m)}\cosh\tfrac{1}{2}q_2 = -2a^2\Gamma_m\, C_m''(\tfrac{1}{2}) \label{eq:9-240}
+\end{equation}
+and
+\begin{equation}
+B_1^{(m)}\cosh\tfrac{1}{2}q_1 - B_2^{(m)}\cosh\tfrac{1}{2}q_2 = ig_m\,\Gamma_m\, C_m''(\tfrac{1}{2}). \label{eq:9-241}
+\end{equation}
+On solving these equations, we find
+\begin{equation}
+B_1^{(m)} = \frac{\Gamma_m}{2}\,\mathrm{sech}\,\tfrac{1}{2}q_1\, \{-2a^2 C_m''(\tfrac{1}{2}) + ig_m\,C_m''(\tfrac{1}{2})q_1\tanh\tfrac{1}{2}q_1\} \label{eq:9-241a}
+\end{equation}
+and $B_2^{(m)}$ is the complex conjugate of this. Inserting this value for $B_1^{(m)}$ in the last line of equations~\eqref{eq:9-239} and reducing the resulting expression in the manner of the preceding case (in \S\,(c) above), we find that the secular matrix can be brought to exactly the same form~\eqref{eq:9-239} with, however, the definitions
+\begin{align}
+Z_\mathrm{mn} &= (4a^4 - g_m g_n)C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) + \notag \\
+&\quad + \frac{\lambda_m^4 - a^4 + Qa^2}{2\lambda_m^4}\,(4a^4 + g_n^2)\{C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) - \tfrac{1}{2}[C_m''(\tfrac{1}{2})]^2\} \quad (m = n), \label{eq:9-249}
+\end{align}
+\begin{align}
+\Sigma_\mathrm{mn} &= C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2})\{(g_m g_n - 4a^4)\,\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1) - \notag \\
+&\quad - 2a^2(g_m + g_n)\,\mathrm{im}(q_1\tanh\tfrac{1}{2}q_1)\}, \label{eq:9-250}
+\end{align}
+and
+\begin{equation}
+\mathrm{im}(q_1\tanh\tfrac{1}{2}q_1) = \frac{\alpha_2\sinh\alpha_1 + \alpha_2\sin\alpha_2}{\cosh\alpha_1 + \cos\alpha_2}, \label{eq:9-251}
+\end{equation}
+where $\alpha_1$ and $\alpha_2$ are defined in \eqref{eq:9-221}.
+
+\subsection*{(d) The case of conducting walls}
+
+In this case the boundary conditions are that $G_m$ and $D\psi_m$ vanish at $\zeta = \pm\frac{1}{2}$. Applying these conditions to the solutions~\eqref{eq:9-227} and \eqref{eq:9-229}, we obtain
+\begin{equation}
+B_1^{(m)} q_1\sinh\tfrac{1}{2}q_1 + B_2^{(m)} q_2\sinh\tfrac{1}{2}q_2 = -2a^2\Gamma_m\, C_m'''(\tfrac{1}{2}) \label{eq:9-252}
+\end{equation}
+and
+\begin{equation}
+B_1^{(m)}\cosh\tfrac{1}{2}q_1 - B_2^{(m)}\cosh\tfrac{1}{2}q_2 = ig_m\,\Gamma_m\, C_m''(\tfrac{1}{2}). \label{eq:9-253}
+\end{equation}
+On solving these equations, we find
+\begin{equation}
+B_1^{(m)} = \frac{\Gamma_m\,\mathrm{sech}\,\tfrac{1}{2}q_1}{2\,\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1)}\,\{-2a^2 C_m'''(\tfrac{1}{2}) + ig_m\, C_m''(\tfrac{1}{2})q_1\tanh\tfrac{1}{2}q_1\} \label{eq:9-253a}
+\end{equation}
+and $B_2^{(m)}$ is the complex conjugate of this. Inserting this value for $B_1^{(m)}$ in the last line of equations~\eqref{eq:9-239} and reducing the resulting expression in the manner of the preceding case (in \S\,(c) above), we find that the secular matrix can be brought to exactly the same form~\eqref{eq:9-245} with, however, the definitions
+\begin{align}
+Z_\mathrm{mn} &= (4a^4 + g_m g_n)C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) + \notag \\
+&\quad + \frac{\lambda_m^4 - a^4 + Qa^2}{2\lambda_m^4}\,(4a^4 + g_n^2)\{C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) - g_m^2 C_m'(\tfrac{1}{2})C_n'(\tfrac{1}{2})\} \quad (m \ne n), \label{eq:9-254}
+\end{align}
+and
+\begin{align}
+\Sigma_\mathrm{mn} &= \frac{1}{\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1)}\,\{4a^2 C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) + \notag \\
+&\quad + g_m g_n\, C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2})q_1\tanh\tfrac{1}{2}q_1|^2 - \notag \\
+&\quad - 2a^2[g_m\, C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) + g_n\, C_m'(\tfrac{1}{2})C_m''(\tfrac{1}{2})]\,\mathrm{im}(q_1\tanh\tfrac{1}{2}q_1)\}, \label{eq:9-255}
+\end{align}
+where
+\begin{equation}
+|q_1\tanh\tfrac{1}{2}q_1|^2 = (\alpha_1^2 + \alpha_2^2)\frac{\sinh^2\alpha_1 + \sin^2\alpha_2}{(\cosh\alpha_1 + \cos\alpha_2)^2}. \label{eq:9-256}
+\end{equation}
+
+\subsection*{(e) Numerical results}
+
+The secular equation~\eqref{eq:9-245} has been solved for the cases considered in \S\S\,(c) and (d) for a number of values of $a$ and $Q$ to determine the critical Taylor numbers for the onset of instability. The results of the calculations are summarized in Tables~XLII and XLIII; they are further illustrated in Figs.~101 and 102.
+
+\begin{table}[ht]
+\centering
+\caption*{TABLE XLII}
+\caption*{\textit{The critical Taylor numbers and related constants for different values of $Q$}}
+\caption*{(The case of non-conducting walls and $\mu > 0$)}
+\begin{tabular}{cccccc}
+\hline
+$Q$ & $a_c$ & \multicolumn{3}{c}{$\mathscr{T}_c$} & $A_2/A_1$ \\
+\cline{3-5}
+ & & Second & Third & & \\
+ & & approximation & approximation & & \\
+\hline
+30 & 2.68 & $3.9557 \times 10^4$ & & $+0.01473$ & \\
+100 & 1.69 & $1.0851 \times 10^5$ & & $+0.00887$ & \\
+300 & 0.94 & $3.2087 \times 10^5$ & & $+0.00585$ & \\
+1,000 & 0.900 & $1.0722 \times 10^6$ & & $+0.00490$ & \\
+3,000 & 0.272 & $3.2152 \times 10^6$ & $3.4153 \times 10^6$ & $+0.00477$ & $+0.00038$ \\
+10,000 & 0.150 & $1.0720 \times 10^7$ & $1.0720 \times 10^7$ & $+0.00448$ & $+0.00027$ \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{table}[ht]
+\centering
+\caption*{TABLE XLIII}
+\caption*{\textit{The critical Taylor numbers and related constants for different values of $Q$}}
+\caption*{(The case of conducting walls and $\mu > 0$)}
+\begin{tabular}{ccccccc}
+\hline
+$Q$ & $a_c$ & \multicolumn{4}{c}{$\mathscr{T}_c$} \\
+\cline{3-6}
+ & & Second & Third & Fourth & \\
+ & & approxi- & approxi- & approxi- & $A_2/A_1$ & $A_3/A_1$ \\
+ & & mation & mation & mation & & \\
+\hline
+5 & 3.20 & $1.4553 \times 10^4$ & & & $+0.01259$ & \\
+10 & 3.20 & $2.6934 \times 10^4$ & & & $+0.01252$ & \\
+30 & 2.46 & $3.6093 \times 10^4$ & & & $+0.01253$ & \\
+100 & 1.30 & $3.9093 \times 10^4$ & & & $+0.01137$ & \\
+300 & 4.67 & $9.000 \times 10^4$ & & & $+0.01994$ & $-0.00270$ \\
+400 & 2.30 & $1.1795 \times 10^5$ & $1.3784 \times 10^5$ & & $-0.00339$ & $+0.00039$ \\
+1,000 & 2.35 & $1.3784 \times 10^5$ & $1.9305 \times 10^5$ & & $-0.05198$ & $+0.01799$ \\
+3,000 & 1.35 & $7.1254 \times 10^5$ & $7.1254 \times 10^5$ & & $-0.05477$ & $+0.01659$ \\
+10,000 & 0.50 & $4.4578 \times 10^6$ & $4.4578 \times 10^6$ & $4.3376 \times 10^6$ & $-0.02859$ & $-0.01131$ \\
+ & & & & & $+0.08021$ & $-0.02853$ \\
+\hline
+\end{tabular}
+\end{table}
+
+values of $Q$. By determining the minimum of the characteristic roots $\mathscr{T}$ as a function of $a$ (for a given $Q$), the critical Taylor numbers for the onset of instability were ascertained. The results of the calculations are summarized in Tables~XLII and XLIII; they are further illustrated in Figs.~101 and 102.
+
+\figurePlaceholder{101}{A comparison of the observed and the theoretical dependence of the critical Taylor number $\mathscr{T}_c$ for the onset of instability as a function of $Q$. The curves labelled $a$ and $b$ are those derived from the theory for the cases of conducting and non-conducting walls, respectively; the dashed curve (labelled $A$) is the asymptote to which curve $a$ (for the case of conducting walls) tends for $Q \to \infty$. The corresponding asymptote for the case of non-conducting walls cannot be distinguished (in the scale drawn) from the curve $b$ for $Q > 1{,}000$. The experimental results of Donnelly and Ozima are represented by open circles (for the case when $R_1 = 1.8$~cm and $R_2 = 2.0$~cm) and solid circles (for the case $R_1 = 1.9$~cm and $R_2 = 2.0$~cm).}
+
+\figurePlaceholder{102}{The variation of the critical wave number $a_c$ as a function of $Q$: the curves labelled $a$ and $b$ are for the cases of conducting and non-conducting walls, respectively; the dashed curve (labelled $A$) is the asymptote to which curve $a$ (for the case of conducting walls) tends for $Q \to \infty$. The corresponding asymptote for the case of non-conducting walls cannot be distinguished (in the scale drawn) from the curve $b$ for $Q > 1{,}000$.}
+
+It is remarkable that the results derived for the two cases differ as markedly as they do. In this respect the present problem differs from the others considered in the earlier chapters. The origin of this difference will become apparent in \S\,(f) below. There is, however, no difficulty in understanding why the presence of the magnetic field inhibits the onset of instability and why the wave number of the disturbance manifested at onset tends to zero as $Q \to \infty$. These latter effects are qualitatively the same as in the problem of thermal instability considered in Chapter~IV: they clearly derive from the same cause.
+
+\subsection*{(f) The asymptotic behaviour for $Q \to \infty$}
+
+The numerical results presented in Tables~XLII and XLIII suggest that
+\begin{equation}
+a^2 \to 0 \quad \text{while} \quad Qa^2 \to \text{a finite limit as } Q \to \infty; \label{eq:9-257}
+\end{equation}
+and, further, that the limit to which $Qa^2$ tends depends significantly on the boundary conditions. On examining the original differential equations~\eqref{eq:9-201} and \eqref{eq:9-202}, we find that they are consistent with the following asymptotic behaviours:
+\begin{equation}
+Qa^2 \to Q_\infty, \quad \mathscr{T} a^2 \to \mathscr{T}_\infty, \quad \text{as } Q \to \infty \text{ and } a \to 0. \label{eq:9-258}
+\end{equation}
+On the assumption that these behaviours are valid, we find that the differential equations take the limiting forms
+\begin{equation}
+(D^4 + Q_\infty)\psi = u \quad \text{and} \quad (D^4 + Q_\infty)u = -\mathscr{T}_\infty\, D^2\psi, \label{eq:9-259}
+\end{equation}
+while the boundary conditions are unaffected and remain the same.
+
+To determine then the correct asymptotic behaviours of the critical Taylor number and the associated wave number for $Q \to \infty$, we must solve equations~\eqref{eq:9-259} together with the proper boundary conditions, as a characteristic value problem for $\mathscr{T}_\infty$, for assigned values of $Q_\infty$, and determine the minimum of the ratio $\mathscr{T}_\infty/Q_\infty$ as a function of $Q_\infty$. This problem can be solved exactly in the manner of \S\,(b) above; the relevant formulae can in fact be written down by setting $a^2 = 0$ in the various expressions except when it occurs in the combinations $Qa^2$ and $\mathscr{T} a^2$; they are then replaced by $Q_\infty$ and $\mathscr{T}_\infty$, respectively.
+
+With these definitions, the limiting form of the secular equation~\eqref{eq:9-245} is
+\begin{equation}
+\left|(\lambda_m^4 + a^4 + Q_\infty)\delta_{mn} + \frac{2}{\alpha_n^2 Q_\infty}\,(\mathscr{Z}_\mathrm{mn} + \Sigma_\mathrm{mn})\right| = 0. \label{eq:9-262}
+\end{equation}
+
+Similarly passing to the limit appropriately in the expressions for $Z_\mathrm{mn}$ and $\Sigma_\mathrm{mn}$, we find that
+\begin{align}
+Z_\mathrm{mn} &= \frac{g_m g_n}{\lambda_m^4 - \mu_n^4}\,(g_m\, C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) - g_n\, C_m'(\tfrac{1}{2})C_n''(\tfrac{1}{2})) \quad (m \ne n) \notag \\
+&= g_n^2\frac{\lambda_m^4 + Q_\infty}{2\lambda_n^4}\,\{\tfrac{1}{2}C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) - \tfrac{1}{2}[C_m''(\tfrac{1}{2})]^2\} - g_n^2 C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) \quad (m = n) \label{eq:9-263}
+\end{align}
+for both sets of boundary conditions, while
+\begin{equation}
+\Sigma_\mathrm{mn} = g_m g_n\, C_m''(\tfrac{1}{2})C_n'(\tfrac{1}{2}) \times
+\begin{cases}
+\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1) & \text{(for non-conducting walls),} \\
+|q_1\tanh\tfrac{1}{2}q_1|^2/\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1) & \text{(for conducting walls).}
+\end{cases} \label{eq:9-264}
+\end{equation}
+In \eqref{eq:9-264} the expressions involving $q_1$ must be evaluated in accordance with equations~\eqref{eq:9-250}, \eqref{eq:9-251}, and \eqref{eq:9-260}.
+
+The secular determinant \eqref{eq:9-262} has been solved in the second and in the third approximation for a number of values of $Q_\infty$ and the minimum value attained by $\mathscr{T}_\infty/Q_\infty$ has been determined for both sets of boundary conditions. The results of the calculations are
+\begin{align}
+Q_\infty &= 225, \quad \mathscr{T}_\infty = 2.4122 \times 10^4; \quad A_1 = 1, \quad A_2 = 0.00465, \quad A_3 = 0.00036 \notag \\
+&\qquad \text{(for the case of non-conducting walls),} \label{eq:9-265}
+\end{align}
+and
+\begin{align}
+Q_\infty &= 2{,}700, \quad \mathscr{T}_\infty = 1.2184 \times 10^6; \quad A_1 = 1, \quad A_4 = -0.32779, \notag \\
+A_2 &= -0.01436 \quad \text{(for the case of conducting walls).} \label{eq:9-265a}
+\end{align}
+
+The corresponding asymptotic behaviours are
+\begin{equation}
+\mathscr{T} \to 107.2Q \quad \text{and} \quad a \to 15.0/\sqrt{Q} \quad \text{as } Q \to \infty \label{eq:9-266a}
+\end{equation}
+\[
+\text{(for the case of non-conducting walls)}
+\]
+and
+\begin{equation}
+\mathscr{T} \to 451.2Q \quad \text{and} \quad a \to 52.0/\sqrt{Q} \quad \text{as } Q \to \infty \label{eq:9-266b}
+\end{equation}
+\[
+\text{(for the case of conducting walls).}
+\]
+
+The fact that $A_2 \ll A_4$ for the solutions in both cases, may be taken to mean that the limiting values of $\mathscr{T}_\infty/Q_\infty$ have been determined with adequate precision.
+
+The role of the boundary conditions in determining the asymptotic behaviours for $Q \to \infty$ is apparent from the results given in \eqref{eq:9-266a}. Moreover, on comparing the predicted asymptotic behaviours with the results of the exact calculations, we observe that while they are nearly attained for $Q = 1{,}000$ in the case of the non-conducting walls, they are not as well attained even for $Q = 10{,}000$ in the case of the conducting walls.
+
+We may finally comment on why, for this problem, all the boundary conditions are relevant to determining the asymptotic behaviours for $Q \to \infty$; this has not been the case in any of the other problems we have considered thus far. Clearly, the reason must lie in the circumstance that, while the magnetic field has the usual effect of elongating the cells in its direction, it has the effect in this instance of making the flow adjoin the walls for longer distances so that the viscous dissipation remains comparable to the Joule dissipation for all strengths of the impressed magnetic field.
+
+\section{The solution of the characteristic value problem in the general case}
+\label{sec:87}
+
+With the origin of $\zeta$ midway between the two cylinders, the equations which have to be solved in the general case are
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi = u \label{eq:9-267}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = -\mathscr{T} a^2\{\tfrac{1}{2}(1+\mu) - (1-\mu)\zeta\}(D^2 - a^2)\psi \label{eq:9-268}
+\end{equation}
+with the same boundary conditions~\eqref{eq:9-203}. The occurrence of the term linear in $\zeta$ on the right-hand side of equation~\eqref{eq:9-268} destroys the symmetry of the problem with respect to reflection and the solutions no longer have a definite parity. On this account, we cannot expand $u$ in terms of the $C$- or the $S$-functions alone: we must include both sets of functions. Apart from this necessity of including both the $C$- and the $S$-functions in the expansion of $u$, we can carry out the solution in exactly the same way as in \S\,86.
+
+We assume, then, that we can expand $u$ and $\psi$ in the forms
+\begin{equation}
+u = \sum_m A_{Cm}\, C_m(\zeta) + \sum_m A_{Sm}\, S_m(\zeta) \label{eq:9-269}
+\end{equation}
+and
+\begin{equation}
+\psi = \sum_m A_{Cm}\, \psi_{Cm}(\zeta) + \sum_m A_{Sm}\, \psi_{Sm}(\zeta), \label{eq:9-270}
+\end{equation}
+where $\psi_{Cm}$ and $\psi_{Sm}$ are solutions of the equations
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi_{Cm} = C_m \label{eq:9-271}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\psi_{Sm} = S_m \label{eq:9-272}
+\end{equation}
+which satisfy the boundary conditions on $\psi$.
+
+The required solutions of equations~\eqref{eq:9-271} and \eqref{eq:9-272} are readily found. They are (cf.\ equation~\eqref{eq:9-227})
+\begin{align}
+\psi_{Cm} &= \Gamma_{Cm}\{(\lambda_m^4 + a^4 + Qa^2)C_m + 2a^2 C_m''\} + B_1^{(m)}\cosh q_1\zeta + B_2^{(m)}\cosh q_2\zeta, \label{eq:9-273}
+\end{align}
+and
+\begin{align}
+\psi_{Sm} &= \Gamma_{Sm}\{(\mu_m^4 + a^4 + Qa^2)S_m + 2a^2 S_m''\} + B_1^{(m)}\sinh q_1\zeta + B_2^{(m)}\sinh q_2\zeta, \label{eq:9-274}
+\end{align}
+where $B_1^{(m)}$, $B_2^{(m)}$, etc., are constants of integration, $q_1$ and $q_2$ have the same meanings as in \S\,86,
+\begin{equation}
+\Gamma_{Cm} = \frac{1}{|\lambda_m^2 - q_1^2|^2}, \quad \text{and} \quad \Gamma_{Sm} = \frac{1}{|\mu_m^2 - q_1^2|^2}. \label{eq:9-275}
+\end{equation}
+
+The corresponding expressions for $G_{Cm}$ and $G_{Sm}$ are:
+\begin{align}
+G_{Cm} &= (D^2 - a^2)\psi_{Cm} \notag \\
+&= \Gamma_{Cm}\{a^2(\lambda_m^4 - a^4 - Qa^2)C_m + (\lambda_m^4 - a^4 + Qa^2)C_m''\} + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\cosh q_1\zeta - B_2^{(m)}\cosh q_2\zeta\} \label{eq:9-276}
+\end{align}
+and
+\begin{align}
+G_{Sm} &= (D^2 - a^2)\psi_{Sm} \notag \\
+&= \Gamma_{Sm}\{a^2(\mu_m^4 - a^4 - Qa^2)S_m + (\mu_m^4 - a^4 + Qa^2)S_m''\} + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\sinh q_1\zeta - B_2^{(m)}\sinh q_2\zeta\}. \label{eq:9-277}
+\end{align}
+
+The constants of integration follow from applying the boundary conditions to the foregoing solutions. We find (cf.\ equations~\eqref{eq:9-241} and \eqref{eq:9-253})
+\begin{equation}
+B_1^{(m)} = \tfrac{1}{2}\Gamma_{Cm}\, C_m''(\tfrac{1}{2})(-2a^2 + ig_{Cm})\,\mathrm{sech}\,\tfrac{1}{2}q_1 \label{eq:9-278}
+\end{equation}
+\[
+B_2^{(m)} = \tfrac{1}{2}\Gamma_{Cm}\, S_m''(\tfrac{1}{2})(-2a^2 + ig_{Cm})\,\mathrm{cosech}\,\tfrac{1}{2}q_1
+\]
+in case of non-conducting walls; and
+\begin{equation}
+B_1^{(m)} = \frac{\Gamma_{Cm}\,\mathrm{sech}\,\tfrac{1}{2}q_1}{2\,\mathrm{re}(q_1\tanh\tfrac{1}{2}q_1)}\,\{-2a^2 S_m''(\tfrac{1}{2}) + ig_{Sm}\, S_m''(\tfrac{1}{2})q_1\tanh\tfrac{1}{2}q_1\} \label{eq:9-279}
+\end{equation}
+\[
+B_2^{(m)} = \frac{\Gamma_{Sm}\,\mathrm{cosech}\,\tfrac{1}{2}q_1}{2\,\mathrm{re}(q_1\coth\tfrac{1}{2}q_1)}\,\{-2a^2 S_m''(\tfrac{1}{2}) + ig_{Sm}\, S_m''(\tfrac{1}{2})q_1\coth\tfrac{1}{2}q_1\}
+\]
+in case of conducting walls. In equations~\eqref{eq:9-278} and \eqref{eq:9-279}
+\begin{equation}
+g_{Cm} = \frac{1}{a\sqrt{Q}}\,(\lambda_m^4 - a^4 + Qa^2) \quad \text{and} \quad g_{Sm} = \frac{1}{a\sqrt{Q}}\,(\mu_m^4 - a^4 + Qa^2). \label{eq:9-280}
+\end{equation}
+
+The constants $B_2^{(m)}$ and $B_2^{(m)}$ are the complex conjugates of $B_1^{(m)}$ and $B_1^{(m)}$.
+
+The next step is to substitute the expansions for $u$ and $\psi$ in equation~\eqref{eq:9-268}. We obtain (cf.\ equation~\eqref{eq:9-231})
+\begin{align}
+\frac{1}{2\mathscr{T} a^2} &\sum_m A_{Cm}\{(\lambda_m^4 + a^4 + Qa^2)C_m - 2a^2 C_m''\} + \notag \\
+&+ \sum_m A_{Sm}\{(\mu_m^4 + a^4 + Qa^2)S_m - 2a^2 S_m''\} \notag \\
+&- \sum_m A_{Cm}\{\Gamma_{Cm}[a^2(\lambda_m^4 - a^4 - Qa^2)(S_m|\zeta|C_n) + (\lambda_m^4 - a^4 + Qa^2)(C_m|\zeta|S_n)] + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\langle\cosh q_1\zeta|S_n\rangle - B_2^{(m)}\langle\cosh q_2\zeta|S_n\rangle\}\} + \notag \\
+&+ \sum_m A_{Sm}\{\Gamma_{Sm}[a^2(\mu_m^4 - a^4 - Qa^2)S_m + (\mu_m^4 - a^4 + Qa^2)S_m'' + \notag \\
+&\quad + ia\sqrt{Q}\{B_1^{(m)}\sinh q_1\zeta - B_2^{(m)}\sinh q_2\zeta\}]\} = 0. \label{eq:9-281}
+\end{align}
+
+The secular determinant for $\mathscr{T}$ now follows from this equation after multiplication by $C_n(\zeta)$, and $S_n(\zeta)$, and integration over the range of $\zeta$.
+
+Because of the even and odd characters of the functions $C$ and $S$, not all matrix elements on the right-hand side will survive. Thus, no term in $A_{Cm}$ with the factor $(1-\mu)$ will survive on multiplication by $C_n$ and integration; similarly, no term in $A_{Sm}$ with the factor $(1+\mu)$ will survive after the same multiplication and integration.
+
+\subsection*{(a) The case $\mu = -1$}
+
+While there is no formal difficulty in carrying out all the necessary integrations for setting up the secular determinant for any value of $\mu$, we shall restrict ourselves to the case $\mu = -1$ as, formally, the simplest and in some sense, physically, the most interesting. It is formally the simplest since only one-half of all the matrix elements on the right-hand side of \eqref{eq:9-281} will survive in this case; and it is physically the most interesting as the portion of the fluid which is unstable by the criterion of \S\,81 occupies exactly one-half of the gap.
+
+When $\mu = -1$, the set of equations we derive from \eqref{eq:9-281} on multiplication by $C_n(\zeta)$, and $S_n(\zeta)$, and integration are, respectively,
+\begin{align}
+\frac{1}{2\mathscr{T} a^2}\sum_m A_{Cm}\{(\lambda_m^4 + a^4 + Qa^2)\delta_\mathrm{mn} - 2a^2 X_\mathrm{mn}^{(C)}\} \notag \\
+- \sum_m A_{Sm}\{\Gamma_{Sm}[a^2(\mu_m^4 - a^4 - Qa^2)(S_m|\zeta|C_n) + (\mu_m^4 - a^4 + Qa^2)(C_m|\zeta|S_n)] + \notag \\
+\quad + 2a\sqrt{Q}\,\mathrm{re}\{iB_1^{(m)}\langle\zeta\cosh q_1\zeta|C_n\rangle\} = 0, \label{eq:9-282}
+\end{align}
+and
+\begin{align}
+\frac{1}{2\mathscr{T} a^2}\sum_m A_{Sm}\{(\mu_m^4 + a^4 + Qa^2)\delta_\mathrm{mn} - 2a^2 X_\mathrm{mn}^{(S)}\} \notag \\
+- \sum_m A_{Cm}\{\Gamma_{Cm}[a^2(\lambda_m^4 - a^4 - Qa^2)(C_m|\zeta|S_n) + (\lambda_m^4 - a^4 + Qa^2)(C_m|\zeta|S_n)] + \notag \\
+\quad + 2a\sqrt{Q}\,\mathrm{re}\{iB_1^{(m)}\langle\zeta\sinh q_1\zeta|S_n\rangle\} = 0, \label{eq:9-283}
+\end{align}
+where
+\begin{align}
+X_\mathrm{mn}^{(C)} &= \int_{-1/2}^{+1/2} C_m'' C_n\, d\zeta = \frac{2}{\lambda_m^4 - \lambda_n^4}\,(C_m'' C_n' - C_m' C_n'')_{+1} \quad (m \ne n) \label{eq:9-284} \\
+&= \tfrac{1}{2}\{\tfrac{4}{5}C_m'' C_n' - \tfrac{1}{2}(C_m'')^2\}_{+1} \quad (m = n); \notag
+\end{align}
+\begin{align}
+X_\mathrm{mn}^{(S)} &= \int_{-1/2}^{+1/2} S_m'' S_n\, d\zeta = \frac{2}{\mu_m^4 - \mu_n^4}\,(S_m'' S_n' - S_m' S_n'')_{+1} \quad (m \ne n) \label{eq:9-285} \\
+&= \tfrac{1}{2}\{\tfrac{3}{2}S_m'' S_n' - \tfrac{1}{2}(S_m'')^2\}_{+1} \quad (m = n); \notag
+\end{align}
+\begin{equation}
+(S_m|\zeta|C_n) = \int_{-1/2}^{+1/2} S_m\zeta C_n\, d\zeta = \frac{8}{\lambda_m^4 - \mu_n^4}\,(C_m'' S_n' - C_m' S_n'')_{+1} \label{eq:9-286}
+\end{equation}
+\begin{equation}
+\langle S_m|\zeta|C_n\rangle = \int_{-1/2}^{+1/2} S_m\zeta C_n\, d\zeta \label{eq:9-287}
+\end{equation}
+\[
+= \frac{1}{\lambda_m^4 - \mu_n^4}\left[S_m'' C_n - S_m C_n'' - \frac{2(3\mu_m^4 + \lambda_n^4)}{\lambda_m^4 - \mu_n^4}\, C_n' S_m'\right]_{+1};
+\]
+\begin{equation}
+(S_m|\zeta|C_n) = \int_{-1/2}^{+1/2} S_m\zeta C_n\, d\zeta \label{eq:9-288}
+\end{equation}
+\[
+= \frac{1}{\lambda_m^4 - \mu_n^4}\left[S_m'' C_n - S_m C_n'' - \frac{2(3\mu_m^4 + \lambda_n^4)}{\lambda_m^4 - \mu_n^4}\, C_n' S_m'\right]_{+1};
+\]
+\begin{equation}
+\langle\cosh q_1\zeta|C_n\rangle = \frac{2}{\lambda_n^4 - q_1^4}\,[C_n'(\tfrac{1}{2})\cosh\tfrac{1}{2}q_1 - C_n(\tfrac{1}{2})q_1\sinh\tfrac{1}{2}q_1], \label{eq:9-289}
+\end{equation}
+\begin{equation}
+\langle\sinh q_1\zeta|S_n\rangle = \frac{2}{\mu_n^4 - q_1^4}\,[S_n'(\tfrac{1}{2})\sinh\tfrac{1}{2}q_1 - S_n(\tfrac{1}{2})q_1\cosh\tfrac{1}{2}q_1], \label{eq:9-290}
+\end{equation}
+\begin{equation}
+\langle\zeta\cosh q_1\zeta|S_n\rangle = \frac{1}{\mu_n^4 - q_1^4}\,[4q_1^2\langle\sinh q_1\zeta|S_n\rangle + (S_m'' - 2S_m')_{+1}\cosh\tfrac{1}{2}q_1 - S_m'(\tfrac{1}{2})q_1\sinh\tfrac{1}{2}q_1], \label{eq:9-291}
+\end{equation}
+and
+\begin{equation}
+\langle\zeta\sinh q_1\zeta|C_n\rangle = \frac{1}{\lambda_n^4 - q_1^4}\,[4q_1^2\langle\cosh q_1\zeta|C_n\rangle + (C_m'' - 2C_m')_{+1}\sinh\tfrac{1}{2}q_1 - C_m'(\tfrac{1}{2})q_1\cosh\tfrac{1}{2}q_1]. \label{eq:9-292}
+\end{equation}
+
+The secular equation derived from equations~\eqref{eq:9-282} and \eqref{eq:9-283} has been solved for a number of different values of $Q$ and $a$ to determine the critical Taylor numbers for the onset of instability. The results are summarized in Table~XLIV; they are further illustrated in Fig.~103. Fig.~104 shows the effect of the magnetic field on the velocity profile.
+
+\begin{table}[ht]
+\centering
+\caption*{TABLE XLIV}
+\caption*{\textit{The critical Taylor numbers and related constants for the case $\mu = -1$}}
+\medskip
+\textit{(a) The case of non-conducting walls ($A_{C,1} = 1$)}
+\begin{tabular}{cccccc}
+\hline
+$Q$ & $a_c$ & $\mathscr{T}_c$ & $A_{S,1}$ & $A_{C,2}$ & $A_{S,2}$ \\
+\hline
+0 & 4.00 & $1.870 \times 10^4$ & $-0.7168$ & $+0.01020$ & $-0.00297$ \\
+10 & 4.00 & $2.916 \times 10^4$ & $-0.6950$ & $+0.01127$ & \\
+100 & 3.40 & $7.163 \times 10^4$ & $-0.6350$ & $+0.01631$ & \\
+1,000 & 0.96 & $7.143 \times 10^5$ & $-0.4791$ & $+0.01247$ & $+0.01117$ \\
+10,000 & 0.26 & $7.248 \times 10^6$ & $-0.4177$ & $+0.01171$ & \\
+\hline
+\end{tabular}
+
+\medskip
+\textit{(b) The case of conducting walls ($A_{C,1} = 1$)}
+\begin{tabular}{ccccccc}
+\hline
+$Q$ & $a_c$ & $\mathscr{T}_c$ & $A_{S,1}$ & $A_{C,2}$ & $A_{S,2}$ \\
+\hline
+0 & 4.0 & $1.870 \times 10^4$ & $-0.7168$ & $+0.01250$ & $-0.00297$ \\
+10 & 3.9 & $2.457 \times 10^4$ & $-0.6721$ & $+0.01086$ & $-0.00245$ \\
+30 & 4.3 & $3.903 \times 10^4$ & $-0.6613$ & $+0.01433$ & $-0.00325$ \\
+100 & 4.7 & $9.000 \times 10^4$ & $-0.5505$ & $+0.01994$ & $-0.00270$ \\
+400 & 2.10 & $1.1795 \times 10^5$ & $-0.9318$ & & \\
+1,000 & 2.35 & $1.3784 \times 10^5$ & $-1.3174$ & $+0.05477$ & $+0.01659$ \\
+3,000 & 1.35 & $7.1254 \times 10^5$ & $-0.5198$ & $-0.02859$ & \\
+10,000 & 0.50 & $4.0004 \times 10^6$ & $+0.08021$ & $-0.02853$ & \\
+\hline
+\end{tabular}
+\end{table}
+
+A comparison of the present results for the case of counter-rotation with those obtained in \S\,86 for the case $\mu > 0$ shows that the effect of the axial magnetic field on the onset of instability is very similar in the two cases. The similarity extends even to the occurrence of an early phase in which there is an increase in the wave number of the disturbance, $a_c$, which is manifested at marginal instability when the confining walls are perfect conductors. In this last respect the case when the confining walls are insulators is different; for the wave number $a_c$ is, then, a monotonic decreasing function of $Q$. It is to this difference in the two cases that we must attribute the very large difference in the constants of proportionality in the asymptotic behaviours for $Q \to \infty$ (see equations~\eqref{eq:9-298} and (299) below).
+
+\figurePlaceholder{103}{The variation of the critical Taylor number ($\mathscr{T}_c$) for the onset of instability as a function of $Q$ for the case when the two cylinders are rotating in opposite directions and $\Omega_2/\Omega_1 = -1$. The curves labelled $a$ and $b$ are for the cases of conducting and non-conducting walls, respectively. (The dashed part of curve $a$ is a free-hand extrapolation of the computed curves.) The curve labelled $A$ is the asymptote to which curve $a$ (for the case of conducting walls) tends for $Q \to \infty$; the corresponding asymptote for the case of non-conducting walls cannot be distinguished (in the scale drawn) from the curve $b$ for $Q > 1{,}000$. (Note the similarity with the corresponding curves in Fig.~102 and in particular the pronounced effect of the electromagnetic boundary conditions.)}
+
+\figurePlaceholder{104}{The dependence of the velocity profile at the onset of instability on $Q$ in case two insulating cylinders are in counter-rotation and $\Omega_2/\Omega_1 = -1$. The different curves are labelled by the value of $Q$ to which they refer. The larger amplitudes in the inner half of the gap between the cylinders originate in the circumstance that in this half the distribution of velocities in the stationary flow is unstable according to the criterion valid for non-dissipative Couette flow.}
+
+The asymptotic dependence of $a_c$ and $\mathscr{T}_c$ on $Q$ can be determined as in \S\,86\,(f). Observing that the differential equations~\eqref{eq:9-267} and \eqref{eq:9-268} are again consistent with the behaviours,
+\begin{equation}
+Qa^2 \to Q_\infty \quad \text{and} \quad \mathscr{T} a^2 \to \mathscr{T}_\infty, \quad \text{as } Q \to \infty \text{ and } a \to 0, \label{eq:9-293}
+\end{equation}
+with the same boundary conditions~\eqref{eq:9-203}, we conclude that in the limit $Q \to \infty$ the differential equations become
+\begin{equation}
+(D^4 + Q_\infty)\psi = u \label{eq:9-294}
+\end{equation}
+and
+\begin{equation}
+(D^4 + Q_\infty)u = -\mathscr{T}_\infty[\tfrac{1}{2}(1+\mu) - (1-\mu)\zeta]D^2\psi. \label{eq:9-295}
+\end{equation}
+To determine the correct asymptotic behaviours of the critical Taylor number and the associated wave number for $Q \to \infty$, we must solve equations~\eqref{eq:9-294} and \eqref{eq:9-295} together with the proper boundary conditions, as a characteristic value problem for $\mathscr{T}_\infty$, for assigned values of $Q_\infty$, and determine the minimum of the ratio $\mathscr{T}_\infty/Q_\infty$ as a function of $Q_\infty$. This problem can be solved in the same way as equations~\eqref{eq:9-267} and \eqref{eq:9-268}: the relevant formulae can in fact be written down by setting $a^2 = 0$ in the various expressions except when it occurs in the combinations $Qa^2$ and $\mathscr{T} a^2$; they are then replaced by $Q_\infty$ and $\mathscr{T}_\infty$. In this manner it is found that
+\begin{align}
+Q_\infty &= 817, \quad \mathscr{T}_\infty = 5.931 \times 10^5; \quad A_{C,1} = 1, \quad A_{S,1} = -0.4625, \notag \\
+A_{C,2} &= 0.1151, \quad \text{and} \quad A_{S,2} = -0.0102 \notag \\
+&\qquad \text{(for the case of non-conducting walls and } \mu = -1\text{),} \label{eq:9-296}
+\end{align}
+and
+\begin{align}
+Q_\infty &= 255{,}000, \quad \mathscr{T}_\infty = 1.768 \times 10^8; \quad A_{C,1} = 1, \quad A_{S,1} = 4.293, \notag \\
+A_{C,2} &= -12.311, \quad A_{S,2} = 15.331, \quad A_{C,3} = -10.709, \quad A_{S,3} = 3.329 \notag \\
+&\qquad \text{(for the case of conducting walls and } \mu = -1\text{).} \label{eq:9-297}
+\end{align}
+
+The corresponding asymptotic behaviours are
+\begin{equation}
+\mathscr{T} \to 726Q \quad \text{and} \quad a \to 28.6 Q^{-1/2} \quad \text{as } Q \to \infty \label{eq:9-298}
+\end{equation}
+\[
+\text{(for the case of non-conducting walls and } \mu = -1\text{),}
+\]
+and
+\begin{equation}
+\mathscr{T} \to 6203 Q \quad \text{and} \quad a \to 534 Q^{-1/2} \quad \text{as } Q \to \infty \label{eq:9-299}
+\end{equation}
+\[
+\text{(for the case of conducting walls and } \mu = -1\text{).}
+\]
+
+\section{The stability of dissipative flow in a curved channel in the presence of an axial magnetic field}
+\label{sec:88}
+
+As we have remarked in \S\,80, we can consider in the framework of equations \eqref{eq:9-1}--\eqref{eq:9-6} a general Couette flow which consists of a superposition of a rotational flow described by equation~\eqref{eq:9-18} and a Poiseuille type of flow maintained by a constant transverse pressure gradient. The presence of a uniform magnetic field in the $z$-direction does not affect the hydrodynamical solution obtained in Chapter~VIII (equations VIII\,(5), (8), and (36)). If we restrict ourselves to narrow gaps, the solution for the stationary flow takes the approximate form (cf.\ equation VIII\,(37))
+\begin{equation}
+\frac{V(r)}{\Omega_1} = \Omega_1[1 - (1 - \mu)\zeta] + \frac{V_m}{R_0}\,\zeta(1 - \zeta), \label{eq:9-300}
+\end{equation}
+where $V_m$ represents the mean flow in the channel maintained by the pressure gradient, and the rest of the symbols have their customary meanings.
+
+\subsection*{(a) The equations governing the marginal state when the onset of instability is as a stationary secondary flow}
+
+Equations \eqref{eq:9-177}--\eqref{eq:9-180} are applicable to any Couette flow; we have only to ascribe to $V$ and $\Omega$ their current meanings. Accordingly, in the framework of the narrow gap approximation (and with the same neglect of the term in $\phi/\eta$ in equation~\eqref{eq:9-179} for the same reason), equations~\eqref{eq:9-190} and \eqref{eq:9-192} are now replaced by
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\phi = \frac{2Ad^2}{Hda}\left[A + \frac{3V_m}{R_0^2}(1 - 2\zeta)\right]u, \label{eq:9-301}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = \frac{2Bd^2}{\nu}\frac{\eta}{R_0^2}\,\Omega_1[1 - (1-\mu)\zeta] + \frac{6V_m}{R_0}(1-\zeta)(D^2 - a^2)\phi; \label{eq:9-302}
+\end{equation}
+and the boundary conditions with respect to which these equations must be solved are the same as in \S\,85 (namely, those given in \eqref{eq:9-197}).
+
+\subsection*{(b) The stability of a pure pressure maintained flow}
+
+In view of the multiplicity of parameters which equations~\eqref{eq:9-301} and \eqref{eq:9-302} contain, we shall restrict our consideration of these equations to the case of a pure pressure maintained flow. In this case $\Omega_1 = A = 0$, and equations~\eqref{eq:9-301} and \eqref{eq:9-302} become
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\phi = \frac{6V_m d}{R_0 \nu}\frac{Hda}{\eta}\,(1 - 2\zeta)u \label{eq:9-303}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = \frac{12V_m d^3}{R_0 \nu}\frac{\eta}{Hda}\, a^2\zeta(1 - \zeta)(D^2 - a^2)\phi. \label{eq:9-304}
+\end{equation}
+
+By the further transformation
+\begin{equation}
+\phi \to -\frac{6V_m d}{R_0 \nu}\frac{Hda}{\eta}\, \phi, \label{eq:9-305}
+\end{equation}
+the equations take the more convenient forms
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]\phi = (1 - 2\zeta)u \label{eq:9-306}
+\end{equation}
+and
+\begin{equation}
+[(D^2 - a^2)^2 + Qa^2]u = a^2 \Lambda \zeta(1 - \zeta)(D^2 - a^2)\phi, \label{eq:9-307}
+\end{equation}
+where
+\begin{equation}
+\Lambda = \frac{72 V_m^2 d^4}{R_0^2 \nu^2} = 72B_1^2 \frac{d^4}{R_0^2}, \label{eq:9-308}
+\end{equation}
+is the same non-dimensional number which we introduced in Chapter~VIII, \S\,76\,(a). And the boundary conditions are
+\begin{equation}
+u = 0, \quad Du = 0, \quad (D^2 - a^2)\phi = 0, \quad \text{and either } \phi \text{ or } D\phi = 0 \label{eq:9-309}
+\end{equation}
+\[
+\text{for } \zeta = 0 \text{ and } 1.
+\]
+
+\begin{table}[ht]
+\centering
+\caption*{TABLE XLV}
+\caption*{\textit{The critical values of $\Lambda$ and related constants for different values of $Q$}}
+\medskip
+\textit{(a) The case of non-conducting walls ($A_{C,1} = 1$)}
+\begin{tabular}{ccccccc}
+\hline
+$Q$ & $a_c$ & $\Lambda_c$ & $A_{S,1}$ & $A_{C,2}$ & $A_{S,2}$ \\
+\hline
+0 & 3.96 & $2.3998 \times 10^4$ & $-0.3746$ & & $+0.00276$ & $+0.00133$ \\
+30 & 3.65 & $3.1744 \times 10^4$ & $-0.4415$ & & $+0.00477$ & $+0.00037$ \\
+100 & 3.55 & $5.6530 \times 10^4$ & $-0.5403$ & & $+0.00657$ & $+0.00049$ \\
+1,000 & 0.866 & $3.7203 \times 10^5$ & $-0.0078$ & & $+0.00534$ & $-0.00395$ \\
+\hline
+\end{tabular}
+
+\medskip
+\textit{(b) The case of conducting walls ($A_{C,1} = 1$)}
+\begin{tabular}{cccccc}
+\hline
+$Q$ & $a_c$ & $\Lambda_c$ & $A_{S,1}$ & $A_{C,2}$ & $A_{S,2}$ \\
+\hline
+30 & 4.25 & $1.8635 \times 10^4$ & $-0.1551$ & $-0.0095$ & \\
+100 & 4.97 & $4.7154 \times 10^4$ & $-0.1438$ & & \\
+300 & 4.98 & $1.8997 \times 10^5$ & $-1.3174$ & $+0.5497$ & $+0.04157$ \\
+1,000 & 6.45\footnotemark & $1.252 \times 10^6$ & & & \\
+\hline
+\end{tabular}
+\end{table}
+\footnotetext{By the method described in \S\,71 (Table~XXXIII, p.~304) the value of $\mathscr{T}$ for this same value of $a$ is $1.685 \times 10^6$.}
+
+The characteristic value problem presented by equations~\eqref{eq:9-306}, \eqref{eq:9-307}, and \eqref{eq:9-309} can be solved by a method similar to the one used in \S\,87: we expand $u$ in terms of the $C$- and the $S$-functions; solve equation~\eqref{eq:9-306} for $\phi$ and arrange that the boundary conditions on $\phi$ are satisfied; substitute the assumed expansion for $u$ and the derived expansion for $\phi$ in equation~\eqref{eq:9-307} and derive the secular equation by multiplication by $C_n$ and $S_n$ and integration over $\zeta$. The details of the analysis are somewhat long and complicated; and as no special novelty is involved, we shall omit them. The results of the calculations which were undertaken to determine the dependence of $\Lambda_c$ on $Q$ are summarized in Table~XLV. And the effect of the magnetic field on the velocity profile is shown in Fig.~105.
+
+\figurePlaceholder{105}{The dependence of the velocity profile at the onset of instability on $Q$ in the case of a pure pressure-maintained flow between two insulating cylinders. The curve labelled 0 refers to the hydrodynamic case when no magnetic field is present and the curve labelled $\infty$ refers to the limiting case when the axial magnetic field tends to infinity. The larger amplitudes in the outer half of the gap between the cylinders originate in the circumstance that in this half the distribution of velocities in the stationary flow is unstable according to the criterion valid for non-dissipative Couette flow (cf.~Fig.~104, p.~421).}
+
+By arguments similar to those employed in \S\,86\,(f), we can show that
+\begin{equation}
+\Lambda a^2 \to \Lambda_\infty, \quad Qa^2 \to Q_\infty, \quad \text{as } Q \to \infty \text{ and } a \to 0, \label{eq:9-310}
+\end{equation}
+where $\Lambda_\infty$ and $Q_\infty$ are certain determinate constants. The associated limiting form of the characteristic value problem can be solved in the same way as equations \eqref{eq:9-294} and \eqref{eq:9-295}. We find
+\begin{align}
+Q_\infty &= 680, \quad \Lambda_\infty = 2.5648 \times 10^6; \quad A_{C,1} = 1, \quad A_{S,1} = 0.5942, \notag \\
+A_{C,2} &= 0.0530, \quad \text{and} \quad A_{S,2} = 0.00420 \notag \\
+&\qquad \text{(for the case of non-conducting walls).} \label{eq:9-311}
+\end{align}
+
+The corresponding asymptotic behaviour is
+\begin{equation}
+\Lambda_c \to 3.7718 \times 10^3 Q \quad \text{and} \quad a_c \to 26.1 Q^{-1/2} \quad \text{as } Q \to \infty \label{eq:9-312}
+\end{equation}
+\[
+\text{(for the case of non-conducting walls).}
+\]
+
+\section{Experiments on the stability of viscous flow between rotating cylinders when an axial magnetic field is present}
+\label{sec:89}
+
+Experiments designed to ascertain the effects of an axial magnetic field on the stability of Couette flow have been undertaken by several authors; but the first really successful experiments were those of Donnelly and Ozima. The principles underlying the experiments of Donnelly and Ozima are the same as those described in \S\,74\,(a): the inner cylinder of a viscometer is rotated at different speeds and the torque exerted on a freely suspended outer cylinder is measured by a null method; and the onset of instability is detected by the occurrence of a discontinuity in the measured viscosity as a function of the speed of rotation of the inner cylinder.
+
+In the experiments of Donnelly and Ozima, mercury was used as the fluid; and the viscometer was of stainless steel. The torsion fibre used for suspension was of tungsten and of diameter 0.003~in. The cylinders were 11.8~cm long; the radius of the outer cylinder was 2~cm; and the gap width was 2~mm. The suspended part of the outer cylinder was 10~cm. The remaining fixed parts at the top and the bottom served as guard against end effects.
+
+The usual designs of a viscometer had to be modified to allow for the fact that steel floats in mercury. The outer cylinder was therefore attached at the bottom by a torsion fibre. Since the viscometer is used as a null-reading instrument and the outer cylinder is always brought back to the same position, the torsion constant of the suspension is not changed, though the sensitivity will be affected.
+
+The overall height of the viscometer was $8\frac{1}{2}$~in.\ and could just be fitted between the pole pieces of a $38\frac{1}{2}$-in.\ cyclotron magnet of the University of Chicago. (The magnet was the same as that used in the experiments on thermal convection described in Chapters~IV and V.) The apparatus could be run in and out of its location between the pole pieces on brass rails.
+
+Adequate provisions for levelling and alignment were provided. The alignment was a particularly difficult matter: this was achieved in the experiments by having the guard cylinder and the suspended cylinder so machined that a misalignment of 0.004~in.\ would prevent a free turning of the outer cylinder. Also, by a suitable design of the suspension system, it could be removed and replaced in a reproducible manner. The motor driving the viscometer had a transmission for close regulation of speed. Rotation speeds in the range 0.6 to 960 rev/min were available for the experiments. The period of rotation was measured by means of an electronic counter with a photoelectric cell and detector.
+
+The experimental procedure was essentially the same as that described in \S\,76\,(b). In the present series of experiments, magnetic fields in the range 250--10,000 gauss were used. The corresponding range of $Q$-values is 2--3,000.
+
+It was found by Donnelly and Ozima that the onset of instability occurred almost as sharply as in the hydrodynamic experiments when the field strengths were not too high; thus, for field strengths of the order of a few hundred gauss, the period of rotation at which the onset of instability occurred could be determined with a precision of the order one part in 300. The results of their experiments are included in Fig.~101, p.~412. It will be seen that the experiments amply confirm the broad aspects of the theoretical predictions; moreover, the experimental points fall rather closely on the theoretical curve for non-conducting walls.
+
+\section*{BIBLIOGRAPHICAL NOTES}
+\addcontentsline{toc}{section}{Bibliographical Notes}
+
+\noindent\textit{\S\,81.} The stability of non-dissipative Couette flow with an axial magnetic field is considered in:
+
+\begin{enumerate}
+\item E.~P.~\textsc{Velikhov}, `Stability of an ideally conducting liquid flowing between cylinders rotating in a magnetic field', \textit{J.\ Expl.\ Theoret.\ Phys.\ (U.S.S.R.)}, \textbf{36}, 1398--1404 (1959).
+
+\item S.~\textsc{Chandrasekhar}, `The stability of non-dissipative Couette flow in hydromagnetics', \textit{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{46}, 253--7 (1960).
+\end{enumerate}
+
+\noindent The treatment in the text is in large measure an expansion of reference~2.
+
+\noindent\textit{\S\,82.} The results given in Table~XLI and illustrated in Figs.~99 and 100 are from:
+
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item W.~H.~\textsc{Reid}, `The stability of non-dissipative Couette flow in the presence of an axial magnetic field', \textit{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{46}, 370--3 (1960).
+\end{enumerate}
+
+\noindent\textit{\S\,83.} The case treated in this section has been considered by:
+
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item D.~H.~\textsc{Michael}, `The stability of an incompressible electrically conducting fluid rotating about an axis when current flows parallel to the axis', \textit{Mathematika}, \textbf{1}, 45--50 (1954).
+\end{enumerate}
+
+\noindent However, Michael's discussion was restricted, from the outset, to the case $m = 0$. The corresponding problem in dissipative flow has been considered by:
+
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item F.~N.~\textsc{Edmonds}, Jr., `Hydromagnetic stability of a conducting fluid in a circular magnetic field', \textit{The Physics of Fluids}, \textbf{1}, 30--41 (1958).
+\end{enumerate}
+
+\noindent\textit{\S\,85.} The stability of viscous flow between rotating cylinders in the presence of an axial magnetic field has been considered by:
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+\item S.~\textsc{Chandrasekhar}, `The stability of the viscous flow between rotating cylinders in the presence of a magnetic field', \textit{Proc.\ Roy.\ Soc.\ (London)}~A, \textbf{216}, 293--309 (1953).
+\end{enumerate}
+
+\noindent In reference~6, attention was directed exclusively to the case $\mu > 0$. The treatment in the book is more general and allows for the customary linear variation of $\Omega$ through the gap.
+
+\noindent\textit{\S\,85\,(b).} In reference~6 only the case of perfectly conducting walls was considered. The importance of considering non-conducting walls was pointed out by:
+
+\begin{enumerate}
+\setcounter{enumi}{6}
+\item E.~B.~\textsc{Niblett}, `The stability of Couette flow in an axial magnetic field', \textit{Canadian J.\ Phys.}\ \textbf{36}, 1509--25 (1958).
+\end{enumerate}
+
+\noindent\textit{\S\,86.} In this section the problems considered in references~6 and 7 are treated afresh by a new method which enables the solutions to be obtained, systematically, in any desired order. The method is based on the expansion of $u$ in terms of the proper functions $C$ and $S$ of the characteristic value problem
+\[
+y^{iv} = \alpha^4 y \quad \text{and} \quad y = y' = 0 \quad \text{for } x = \pm\tfrac{1}{2}.
+\]
+
+The original suggestion of the usefulness of these functions for the solution of hydrodynamic problems is contained in:
+
+\begin{enumerate}
+\setcounter{enumi}{7}
+\item S.~\textsc{Chandrasekhar} and W.~H.~\textsc{Reid}, `On the expansion of functions which satisfy four boundary conditions', \textit{Proc.\ Nat.\ Acad.\ Sci.}\ \textbf{43}, 521--7 (1957).
+\end{enumerate}
+
+\noindent However, the construction of these functions in their present useful and convenient forms is due to:
+
+\begin{enumerate}
+\setcounter{enumi}{8}
+\item D.~L.~\textsc{Harris} and W.~H.~\textsc{Reid}, `On orthogonal functions which satisfy four boundary conditions.~I. Tables for use in Fourier-type expansions', \textit{Astrophys.\ J.\ Suppl.}, Ser.~3, 429--47 (1958).
+
+\item W.~H.~\textsc{Reid} and D.~L.~\textsc{Harris}, `On orthogonal functions which satisfy four boundary conditions.~II. Integrals for use with Fourier-type expansions', \textit{Astrophys.\ J.\ Suppl.}, Ser.~3, 448--52 (1958).
+\end{enumerate}
+
+\noindent The calculations summarized in Tables~XLII and XLIII were carried out by Miss~Donna~D.~Elbert expressly for inclusion in this book.
+
+\noindent\textit{\S\,87.} The treatment follows:
+
+\begin{enumerate}
+\setcounter{enumi}{10}
+\item S.~\textsc{Chandrasekhar} and Donna~D.~\textsc{Elbert}, `The stability of the viscous flow between rotating cylinders in the presence of a magnetic field.~II', \textit{Proc.\ Roy.\ Soc.\ (London)}~A, in press.
+\end{enumerate}
+
+\noindent\textit{\S\,88.} The results quoted in this section are taken from:
+
+\begin{enumerate}
+\setcounter{enumi}{11}
+\item S.~\textsc{Chandrasekhar}, Donna~D.~\textsc{Elbert}, and N.~\textsc{Lebovitz}, `The stability of viscous flow in a curved channel in the presence of an axial magnetic field', in press.
+\end{enumerate}
+
+\noindent\textit{\S\,89.} The first experiments on hydromagnetic Couette flow were carried out by Niblett (reference~7). Niblett's experiments were, however, inconclusive. The experiments described in this section are those of:
+
+\begin{enumerate}
+\setcounter{enumi}{12}
+\item R.~J.~\textsc{Donnelly} and M.~\textsc{Ozima}, `Hydromagnetic stability of flow between rotating cylinders', \textit{Phys.\ Rev.\ Letters}, \textbf{4}, 497--8 (1960).
+\end{enumerate}
