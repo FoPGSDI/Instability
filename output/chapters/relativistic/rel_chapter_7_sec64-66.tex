@@ -1,0 +1,363 @@
+% Relativistic Chapter VII, §64–66: Rayleigh Criterion for Couette Flow
+% Relativistic generalization of Chandrasekhar, Chapter VII §64–66
+% Conventions: see RELATIVISTIC_CONVENTIONS.md
+
+\chapter{The Stability of Relativistic Couette Flow}
+\label{ch:rel-7}
+
+%% ================================================================
+\section{Introduction: relativistic rotating flows}\label{sec:rel-7-64}
+
+In Chapter~VII of the non-relativistic treatment, the stability of
+Couette flow---the steady circular flow of a liquid between two
+rotating coaxial cylinders---was analysed and found to hinge on the
+radial gradient of specific angular momentum.  The present chapter
+extends that analysis to the relativistic regime, where the inertia
+of energy plays a decisive role.
+
+Relativistic rotation arises naturally in at least three
+astrophysical contexts:
+\begin{enumerate}
+\item \textbf{Accretion disks.}  Matter spiralling into a compact
+  object (neutron star or black hole) can reach orbital velocities
+  $v_{\phi}\sim 0.1$--$0.5\,c$.  The inner disk is effectively a
+  relativistic Couette flow, and its stability governs angular-momentum
+  transport and, ultimately, the observed luminosity.
+\item \textbf{Relativistic jets.}  The boundary layer between a
+  fast-moving jet ($\Gamma\gg 1$) and the ambient medium experiences
+  strong rotational shear.  Whether that shear layer is Rayleigh-stable
+  determines the growth of Kelvin--Helmholtz modes and the jet's
+  long-range collimation.
+\item \textbf{Neutron-star interiors and heavy-ion collisions.}
+  The quark--gluon plasma produced in collisions of heavy nuclei, and
+  the dense matter in differentially rotating neutron stars, can sustain
+  rotational velocities for which $(\varepsilon+p)/c^{2}$ differs
+  appreciably from the rest-mass density $\rho_{0}$.
+\end{enumerate}
+
+The non-relativistic criterion of Rayleigh states that a
+distribution of angular velocity $\Omega(r)$ is stable if and only if
+the square of the specific angular momentum $L=r^{2}\Omega$ increases
+outward.  When the flow is relativistic, the ``inertia'' of a fluid
+element is no longer its rest-mass density $\rho_{0}$ but the
+relativistic enthalpy density $w=(\varepsilon+p)/c^{2}$; the specific
+angular momentum must accordingly be redefined.  The purpose of the
+next two sections is to make this precise and to derive the
+relativistic Rayleigh criterion together with the associated
+epicyclic frequency used in modern accretion-disk theory.
+
+Throughout, we work in flat Minkowski spacetime with cylindrical
+coordinates $(t,r,\theta,z)$ and signature $(-,+,+,+)$.  The speed
+of light $c$ is kept explicit so that the non-relativistic limit is
+transparent.  The four-velocity satisfies $u^{\mu}u_{\mu}=-c^{2}$.
+
+%% ================================================================
+\section{The physical problem: relativistic Couette flow}
+\label{sec:rel-7-65}
+
+\subsection{Steady circular flow}
+\label{sec:rel-7-65a}
+
+Consider an ideal (inviscid, non-heat-conducting) relativistic fluid
+confined between two coaxial cylinders of radii $R_{1}$ and
+$R_{2}$ ($R_{2}>R_{1}$) rotating with angular velocities $\Omega_{1}$
+and $\Omega_{2}$.  We seek stationary, axisymmetric, purely circular
+flows:
+\begin{equation}
+\label{eq:rel-7-1}
+u^{\mu} = \Lf\bigl(c,\,0,\,r\Omega,\,0\bigr),
+\end{equation}
+where $\Omega=\Omega(r)$ is the angular velocity and
+\begin{equation}
+\label{eq:rel-7-2}
+\Lf = \frac{1}{\sqrt{1-v_{\phi}^{2}/c^{2}}},\qquad
+v_{\phi}=r\Omega,
+\end{equation}
+is the Lorentz factor.  Causality demands
+\begin{equation}
+\label{eq:rel-7-3}
+\boxed{v_{\phi}=r\Omega < c}
+\end{equation}
+everywhere in the flow domain.  This is an absolute upper bound that
+has no analogue in the non-relativistic theory and restricts the
+permissible profiles $\Omega(r)$.
+
+\subsection{Relativistic centrifugal balance}
+\label{sec:rel-7-65b}
+
+For a perfect fluid the energy-momentum tensor is
+\begin{equation}
+\label{eq:rel-7-4}
+T^{\mu\nu} = \frac{\varepsilon+p}{c^{2}}\,u^{\mu}u^{\nu}
+             + p\,g^{\mu\nu},
+\end{equation}
+and the equations of motion are $\nabla_{\mu}T^{\mu\nu}=0$.
+Projecting perpendicular to $u^{\nu}$ and evaluating for the
+steady circular flow \eqref{eq:rel-7-1}, the radial component yields
+the \emph{relativistic centrifugal-balance equation}:
+\begin{equation}
+\label{eq:rel-7-5}
+\boxed{\frac{\varepsilon+p}{c^{2}}\;\frac{v_{\phi}^{2}}{r}
+       = -\frac{\partial p}{\partial r}\,.}
+\end{equation}
+Equivalently, introducing the relativistic enthalpy density
+$w=(\varepsilon+p)/c^{2}$,
+\begin{equation}
+\label{eq:rel-7-6}
+w\,\frac{v_{\phi}^{2}}{r} = -\frac{\partial p}{\partial r}\,.
+\end{equation}
+In the non-relativistic limit $\varepsilon\to\rho_{0}c^{2}$,
+$p/\varepsilon\to 0$, and~\eqref{eq:rel-7-5} reduces to the familiar
+$\rho_{0}\,v_{\phi}^{2}/r = -\partial p/\partial r$.
+
+For a barotropic equation of state $p=p(\varepsilon)$ (or, more
+generally, for an isentropic flow), \eqref{eq:rel-7-6} can be
+integrated.  Defining the relativistic specific enthalpy by
+\begin{equation}
+\label{eq:rel-7-7}
+h = \int_{0}^{p}\frac{dp'}{\varepsilon(p')+p'}\,,
+\end{equation}
+one obtains
+\begin{equation}
+\label{eq:rel-7-8}
+h + \tfrac{1}{2}\ln\!\left(1-\frac{v_{\phi}^{2}}{c^{2}}\right) = \text{const},
+\end{equation}
+which generalises the Bernoulli integral for relativistic rotating flow.
+
+\subsection{Relativistic specific angular momentum}
+\label{sec:rel-7-65c}
+
+The azimuthal component of the relativistic Euler equation for the
+steady flow~\eqref{eq:rel-7-1}, combined with baryon-number
+conservation $\nabla_{\mu}(n\,u^{\mu})=0$, implies that the
+\emph{relativistic specific angular momentum},
+\begin{equation}
+\label{eq:rel-7-9}
+\boxed{\ell \;=\; \Lf\,r\,v_{\phi}\;\frac{\varepsilon+p}
+               {\rho_{0}\,c^{2}}
+       \;=\; \Lf^{2}\,r^{2}\Omega\;\frac{w}{\rho_{0}}\,,}
+\end{equation}
+is conserved following the fluid, i.e.\ $u^{\mu}\nabla_{\mu}\ell=0$.
+Here $\rho_{0}$ is the rest-mass density (baryon mass times number
+density) and $w=(\varepsilon+p)/c^{2}$ is the enthalpy density.
+
+The decisive difference from the non-relativistic angular momentum
+$L=r^{2}\Omega=r\,v_{\phi}$ is twofold:
+\begin{enumerate}
+\item The Lorentz factor $\Lf$ appears, reflecting time dilation.
+\item The ratio $w/\rho_{0}=(\varepsilon+p)/(\rho_{0}c^{2})$
+  weights the angular momentum by the \emph{total inertia per baryon},
+  including thermal and binding energy.  In the non-relativistic
+  limit $w/\rho_{0}\to 1$ and $\Lf\to 1$, so that $\ell\to L$.
+\end{enumerate}
+
+\noindent
+\textbf{Remark (isentropic fluid).}
+For an isentropic perfect fluid it is often convenient to work with the
+\emph{canonical} angular momentum per unit enthalpy,
+\begin{equation}
+\label{eq:rel-7-10}
+\widetilde{\ell} = \Lf\,r\,v_{\phi}
+                 = \Lf^{2}\,r^{2}\Omega
+                 = \frac{v_{\phi}\,r}{1-v_{\phi}^{2}/c^{2}}\,,
+\end{equation}
+which is conserved along streamlines for a perfect barotropic fluid
+and reduces to $r^{2}\Omega$ in the non-relativistic limit.
+
+%% ================================================================
+\section{Rayleigh's criterion: relativistic version}
+\label{sec:rel-7-66}
+
+\subsection{Interchange argument}
+\label{sec:rel-7-66a}
+
+We follow Rayleigh's original thought experiment, adapted to the
+relativistic setting.  Two thin coaxial rings of fluid at radii
+$r_{1}$ and $r_{2}$ ($r_{2}>r_{1}$), each of unit rest mass, are
+interchanged.  Because angular momentum is conserved, after the
+interchange the ring originally at $r_{1}$ carries angular
+momentum~$\ell_{1}$ but now sits at~$r_{2}$, and vice versa.
+
+The effective centrifugal potential energy per unit rest mass at
+radius~$r$ for a ring of angular momentum~$\ell$ is, in the
+relativistic framework,
+\begin{equation}
+\label{eq:rel-7-11}
+E_{\mathrm{cent}}(\ell,r) = \frac{c^{2}}{2}\ln\!\left(
+  1+\frac{\ell^{2}}{r^{2}c^{2}}\right),
+\end{equation}
+which for $\ell\ll rc$ reduces to $\ell^{2}/(2r^{2})$, the
+non-relativistic expression.  (This follows from the logarithmic
+Bernoulli integral~\eqref{eq:rel-7-8} with $v_{\phi}=\ell/(r\Lf)$.)
+
+The change in total centrifugal potential energy upon interchange is
+\begin{equation}
+\label{eq:rel-7-12}
+\delta E = \bigl[E_{\mathrm{cent}}(\ell_{1},r_{2})
+           + E_{\mathrm{cent}}(\ell_{2},r_{1})\bigr]
+         - \bigl[E_{\mathrm{cent}}(\ell_{1},r_{1})
+           + E_{\mathrm{cent}}(\ell_{2},r_{2})\bigr].
+\end{equation}
+For infinitesimally separated rings ($r_{2}=r_{1}+\delta r$),
+expanding to leading order in $\delta r$ gives
+\begin{equation}
+\label{eq:rel-7-13}
+\delta E \propto \frac{d(\widetilde{\ell}^{\,2})}{dr}\,(\delta r)^{2},
+\end{equation}
+where $\widetilde{\ell}=\Lf\,r\,v_{\phi}$ is the canonical angular
+momentum~\eqref{eq:rel-7-10}.
+
+\emph{If $\delta E>0$, the interchange requires an external source of
+energy and the flow is stable; if $\delta E<0$, energy is released
+and the flow is unstable.}  Hence:
+
+\subsection{The relativistic Rayleigh criterion}
+\label{sec:rel-7-66b}
+
+\begin{quote}
+\textbf{Theorem (Relativistic Rayleigh criterion).}
+\emph{In the absence of viscosity and heat conduction, a stationary,
+axisymmetric, circular flow of a relativistic perfect fluid is stable
+to axisymmetric perturbations if and only if}
+\begin{equation}
+\label{eq:rel-7-14}
+\boxed{\frac{d}{dr}\!\left(\widetilde{\ell}^{\,2}\right) > 0
+\qquad\text{everywhere},}
+\end{equation}
+\emph{where $\widetilde{\ell}=\Lf^{2}\,r^{2}\Omega$ is the
+relativistic specific angular momentum.  The flow is unstable if
+$\widetilde{\ell}^{\,2}$ decreases anywhere in the interval.}
+\end{quote}
+
+\noindent
+Writing \eqref{eq:rel-7-14} explicitly:
+\begin{equation}
+\label{eq:rel-7-15}
+\frac{d}{dr}\!\left(\frac{r^{4}\Omega^{2}}
+   {\bigl(1-r^{2}\Omega^{2}/c^{2}\bigr)^{2}}\right) > 0.
+\end{equation}
+The key modification with respect to the classical criterion
+$d(r^{2}\Omega)^{2}/dr>0$ is that:
+\begin{enumerate}
+\item The Lorentz factor $\Lf^{2}=(1-v_{\phi}^{2}/c^{2})^{-1}$
+  enhances the effective angular momentum at high rotational
+  velocities.
+\item For a non-barotropic fluid, the full angular momentum
+  $\ell$~\eqref{eq:rel-7-9} must be used, and the enthalpy factor
+  $(\varepsilon+p)/(\rho_{0}c^{2})$ replaces the trivial factor of
+  unity that appears in the non-relativistic case.  A fluid that is
+  strongly heated (large $\varepsilon+p$) is thus ``more stable''
+  than a cold fluid with the same velocity profile.
+\end{enumerate}
+
+\subsection{Relativistic Rayleigh discriminant and epicyclic frequency}
+\label{sec:rel-7-66c}
+
+By analogy with Chandrasekhar's non-relativistic
+discriminant~(eq.~\ref{eq:7-18}), we define the
+\emph{relativistic Rayleigh discriminant}
+\begin{equation}
+\label{eq:rel-7-16}
+\Phi_{\mathrm{rel}}(r) = \frac{1}{r^{3}\Lf^{4}}\;
+  \frac{d}{dr}\!\left(\widetilde{\ell}^{\,2}\right)
+= \frac{1}{r^{3}\Lf^{4}}\;
+  \frac{d}{dr}\!\left(\Lf^{4}\,r^{4}\Omega^{2}\right).
+\end{equation}
+Stability requires $\Phi_{\mathrm{rel}}>0$.
+
+The square of the \emph{relativistic epicyclic (radial oscillation)
+frequency} is closely related:
+\begin{equation}
+\label{eq:rel-7-17}
+\boxed{\kappa_{\mathrm{rel}}^{2}
+= \frac{1}{\Lf^{2}\,r^{3}}\;\frac{d}{dr}\!\left(
+  \Lf^{2}\,r^{2}\,v_{\phi}\right)^{2}
+= \frac{1}{\Lf^{2}\,r^{3}}\;\frac{d}{dr}\!\left(
+  \widetilde{\ell}^{\,2}\right).}
+\end{equation}
+A displaced fluid ring oscillates radially at frequency
+$\kappa_{\mathrm{rel}}$ when the flow is stable
+($\kappa_{\mathrm{rel}}^{2}>0$), and grows exponentially when the
+flow is unstable ($\kappa_{\mathrm{rel}}^{2}<0$).
+
+In accretion-disk theory (e.g.\ for a test particle in a
+Schwarzschild or Kerr metric), $\kappa_{\mathrm{rel}}$ is the
+epicyclic frequency that governs the radial structure of density
+waves and the location of the innermost stable circular orbit (ISCO).
+For a Keplerian disk around a Schwarzschild black hole of mass~$M$,
+\begin{equation}
+\label{eq:rel-7-18}
+\kappa_{\mathrm{Schw}}^{2}
+= \Omega_{K}^{2}\!\left(1 - \frac{6GM}{rc^{2}}\right),
+\end{equation}
+where $\Omega_{K}$ is the Keplerian angular velocity.  The ISCO is at
+$r=6GM/c^{2}$ where $\kappa^{2}=0$, precisely corresponding to the
+marginal Rayleigh stability of the relativistic circular orbit.
+
+\subsection{Non-relativistic limit}
+\label{sec:rel-7-66d}
+
+In the limit $v_{\phi}/c\to 0$, $\Lf\to 1$ and
+$\widetilde{\ell}\to r^{2}\Omega$.  Then:
+\begin{itemize}
+\item The stability condition \eqref{eq:rel-7-14} becomes
+  $d(r^{2}\Omega)^{2}/dr>0$, which is Rayleigh's classical
+  criterion~\eqref{eq:7-5}.
+\item The centrifugal balance \eqref{eq:rel-7-5} reduces to
+  $\rho_{0}\,v_{\phi}^{2}/r=-\partial p/\partial r$.
+\item The epicyclic frequency \eqref{eq:rel-7-17} becomes
+  $\kappa^{2}=(1/r^{3})\,d(r^{2}\Omega)^{2}/dr$, the standard
+  result.
+\item The relativistic angular momentum \eqref{eq:rel-7-9} reduces
+  to $\ell\to r\,v_{\phi}=r^{2}\Omega$.
+\end{itemize}
+All relativistic modifications vanish, and the entire classical
+analysis of Chapter~VII \S\S\,64--66 is recovered.
+
+\subsection{Application to the viscous Couette profile}
+\label{sec:rel-7-66e}
+
+For the Couette profile $\Omega(r)=A+B/r^{2}$ (eq.~\ref{eq:7-1}),
+the relativistic stability criterion \eqref{eq:rel-7-14} requires
+\begin{equation}
+\label{eq:rel-7-19}
+\frac{d}{dr}\!\left[\frac{r^{4}(A+B/r^{2})^{2}}
+  {\bigl(1-r^{2}(A+B/r^{2})^{2}/c^{2}\bigr)^{2}}\right] > 0
+\qquad (R_{1}\le r\le R_{2}).
+\end{equation}
+When $v_{\phi}\ll c$, the denominator tends to unity and
+\eqref{eq:rel-7-19} reduces to $d(Ar^{2}+B)^{2}/dr>0$, yielding
+the classical condition $\mu>\eta^{2}$.
+
+At higher velocities the Lorentz-factor weighting makes the criterion
+\emph{more restrictive}: the centrifugal ``inertia'' of rapidly
+rotating inner fluid is amplified by $\Lf^{4}$, so a steeper rise
+in $\Omega$ is needed to maintain stability.  Equivalently,
+the critical ratio $\mu_{c}=\Omega_{2}/\Omega_{1}$ at which the
+Rayleigh line lies shifts upward:
+\begin{equation}
+\label{eq:rel-7-20}
+\mu_{c}^{\mathrm{rel}} = \eta^{2} + \mathcal{O}
+  \!\left(\frac{R_{1}^{2}\Omega_{1}^{2}}{c^{2}}\right).
+\end{equation}
+The causality constraint $R_{1}\Omega_{1}<c$ ensures that
+\eqref{eq:rel-7-19} is always well defined.
+
+\subsection{Causality constraints}
+\label{sec:rel-7-66f}
+
+In any physical realisation of relativistic Couette flow, two
+causality bounds must be respected:
+\begin{enumerate}
+\item \textbf{Centrifugal velocity bound:}  $v_{\phi}=r\Omega<c$
+  for all $r$ in the flow domain, cf.~\eqref{eq:rel-7-3}.  This is
+  an absolute kinematic requirement.
+\item \textbf{Signal-speed bound:}  Perturbations propagate at speeds
+  bounded by the relativistic sound speed $c_{s}$, with
+  $c_{s}^{2}=(\partial p/\partial\varepsilon)_{s}\le c^{2}$.  When
+  viscosity is included via the Israel--Stewart theory, the relaxation
+  times $\tau_{\pi},\tau_{q}>0$ guarantee that viscous and thermal
+  signals also remain subluminal.
+\end{enumerate}
+These constraints have no analogue in the classical theory and become
+essential when assessing stability near the speed-of-light limit.
