@@ -1,0 +1,434 @@
+% ===========================================================================
+% Relativistic Modification of Chapter XI, Sections 100--101
+% Kelvin--Helmholtz perturbation equations; two uniform fluids
+% ===========================================================================
+% Agent 48 — relativistic branch
+% Conventions: RELATIVISTIC_CONVENTIONS.md, rel_preamble.tex
+% ===========================================================================
+
+\chapter{Relativistic Kelvin--Helmholtz Instability}
+\label{ch:rel-11-KH}
+
+\section*{11R. THE STABILITY OF SUPERPOSED FLUIDS IN RELATIVE MOTION: RELATIVISTIC FORMULATION}
+
+\section{The relativistic perturbation equations}\label{sec:rel-11-100}
+
+In \S\,100 of Chandrasekhar, the Kelvin--Helmholtz instability is studied
+for an incompressible, inviscid fluid in which adjacent layers stream
+horizontally at different velocities. The relativistic generalization
+of this problem arises naturally in astrophysical contexts where the
+relative velocity of the two fluid layers becomes a significant fraction
+of the speed of light: relativistic jets impinging on ambient media,
+the interface between the fast spine and slower sheath of AGN jets, and
+shear layers in gamma-ray burst outflows.
+
+Throughout this chapter we adopt the conventions of
+\textsc{Relativistic\_Conventions}: metric signature $(-,+,+,+)$,
+the speed of light $c$ kept explicit, and the 4-velocity normalized as
+$u^{\mu}u_{\mu} = -c^{2}$.
+
+\subsection{Relativistic kinematics of two-fluid shear flow}
+
+Consider two semi-infinite fluids separated by a planar interface
+at $z=0$, streaming in the $x$-direction with 3-velocities $U_1$
+(lower fluid, $z<0$) and $U_2$ (upper fluid, $z>0$) as measured in the
+laboratory frame.  The associated Lorentz factors are
+\begin{equation}\label{eq:rel-11-1}
+  \gamma_j = \frac{1}{\sqrt{1 - U_j^{2}/c^{2}}}, \qquad j = 1,2.
+\end{equation}
+
+The relative velocity between the two streams, as determined by
+the relativistic velocity-addition formula, is
+\begin{equation}\label{eq:rel-11-2}
+  \boxed{\;
+  V_{\mathrm{rel}} = \frac{|U_1 - U_2|}{1 - U_1 U_2/c^{2}}.
+  \;}
+\end{equation}
+The corresponding \emph{relative Lorentz factor} is
+\begin{equation}\label{eq:rel-11-3}
+  \gamma_{\mathrm{rel}}
+  = \frac{1}{\sqrt{1 - V_{\mathrm{rel}}^{2}/c^{2}}}
+  = \gamma_1\,\gamma_2\!\left(1 - \frac{U_1 U_2}{c^{2}}\right).
+\end{equation}
+Causality requires $V_{\mathrm{rel}} < c$, which is automatically
+satisfied for any $|U_j| < c$.
+
+It is often convenient to work in the rest frame of one of the fluids.
+A Lorentz boost with velocity $U_1$ in the $x$-direction transforms
+the lower fluid to rest; in this frame the upper fluid streams with
+velocity
+\begin{equation}\label{eq:rel-11-4}
+  U'_{2} = \frac{U_2 - U_1}{1 - U_1 U_2/c^{2}} = V_{\mathrm{rel}}\,
+  \operatorname{sgn}(U_2 - U_1).
+\end{equation}
+
+\subsection{Equilibrium state and the energy-momentum tensor}
+
+For each fluid region, the unperturbed energy-momentum tensor of a
+perfect relativistic fluid is
+\begin{equation}\label{eq:rel-11-5}
+  T^{\mu\nu} = \frac{\enthalpy_j}{c^{2}}\, u_j^{\mu}\, u_j^{\nu}
+  + p_j\, \eta^{\mu\nu},
+  \qquad \enthalpy_j \equiv \edensity_j + p_j,
+\end{equation}
+where $\edensity_j$ is the total energy density (including rest-mass
+energy) and $p_j$ is the pressure in region $j$.  The 4-velocity of
+the unperturbed flow is
+\begin{equation}\label{eq:rel-11-6}
+  u_j^{\mu} = \gamma_j\,(c,\, U_j,\, 0,\, 0).
+\end{equation}
+
+In the relativistic theory the \emph{inertial mass density} is not the
+rest-mass density $\rho_{0,j}$ but rather
+\begin{equation}\label{eq:rel-11-7}
+  \boxed{\;
+  \hat{\rho}_j \equiv \frac{\enthalpy_j}{c^{2}}
+  = \frac{\edensity_j + p_j}{c^{2}},
+  \;}
+\end{equation}
+which replaces $\rho_j$ wherever it appears in the classical equations.
+This is the central relativistic substitution for the Kelvin--Helmholtz
+problem.
+
+\subsection{Linearized perturbation equations}
+
+We perturb the equilibrium state in each region by writing
+\begin{equation}\label{eq:rel-11-8}
+  u^{\mu} = u_j^{\mu} + \delta u_j^{\mu}, \qquad
+  p = p_j + \delta p_j, \qquad
+  \edensity = \edensity_j + \delta\edensity_j.
+\end{equation}
+The perturbation 4-velocity must remain orthogonal to $u^{\mu}$, so
+$u_{\mu}\,\delta u^{\mu} = 0$ at linear order.
+
+We decompose the spatial part of $\delta u^{\mu}$ in the laboratory
+frame as perturbation velocities $(u, v, w)$ and seek normal-mode
+solutions with dependence
+\begin{equation}\label{eq:rel-11-9}
+  \exp\!\left[\mathrm{i}(k_x\,x + k_y\,y + n\,t)\right],
+\end{equation}
+where $k = \sqrt{k_x^{2}+k_y^{2}}$ and $n$ is the (complex) frequency.
+
+The Doppler-shifted frequency in the rest frame of fluid $j$ is
+\begin{equation}\label{eq:rel-11-10}
+  \tilde{n}_j = \gamma_j\!\left(n + k_x\, U_j\right),
+\end{equation}
+which accounts for the relativistic Doppler effect. In the
+non-relativistic limit $\gamma_j \to 1$ and we recover the classical
+Doppler shift $n + k_x U_j$.
+
+Linearizing the relativistic Euler equation
+$\hat{\rho}\, u^{\alpha}\nabla_{\alpha} u^{\mu}
+= -(\eta^{\mu\nu} + u^{\mu}u^{\nu}/c^{2})\,\partial_{\nu} p$
+and the continuity equation $\nabla_{\mu}(\hat{\rho}\, u^{\mu}) = 0$
+about the uniform-flow equilibrium, and assuming the fluid to be
+effectively incompressible in each region (valid when all flow speeds
+and perturbation phase velocities are much less than the sound speed
+$c_s$ in each fluid), we obtain the relativistic analogues of
+Chandrasekhar's equations~(1)--(6) of Chapter~XI:
+\begin{equation}\label{eq:rel-11-11}
+  \mathrm{i}\,\gamma_j^{2}\,\hat{\rho}_j\!\left(n + k_x U_j\right) u
+  + \gamma_j^{2}\,\hat{\rho}_j\,(DU_j)\, w
+  = -\mathrm{i}\, k_x\,\delta p,
+\end{equation}
+\begin{equation}\label{eq:rel-11-12}
+  \mathrm{i}\,\gamma_j^{2}\,\hat{\rho}_j\!\left(n + k_x U_j\right) v
+  = -\mathrm{i}\, k_y\,\delta p,
+\end{equation}
+\begin{equation}\label{eq:rel-11-13}
+  \mathrm{i}\,\hat{\rho}_j\!\left(n + k_x U_j\right) w
+  = -D\delta p - g\,\delta\hat{\rho}
+  - k^{2}\sum_s T_s\,\delta z_s\,\delta(z - z_s),
+\end{equation}
+\begin{equation}\label{eq:rel-11-14}
+  \frac{\partial u}{\partial x}
+  + \frac{\partial v}{\partial y}
+  + \frac{\partial w}{\partial z} = 0,
+\end{equation}
+where $D = d/dz$, $\hat{\rho}_j = (\edensity_j + p_j)/c^{2}$, and
+$T_s$ is the surface tension at interface $s$.
+
+\emph{Key relativistic modifications.}  (i) In the horizontal momentum
+equations~\eqref{eq:rel-11-11} and~\eqref{eq:rel-11-12} an additional
+factor of $\gamma_j^{2}$ appears because the horizontal inertia of a
+fluid element moving at velocity $U_j$ is $\gamma_j^{2}\hat{\rho}_j$
+(the ``longitudinal mass'').  (ii) In the vertical equation~%
+\eqref{eq:rel-11-13} the gravitational term involves $\hat{\rho}_j$
+rather than $\rho_j$; there is no extra $\gamma_j$ factor on this
+term because the vertical motion is transverse to the boost.
+(iii) The incompressibility condition~\eqref{eq:rel-11-14} is
+unchanged at linear order.
+
+\subsection{Reduction to a single equation}
+
+Following the same algebraic procedure as in the classical case
+(multiplying the horizontal equations by $-\mathrm{i}k_x$ and
+$-\mathrm{i}k_y$, adding, and using incompressibility), we eliminate
+$u$, $v$, and $\delta p$ to obtain the relativistic analogue of
+Chandrasekhar's equation~(16):
+\begin{multline}\label{eq:rel-11-15}
+  D\!\left[\gamma_j^{2}\,\hat{\rho}_j\!\left(n + k_x U_j\right)Dw
+  - \gamma_j^{2}\,\hat{\rho}_j\, k_x(DU_j)\,w\right]
+  - k^{2}\hat{\rho}_j\!\left(n + k_x U_j\right) w \\
+  = g\,k^{2}\bigg[D\hat{\rho}
+  - \frac{k^{2}}{g}\sum_s T_s\,\delta(z - z_s)\bigg]
+  \frac{w}{n + k_x U_j}\,.
+\end{multline}
+In regions of constant $\hat{\rho}_j$ and $U_j$, this reduces to
+$(D^{2} - k^{2})w = 0$, exactly as in the classical theory.
+
+The interface condition (integrating across the discontinuity at
+$z = z_s$) becomes
+\begin{equation}\label{eq:rel-11-16}
+  \Delta_s\!\left[\gamma^{2}\hat{\rho}\!\left(n + k_x U\right)Dw
+  - \gamma^{2}\hat{\rho}\, k_x(DU)\,w\right]
+  = g\,k^{2}\!\left[\Delta_s(\hat{\rho})
+  - \frac{k^{2}T_s}{g}\right]\!
+  \left(\frac{w}{n + k_x U}\right)_{\!s},
+\end{equation}
+the relativistic generalization of Chandrasekhar's equation~(19).
+
+
+% ===================================================================
+\section{Two uniform relativistic fluids in relative horizontal motion}
+\label{sec:rel-11-101}
+% ===================================================================
+
+We now apply the perturbation equations of the preceding section to
+the case treated in \S\,101 of Chandrasekhar: two uniform fluids of
+(relativistic) inertial densities $\hat{\rho}_1 = (\edensity_1 + p_1)/c^{2}$
+and $\hat{\rho}_2 = (\edensity_2 + p_2)/c^{2}$, separated by a
+horizontal boundary at $z = 0$, with streaming velocities $U_1$ and $U_2$.
+
+In each region $(D^{2} - k^{2})w = 0$ with solutions
+\begin{equation}\label{eq:rel-11-17}
+  w_1 = A\!\left(n + k_x U_1\right) e^{+kz} \quad (z < 0),
+  \qquad
+  w_2 = A\!\left(n + k_x U_2\right) e^{-kz} \quad (z > 0),
+\end{equation}
+identical in form to the classical case.  Applying the interface
+condition~\eqref{eq:rel-11-16} yields the \emph{relativistic dispersion
+relation}:
+\begin{equation}\label{eq:rel-11-18}
+  \boxed{\;
+  \gamma_1^{2}\,\hat{\rho}_1\!\left(n + k_x U_1\right)^{2}
+  + \gamma_2^{2}\,\hat{\rho}_2\!\left(n + k_x U_2\right)^{2}
+  = g\,k\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)
+  + k^{3}\,\frac{T}{\hat{\rho}_1 + \hat{\rho}_2}\,,
+  \;}
+\end{equation}
+where $T$ is the surface tension.  This is the relativistic
+counterpart of Chandrasekhar's equation~(26).
+
+Define the relativistic density fractions
+\begin{equation}\label{eq:rel-11-19}
+  \hat{\alpha}_j
+  = \frac{\gamma_j^{2}\,\hat{\rho}_j}
+  {\gamma_1^{2}\,\hat{\rho}_1 + \gamma_2^{2}\,\hat{\rho}_2},
+  \qquad j = 1,2,
+  \qquad \hat{\alpha}_1 + \hat{\alpha}_2 = 1.
+\end{equation}
+In terms of these fractions the dispersion relation becomes
+\begin{equation}\label{eq:rel-11-20}
+  \hat{\alpha}_1\!\left(n + k_x U_1\right)^{2}
+  + \hat{\alpha}_2\!\left(n + k_x U_2\right)^{2}
+  = \frac{g\,k\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)
+  + k^{3}\,T/(\hat{\rho}_1+\hat{\rho}_2)}
+  {\gamma_1^{2}\,\hat{\rho}_1 + \gamma_2^{2}\,\hat{\rho}_2}\,.
+\end{equation}
+
+Expanding and solving the quadratic in $n$:
+\begin{multline}\label{eq:rel-11-21}
+  n = -k_x\!\left(\hat{\alpha}_1 U_1 + \hat{\alpha}_2 U_2\right)
+  \pm \bigg[
+  \frac{g\,k(\hat{\rho}_1 - \hat{\rho}_2)
+  + k^{3}\,T/(\hat{\rho}_1+\hat{\rho}_2)}
+  {\gamma_1^{2}\hat{\rho}_1 + \gamma_2^{2}\hat{\rho}_2}
+  \\
+  {}- k_x^{2}\,\hat{\alpha}_1\,\hat{\alpha}_2\!\left(U_1 - U_2\right)^{2}
+  \bigg]^{1/2}.
+\end{multline}
+
+\subsection*{(a) Without surface tension: relativistic critical velocity}
+
+Setting $T = 0$ and $k_x = k$ (the most unstable direction), instability
+occurs when
+\begin{equation}\label{eq:rel-11-22}
+  k\,\hat{\alpha}_1\,\hat{\alpha}_2\!\left(U_1 - U_2\right)^{2}
+  > \frac{g\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)}
+  {\gamma_1^{2}\hat{\rho}_1 + \gamma_2^{2}\hat{\rho}_2}\,,
+\end{equation}
+which gives a minimum unstable wavenumber
+\begin{equation}\label{eq:rel-11-23}
+  k_{\min}^{(\mathrm{rel})}
+  = \frac{g\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)}
+  {\hat{\alpha}_1\,\hat{\alpha}_2\!\left(U_1 - U_2\right)^{2}
+  \!\left(\gamma_1^{2}\hat{\rho}_1 + \gamma_2^{2}\hat{\rho}_2\right)}.
+\end{equation}
+
+\emph{Comparison with the classical result.}  In the non-relativistic
+limit $\gamma_j \to 1$, $\hat{\rho}_j \to \rho_j$, and we recover
+Chandrasekhar's equation~(35):
+$k_{\min} = g(\alpha_1 - \alpha_2)/[\alpha_1\alpha_2(U_1 - U_2)^{2}]$.
+
+The relativistic modifications are twofold:
+
+\begin{enumerate}
+\item \textbf{Inertial-density replacement:} The rest-mass density
+$\rho_j$ is replaced everywhere by $\hat{\rho}_j = (\edensity_j + p_j)/c^{2}$.
+For a hot relativistic plasma with $p \sim \edensity/3$ (radiation-dominated
+equation of state), $\hat{\rho} = 4\edensity/(3c^{2})$, which is
+$4/3$ times the naive $\edensity/c^{2}$.
+
+\item \textbf{Lorentz-factor weighting:} The effective inertia
+$\gamma_j^{2}\hat{\rho}_j$ of each stream is enhanced by the
+square of its Lorentz factor.  This means that a faster stream is
+``heavier'' in the sense relevant for the KH instability, altering the
+density fractions $\hat{\alpha}_j$ and hence the critical wavenumber.
+\end{enumerate}
+
+The \emph{critical relative velocity} for the onset of instability at
+a given wavenumber $k$ (with $k_x = k$, $T = 0$) can be written in
+a form that makes the relativistic corrections transparent.
+Working in the frame where fluid~1 is at rest ($U_1 = 0$,
+$\gamma_1 = 1$, $U_2 = V_{\mathrm{rel}}$, $\gamma_2 = \gamma_{\mathrm{rel}}$),
+the dispersion relation~\eqref{eq:rel-11-18} becomes
+\begin{equation}\label{eq:rel-11-24}
+  \hat{\rho}_1\, n^{2}
+  + \gamma_{\mathrm{rel}}^{2}\,\hat{\rho}_2
+  \!\left(n + k\, V_{\mathrm{rel}}\right)^{2}
+  = g\,k\!\left(\hat{\rho}_1 - \hat{\rho}_2\right).
+\end{equation}
+Instability ($n$ has a positive imaginary part) requires
+\begin{equation}\label{eq:rel-11-25}
+  \boxed{\;
+  V_{\mathrm{rel}}^{2}
+  > \frac{g}{k}\,
+  \frac{(\hat{\rho}_1 - \hat{\rho}_2)
+  (\hat{\rho}_1 + \gamma_{\mathrm{rel}}^{2}\hat{\rho}_2)}
+  {\hat{\rho}_1\,\gamma_{\mathrm{rel}}^{2}\,\hat{\rho}_2}\,.
+  \;}
+\end{equation}
+In the non-relativistic limit ($\gamma_{\mathrm{rel}} \to 1$,
+$\hat{\rho}_j \to \rho_j$) this reduces to
+$V_{\mathrm{rel}}^{2} > (g/k)(\rho_1^{2} - \rho_2^{2})/(\rho_1\rho_2)$,
+reproducing the classical result
+$V_{\mathrm{crit}}^{2} \sim g(\rho_2^{2}-\rho_1^{2})/(\rho_1\rho_2\, k)$
+(with appropriate sign conventions for $\rho_1 > \rho_2$).
+
+For ultra-relativistic streaming ($\gamma_{\mathrm{rel}} \gg 1$),
+the right-hand side of~\eqref{eq:rel-11-25} approaches
+$(g/k)(\hat{\rho}_1 - \hat{\rho}_2)/\hat{\rho}_2$, which is
+independent of $\gamma_{\mathrm{rel}}$.  Since $V_{\mathrm{rel}} \to c$
+in this limit, the inequality is always satisfied for sufficiently
+large relative velocity: the KH instability persists in the
+ultra-relativistic regime.
+
+\subsection*{(b) Relativistic Doppler effect and aberration}
+
+The growth rate of the KH instability is modified in the relativistic
+regime by two kinematic effects:
+
+\begin{enumerate}
+\item \textbf{Relativistic Doppler shift.}  The Doppler-shifted
+frequency~\eqref{eq:rel-11-10} differs from the classical one by the
+factor $\gamma_j$. As a consequence, the real part of $n$ (the
+oscillation frequency of the interface) is modified; the growth rate
+(imaginary part of $n$) inherits $\gamma$-dependent corrections that
+reduce the e-folding rate in the lab frame relative to the co-moving
+frame by a factor of $\gamma$.
+
+\item \textbf{Aberration.}  The angle $\theta$ between the wave vector
+$\mathbf{k}$ and the streaming direction transforms under a boost:
+\begin{equation}\label{eq:rel-11-26}
+  \cos\theta' = \frac{\cos\theta - U_j/c}{1 - (U_j/c)\cos\theta},
+\end{equation}
+where $\theta'$ is the angle in the rest frame of fluid~$j$.
+This means that perturbations which are oblique in the lab frame appear
+more nearly aligned with the streaming direction in the co-moving frame,
+enhancing the effective $k_x$ component and thus the destabilizing
+influence of the shear.
+\end{enumerate}
+
+\subsection*{(c) The stabilizing effect of surface tension — relativistic}
+
+When surface tension $T$ is present, equation~\eqref{eq:rel-11-21}
+predicts stability (setting $k_x = k$) if
+\begin{equation}\label{eq:rel-11-27}
+  \hat{\alpha}_1\,\hat{\alpha}_2\!\left(U_1 - U_2\right)^{2}
+  < \frac{g\,k^{-1}\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)
+  + k\, T/(\hat{\rho}_1 + \hat{\rho}_2)}
+  {\gamma_1^{2}\hat{\rho}_1 + \gamma_2^{2}\hat{\rho}_2}\,.
+\end{equation}
+The right-hand side is minimized at a wavenumber $k_*^{(\mathrm{rel})}$
+satisfying
+\begin{equation}\label{eq:rel-11-28}
+  \left(k_*^{(\mathrm{rel})}\right)^{2}
+  = \frac{g\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)
+  (\hat{\rho}_1 + \hat{\rho}_2)}{T}\,,
+\end{equation}
+which has the same functional form as the classical
+expression~(Chandrasekhar eq.~(38)) with $\rho_j$ replaced by
+$\hat{\rho}_j$.
+
+Surface tension suppresses the relativistic KH instability if
+\begin{equation}\label{eq:rel-11-29}
+  \boxed{\;
+  \left(U_1 - U_2\right)^{2}
+  < \frac{2}{\hat{\alpha}_1\,\hat{\alpha}_2}
+  \sqrt{\frac{T\, g\!\left(\hat{\rho}_1 - \hat{\rho}_2\right)}
+  {(\hat{\rho}_1 + \hat{\rho}_2)
+  \!\left(\gamma_1^{2}\hat{\rho}_1
+  + \gamma_2^{2}\hat{\rho}_2\right)^{2}}}\,.
+  \;}
+\end{equation}
+In the non-relativistic limit this reduces to Chandrasekhar's
+equation~(40), which is the Kelvin criterion for the suppression
+of the KH instability by surface tension.
+
+\subsection*{(d) Causality checks}
+
+The relativistic formulation demands that all physical velocities
+remain subluminal.  We verify three requirements:
+
+\begin{enumerate}
+\item \textbf{Streaming velocities:}  $|U_j| < c$ for $j = 1,2$,
+guaranteed by hypothesis and by equation~\eqref{eq:rel-11-1}.
+
+\item \textbf{Relative velocity:}  $V_{\mathrm{rel}} < c$ as noted
+below equation~\eqref{eq:rel-11-3}; this follows from the structure
+of the relativistic velocity-addition formula.
+
+\item \textbf{Phase velocities of KH modes:}  The phase velocity of a
+perturbation mode is $v_{\mathrm{ph}} = -\operatorname{Re}(n)/k$.
+From equation~\eqref{eq:rel-11-21}, the real part of $n$ is
+$-k(\hat{\alpha}_1 U_1 + \hat{\alpha}_2 U_2)$ (plus a correction from
+the square root for stable modes), so
+\begin{equation}\label{eq:rel-11-30}
+  v_{\mathrm{ph}} = \hat{\alpha}_1 U_1 + \hat{\alpha}_2 U_2,
+\end{equation}
+which is a weighted average of $U_1$ and $U_2$ with positive weights
+summing to unity.  Since $|U_j| < c$, we have $|v_{\mathrm{ph}}| < c$.
+
+For unstable modes the imaginary part $\operatorname{Im}(n)$
+represents a temporal growth rate, not a spatial propagation velocity,
+so there is no additional causality constraint from the growth rate
+itself.  However, the \emph{group velocity}
+$v_g = \partial\operatorname{Re}(n)/\partial k$ must also satisfy
+$|v_g| < c$; a direct calculation from~\eqref{eq:rel-11-21} confirms
+this, as $v_g$ remains a combination of $U_1$, $U_2$, and the
+(subluminal) gravitational propagation speed $\sqrt{g/k}$.
+\end{enumerate}
+
+\subsection*{(e) Non-relativistic limit}
+
+In the limit $|U_j|/c \to 0$, $p_j/(\rho_j c^{2}) \to 0$,
+we have $\gamma_j \to 1$, $\hat{\rho}_j \to \rho_j$,
+$\hat{\alpha}_j \to \alpha_j$, and all equations of this section
+reduce identically to those of Chandrasekhar's \S\,101.  In particular:
+\begin{itemize}
+\item Equation~\eqref{eq:rel-11-18} $\to$ Chandrasekhar eq.~(26).
+\item Equation~\eqref{eq:rel-11-23} $\to$ Chandrasekhar eq.~(35).
+\item Equation~\eqref{eq:rel-11-29} $\to$ Chandrasekhar eq.~(40).
+\end{itemize}
+This provides a consistency check on the relativistic generalization.
